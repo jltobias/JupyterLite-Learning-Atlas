@@ -1,0 +1,12 @@
+.venv/
+_build/
+_site/
+_research/
+_bmad/
+_bmad-output/
+_bmad.setup-*/
+__pycache__/
+.ipynb_checkpoints/
+node_modules/
+*.log
+.jupyterlite.doit.db*

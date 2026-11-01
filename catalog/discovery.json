@@ -1,0 +1,355 @@
+{
+  "inspected_on": "2026-11-01",
+  "method": "Fresh public GitHub connector inventory after four authorized source visibility changes; README inspection for included projects",
+  "owner": "jltobias",
+  "repositories": [
+    {
+      "name": "ArcGIS",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/ArcGIS"
+    },
+    {
+      "name": "osmnx",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/osmnx"
+    },
+    {
+      "name": "null-island",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/null-island"
+    },
+    {
+      "name": "JupyterNotebooks",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterNotebooks"
+    },
+    {
+      "name": "notebooks",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/notebooks"
+    },
+    {
+      "name": "1854-Cholera-Outbreak-London",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/1854-Cholera-Outbreak-London"
+    },
+    {
+      "name": "Case-Study-Development-Guide",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/Case-Study-Development-Guide"
+    },
+    {
+      "name": "topojson",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/topojson"
+    },
+    {
+      "name": "esri-leaflet",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/esri-leaflet"
+    },
+    {
+      "name": "r-bridge-install",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/r-bridge-install"
+    },
+    {
+      "name": "r-sample-tools",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/r-sample-tools"
+    },
+    {
+      "name": "nearby-android",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/nearby-android"
+    },
+    {
+      "name": "2017-HIV-Prevalence-Case-Study",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/2017-HIV-Prevalence-Case-Study"
+    },
+    {
+      "name": "ICPIutilities",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/ICPIutilities"
+    },
+    {
+      "name": "geoda",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/geoda"
+    },
+    {
+      "name": "datimutils",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/datimutils"
+    },
+    {
+      "name": "gpssample-android",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/gpssample-android"
+    },
+    {
+      "name": "EpiSample-Old",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/EpiSample-Old"
+    },
+    {
+      "name": "qgrid",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/qgrid"
+    },
+    {
+      "name": "Tutorial_Agent_Based_Models",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/Tutorial_Agent_Based_Models"
+    },
+    {
+      "name": "2020-COVID19-NO2-Remote-Sensing",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/2020-COVID19-NO2-Remote-Sensing"
+    },
+    {
+      "name": "GIS",
+      "default_branch": "master",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/GIS"
+    },
+    {
+      "name": "ml4eo-bootcamp-2021",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/ml4eo-bootcamp-2021"
+    },
+    {
+      "name": "2021-HELINA-COVID19-OSMNx-Workshop",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/2021-HELINA-COVID19-OSMNx-Workshop"
+    },
+    {
+      "name": "JupyterLite-Data-Visualization",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Data-Visualization"
+    },
+    {
+      "name": "JupyterLite-Shiny-Live-Apps",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Shiny-Live-Apps"
+    },
+    {
+      "name": "South-Sudan-Python-Shiny-Live-App",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/South-Sudan-Python-Shiny-Live-App"
+    },
+    {
+      "name": "JupyterLite-South-Sudan-Dashboard",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-South-Sudan-Dashboard"
+    },
+    {
+      "name": "JupyterLite-Spatial-Analysis",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Spatial-Analysis"
+    },
+    {
+      "name": "JupyterLite-Maps-and-Spatial-Analyses",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Maps-and-Spatial-Analyses"
+    },
+    {
+      "name": "JupyterLite-Geospatial-Analyses-and-Maps-old",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Geospatial-Analyses-and-Maps-old"
+    },
+    {
+      "name": "JupyterLite-Geospatial-Analyses-and-Maps",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Geospatial-Analyses-and-Maps"
+    },
+    {
+      "name": "JupyterLite-Geospatial-Analyses-and-Maps-revised",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Geospatial-Analyses-and-Maps-revised"
+    },
+    {
+      "name": "JupyterGIS-StoryMap-Gaborone-TB-ABM",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterGIS-StoryMap-Gaborone-TB-ABM"
+    },
+    {
+      "name": "JupyterLite-Global-Health-GIS",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Global-Health-GIS"
+    },
+    {
+      "name": "Cross-Border-Ebola-Risk-Mapping-Prototype",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/Cross-Border-Ebola-Risk-Mapping-Prototype"
+    },
+    {
+      "name": "global-informal-settlements-storymap",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/global-informal-settlements-storymap"
+    },
+    {
+      "name": "JupyterLite-HIVDB-Drug-Resistance-Maps",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-HIVDB-Drug-Resistance-Maps"
+    },
+    {
+      "name": "JupyterLite-Whitebox",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Whitebox"
+    },
+    {
+      "name": "JupyterLite-AI-Agents-and-Orchestrator-Six-Thinking-Hats",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-AI-Agents-and-Orchestrator-Six-Thinking-Hats"
+    },
+    {
+      "name": "JupyterLite-DRC-Population-Mobility-Border-Mapping",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-DRC-Population-Mobility-Border-Mapping"
+    },
+    {
+      "name": "JupyterLite-Geospatial-Research-Awareness-Radar",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Geospatial-Research-Awareness-Radar"
+    },
+    {
+      "name": "JupyterLite-World-Monitor-Prototype",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-World-Monitor-Prototype"
+    },
+    {
+      "name": "JupyterLite-Astra-demos",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Astra-demos"
+    },
+    {
+      "name": "JupyterLite-Gods-Eye-View-Satellite",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Gods-Eye-View-Satellite"
+    },
+    {
+      "name": "JupyterLite-WorldView",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-WorldView"
+    },
+    {
+      "name": "JupyterLite-Custom-GPT-Six-Thinking-Hats",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Custom-GPT-Six-Thinking-Hats"
+    },
+    {
+      "name": "JupyterLite-GeoLibre-GeoAI",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-GeoLibre-GeoAI"
+    },
+    {
+      "name": "JupyterLite-GPT-6-Astra-Geospatial",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-GPT-6-Astra-Geospatial"
+    },
+    {
+      "name": "JupyterLite-zarr-sql-views",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-zarr-sql-views"
+    },
+    {
+      "name": "JupyterLite-Rewiring-Global-Health",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Rewiring-Global-Health"
+    },
+    {
+      "name": "JupyterLite-Sea-Level-Rise",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Sea-Level-Rise"
+    },
+    {
+      "name": "JupyterLite-STAC-Browser",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-STAC-Browser"
+    },
+    {
+      "name": "JupyterLite-Climate-and-Health",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Climate-and-Health"
+    },
+    {
+      "name": "JupyterLite-RustGIS",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-RustGIS"
+    },
+    {
+      "name": "JupyterLite-Osiris",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Osiris"
+    },
+    {
+      "name": "JupyterLite-PyScript",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-PyScript"
+    },
+    {
+      "name": "JupyterLite-Index-Repo",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Index-Repo"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JupyterLite Learning Atlas catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "inspected_on", "scope", "repositories"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "inspected_on": {"type": "string", "format": "date"},
+    "scope": {"type": "string", "minLength": 20},
+    "repositories": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/repository"}}
+  },
+  "$defs": {
+    "https": {"type": "string", "pattern": "^https://[^\\s]+$", "format": "uri"},
+    "repository": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name","title","slug","theme","summary","status","category","learning_question","source_url","readme_url","default_branch","source_commit","inspected_on","visibility","notebook","book_path","lab_path","resources","launch_status","attribution","limitations"],
+      "properties": {
+        "name": {"type":"string","minLength":3},
+        "title": {"type":"string","minLength":8},
+        "slug": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "theme": {"enum":["Foundations","Browser GIS","Spatial methods","Global health","Terrain & Earth observation","AI & human decisions","Emergency operations"]},
+        "summary": {"type":"string","minLength":30},
+        "status": {"type":"string","minLength":5},
+        "category": {"enum":["jupyterlite","related"]},
+        "learning_question": {"type":"string","minLength":20},
+        "source_url": {"$ref":"#/$defs/https"},
+        "readme_url": {"$ref":"#/$defs/https"},
+        "default_branch": {"type":"string","minLength":1},
+        "source_commit": {"type":"string","pattern":"^[a-f0-9]{40}$"},
+        "inspected_on": {"type":"string","format":"date"},
+        "visibility": {"const":"public"},
+        "notebook": {"type":"string","pattern":"^projects/[a-z0-9-]+/index\\.ipynb$"},
+        "book_path": {"type":"string","pattern":"^book/projects/[a-z0-9-]+/index\\.html$"},
+        "lab_path": {"type":"string","pattern":"^lite/lab/index\\.html\\?path=projects/[a-z0-9-]+/index\\.ipynb$"},
+        "launch_status": {"type":"string","minLength":10},
+        "attribution": {"type":"string","minLength":20},
+        "limitations": {"type":"string","minLength":40},
+        "resources": {"type":"array","items":{"type":"object","additionalProperties":false,"required":["kind","label","url","description","availability","checked_on","http_status"],"properties":{
+          "kind":{"enum":["book","lab","map-2d","map-3d","scene-3d","explorer","hub"]},
+          "label":{"type":"string","minLength":5},"url":{"$ref":"#/$defs/https"},"description":{"type":"string","minLength":15},"availability":{"type":"string","minLength":10},"checked_on":{"type":["string","null"],"format":"date"},"http_status":{"type":["integer","null"],"minimum":100,"maximum":599}
+        }}}
+      }
+    }
+  }
+}

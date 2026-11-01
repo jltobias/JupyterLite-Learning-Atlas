@@ -1,0 +1,34 @@
+{
+  "checked_on": "2026-11-01",
+  "method": "Explicitly authorized source visibility changes, verified by authenticated GitHub metadata and unauthenticated public API HTTP 200; index publication is separate",
+  "repositories": [
+    {
+      "name": "JupyterLite-Shiny-Live-Apps",
+      "before": "private",
+      "after": "public",
+      "verified": true,
+      "url": "https://github.com/jltobias/JupyterLite-Shiny-Live-Apps"
+    },
+    {
+      "name": "JupyterLite-Spatial-Analysis",
+      "before": "private",
+      "after": "public",
+      "verified": true,
+      "url": "https://github.com/jltobias/JupyterLite-Spatial-Analysis"
+    },
+    {
+      "name": "JupyterLite-Maps-and-Spatial-Analyses",
+      "before": "private",
+      "after": "public",
+      "verified": true,
+      "url": "https://github.com/jltobias/JupyterLite-Maps-and-Spatial-Analyses"
+    },
+    {
+      "name": "JupyterLite-Geospatial-Analyses-and-Maps-old",
+      "before": "private",
+      "after": "public",
+      "verified": true,
+      "url": "https://github.com/jltobias/JupyterLite-Geospatial-Analyses-and-Maps-old"
+    }
+  ]
+}

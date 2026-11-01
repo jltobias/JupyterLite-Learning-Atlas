@@ -1,0 +1,96 @@
+format: jb-book
+root: index
+parts:
+- caption: Start here
+  chapters:
+  - file: foundations/browser-python
+  - file: foundations/spatial-thinking
+  - file: foundations/learning-a-model
+  - file: foundations/evidence-ai
+  - file: synthesis/global-health
+- caption: Foundations
+  chapters:
+  - file: projects/data-visualization/index
+    title: Data-Visualization - See the same evidence two ways
+  - file: projects/shiny-live-apps/index
+    title: Shiny-Live-Apps - Prototype a reactive rule before an app
+- caption: Global health
+  chapters:
+  - file: projects/south-sudan-dashboard/index
+    title: South-Sudan-Dashboard - Service continuity as a dependency
+  - file: projects/global-health-gis/index
+    title: Global-Health-GIS - Weight burden without hiding assumptions
+  - file: projects/hivdb-drug-resistance-maps/index
+    title: HIVDB-Drug-Resistance-Maps - Audit the surveillance denominator
+  - file: projects/drc-population-mobility-border-mapping/index
+    title: DRC-Population-Mobility-Border-Mapping - Flows are connections, not infections
+  - file: projects/rewiring-global-health/index
+    title: Rewiring-Global-Health - Rewiring Global Health in the Age of AI
+  - file: projects/sea-level-rise/index
+    title: Sea-Level-Rise - Separate hazard from service impact
+  - file: projects/climate-and-health/index
+    title: Climate-and-Health - Count heat exposure, preserve uncertainty
+- caption: Spatial methods
+  chapters:
+  - file: projects/spatial-analysis/index
+    title: Spatial-Analysis - Neighborhoods change a summary
+  - file: projects/maps-and-spatial-analyses/index
+    title: Maps-and-Spatial-Analyses - A buffer is a declared rule
+  - file: projects/geospatial-analyses-and-maps-old/index
+    title: Geospatial-Analyses-and-Maps-old - A teaching extract is not a census
+  - file: projects/geospatial-analyses-and-maps/index
+    title: Geospatial-Analyses-and-Maps - Overlay with an explicit layer contract
+  - file: projects/geospatial-analyses-and-maps-revised/index
+    title: Geospatial-Analyses-and-Maps-revised - Show what aggregation hides
+- caption: Terrain & Earth observation
+  chapters:
+  - file: projects/whitebox/index
+    title: Whitebox - Trace downhill, then change runtimes
+  - file: projects/astra-demos/index
+    title: Astra-demos - Procedural terrain, transparent assumptions
+  - file: projects/gods-eye-view-satellite/index
+    title: Gods-Eye-View-Satellite - Inspect the viewing geometry
+  - file: projects/zarr-sql-views/index
+    title: zarr-sql-views - Query a cube, account for the work
+  - file: projects/stac-browser/index
+    title: STAC-Browser - Discover assets without reading pixels
+- caption: AI & human decisions
+  chapters:
+  - file: projects/ai-agents-and-orchestrator-six-thinking-hats/index
+    title: AI-Agents-and-Orchestrator-Six-Thinking-Hats - Route perspectives before
+      synthesis
+  - file: projects/geospatial-research-awareness-radar/index
+    title: Geospatial-Research-Awareness-Radar - Rank leads without endorsing claims
+  - file: projects/custom-gpt-six-thinking-hats/index
+    title: Custom-GPT-Six-Thinking-Hats - Validate a structured conversation
+  - file: projects/geolibre-geoai/index
+    title: GeoLibre-GeoAI - Check a spatial holdout
+  - file: projects/gpt-6-astra-geospatial/index
+    title: GPT-6-Astra-Geospatial - Evaluate claims against a contract
+- caption: Emergency operations
+  chapters:
+  - file: projects/world-monitor-prototype/index
+    title: World-Monitor-Prototype - Put freshness in the situation report
+  - file: projects/worldview/index
+    title: WorldView - Allocate supplies with visible constraints
+  - file: projects/osiris/index
+    title: Osiris - Turn signals into a reviewed brief
+- caption: Browser GIS
+  chapters:
+  - file: projects/rustgis/index
+    title: RustGIS - Export a small layer with a contract
+  - file: projects/pyscript/index
+    title: PyScript - One data contract, two browser runtimes
+- caption: Related browser projects
+  chapters:
+  - file: projects/jupytergis-storymap-gaborone-tb-abm/index
+    title: JupyterGIS-StoryMap-Gaborone-TB-ABM - Storytelling needs a residual check
+  - file: projects/cross-border-ebola-risk-mapping-prototype/index
+    title: Cross-Border-Ebola-Risk-Mapping-Prototype - Sensitivity before a risk label
+  - file: projects/global-informal-settlements-storymap/index
+    title: global-informal-settlements-storymap - A settlement label needs evidence
+- caption: Keep exploring
+  chapters:
+  - file: contributor-guide
+  - file: references
+  - file: visual-provenance

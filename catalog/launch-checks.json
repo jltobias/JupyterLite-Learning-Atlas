@@ -1,0 +1,421 @@
+{
+  "checked_on": "2026-11-01",
+  "method": "HTTP GET entry reachability; no functional promise",
+  "results": [
+    {
+      "repository": "JupyterLite-Data-Visualization",
+      "url": "https://jltobias.github.io/JupyterLite-Data-Visualization/book/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Data-Visualization",
+      "url": "https://jltobias.github.io/JupyterLite-Data-Visualization/lab/index.html?path=visualization_methods_v2.ipynb&reset",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Data-Visualization",
+      "url": "https://jltobias.github.io/JupyterLite-Data-Visualization/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Global-Health-GIS",
+      "url": "https://jltobias.github.io/jupyterlite-global-health-gis/lab/index.html",
+      "status": 404
+    },
+    {
+      "repository": "global-informal-settlements-storymap",
+      "url": "https://jltobias.github.io/global-informal-settlements-storymap/lab/index.html?path=global/Global_Human_Settlements_Tour.jGIS",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-HIVDB-Drug-Resistance-Maps",
+      "url": "https://jltobias.github.io/JupyterLite-HIVDB-Drug-Resistance-Maps/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Whitebox",
+      "url": "https://jltobias.github.io/JupyterLite-Whitebox/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Whitebox",
+      "url": "https://jltobias.github.io/JupyterLite-Whitebox/book/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-AI-Agents-and-Orchestrator-Six-Thinking-Hats",
+      "url": "https://jltobias.github.io/JupyterLite-AI-Agents-and-Orchestrator-Six-Thinking-Hats/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-AI-Agents-and-Orchestrator-Six-Thinking-Hats",
+      "url": "https://jltobias.github.io/JupyterLite-AI-Agents-and-Orchestrator-Six-Thinking-Hats/lite/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-DRC-Population-Mobility-Border-Mapping",
+      "url": "https://jltobias.github.io/JupyterLite-DRC-Population-Mobility-Border-Mapping/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-DRC-Population-Mobility-Border-Mapping",
+      "url": "https://jltobias.github.io/JupyterLite-DRC-Population-Mobility-Border-Mapping/maps/drc-mobility-map.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Geospatial-Research-Awareness-Radar",
+      "url": "https://jltobias.github.io/JupyterLite-Geospatial-Research-Awareness-Radar/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-World-Monitor-Prototype",
+      "url": "https://jltobias.github.io/JupyterLite-World-Monitor-Prototype/book/intro.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-World-Monitor-Prototype",
+      "url": "https://jltobias.github.io/JupyterLite-World-Monitor-Prototype/lab/index.html?path=00_Start_Here.ipynb",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Astra-demos",
+      "url": "https://jltobias.github.io/JupyterLite-Astra-demos/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Astra-demos",
+      "url": "https://jltobias.github.io/JupyterLite-Astra-demos/lite/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Astra-demos",
+      "url": "https://jltobias.github.io/JupyterLite-Astra-demos/demos/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Gods-Eye-View-Satellite",
+      "url": "https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Gods-Eye-View-Satellite",
+      "url": "https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/lite/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Gods-Eye-View-Satellite",
+      "url": "https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/_static/demos/riverbend-2d.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Gods-Eye-View-Satellite",
+      "url": "https://jltobias.github.io/JupyterLite-Gods-Eye-View-Satellite/_static/demos/riverbend-3d.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-WorldView",
+      "url": "https://jltobias.github.io/JupyterLite-WorldView/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-WorldView",
+      "url": "https://jltobias.github.io/JupyterLite-WorldView/dashboard/operations.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-WorldView",
+      "url": "https://jltobias.github.io/JupyterLite-WorldView/scenes/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-WorldView",
+      "url": "https://jltobias.github.io/JupyterLite-WorldView/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-WorldView",
+      "url": "https://jltobias.github.io/JupyterLite-WorldView/book/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-WorldView",
+      "url": "https://jltobias.github.io/JupyterLite-WorldView/dashboard/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Custom-GPT-Six-Thinking-Hats",
+      "url": "https://jltobias.github.io/JupyterLite-Custom-GPT-Six-Thinking-Hats/lite/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Custom-GPT-Six-Thinking-Hats",
+      "url": "https://jltobias.github.io/JupyterLite-Custom-GPT-Six-Thinking-Hats/book/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Custom-GPT-Six-Thinking-Hats",
+      "url": "https://jltobias.github.io/JupyterLite-Custom-GPT-Six-Thinking-Hats/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-GeoLibre-GeoAI",
+      "url": "https://jltobias.github.io/JupyterLite-GeoLibre-GeoAI/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-GeoLibre-GeoAI",
+      "url": "https://jltobias.github.io/JupyterLite-GeoLibre-GeoAI/lite/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-GeoLibre-GeoAI",
+      "url": "https://jltobias.github.io/JupyterLite-RustGIS/maps/2d.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-GeoLibre-GeoAI",
+      "url": "https://jltobias.github.io/JupyterLite-RustGIS/maps/3d.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-GeoLibre-GeoAI",
+      "url": "https://jltobias.github.io/JupyterLite-RustGIS/maps/scene.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-GeoLibre-GeoAI",
+      "url": "https://jltobias.github.io/JupyterLite-STAC-Browser/explorer/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-GPT-6-Astra-Geospatial",
+      "url": "https://jltobias.github.io/JupyterLite-GPT-6-Astra-Geospatial/book/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-GPT-6-Astra-Geospatial",
+      "url": "https://jltobias.github.io/JupyterLite-GPT-6-Astra-Geospatial/lite/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-GPT-6-Astra-Geospatial",
+      "url": "https://jltobias.github.io/JupyterLite-GPT-6-Astra-Geospatial/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/book/intro.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=tessera_lagos&mode=columns",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=water&mode=map",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=coast&mode=scene",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Rewiring-Global-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Rewiring-Global-Health/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Rewiring-Global-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Rewiring-Global-Health/lite/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Rewiring-Global-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Rewiring-Global-Health/demos/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Rewiring-Global-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Rewiring-Global-Health/demos/scene.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Sea-Level-Rise",
+      "url": "https://jltobias.github.io/JupyterLite-Sea-Level-Rise/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Sea-Level-Rise",
+      "url": "https://jltobias.github.io/JupyterLite-Sea-Level-Rise/book/intro.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Sea-Level-Rise",
+      "url": "https://jltobias.github.io/JupyterLite-Sea-Level-Rise/lite/lab/index.html?path=notebooks/00_start_here.ipynb",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Sea-Level-Rise",
+      "url": "https://jltobias.github.io/JupyterLite-Sea-Level-Rise/dashboard/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Sea-Level-Rise",
+      "url": "https://jltobias.github.io/JupyterLite-Sea-Level-Rise/dashboard/?view=terrain&dataset=synthetic",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-STAC-Browser",
+      "url": "https://jltobias.github.io/JupyterLite-STAC-Browser/explorer/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-STAC-Browser",
+      "url": "https://jltobias.github.io/JupyterLite-STAC-Browser/lite/lab/index.html?path=01_launch_map.ipynb",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-STAC-Browser",
+      "url": "https://jltobias.github.io/JupyterLite-STAC-Browser/book/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-STAC-Browser",
+      "url": "https://jltobias.github.io/JupyterLite-STAC-Browser",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Climate-and-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Climate-and-Health/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Climate-and-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Climate-and-Health/book/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Climate-and-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Climate-and-Health/lite/lab/index.html?path=legacy/index.ipynb",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Climate-and-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Climate-and-Health/explore/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Climate-and-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Climate-and-Health/explore/?view=scene&case=beira",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-RustGIS",
+      "url": "https://jltobias.github.io/JupyterLite-RustGIS/lab/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-RustGIS",
+      "url": "https://jltobias.github.io/JupyterLite-RustGIS/book/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-RustGIS",
+      "url": "https://jltobias.github.io/JupyterLite-RustGIS/maps/2d.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-RustGIS",
+      "url": "https://jltobias.github.io/JupyterLite-RustGIS/maps/3d.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-RustGIS",
+      "url": "https://jltobias.github.io/JupyterLite-RustGIS/maps/scene.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-RustGIS",
+      "url": "https://jltobias.github.io/JupyterLite-STAC-Browser/explorer/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Osiris",
+      "url": "https://jltobias.github.io/JupyterLite-Osiris/lab/lab/index.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Osiris",
+      "url": "https://jltobias.github.io/JupyterLite-Osiris/book/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Osiris",
+      "url": "https://jltobias.github.io/JupyterLite-Osiris/scenes/veoc-dashboard.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Osiris",
+      "url": "https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-2d.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Osiris",
+      "url": "https://jltobias.github.io/JupyterLite-Osiris/scenes/operations-3d.html",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-PyScript",
+      "url": "https://jltobias.github.io/JupyterLite-PyScript/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-PyScript",
+      "url": "https://jltobias.github.io/JupyterLite-PyScript/book/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-PyScript",
+      "url": "https://jltobias.github.io/JupyterLite-PyScript/lite/lab/index.html?path=01-welcome.ipynb",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-PyScript",
+      "url": "https://jltobias.github.io/JupyterLite-PyScript/apps/leaflet/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-PyScript",
+      "url": "https://jltobias.github.io/JupyterLite-PyScript/apps/deck/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-PyScript",
+      "url": "https://jltobias.github.io/JupyterLite-PyScript/apps/scene/",
+      "status": 200
+    },
+    {
+      "repository": "JupyterLite-Maps-and-Spatial-Analyses",
+      "url": "https://jltobias.github.io/JupyterLite-Maps-and-Spatial-Analyses/",
+      "status": 404
+    }
+  ]
+}
