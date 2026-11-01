@@ -1,7 +1,9 @@
 # Tested stable Jupyter Book v1/Sphinx stack. Runtime and authoring are separate.
 jupyter-book==1.0.4.post1
 sphinx==7.4.7
-jupyterlite-core==0.8.2
+jupyterlite-core[contents]==0.8.2
+# Build-time contents manager; the deployed site remains fully static.
+jupyter-server==2.21.0
 jupyterlite-pyodide-kernel==0.8.3
 nbformat==5.10.4
 nbclient==0.11.0
