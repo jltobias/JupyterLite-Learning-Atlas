@@ -1,6 +1,7 @@
 /* Keep long source identifiers readable on narrow Book pages. */
 @media (max-width: 767px) {
-  .bd-article :not(pre) > code {
+  .bd-article :not(pre) > code,
+  .bd-article :not(pre) > code span.pre {
     white-space: normal;
     overflow-wrap: anywhere;
   }
