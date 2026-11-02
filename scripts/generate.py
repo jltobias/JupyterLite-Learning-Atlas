@@ -9,6 +9,7 @@ from pathlib import Path
 import yaml
 
 from lesson_material import HEALTH_LESSONS, LESSONS, PATHS
+from ocean_earth_material import CUBE_CODE, CUBE_INTRO, CUBE_INTERPRET, EARTH_LESSONS, earth_overview, ocean_overview
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/repositories.json"
@@ -105,8 +106,10 @@ def seed_project(r):
     title, theme, summary, question, method, exercise, interpretation, extension, limitation = item
     relative = "../../assets/"
     diagram = "evidence-to-action.svg" if theme == "Global health" else "empathy-iteration.svg" if theme == "AI & human decisions" else "capabilities.svg"
-    source_links = "\n".join(f"- [{x['label']}]({x['url']}) — {x['description']} **{x['availability']}**" for x in r["resources"])
-    extra = health_table() if key == "Rewiring-Global-Health" else ""
+    source_links = "\n".join(f"- [{x['label']}]({x['url']}) — {x['description']} **{x['availability']}**"
+                             for x in r["resources"] if key != "zarr-sql-views" or "?path=" not in x['url'])
+    extra = (health_table() if key == "Rewiring-Global-Health" else
+             ocean_overview() if key == "Global-Fishing-Watch-and-Dark-Vessels" else "")
     activity_context = ("It is an original prototype motivated only by a title-only source stub; no source Shiny app, source Lab or deployed service is supplied or verified."
                         if r["status"] == "source stub" else "It is a small companion to the source project, not a reproduction of that project's full course.")
     continuation = ("This source stub supplies no runtime or deployment instructions. Before any future app continuation, review actual application code, accessibility, dependencies and deployment evidence."
@@ -126,6 +129,10 @@ def seed_project(r):
         md(extra) if extra else md(f"## Connect the idea\n\nCompare this activity with another chapter on the same [learning path](../../index.ipynb). Keep the question, data status and interpretation visible when transferring a method."),
         md(f"## Sources, continuation and limits\n\n**Source repository:** [{r['name']}]({r['source_url']}).\n\n**Source README:** [reviewed immutable version]({r['readme_url']}); inspected {r['inspected_on']}, commit `{r['source_commit'][:12]}`. Repository content and linked works keep their original terms. Summaries and exercises here are newly authored.\n\n{limitation}\n\n{source_links or 'No exact published launch URL is documented in this README. Use the repository source; hosted availability is unverified.'}\n\n**Runtime budget:** this default is fewer than 100 values and normally completes within seconds; allow 60 seconds per cell while first loading Python. {continuation}\n\n[Central references](../../references.ipynb) · [Contribute](../../contributor-guide.ipynb)"),
     ]
+    if key == "zarr-sql-views":
+        cells[0] = md(cells[0]["source"].replace(summary, r["summary"]))
+        cells[6] = md(cells[6]["source"].replace(limitation, r["limitations"]))
+        cells[5:5] = [md(CUBE_INTRO), code(CUBE_CODE), md(CUBE_INTERPRET), md(earth_overview(EARTH_LESSONS))]
     notebook(r["notebook"], cells, kind="project", repository=r["name"])
 
 

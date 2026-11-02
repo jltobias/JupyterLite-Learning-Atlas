@@ -1,6 +1,5 @@
 {
   "inspected_on": "2026-11-01",
-  "method": "Fresh public GitHub connector inventory after four authorized source visibility changes; README inspection for included projects",
   "owner": "jltobias",
   "repositories": [
     {
@@ -350,6 +349,13 @@
       "default_branch": "main",
       "visibility": "public",
       "url": "https://github.com/jltobias/JupyterLite-Index-Repo"
+    },
+    {
+      "name": "JupyterLite-Global-Fishing-Watch-and-Dark-Vessels",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels"
     }
-  ]
+  ],
+  "method": "Fresh public-only GitHub connector inventory for the Ocean Watch and Earth studio source refresh; immutable README inspection for included projects"
 }

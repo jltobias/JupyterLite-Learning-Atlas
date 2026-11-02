@@ -416,6 +416,312 @@
       "repository": "JupyterLite-Maps-and-Spatial-Analyses",
       "url": "https://jltobias.github.io/JupyterLite-Maps-and-Spatial-Analyses/",
       "status": 404
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/book/sea-level.html",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/book/embeddings.html",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/book/fields.html",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/book/seasfire.html",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=01_start_here.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=02_zarr_sql.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=03_deafrica_water.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=04_maps_and_cubes.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=05_c3s_atlas.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=06_heat_stress.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=07_coastal_scenes.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=08_air_quality.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=09_water_quality.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=10_food_water.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=11_stac_geolibre.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=12_capstone.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=13_ar6_archive.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=14_ar6_port_cities.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=15_ar6_grid_maps.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=16_ar6_uncertainty.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=17_tessera_embeddings.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=18_tessera_similarity.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=19_tessera_pca.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=20_tessera_clusters.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=21_tessera_change.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=22_ftw_discovery.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=23_ftw_probability_sql.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=24_ftw_fields_confidence.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=25_ftw_change_food_water.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=26_seasfire_discovery.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=27_seasfire_maps_sql.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=28_seasfire_seasons_lags.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=29_seasfire_lexcube.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=30_seasfire_lexcube_compare.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=seasfire_ghana&mode=map",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=seasfire_ghana&mode=columns",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=seasfire_ghana&mode=cube",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=seasfire_ghana&mode=scene",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ftw_senegal&mode=map",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ftw_senegal&mode=columns",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ftw_senegal&mode=cube",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ftw_senegal&mode=scene",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=tessera_lagos&mode=map",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=tessera_lagos&mode=cube",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ar6_lagos&mode=map",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ar6_lagos&mode=columns",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ar6_lagos&mode=cube",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-zarr-sql-views",
+      "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/vendor/lexcube/README.md",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-Global-Fishing-Watch-and-Dark-Vessels",
+      "url": "https://jltobias.github.io/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels/",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-Global-Fishing-Watch-and-Dark-Vessels",
+      "url": "https://jltobias.github.io/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels/lab/index.html?path=01_observed_ocean.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-Global-Fishing-Watch-and-Dark-Vessels",
+      "url": "https://globalfishingwatch.org/map/",
+      "status": 200,
+      "checked_on": "2026-11-01"
     }
   ]
 }

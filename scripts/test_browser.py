@@ -38,6 +38,15 @@ def main():
             page.goto(BASE+'explore/');page.locator('#projects article').first.wait_for()
             assert page.locator('#projects article').count()==counts['jupyterlite']
             assert page.locator('#related article').count()==counts['related']
+            source_record=next(r for r in records if r['resources'])
+            page.locator('#query').fill(source_record['name'])
+            details=page.locator(f'.resource[data-slug="{source_record["slug"]}"] details')
+            details.locator('summary').click()
+            assert details.evaluate('(element)=>element.open'),'First summary click after typing must open source details'
+            source_links=details.locator('a')
+            assert source_links.count()==len(source_record['resources'])+2
+            assert all(anchor.is_visible() for anchor in source_links.all())
+            checks.append('one source-summary click immediately after a catalog-derived repository search opens visible source links')
             page.locator('#query').fill('privacy')
             assert 0<page.locator('.resource').count()<total
             page.locator('#query').fill('no-such-topic-zzzzz')

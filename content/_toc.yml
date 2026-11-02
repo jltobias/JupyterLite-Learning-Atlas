@@ -52,6 +52,8 @@ parts:
     title: Gods-Eye-View-Satellite - Inspect the viewing geometry
   - file: projects/zarr-sql-views/index
     title: zarr-sql-views - Query a cube, account for the work
+  - file: projects/global-fishing-watch-and-dark-vessels/index
+    title: Global-Fishing-Watch-and-Dark-Vessels - Observe vessels, preserve uncertainty
   - file: projects/stac-browser/index
     title: STAC-Browser - Discover assets without reading pixels
 - caption: AI & human decisions

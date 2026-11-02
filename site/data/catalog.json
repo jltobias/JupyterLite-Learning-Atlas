@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "inspected_on": "2026-11-01",
-  "scope": "29 public JupyterLite-named repositories plus 3 related public browser projects; excludes the index itself",
+  "scope": "30 public JupyterLite-named repositories plus 3 related public browser projects; excludes the index itself",
   "repositories": [
     {
       "name": "JupyterLite-Data-Visualization",
@@ -945,14 +945,14 @@
       "title": "Query a cube, account for the work",
       "slug": "zarr-sql-views",
       "theme": "Terrain & Earth observation",
-      "summary": "An Earth-observation teaching atlas connecting Zarr, SQL, maps, space–time cubes and separately attributed small real derivatives.",
+      "summary": "Earth in the Browser: 30 lessons connect Zarr/SQL foundations with AR6 projections, GeoTessera embeddings, Global FTW predictions and SeasFire/LexCube historical fire studios.",
       "status": "learning companion",
       "category": "jupyterlite",
-      "learning_question": "How does a time filter change the number of chunks touched?",
+      "learning_question": "How do chunk access, interval duration and variable-specific missing coverage affect a cube summary?",
       "source_url": "https://github.com/jltobias/JupyterLite-zarr-sql-views",
-      "readme_url": "https://github.com/jltobias/JupyterLite-zarr-sql-views/blob/37e487943ea5d6c050c8bcc9e19fc874cbe11e63/README.md",
+      "readme_url": "https://github.com/jltobias/JupyterLite-zarr-sql-views/blob/9a191f1fd30c40e09b48b9f92a9b5fdd9676509e/README.md",
       "default_branch": "main",
-      "source_commit": "37e487943ea5d6c050c8bcc9e19fc874cbe11e63",
+      "source_commit": "9a191f1fd30c40e09b48b9f92a9b5fdd9676509e",
       "inspected_on": "2026-11-01",
       "visibility": "public",
       "notebook": "projects/zarr-sql-views/index.ipynb",
@@ -1021,11 +1021,494 @@
           "availability": "HTTP 200 - entry only",
           "checked_on": "2026-11-01",
           "http_status": 200
+        },
+        {
+          "kind": "book",
+          "label": "AR6 port-city studio",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/book/sea-level.html",
+          "description": "Read the source studio, its interpretation limits and provider credits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "book",
+          "label": "GeoTessera embedding studio",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/book/embeddings.html",
+          "description": "Read the source studio, its interpretation limits and provider credits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "book",
+          "label": "Global FTW field studio",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/book/fields.html",
+          "description": "Read the source studio, its interpretation limits and provider credits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "book",
+          "label": "SeasFire and LexCube studio",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/book/seasfire.html",
+          "description": "Read the source studio, its interpretation limits and provider credits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 01: A browser is a scientific workspace",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=01_start_here.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 02: From Zarr chunks to SQL rows",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=02_zarr_sql.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 03: Lake Ngami: water observations and missing evidence",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=03_deafrica_water.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 04: 2D maps, 3D maps, and a space–time cube",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=04_maps_and_cubes.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 05: C3S Atlas: scenarios, warming levels, and model spread",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=05_c3s_atlas.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 06: Global heat questions, African heat laboratory",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=06_heat_stress.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 07: Sea-level rise and the meaning of a 3D scene",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=07_coastal_scenes.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 08: Air quality: a map is not an exposure estimate",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=08_air_quality.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 09: Water quality: from optical signal to a testable hypothesis",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=09_water_quality.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 10: Food and water insecurity",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=10_food_water.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 11: STAC discovery and GeoLibre handoff",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=11_stac_geolibre.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 12: Capstone: an evidence-led climate story",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=12_capstone.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 13: Open the AR6 archive without downloading the world",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=13_ar6_archive.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 14: Five port cities, four tide-gauge proxies",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=14_ar6_port_cities.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 15: Regional grids, 3D maps, and sea-level time cubes",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=15_ar6_grid_maps.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 16: Threshold questions without false flood probabilities",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=16_ar6_uncertainty.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 17: GeoTessera: from satellite years to embedding vectors",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=17_tessera_embeddings.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 18: Similarity search: vectors, maps, Zarr and SQL",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=18_tessera_similarity.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 19: PCA colors and a three-dimensional embedding space",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=19_tessera_pca.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 20: Clusters, transfer and the need for independent labels",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=20_tessera_clusters.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 21: Annual embedding differences and coastal evidence",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=21_tessera_change.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 22: Global FTW: discover fields, probabilities and confidence",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=22_ftw_discovery.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 23: FTW probability cubes: maps, SQL and 3D",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=23_ftw_probability_sql.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 24: Field polygons, confidence and selection bias",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=24_ftw_fields_confidence.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 25: Annual field predictions and food–water questions",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=25_ftw_change_food_water.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 26: SeasFire: read the cube before reading the fire",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=26_seasfire_discovery.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 27: Burned area: maps, SQL and a moving season",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=27_seasfire_maps_sql.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 28: Seasons, anomalies and lagged relationships",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=28_seasfire_seasons_lags.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 29: LexCube: slice a real fire cube in the browser",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=29_seasfire_lexcube.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Lesson 30: LexCube comparisons: fire, dryness and evidence",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lite/lab/index.html?path=30_seasfire_lexcube_compare.ipynb",
+          "description": "Run the external source lesson; its own data, dependencies and licenses apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "Historical SeasFire: northern Ghana and neighboring savannas — 2D map",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=seasfire_ghana&mode=map",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "map-3d",
+          "label": "Historical SeasFire: northern Ghana and neighboring savannas — 3D columns",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=seasfire_ghana&mode=columns",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Historical SeasFire: northern Ghana and neighboring savannas — time cube",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=seasfire_ghana&mode=cube",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "scene-3d",
+          "label": "Historical SeasFire: northern Ghana and neighboring savannas — value scene",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=seasfire_ghana&mode=scene",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "FTW predicted fields: Senegal teaching window — 2D map",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ftw_senegal&mode=map",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "map-3d",
+          "label": "FTW predicted fields: Senegal teaching window — 3D columns",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ftw_senegal&mode=columns",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "FTW predicted fields: Senegal teaching window — time cube",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ftw_senegal&mode=cube",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "scene-3d",
+          "label": "FTW predicted fields: Senegal teaching window — value scene",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ftw_senegal&mode=scene",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "GeoTessera annual similarity: Lagos teaching window — 2D map",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=tessera_lagos&mode=map",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "GeoTessera annual similarity: Lagos teaching window — time cube",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=tessera_lagos&mode=cube",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "Conditional AR6 projection: Lagos regional grid — 2D map",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ar6_lagos&mode=map",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "map-3d",
+          "label": "Conditional AR6 projection: Lagos regional grid — 3D columns",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ar6_lagos&mode=columns",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Conditional AR6 projection: Lagos regional grid — time cube",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/lab/?dataset=ar6_lagos&mode=cube",
+          "description": "Source view of a bounded window; consult studio provenance, units, masks and interpretation limits.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "book",
+          "label": "LexCube source and Pyodide adaptation",
+          "url": "https://jltobias.github.io/JupyterLite-zarr-sql-views/vendor/lexcube/README.md",
+          "description": "Corresponding source and GPL-3.0-or-later license for source-course LexCube 2.0.1; no LexCube is embedded in this index.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
         }
       ],
       "launch_status": "All documented launch entries checked by HTTP GET on 2026-11-01; entry reachability only",
       "attribution": "James L. Tobias / jltobias; JupyterLite-zarr-sql-views. Source project and upstream works retain their own terms. Atlas summary/exercise original.",
-      "limitations": "Inspired upstream by dzole0311/zarr-sql-views (ISC). Source includes real GeoTessera/AR6 derivatives with specific limitations; none is copied here. Native bulk source preparation stays separate from browser learning."
+      "limitations": "Original atlas chunk and coverage exercises are synthetic Python analogues, not actual Zarr/SQL or LexCube execution. Source lessons/artwork and upstream Zarr SQL Views are ISC; LexCube 2.0.1 is GPL-3.0-or-later. Source datasets retain separate terms. AR6 conditional projections are not flood probabilities; embeddings are not hazard measurements; FTW predictions are not ownership; SeasFire associations are not forecasts or causal effects. No source data, code, imagery or binaries are copied. Native preparation and source graphics/runtime requirements remain separate."
+    },
+    {
+      "name": "JupyterLite-Global-Fishing-Watch-and-Dark-Vessels",
+      "readme_url": "https://github.com/jltobias/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels/blob/145a73e500cb06070f399a040206802cc279174e/README.md",
+      "default_branch": "main",
+      "source_commit": "145a73e500cb06070f399a040206802cc279174e",
+      "inspected_on": "2026-11-01",
+      "visibility": "public",
+      "title": "Observe vessels, preserve uncertainty",
+      "slug": "global-fishing-watch-and-dark-vessels",
+      "theme": "Terrain & Earth observation",
+      "summary": "Ocean Watch connects historical GFW/Sentinel-1 study products, radar, environmental evidence and One Health questions across nine source lessons.",
+      "status": "learning companion",
+      "category": "jupyterlite",
+      "learning_question": "How do inclusive distance and time gates change AIS–SAR candidate ambiguity?",
+      "source_url": "https://github.com/jltobias/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels",
+      "notebook": "projects/global-fishing-watch-and-dark-vessels/index.ipynb",
+      "book_path": "book/projects/global-fishing-watch-and-dark-vessels/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/global-fishing-watch-and-dark-vessels/index.ipynb",
+      "resources": [
+        {
+          "kind": "book",
+          "label": "Read Ocean Watch",
+          "url": "https://jltobias.github.io/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels/",
+          "description": "Read the source course and its historical, observed and synthetic evidence distinctions.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source Ocean Watch Lab",
+          "url": "https://jltobias.github.io/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels/lab/index.html?path=01_observed_ocean.ipynb",
+          "description": "Run source lesson 01; source runtimes, data rights and optional service limits apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Explore Global Fishing Watch",
+          "url": "https://globalfishingwatch.org/map/",
+          "description": "External GFW platform; product-specific access and CC BY-NC terms differ from the CC BY publication deposit.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-01",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "All documented launch entries checked by HTTP GET on 2026-11-01; entry reachability only",
+      "attribution": "James L. Tobias / jltobias; Ocean Watch. Paolo et al. (2024), GFW, Copernicus/Planetary Computer, NOAA and other providers credited in the pinned source register. Atlas exercise and figures original.",
+      "limitations": "The pinned Ocean Watch course separates historical 2017–2021 study products, actual Sentinel-1 pixels and NOAA derivatives, synthetic experiments and optional live services. This atlas copies none of those data, code, imagery or the conceptual AI cover. Source 3D views need their own graphics/runtime support; current platform exports have product-specific access and rights. Unmatched SAR detections are not proof of illegality or deliberate AIS suppression; activity is not catch, stock, dietary intake or disease. Publication deposit CC BY 4.0 differs from platform CC BY-NC 4.0."
     },
     {
       "name": "JupyterLite-Rewiring-Global-Health",
