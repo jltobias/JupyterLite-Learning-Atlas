@@ -7,11 +7,79 @@ import sys
 import time
 import urllib.request
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
+import nbformat
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-BASE='http://127.0.0.1:8766/JupyterLite-Index-Repo/'
+BASE='http://127.0.0.1:8766/JupyterLite-Learning-Atlas/'
+
+
+def check_coral(page, browser, records, output, checks):
+    """Keep reef discovery, evidence links and rendered accessibility in the public gate."""
+    record=next(r for r in records if r['slug']=='coral-reef-one-health')
+    page.goto(BASE)
+    earth=page.locator('a.path').filter(has=page.get_by_role('heading',name='Observe a changing Earth',exact=True))
+    assert earth.get_attribute('href')=='book/index.html#observe-a-changing-earth'
+    earth.click()
+    route=page.locator('#observe-a-changing-earth')
+    route.wait_for()
+    assert route.locator('a[href="projects/coral-reef-one-health/index.html"]').count()==1
+    checks.append('Earth route links to the Book path containing Coral')
+
+    page.goto(BASE+'explore/');page.locator('#projects article').first.wait_for()
+    page.locator('#theme').select_option(record['theme'])
+    for provider in ['CoralNet','MERMAID','OBIS','Allen','Millennium']:
+        page.locator('#query').fill(provider)
+        card=page.locator('.resource[data-slug="coral-reef-one-health"]')
+        assert card.is_visible(),provider+' must discover Coral'
+        assert page.locator('#query').evaluate('(e)=>e===document.activeElement')
+        assert page.locator('#theme').input_value()==record['theme']
+        assert parse_qs(urlsplit(page.url).query)['q']==[provider]
+        card.locator('summary').click()
+        assert card.locator('details').evaluate('(e)=>e.open')
+        for resource in record['resources']:
+            assert card.locator(f'a[href="{resource["url"]}"]').is_visible()
+        assert card.locator(f'a[href="{record["readme_url"]}"]').is_visible()
+    page.screenshot(path=str(output/'coral-explorer.png'),full_page=True)
+    checks.append('Coral provider/attribution searches preserve focus, filters, URL state and visible source disclosures')
+
+    response=page.goto(BASE+record['book_path']);assert response and response.status==200
+    run=page.get_by_role('link',name='Run this notebook in Lab');run.wait_for()
+    assert run.get_attribute('href')=='/JupyterLite-Learning-Atlas/lite/lab/index.html?path=projects%2Fcoral-reef-one-health%2Findex.ipynb'
+    for filename in ['01-reef-mapping.ipynb','02-one-health.ipynb']:
+        pinned=f'{record["source_url"]}/blob/{record["source_commit"]}/content/{filename}'
+        source_lab='https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html?path='+filename
+        assert page.locator(f'a[href="{pinned}"]').count()>=1
+        assert page.locator(f'a[href="{source_lab}"]').count()>=1
+    for url in [record['readme_url'],'https://doi.org/10.1016/j.jip.2021.107538',
+                'https://allencoralatlas.org/methods/','https://allencoralatlas.org/tou/',
+                'https://www.livingoceansfoundation.org/mapping-the-worlds-coral-reefs/',
+                'https://landsat.gsfc.nasa.gov/wp-content/uploads/2012/07/coral-l7.pdf',
+                'https://www.who.int/health-topics/one-health',
+                'https://github.com/luismmontilla/awesome-coral-research/blob/master/LICENCE.md',
+                *[r['url'] for r in record['resources'][5:]]]:
+        assert page.locator(f'a[href="{url}"]').count()>=1,url
+    page.screenshot(path=str(output/'coral-book-desktop.png'),full_page=True)
+    page.set_viewport_size({'width':390,'height':844})
+    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2'),'Coral mobile page overflows'
+    page.screenshot(path=str(output/'coral-book-mobile.png'),full_page=True)
+    page.set_viewport_size({'width':1440,'height':1000})
+    notebook=nbformat.read(ROOT/'content'/record['notebook'],as_version=4)
+    figures=[o.data['image/svg+xml'] for c in notebook.cells if c.cell_type=='code'
+             for o in c.outputs if 'image/svg+xml' in o.get('data',{})]
+    assert figures,'Expected executed Coral SVG'
+    # The Book theme retains its live DOM; a separate, clean page owns SVG layout checks.
+    figure_page=browser.new_page(viewport={'width':1440,'height':1000})
+    try:
+        for i,figure in enumerate(figures):
+            figure_page.set_content(figure)
+            clipped=figure_page.locator('svg').evaluate('''s=>{const v=s.viewBox.baseVal;return [...s.querySelectorAll('text')].filter(t=>{const b=t.getBBox();return b.x<0||b.y<0||b.x+b.width>v.width||b.y+b.height>v.height}).map(t=>t.textContent)}''')
+            assert not clipped,clipped
+            figure_page.screenshot(path=str(output/f'coral-figure-{i}.png'))
+    finally:figure_page.close()
+    checks.append('Coral source/pinned notebooks, primary citations, Book-to-Lab handoff, mobile width and SVG clipping')
 
 
 def main():
@@ -68,6 +136,7 @@ def main():
                 expected={r['slug'] for r in records if r['theme']=='Global health' and r['category']==category}
                 assert actual==expected,(section,actual,expected)
             checks.append('search, theme/type/status filters, URL state, empty state, reset/focus, source disclosure, related separation')
+            check_coral(page,browser,records,output,checks)
             page.goto(BASE+'teach/');page.locator('#teaching-table tr').first.wait_for()
             assert page.locator('#teaching-table tr').count()==16
             before=page.locator('#view-summary').inner_text()
@@ -90,7 +159,7 @@ def main():
                 page.goto(BASE+route)
                 run=page.get_by_role('link',name='Run this notebook in Lab')
                 run.wait_for()
-                assert run.get_attribute('href')=='/JupyterLite-Index-Repo/lite/lab/index.html?path='+notebook
+                assert run.get_attribute('href')=='/JupyterLite-Learning-Atlas/lite/lab/index.html?path='+notebook
             checks.append('Book root, directory alias and explicit project Book-to-Lab handoffs preserve the project subpath')
             for suffix in ['','explore/','teach/','about/','book/index.html','lite/lab/index.html']:
                 response=page.goto(BASE+suffix);assert response and response.status==200,suffix

@@ -1,0 +1,14 @@
+{
+  "verified_on": "2026-11-02",
+  "repository_id": 1441864612,
+  "owner": "jltobias",
+  "previous_name": "JupyterLite-Index-Repo",
+  "current_name": "JupyterLite-Learning-Atlas",
+  "previous_url": "https://github.com/jltobias/JupyterLite-Index-Repo",
+  "current_url": "https://github.com/jltobias/JupyterLite-Learning-Atlas",
+  "visibility": "public",
+  "default_branch": "main",
+  "identity_preserved": true,
+  "method": "User-authorized GitHub repository name update, then authenticated GET of new repository identity",
+  "expected_pages_url": "https://jltobias.github.io/JupyterLite-Learning-Atlas/"
+}

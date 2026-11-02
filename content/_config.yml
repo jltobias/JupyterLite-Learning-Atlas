@@ -8,7 +8,7 @@ execute:
 launch_buttons:
   thebe: false
 repository:
-  url: https://github.com/jltobias/JupyterLite-Index-Repo
+  url: https://github.com/jltobias/JupyterLite-Learning-Atlas
   branch: main
   path_to_book: content
 html:

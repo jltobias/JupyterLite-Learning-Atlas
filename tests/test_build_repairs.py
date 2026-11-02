@@ -1,6 +1,7 @@
 """Targeted build/config/TOC contracts, using small temporary fixtures only."""
 import copy
 import json
+import hashlib
 import sys
 import tempfile
 import unittest
@@ -104,13 +105,20 @@ class BuildRepairs(unittest.TestCase):
 
     def test_resource_statuses_match_the_final_exact_url_audit(self):
         evidence=json.loads((ROOT/'catalog/launch-checks.json').read_text(encoding='utf-8'))
-        expected={r['url']:r['status'] for r in evidence['results']}
+        baseline=evidence['baseline_results']
+        self.assertEqual(baseline['source_commit'],'cc0e120e51ebad702ab42b4c56dd7544ddf9466d')
+        self.assertEqual(baseline['count'],134)
+        self.assertEqual(baseline['sha256'],'dd2009da29a0ebf5933afdddcd987adec1fc73b2d5082faf96cdb41312514e1b')
+        preserved=json.dumps(evidence['results'][:baseline['count']],sort_keys=True,separators=(',',':'),ensure_ascii=False).encode('utf-8')
+        self.assertEqual(hashlib.sha256(preserved).hexdigest(),baseline['sha256'],'Historical launch evidence changed')
+        expected={(r['repository'],r['url']):r for r in evidence['results']}
         catalog=json.loads((ROOT/'catalog/repositories.json').read_text())
-        resources=[resource for r in catalog['repositories'] for resource in r['resources']]
+        resources=[(r['name'],resource) for r in catalog['repositories'] for resource in r['resources']]
         self.assertEqual(len(resources),len(evidence['results']))
-        for resource in resources:
-            self.assertEqual(resource['http_status'],expected[resource['url']])
-            self.assertEqual(resource['checked_on'],evidence['checked_on'])
+        for repository,resource in resources:
+            row=expected[(repository,resource['url'])]
+            self.assertEqual(resource['http_status'],row['status'])
+            self.assertEqual(resource['checked_on'],row.get('checked_on',evidence.get('baseline_checked_on',evidence['checked_on'])))
             self.assertNotIn('Unverified',resource['availability'])
 
 

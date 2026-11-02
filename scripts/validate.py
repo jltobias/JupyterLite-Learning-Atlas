@@ -52,7 +52,7 @@ def main():
     records=catalog['repositories']
     discovery=json.loads((ROOT/'catalog/discovery.json').read_text(encoding='utf-8'))['repositories']
     assert all(r['visibility']=='public' for r in discovery), 'Nonpublic discovery metadata'
-    expected={r['name'] for r in discovery if r['name'].startswith('JupyterLite') and r['name']!='JupyterLite-Index-Repo'}
+    expected={r['name'] for r in discovery if r['name'].startswith('JupyterLite') and r['name']!='JupyterLite-Learning-Atlas'}
     actual={r['name'] for r in records if r['category']=='jupyterlite'}
     assert actual==expected, f'Coverage differs: missing={expected-actual}, unexpected={actual-expected}'
     related={r['name'] for r in records if r['category']=='related'}

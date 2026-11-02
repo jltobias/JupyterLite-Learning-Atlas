@@ -1,6 +1,26 @@
 # Validation record
 
-Verified locally on **2026-11-01** with Windows, Python 3.13.14, pinned build dependencies and headless Chrome. Remote validation/publication results are recorded in the [GitHub Actions workflow](https://github.com/jltobias/JupyterLite-Index-Repo/actions/workflows/pages.yml).
+The **2026-11-02** update adds Coral Reef One Health, the README cover and the repository rename to **JupyterLite-Learning-Atlas**. The local workspace folder retains its earlier name. Current publication status is available in the [GitHub Actions workflow](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml).
+
+| Current check | Result |
+|---|---|
+| Coverage | 31 JupyterLite-named plus three related projects; 34 project chapters, 43 canonical notebooks (40 code / three narrative), 60 public discovery records. The Coral source was a targeted addition; older sources were not fully reinspected. |
+| Numerical and source checks | All 34 unit tests passed, including eight Coral tests for default/edit/zero/all-missing/error behavior, actual SVG values, seed preservation and primary citation links. Source validation passed with 242 local notebook links. |
+| Native execution and preservation | New Coral and introduction code ran in fresh network-guarded native kernels. All 42 prior notebooks' code was compared with baseline cc0e120e51ebad702ab42b4c56dd7544ddf9466d: only the introductory catalog theme list changed. Five original non-count SVG compositions and all 134 previous launch-audit rows are preserved. |
+| Strict assembly | Complete Book/Lite build passed, including every Book route, byte-identical canonical Lab copies, all four runtime settings, kernel assets and exact public catalog evidence copies. |
+| Browser | Shared source-UI and Chrome behavior checks passed under /JupyterLite-Learning-Atlas/. Targeted Coral checks passed both pinned source notebook links, DOI/provider links, exact Book-to-Lab handoff, explorer disclosure, mobile overflow and SVG clipping checks. |
+| Actual browser Python | Standard ML gate and the complete new Coral code sequence passed in separate fresh Pyodide browser contexts under the renamed prefix. New unique markers, numerical assertions and newly loaded SVGs prove execution. Coral assertions cover 0.65/0.35 defaults, unknown/75% coverage, reversed weights, observed zero, all-missing and invalid weights. An initial Coral kernel-startup timeout was retained in diagnostics; the fresh retry completed successfully. |
+| Sources and rights | Eleven Coral/provider entry GETs returned 200 on 2026-11-02. Catalog totals: 145 resources, 143 HTTP 200 and two retained earlier 404s. Entry responses do not certify external service functions. README, central references and chapter record the full source commit, author, publication metadata and provider rights. Source has no repository-wide license selected; no source assets were copied. |
+| Cover | Built-in OpenAI image generation produced the new 1774 ×887 README illustration, visually inspected and copied unchanged. Full prompt, date, attribution and SHA-256 appear in assets/SPLASH-PROVENANCE.md. Existing SVG artwork remains available for Book and website. |
+| Rename | GitHub repository ID1441864612 is unchanged and public at jltobias/JupyterLite-Learning-Atlas; origin, Pages links, citation/build settings, self-exclusion and preview/browser prefixes are updated. catalog/repository-rename.json records identity verification. |
+
+Current local evidence is in _build/coral-implementation-evidence.json, coral-preservation-results.json, coral-units.log, coral-build.log, coral-source-ui.log, coral-browser.log, coral-browser/results.json, coral-runtime/results.json and runtime-browser/results.json. Unchanged earlier execution evidence is retained. Publication results follow the successful Actions run for a commit.
+
+The public `scripts/test_browser.py` now retains Coral provider search, source links, route, mobile and SVG assertions. `scripts/check_runtime.py` retains both fresh ML and Coral execution cases; its CLI is unchanged. A committed canonical digest protects the original 134 launch-audit rows, and a derived test checks the introduction?s printed and plotted theme counts against the catalog.
+
+## Previous Ocean Watch and Earth studio verification
+
+Verified locally on **2026-11-01** with Windows, Python 3.13.14, pinned build dependencies and headless Chrome. Remote validation/publication results are recorded in the [GitHub Actions workflow](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml).
 
 | Check | Result |
 |---|---|

@@ -7,7 +7,7 @@ authors:
 date-released: 2026-11-01
 version: 0.1.0
 type: software
-repository-code: https://github.com/jltobias/JupyterLite-Index-Repo
-url: https://github.com/jltobias/JupyterLite-Index-Repo
+repository-code: https://github.com/jltobias/JupyterLite-Learning-Atlas
+url: https://github.com/jltobias/JupyterLite-Learning-Atlas
 license: MIT
 abstract: "A public repository index, Jupyter Book and matching JupyterLite notebooks. Original content and visuals are CC BY 4.0; code is MIT. Synthetic teaching results are not real health evidence."

@@ -4,6 +4,7 @@ After generation, edit content/**/*.ipynb directly: generate.py never overwrites
 All observations below are invented. No health records, model service, or remote data.
 """
 from ocean_earth_material import OCEAN_LESSON
+from coral_material import CORAL_LESSON
 
 # key: short repository name; title, theme, summary, question, method, code,
 # interpretation, extension, source-specific limitation.
@@ -318,6 +319,8 @@ svg(body, title, description, width=620, height=370)''',
 
 LESSONS["Global-Fishing-Watch-and-Dark-Vessels"] = OCEAN_LESSON
 
+LESSONS["Coral-Reef-One-Health"] = CORAL_LESSON
+
 HEALTH_LESSONS = [
     ("00", "Rewiring global health", "Stakeholder connections, policy weights, sensitivity and a decision record", "00_rewiring_global_health.ipynb"),
     ("01", "Climate, C3S, and STAC", "Catalog metadata, provenance and synthetic climate anomalies", "01_climate_stac_c3s.ipynb"),
@@ -334,8 +337,8 @@ HEALTH_LESSONS = [
 PATHS = [
     ("Start with a browser", "Foundations → Browser GIS", ["Data-Visualization", "Shiny-Live-Apps", "PyScript", "RustGIS"]),
     ("Read a map critically", "Neighborhoods → distance rules → overlay → aggregation → extract provenance", ["Spatial-Analysis", "Maps-and-Spatial-Analyses", "Geospatial-Analyses-and-Maps", "Geospatial-Analyses-and-Maps-revised", "Geospatial-Analyses-and-Maps-old"]),
-    ("Observe a changing Earth", "Terrain → metadata → ocean evidence → data cubes", ["Astra-demos", "Gods-Eye-View-Satellite", "Whitebox", "STAC-Browser", "Global-Fishing-Watch-and-Dark-Vessels", "zarr-sql-views"]),
-    ("Rewire global health", "Evidence → access → privacy → community review", ["Rewiring-Global-Health", "Global-Health-GIS", "HIVDB-Drug-Resistance-Maps", "Climate-and-Health", "Sea-Level-Rise", "South-Sudan-Dashboard", "DRC-Population-Mobility-Border-Mapping"]),
+    ("Observe a changing Earth", "Terrain → metadata → ocean/reef evidence → data cubes", ["Astra-demos", "Gods-Eye-View-Satellite", "Whitebox", "STAC-Browser", "Global-Fishing-Watch-and-Dark-Vessels", "Coral-Reef-One-Health", "zarr-sql-views"]),
+    ("Rewire global health", "Evidence → ecosystems → access → privacy → community review", ["Rewiring-Global-Health", "Coral-Reef-One-Health", "Global-Health-GIS", "HIVDB-Drug-Resistance-Maps", "Climate-and-Health", "Sea-Level-Rise", "South-Sudan-Dashboard", "DRC-Population-Mobility-Border-Mapping"]),
     ("Inspect AI and decisions", "Structured perspectives → evaluation → human agency", ["AI-Agents-and-Orchestrator-Six-Thinking-Hats", "Custom-GPT-Six-Thinking-Hats", "GeoLibre-GeoAI", "GPT-6-Astra-Geospatial", "Geospatial-Research-Awareness-Radar"]),
     ("Build a common picture", "Signals → constraints → reviewed briefing", ["World-Monitor-Prototype", "WorldView", "Osiris"]),
 ]

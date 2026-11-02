@@ -1,6 +1,7 @@
 {
-  "checked_on": "2026-11-01",
-  "method": "HTTP GET entry reachability; no functional promise",
+  "checked_on": "2026-11-02",
+  "baseline_checked_on": "2026-11-01",
+  "method": "HTTP GET entry reachability only. Original 134 rows retained verbatim from checks on 2026-11-01; original rows without checked_on retain that 2026-11-01 date. Targeted Coral addition: eleven exact source/provider entry checks on 2026-11-02, first 512 bytes only. No full reinspection, notebook-target or service functional certification.",
   "results": [
     {
       "repository": "JupyterLite-Data-Visualization",
@@ -722,6 +723,89 @@
       "url": "https://globalfishingwatch.org/map/",
       "status": 200,
       "checked_on": "2026-11-01"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/book/",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/book/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html?path=01-reef-mapping.ipynb",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html?path=01-reef-mapping.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html?path=02-one-health.ipynb",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html?path=02-one-health.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://allencoralatlas.org/",
+      "status": 200,
+      "resolved_url": "https://allencoralatlas.org/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://maps.lof.org/",
+      "status": 200,
+      "resolved_url": "https://experience.arcgis.com/experience/094f432801904cdeb1fe78495a0b4305#data_s=id%3AdataSource_2-19be67fb632-layer-36-19be67fbe2a-layer-113%3A17547%2Cid%3AdataSource_2-19bd8480022-layer-95%3A9%2Cid%3AdataSource_2-19be2132059-layer-9%3A68",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://coralreefwatch.noaa.gov/satellite/index.php",
+      "status": 200,
+      "resolved_url": "https://coralreefwatch.noaa.gov/satellite/index.php",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://datamermaid.org/",
+      "status": 200,
+      "resolved_url": "https://datamermaid.org/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://coralnet.ucsd.edu/",
+      "status": 200,
+      "resolved_url": "https://coralnet.ucsd.edu/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "url": "https://obis.org/",
+      "status": 200,
+      "resolved_url": "https://obis.org/",
+      "checked_on": "2026-11-02"
     }
-  ]
+  ],
+  "baseline_results": {
+    "source_commit": "cc0e120e51ebad702ab42b4c56dd7544ddf9466d",
+    "count": 134,
+    "sha256": "dd2009da29a0ebf5933afdddcd987adec1fc73b2d5082faf96cdb41312514e1b",
+    "canonicalization": "UTF-8 JSON array, sort_keys=True, ensure_ascii=False, separators=(comma,colon), no whitespace"
+  }
 }

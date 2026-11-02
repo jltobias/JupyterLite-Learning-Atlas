@@ -2,27 +2,31 @@
 
 **James L. Tobias / browser geospatial science, global health and shared decisions**
 
-![An original illustrated globe connects browser notebooks, geographic evidence and people learning together.](assets/splash.svg)
+![The JupyterLite Learning Atlas: an open notebook becomes a coastal landscape and coral reef, with an Earth globe, satellite and people learning together.](assets/splash-v2.png)
+
+*AI-generated conceptual illustration. [Generation prompt, provenance and credits](assets/SPLASH-PROVENANCE.md).*
+
+This repository is now **[JupyterLite-Learning-Atlas](https://github.com/jltobias/JupyterLite-Learning-Atlas)**, renamed on 2 November 2026. [Repository identity record](catalog/repository-rename.json). Its live Book and Lab use the updated links below.
 
 A growing index of public JupyterLite projects, a Jupyter Book and a matching browser-executable JupyterLite Lab. Follow six paths through GIS, remote sensing, Earth observation, AI/ML, GeoAI/GeoML, global health and human-centered experiments. Every project has a distinct explained exercise, visual output, interpretation, extension and source citation.
 
-**30 public JupyterLite-named repositories + 3 related browser projects / 33 project chapters / 42 canonical notebooks / no credentials for default exercises.** The public inventory was inspected on 2026-11-01. The four requested source repositories are now public and included; the refreshed discovery contains 59 public records. Original, revised and old editions remain distinct. The title-only Shiny repository is labeled a source stub. No sensitive health data are published.
+**31 public JupyterLite-named repositories + 3 related browser projects / 34 project chapters / 43 canonical notebooks (40 with code, 3 narrative) / no credentials for default exercises.** The public inventory was inspected on 2026-11-01; Coral Reef One Health was added through a targeted source review on 2026-11-02. Discovery now contains 60 public records; existing records were retained without full reinspection. The four requested source repositories remain public and included. Original, revised and old editions remain distinct. The title-only Shiny repository is labeled a source stub. No sensitive health data are published.
 
 ## Read, run and explore
 
-The source visibility changes are complete. GitHub Actions builds and publishes this index from `main`; see the [publication workflow](https://github.com/jltobias/JupyterLite-Index-Repo/actions/workflows/pages.yml) for the latest build and deployment status. Source companion availability is recorded independently.
+The source visibility changes are complete. GitHub Actions builds and publishes this index from `main`; see the [publication workflow](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) for the latest build and deployment status. Source companion availability is recorded independently.
 
 Use the published entry points below. Availability follows the latest successful Pages deployment:
 
 | Experience | Published link | What you do |
 |---|---|---|
-| Learning hub | [Open the atlas](https://jltobias.github.io/JupyterLite-Index-Repo/) | Choose a question and a learning path |
-| Jupyter Book | [Read the Book](https://jltobias.github.io/JupyterLite-Index-Repo/book/index.html) | Read explanations and executed outputs |
-| JupyterLite Lab | [Run the same notebooks](https://jltobias.github.io/JupyterLite-Index-Repo/lite/lab/index.html?path=index.ipynb) | Edit assumptions and run Python in a browser |
-| Resource explorer | [Search the collection](https://jltobias.github.io/JupyterLite-Index-Repo/explore/) | Filter exact Book, Lab, 2D map, 3D map, scene and explorer links |
-| Local teaching views | [2D map](https://jltobias.github.io/JupyterLite-Index-Repo/teach/?view=2d) / [3D map](https://jltobias.github.io/JupyterLite-Index-Repo/teach/?view=3d-map) / [3D scene](https://jltobias.github.io/JupyterLite-Index-Repo/teach/?view=3d-scene) | Change a water threshold on a fictional grid; compare interpretations |
+| Learning hub | [Open the atlas](https://jltobias.github.io/JupyterLite-Learning-Atlas/) | Choose a question and a learning path |
+| Jupyter Book | [Read the Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/index.html) | Read explanations and executed outputs |
+| JupyterLite Lab | [Run the same notebooks](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=index.ipynb) | Edit assumptions and run Python in a browser |
+| Resource explorer | [Search the collection](https://jltobias.github.io/JupyterLite-Learning-Atlas/explore/) | Filter exact Book, Lab, 2D map, 3D map, scene and explorer links |
+| Local teaching views | [2D map](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/?view=2d) / [3D map](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/?view=3d-map) / [3D scene](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/?view=3d-scene) | Change a water threshold on a fictional grid; compare interpretations |
 
-For a local preview, build the site, run `python scripts/serve.py`, and open [localhost](http://localhost:8000/JupyterLite-Index-Repo/).
+For a local preview, build the site, run `python scripts/serve.py`, and open [localhost](http://localhost:8000/JupyterLite-Learning-Atlas/).
 
 ## Published companion experiences
 
@@ -37,14 +41,14 @@ These **existing source projects** returned HTTP 200 on 2026-11-01. Entry reacha
 | RustGIS companion 3D scene | [Open the orbitable scene](https://jltobias.github.io/JupyterLite-RustGIS/maps/scene.html) |
 | STAC resource explorer | [Discover source catalog metadata](https://jltobias.github.io/JupyterLite-STAC-Browser/explorer/) |
 
-This index's entry points: [hub](https://jltobias.github.io/JupyterLite-Index-Repo/), [Book](https://jltobias.github.io/JupyterLite-Index-Repo/book/index.html), [Lab](https://jltobias.github.io/JupyterLite-Index-Repo/lite/lab/index.html?path=index.ipynb), [explorer](https://jltobias.github.io/JupyterLite-Index-Repo/explore/), and [local teaching views](https://jltobias.github.io/JupyterLite-Index-Repo/teach/). The workflow status records whether the latest revision has deployed successfully.
+This index's entry points: [hub](https://jltobias.github.io/JupyterLite-Learning-Atlas/), [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/index.html), [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=index.ipynb), [explorer](https://jltobias.github.io/JupyterLite-Learning-Atlas/explore/), and [local teaching views](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/). The workflow status records whether the latest revision has deployed successfully.
 
 ## Six connected paths
 
 1. **Start with a browser:** Python foundations / original Shiny-stub prototype / [fit and evaluate a small model](content/foundations/learning-a-model.ipynb) / Data Visualization / PyScript / RustGIS.
 2. **Read a map critically:** neighborhoods / inclusive distance buffers / layer contracts / aggregation / extract provenance; compare distinct original, revised and old public spatial-analysis editions.
-3. **Observe a changing Earth:** procedural terrain / viewing geometry / Whitebox runtime boundary / STAC / Ocean Watch / Zarr/SQL and Earth studios.
-4. **Rewire global health:** stakeholder priorities / burden denominators / HIVDB / climate/coastal services / mobility and community review.
+3. **Observe a changing Earth:** procedural terrain / viewing geometry / Whitebox runtime boundary / STAC / Ocean Watch / [Coral Reef One Health](content/projects/coral-reef-one-health/index.ipynb) / Zarr/SQL and Earth studios.
+4. **Rewire global health:** stakeholder priorities / reef ecosystems and community questions / burden denominators / HIVDB / climate/coastal services / mobility and community review.
 5. **Inspect AI and decisions:** fitted models / Six Hats / structured JSON / spatial holdouts / evidence contracts / research discovery. Explore [design thinking, human-centered design and fail-fast iteration](content/foundations/evidence-ai.ipynb).
 6. **Build a common picture:** World Monitor / WorldView / OSIRIS; verify uncertain signals before briefing.
 
@@ -92,6 +96,7 @@ The links below open canonical notebooks on GitHub. The assembled Book and Lab u
 | [JupyterLite-RustGIS](https://github.com/jltobias/JupyterLite-RustGIS) | [Export a small layer with a contract](content/projects/rustgis/index.ipynb) | learning companion |
 | [JupyterLite-Osiris](https://github.com/jltobias/JupyterLite-Osiris) | [Turn signals into a reviewed brief](content/projects/osiris/index.ipynb) | learning companion |
 | [JupyterLite-PyScript](https://github.com/jltobias/JupyterLite-PyScript) | [One data contract, two browser runtimes](content/projects/pyscript/index.ipynb) | learning companion |
+| [JupyterLite-Coral-Reef-One-Health](https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health) | [Coral Reef One Health: maps, evidence and priorities](content/projects/coral-reef-one-health/index.ipynb) | learning companion |
 
 ## Related browser projects
 
@@ -119,7 +124,7 @@ python scripts/serve.py
 
 Use Python 3.13. This pins the stable Jupyter Book v1/Sphinx renderer (maintenance mode) and JupyterLite stack; Node is unnecessary. First-time browser runtime downloads need network. Computations use bundled synthetic values or metadata; no learner package installs or remote data services. Native/GPU tools and live model providers have explicit separate continuation paths and trial limits in each relevant chapter. Download notebook edits to keep them; browser storage is not GitHub or a shared database.
 
-To publish, set repository **Settings / Pages / Source: GitHub Actions**, then run the supplied workflow on `main`. Pull requests validate/build without deploying. Exactly four source visibility changes were authorized and completed; their public audit is in [catalog/public-visibility-changes.json](catalog/public-visibility-changes.json). Commits pushed to `main` run the [validation and deployment workflow](https://github.com/jltobias/JupyterLite-Index-Repo/actions/workflows/pages.yml). See [CONTRIBUTING.md](CONTRIBUTING.md) for catalog schema, preservation of manual notebook edits, build/preview commands, runtime limits and publication setup. See [VALIDATION.md](VALIDATION.md) for actual verification and remaining limits.
+To publish, set repository **Settings / Pages / Source: GitHub Actions**, then run the supplied workflow on `main`. Pull requests validate/build without deploying. Exactly four source visibility changes were authorized and completed; their public audit is in [catalog/public-visibility-changes.json](catalog/public-visibility-changes.json). Commits pushed to `main` run the [validation and deployment workflow](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml). See [CONTRIBUTING.md](CONTRIBUTING.md) for catalog schema, preservation of manual notebook edits, build/preview commands, runtime limits and publication setup. See [VALIDATION.md](VALIDATION.md) for actual verification and remaining limits.
 
 ![The catalog's actual repository theme counts.](assets/repository-overview.svg)
 
@@ -142,3 +147,23 @@ The new [Ocean Watch chapter](content/projects/global-fishing-watch-and-dark-ves
 - **AR6:** Garner et al. (2021), *IPCC AR6 Sea Level Projections*, **v20210809**, [dataset](https://doi.org/10.5281/zenodo.5914709), **CC BY 4.0**; Fox-Kemper et al. (2021), WG1 Chapter 9, [DOI](https://doi.org/10.1017/9781009157896.011); Kopp et al. (2023), *FACTS v1.0*, GMD **16**, 7461–7489, [DOI](https://doi.org/10.5194/gmd-16-7461-2023). Credit the projection authors, supporting funders and NASA Sea Level Change Team; retain the [pinned Rutgers guide](https://github.com/Rutgers-ESSP/IPCC-AR6-Sea-Level-Projections/tree/8ee75128d8f6d9a8ba9825f47c92d11955d0651e). Scenarios have no assigned probabilities; workflow percentiles are not the assessed p-box.
 
 These datasets, code, pixels, model weights and source graphics are **linked, not bundled**. Index fixtures and SVGs are original (CC BY 4.0); original executable code is MIT. See [REFERENCES.md](REFERENCES.md), [DATA_SOURCES.md](DATA_SOURCES.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the rights/use distinctions and complete provider references. No institutional endorsement is implied.
+
+
+The [Coral Reef One Health chapter](content/projects/coral-reef-one-health/index.ipynb) adds an original two-descriptor weighting exercise: complete evidence, explicit missingness and weight sensitivity. Its teaching index is not validated health or conservation advice. Three mapping initiatives and four external research tools connect maps to field and community evidence; no external data or artwork is copied.
+
+## Coral Reef One Health: citations and rights (2026-11-02)
+
+- **Tobias, James L. / jltobias (2026).** *Coral Reef One Health*. [Reviewed README](https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health/blob/6b76d79a9b4b683a52bbf0ba019f204e7635aaf9/README.md), commit `6b76d79a9b4b683a52bbf0ba019f204e7635aaf9`, inspected 2026-11-02. [Mapping guide](https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health/blob/6b76d79a9b4b683a52bbf0ba019f204e7635aaf9/book/mapping-initiatives.md), [One Health guide](https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health/blob/6b76d79a9b4b683a52bbf0ba019f204e7635aaf9/book/one-health.md), [research guide](https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health/blob/6b76d79a9b4b683a52bbf0ba019f204e7635aaf9/book/research-resources.md) and [source references](https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health/blob/6b76d79a9b4b683a52bbf0ba019f204e7635aaf9/book/references.md) informed the selection. **No repository-wide license selected**: no source code, dataset, prose, artwork or splash is copied.
+- **Allen Coral Atlas / Arizona State University Center for Global Discovery and Conservation Science and partners.** [Atlas](https://allencoralatlas.org/), [methods](https://allencoralatlas.org/methods/) and [Terms of Use](https://allencoralatlas.org/tou/). Credit Paul Allen's Vulcan, Planet, Coral Reef Alliance and University of Queensland. Shallow habitat classes depend on product, depth and water visibility; they are not direct live coral cover or household health. Website terms and product permissions are separate; no blanket CC BY grant is asserted.
+- **Khaled bin Sultan Living Oceans Foundation (KSLOF).** [Mapping the World's Coral Reefs](https://www.livingoceansfoundation.org/mapping-the-worlds-coral-reefs/) and [World Reef Map](https://maps.lof.org/). Expedition habitat/bathymetry mapping combines satellite and field evidence, with NASA collaboration; selected sites are not continuous global monitoring. Viewing and the provider's data-request permissions are separate.
+- **NASA Landsat / University of South Florida Institute for Marine Remote Sensing (IMaRS).** [*Landsat 7 Worldwide Inventory of Coral Reefs Completed*](https://landsat.gsfc.nasa.gov/wp-content/uploads/2012/07/coral-l7.pdf), historical Millennium mapping context using 1999–2002 imagery. [IMaRS project](https://imars.usf.edu/millennium-corals/) and [UNEP-WCMC global reef compilation record](https://data-gis.unep-wcmc.org/portal/home/item.html?id=0613604367334836863f5c0c10e452bf) are continuation links: obtain the actual product version, contributors, requested citation and terms from current provider metadata. A release date is not every feature's observation date.
+- **World Health Organization.** [One Health](https://www.who.int/health-topics/one-health), for integrated people/animal/ecosystem inquiry and shared governance. **Sweet, Michael; Burian, Alfred; Bulling, Mark (2021).** *Corals as canaries in the coalmine: Towards the incorporation of marine ecosystems into the 'One Health' concept*. Journal of Invertebrate Pathology **186**, 107538. [DOI](https://doi.org/10.1016/j.jip.2021.107538) · [PubMed PMID 33545133](https://pubmed.ncbi.nlm.nih.gov/33545133/). Indexed abstract and bibliographic metadata inspected; full text not inspected. The arbitrary atlas index does not implement or validate their proposed framework.
+- **NOAA.** [Coral reef ecosystems](https://www.noaa.gov/education/resource-collections/marine-life/coral-reef-ecosystems), ecosystem-services and cultural context; no photographs or clinical findings copied. The evidence plan here is an original interpretation, not a reproduced WHO or NOAA diagram.
+- **luismmontilla and contributors.** [Awesome coral research](https://github.com/luismmontilla/awesome-coral-research), discovery directory, [CC BY 4.0 license](https://github.com/luismmontilla/awesome-coral-research/blob/master/LICENCE.md). Credit the directory's selection; this atlas selects four links with newly authored descriptions and copies no full directory or image. Provider terms remain separate.
+- **NOAA Coral Reef Watch.** [Satellite monitoring/products](https://coralreefwatch.noaa.gov/satellite/index.php): temperature, heat stress and bleaching alerts are distinct from field bleaching observations. **MERMAID team / Wildlife Conservation Society.** [MERMAID](https://datamermaid.org/): standardized field survey collection, exploration and management. **CoralNet team.** [CoralNet](https://coralnet.ucsd.edu/): image organization/annotation and statistics, with labels requiring validation. **OBIS contributors / IOC-UNESCO.** [Ocean Biodiversity Information System](https://obis.org/): marine occurrence discovery; sampling effort matters and absent records do not establish species absence. Obtain dataset-specific citations, versions, permissions and access conditions from each provider before any continuation.
+
+Only the sources used above are cited as consulted; unused source-course readings and videos are not adopted. No provider data, reef/community observations, imagery, annotations, models or API connections are bundled or requested. All summaries, fixture code and SVGs here are original: **MIT code; CC BY 4.0 narrative, figures and synthetic fixtures**, attributed to James L. Tobias and contributors (2026). External rights remain with their creators; no endorsement is implied. The 2026-11-02 HTTP checks establish entry reachability only, not external notebook targets or service functions.
+
+### README splash illustration
+
+The [new cover](assets/splash-v2.png) was created for this index on **2 November 2026** with **OpenAI's built-in image generation tool**, directed and selected by **James L. Tobias and JupyterLite Learning Atlas contributors**. Its fictional landscape, reef, team, charts and globe are conceptual artwork. No external reference images, provider imagery or source-course art were used. [Full prompt, artifact details and attribution](assets/SPLASH-PROVENANCE.md). Original project artwork uses [CC BY4.0](LICENSE-CONTENT.md); this does not license linked provider materials. The earlier SVG remains available for the website and Book.

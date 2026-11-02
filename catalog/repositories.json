@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "inspected_on": "2026-11-01",
-  "scope": "30 public JupyterLite-named repositories plus 3 related public browser projects; excludes the index itself",
+  "inspected_on": "2026-11-02",
+  "scope": "31 public JupyterLite-named repositories plus 3 related public browser projects; excludes the index itself. Baseline inventory/readme inspection 2026-11-01; targeted Coral Reef One Health addition inspected 2026-11-02, not a full reinspection.",
   "repositories": [
     {
       "name": "JupyterLite-Data-Visualization",
@@ -1992,6 +1992,129 @@
       "launch_status": "All documented launch entries checked by HTTP GET on 2026-11-01; entry reachability only",
       "attribution": "James L. Tobias / jltobias; JupyterLite-PyScript. Source project and upstream works retain their own terms. Atlas summary/exercise original.",
       "limitations": "Source apps need browser runtime/CDN/tiles on first load. Native RustGIS and JupyterGIS Lite have separate capabilities; preview limitations include collaboration and STAC search. No backend is needed here."
+    },
+    {
+      "name": "JupyterLite-Coral-Reef-One-Health",
+      "title": "Coral Reef One Health: maps, evidence and priorities",
+      "slug": "coral-reef-one-health",
+      "theme": "Global health",
+      "summary": "Connect three reef-mapping initiatives with field observations and community questions, then test how arbitrary weights and missing evidence change an original teaching index.",
+      "status": "learning companion",
+      "category": "jupyterlite",
+      "learning_question": "Can changing a preference change an ordering without changing a single observation?",
+      "source_url": "https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health",
+      "readme_url": "https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health/blob/6b76d79a9b4b683a52bbf0ba019f204e7635aaf9/README.md",
+      "default_branch": "main",
+      "source_commit": "6b76d79a9b4b683a52bbf0ba019f204e7635aaf9",
+      "inspected_on": "2026-11-02",
+      "visibility": "public",
+      "notebook": "projects/coral-reef-one-health/index.ipynb",
+      "book_path": "book/projects/coral-reef-one-health/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/coral-reef-one-health/index.ipynb",
+      "resources": [
+        {
+          "kind": "hub",
+          "label": "Open Coral learning hub",
+          "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/",
+          "description": "Source portal linking the separate Book and Lab.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "book",
+          "label": "Read source Coral Book",
+          "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/book/",
+          "description": "Source reef mapping, One Health and research-tool explanations.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source Coral Lab",
+          "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html",
+          "description": "Separate source browser runtime; its own terms and dependencies apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source mapping notebook",
+          "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html?path=01-reef-mapping.ipynb",
+          "description": "Exact documented mapping-catalogue notebook entry; target execution not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source One Health notebook",
+          "url": "https://jltobias.github.io/JupyterLite-Coral-Reef-One-Health/lite/lab/index.html?path=02-one-health.ipynb",
+          "description": "Exact source synthetic-indicator notebook entry; target execution not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "Explore Allen Coral Atlas",
+          "url": "https://allencoralatlas.org/",
+          "description": "External shallow reef habitat mapping; check product dates, classes and terms.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "Explore KSLOF World Reef Map",
+          "url": "https://maps.lof.org/",
+          "description": "External expedition habitat and bathymetry viewer; viewing does not grant data reuse.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Explore NOAA Coral Reef Watch",
+          "url": "https://coralreefwatch.noaa.gov/satellite/index.php",
+          "description": "External satellite heat-stress and bleaching-alert products; not field observations everywhere.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Explore MERMAID surveys",
+          "url": "https://datamermaid.org/",
+          "description": "External WCS/MERMAID field-survey collection, exploration and management.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Explore CoralNet annotations",
+          "url": "https://coralnet.ucsd.edu/",
+          "description": "External reef-image annotation service; labels need independent validation.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Explore OBIS occurrences",
+          "url": "https://obis.org/",
+          "description": "External marine biodiversity discovery; sampling effort and provider terms matter.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "Eleven exact source/provider entry documents checked by HTTP GET on 2026-11-02; no notebook-target or service functional certification",
+      "attribution": "James L. Tobias / jltobias; source has no repository-wide license selected. Allen Coral Atlas/ASU and partners, KSLOF, NASA/USF IMaRS Millennium mapping, WHO, Sweet/Burian/Bulling, NOAA, luismmontilla and contributors (CC BY 4.0 discovery directory), NOAA CRW, MERMAID/WCS, CoralNet and OBIS/IOC-UNESCO credited in chapter. Atlas fixture/code/figures original.",
+      "limitations": "No repository-wide source license has been selected. The source is linked without copying its code, CSV, prose or splash illustration. The local fixture and SVG are original; executable code is MIT and original narrative/figures/fixtures are CC BY 4.0. Maps and this score establish neither disease, seafood safety, causality, carbon balance nor real community outcomes."
     }
   ]
 }

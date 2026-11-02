@@ -20,7 +20,7 @@ python scripts/build.py
 python scripts/serve.py
 ```
 
-Open `http://localhost:8000/JupyterLite-Index-Repo/`. The preview deliberately uses the GitHub project subpath. `_site/` is generated output. Builds never publish, stage or commit anything. The first browser load of Pyodide still needs network; notebook computations need no remote data or credentials. Notebook edits live in browser storage. Download work before clearing browser data or changing profiles. Rebuild the site after changing notebooks.
+Open `http://localhost:8000/JupyterLite-Learning-Atlas/`. The preview deliberately uses the GitHub project subpath. `_site/` is generated output. Builds never publish, stage or commit anything. The first browser load of Pyodide still needs network; notebook computations need no remote data or credentials. Notebook edits live in browser storage. Download work before clearing browser data or changing profiles. Rebuild the site after changing notebooks.
 
 `scripts/build.py` regenerates navigation, validates source, runs a strict Book build, copies canonical content into a Lite staging folder, builds JupyterLite and assembles `_site/`. It does not execute notebooks implicitly: run `execute.py --write` before building changed code. CI executes them before its build. The build only replaces its own `_build/` staging subfolders and `_site/`; output paths are checked to stay under this repository. It preserves `.git` and the source tree.
 
@@ -55,7 +55,7 @@ Native WhiteboxTools, GDAL/Rasterio stacks, RustGIS Python and GPU/model service
 
 ## Publish with GitHub Pages
 
-The included `.github/workflows/pages.yml` validates pull requests and deploys successful builds on pushes to `main` (or a manual run on `main`). In GitHub **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions**. The workflow needs Pages/write and OIDC permissions only in its deploy job. Consult the [repository workflow status](https://github.com/jltobias/JupyterLite-Index-Repo/actions/workflows/pages.yml) to confirm that a revision has passed validation and deployed successfully. Existing source-project availability is recorded independently.
+The included `.github/workflows/pages.yml` validates pull requests and deploys successful builds on pushes to `main` (or a manual run on `main`). In GitHub **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions**. The workflow needs Pages/write and OIDC permissions only in its deploy job. Consult the [repository workflow status](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) to confirm that a revision has passed validation and deployed successfully. Existing source-project availability is recorded independently.
 
 ## Sources for the build architecture
 

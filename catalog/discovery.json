@@ -1,5 +1,5 @@
 {
-  "inspected_on": "2026-11-01",
+  "inspected_on": "2026-11-02",
   "owner": "jltobias",
   "repositories": [
     {
@@ -345,17 +345,36 @@
       "url": "https://github.com/jltobias/JupyterLite-PyScript"
     },
     {
-      "name": "JupyterLite-Index-Repo",
+      "name": "JupyterLite-Learning-Atlas",
       "default_branch": "main",
       "visibility": "public",
-      "url": "https://github.com/jltobias/JupyterLite-Index-Repo"
+      "url": "https://github.com/jltobias/JupyterLite-Learning-Atlas"
     },
     {
       "name": "JupyterLite-Global-Fishing-Watch-and-Dark-Vessels",
       "default_branch": "main",
       "visibility": "public",
       "url": "https://github.com/jltobias/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels"
+    },
+    {
+      "name": "JupyterLite-Coral-Reef-One-Health",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health"
     }
   ],
-  "method": "Fresh public-only GitHub connector inventory for the Ocean Watch and Earth studio source refresh; immutable README inspection for included projects"
+  "method": "Public-only GitHub connector inventory inspected 2026-11-01 (59 records), plus one targeted public Coral Reef One Health source addition verified 2026-11-02 (60 records). Existing records were retained without full reinspection; included source README is pinned to its inspected commit.; index record renamed to JupyterLite-Learning-Atlas on 2026-11-02 with repository identity verified (catalog/repository-rename.json)",
+  "baseline_inspection": {
+    "inspected_on": "2026-11-01",
+    "repository_count": 59,
+    "method": "Public-only GitHub connector inventory; prior source records retain their original inspection scope."
+  },
+  "targeted_additions": [
+    {
+      "repository": "JupyterLite-Coral-Reef-One-Health",
+      "inspected_on": "2026-11-02",
+      "source_commit": "6b76d79a9b4b683a52bbf0ba019f204e7635aaf9",
+      "scope": "One public source addition; prior discovery/source records were retained without full reinspection."
+    }
+  ]
 }

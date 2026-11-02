@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import urlsplit,unquote
 
 ROOT=Path(__file__).resolve().parents[1]
-PREFIX='/JupyterLite-Index-Repo/'
+PREFIX='/JupyterLite-Learning-Atlas/'
 
 
 class Handler(SimpleHTTPRequestHandler):

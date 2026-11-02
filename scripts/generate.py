@@ -10,6 +10,7 @@ import yaml
 
 from lesson_material import HEALTH_LESSONS, LESSONS, PATHS
 from ocean_earth_material import CUBE_CODE, CUBE_INTRO, CUBE_INTERPRET, EARTH_LESSONS, earth_overview, ocean_overview
+from coral_material import coral_overview
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/repositories.json"
@@ -109,7 +110,8 @@ def seed_project(r):
     source_links = "\n".join(f"- [{x['label']}]({x['url']}) — {x['description']} **{x['availability']}**"
                              for x in r["resources"] if key != "zarr-sql-views" or "?path=" not in x['url'])
     extra = (health_table() if key == "Rewiring-Global-Health" else
-             ocean_overview() if key == "Global-Fishing-Watch-and-Dark-Vessels" else "")
+             ocean_overview() if key == "Global-Fishing-Watch-and-Dark-Vessels" else
+             coral_overview() if key == "Coral-Reef-One-Health" else "")
     activity_context = ("It is an original prototype motivated only by a title-only source stub; no source Shiny app, source Lab or deployed service is supplied or verified."
                         if r["status"] == "source stub" else "It is a small companion to the source project, not a reproduction of that project's full course.")
     continuation = ("This source stub supplies no runtime or deployment instructions. Before any future app continuation, review actual application code, accessibility, dependencies and deployment evidence."
@@ -121,6 +123,8 @@ def seed_project(r):
     }
     if key in spatial_continuations:
         continuation = f"{spatial_continuations[key]} [Reviewed source README]({r['readme_url']})."
+    if key == "Coral-Reef-One-Health":
+        continuation = "For a continuation, inspect each provider's product metadata, version, observation dates, requested citation and permissions; source entry checks do not validate service functions. The original local exercise uses only standard-library Python and IPython display."
     cells = [
         md(f"# {title}\n\n**{theme} · 15–25 minutes · {r['status']}**\n\n{summary}\n\n**Learning question:** {question}\n\nThis original index activity is **synthetic teaching analysis**. It uses invented values or authored metadata, no real people or sensitive locations, no remote APIs, and no AI model calls. {activity_context}\n\n![Learning workflow]({relative}{diagram})\n\nOriginal atlas diagram, James L. Tobias and contributors, CC BY 4.0; see [asset provenance](../../visual-provenance.ipynb)."),
         md(f"## Predict before running\n\n{method}\n\nWrite a prediction and one assumption you would need to check. Run cells in order with **Shift+Enter**, or **Run → Run All Cells**. The next cell defines only local SVG display helpers; the following cell performs the analysis. Every graphic also prints its values as a text alternative."),
@@ -145,7 +149,7 @@ def seed_foundations(records):
         links = " → ".join(f"[{known[k]['title']}]({known[k]['notebook']})" for k in keys if k in known)
         path_links.append(f"### {title}\n\n{subtitle}.\n\n{links}")
     notebook("index.ipynb", [
-        md(f"# The JupyterLite Learning Atlas\n\n**James L. Tobias · a browser, a question, a world to explore**\n\n![The learning atlas: geography, notebooks and shared decisions](assets/splash.svg)\n\nDiscover **{len(records)} public projects**: {prefixed_count} repositories named JupyterLite plus {related_count} related JupyterGIS/browser projects. Each has an original, small companion exercise. Read this Book, then run the same chapter notebooks in the bundled Lab. No account, API key, desktop GIS or data-service connection is required for these defaults. The four source visibility changes are complete; GitHub Actions builds and publishes this index from `main`; see the [workflow status](https://github.com/jltobias/JupyterLite-Index-Repo/actions/workflows/pages.yml) for deployment results.\n\nStart with [browser Python](foundations/browser-python.ipynb), [spatial thinking](foundations/spatial-thinking.ipynb), and [evidence, AI and empathy](foundations/evidence-ai.ipynb). The Book displays executed outputs; the Lab lets you change assumptions.\n\nAll local exercises use synthetic values or authored teaching metadata. They do not estimate real health outcomes or reproduce a source model. External companion projects can have different data, dependencies, credentials and licenses."),
+        md(f"# The JupyterLite Learning Atlas\n\n**James L. Tobias · a browser, a question, a world to explore**\n\n![The learning atlas: geography, notebooks and shared decisions](assets/splash.svg)\n\nDiscover **{len(records)} public projects**: {prefixed_count} repositories named JupyterLite plus {related_count} related JupyterGIS/browser projects. Each has an original, small companion exercise. Read this Book, then run the same chapter notebooks in the bundled Lab. No account, API key, desktop GIS or data-service connection is required for these defaults. The four source visibility changes are complete; GitHub Actions builds and publishes this index from `main`; see the [workflow status](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) for deployment results.\n\nStart with [browser Python](foundations/browser-python.ipynb), [spatial thinking](foundations/spatial-thinking.ipynb), and [evidence, AI and empathy](foundations/evidence-ai.ipynb). The Book displays executed outputs; the Lab lets you change assumptions.\n\nAll local exercises use synthetic values or authored teaching metadata. They do not estimate real health outcomes or reproduce a source model. External companion projects can have different data, dependencies, credentials and licenses."),
         md("## Choose a route\n\n" + "\n\n".join(path_links)),
         md("## Rewiring Global Health in the Age of AI\n\nThe [featured course chapter](projects/rewiring-global-health/index.ipynb) preserves links to all ten source lessons. The [cross-project synthesis](synthesis/global-health.ipynb) connects observation, assumptions, privacy, empathy and accountable review.\n\n![Evidence to action](assets/evidence-to-action.svg)\n\nOriginal atlas diagrams: James L. Tobias and contributors, CC BY 4.0. [Visual provenance](visual-provenance.ipynb).\n\n## A useful workshop rhythm\n\nPredict → run → interpret → change one assumption → discuss who benefits or could be harmed → save a decision record. Treat a vivid map as a question worth examining, not proof.\n\n[Contributor guide](contributor-guide.ipynb) · [References](references.ipynb)"),
         code(HELPERS), code("counts = {}\nfor theme in "+repr([r['theme'] for r in records])+":\n    counts[theme] = counts.get(theme,0)+1\nbars(counts, 'Public catalog themes — repository metadata', 'repositories')"),

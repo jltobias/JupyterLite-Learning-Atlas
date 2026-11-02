@@ -30,6 +30,8 @@ parts:
     title: Sea-Level-Rise - Separate hazard from service impact
   - file: projects/climate-and-health/index
     title: Climate-and-Health - Count heat exposure, preserve uncertainty
+  - file: projects/coral-reef-one-health/index
+    title: 'Coral-Reef-One-Health - Coral Reef One Health: maps, evidence and priorities'
 - caption: Spatial methods
   chapters:
   - file: projects/spatial-analysis/index
