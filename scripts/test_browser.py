@@ -63,7 +63,7 @@ def check_coral(page, browser, records, output, checks):
         assert page.locator(f'a[href="{url}"]').count()>=1,url
     page.screenshot(path=str(output/'coral-book-desktop.png'),full_page=True)
     page.set_viewport_size({'width':390,'height':844})
-    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2'),'Coral mobile page overflows'
+    page.wait_for_function('document.documentElement.scrollWidth<=innerWidth+2',timeout=10000)
     page.screenshot(path=str(output/'coral-book-mobile.png'),full_page=True)
     page.set_viewport_size({'width':1440,'height':1000})
     notebook=nbformat.read(ROOT/'content'/record['notebook'],as_version=4)

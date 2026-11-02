@@ -33,6 +33,7 @@ sphinx:
       - sphinx_book_theme
     html_static_path: ["_static"]
     html_js_files: ["atlas-launch.js"]
+    html_css_files: ["atlas-book.css"]
     html_theme_options:
       show_navbar_depth: 1
     html_show_sourcelink: true

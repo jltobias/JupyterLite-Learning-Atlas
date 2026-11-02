@@ -1,0 +1,14 @@
+/* Keep long source identifiers readable on narrow Book pages. */
+@media (max-width: 767px) {
+  .bd-article :not(pre) > code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .bd-article a {
+    overflow-wrap: anywhere;
+  }
+  .bd-article .pst-scrollable-table-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
