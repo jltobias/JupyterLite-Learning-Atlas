@@ -1,7 +1,7 @@
 {
   "checked_on": "2026-11-02",
   "baseline_checked_on": "2026-11-01",
-  "method": "HTTP GET entry reachability only. Original 134 rows retained verbatim from checks on 2026-11-01; original rows without checked_on retain that 2026-11-01 date. Targeted Coral addition: eleven exact source/provider entry checks on 2026-11-02, first 512 bytes only. No full reinspection, notebook-target or service functional certification.",
+  "method": "HTTP GET entry reachability only. Original 134 rows retained verbatim from checks on 2026-11-01; original rows without checked_on retain that 2026-11-01 date. Targeted Coral addition: eleven exact source/provider entry checks on 2026-11-02, first 512 bytes only. No full reinspection, notebook-target or service functional certification. Targeted PHI addition: thirteen source entry GETs on 2026-11-02, using reviewed README URLs or explicitly observed deployment workflow/manifests. Prior 145 rows preserved; no source execution or Binder build/session started. Published contents manifests are separately normalized under manifest_evidence; these metadata checks add no launch rows.",
   "results": [
     {
       "repository": "JupyterLite-Data-Visualization",
@@ -800,6 +800,97 @@
       "status": 200,
       "resolved_url": "https://obis.org/",
       "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Basic",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Basic",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/lab/index.html",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/lab/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Basic",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/lab/index.html?path=NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/lab/index.html?path=NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Basic",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/lab/index.html?path=NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/lab/index.html?path=NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB01-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB01-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB02-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB02-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB03-Cholera-Case-Study-Isochrone-Map.ipynb",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB03-Cholera-Case-Study-Isochrone-Map.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB04-Cholera-Case-Study-Isochrone-Map.ipynb",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB04-Cholera-Case-Study-Isochrone-Map.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB05-Cholera-Case-Study-Inspiration-and-To-Do-List.ipynb",
+      "status": 200,
+      "resolved_url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB05-Cholera-Case-Study-Inspiration-and-To-Do-List.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "1854-Cholera-Outbreak-London-Advanced-2",
+      "url": "https://beta.mybinder.org/v2/gh/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/master",
+      "status": 200,
+      "resolved_url": "https://mybinder.org/v2/gh/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/master",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "2005-MDR-TB-Outbreak-Thailand",
+      "url": "https://beta.mybinder.org/v2/gh/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/master",
+      "status": 200,
+      "resolved_url": "https://mybinder.org/v2/gh/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/master",
+      "checked_on": "2026-11-02"
     }
   ],
   "baseline_results": {
@@ -807,5 +898,36 @@
     "count": 134,
     "sha256": "dd2009da29a0ebf5933afdddcd987adec1fc73b2d5082faf96cdb41312514e1b",
     "canonicalization": "UTF-8 JSON array, sort_keys=True, ensure_ascii=False, separators=(comma,colon), no whitespace"
-  }
+  },
+  "manifest_evidence": [
+    {
+      "repository": "Jupyterlite-1854-Cholera-Basic",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/api/contents/all.json",
+      "checked_on": "2026-11-02",
+      "source_commit": "476f6dd5a8430e6eb823e79614fda1d7e12a78fb",
+      "sha256": "9719e69cd9c0a58a92e9f72010cbd61ccf605b798672f1af25f7446464f34369",
+      "normalization": "UTF-8 JSON object, sort_keys=True, ensure_ascii=False, separators=(comma,colon), no whitespace",
+      "confirmed_notebook_basenames": [
+        "NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb",
+        "NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb"
+      ],
+      "limits": "Published root notebook filenames only; no source execution, widget, tile or provider behavior certified."
+    },
+    {
+      "repository": "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/api/contents/all.json",
+      "checked_on": "2026-11-02",
+      "source_commit": "8bde848d13d71602b2b32c62e5d4b4957e4a45a1",
+      "sha256": "afade817393c60e3a89d66077a726a9ea3e76d0b061273440774528696b7b602",
+      "normalization": "UTF-8 JSON object, sort_keys=True, ensure_ascii=False, separators=(comma,colon), no whitespace",
+      "confirmed_notebook_basenames": [
+        "NB01-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+        "NB02-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+        "NB03-Cholera-Case-Study-Isochrone-Map.ipynb",
+        "NB04-Cholera-Case-Study-Isochrone-Map.ipynb",
+        "NB05-Cholera-Case-Study-Inspiration-and-To-Do-List.ipynb"
+      ],
+      "limits": "Published root notebook filenames only; no source execution, widget, tile or provider behavior certified."
+    }
+  ]
 }

@@ -11,6 +11,7 @@ import yaml
 from lesson_material import HEALTH_LESSONS, LESSONS, PATHS
 from ocean_earth_material import CUBE_CODE, CUBE_INTRO, CUBE_INTERPRET, EARTH_LESSONS, earth_overview, ocean_overview
 from coral_material import coral_overview
+from phi_case_material import CASES as PHI_CASES, chapter_cells as phi_chapter_cells
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/repositories.json"
@@ -99,6 +100,9 @@ def health_table():
 
 
 def seed_project(r):
+    if r['slug'] in PHI_CASES:
+        notebook(r['notebook'], phi_chapter_cells(r, md, code, HELPERS), kind='project', repository=r['name'])
+        return
     key = r["name"].removeprefix("JupyterLite-")
     item = LESSONS.get(key)
     if item is None:
@@ -149,7 +153,7 @@ def seed_foundations(records):
         links = " → ".join(f"[{known[k]['title']}]({known[k]['notebook']})" for k in keys if k in known)
         path_links.append(f"### {title}\n\n{subtitle}.\n\n{links}")
     notebook("index.ipynb", [
-        md(f"# The JupyterLite Learning Atlas\n\n**James L. Tobias · a browser, a question, a world to explore**\n\n![The learning atlas: geography, notebooks and shared decisions](assets/splash.svg)\n\nDiscover **{len(records)} public projects**: {prefixed_count} repositories named JupyterLite plus {related_count} related JupyterGIS/browser projects. Each has an original, small companion exercise. Read this Book, then run the same chapter notebooks in the bundled Lab. No account, API key, desktop GIS or data-service connection is required for these defaults. The four source visibility changes are complete; GitHub Actions builds and publishes this index from `main`; see the [workflow status](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) for deployment results.\n\nStart with [browser Python](foundations/browser-python.ipynb), [spatial thinking](foundations/spatial-thinking.ipynb), and [evidence, AI and empathy](foundations/evidence-ai.ipynb). The Book displays executed outputs; the Lab lets you change assumptions.\n\nAll local exercises use synthetic values or authored teaching metadata. They do not estimate real health outcomes or reproduce a source model. External companion projects can have different data, dependencies, credentials and licenses."),
+        md(f"# The JupyterLite Learning Atlas\n\n**James L. Tobias · a browser, a question, a world to explore**\n\n![The learning atlas: geography, notebooks and shared decisions](assets/splash.svg)\n\nDiscover **{len(records)} public projects**: {prefixed_count} core JupyterLite-named repositories by jltobias plus {related_count} related browser/teaching projects (three prior related and four external PHI cases). Each has an original, small companion exercise. Read this Book, then run the same chapter notebooks in the bundled Lab. No account, API key, desktop GIS or data-service connection is required for these defaults. The four source visibility changes are complete; GitHub Actions builds and publishes this index from `main`; see the [workflow status](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) for deployment results.\n\nStart with [browser Python](foundations/browser-python.ipynb), [1854 Cholera Basic](projects/cholera-1854-basic/index.ipynb), [spatial thinking](foundations/spatial-thinking.ipynb), and [evidence, AI and empathy](foundations/evidence-ai.ipynb). The Book displays executed outputs; the Lab lets you change assumptions.\n\nAll local exercises use synthetic values or authored teaching metadata. They do not estimate real health outcomes or reproduce a source model. External companion projects can have different data, dependencies, credentials and licenses."),
         md("## Choose a route\n\n" + "\n\n".join(path_links)),
         md("## Rewiring Global Health in the Age of AI\n\nThe [featured course chapter](projects/rewiring-global-health/index.ipynb) preserves links to all ten source lessons. The [cross-project synthesis](synthesis/global-health.ipynb) connects observation, assumptions, privacy, empathy and accountable review.\n\n![Evidence to action](assets/evidence-to-action.svg)\n\nOriginal atlas diagrams: James L. Tobias and contributors, CC BY 4.0. [Visual provenance](visual-provenance.ipynb).\n\n## A useful workshop rhythm\n\nPredict → run → interpret → change one assumption → discuss who benefits or could be harmed → save a decision record. Treat a vivid map as a question worth examining, not proof.\n\n[Contributor guide](contributor-guide.ipynb) · [References](references.ipynb)"),
         code(HELPERS), code("counts = {}\nfor theme in "+repr([r['theme'] for r in records])+":\n    counts[theme] = counts.get(theme,0)+1\nbars(counts, 'Public catalog themes — repository metadata', 'repositories')"),
@@ -158,7 +162,7 @@ def seed_foundations(records):
     notebook("foundations/browser-python.ipynb", [
         md("# Your first browser experiment\n\n**Foundations · 15 minutes**\n\nJupyterLite runs Python through Pyodide/WebAssembly in your browser. First load needs a network connection to fetch the runtime. Once loaded, these exercises read no external data; a fresh fully offline browser is not guaranteed to start.\n\nOpen a notebook, wait for **Python (Pyodide)**, and run with **Shift+Enter**. Restart the kernel and Run All to check reproducibility. Files and edits live in browser storage; download valuable work before clearing browser data or changing browser profiles. This index uses its own storage namespace.\n\n**Question:** How does a threshold change the summary of an invented dataset?"),
         code(HELPERS), code("observations = [2,4,4,6,9]\nthreshold = 5\nprint('Synthetic observations:', observations)\nprint('Mean:', sum(observations)/len(observations))\nbars({'below':sum(x<threshold for x in observations), 'at or above':sum(x>=threshold for x in observations)}, 'Your first synthetic comparison', 'observations')"),
-        md("## Interpret and try\n\nThree invented observations are below 5 and two are at or above it. Change the threshold to 4 and predict the result before running. A programming error, a bad assumption and an unsupported interpretation are different problems.\n\nIf no kernel appears, allow runtime downloads, wait for startup, and reload once; use the static Book while troubleshooting. No package installation is needed inside these lessons. Do not upload sensitive records.\n\n![Browser and continuation capabilities](../assets/capabilities.svg)\n\nOriginal diagram, CC BY 4.0. [Provenance](../visual-provenance.ipynb).\n\n**References:** [JupyterLite](https://jupyterlite.readthedocs.io/en/stable/) and [Pyodide](https://pyodide.org/en/stable/). Their runtime downloads and libraries retain their terms. [Next: spatial thinking](spatial-thinking.ipynb)."),
+        md("## Interpret and try\n\nThree invented observations are below 5 and two are at or above it. Change the threshold to 4 and predict the result before running. A programming error, a bad assumption and an unsupported interpretation are different problems.\n\nIf no kernel appears, allow runtime downloads, wait for startup, and reload once; use the static Book while troubleshooting. No package installation is needed inside these lessons. Do not upload sensitive records.\n\n![Browser and continuation capabilities](../assets/capabilities.svg)\n\nOriginal diagram, CC BY 4.0. [Provenance](../visual-provenance.ipynb).\n\n**References:** [JupyterLite](https://jupyterlite.readthedocs.io/en/stable/) and [Pyodide](https://pyodide.org/en/stable/). Their runtime downloads and libraries retain their terms. [Next: 1854 Cholera Basic](../projects/cholera-1854-basic/index.ipynb) · [Spatial thinking](spatial-thinking.ipynb)."),
     ])
     notebook("foundations/spatial-thinking.ipynb", [
         md("# Ask a spatial question\n\n**Foundations · 20 minutes**\n\nA map combines values, geometry, scale, projection and design choices. Before mapping, ask what was measured, where, when, with which units and for whom. Longitude/latitude degrees are not a uniform distance unit. Counts need denominators before comparing rates.\n\n**Question:** Can the nearest location change when distance follows a network? Compare straight-line and grid-route distance for fictional points in arbitrary planar units."),
@@ -183,9 +187,15 @@ def seed_foundations(records):
 
 def make_toc(records):
     """Build structured navigation so arbitrary valid titles cannot break YAML."""
+    by_slug = {r['slug']: r for r in records}
+    early = ['projects/cholera-1854-basic/index'] if 'cholera-1854-basic' in by_slug else []
     parts=[{'caption':'Start here','chapters':[{'file':path} for path in [
-        'foundations/browser-python','foundations/spatial-thinking','foundations/learning-a-model',
+        'foundations/browser-python', *early, 'foundations/spatial-thinking','foundations/learning-a-model',
         'foundations/evidence-ai','synthesis/global-health']]}]
+    investigations = [by_slug[slug] for slug in PHI_CASES if slug != 'cholera-1854-basic' and slug in by_slug]
+    if investigations:
+        parts.append({'caption':'Outbreak investigations','chapters':[
+            {'file':r['notebook'].removesuffix('.ipynb'), 'title':r['title']} for r in investigations]})
     for theme in dict.fromkeys(r['theme'] for r in records if r['category']=='jupyterlite'):
         parts.append({'caption':theme,'chapters':[
             {'file':r['notebook'].removesuffix('.ipynb'),
@@ -193,7 +203,7 @@ def make_toc(records):
             for r in records if r['theme']==theme and r['category']=='jupyterlite']})
     parts.append({'caption':'Related browser projects','chapters':[
         {'file':r['notebook'].removesuffix('.ipynb'),'title':f"{r['name']} - {r['title']}"}
-        for r in records if r['category']=='related']})
+        for r in records if r['category']=='related' and r['slug'] not in PHI_CASES]})
     parts.append({'caption':'Keep exploring','chapters':[{'file':path} for path in [
         'contributor-guide','references','visual-provenance']]})
     return {'format':'jb-book','root':'index','parts':parts}

@@ -11,6 +11,7 @@ from urllib.parse import parse_qs, urlsplit
 
 import nbformat
 from playwright.sync_api import sync_playwright
+from phi_case_material import CASES as PHI_CASES
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE='http://127.0.0.1:8766/JupyterLite-Learning-Atlas/'
@@ -79,6 +80,10 @@ def check_coral(page, browser, records, output, checks):
     page.screenshot(path=str(output/'coral-book-desktop.png'),full_page=True)
     page.set_viewport_size({'width':390,'height':844})
     check_mobile_book_width(page,'coral')
+    # A nested Sphinx span.pre used to defeat wrapping on Linux font metrics.
+    stress=page.add_style_tag(content='.bd-article :not(pre)>code {font-size:16px!important;font-family:monospace!important}')
+    check_mobile_book_width(page,'coral-inline-code-stress')
+    stress.evaluate('(element)=>element.remove()')
     page.screenshot(path=str(output/'coral-book-mobile.png'),full_page=True)
     page.set_viewport_size({'width':1440,'height':1000})
     notebook=nbformat.read(ROOT/'content'/record['notebook'],as_version=4)
@@ -95,6 +100,72 @@ def check_coral(page, browser, records, output, checks):
             figure_page.screenshot(path=str(output/f'coral-figure-{i}.png'))
     finally:figure_page.close()
     checks.append('Coral source/pinned notebooks, primary citations, Book-to-Lab handoff, mobile width and SVG clipping')
+
+
+def check_phi_cases(page, browser, records, output, checks):
+    """Assert public learning order, source disclosures, handoffs and actual figures."""
+    page.goto(BASE+'book/index.html')
+    navigation=page.locator('nav.bd-links .toctree-l1 > a.reference.internal')
+    navigation.first.wait_for()
+    links=navigation.evaluate_all('(links)=>links.map(link=>link.getAttribute("href"))')
+    assert links[:2]==['foundations/browser-python.html','projects/cholera-1854-basic/index.html'],links[:2]
+    for slug in PHI_CASES:
+        assert links.count(f'projects/{slug}/index.html')==1,slug
+    assert [link for link in links if any('/'+slug+'/' in link for slug in PHI_CASES)]==[
+        f'projects/{slug}/index.html' for slug in PHI_CASES]
+    page.goto(BASE+'explore/?q=PHI-Case-Studies')
+    page.locator('#related article').first.wait_for()
+    assert page.locator('#projects article').count()==0
+    assert set(page.locator('#related article').evaluate_all('(cards)=>cards.map(card=>card.dataset.slug)'))==set(PHI_CASES)
+    for slug, case in PHI_CASES.items():
+        record=next(r for r in records if r['slug']==slug)
+        card=page.locator(f'.resource[data-slug="{slug}"]')
+        card.locator('summary').click()
+        assert card.locator('details').evaluate('(element)=>element.open')
+        assert card.locator(f'a[href="{record["readme_url"]}"]').is_visible()
+        for resource in record['resources']:
+            assert card.locator(f'a[href="{resource["url"]}"]').is_visible()
+    checks.append('PHI Basic second after browser Python; ordered investigations each once; four external explorer cards and source disclosures')
+
+    figure_page=browser.new_page(viewport={'width':1440,'height':1000})
+    try:
+        for slug, case in PHI_CASES.items():
+            record=next(r for r in records if r['slug']==slug)
+            response=page.goto(BASE+record['book_path']);assert response and response.status==200
+            article=page.locator('article.bd-article')
+            run=page.get_by_role('link',name='Run this notebook in Lab');run.wait_for()
+            assert run.get_attribute('href')==f'/JupyterLite-Learning-Atlas/lite/lab/index.html?path=projects%2F{slug}%2Findex.ipynb'
+            for path, _ in case['files']:
+                pinned=f'{record["source_url"]}/blob/{case["commit"]}/{path}'
+                assert article.locator(f'a[href="{pinned}"]').count()>=1,pinned
+            for resource in record['resources']:
+                assert article.locator(f'a[href="{resource["url"]}"]').count()>=1,resource['url']
+            for other in PHI_CASES:
+                if other!=slug:
+                    assert article.locator(f'a[href="../{other}/index.html"]').count()>=1,(slug,other)
+            assert 'synthetic' in article.inner_text().lower()
+            expected_states = ['tie', 'outside'] if slug == 'cholera-1854-advanced-2' else ['unknown']
+            assert all(state in article.inner_text().lower() for state in expected_states),slug
+            assert article.locator('.cell_output img, .cell_output svg').count()>=1,slug
+            page.screenshot(path=str(output/(slug+'-book-desktop.png')),full_page=True)
+            page.set_viewport_size({'width':390,'height':844})
+            check_mobile_book_width(page,slug)
+            page.screenshot(path=str(output/(slug+'-book-mobile.png')),full_page=True)
+            page.set_viewport_size({'width':1440,'height':1000})
+            notebook=nbformat.read(ROOT/'content'/record['notebook'],as_version=4)
+            figures=[o.data['image/svg+xml'] for c in notebook.cells if c.cell_type=='code'
+                     for o in c.outputs if 'image/svg+xml' in o.get('data',{})]
+            assert figures,'Expected executed '+slug+' SVG'
+            for i,figure in enumerate(figures):
+                figure_page.set_content(figure)
+                assert figure_page.locator('svg title').text_content()
+                assert figure_page.locator('svg desc').text_content()
+                clipped=figure_page.locator('svg').evaluate('''s=>{const v=s.viewBox.baseVal;return [...s.querySelectorAll('text')].filter(t=>{const b=t.getBBox();return b.x<0||b.y<0||b.x+b.width>v.width||b.y+b.height>v.height}).map(t=>t.textContent)}''')
+                assert not clipped,(slug,clipped)
+                figure_page.screenshot(path=str(output/f'{slug}-figure-{i}.png'))
+    finally:
+        figure_page.close()
+    checks.append('Four PHI Book routes, 20 pinned source notebooks, 13 launch resources, reciprocal links, Lab handoffs, mobile width and unclipped accessible SVGs')
 
 
 def main():
@@ -152,6 +223,7 @@ def main():
                 assert actual==expected,(section,actual,expected)
             checks.append('search, theme/type/status filters, URL state, empty state, reset/focus, source disclosure, related separation')
             check_coral(page,browser,records,output,checks)
+            check_phi_cases(page,browser,records,output,checks)
             page.goto(BASE+'teach/');page.locator('#teaching-table tr').first.wait_for()
             assert page.locator('#teaching-table tr').count()==16
             before=page.locator('#view-summary').inner_text()

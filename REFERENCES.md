@@ -1,6 +1,6 @@
 # References and source register
 
-Baseline sources inspected 2026-11-01; the Coral Reef One Health source and selected provider context were reviewed in a targeted addition on 2026-11-02. Existing sources were not fully reinspected. Source summaries are original paraphrases. The project title links to the actual repository; the reviewed README links to its immutable default-head commit. Cite the commit/release and underlying data separately when using a source. Exact launch URLs, availability dates and runtime limits are in `catalog/repositories.json` and each chapter.
+Baseline sources inspected 2026-11-01; the Coral Reef One Health source and selected provider context were reviewed in a targeted addition on 2026-11-02. Four external PHI-Case-Studies courses were also reviewed on 2026-11-02. Existing sources were not fully reinspected. Source summaries are original paraphrases. The project title links to the actual repository; the reviewed README links to its immutable default-head commit. Cite the commit/release and underlying data separately when using a source. Exact launch URLs, availability dates and runtime limits are in `catalog/repositories.json` and each chapter.
 
 ## Original repositories
 
@@ -126,3 +126,113 @@ Only the sources used above are cited as consulted; unused source-course reading
 ## README splash illustration (2026-11-02)
 
 **James L. Tobias and JupyterLite Learning Atlas contributors (2026), AI-generated with OpenAI image generation.** The original [README cover](https://github.com/jltobias/JupyterLite-Learning-Atlas/blob/main/assets/splash-v2.png) was generated with OpenAI's built-in tool on 2 November 2026, without external reference images. Its landscape, reef, people, globe and abstract charts are conceptual illustration; they are not scientific observations or depictions of an actual research team. [Full prompt, tool/date, artifact hash and attribution](https://github.com/jltobias/JupyterLite-Learning-Atlas/blob/main/assets/SPLASH-PROVENANCE.md). Original project artwork is offered under the repository's CC BY4.0 content license. No provider artwork or logo is copied, and no institutional endorsement is implied. The earlier code-generated SVG remains in use on the website and Book.
+
+
+## PHI outbreak cases: creators, sources and rights (2026-11-02)
+
+### 1854 Cholera Basic: dots, counts and centres: inspected source notebooks
+
+**Creators:** PHI-Case-Studies and contributors; the Cholera notebooks list contact credits for Herman Tolentino, Jan MacGregor, James Tobias and Zhanar Haimovich. Contacts do not establish sole authorship.
+
+**Repository:** [PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic). [Reviewed README](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/README.md), full commit `476f6dd5a8430e6eb823e79614fda1d7e12a78fb`, branch `main`, inspected 2026-11-02.
+
+The source supplies a published JupyterLite course. Its pandas/Folium maps and external tiles have separate runtime and attribution requirements; their execution is not certified by entry checks.
+
+**Source rights:** Root LICENSE: GNU GPLv3.
+
+| Inspected source file | What the source teaches |
+|---|---|
+| [NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb) | Tables, deaths/pumps, Folium layers and the information value cycle |
+| [NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb) | Death-weighted mean centre and careful map interpretation |
+
+[Root license at the inspected commit](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/LICENSE).
+
+The [published contents manifest](https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/api/contents/all.json) was inspected 2026-11-02. The [existing source audit](https://jltobias.github.io/JupyterLite-Learning-Atlas/catalog/launch-checks.json) records its dated URL, source commit, confirmed course notebook basenames and canonical-JSON SHA-256 under `manifest_evidence`, separate from launch rows. This confirms filenames, not source execution or provider behavior. The reviewed Basic README supplies the course root; the manifest separately confirms its two root notebook filenames.
+
+### 1854 Cholera Advanced1: routes and reachable nodes: inspected source notebooks
+
+**Creators:** PHI-Case-Studies and contributors; the Cholera notebooks list contact credits for Herman Tolentino, Jan MacGregor, James Tobias and Zhanar Haimovich. Contacts do not establish sole authorship.
+
+**Repository:** [PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1). [Reviewed README](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/README.md), full commit `8bde848d13d71602b2b32c62e5d4b4957e4a45a1`, branch `main`, inspected 2026-11-02.
+
+This later Jupyterlite source is primary. Its published deployment and root notebook paths were observed in the pinned deployment workflow and public manifest; its generic template README's demo is not the Cholera course. OSMnx/NetworkX/Folium workflows and external tiles need separate support checks.
+
+**Source rights:** Root LICENSE: GNU GPLv3; content/LICENSE: Apache 2.0, with Apache wording in the content README. Both layers are recorded; no blanket resolution is asserted.
+
+| Inspected source file | What the source teaches |
+|---|---|
+| [content/NB01-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/content/NB01-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb) | OSMnx street graph and Folium overlay |
+| [content/NB02-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/content/NB02-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb) | Pairwise network distances, nearest-node connectors and a 400 m walkability assumption |
+| [content/NB03-Cholera-Case-Study-Isochrone-Map.ipynb](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/content/NB03-Cholera-Case-Study-Isochrone-Map.ipynb) | Projected walking times and convex-hull/buffer approximations |
+| [content/NB04-Cholera-Case-Study-Isochrone-Map.ipynb](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/content/NB04-Cholera-Case-Study-Isochrone-Map.ipynb) | Point-location counts within isochrones, distinct from death weights |
+| [content/NB05-Cholera-Case-Study-Inspiration-and-To-Do-List.ipynb](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/content/NB05-Cholera-Case-Study-Inspiration-and-To-Do-List.ipynb) | Further work, including synthetic time series |
+
+[Root license at the inspected commit](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/LICENSE).
+
+The [published contents manifest](https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/api/contents/all.json) was inspected 2026-11-02. The [existing source audit](https://jltobias.github.io/JupyterLite-Learning-Atlas/catalog/launch-checks.json) records its dated URL, source commit, confirmed course notebook basenames and canonical-JSON SHA-256 under `manifest_evidence`, separate from launch rows. This confirms filenames, not source execution or provider behavior. The source deployment is also evidenced by its pinned workflow below.
+[Content license](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/content/LICENSE) and [content README](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/content/README.md) retain the separate Apache wording.
+
+The [pinned deployment workflow](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/.github/workflows/deploy.yml) and [published manifest](https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/api/contents/all.json) establish the separately observed course route. The earlier [native original README](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-1/blob/97a1d13dfb23032387ed23804e3d6f4dbc99aec7/README.md), master commit `97a1d13dfb23032387ed23804e3d6f4dbc99aec7`, describes Notebook/Docker/Binder. It remains background continuation, not a duplicate atlas chapter.
+
+### 1854 Cholera Advanced2: nearest sites, ties and buildings: inspected source notebooks
+
+**Creators:** PHI-Case-Studies and contributors; the Cholera notebooks list contact credits for Herman Tolentino, Jan MacGregor, James Tobias and Zhanar Haimovich. Contacts do not establish sole authorship.
+
+**Repository:** [PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2). [Reviewed README](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/blob/d1b56c135b0fab2f470b837a51e6777dfc20b286/README.md), full commit `d1b56c135b0fab2f470b837a51e6777dfc20b286`, branch `master`, inspected 2026-11-02.
+
+The source documents native/server Notebook, Docker and Binder. No public JupyterLite counterpart was found. Its SciPy/Shapely/GeoPandas/OSMnx/Folium polygon and overlay workflow is a separate continuation, not executed by this browser-safe companion. A Binder entry response is not a running session; no Binder build was started.
+
+**Source rights:** Root LICENSE: Apache 2.0.
+
+| Inspected source file | What the source teaches |
+|---|---|
+| [NB01-Intro-Voronoi-Diagrams.ipynb](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/blob/d1b56c135b0fab2f470b837a51e6777dfc20b286/NB01-Intro-Voronoi-Diagrams.ipynb) | Introduction to Voronoi diagrams |
+| [NB02-Computing-Convex-Hulls.ipynb](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/blob/d1b56c135b0fab2f470b837a51e6777dfc20b286/NB02-Computing-Convex-Hulls.ipynb) | Convex hull construction |
+| [NB03-Constructing-Voronoi-Polygons.ipynb](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/blob/d1b56c135b0fab2f470b837a51e6777dfc20b286/NB03-Constructing-Voronoi-Polygons.ipynb) | Voronoi polygon construction |
+| [NB04-Interactive-Voronoi-Map-Folium.ipynb](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/blob/d1b56c135b0fab2f470b837a51e6777dfc20b286/NB04-Interactive-Voronoi-Map-Folium.ipynb) | Interactive Folium Voronoi map |
+| [NB05-Buildings-in-Voronoi-Cells.ipynb](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/blob/d1b56c135b0fab2f470b837a51e6777dfc20b286/NB05-Buildings-in-Voronoi-Cells.ipynb) | Building-footprint centroids and point-in-polygon counts |
+| [NB99-Computing-Convex-Hulls-Part-2.ipynb](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/blob/d1b56c135b0fab2f470b837a51e6777dfc20b286/NB99-Computing-Convex-Hulls-Part-2.ipynb) | Supplement: alpha shapes and further hull exploration |
+
+[Root license at the inspected commit](https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/blob/d1b56c135b0fab2f470b837a51e6777dfc20b286/LICENSE).
+
+### 2005 MDR-TB Thailand: contact evidence and unknown results: inspected source notebooks
+
+**Creators:** PHI-Case-Studies and contributors as teaching-course creators, with John Oeltmann credited in the source. Research authors are credited separately below.
+
+**Repository:** [PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand). [Reviewed README](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/README.md), full commit `6d50f558cd39b40089cd3eea1fbc19425e5191d1`, branch `master`, inspected 2026-11-02.
+
+The source documents Binder/native Notebook, not a deployed JupyterLite course; no public JupyterLite counterpart was found. Its pandas, Plotly, NetworkX and Bokeh pipeline is separate. A Binder entry response is not a running session; no Binder build was started.
+
+**Source rights:** Root LICENSE: Apache 2.0.
+
+| Inspected source file | What the source teaches |
+|---|---|
+| [NB01-MDR-TB-Case-Study-Case-Intro.ipynb](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/NB01-MDR-TB-Case-Study-Case-Intro.ipynb) | Investigation, genotyping and the information workflow |
+| [NB02-World-TB-Notebook-Part-1.ipynb](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/NB02-World-TB-Notebook-Part-1.ipynb) | Historical WHO/World Bank TB, GDP, education and health-spending preparation |
+| [NB03-World-TB-Notebook-Part-2.ipynb](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/NB03-World-TB-Notebook-Part-2.ipynb) | Country/year data merging |
+| [NB04-World-TB-Notebook-Part-3.ipynb](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/NB04-World-TB-Notebook-Part-3.ipynb) | Plotly exploration and ecological summaries |
+| [NB05-MDR-TB-Case-Study-Part-1.ipynb](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/NB05-MDR-TB-Case-Study-Part-1.ipynb) | Mapping and genotype/DST joins |
+| [NB06-MDR-TB-Case-Study-Part-2.ipynb](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/NB06-MDR-TB-Case-Study-Part-2.ipynb) | Reported contacts, duplicate edges and secondary interviews; work in progress |
+| [NB07-MDR-TB-Case-Study-Part-3.ipynb](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/NB07-MDR-TB-Case-Study-Part-3.ipynb) | Social networks with NetworkX/Bokeh |
+
+[Root license at the inspected commit](https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/LICENSE).
+
+**Historical provider pipeline:** WHO and the World Bank are credited as providers in the pinned NB02–NB04 preparation/merge/exploration sequence. The inspected source snapshot is dated 2025-07-23; its preserved country/year TB, GDP, education and health-spending inputs are historical course material. No current provider feed is queried, no source table is imported, and country-level associations cannot identify individual risk. Provider attribution here is through those inspected source notebooks, rather than a claim to have refreshed their underlying datasets.
+
+### Historical and methodological works used
+
+- **Snow, John (1855).** *On the Mode of Communication of Cholera*, 2nd ed., London: John Churchill, pp. 38–55. [Primary transcription and map context, UCLA](https://epi-snow.ph.ucla.edu/Stream2_BSPoutbreak_a.html). Credit Charles Frederick Cheffins for historical maps drawn for Snow, and Ralph R. Frerichs and contributors for UCLA archive/curation. Historical maps are linked, never reproduced.
+- **Brody, H.; Rip, M. R.; Vinten-Johansen, P.; Paneth, N.; Rachman, S. (2000).** *Map-making and myth-making in Broad Street: the London cholera epidemic, 1854.* Lancet **356**(9223), 64–68. [DOI](https://doi.org/10.1016/S0140-6736(00)02442-9), [author reprint](https://epi-snow.ph.ucla.edu/Stream2_BSPoutbreak_f.html). Snow's water hypothesis preceded the famous map; a map alone did not establish an intervention effect.
+- **UCLA Department of Epidemiology, Ralph R. Frerichs and contributors.** [Historical investigation](https://epi-snow.ph.ucla.edu/Stream2_BSPoutbreak_d.html) and [Henry Whitehead context](https://epi-snow.ph.ucla.edu/Stream2_BSPoutbreak_e.html). Household inquiries, Whitehead and local officials contributed; attacks were already declining before the pump handle was removed on 8 September 1854.
+- **CDC (2004).** *150th Anniversary of John Snow and the Pump Handle.* MMWR **53**(34), 783. [Historical overview](https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5334a1.htm). A retrospective account is not a randomized counterfactual comparison.
+- **World Health Organization (29 September 2026).** [*Cholera* fact sheet](https://www.who.int/news-room/fact-sheets/detail/cholera). Contaminated food/water, safe water, sanitation and community work provide context; this activity supplies no burden or treatment estimate.
+
+- **Oeltmann, J. E.; Varma, J. K.; Ortega, L.; Liu, Y.; O'Rourke, T.; Cano, M.; et al. (2008).** *Multidrug-Resistant Tuberculosis Outbreak among US-bound Hmong Refugees, Thailand, 2005.* Emerging Infectious Diseases **14**(11), 1715–1721. [DOI](https://doi.org/10.3201/eid1411.071629), [primary article](https://wwwnc.cdc.gov/eid/article/14/11/07-1629_article). Credit the research authors, CDC, Thailand Ministry of Public Health and International Organization for Migration. Published tables, patient locations, networks and effect estimates are not reproduced in the atlas.
+- **World Health Organization (20 May 2024).** [*Tuberculosis: Multidrug-resistant (MDR-TB) or rifampicin-resistant TB (RR-TB)*](https://www.who.int/news-room/questions-and-answers/item/tuberculosis-multidrug-resistant-tuberculosis-%28mdr-tb%29). MDR includes resistance to rifampicin and isoniazid; this exercise computes no diagnosis or treatment decision. Historical policies/data are not current clinical or immigration guidance.
+
+- **NetworkX contributors.** [Weighted shortest paths](https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html) and [connected components](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.connected_components.html), algorithm background only. No NetworkX code/examples are copied and no package installation is needed.
+- **SciPy contributors.** [Voronoi method documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.Voronoi.html), source-method context only. The atlas samples a finite nearest-site grid rather than constructing exact Voronoi polygons; SciPy is not installed by these activities.
+- **OpenStreetMap contributors.** [Copyright and ODbL attribution](https://www.openstreetmap.org/copyright). Source streets/buildings and Folium/CARTO tiles have separate data/provider terms. All atlas geometry is invented; no OSM graph, footprint, tile or historical basemap is bundled or downloaded. Retain required attribution in source continuations.
+- **Upstream software communities:** pandas, NumPy, Folium, OSMnx, NetworkX, GeoPandas, Shapely, SciPy, Bokeh and Plotly support the linked source courses. The original atlas activities execute only Python's standard library and IPython display, under the atlas's existing runtime notices.
+
+All summaries, code, synthetic fixtures and SVGs here are newly authored: MIT executable code; CC BY 4.0 narrative, fixtures and figures, James L. Tobias and JupyterLite Learning Atlas contributors (2026). No source code/prose/data/imagery, patient records, pickles, saved graphs or map tiles are copied. Source rights remain with their creators; public access and shared contributors imply no blanket relicensing or endorsement.

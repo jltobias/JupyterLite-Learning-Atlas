@@ -4,10 +4,19 @@ parts:
 - caption: Start here
   chapters:
   - file: foundations/browser-python
+  - file: projects/cholera-1854-basic/index
   - file: foundations/spatial-thinking
   - file: foundations/learning-a-model
   - file: foundations/evidence-ai
   - file: synthesis/global-health
+- caption: Outbreak investigations
+  chapters:
+  - file: projects/cholera-1854-advanced-1/index
+    title: '1854 Cholera Advanced1: routes and reachable nodes'
+  - file: projects/cholera-1854-advanced-2/index
+    title: '1854 Cholera Advanced2: nearest sites, ties and buildings'
+  - file: projects/mdr-tb-thailand-2005/index
+    title: '2005 MDR-TB Thailand: contact evidence and unknown results'
 - caption: Foundations
   chapters:
   - file: projects/data-visualization/index

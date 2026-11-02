@@ -13,6 +13,7 @@ from pathlib import Path
 
 import nbformat
 from playwright.sync_api import sync_playwright
+from phi_case_material import CASES as PHI_CASES
 
 ROOT=Path(__file__).resolve().parents[1]
 NOTEBOOK='foundations/learning-a-model.ipynb'
@@ -35,6 +36,41 @@ for bad_weights in [(0, 1), (-1, 1), (float('inf'), 1), (float('nan'), 1)]:
         pass
     else:
         raise AssertionError('Invalid weights must stop calculation')'''
+
+PHI_RUNTIME = [
+    ('cholera-1854-basic', '''assert total == 14 and positive == 5 and len(rows) == 6
+assert unweighted == (28/6, 2) and weighted == (30/14, 26/14)
+edited = [(name, x, y, 14 if name == 'B3' else count) for name, x, y, count in rows]
+assert centres(edited) == (28, unweighted, (156/28, 54/28))
+assert centres([(name, x, y, 0) for name, x, y, count in rows])[2] is None''',
+     'Synthetic Cholera Basic: dots and centres'),
+    ('cholera-1854-advanced-1', '''assert costs == {'S':0, 'A':2, 'B':1, 'C':4, 'D':2, 'E':3, 'U':None}
+assert len(reached) == 5 and boundary == ['E']
+assert sum(value is not None and value <= 2 for value in costs.values()) == 4
+changed = shortest_costs(nodes, [edge for edge in edges if edge[:2] != ('B', 'D')], 'S')
+assert changed['E'] == 8 and changed['D'] == 9 and changed['U'] is None
+assert sum(value is not None and value <= 3 for value in changed.values()) == 3''',
+     'Synthetic Cholera Advanced1: network access'),
+    ('cholera-1854-advanced-2', '''assert len(samples) == 35 and len(buildings) == 6
+assert grid_counts == {'A':15, 'B':15, 'tie':5, 'outside':0}
+assert building_counts == {'A':2, 'B':2, 'tie':1, 'outside':1}
+moved = {'A':(1, 1), 'B':(4, 1)}
+labels = [nearest_site(point, moved, domain) for point in samples]
+assert {label:labels.count(label) for label in ['A','B','tie','outside']} == {'A':15, 'B':20, 'tie':0, 'outside':0}
+labels = [nearest_site(point, moved, domain) for point in buildings.values()]
+assert {label:labels.count(label) for label in ['A','B','tie','outside']} == {'A':2, 'B':3, 'tie':0, 'outside':1}
+labels = [nearest_site(point, pumps, (1, 5, 0, 4)) for point in samples]
+assert {label:labels.count(label) for label in ['A','B','tie','outside']} == {'A':10, 'B':10, 'tie':5, 'outside':10}''',
+     'Synthetic Cholera Advanced2: sampled nearest sites'),
+    ('mdr-tb-thailand-2005', '''assert components == [['A','B','C'], ['D','E'], ['F']] and sizes == [3,2,1]
+assert summary == {'mdr':3, 'known':4, 'unknown':2, 'fraction':0.75}
+observed = dst.copy()
+assert contact_components(dst, contacts, True) == [['A','B','C','D','E'], ['F']]
+assert dst == observed
+assert dst_summary(dict(dst, C='MDR')) == {'mdr':4, 'known':5, 'unknown':1, 'fraction':0.8}
+assert dst_summary(dict.fromkeys(dst)) == {'mdr':0, 'known':0, 'unknown':6, 'fraction':None}''',
+     'Synthetic MDR-TB: contacts and observed DST'),
+]
 
 
 def select_python(page, timeout_ms):
@@ -138,9 +174,13 @@ def main():
                          'Signed residuals, grouped schematically','ml','round(metrics["East held-out MAE"], 3)'),
                          execute_case(browser,base,output,args.timeout,CORAL_NOTEBOOK,CORAL_ASSERTIONS,
                          'Invented reef descriptors','coral')]
+                for slug, assertions, expected_svg in PHI_RUNTIME:
+                    assert slug in PHI_CASES
+                    results.append(execute_case(browser,base,output,args.timeout,
+                        f'projects/{slug}/index.ipynb',assertions,expected_svg,slug))
                 (output/'results.json').write_text(json.dumps({'status':'passed','cases':results,
                     'method':'Separate fresh browser context per case, Python kernel, canonical code plus numerical assertions and a unique marker; actual loaded SVG from the newly executed cell.',
-                    'limits':'Canonical ML and Coral fixtures only; no certification of external companion services.'},indent=2)+'\n',encoding='utf-8')
+                    'limits':'Canonical ML, Coral and four original PHI fixtures only; no certification of external companion services.'},indent=2)+'\n',encoding='utf-8')
             finally:browser.close()
     finally:server.terminate();server.wait(timeout=10);log.close()
 

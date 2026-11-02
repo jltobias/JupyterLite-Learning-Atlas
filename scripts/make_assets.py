@@ -57,7 +57,7 @@ def make_repository_overview():
         b+=f'<text x="35" y="{y+21}" font-size="16" fill="#153740">{escape(theme)}</text><rect x="345" y="{y}" width="{n*40}" height="31" rx="4" fill="#217a6d"/><text x="{355+n*40}" y="{y+21}" font-size="16" fill="#153740">{n}</text>'
     prefixed=sum(r['category']=='jupyterlite' for r in data)
     related=sum(r['category']=='related' for r in data)
-    b+=f'<text x="35" y="410" font-size="13" fill="#53676b">{len(data)} public project chapters · {prefixed} JupyterLite-named + {related} related · reef addition, 2026-11-02</text>'
+    b+=f'<text x="35" y="410" font-size="13" fill="#53676b">{len(data)} public project chapters · {prefixed} core + {related} related · catalog metadata, 2026-11-02</text>'
     save('repository-overview.svg','Repository overview by learning theme',f'Actual curated catalog metadata, not synthetic observations. Counts group {len(data)} public project chapters into {len(counts)} themes.',b,960,445)
 
 

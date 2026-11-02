@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "inspected_on": "2026-11-02",
-  "scope": "31 public JupyterLite-named repositories plus 3 related public browser projects; excludes the index itself. Baseline inventory/readme inspection 2026-11-01; targeted Coral Reef One Health addition inspected 2026-11-02, not a full reinspection.",
+  "scope": "31 public core JupyterLite-named repositories owned by jltobias, plus 3 prior related browser projects and 4 external PHI-Case-Studies teaching projects (38 chapters); excludes the index. Baseline inventory/README inspection 2026-11-01; targeted Coral and PHI reviews 2026-11-02, without full reinspection of prior sources.",
   "repositories": [
     {
       "name": "JupyterLite-Data-Visualization",
@@ -2115,6 +2115,271 @@
       "launch_status": "Eleven exact source/provider entry documents checked by HTTP GET on 2026-11-02; no notebook-target or service functional certification",
       "attribution": "James L. Tobias / jltobias; source has no repository-wide license selected. Allen Coral Atlas/ASU and partners, KSLOF, NASA/USF IMaRS Millennium mapping, WHO, Sweet/Burian/Bulling, NOAA, luismmontilla and contributors (CC BY 4.0 discovery directory), NOAA CRW, MERMAID/WCS, CoralNet and OBIS/IOC-UNESCO credited in chapter. Atlas fixture/code/figures original.",
       "limitations": "No repository-wide source license has been selected. The source is linked without copying its code, CSV, prose or splash illustration. The local fixture and SVG are original; executable code is MIT and original narrative/figures/fixtures are CC BY 4.0. Maps and this score establish neither disease, seafood safety, causality, carbon balance nor real community outcomes."
+    },
+    {
+      "name": "Jupyterlite-1854-Cholera-Basic",
+      "title": "1854 Cholera Basic: dots, counts and centres",
+      "slug": "cholera-1854-basic",
+      "theme": "Global health",
+      "summary": "An original browser-safe companion to PHI-Case-Studies: explore six invented locations, distinguish zero from missingness, and compare listed-location and death-weighted centres before making a historical claim.",
+      "status": "external PHI teaching case",
+      "category": "related",
+      "learning_question": "How can two centres summarize the same dots differently, and what do neither of them establish?",
+      "source_url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic",
+      "readme_url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/README.md",
+      "default_branch": "main",
+      "source_commit": "476f6dd5a8430e6eb823e79614fda1d7e12a78fb",
+      "inspected_on": "2026-11-02",
+      "visibility": "public",
+      "notebook": "projects/cholera-1854-basic/index.ipynb",
+      "book_path": "book/projects/cholera-1854-basic/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/cholera-1854-basic/index.ipynb",
+      "resources": [
+        {
+          "kind": "hub",
+          "label": "Open source course",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic",
+          "description": "README-documented course root; separate source runtime.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Open source Lab",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/lab/index.html",
+          "description": "Published source Lab entry; execution and provider behavior not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 1",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/lab/index.html?path=NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb",
+          "description": "Exact root notebook path confirmed in published manifest; source execution not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 2",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Basic/lab/index.html?path=NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb",
+          "description": "Exact root notebook path confirmed in published manifest; source execution not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "4 exact source entry GETs checked 2026-11-02; reviewed README supplies the course root and published contents manifest confirms browser notebook filenames; no source execution or provider functionality certified",
+      "attribution": "PHI-Case-Studies and contributors. Cholera source contact credits: Herman Tolentino, Jan MacGregor, James Tobias and Zhanar Haimovich; not a sole-authorship claim. Root LICENSE: GNU GPLv3.",
+      "limitations": "The source supplies a published JupyterLite course. Its pandas/Folium maps and external tiles have separate runtime and attribution requirements; their execution is not certified by entry checks. All summaries, code, synthetic fixtures and SVGs here are newly authored: MIT executable code; CC BY 4.0 narrative, fixtures and figures, James L. Tobias and JupyterLite Learning Atlas contributors (2026). No source code/prose/data/imagery, patient records, pickles, saved graphs or map tiles are copied. Source rights remain with their creators; public access and shared contributors imply no blanket relicensing or endorsement.",
+      "source_owner": "PHI-Case-Studies",
+      "source_review": {
+        "kind": "targeted-external",
+        "inspected_on": "2026-11-02",
+        "notebook_paths": [
+          "NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb",
+          "NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb"
+        ],
+        "launch_provenance": "reviewed README and published manifest"
+      }
+    },
+    {
+      "name": "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "title": "1854 Cholera Advanced1: routes and reachable nodes",
+      "slug": "cholera-1854-advanced-1",
+      "theme": "Global health",
+      "summary": "An original PHI-Case-Studies companion using seven invented graph nodes and edge times to expose topology, inclusive travel budgets, unreachable locations and the limits of an isochrone.",
+      "status": "external PHI teaching case",
+      "category": "related",
+      "learning_question": "How do a travel budget and one missing connection change reachability while an unreachable node remains unknown?",
+      "source_url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1",
+      "readme_url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/blob/8bde848d13d71602b2b32c62e5d4b4957e4a45a1/README.md",
+      "default_branch": "main",
+      "source_commit": "8bde848d13d71602b2b32c62e5d4b4957e4a45a1",
+      "inspected_on": "2026-11-02",
+      "visibility": "public",
+      "notebook": "projects/cholera-1854-advanced-1/index.ipynb",
+      "book_path": "book/projects/cholera-1854-advanced-1/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/cholera-1854-advanced-1/index.ipynb",
+      "resources": [
+        {
+          "kind": "hub",
+          "label": "Open source course",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/",
+          "description": "Course deployment observed in pinned workflow and public manifest; separate source runtime.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Open source Lab",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html",
+          "description": "Published source Lab entry; execution and provider behavior not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 1",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB01-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+          "description": "Exact root notebook path confirmed in published manifest; source execution not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 2",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB02-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+          "description": "Exact root notebook path confirmed in published manifest; source execution not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 3",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB03-Cholera-Case-Study-Isochrone-Map.ipynb",
+          "description": "Exact root notebook path confirmed in published manifest; source execution not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 4",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB04-Cholera-Case-Study-Isochrone-Map.ipynb",
+          "description": "Exact root notebook path confirmed in published manifest; source execution not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 5",
+          "url": "https://phi-case-studies.github.io/Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1/lab/index.html?path=NB05-Cholera-Case-Study-Inspiration-and-To-Do-List.ipynb",
+          "description": "Exact root notebook path confirmed in published manifest; source execution not certified.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "7 exact source entry GETs checked 2026-11-02; manifests confirm browser notebook filenames only; no source execution or Binder build certification",
+      "attribution": "PHI-Case-Studies and contributors. Cholera source contact credits: Herman Tolentino, Jan MacGregor, James Tobias and Zhanar Haimovich; not a sole-authorship claim. Root LICENSE: GNU GPLv3; content/LICENSE: Apache 2.0, with Apache wording in the content README. Both layers are recorded; no blanket resolution is asserted.",
+      "limitations": "This later Jupyterlite source is primary. Its published deployment and root notebook paths were observed in the pinned deployment workflow and public manifest; its generic template README's demo is not the Cholera course. OSMnx/NetworkX/Folium workflows and external tiles need separate support checks. All summaries, code, synthetic fixtures and SVGs here are newly authored: MIT executable code; CC BY 4.0 narrative, fixtures and figures, James L. Tobias and JupyterLite Learning Atlas contributors (2026). No source code/prose/data/imagery, patient records, pickles, saved graphs or map tiles are copied. Source rights remain with their creators; public access and shared contributors imply no blanket relicensing or endorsement.",
+      "source_owner": "PHI-Case-Studies",
+      "source_review": {
+        "kind": "targeted-external",
+        "inspected_on": "2026-11-02",
+        "notebook_paths": [
+          "content/NB01-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+          "content/NB02-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb",
+          "content/NB03-Cholera-Case-Study-Isochrone-Map.ipynb",
+          "content/NB04-Cholera-Case-Study-Isochrone-Map.ipynb",
+          "content/NB05-Cholera-Case-Study-Inspiration-and-To-Do-List.ipynb"
+        ],
+        "launch_provenance": "pinned deployment workflow and published manifest"
+      }
+    },
+    {
+      "name": "1854-Cholera-Outbreak-London-Advanced-2",
+      "title": "1854 Cholera Advanced2: nearest sites, ties and buildings",
+      "slug": "cholera-1854-advanced-2",
+      "theme": "Global health",
+      "summary": "An original PHI-Case-Studies browser companion compares 35 sampled nearest-site assignments with six invented building centroids, preserving ties and an outside-domain record instead of claiming exact polygons or population coverage.",
+      "status": "external PHI teaching case",
+      "category": "related",
+      "learning_question": "What changes when a nearest-site rule preserves boundary ties and an outside-domain building instead of forcing a winner?",
+      "source_url": "https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2",
+      "readme_url": "https://github.com/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/blob/d1b56c135b0fab2f470b837a51e6777dfc20b286/README.md",
+      "default_branch": "master",
+      "source_commit": "d1b56c135b0fab2f470b837a51e6777dfc20b286",
+      "inspected_on": "2026-11-02",
+      "visibility": "public",
+      "notebook": "projects/cholera-1854-advanced-2/index.ipynb",
+      "book_path": "book/projects/cholera-1854-advanced-2/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/cholera-1854-advanced-2/index.ipynb",
+      "resources": [
+        {
+          "kind": "lab",
+          "label": "Source Binder entry (native/server)",
+          "url": "https://beta.mybinder.org/v2/gh/PHI-Case-Studies/1854-Cholera-Outbreak-London-Advanced-2/master",
+          "description": "Exact README-documented Binder entry; no build/session started. Native/server continuation, not JupyterLite.",
+          "availability": "HTTP 200 - entry only; no Binder build",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "One exact README-documented Binder entry GET checked 2026-11-02; no browser manifest, source execution or Binder session is certified",
+      "attribution": "PHI-Case-Studies and contributors. Cholera source contact credits: Herman Tolentino, Jan MacGregor, James Tobias and Zhanar Haimovich; not a sole-authorship claim. Root LICENSE: Apache 2.0.",
+      "limitations": "The source documents native/server Notebook, Docker and Binder. No public JupyterLite counterpart was found. Its SciPy/Shapely/GeoPandas/OSMnx/Folium polygon and overlay workflow is a separate continuation, not executed by this browser-safe companion. A Binder entry response is not a running session; no Binder build was started. All summaries, code, synthetic fixtures and SVGs here are newly authored: MIT executable code; CC BY 4.0 narrative, fixtures and figures, James L. Tobias and JupyterLite Learning Atlas contributors (2026). No source code/prose/data/imagery, patient records, pickles, saved graphs or map tiles are copied. Source rights remain with their creators; public access and shared contributors imply no blanket relicensing or endorsement.",
+      "source_owner": "PHI-Case-Studies",
+      "source_review": {
+        "kind": "targeted-external",
+        "inspected_on": "2026-11-02",
+        "notebook_paths": [
+          "NB01-Intro-Voronoi-Diagrams.ipynb",
+          "NB02-Computing-Convex-Hulls.ipynb",
+          "NB03-Constructing-Voronoi-Polygons.ipynb",
+          "NB04-Interactive-Voronoi-Map-Folium.ipynb",
+          "NB05-Buildings-in-Voronoi-Cells.ipynb",
+          "NB99-Computing-Convex-Hulls-Part-2.ipynb"
+        ],
+        "launch_provenance": "reviewed README"
+      }
+    },
+    {
+      "name": "2005-MDR-TB-Outbreak-Thailand",
+      "title": "2005 MDR-TB Thailand: contact evidence and unknown results",
+      "slug": "mdr-tb-thailand-2005",
+      "theme": "Global health",
+      "summary": "An original PHI-Case-Studies browser companion uses six invented IDs to separate reported contacts, missing laboratory evidence and connected components, while preserving an isolate and avoiding transmission claims.",
+      "status": "external PHI teaching case",
+      "category": "related",
+      "learning_question": "Can a weaker reported contact merge components without changing a single observed drug-susceptibility result?",
+      "source_url": "https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand",
+      "readme_url": "https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/blob/6d50f558cd39b40089cd3eea1fbc19425e5191d1/README.md",
+      "default_branch": "master",
+      "source_commit": "6d50f558cd39b40089cd3eea1fbc19425e5191d1",
+      "inspected_on": "2026-11-02",
+      "visibility": "public",
+      "notebook": "projects/mdr-tb-thailand-2005/index.ipynb",
+      "book_path": "book/projects/mdr-tb-thailand-2005/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/mdr-tb-thailand-2005/index.ipynb",
+      "resources": [
+        {
+          "kind": "lab",
+          "label": "Source Binder entry (native/server)",
+          "url": "https://beta.mybinder.org/v2/gh/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/master",
+          "description": "Exact README-documented Binder entry; no build/session started. Native/server continuation, not JupyterLite.",
+          "availability": "HTTP 200 - entry only; no Binder build",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "One exact README-documented Binder entry GET checked 2026-11-02; no browser manifest, source execution or Binder session is certified",
+      "attribution": "PHI-Case-Studies and contributors. John Oeltmann credited in the source; Oeltmann et al. (2008) research credited separately, with CDC, Thailand Ministry of Public Health and International Organization for Migration. Root LICENSE: Apache 2.0.",
+      "limitations": "The source documents Binder/native Notebook, not a deployed JupyterLite course; no public JupyterLite counterpart was found. Its pandas, Plotly, NetworkX and Bokeh pipeline is separate. A Binder entry response is not a running session; no Binder build was started. All summaries, code, synthetic fixtures and SVGs here are newly authored: MIT executable code; CC BY 4.0 narrative, fixtures and figures, James L. Tobias and JupyterLite Learning Atlas contributors (2026). No source code/prose/data/imagery, patient records, pickles, saved graphs or map tiles are copied. Source rights remain with their creators; public access and shared contributors imply no blanket relicensing or endorsement.",
+      "source_owner": "PHI-Case-Studies",
+      "source_review": {
+        "kind": "targeted-external",
+        "inspected_on": "2026-11-02",
+        "notebook_paths": [
+          "NB01-MDR-TB-Case-Study-Case-Intro.ipynb",
+          "NB02-World-TB-Notebook-Part-1.ipynb",
+          "NB03-World-TB-Notebook-Part-2.ipynb",
+          "NB04-World-TB-Notebook-Part-3.ipynb",
+          "NB05-MDR-TB-Case-Study-Part-1.ipynb",
+          "NB06-MDR-TB-Case-Study-Part-2.ipynb",
+          "NB07-MDR-TB-Case-Study-Part-3.ipynb"
+        ],
+        "launch_provenance": "reviewed README"
+      }
     }
   ]
 }

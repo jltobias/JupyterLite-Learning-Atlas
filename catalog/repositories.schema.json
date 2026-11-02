@@ -15,6 +15,7 @@
     "repository": {
       "type": "object", "additionalProperties": false,
       "required": ["name","title","slug","theme","summary","status","category","learning_question","source_url","readme_url","default_branch","source_commit","inspected_on","visibility","notebook","book_path","lab_path","resources","launch_status","attribution","limitations"],
+      "allOf": [{"if":{"properties":{"source_url":{"not":{"pattern":"^https://github\\.com/[jJ][lL][tT][oO][bB][iI][aA][sS]/"}}}},"then":{"required":["source_owner","source_review"]}}],
       "properties": {
         "name": {"type":"string","minLength":3},
         "title": {"type":"string","minLength":8},
@@ -36,6 +37,12 @@
         "launch_status": {"type":"string","minLength":10},
         "attribution": {"type":"string","minLength":20},
         "limitations": {"type":"string","minLength":40},
+        "source_owner": {"type":"string","minLength":1},
+        "source_review": {"type":"object","additionalProperties":false,"required":["kind","inspected_on","notebook_paths","launch_provenance"],"properties":{
+          "kind":{"const":"targeted-external"},"inspected_on":{"type":"string","format":"date"},
+          "notebook_paths":{"type":"array","minItems":1,"items":{"type":"string","pattern":"\\.ipynb$"}},
+          "launch_provenance":{"enum":["reviewed README","reviewed README and published manifest","pinned deployment workflow and published manifest"]}
+        }},
         "resources": {"type":"array","items":{"type":"object","additionalProperties":false,"required":["kind","label","url","description","availability","checked_on","http_status"],"properties":{
           "kind":{"enum":["book","lab","map-2d","map-3d","scene-3d","explorer","hub"]},
           "label":{"type":"string","minLength":5},"url":{"$ref":"#/$defs/https"},"description":{"type":"string","minLength":15},"availability":{"type":"string","minLength":10},"checked_on":{"type":["string","null"],"format":"date"},"http_status":{"type":["integer","null"],"minimum":100,"maximum":599}

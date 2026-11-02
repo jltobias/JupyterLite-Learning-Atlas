@@ -19,6 +19,18 @@ ROOT = Path(__file__).resolve().parents[1]
 PYODIDE_EXTENSION='@jupyterlite/pyodide-kernel-extension'
 
 
+def validate_catalog_sources(catalog, schema):
+    """Require reviewed external sources and consistent explicit owner attribution."""
+    jsonschema.Draft202012Validator(schema,format_checker=jsonschema.FormatChecker()).validate(catalog)
+    for record in catalog['repositories']:
+        owner=urlsplit(record['source_url']).path.strip('/').split('/')[0]
+        if owner.lower()!='jltobias':
+            assert 'source_owner' in record and 'source_review' in record, 'External source review metadata required'
+        if 'source_owner' in record:
+            assert record['source_owner'].lower()==owner.lower(), f"source_owner disagrees with source URL: {record['name']}"
+    return catalog['repositories']
+
+
 def validate_lite_runtime(lite, source_config):
     """A Lab shell is insufficient: require the configured, loadable kernel bundle."""
     lite=Path(lite)
@@ -48,11 +60,11 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--built',action='store_true');args=parser.parse_args()
     catalog=json.loads((ROOT/'catalog/repositories.json').read_text(encoding='utf-8'))
     schema=json.loads((ROOT/'catalog/repositories.schema.json').read_text(encoding='utf-8'))
-    jsonschema.Draft202012Validator(schema,format_checker=jsonschema.FormatChecker()).validate(catalog)
-    records=catalog['repositories']
+    records=validate_catalog_sources(catalog,schema)
     discovery=json.loads((ROOT/'catalog/discovery.json').read_text(encoding='utf-8'))['repositories']
     assert all(r['visibility']=='public' for r in discovery), 'Nonpublic discovery metadata'
-    expected={r['name'] for r in discovery if r['name'].startswith('JupyterLite') and r['name']!='JupyterLite-Learning-Atlas'}
+    expected={r['name'] for r in discovery if urlsplit(r['url']).path.strip('/').split('/')[0].lower()=='jltobias'
+              and r['name'].startswith('JupyterLite') and r['name']!='JupyterLite-Learning-Atlas'}
     actual={r['name'] for r in records if r['category']=='jupyterlite'}
     assert actual==expected, f'Coverage differs: missing={expected-actual}, unexpected={actual-expected}'
     related={r['name'] for r in records if r['category']=='related'}

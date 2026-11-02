@@ -2,7 +2,7 @@
 
 Original executable code is MIT (`LICENSE`). Original narrative, SVG artwork, generated teaching figures and synthetic fixtures are CC BY 4.0 (`LICENSE-CONTENT.md`). An `.ipynb` is a mixed document: code cells use MIT; original narrative and figures use CC BY 4.0. These grants do not change the terms of linked third-party works.
 
-The site links source repositories and their exact README resources rather than cloning their code, media, datasets or branding. Each source repository and upstream attribution remains authoritative. Consult its reviewed README and license before reuse; availability or ownership by the same GitHub profile does not grant a blanket license. Source-course images and original presentation slides are not bundled here.
+The site links source repositories and exact resources from reviewed READMEs or explicitly observed published deployment workflows/manifests rather than cloning their code, media, datasets or branding. Each source repository and upstream attribution remains authoritative. Consult its reviewed README and license before reuse; availability or ownership by the same GitHub profile does not grant a blanket license. Source-course images and original presentation slides are not bundled here.
 
 | Referenced work | Attribution and boundary |
 |---|---|
@@ -42,3 +42,11 @@ The [luismmontilla and contributors discovery directory](https://github.com/luis
 ## New README cover
 
 The README uses original AI-generated conceptual artwork created with OpenAI's built-in image generation tool on 2 November 2026, directed and selected by James L. Tobias and JupyterLite Learning Atlas contributors. No third-party reference image, source-course splash, photograph, dataset or logo was supplied. The depicted landscape, reef, charts and learning group are fictional. [Prompt, provenance and attribution](assets/SPLASH-PROVENANCE.md). Original project artwork is offered under LICENSE-CONTENT.md; the new cover does not alter any linked resource's rights.
+
+## PHI-Case-Studies linked teaching courses (2026-11-02)
+
+Credit PHI-Case-Studies and contributors as course creators. Cholera notebook contact credits name Herman Tolentino, Jan MacGregor, James Tobias and Zhanar Haimovich, without establishing sole authorship. The MDR source credits John Oeltmann; Oeltmann et al. (2008), CDC, Thailand Ministry of Public Health and International Organization for Migration are research credits.
+
+Basic root LICENSE is GPLv3. Later Jupyterlite Advanced1 has GPLv3 at the root and Apache 2.0 at content/LICENSE with Apache content README wording: both layers remain recorded, with no blanket resolution. Advanced2 and MDR root licenses are Apache 2.0. Their pinned commits and all 20 source notebooks are linked in README.md and REFERENCES.md. The earlier native Advanced1 is background, not an additional chapter. OSM contributors' ODbL attribution, external Folium/CARTO tile terms and pandas/NumPy/Folium/OSMnx/NetworkX/GeoPandas/Shapely/SciPy/Bokeh/Plotly terms belong to source continuations. No source code, source prose, data, historical/patient maps, graph objects, images or tiles are redistributed.
+
+Snow (1855), Cheffins, UCLA/Frerichs and contributors, Brody et al. (2000), CDC (2004), WHO cholera (2026), Oeltmann et al. (2008), WHO MDR-TB (2024), NetworkX and SciPy are linked with full credits in the bibliography; source medical/historical material is contextual, not current guidance. Atlas fixture/code/SVGs are original: MIT code; CC BY 4.0 narrative/fixtures/figures, James L. Tobias and contributors (2026). No clinical decision, causal estimate, directed transmission or provider endorsement is supplied.

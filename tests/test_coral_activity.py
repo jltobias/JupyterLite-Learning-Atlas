@@ -152,7 +152,8 @@ class CoralActivityTests(unittest.TestCase):
         records = catalog['repositories']
         discovery = json.loads((ROOT / 'catalog/discovery.json').read_text(encoding='utf-8'))
         self.assertEqual({r['name'] for r in records if r['category']=='jupyterlite'},
-                         {r['name'] for r in discovery['repositories'] if r['name'].lower().startswith('jupyterlite-')
+                         {r['name'] for r in discovery['repositories'] if r['url'].split('/')[3].lower()=='jltobias'
+                          and r['name'].lower().startswith('jupyterlite-')
                           and r['name']!='JupyterLite-Learning-Atlas'})
         self.assertTrue({r['name'] for r in records} <= {r['name'] for r in discovery['repositories']})
         self.assertEqual(discovery['baseline_inspection']['inspected_on'], '2026-11-01')

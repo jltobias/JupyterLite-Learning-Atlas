@@ -335,10 +335,10 @@ HEALTH_LESSONS = [
 ]
 
 PATHS = [
-    ("Start with a browser", "Foundations → Browser GIS", ["Data-Visualization", "Shiny-Live-Apps", "PyScript", "RustGIS"]),
+    ("Start with a browser", "Browser Python → Cholera Basic → Foundations → Browser GIS", ["Jupyterlite-1854-Cholera-Basic", "Data-Visualization", "Shiny-Live-Apps", "PyScript", "RustGIS"]),
     ("Read a map critically", "Neighborhoods → distance rules → overlay → aggregation → extract provenance", ["Spatial-Analysis", "Maps-and-Spatial-Analyses", "Geospatial-Analyses-and-Maps", "Geospatial-Analyses-and-Maps-revised", "Geospatial-Analyses-and-Maps-old"]),
     ("Observe a changing Earth", "Terrain → metadata → ocean/reef evidence → data cubes", ["Astra-demos", "Gods-Eye-View-Satellite", "Whitebox", "STAC-Browser", "Global-Fishing-Watch-and-Dark-Vessels", "Coral-Reef-One-Health", "zarr-sql-views"]),
-    ("Rewire global health", "Evidence → ecosystems → access → privacy → community review", ["Rewiring-Global-Health", "Coral-Reef-One-Health", "Global-Health-GIS", "HIVDB-Drug-Resistance-Maps", "Climate-and-Health", "Sea-Level-Rise", "South-Sudan-Dashboard", "DRC-Population-Mobility-Border-Mapping"]),
+    ("Rewire global health", "Evidence → ecosystems → access → privacy → community review", ["Jupyterlite-1854-Cholera-Basic", "Jupyterlite-1854-Cholera-Outbreak-London-Advanced-1", "1854-Cholera-Outbreak-London-Advanced-2", "2005-MDR-TB-Outbreak-Thailand", "Rewiring-Global-Health", "Coral-Reef-One-Health", "Global-Health-GIS", "HIVDB-Drug-Resistance-Maps", "Climate-and-Health", "Sea-Level-Rise", "South-Sudan-Dashboard", "DRC-Population-Mobility-Border-Mapping"]),
     ("Inspect AI and decisions", "Structured perspectives → evaluation → human agency", ["AI-Agents-and-Orchestrator-Six-Thinking-Hats", "Custom-GPT-Six-Thinking-Hats", "GeoLibre-GeoAI", "GPT-6-Astra-Geospatial", "Geospatial-Research-Awareness-Radar"]),
     ("Build a common picture", "Signals → constraints → reviewed briefing", ["World-Monitor-Prototype", "WorldView", "Osiris"]),
 ]
