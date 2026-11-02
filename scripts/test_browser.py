@@ -16,6 +16,21 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='http://127.0.0.1:8766/JupyterLite-Learning-Atlas/'
 
 
+def check_mobile_book_width(page, label):
+    """Keep failure evidence useful across browser engines and build hosts."""
+    try:
+        page.wait_for_function('document.documentElement.scrollWidth<=innerWidth+2',timeout=10000)
+    except Exception:
+        layout=page.evaluate('''()=>({url:location.href,width:innerWidth,scroll:document.documentElement.scrollWidth,
+          styles:[...document.styleSheets].map(s=>s.href),
+          blocks:[...document.querySelectorAll('main,article,.bd-main,.bd-content,.bd-article-container,.cell_output,table,img,svg,pre')]
+            .map(e=>({tag:e.tagName,cls:String(e.className),width:e.getBoundingClientRect().width,right:e.getBoundingClientRect().right,scroll:e.scrollWidth,overflow:getComputedStyle(e).overflowX,text:e.textContent.slice(0,100)}))
+            .filter(e=>e.right>innerWidth+2||e.scroll>e.width+2).slice(0,35)})''')
+        print('BOOK_MOBILE_LAYOUT '+json.dumps({'label':label,**layout}),flush=True)
+        page.screenshot(path=str(ROOT/'_build/browser'/('failure-'+label+'-mobile.png')),full_page=True)
+        raise
+
+
 def check_coral(page, browser, records, output, checks):
     """Keep reef discovery, evidence links and rendered accessibility in the public gate."""
     record=next(r for r in records if r['slug']=='coral-reef-one-health')
@@ -63,7 +78,7 @@ def check_coral(page, browser, records, output, checks):
         assert page.locator(f'a[href="{url}"]').count()>=1,url
     page.screenshot(path=str(output/'coral-book-desktop.png'),full_page=True)
     page.set_viewport_size({'width':390,'height':844})
-    page.wait_for_function('document.documentElement.scrollWidth<=innerWidth+2',timeout=10000)
+    check_mobile_book_width(page,'coral')
     page.screenshot(path=str(output/'coral-book-mobile.png'),full_page=True)
     page.set_viewport_size({'width':1440,'height':1000})
     notebook=nbformat.read(ROOT/'content'/record['notebook'],as_version=4)
