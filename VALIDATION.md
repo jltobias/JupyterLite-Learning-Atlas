@@ -1,5 +1,24 @@
 # Validation record
 
+The **2 November 2026 EO update** uses the unchanged README PNG in the opening Book/Lab notebook and adds the EO Satellite Guide chapter, an original routing demonstration, and a proposed STAC/EarthCODE connection. The [publication workflow](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) records remote validation and deployment for each commit.
+
+| Current check | Result |
+|---|---|
+| Coverage | 32 core JupyterLite repositories plus seven related projects; 39 project chapters, 48 canonical notebooks (45 code/three narrative), 65 discovery records and 300 local notebook links. Every canonical notebook appears exactly once in the Book. |
+| Regressions | All 65 unit tests passed, including 14 EO tests covering default/edited routes, unknown mapping, static archive, invalid/canonical UTC/bbox/page inputs, actual marker lanes, query contents, source/seed/non-overwrite behavior and the unchanged cover. Preservation tests now permit future unrelated additions while protecting baseline paths/records. |
+| Review | Three independent review lenses completed. Fixes cover portable artwork hashes, escaped SVG identifiers, derived figure totals, printed compatibility evidence/JSON assertions, mobile reading guidance and current reproduction instructions. No unresolved or deferred review issue remains. |
+| Native execution | New EO and updated introduction executed in separate fresh kernels and temporary directories with Python data-service networking blocked. No saved errors. EO was re-executed after the review fixes. |
+| Preservation | All 47 previous notebook code sequences are preserved except the introductory metadata-count list. STAC code and raw outputs, 38 source records, 64 discovery records, 158 launch rows and two prior manifest observations are unchanged. All five non-count SVGs and the cover PNG retain their bytes (SVG comparison normalizes checkout line endings). |
+| Strict assembly | Full strict Book/Lite build passed, including all 48 canonical notebook byte-identical Lab copies, Book routes, runtime assets/settings and exact catalog/evidence copies. |
+| Browser | All three source-UI tests and the retained complete Chrome behavior suite passed. New checks cover EO/EarthCODE searches and disclosures, six pinned notebook links, ten source/ESA resources, primary citations, reciprocal STAC links, exact Lab handoff, 390px mobile width and unclipped accessible SVG. The new figure was visually inspected. |
+| Shared cover | Book and a fresh Lab context both display the 1774 × 887 README PNG with alt text and AI-art credit. JupyterLite resolves it to a data URI; SHA-256 of the actual displayed bytes matches the committed image: 09b30e50095b2286df7ea0a1556fd447d1124c83b3ab5dfc68fab4c29877b0f9. No image generation or pixel changes were made. |
+| Actual browser Python | All seven canonical cases passed in separate fresh Pyodide browser contexts: ML, Coral, four PHI cases and EO. Each ran canonical code plus numerical/edit assertions and a unique marker, then verified the newly loaded SVG from the executed cell. Saved outputs alone do not satisfy this check. |
+| Sources and scope | Ten new entry GETs returned HTTP 200 on 2026-11-02; total 168 resources (166 HTTP 200/two historical HTTP 404). EO manifest confirms six root notebook filenames; its normalized checksum is retained separately. README, chapter and reference page cite source pins, creators, MIT/CC BY4 distinctions, Natural Earth, STAC/W3C standards and official ESA EarthCODE documentation. The integration is a proposal; no upstream merge, source execution certification, data/model request, cloud job or external publication is claimed. |
+
+Local evidence: `_build/eo-review-units.log`, `eo-review-build.log`, `eo-parent-ui.log`, `eo-review-browser.log`, `eo-review-runtime.log`, `eo-native-execution.json`, `eo-parent-preservation.json`, `browser/results.json` and `runtime-browser/results.json`. These receipts describe local verification; use the workflow above for the publication result of a revision.
+
+## Previous PHI outbreak verification
+
 The **2 November 2026 PHI outbreak update** adds Cholera Basic, Advanced1, Advanced2 and MDR-TB Thailand as four original browser companions. Basic is the second learning chapter. The atlas now contains **38 project chapters and 47 canonical notebooks**. The [publication workflow](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) records deployment for each commit.
 
 | Current check | Result |
@@ -66,7 +85,7 @@ python scripts/test_browser.py
 python scripts/check_runtime.py
 ```
 
-Install pinned browser-test requirements and Playwright Chromium first. An installed Chrome/Chromium can be selected with --browser-executable; ATLAS_TEST_BROWSER_EXECUTABLE selects it for source-UI tests. The standard runtime gate runs the ML foundation, Coral and all four PHI case companions in six separate fresh browser contexts. The additional local Ocean/Earth smoke executed unmodified canonical code plus numerical assertions and a unique marker, and checked the newly loaded SVG in the same executed cell; notebook windowing was handled by following that unique output to its actual cell.
+Install pinned browser-test requirements and Playwright Chromium first. An installed Chrome/Chromium can be selected with --browser-executable; ATLAS_TEST_BROWSER_EXECUTABLE selects it for source-UI tests. The standard runtime gate runs the ML foundation, Coral, all four PHI case companions and EO in seven separate fresh browser contexts. The additional local Ocean/Earth smoke executed unmodified canonical code plus numerical assertions and a unique marker, and checked the newly loaded SVG in the same executed cell; notebook windowing was handled by following that unique output to its actual cell.
 
 Ignored local evidence: _build/ocean-earth-execution-results.json, ocean-earth-execution-results-initial.json, ocean-earth-preservation-results.json, ocean-earth-units.log, ocean-earth-final-build.log, ocean-earth-browser.log, ocean-earth-browser/results.json and ocean-earth-runtime/results.json, with screenshots in the browser folders. Earlier baseline evidence is retained. Windows kernel connection files and browser processes required authorized execution outside the filesystem sandbox.
 

@@ -18,6 +18,30 @@ from phi_case_material import CASES as PHI_CASES
 ROOT=Path(__file__).resolve().parents[1]
 NOTEBOOK='foundations/learning-a-model.ipynb'
 CORAL_NOTEBOOK='projects/coral-reef-one-health/index.ipynb'
+EO_NOTEBOOK='projects/eo-satellite-guide/index.ipynb'
+EO_ASSERTIONS='''assert len(candidates) == 5 and len({row['mission'] for row in candidates}) == 4
+assert counts == {'draft':1, 'incompatible':2, 'unmapped':1, 'browse-static':1, 'check-api':0}
+assert [p['intent']['candidate'] for p in proposals] == ['optical-sr']
+assert proposals[0]['simulation'] is True and proposals[0]['status'] == 'proposal-only'
+assert proposals[0]['search'] == {'collections':['demo-optical-sr'], 'bbox':[-10,-5,10,5], 'datetime':'2024-06-01T00:00:00Z/2024-06-30T23:59:59Z', 'limit':3}
+changed, totals, drafts = discovery_plan(candidates, 'backscatter', 'GRD', bbox, start, end, limit)
+assert totals == {'draft':1, 'incompatible':4, 'unmapped':0, 'browse-static':0, 'check-api':0}
+assert [p['intent']['candidate'] for p in drafts] == ['radar-grd']
+edited = [dict(row) for row in candidates]
+edited[0]['item_search'] = False
+assert discovery_plan(edited, target_property, target_processing, bbox, start, end, limit)[1]['check-api'] == 1
+assert discovery_plan(edited, target_property, target_processing, bbox, start, end, limit)[2] == []
+edited[0]['item_search'] = True
+edited[0]['collection'] = None
+assert discovery_plan(edited, target_property, target_processing, bbox, start, end, limit)[1]['unmapped'] == 2
+assert discovery_plan(edited, target_property, target_processing, bbox, start, end, limit)[2] == []
+for bad_bbox, bad_start, bad_limit in [([10,-5,-10,5], start, limit), (bbox, '2024-07-01T00:00:00Z', limit), (bbox, '2024-6-1T00:00:00Z', limit), (bbox, start, 0)]:
+    try:
+        discovery_plan(candidates, target_property, target_processing, bad_bbox, bad_start, end, bad_limit)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError('Invalid query edits must stop before draft')'''
 CORAL_ASSERTIONS='''assert weights == (3.0, 1.0)
 assert abs(results['A']['index'] - 0.65) < 1e-12
 assert abs(results['B']['index'] - 0.35) < 1e-12
@@ -178,9 +202,11 @@ def main():
                     assert slug in PHI_CASES
                     results.append(execute_case(browser,base,output,args.timeout,
                         f'projects/{slug}/index.ipynb',assertions,expected_svg,slug))
+                results.append(execute_case(browser,base,output,args.timeout,EO_NOTEBOOK,EO_ASSERTIONS,
+                    'Fictional capability → discovery routes','eo'))
                 (output/'results.json').write_text(json.dumps({'status':'passed','cases':results,
                     'method':'Separate fresh browser context per case, Python kernel, canonical code plus numerical assertions and a unique marker; actual loaded SVG from the newly executed cell.',
-                    'limits':'Canonical ML, Coral and four original PHI fixtures only; no certification of external companion services.'},indent=2)+'\n',encoding='utf-8')
+                    'limits':'Canonical ML, Coral, four original PHI fixtures and original EO proposal fixture only; no certification of external companion services.'},indent=2)+'\n',encoding='utf-8')
             finally:browser.close()
     finally:server.terminate();server.wait(timeout=10);log.close()
 

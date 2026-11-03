@@ -4,7 +4,7 @@
 
 The open notebook, landscape, reef, people, charts and globe are **AI-generated conceptual illustration**, not a satellite image, geographic dataset, measured chart, actual reef or depiction of an actual research team. The image makes no health or model-performance claim. Original project artwork is offered under the repository's [CC BY4.0 content license](https://github.com/jltobias/JupyterLite-Learning-Atlas/blob/main/LICENSE-CONTENT.md); external services and linked resources retain their own terms. Attribution: **James L. Tobias and JupyterLite Learning Atlas contributors (2026), AI-generated with OpenAI image generation.** No institutional endorsement is implied.
 
-This raster illustration replaces the README cover. The earlier code-generated `splash.svg` remains the website/Book illustration and is separately documented in [PROVENANCE.md](PROVENANCE.md).
+This unchanged raster illustration is the README and opening Book/Lab notebook cover. The earlier code-generated `splash.svg` remains the website illustration and is separately documented in [PROVENANCE.md](PROVENANCE.md).
 
 Artifact: PNG, 1774 ×887 pixels, 2,450,981 bytes. SHA-256: `09b30e50095b2286df7ea0a1556fd447d1124c83b3ab5dfc68fab4c29877b0f9`. The selected image is copied unchanged from the built-in tool output; no post-generation image editing was used.
 

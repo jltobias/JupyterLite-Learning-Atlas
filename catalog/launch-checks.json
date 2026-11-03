@@ -1,7 +1,7 @@
 {
   "checked_on": "2026-11-02",
   "baseline_checked_on": "2026-11-01",
-  "method": "HTTP GET entry reachability only. Original 134 rows retained verbatim from checks on 2026-11-01; original rows without checked_on retain that 2026-11-01 date. Targeted Coral addition: eleven exact source/provider entry checks on 2026-11-02, first 512 bytes only. No full reinspection, notebook-target or service functional certification. Targeted PHI addition: thirteen source entry GETs on 2026-11-02, using reviewed README URLs or explicitly observed deployment workflow/manifests. Prior 145 rows preserved; no source execution or Binder build/session started. Published contents manifests are separately normalized under manifest_evidence; these metadata checks add no launch rows.",
+  "method": "HTTP GET entry reachability only. Original 134 rows retained verbatim from checks on 2026-11-01; original rows without checked_on retain that 2026-11-01 date. Targeted Coral addition: eleven exact source/provider entry checks on 2026-11-02, first 512 bytes only. No full reinspection, notebook-target or service functional certification. Targeted PHI addition: thirteen source entry GETs on 2026-11-02, using reviewed README URLs or explicitly observed deployment workflow/manifests. Prior 145 rows preserved; no source execution or Binder build/session started. Published contents manifests are separately normalized under manifest_evidence; these metadata checks add no launch rows. Targeted EO addition: ten exact EO/ESA entry GETs on 2026-11-02, all HTTP 200, extending 158 preserved rows to 168 (166 HTTP 200, two historical HTTP 404). Separate normalized EO manifest metadata confirms six notebook filenames only.",
   "results": [
     {
       "repository": "JupyterLite-Data-Visualization",
@@ -891,6 +891,76 @@
       "status": 200,
       "resolved_url": "https://mybinder.org/v2/gh/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand/master",
       "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/explorer/",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/explorer/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/book/intro.html",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/book/intro.html",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=01_constellation_poster.ipynb",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=01_constellation_poster.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=02_sensor_comparison.ipynb",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=02_sensor_comparison.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=03_hyperspectral_land.ipynb",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=03_hyperspectral_land.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=04_orbits_and_resolution.ipynb",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=04_orbits_and_resolution.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=05_observation_to_public_health.ipynb",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=05_observation_to_public_health.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=06_knowledge_graph_and_curation.ipynb",
+      "status": 200,
+      "resolved_url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=06_knowledge_graph_and_curation.ipynb",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://earthcode.esa.int/",
+      "status": 200,
+      "resolved_url": "https://earthcode.esa.int/",
+      "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://opensciencedata.esa.int/products/catalog",
+      "status": 200,
+      "resolved_url": "https://opensciencedata.esa.int/products/catalog",
+      "checked_on": "2026-11-02"
     }
   ],
   "baseline_results": {
@@ -928,6 +998,23 @@
         "NB05-Cholera-Case-Study-Inspiration-and-To-Do-List.ipynb"
       ],
       "limits": "Published root notebook filenames only; no source execution, widget, tile or provider behavior certified."
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/api/contents/all.json",
+      "checked_on": "2026-11-02",
+      "source_commit": "2c607525ab06f52c77192889b2f01c5621714d0e",
+      "sha256": "0e3514a09d0f4d432430ad6ae1a1867e30bbd7a20096bdddec9200173781d74e",
+      "normalization": "UTF-8 JSON object, sort_keys=True, ensure_ascii=False, separators=(comma,colon), no whitespace",
+      "confirmed_notebook_basenames": [
+        "01_constellation_poster.ipynb",
+        "02_sensor_comparison.ipynb",
+        "03_hyperspectral_land.ipynb",
+        "04_orbits_and_resolution.ipynb",
+        "05_observation_to_public_health.ipynb",
+        "06_knowledge_graph_and_curation.ipynb"
+      ],
+      "limits": "Published root notebook filenames only; no source execution, widget, provider or EarthCODE behavior certified."
     }
   ]
 }

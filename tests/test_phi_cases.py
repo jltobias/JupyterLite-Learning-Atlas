@@ -242,7 +242,7 @@ class PHIIntegrationTests(unittest.TestCase):
         manifests = {item['repository']: item for item in audit['manifest_evidence']}
         checksums = {'cholera-1854-basic': '9719e69cd9c0a58a92e9f72010cbd61ccf605b798672f1af25f7446464f34369',
                      'cholera-1854-advanced-1': 'afade817393c60e3a89d66077a726a9ea3e76d0b061273440774528696b7b602'}
-        self.assertEqual(set(manifests), {CASES[slug]['name'] for slug in checksums})
+        self.assertTrue({CASES[slug]['name'] for slug in checksums} <= set(manifests))
         for slug, checksum in checksums.items():
             case = CASES[slug]
             evidence = manifests[case['name']]
@@ -267,7 +267,7 @@ class PHIIntegrationTests(unittest.TestCase):
                   (ROOT/'REFERENCES.md').read_text(encoding='utf-8'),
                   nbformat.read(ROOT/'content/references.ipynb', as_version=4).cells[0].source]
         for text in shared:
-            section = group+text.split(group, 1)[1]
+            section = group+text.split(group, 1)[1].split('\n## ', 1)[0]
             self.assertEqual([line for line in section.splitlines() if line.startswith('## ')], [group])
             self.assertEqual([line for line in section.splitlines() if line.startswith('### ')], expected)
         for slug, case in CASES.items():

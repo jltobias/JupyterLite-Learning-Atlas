@@ -393,9 +393,17 @@
       "url": "https://github.com/PHI-Case-Studies/2005-MDR-TB-Outbreak-Thailand",
       "owner": "PHI-Case-Studies",
       "inspected_on": "2026-11-02"
+    },
+    {
+      "name": "JupyterLite-EO-Satellite-Guide",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-EO-Satellite-Guide",
+      "owner": "jltobias",
+      "inspected_on": "2026-11-02"
     }
   ],
-  "method": "Public-only GitHub connector inventory inspected 2026-11-01 (59 records), plus one targeted public Coral Reef One Health source addition verified 2026-11-02 (60 records). Existing records were retained without full reinspection; included source README is pinned to its inspected commit.; index record renamed to JupyterLite-Learning-Atlas on 2026-11-02 with repository identity verified (catalog/repository-rename.json); four external PHI-Case-Studies sources added through targeted commit/notebook/rights/deployment review on 2026-11-02 (64 public records total). The owner field describes the baseline inventory; external records have their own explicit owner.",
+  "method": "Public-only GitHub connector inventory inspected 2026-11-01 (59 records), plus one targeted public Coral Reef One Health source addition verified 2026-11-02 (60 records). Existing records were retained without full reinspection; included source README is pinned to its inspected commit.; index record renamed to JupyterLite-Learning-Atlas on 2026-11-02 with repository identity verified (catalog/repository-rename.json); four external PHI-Case-Studies sources added through targeted commit/notebook/rights/deployment review on 2026-11-02 (64 public records total). The owner field describes the baseline inventory; external records have their own explicit owner. One targeted EO Satellite Guide source added on 2026-11-02: 65 public records total; all 64 prior records retained.",
   "baseline_inspection": {
     "inspected_on": "2026-11-01",
     "repository_count": 59,
@@ -435,6 +443,13 @@
       "inspected_on": "2026-11-02",
       "source_commit": "6d50f558cd39b40089cd3eea1fbc19425e5191d1",
       "scope": "Targeted external PHI teaching case; prior discovery/source records retained without full reinspection."
+    },
+    {
+      "repository": "JupyterLite-EO-Satellite-Guide",
+      "owner": "jltobias",
+      "inspected_on": "2026-11-02",
+      "source_commit": "2c607525ab06f52c77192889b2f01c5621714d0e",
+      "scope": "Targeted EO source, six notebooks, rights and published-manifest review; all 64 prior discovery records retained without full reinspection."
     }
   ]
 }

@@ -67,6 +67,8 @@ parts:
     title: Global-Fishing-Watch-and-Dark-Vessels - Observe vessels, preserve uncertainty
   - file: projects/stac-browser/index
     title: STAC-Browser - Discover assets without reading pixels
+  - file: projects/eo-satellite-guide/index
+    title: EO-Satellite-Guide - From an EO poster to defensible discovery
 - caption: AI & human decisions
   chapters:
   - file: projects/ai-agents-and-orchestrator-six-thinking-hats/index

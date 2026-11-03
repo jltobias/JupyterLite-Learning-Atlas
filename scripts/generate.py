@@ -12,6 +12,7 @@ from lesson_material import HEALTH_LESSONS, LESSONS, PATHS
 from ocean_earth_material import CUBE_CODE, CUBE_INTRO, CUBE_INTERPRET, EARTH_LESSONS, earth_overview, ocean_overview
 from coral_material import coral_overview
 from phi_case_material import CASES as PHI_CASES, chapter_cells as phi_chapter_cells
+from eo_material import chapter_cells as eo_chapter_cells, STAC_CONNECTION
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/repositories.json"
@@ -100,6 +101,9 @@ def health_table():
 
 
 def seed_project(r):
+    if r['slug'] == 'eo-satellite-guide':
+        notebook(r['notebook'], eo_chapter_cells(r, md, code, HELPERS), kind='project', repository=r['name'])
+        return
     if r['slug'] in PHI_CASES:
         notebook(r['notebook'], phi_chapter_cells(r, md, code, HELPERS), kind='project', repository=r['name'])
         return
@@ -141,6 +145,8 @@ def seed_project(r):
         cells[0] = md(cells[0]["source"].replace(summary, r["summary"]))
         cells[6] = md(cells[6]["source"].replace(limitation, r["limitations"]))
         cells[5:5] = [md(CUBE_INTRO), code(CUBE_CODE), md(CUBE_INTERPRET), md(earth_overview(EARTH_LESSONS))]
+    if key == "STAC-Browser":
+        cells.insert(6, md(STAC_CONNECTION))
     notebook(r["notebook"], cells, kind="project", repository=r["name"])
 
 
@@ -153,7 +159,7 @@ def seed_foundations(records):
         links = " → ".join(f"[{known[k]['title']}]({known[k]['notebook']})" for k in keys if k in known)
         path_links.append(f"### {title}\n\n{subtitle}.\n\n{links}")
     notebook("index.ipynb", [
-        md(f"# The JupyterLite Learning Atlas\n\n**James L. Tobias · a browser, a question, a world to explore**\n\n![The learning atlas: geography, notebooks and shared decisions](assets/splash.svg)\n\nDiscover **{len(records)} public projects**: {prefixed_count} core JupyterLite-named repositories by jltobias plus {related_count} related browser/teaching projects (three prior related and four external PHI cases). Each has an original, small companion exercise. Read this Book, then run the same chapter notebooks in the bundled Lab. No account, API key, desktop GIS or data-service connection is required for these defaults. The four source visibility changes are complete; GitHub Actions builds and publishes this index from `main`; see the [workflow status](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) for deployment results.\n\nStart with [browser Python](foundations/browser-python.ipynb), [1854 Cholera Basic](projects/cholera-1854-basic/index.ipynb), [spatial thinking](foundations/spatial-thinking.ipynb), and [evidence, AI and empathy](foundations/evidence-ai.ipynb). The Book displays executed outputs; the Lab lets you change assumptions.\n\nAll local exercises use synthetic values or authored teaching metadata. They do not estimate real health outcomes or reproduce a source model. External companion projects can have different data, dependencies, credentials and licenses."),
+        md(f"# The JupyterLite Learning Atlas\n\n**James L. Tobias · a browser, a question, a world to explore**\n\n![The JupyterLite Learning Atlas: an open notebook becomes a coastal landscape and coral reef, with an Earth globe, satellite and people learning together.](assets/splash-v2.png)\n\n*AI-generated conceptual illustration. [Generation prompt, provenance and credits](https://github.com/jltobias/JupyterLite-Learning-Atlas/blob/main/assets/SPLASH-PROVENANCE.md).*\n\nDiscover **{len(records)} public projects**: {prefixed_count} core JupyterLite-named repositories by jltobias plus {related_count} related browser/teaching projects (three prior related and four external PHI cases). Each has an original, small companion exercise. Read this Book, then run the same chapter notebooks in the bundled Lab. No account, API key, desktop GIS or data-service connection is required for these defaults. The four source visibility changes are complete; GitHub Actions builds and publishes this index from `main`; see the [workflow status](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) for deployment results.\n\nStart with [browser Python](foundations/browser-python.ipynb), [1854 Cholera Basic](projects/cholera-1854-basic/index.ipynb), [spatial thinking](foundations/spatial-thinking.ipynb), and [evidence, AI and empathy](foundations/evidence-ai.ipynb). The Book displays executed outputs; the Lab lets you change assumptions.\n\nAll local exercises use synthetic values or authored teaching metadata. They do not estimate real health outcomes or reproduce a source model. External companion projects can have different data, dependencies, credentials and licenses."),
         md("## Choose a route\n\n" + "\n\n".join(path_links)),
         md("## Rewiring Global Health in the Age of AI\n\nThe [featured course chapter](projects/rewiring-global-health/index.ipynb) preserves links to all ten source lessons. The [cross-project synthesis](synthesis/global-health.ipynb) connects observation, assumptions, privacy, empathy and accountable review.\n\n![Evidence to action](assets/evidence-to-action.svg)\n\nOriginal atlas diagrams: James L. Tobias and contributors, CC BY 4.0. [Visual provenance](visual-provenance.ipynb).\n\n## A useful workshop rhythm\n\nPredict → run → interpret → change one assumption → discuss who benefits or could be harmed → save a decision record. Treat a vivid map as a question worth examining, not proof.\n\n[Contributor guide](contributor-guide.ipynb) · [References](references.ipynb)"),
         code(HELPERS), code("counts = {}\nfor theme in "+repr([r['theme'] for r in records])+":\n    counts[theme] = counts.get(theme,0)+1\nbars(counts, 'Public catalog themes — repository metadata', 'repositories')"),

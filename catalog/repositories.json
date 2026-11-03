@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "inspected_on": "2026-11-02",
-  "scope": "31 public core JupyterLite-named repositories owned by jltobias, plus 3 prior related browser projects and 4 external PHI-Case-Studies teaching projects (38 chapters); excludes the index. Baseline inventory/README inspection 2026-11-01; targeted Coral and PHI reviews 2026-11-02, without full reinspection of prior sources.",
+  "scope": "32 public core JupyterLite-named repositories owned by jltobias, plus 3 prior related browser projects and 4 external PHI-Case-Studies teaching projects (39 chapters); excludes the index. Baseline inventory/README inspection 2026-11-01; targeted Coral, PHI and EO reviews 2026-11-02, without full reinspection of prior sources.",
   "repositories": [
     {
       "name": "JupyterLite-Data-Visualization",
@@ -2380,6 +2380,120 @@
         ],
         "launch_provenance": "reviewed README"
       }
+    },
+    {
+      "name": "JupyterLite-EO-Satellite-Guide",
+      "title": "From an EO poster to defensible discovery",
+      "slug": "eo-satellite-guide",
+      "theme": "Terrain & Earth observation",
+      "summary": "Explore satellite platform/sensor/product capabilities in the EO Satellite Guide, then route five fictional products toward a proposed STAC Browser and ESA EarthCODE workflow with explicit unknown, static and API states.",
+      "status": "learning companion",
+      "category": "jupyterlite",
+      "learning_question": "How can an EO capability become a bounded discovery proposal while preserving missing mappings, product levels and API boundaries?",
+      "source_url": "https://github.com/jltobias/JupyterLite-EO-Satellite-Guide",
+      "readme_url": "https://github.com/jltobias/JupyterLite-EO-Satellite-Guide/blob/2c607525ab06f52c77192889b2f01c5621714d0e/README.md",
+      "default_branch": "main",
+      "source_commit": "2c607525ab06f52c77192889b2f01c5621714d0e",
+      "inspected_on": "2026-11-02",
+      "visibility": "public",
+      "notebook": "projects/eo-satellite-guide/index.ipynb",
+      "book_path": "book/projects/eo-satellite-guide/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/eo-satellite-guide/index.ipynb",
+      "resources": [
+        {
+          "kind": "explorer",
+          "label": "Explore the source constellation poster",
+          "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/explorer/",
+          "description": "Search capabilities and inspect linked platform, sensor and product evidence in the source poster.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "book",
+          "label": "Read the source EO Book",
+          "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/book/intro.html",
+          "description": "Read the source introduction and six-lesson satellite discovery course.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 01",
+          "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=01_constellation_poster.ipynb",
+          "description": "Navigate the poster, unfold sensor/product evidence and compare capabilities. Source dependencies and terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 02",
+          "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=02_sensor_comparison.ipynb",
+          "description": "Query local metadata, preserve nulls and export contextual CSV. Source dependencies and terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 03",
+          "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=03_hyperspectral_land.ipynb",
+          "description": "Synthetic spectra and band averaging; radiance is not reflectance (source cites ARSET). Source dependencies and terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 04",
+          "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=04_orbits_and_resolution.ipynb",
+          "description": "Generic circular orbits, period/repeat/cadence and native sampling versus resampled grids; not ephemerides. Source dependencies and terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 05",
+          "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=05_observation_to_public_health.ipynb",
+          "description": "An evidence/health worksheet and historical versus modern sensors; medical claims are not independently reviewed here. Source dependencies and terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source lesson 06",
+          "url": "https://jltobias.github.io/JupyterLite-EO-Satellite-Guide/lab/index.html?path=06_knowledge_graph_and_curation.ipynb",
+          "description": "SOSA/DCAT/PROV profiles, evidence validation and graph export. Source dependencies and terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "hub",
+          "label": "Visit ESA EarthCODE",
+          "url": "https://earthcode.esa.int/",
+          "description": "Discover the ESA EarthCODE open-science ecosystem, resources and workflow context; no publication or execution is performed here.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Browse ESA Open Science Catalog",
+          "url": "https://opensciencedata.esa.int/products/catalog",
+          "description": "Explore EarthCODE missions, variables, projects and products; workflow records use OGC API Records rather than a universal raster Item schema.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-02",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "Ten exact EO/ESA entry GETs returned HTTP 200 on 2026-11-02; entry reachability and separate manifest filenames only, not source execution or provider service certification.",
+      "attribution": "jltobias / James L. Tobias and EO Satellite Guide contributors, original source MIT; third-party materials retain their terms. Natural Earth source geometry credited separately; atlas fixture, SVG and prose original.",
+      "limitations": "The poster shows representative capability metadata, not live ephemerides or actual acquisitions. The original atlas default uses fictional IDs and no network. STAC Browser/EarthCODE integration is a documented proposal, not an importer, merged connector or published workflow. Provider rights, CORS, optional authentication, resources and review remain separate."
     }
   ]
 }

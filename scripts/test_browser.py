@@ -12,6 +12,7 @@ from urllib.parse import parse_qs, urlsplit
 import nbformat
 from playwright.sync_api import sync_playwright
 from phi_case_material import CASES as PHI_CASES
+from eo_material import FILES as EO_FILES, PIN as EO_PIN
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE='http://127.0.0.1:8766/JupyterLite-Learning-Atlas/'
@@ -168,6 +169,103 @@ def check_phi_cases(page, browser, records, output, checks):
     checks.append('Four PHI Book routes, 20 pinned source notebooks, 13 launch resources, reciprocal links, Lab handoffs, mobile width and unclipped accessible SVGs')
 
 
+def check_eo(page, browser, records, output, checks):
+    """Require the actual shared cover, EO discovery, reciprocal links and figure."""
+    record=next(r for r in records if r['slug']=='eo-satellite-guide')
+    page.goto(BASE+'book/index.html')
+    article=page.locator('article.bd-article')
+    cover=article.locator('img[src*="splash-v2.png"]')
+    cover.wait_for()
+    page.wait_for_function("image=>image.complete&&image.naturalWidth===1774&&image.naturalHeight===887",arg=cover.element_handle())
+    assert cover.get_attribute('alt')=='The JupyterLite Learning Atlas: an open notebook becomes a coastal landscape and coral reef, with an Earth globe, satellite and people learning together.'
+    assert article.locator('a[href="https://github.com/jltobias/JupyterLite-Learning-Atlas/blob/main/assets/SPLASH-PROVENANCE.md"]').count()==1
+    assert article.locator('a[href="projects/eo-satellite-guide/index.html"]').count()==1
+    page.screenshot(path=str(output/'opening-book-cover.png'),full_page=True)
+    page.set_viewport_size({'width':390,'height':844})
+    check_mobile_book_width(page,'opening-cover')
+    page.screenshot(path=str(output/'opening-book-cover-mobile.png'),full_page=True)
+    page.set_viewport_size({'width':1440,'height':1000})
+
+    context=browser.new_context(viewport={'width':1440,'height':1000})
+    try:
+        lab=context.new_page()
+        response=lab.goto(BASE+'lite/lab/index.html?path=index.ipynb',wait_until='domcontentloaded')
+        assert response and response.status==200
+        lab.locator('.jp-Notebook').wait_for(timeout=90000)
+        # JupyterLite resolves bundled Markdown images to data URLs.
+        lab_cover=lab.get_by_role('img',name=cover.get_attribute('alt'),exact=True)
+        lab_cover.wait_for(timeout=30000)
+        lab.wait_for_function("image=>image.complete&&image.naturalWidth===1774&&image.naturalHeight===887",arg=lab_cover.element_handle())
+        displayed_hash=lab_cover.evaluate("""async image=>{
+            const bytes=await (await fetch(image.currentSrc||image.src)).arrayBuffer();
+            const digest=await crypto.subtle.digest('SHA-256',bytes);
+            return [...new Uint8Array(digest)].map(value=>value.toString(16).padStart(2,'0')).join('');
+        }""")
+        assert displayed_hash=='09b30e50095b2286df7ea0a1556fd447d1124c83b3ab5dfc68fab4c29877b0f9'
+        assert 'open notebook becomes a coastal landscape' in lab_cover.get_attribute('alt')
+        lab.screenshot(path=str(output/'opening-lab-cover.png'))
+    finally:
+        context.close()
+    checks.append('Same 1774×887 README PNG actually loads in opening Book and fresh Lab, with alt/credit and mobile Book width')
+
+    page.goto(BASE+'explore/')
+    page.locator('#projects article').first.wait_for()
+    page.locator('#theme').select_option(record['theme'])
+    for query in ['EO Satellite Guide','EarthCODE']:
+        page.locator('#query').fill(query)
+        card=page.locator('.resource[data-slug="eo-satellite-guide"]')
+        assert card.is_visible(),query
+        assert page.locator('#query').evaluate('(element)=>element===document.activeElement')
+        assert parse_qs(urlsplit(page.url).query)['q']==[query]
+        card.locator('summary').click()
+        assert card.locator('details').evaluate('(element)=>element.open')
+        for resource in record['resources']:
+            assert card.locator(f'a[href="{resource["url"]}"]').is_visible()
+        assert card.locator(f'a[href="{record["readme_url"]}"]').is_visible()
+    page.screenshot(path=str(output/'eo-earthcode-explorer.png'),full_page=True)
+
+    response=page.goto(BASE+record['book_path']);assert response and response.status==200
+    article=page.locator('article.bd-article')
+    run=page.get_by_role('link',name='Run this notebook in Lab');run.wait_for()
+    assert run.get_attribute('href')=='/JupyterLite-Learning-Atlas/lite/lab/index.html?path=projects%2Feo-satellite-guide%2Findex.ipynb'
+    for filename,_ in EO_FILES:
+        assert article.locator(f'a[href="{EO_PIN}notebooks/{filename}"]').count()>=1
+    for resource in record['resources']:
+        assert article.locator(f'a[href="{resource["url"]}"]').count()>=1
+    for url in ['https://www.w3.org/TR/vocab-ssn/','https://www.w3.org/TR/vocab-dcat-3/',
+                'https://www.w3.org/TR/prov-o/','https://www.naturalearthdata.com/about/terms-of-use/',
+                'https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md']:
+        assert article.locator(f'a[href="{url}"]').count()>=1,url
+    assert article.locator('a[href="../stac-browser/index.html"]').count()>=1
+    assert 'OGC API Records' in article.inner_text()
+    assert article.locator('.cell_output img, .cell_output svg').count()>=1
+    page.screenshot(path=str(output/'eo-book-desktop.png'),full_page=True)
+    page.set_viewport_size({'width':390,'height':844})
+    check_mobile_book_width(page,'eo')
+    page.screenshot(path=str(output/'eo-book-mobile.png'),full_page=True)
+    page.set_viewport_size({'width':1440,'height':1000})
+    page.goto(BASE+'book/projects/stac-browser/index.html')
+    assert page.locator('article.bd-article a[href="../eo-satellite-guide/index.html"]').count()==1
+
+    notebook=nbformat.read(ROOT/'content'/record['notebook'],as_version=4)
+    figures=[o.data['image/svg+xml'] for c in notebook.cells if c.cell_type=='code'
+             for o in c.outputs if 'image/svg+xml' in o.get('data',{})]
+    assert len(figures)==1,'Expected executed EO route figure'
+    figure_page=browser.new_page(viewport={'width':1440,'height':1000})
+    try:
+        figure_page.set_content(figures[0])
+        assert figure_page.locator('svg[role="img"][aria-label] title').text_content()
+        assert 'unknown (None)' in figure_page.locator('svg desc').text_content()
+        assert figure_page.locator('svg g[data-route]').count()==5
+        assert figure_page.locator('svg g[data-route="draft"] .route-mark').get_attribute('x')=='440'
+        clipped=figure_page.locator('svg').evaluate('''s=>{const v=s.viewBox.baseVal;return [...s.querySelectorAll('text')].filter(t=>{const b=t.getBBox();return b.x<0||b.y<0||b.x+b.width>v.width||b.y+b.height>v.height}).map(t=>t.textContent)}''')
+        assert not clipped,clipped
+        figure_page.screenshot(path=str(output/'eo-route-figure.png'))
+    finally:
+        figure_page.close()
+    checks.append('EO/EarthCODE explorer, six pinned source lessons, ten resources, primary citations, reciprocal STAC links, Lab handoff, mobile width and actual unclipped route SVG')
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--browser-executable');args=parser.parse_args()
     output=ROOT/'_build/browser';output.mkdir(parents=True,exist_ok=True)
@@ -224,6 +322,7 @@ def main():
             checks.append('search, theme/type/status filters, URL state, empty state, reset/focus, source disclosure, related separation')
             check_coral(page,browser,records,output,checks)
             check_phi_cases(page,browser,records,output,checks)
+            check_eo(page,browser,records,output,checks)
             page.goto(BASE+'teach/');page.locator('#teaching-table tr').first.wait_for()
             assert page.locator('#teaching-table tr').count()==16
             before=page.locator('#view-summary').inner_text()
