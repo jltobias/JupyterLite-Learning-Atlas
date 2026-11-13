@@ -1,0 +1,604 @@
+{
+  "notice": "Source-cell test fixtures derived from PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic, commit 476f6dd5a8430e6eb823e79614fda1d7e12a78fb. PHI-Case-Studies and contributors; the source contact credits name Herman Tolentino, Jan MacGregor, James Tobias and Zhanar Haimovich. Contacts do not establish sole authorship. Scoped GPL-3.0; see content/courses/cholera-1854-basic/LICENSE. These fixtures retain source text only; outputs, attachments and embedded data media are excluded. Third-party historical media are not redistributed.",
+  "commit": "476f6dd5a8430e6eb823e79614fda1d7e12a78fb",
+  "notebooks": {
+    "NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb": {
+      "original_sha256": "81058a5ea4d3d29e08210d36ff207e9394dbdfe7b55360349aff01a8b295515d",
+      "original_cell_sha256": "022e0845eb15e3042063a946e8843fe04b55cdaa1f849c2e5cc9f330491780c3",
+      "sanitization": "One unclear embedded historical figure is represented by its existing Atlas omission text; no media bytes are retained.",
+      "cells": [
+        {
+          "cell_type": "markdown",
+          "source": "**IMPORTANT:** If you are running this notebook for the first time, please run the first code cell below by pressing Shift-Enter while in it. If not, please skip it. This digital case study has been developed for Jupyter Notebook Python 3 kernel."
+        },
+        {
+          "cell_type": "code",
+          "source": "%run ./resources/library.py"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "The <font color='red'>`style_notebook()`</font> function increases the font size to improve readability. You can skip the cell below if you don't need a larger font size."
+        },
+        {
+          "cell_type": "code",
+          "source": "style_notebook()"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "# Notebook 1: Basic Web Mapping Techniques with Data from the John Snow Cholera Outbreak"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "In this notebook, we will learn about the approach that Dr. John Snow used when he solved the cholera outbreak in London in 1854. Let's watch a short video about the Cholera Outbreak in 1854 London. \n\n> Run any of the two code cells below (pick Option 1 or 2):\n>* **Option 1:** YouTube (runs on Microsoft Azure and BinderHub Notebook Services)\n>* **Option 2:** Run local video file"
+        },
+        {
+          "cell_type": "code",
+          "source": "\"\"\"\n    Option 1: YouTube (runs in Microsoft Azure and BinderHub environment)\n\n\"\"\" \nshow_youtube(\"https://www.youtube.com/embed/lNjrAXGRda4\",900,600)"
+        },
+        {
+          "cell_type": "code",
+          "source": "\"\"\"\n    Option 2: Run local Video File (in resources folder)\n\n\"\"\"\nshow_video_file(\"resources/John Snow Cholera 23MB.mp4\",900,600)"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## Learning Objectives (Tier 1)"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "By the end of this case study the participants should be able to:\n\n**Case Study / Jupyter Notebook Process**\n1. Log in to Jupyter Notebook Server or Launch a BinderHub Case Study.\n2. Open a Jupyter Notebook from the Jupyter Notebook interface.\n3. Physically navigate through the code cells of the Jupyter Notebook Digital Case Study using <mark>`Shift-Enter`</mark>\n4. Combine code from different code cells into one.\n5. Type answers to questions on designated Jupyter Notebook `MarkDown` cells\n6. Write basic Python code on designated Jupyter Notebook code cells (for example, display a dataframe, display a map, alter or type Python code)\n7. Access case study references by clicking on links embedded in Jupyter Notebook pages\n\n**Case Study Content (Disease Domain, Public Health Action, Informatics)**\n1. Explain the role of information technology (paper or digital) in public health practice\n2. Describe the steps taken to draw the John Snow cholera Map\n3. Describe the potential benefit of information technology to the 1850 cholera outbreak investigation (if John Snow had the technology you have now, how would this benefit the investigation?)\n4. Identify the value generated at each iteration of the Information Value Cycle in the cholera outbreak investigation\n5. Contribute to group discussions with case study team (if class format includes group discussions)"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Using Lessons Learned from Dr. John Snow (1854) and Soho District Cholera Map</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "<img src=\"./images/John_Snow.png\" alt=\"John Snow\" style=\"float:left; padding-right:20px;\"/>\n\nDr. John Snow was a physician from London in 1854 when a cholera outbreak occurred in the Soho district. Soho is an area of the City of Westminster, in the West End of London. \n\nIt was common that waste water was collected within wooden buckets in the basements of London homes in 1854.  There were men known as the \"Night Soil Men\" that would come to a home to collect waste buckets and dispose of the waste.  London was plagued with many illnesses, stench, and disease. \n\nThere was widespread belief that **\"Miasma\"** or bad air and stench was the cause of the cholera outbreak in Soho district.\n\nDr. Snow was skeptical of the Miasma theory and was certain that cholera was likely a water-borne illness. In addition to his systematic process of determining how cholera is transmitted, he began to create maps of the Cholera deaths in Soho and to map the locations of water pumps within the neighborhood. "
+        },
+        {
+          "cell_type": "markdown",
+          "source": "> **John Snow Accounts**\n>  \n> “Within 250 yards of the spot where Cambridge Street joins Broad Street there were upwards of 500 fatal attacks of cholera in 10 days,” Dr. Snow wrote  “As soon as I became acquainted with the situation and extent of this irruption (sic) of cholera, I suspected some contamination of the water of the much-frequented street-pump in Broad Street.”\n>\n> \"Dr. Snow worked around the clock to track down information from hospital and public records on when the outbreak began and whether the victims drank water from the Broad Street pump. Snow suspected that those who lived or worked near the pump were the most likely to use the pump and thus, contract cholera.\""
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Vibrio Cholera"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "<img src=\"./images/Cholera_bacteria_SEM.png\" alt=\"cholera vibrio\" width=400 style=\"float: right; padding: 10px 10px 10px 0px\"/>\n\nThis is a scanning electron microscope picture of *Vibrio Cholera*, the microorganism responsible for causing Cholera. \n\nInfection with *V. cholerae* begins with the ingestion of contaminated food or water.\nAfter oral ingestion and passage through the acid barrier of the stomach, the organism colonizes the lining wall of the small intestine. Cholera enterotoxin produced by the adherent vibrios is secreted across the bacterial outer membrane into the extracellular environment and disrupts ion transport by intestinal epithelial cells. The subsequent\nloss of water and electrolytes leads to the severe diarrhoea characteristic of cholera [[WHO](http://www.who.int/water_sanitation_health/dwq/admicrob6.pdf)]."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Discussion Questions"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "1. According to popular belief in 1854 London, what was the cause of cholera?\n2. John Snow walked door to door to collect data that he used to draw a paper map. What modern tools could he have used to be more efficient in collecting outbreak data?\n\n   a. To collect and record data: (answer here)  \n   b. To draw maps: (answer here)   "
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Case Study Scenario</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "<img src=\"./images/tardis.jpeg\" alt=\"cholera vibrio\" width=300px style=\"float: left; padding: 10px 10px 10px 0px\"/> For this case study you need a time machine to travel back in time to 1854. Fortunately, you were invited by Dr. Who to travel on the [TARDIS](http://www.thedoctorwhosite.co.uk/tardis/) to 1854 London to observe Dr.John Snow and develop some insights into how effective data management and community engagement can help solve an outbreak.\n\nThe TARDIS is the time machine, shaped as a police box, that Dr. Who, the Gallifreyan Time Lord, uses to travel through time and space. TARDIS stands for <font color='red'>T</font>-ime <font color='red'>A</font>-nd <font color='red'>R</font>-elative <font color='red'>D</font>-imension <font color='red'>I</font>-n <font color='red'>S</font>-pace.\n\nWe will carry out five data management steps in this notebook to create **value** out of data:\n\n**<font color='red'>Step 1</font>**. Collect the data (locations of pumps and deaths) and load these into `pandas` \"dataframes\"\n \n**<font color='red'>Step 2</font>**. Recreate the basemap of Soho District using `folium` and apply themes for amplified cognition.\n \n**<font color='red'>Step 3</font>**. Add the mortality data as data points to the basemap\n \n**<font color='red'>Step 4</font>**. Add the water pump data as data points to the basemap\n \n**<font color='red'>Step 5</font>**. Bring all code together in one map display"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 1. Collect the data (pump locations and deaths) and load these into dataframes</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Loading Cholera mortality and pump data"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "After we have helped Dr. John Snow convert the data to *comma-separated values* (CSV) files, we will use the Python package called [`pandas`](https://pandas.pydata.org/) to extract the data about cholera deaths and pumps from CSV files.\n\nPlease run the next three code cells below to (1) import the `pandas` package, (2) read a Comma-Separated Value (CSV) file of Cholera deaths and pumps into their respective dataframes, and (3) display the dataframes. You can read more about `pandas` [here](https://pandas.pydata.org/). You can also read more about `pandas` dataframes [here](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "![Pandas and Swiss Knife](./images/swissknifepandas.png) "
+        },
+        {
+          "cell_type": "markdown",
+          "source": "You may have mistaken the term `pandas` for the beautiful mammals in the picture above. The `pandas`library is such a versatile tool you will not forget how to use it. It's like a multi-tool (Swiss) knife for processing data."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "<font color=red>`read_csv()`</font> is a `pandas` dot function to read data from CSV files. Note that in the code above the text after the hash symbol `#` are comments and do not get executed. It's good to comment your code so you will remember what it does. Try adding some more commnents to the code to help you understand and remember what the code does in plain language."
+        },
+        {
+          "cell_type": "code",
+          "source": "!pip install pandas numpy"
+        },
+        {
+          "cell_type": "code",
+          "source": "# Press Shift-Enter\n# Import pandas for use. Use pd as an alias for pandas.\nimport pandas as pd\npd.__version__"
+        },
+        {
+          "cell_type": "code",
+          "source": "# Read the comma-delimited text file (.csv) of cholera deaths and create a dataframe.\ndeaths_df = pd.read_csv('resources/cholera_deaths.csv')"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "> Let's display the `deaths_df` dataframe. You can use the `pandas` <font color='red'>`.head()`</font> dot function to display just the first five records (default is 5 records). You can display more or less by adding the number of records to `.head()`: `.head(10)` displays 10 records, `.head(50)` displays 50 records. Note that we use a `_df` suffix to help us remember `deaths_df` is a dataframe."
+        },
+        {
+          "cell_type": "code",
+          "source": "deaths_df.head()"
+        },
+        {
+          "cell_type": "code",
+          "source": "# Read the comma-delimited text file (.csv) of water pumps and create a dataframe.\npumps_df = pd.read_csv('resources/pumps.csv')"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "> Now it's your turn to type some Python code..."
+        },
+        {
+          "cell_type": "code",
+          "source": "# Use .head() to display the first five records of pumps_df\n# Type the required Python code below.\npumps_df.head()"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "> Let's display the `pumps_df` dataframe. You can use the `pandas` <font color='red'>`.info()`</font> dot function to display information about the dataframe."
+        },
+        {
+          "cell_type": "code",
+          "source": "deaths_df.info()"
+        },
+        {
+          "cell_type": "code",
+          "source": "# Use .info() to display information about pumps_df\n# Type the required Python code below.\n"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 2.  Recreate the basemap of Soho District</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Viewing the Original Map"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "In this first mapping exercise, we will digitally recreate a reproduction of the cholera map (Steps 2-5). \n\nThat map will somewhat look like this original map below. \n<img src=\"./images/20040209cholera.jpg\" style=\"float: left; padding: 0px 10px 0px 0px\"/>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Using `Folium` Maps"
+        },
+        {
+          "cell_type": "code",
+          "source": "%pip install -q folium"
+        },
+        {
+          "cell_type": "code",
+          "source": "# Folium is a web mapping library for Python\nimport folium\nfolium.__version__"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "> If you get an error, `NameError: name 'folium' is not defined`, please run the code to load Python packages in Notebook 0 (Prepare Environment).\n>  \n> You can learn more about Folium [here](http://python-visualization.github.io/folium/)."
+        },
+        {
+          "cell_type": "code",
+          "source": "# use the latitude and Longitude coordinates of the Soho District center\nSOHO_COORDINATES = (51.513578, -0.136722)"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "We used `SOHO_COORDINATES` as a Python variable to store latitude and longitude values, also known as a `point`. In the Python programming language, this data structure is called a `tuple`. As we will be using at least two types of data structures in this case study, you can learn more about other data structures using this Python tutorial on [data structures](https://www.datacamp.com/community/tutorials/data-structures-python). "
+        },
+        {
+          "cell_type": "code",
+          "source": "# Continue pressing Shift-Enter\n# create a basemap centered on the Soho District\n# Try changing the zoom level and press \"Shift-Enter\" to reload map1\nmap1 = folium.Map(location=SOHO_COORDINATES, zoom_start=17)\nmap1"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Please note that Broadwick Street is the famous street where the \"Broad Street Pump\" was located in 1854."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "The map above, represented as the `map1` variable, is based on [Open Street Map](https://en.wikipedia.org/wiki/OpenStreetMap) tiles. OpenStreetMap (OSM) is a collaborative project to create a free editable map of the world. It is considered a prominent example of volunteered, or \"crowdsourced\" geographic information."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Folium Themes"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's use a `Folium` theme called `stamentoner` and redisplay the map. This will enable you to approximate the appearance of Dr. John Snow's original cholera map."
+        },
+        {
+          "cell_type": "code",
+          "source": "# Let's add the \"Stamen Toner\" tile layer to the basemap, map1\nfolium.TileLayer('stamentoner').add_to(map1)"
+        },
+        {
+          "cell_type": "code",
+          "source": "# Display map1\n# In case you want to get back to the original zoom and location just re-run this code cell (or press Shift-Enter)\nmap1"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "> Please practice playing with the map above by zooming in and out and locating Broadwick Street. \n>\n"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Applying Amplified Cognition"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's switch the tile layer to `cartodbpositron` for [amplified cognition](https://infovis-wiki.net/wiki/Amplified_cognition). A subdued background will enable us to better see map markers."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "> #### Notes about Amplified Cognition\n> **Amplified cognition** is an important goal of [information visualizaton](https://hal.inria.fr/hal-00701741/document). Dr. John Snow illustrated this concept by creating a spot map of all the cases in the district. You may also think of amplified cognition as increasing the **signal-to-noise ratio** of visual communication (increasing perception of useful information and minimizing noise or less useful information)."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Congratulations! You have created your first web maps using the `folium` package. That's just the basemap. You can now add data about the cholera deaths and pumps as points on the map."
+        },
+        {
+          "cell_type": "code",
+          "source": "map1 = folium.Map(location=SOHO_COORDINATES, zoom_start=17)\n\n# Try to change the theme to \"cartodbpositron\" below\nfolium.TileLayer('cartodbpositron').add_to(map1)\n\n# Display map1\nmap1"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 3.  Add the mortality data as data points to the basemap.</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "We used the variable `deaths_df` as a dataframe to store the data from the `cholera_deaths.csv` file. We used `pandas` again to do that."
+        },
+        {
+          "cell_type": "code",
+          "source": "# Display the dataframe\ndeaths_df.head()"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Mapping Mortality Data"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "In the Python code below, `LAT` and `LON` are variables that store the data from `LAT` (latitude) and `LON` (longitude) columns from `deaths_df` dataframe. These are also your latitude, longitude coordinates. We will also create two lists: `locationlist`, which stores all the coordinates, and `radiuslist`, which has all the deaths. The number of deaths for each point will determine the radius (size) of the point on the map."
+        },
+        {
+          "cell_type": "code",
+          "source": "locationlist = deaths_df[[\"LAT\",\"LON\"]].values.tolist()\nradiuslist = deaths_df[[\"DEATHS\"]].values.tolist()"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "> Note in the code above <font color='red'>`.values`</font> and <font color='red'>`.to_list()`</font> \"chained\" together.\n>   \n"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "We can check what these commands do to the `deaths_df` data by `print`-ing (displaying) the contents of `locationlist` and `radiuslist` to a notebook cell."
+        },
+        {
+          "cell_type": "code",
+          "source": "print(locationlist)"
+        },
+        {
+          "cell_type": "code",
+          "source": "print(radiuslist)"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "> Recall from the \"Information Value Cycle\", by having the capability to store, manage (including transform) and retrieve data, we generate \"value\" from this additional process."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Loading the data points on the digital basemap"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "We will use a type of `folium` marker type called a `CircleMarker` to draw circles instead of points. Let's fill the circles with the color <font color='red'>red</font>. "
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Now, you can create the cholera deaths as points on the map by using a `for` loop to iterate through the `LAT` and `LON` values in `locationlist` while using number of deaths in `radiuslist` to determine the radius of the circle. Learn more about `for` loops from this [brief tutorial](https://www.datacamp.com/community/tutorials/for-loops-in-python)."
+        },
+        {
+          "cell_type": "code",
+          "source": "map1 = folium.Map(location=SOHO_COORDINATES, zoom_start=17)\n\nfolium.TileLayer('cartodbpositron').add_to(map1)\n\n# Iterate through the rows of the cholera deaths data frame \n#    and add each cholera death circle marker to map1\nfor i in range(0, len(locationlist)):\n    \n    # Create a popup for each marker\n    # Each marker will show point information and \n    #   number of deaths in that location.\n    popup = folium.Popup('Location: '+'('+str(locationlist[i][0])+\\\n                         ', '+str(locationlist[i][1])+')'+\\\n                         '<br/>'+\\\n                        'Deaths: '+ str(radiuslist[i][0]))\n    \n    # Add each circle marker with popup representing \n    #   a location with deaths to map1\n    folium.CircleMarker(\n                    location=locationlist[i], \\\n                    radius=radiuslist[i], \\\n                    popup=popup, \\\n                    color='black', \\\n                    weight=1, \\\n                    fill=True, \\\n                    fill_color='red', \\\n                    fill_opacity=1).add_to(map1)\n\nmap1    "
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Discussion Questions"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "1. What is the difference between use of paper maps versus digital maps in \"amplifying cognition\"?\n2. Where do you find the most number of deaths on the map and how many deaths are on that location? (Clue: Click on the markers and you will see the pop-up windows with data in it.)"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 4.  Add the water pump data as data points to the basemap.</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's display the dataframe by typing `pumps_df` in the code cell below."
+        },
+        {
+          "cell_type": "code",
+          "source": "pumps_df"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Load pump data points to the map"
+        },
+        {
+          "cell_type": "code",
+          "source": "map1 = folium.Map(location=SOHO_COORDINATES, zoom_start=17)\n\nfolium.TileLayer('cartodbpositron').add_to(map1)\n\n# Iterate through the rows of the cholera deaths data frame \n#    and add each cholera death circle marker to map1\nfor i in range(0, len(locationlist)):\n\n    # Each marker will show point information and \n    #   number of deaths in that location.\n    #\n    # Compose popup text as HTML string\n    popup_text = '<b>Location:</b> '+'('+str(locationlist[i][0])+\\\n                 ', '+str(locationlist[i][1])+')'+\\\n                 '<br/>'+\\\n                 '<b>Deaths:</b> '+ str(radiuslist[i][0])\n    # Create a popup for each marker\n    popup_death = folium.Popup(popup_text, max_width=200)\n    \n    # Add each circle marker with popup representing \n    #   a location with deaths to map1\n    folium.CircleMarker(\n                    location=locationlist[i], \\\n                    radius=radiuslist[i], \\\n                    popup=popup_death, \\\n                    color='black', \\\n                    weight=1, \\\n                    fill=True, \\\n                    fill_color='red', \\\n                    fill_opacity=1).add_to(map1)\n\n# Iterate through the rows of the pumps_df data frame \n#   and add each water pump to map1\nfor each in pumps_df.iterrows():\n    \n    # Each marker will show pump location information\n    # Compose popup text\n    popup_text = '<b>Location:</b> '+'('+str(each[1]['LAT'])+', '+str(each[1]['LON'])+')'+\\\n                 '<br/>'+\\\n                 '<b>Street Name:</b> '+each[1]['Street']\n    # Create a popup for each marker\n    popup_pump = folium.Popup(popup_text, max_width=200)\n\n    # Add each circle marker with popup representing \n    #   a pump location to map1\n    folium.RegularPolygonMarker([each[1]['LAT'],each[1]['LON']], \\\n                    color='black', \\\n                    weight=1,\\\n                    fill_opacity=1, \\\n                    fill_color='blue', \\\n                    number_of_sides=4, \\\n                    popup=popup_pump, \\\n                    radius=10).add_to(map1)\n\nmap1 "
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Don't forget to test the popups!"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Discussion Questions"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "1. What do you observe about the distribution of deaths and pumps on the digital map?\n2. If you were Dr. John Snow and had unlimited resources and technology at your disposal, what other kinds of data can you add to map to help you better understand what's going on in the outbreak?"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 5. Bring all the code together in one map display</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's put together all the key pieces of code without the narratives so you can play with it. \n\n<img src=\"./images/fullscreen_button.png\" width='400px' style=\"float: left; padding: 0px 10px 0px 0px\"/> We can add some more features to our basic folium map using folium plugins. Let's add a \"full screen\" button on the upper right hand corner of the map, so we can see the map display in full. "
+        },
+        {
+          "cell_type": "code",
+          "source": "import pandas as pd\nimport folium\n\n# let's import the folium plugins\nfrom folium import plugins\n\ndeaths_df = pd.read_csv('resources/cholera_deaths.csv')\npumps_df = pd.read_csv('resources/pumps.csv')\n\nSOHO_COORDINATES = (51.513578, -0.136722)\n\nmap1 = folium.Map(location=SOHO_COORDINATES, zoom_start=17)\n\nfolium.TileLayer('cartodbpositron').add_to(map1)\n\nlocationlist = deaths_df[[\"LAT\",\"LON\"]].values.tolist()\nradiuslist = deaths_df[[\"DEATHS\"]].values.tolist()\n\n# Iterate through the rows of the cholera deaths data frame \n#    and add each cholera death circle marker to map1\nfor i in range(0, len(locationlist)):\n\n    # Each marker will show point information and \n    #   number of deaths in that location.\n    #\n    # Compose popup text as HTML string\n    popup_text = '<b>Location:</b> '+'('+str(locationlist[i][0])+\\\n                 ', '+str(locationlist[i][1])+')'+\\\n                 '<br/>'+\\\n                 '<b>Deaths:</b> '+ str(radiuslist[i][0])\n    # Create a popup for each marker\n    popup_death = folium.Popup(popup_text, max_width=200)\n    \n    # Add each circle marker with popup representing \n    #   a location with deaths to map1\n    folium.CircleMarker(\n                    location=locationlist[i], \\\n                    radius=radiuslist[i], \\\n                    popup=popup_death, \\\n                    color='black', \\\n                    weight=1, \\\n                    fill=True, \\\n                    fill_color='red', \\\n                    fill_opacity=1).add_to(map1)\n    \n# Iterate through the rows of the pumps_df data frame \n#   and add each water pump to map1\nfor each in pumps_df.iterrows():\n    \n    # Each marker will show pump location information\n    # Compose popup text\n    popup_text = '<b>Location:</b> '+'('+str(each[1]['LAT'])+', '+str(each[1]['LON'])+')'+\\\n                 '<br/>'+\\\n                 '<b>Street Name:</b> '+each[1]['Street']\n    # Create a popup for each marker\n    popup_pump = folium.Popup(popup_text, max_width=200)\n\n    # Add each circle marker with popup representing \n    #   a pump location to map1\n    folium.RegularPolygonMarker([each[1]['LAT'],each[1]['LON']], \\\n                    color='black', \\\n                    weight=1,\\\n                    fill_opacity=1, \\\n                    fill_color='blue', \\\n                    number_of_sides=4, \\\n                    popup=popup_pump, \\\n                    radius=10).add_to(map1)\n\n# let's use the \"Fullscreen\" plugin\n# add the button to the top right corner\nplugins.Fullscreen(\n    position='topright',\n    title='Expand me',\n    title_cancel='Exit me',\n    force_separate_button=True\n).add_to(map1)\n\nmap1"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Pickle Functions in `pandas`"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Finally, let's **pickle** our dataframes. Pickling with the <font color='red'>`to_pickle()`</font> dot function allows us to save the dataframes to disk and retrieve these later, to use in another notebook.\n\n\"Pickling\" allows us to save and retrieve dataframes for future use.  \n\n> From Wikipedia: A pickled cucumber (pickle) is a cucumber that has been pickled in a brine, vinegar, or other solution and left to ferment for a period of time, by either immersing the cucumbers in an acidic solution or through souring by lacto-fermentation. Pickled cucumbers are often part of mixed pickles. "
+        },
+        {
+          "cell_type": "code",
+          "source": "# Pickling dataframes\ndeaths_df.to_pickle(\"outputs/deaths_df.pickle\")\npumps_df.to_pickle(\"outputs/pumps_df.pickle\")"
+        },
+        {
+          "cell_type": "code",
+          "source": "# Let's check if the pickle files were created...\n!ls -la outputs/*.pickle"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### The Information Value Cycle"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Data collected increases in value as information systems transform data to information and to knowledge, and enable effective use of the data to improve population health. By applying informatics problem solving knowledge and skills, informatics practitioners, including GEEKS fellows, are able to diagnose gaps in **value creation** and implement solutions to maximize benefits (value) from investments (time, money, effort) in information systems."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "See the Information Value Cycle diagram below.\n[Embedded historical figure omitted: individual reuse rights not established; consult the pinned source.]"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "As a famed data science hacker who graduated from GEEKS Tier 1 training and have helped Dr. John Snow solve the cholera outbreak with digital tools, and having gone through this first notebook in the 1854 Cholera Case Study, you have become much more aware of the potential (and pitfalls) of using technology for public health."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "###  Congratulations !   \n\nYou have recreated the famous John Snow Cholera map within a Jupyter notebook. "
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Discussion Questions"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "1. Cholera is a water-borne disease that still plagues many parts of the world today. \n\n   **How can technologies such as Geographical Information Systems (GIS) and Jupyter notebooks help us to map water and waste-water sources to help prevent future outbreaks?** \n   \n      \n2. The Cholera outbreak mapping involved the use of a basemap (streets) and two operational layers (cholera deaths and water pumps). Dr. Snow was an eminent scientist of his day and yet his data and his map were only part of his solution. Dr. Snow went door to door to talk with families with Cholera deaths during the outbreak. He met with local church leaders and convinced them to remove the Broad street pump handle through his data-driven, evidence-based approach. \n\n  **What other skills did you think Dr. John Snow applied to carry out his investigation?**\n     \n  \n3. Think for a while that you are having a discussion with Dr. John Snow. \n\n   **What other enhancements can information technology offer the 1854 Cholera outbreak investigation from start to finish, if you could make it available and recommend these to Dr. Snow?**\n"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## References\n"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Cholera"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "1. Tuthill K. John Snow and the Broad Street Pump: On the Trail of an Epidemic. UCLA School of Public Health Web Site. URL: http://www.ph.ucla.edu/epi/snow/snowcricketarticle.html\n2. Brody, Howard, et al. \"Map-making and myth-making in Broad Street: the London cholera epidemic, 1854.\" The Lancet 356.9223 (2000): 64-68. URL (Lancet): https://www.thelancet.com/pdfs/journals/lancet/PIIS0140-6736(00)02442-9.pdf; URL (UCLA): http://www.ph.ucla.edu/epi/snow/mapmyth/mapmyth.html\n3. Report on the Cholera Outbreak in the Parish of St. James, Westminster, during the Autumn of 1854. URL: http://johnsnow.matrix.msu.edu/work.php?id=15-78-55\n4. Snow, John. \"On the mode of communication of cholera.\" Edinburgh Medical Journal 1.7 (1856): 668. Reprint URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5307547/pdf/edinbmedj73529-0094a.pdf\n5. Lessler, Justin, et al. \"Mapping the burden of cholera in sub-Saharan Africa and implications for control: an analysis of data across geographical scales.\" The Lancet 391.10133 (2018): 1908-1915. URL: https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)33050-7/fulltext\n6. CDC, Cholera in Africa. URL: https://www.cdc.gov/cholera/africa/index.html\n"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Data Visualizaton"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "1. Fekete, Jean-Daniel, et al. \"The value of information visualization.\" Information visualization. Springer, Berlin, Heidelberg, 2008. 1-18."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "*For case study suggestions for improvement, please contact Herman Tolentino, Jan MacGregor, James Tobias or Zhanar Haimovich.*"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## Revision History"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "**2019-11-30**: Removed heat map, added tutorial links, cleaned up code - HT  \n\n**2019-08-01**:\n* Using Folium 0.10.0\n* Added Heat Map\n\n**2019-05-12**: Added folium plugins (Fullscreen Plugin) to last map - HT  \n\n**2019-05-24**: \n* Using Folium 0.9\n* Changed Polygon Markers to Circle Markers (HT)\n\n**2020-01-01**:\n* Removed Heat Map"
+        },
+        {
+          "cell_type": "code",
+          "source": ""
+        }
+      ]
+    },
+    "NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb": {
+      "original_sha256": "906e451e711be341ee8d7bbb1dc1dd1f747c81c936cfa52e2068b0bba99db237",
+      "original_cell_sha256": "cfcd8a807fefeac3fc088e5d32c79c1962e73ec0021d3760dd87e354246b6aa3",
+      "sanitization": "No source-cell sanitization required.",
+      "cells": [
+        {
+          "cell_type": "markdown",
+          "source": "**IMPORTANT:** If you are running this notebook for the first time, please run the first code cell below by pressing Shift-Enter while in it. If not, please skip it. This digital case study has been developed for Jupyter Notebook Python 3 kernel."
+        },
+        {
+          "cell_type": "code",
+          "source": "%run ./resources/library.py"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "The <font color='red'>`style_notebook()`</font> function increases the font size to improve readability. You can skip the cell below if you don't need a larger font size."
+        },
+        {
+          "cell_type": "code",
+          "source": "style_notebook()"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "# Notebook 2: Calculating the Mean Center Point for Mortality Locations"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Background</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "One of the benefits of digital data is the ability to use digital tools to triangulate observations using a multiple digital analytical tools. We will extend Dr. John Snow's toolkit by quickly performing mean center analysis of mortality locations in Soho District."
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Steps to carry out for Mean Center Analysis"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "* **Step 1.** Unpickle the dataframes from Notebook 1.\n* **Step 2.** Review Mean Center Analysis equestions.\n* **Step 3.** Transform Equations to Python Code\n* **Step 4.** Recreate the Notebook 1 map, `map1`\n* **Step 5.** Add Mean Center Point to Notebook 1 map"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 1. Unpickle Dataframe Files</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "We learned to pickle the `deaths_df` and `pumps_df` dataframes in Notebook 1. To unpickle these, we will use the `pandas` dot function called <font color='red'>`.read_pickle()`</font>."
+        },
+        {
+          "cell_type": "code",
+          "source": "# Don't forget to import pandas\nimport pandas as pd\n\n# Let's read the pickle files back into their dataframes.\ndeaths_df = pd.read_pickle('outputs/deaths_df.pickle')\npumps_df = pd.read_pickle('outputs/pumps_df.pickle')"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 2. Review Mean Center Analysis Equations</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Assuming those who got sick and died had access to water within walkable distance to a nearby water pump, let's obtain the mean center of all points, weighted by deaths at each point. \n\nThe equations for mean center are as follows (written within `MarkDown` in [`Latex`](http://data-blog.udacity.com/posts/2016/10/latex-primer/)):\n\n$\\begin{align} \\small Equation-1 && \\normalsize\\bar x _{weighted} = \\normalsize\\frac{\\Sigma (x_{1..n} w_{1..n})}{\\Sigma (w_{1..n})}\\end{align}$\n\n$\\begin{align} \\small Equation-2 && \\normalsize \\bar y _{weighted} = \\normalsize\\frac{\\Sigma (y_{1..n} w_{1..n})}{\\Sigma (w_{1..n})}\\end{align}$\n\n$\\begin{align} \\small Equation-3 && \\normalsize {mean\\ center} = \\normalsize(\\bar x _{weighted}, \\bar y _{weighted}) \\end{align}$"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 3. Transform Equations to Python Code</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "1. We substitute longitude values for **`x`**, latitude values for **`y`** (<font color='red'>important to remember these variable mappings</font>), and deaths for **`w`**\n2. We create two new columns, `product_LAT` (for numerator of Equation 1) and `product_LON` (for numerator of Equation 2), in the `deaths_df` dataframe. \n3. Let's display the new dataframe."
+        },
+        {
+          "cell_type": "code",
+          "source": "# For x and y respectively:\n#   populate product_LAT and product_LON \n#   with LAT and LON values weighted (multipled) by deaths\ndeaths_df['product_LAT'] = deaths_df['LAT'] * deaths_df['DEATHS']\ndeaths_df['product_LON'] = deaths_df['LON'] * deaths_df['DEATHS']\n\n# Let's copy this dataframe to a new one which we can save (pickle)\nmean_center_df = deaths_df\n\n# Let's display it. Type the command to display mean_center_df below.\nmean_center_df.head()"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's pickle this dataframe."
+        },
+        {
+          "cell_type": "code",
+          "source": "mean_center_df.to_pickle(\"outputs/mean_center_df.pickle\")"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's obtain the mean center coordinates by combining `mean_LAT` and `mean_LON`. We will use the <font color='red'>`sum()`</font> dot function of package `numpy`."
+        },
+        {
+          "cell_type": "code",
+          "source": "import numpy as np"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's finish calculating Equation 1, solving for weighted mean `x` (longitude). We already have values for the product inside the parentheses, stored in `product_LON`. We use the `numpy` dot function <font color='red'>`.sum()`</font> to sum the numerator and denominator.\n\n$\\begin{align} \\small Equation-1 && \\normalsize\\bar x _{weighted} = \\normalsize\\frac{\\Sigma (x_{1..n} w_{1..n})}{\\Sigma (w_{1..n})}\\end{align}$"
+        },
+        {
+          "cell_type": "code",
+          "source": "# This corresponds to the x bar, weighted, in the mean center formula\n# Equation 1\nmean_LON = np.sum(deaths_df['product_LON'])/np.sum(deaths_df['DEATHS'])"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's finish calculating Equation 2, using the same approach and solve for weighted mean `y` (longitude).\n\n$\\begin{align} \\small Equation-2 && \\normalsize \\bar y _{weighted} = \\normalsize\\frac{\\Sigma (y_{1..n} w_{1..n})}{\\Sigma (w_{1..n})}\\end{align}$"
+        },
+        {
+          "cell_type": "code",
+          "source": "# This corresponds to y bar, weighted, in the mean center formula\n# Equation 2\nmean_LAT = np.sum(deaths_df['product_LAT'])/np.sum(deaths_df['DEATHS'])"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's put together Equation 3 and display the mean center point.\n\n$\\begin{align} \\small Equation-3 && \\normalsize {mean\\ center} = \\normalsize(\\bar x _{weighted}, \\bar y _{weighted}) \\end{align}$"
+        },
+        {
+          "cell_type": "code",
+          "source": "# Let's put these two together as coordinates, called mean_center_POINT\n# Equation 3\nmean_center_POINT = (mean_LAT, mean_LON)\n\nmean_center_POINT"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 4. Recreate the Notebook 1 map, `map1`</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "We can copy-paste all the code from the last map rendering in Notebook 1."
+        },
+        {
+          "cell_type": "code",
+          "source": "%pip install -q folium"
+        },
+        {
+          "cell_type": "code",
+          "source": "import pandas as pd\nimport folium\n\n# let's import the folium plugins\nfrom folium import plugins\n\ndeaths_df = pd.read_csv('resources/cholera_deaths.csv')\npumps_df = pd.read_csv('resources/pumps.csv')\n\nSOHO_COORDINATES = (51.513578, -0.136722)\n\nmap1 = folium.Map(location=SOHO_COORDINATES, zoom_start=17)\n\nfolium.TileLayer('cartodbpositron').add_to(map1)\n\nlocationlist = deaths_df[[\"LAT\",\"LON\"]].values.tolist()\nradiuslist = deaths_df[[\"DEATHS\"]].values.tolist()\n\n# Iterate through the rows of the cholera deaths data frame \n#    and add each cholera death circle marker to map1\nfor i in range(0, len(locationlist)):\n\n    # Each marker will show point information and \n    #   number of deaths in that location.\n    #\n    # Compose popup text as HTML string\n    popup_text = '<b>Location:</b> '+'('+str(locationlist[i][0])+\\\n                 ', '+str(locationlist[i][1])+')'+\\\n                 '<br/>'+\\\n                 '<b>Deaths:</b> '+ str(radiuslist[i][0])\n    # Create a popup for each marker\n    popup_death = folium.Popup(popup_text, max_width=200)\n    \n    # Add each circle marker with popup representing \n    #   a location with deaths to map1\n    folium.CircleMarker(\n                    location=locationlist[i], \\\n                    radius=radiuslist[i], \\\n                    popup=popup_death, \\\n                    color='black', \\\n                    weight=1, \\\n                    fill=True, \\\n                    fill_color='red', \\\n                    fill_opacity=1).add_to(map1)\n    \n# Iterate through the rows of the pumps_df data frame \n#   and add each water pump to map1\nfor each in pumps_df.iterrows():\n    \n    # Each marker will show pump location information\n    # Compose popup text\n    popup_text = '<b>Location:</b> '+'('+str(each[1]['LAT'])+', '+str(each[1]['LON'])+')'+\\\n                 '<br/>'+\\\n                 '<b>Street Name:</b> '+each[1]['Street']\n    # Create a popup for each marker\n    popup_pump = folium.Popup(popup_text, max_width=200)\n\n    # Add each circle marker with popup representing \n    #   a pump location to map1\n    folium.RegularPolygonMarker([each[1]['LAT'],each[1]['LON']], \\\n                    color='black', \\\n                    weight=1,\\\n                    fill_opacity=1, \\\n                    fill_color='blue', \\\n                    number_of_sides=4, \\\n                    popup=popup_pump, \\\n                    radius=10).add_to(map1)\n\n# let's use the \"Fullscreen\" plugin\n# add the button to the top right corner\nplugins.Fullscreen(\n    position='topright',\n    title='Expand me',\n    title_cancel='Exit me',\n    force_separate_button=True\n).add_to(map1)\n\nmap1"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## <font color='blue'>Step 5. Add Mean Center Point to Notebook 1 map</font>"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "Let's plug that `mean_POINT` value into `map1` as a Folium `RegularPolygonMarker` and find out where the mean center is of case locations weighted by number of deaths in each location."
+        },
+        {
+          "cell_type": "code",
+          "source": "popup_meancenter = '<b>Mean Center Point:</b> '+ \\\n                str(mean_center_POINT)\n\nfolium.CircleMarker(\n            location=mean_center_POINT, \\\n            color='black', \\\n            weight=2, \\\n            fill_opacity=1, \\\n            fill_color=\"yellowgreen\", \\\n            popup=folium.Popup(popup_meancenter), \\\n            radius=10).add_to(map1)\nmap1"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "##  Congratulations !   \n\nYou have:\n1. Recreated the famous John Snow Cholera map within a Jupyter notebook\n2. Added Mean Center analysis to triangulate observations of pump and mortality locations on the map"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "## References\n"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "### Weighted Mean Center"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "1. https://glenbambrick.com/tag/weighted-mean-center/\n2. https://docs.scipy.org/doc/numpy/index.html\n3. http://data-blog.udacity.com/posts/2016/10/latex-primer/"
+        },
+        {
+          "cell_type": "markdown",
+          "source": "*For case study suggestions for improvement, please contact Herman Tolentino, Jan MacGregor, James Tobias or Zhanar Haimovich.*"
+        },
+        {
+          "cell_type": "code",
+          "source": ""
+        }
+      ]
+    }
+  }
+}

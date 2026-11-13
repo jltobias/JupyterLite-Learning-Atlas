@@ -1,6 +1,6 @@
 {
   "verification": "Fresh native Python kernels; not browser/Pyodide certification",
-  "network": "Python data-service connection guard; explicitly selected local lessons only",
+  "network": "Python data-service connection guard; explicitly selected source calculation paths only. Map HTML may be emitted, but native verification does not fetch tiles or certify rendered browser maps.",
   "results": [
     {
       "path": "content/courses/ai-agents-and-orchestrator-six-thinking-hats/00_six_thinking_hats_foundations.ipynb",
@@ -304,15 +304,21 @@
     },
     {
       "path": "content/courses/cholera-1854-basic/NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb",
-      "status": "skipped",
-      "runtime": "local-server",
-      "reason": "Remote services, tiles, CDN assets or package retrieval are subject to network/CORS availability. Use the source local/server environment for native GIS, shell, installed project or legacy dependencies; Lab provides a reading/editing copy. Follow notebook order to regenerate omitted outputs; optional unlicensed media are external continuations. Not in the explicitly selected execution subset."
+      "status": "passed",
+      "runtime": "browser-network",
+      "code_cells": 28,
+      "source_sha256": "27ae02bf075b40705948813ba228ec062f86ca0386f5d2796211733de37a7d3d",
+      "code_sha256": "81dc6107b2da8da97283a0b12d8f7bd8130bd792ecdc58325155c79b08fed40c",
+      "assertions": "250 mortality locations; 489 deaths; 8 pumps; every marker coordinate and bound popup coordinate/death/street matches its CSV row; weighted center 51.51339831083845/-0.1364029734151329; one attributed OSM layer; fresh owned output directory"
     },
     {
       "path": "content/courses/cholera-1854-basic/NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb",
-      "status": "skipped",
-      "runtime": "local-server",
-      "reason": "Use the source local/server environment for native GIS, shell, installed project or legacy dependencies; Lab provides a reading/editing copy. Follow notebook order to regenerate omitted outputs; optional unlicensed media are external continuations. Not in the explicitly selected execution subset."
+      "status": "passed",
+      "runtime": "browser-network",
+      "code_cells": 13,
+      "source_sha256": "60763105f529fa5380f2d3c3b20d3c664a2df50af1577ab8d34d3fa2557be2fe",
+      "code_sha256": "f0ce95909bb4c0ae2e60382c68cbe56d7a5e9f0d9a1d8737355e36d748ad9f7f",
+      "assertions": "250 mortality locations; 489 deaths; 8 pumps; every marker coordinate and bound popup coordinate/death/street matches its CSV row; weighted center 51.51339831083845/-0.1364029734151329; one attributed OSM layer; fresh owned output directory"
     },
     {
       "path": "content/courses/climate-and-health/notebooks/00_start_here.ipynb",

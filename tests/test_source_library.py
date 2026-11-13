@@ -69,8 +69,10 @@ class SourceLibraryTests(unittest.TestCase):
 
     def test_source_selection_never_autoruns_native_external_or_unknown_lessons(self):
         selected=[s for s in self.library['sections'] if s['runtime']['execution_selected']]
-        self.assertEqual(len(selected),16)
-        self.assertTrue(all(s['runtime']['class']=='browser-local' for s in selected))
+        self.assertEqual(len(selected),18)
+        self.assertTrue(all(s['runtime']['class']=='browser-local' or
+            (s['course']=='cholera-1854-basic' and s['runtime']['class']=='browser-network') for s in selected))
+        self.assertEqual(sum(s['course']=='cholera-1854-basic' for s in selected),2)
         self.assertEqual(sum(s['course']=='population-data-comparison' for s in selected),3)
         self.assertEqual(sum(s['course']=='onehealth' for s in selected),11)
         self.assertTrue(all(s['verification']['status']=='not-run' for s in self.library['sections']))

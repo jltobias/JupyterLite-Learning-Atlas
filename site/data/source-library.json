@@ -2073,15 +2073,15 @@
       "source_path": "NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb",
       "source_sha256": "81058a5ea4d3d29e08210d36ff207e9394dbdfe7b55360349aff01a8b295515d",
       "source_cell_sha256": "022e0845eb15e3042063a946e8843fe04b55cdaa1f849c2e5cc9f330491780c3",
-      "adapted_cell_sha256": "1283c7b6a1336421afe949ae0d155c67b4446a941ff3095d08b89f6f94e21864",
+      "adapted_cell_sha256": "9d8a4558fcf020b99954cf42042e6aa57d4d26d9d9254fabf665adf0fc268b3e",
       "runtime": {
-        "class": "local-server",
+        "class": "browser-network",
         "requirements": [
-          "Remote services, tiles, CDN assets or package retrieval are subject to network/CORS availability.",
-          "Use the source local/server environment for native GIS, shell, installed project or legacy dependencies; Lab provides a reading/editing copy.",
-          "Follow notebook order to regenerate omitted outputs; optional unlicensed media are external continuations."
+          "Run either notebook independently in a fresh Pyodide kernel: the first code cell prepares numpy/pandas and Folium 0.20.0 with piplite. Native kernels use the pinned Atlas build requirements.",
+          "Bundled historical CSVs supply calculations; OpenStreetMap street tiles and Folium JavaScript/CSS require network access. One tile layer uses original light-gray CSS while markers retain their colors and OSM attribution remains visible. No offline or historical street-map claim.",
+          "Optional video is an external continuation. Local pickle persistence is an exercise, not a Notebook 2 prerequisite; output directories are created before writes."
         ],
-        "execution_selected": false
+        "execution_selected": true
       },
       "verification": {
         "status": "not-run",
@@ -2094,39 +2094,29 @@
           "reason": "Normalized notebook v4.5 and deterministic unique cell IDs; inserted Atlas provenance/runtime cell; cleared unverified outputs and widget execution state."
         },
         {
+          "kind": "portability",
+          "adapter": "cholera-basic-browser-v1",
+          "reason": "Prepare numpy/pandas and pinned Folium 0.20.0 with piplite only in Pyodide; remove shell installers/listing; create owned output directories; use independent CSV prerequisites and external optional video continuations."
+        },
+        {
+          "kind": "basemap",
+          "adapter": "cholera-basic-browser-v1",
+          "reason": "Replace stacked/retired Stamen and CARTO tiles with one explicit keyless OpenStreetMap street layer and original tile-pane-only light-gray CSS; preserve visible OSM attribution and marker colors. Modern street context requires network access, not historical cartography or an offline map."
+        },
+        {
+          "kind": "marker",
+          "adapter": "cholera-basic-browser-v1",
+          "reason": "Pass each DEATHS value as a scalar CircleMarker radius, retaining the instructional radiuslist list-of-lists and the same mortality sizes/data."
+        },
+        {
+          "kind": "teaching",
+          "adapter": "cholera-basic-browser-v1",
+          "reason": "Retain one optional video continuation and explicit Folium version display; clarify that the death-weighted mortality center excludes pump locations and provides no at-risk denominator or causal inference."
+        },
+        {
           "kind": "link",
           "from": "./images/John_Snow.png",
           "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/John_Snow.png"
-        },
-        {
-          "kind": "link",
-          "from": "./images/Cholera_bacteria_SEM.png",
-          "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/Cholera_bacteria_SEM.png"
-        },
-        {
-          "kind": "link",
-          "from": "./images/tardis.jpeg",
-          "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/tardis.jpeg"
-        },
-        {
-          "kind": "link",
-          "from": "./images/swissknifepandas.png",
-          "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/swissknifepandas.png"
-        },
-        {
-          "kind": "link",
-          "from": "./images/20040209cholera.jpg",
-          "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/20040209cholera.jpg"
-        },
-        {
-          "kind": "link",
-          "from": "./images/fullscreen_button.png",
-          "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/fullscreen_button.png"
-        },
-        {
-          "kind": "rights",
-          "reason": "Removed embedded third-party historical figure with unclear rights",
-          "count": 1
         },
         {
           "kind": "embed",
@@ -2135,10 +2125,20 @@
           "url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/John_Snow.png"
         },
         {
+          "kind": "link",
+          "from": "./images/Cholera_bacteria_SEM.png",
+          "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/Cholera_bacteria_SEM.png"
+        },
+        {
           "kind": "embed",
           "reason": "External/uncleared media render changed to an explicit continuation; code/prose retained",
           "type": "image",
           "url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/Cholera_bacteria_SEM.png"
+        },
+        {
+          "kind": "link",
+          "from": "./images/tardis.jpeg",
+          "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/tardis.jpeg"
         },
         {
           "kind": "embed",
@@ -2147,22 +2147,31 @@
           "url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/tardis.jpeg"
         },
         {
+          "kind": "link",
+          "from": "./images/swissknifepandas.png",
+          "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/swissknifepandas.png"
+        },
+        {
           "kind": "embed",
           "reason": "External/uncleared media render changed to an explicit continuation; code/prose retained",
           "type": "image",
           "url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/swissknifepandas.png"
         },
         {
-          "kind": "embed",
-          "reason": "External/uncleared media render changed to an explicit continuation; code/prose retained",
-          "type": "image",
-          "url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/20040209cholera.jpg"
+          "kind": "link",
+          "from": "./images/fullscreen_button.png",
+          "to": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/fullscreen_button.png"
         },
         {
           "kind": "embed",
           "reason": "External/uncleared media render changed to an explicit continuation; code/prose retained",
           "type": "image",
           "url": "https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/fullscreen_button.png"
+        },
+        {
+          "kind": "rights",
+          "reason": "Removed embedded third-party historical figure with unclear rights",
+          "count": 1
         }
       ],
       "collection": "authored"
@@ -2174,14 +2183,15 @@
       "source_path": "NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb",
       "source_sha256": "906e451e711be341ee8d7bbb1dc1dd1f747c81c936cfa52e2068b0bba99db237",
       "source_cell_sha256": "cfcd8a807fefeac3fc088e5d32c79c1962e73ec0021d3760dd87e354246b6aa3",
-      "adapted_cell_sha256": "cfcd8a807fefeac3fc088e5d32c79c1962e73ec0021d3760dd87e354246b6aa3",
+      "adapted_cell_sha256": "0f516dc310c7ed8623beb9e33c06765eff5f78da1e1464c5bacf99471afb1efd",
       "runtime": {
-        "class": "local-server",
+        "class": "browser-network",
         "requirements": [
-          "Use the source local/server environment for native GIS, shell, installed project or legacy dependencies; Lab provides a reading/editing copy.",
-          "Follow notebook order to regenerate omitted outputs; optional unlicensed media are external continuations."
+          "Run either notebook independently in a fresh Pyodide kernel: the first code cell prepares numpy/pandas and Folium 0.20.0 with piplite. Native kernels use the pinned Atlas build requirements.",
+          "Bundled historical CSVs supply calculations; OpenStreetMap street tiles and Folium JavaScript/CSS require network access. One tile layer uses original light-gray CSS while markers retain their colors and OSM attribution remains visible. No offline or historical street-map claim.",
+          "Optional video is an external continuation. Local pickle persistence is an exercise, not a Notebook 2 prerequisite; output directories are created before writes."
         ],
-        "execution_selected": false
+        "execution_selected": true
       },
       "verification": {
         "status": "not-run",
@@ -2192,6 +2202,26 @@
         {
           "kind": "format",
           "reason": "Normalized notebook v4.5 and deterministic unique cell IDs; inserted Atlas provenance/runtime cell; cleared unverified outputs and widget execution state."
+        },
+        {
+          "kind": "portability",
+          "adapter": "cholera-basic-browser-v1",
+          "reason": "Prepare numpy/pandas and pinned Folium 0.20.0 with piplite only in Pyodide; remove shell installers/listing; create owned output directories; use independent CSV prerequisites and external optional video continuations."
+        },
+        {
+          "kind": "basemap",
+          "adapter": "cholera-basic-browser-v1",
+          "reason": "Replace stacked/retired Stamen and CARTO tiles with one explicit keyless OpenStreetMap street layer and original tile-pane-only light-gray CSS; preserve visible OSM attribution and marker colors. Modern street context requires network access, not historical cartography or an offline map."
+        },
+        {
+          "kind": "marker",
+          "adapter": "cholera-basic-browser-v1",
+          "reason": "Pass each DEATHS value as a scalar CircleMarker radius, retaining the instructional radiuslist list-of-lists and the same mortality sizes/data."
+        },
+        {
+          "kind": "teaching",
+          "adapter": "cholera-basic-browser-v1",
+          "reason": "Retain one optional video continuation and explicit Folium version display; clarify that the death-weighted mortality center excludes pump locations and provides no at-risk denominator or causal inference."
         }
       ],
       "collection": "authored"

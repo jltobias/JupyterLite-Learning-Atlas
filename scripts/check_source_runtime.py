@@ -19,11 +19,64 @@ from pathlib import Path
 from urllib.parse import quote
 
 import nbformat
-from playwright.sync_api import sync_playwright
-
-from check_runtime import select_python
 
 ROOT = Path(__file__).resolve().parents[1]
+
+CHOLERA_ASSERTIONS = r'''
+assert len(deaths_df) == 250 and int(deaths_df['DEATHS'].sum()) == 489
+assert len(pumps_df) == 8
+assert abs(sum(float(row.LAT)*int(row.DEATHS) for row in deaths_df.itertuples())/489 - 51.51339831083845) < 1e-12
+assert abs(sum(float(row.LON)*int(row.DEATHS) for row in deaths_df.itertuples())/489 - (-0.1364029734151329)) < 1e-12
+_base_layers = [layer for layer in map1._children.values() if isinstance(layer, folium.TileLayer)]
+assert len(_base_layers) == 1 and _base_layers[0].tiles == 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+assert 'OpenStreetMap' in _base_layers[0].options['attribution']
+_mortality = [layer for layer in map1._children.values() if isinstance(layer, folium.CircleMarker) and layer.options['fillColor'] == 'red']
+_pumps = [layer for layer in map1._children.values() if isinstance(layer, folium.RegularPolygonMarker) and layer.options['fillColor'] == 'blue']
+assert len(_mortality) == 250 and len(_pumps) == 8
+assert [layer.options['radius'] for layer in _mortality] == deaths_df['DEATHS'].tolist()
+assert all(layer.options['fill'] and layer.options['fillOpacity'] == 1 for layer in _mortality+_pumps)
+assert all(any(isinstance(child, folium.Popup) for child in layer._children.values()) for layer in _mortality+_pumps)
+import re as _re
+from html import unescape as _unescape
+def _bound_popup_text(layer):
+    popup = next(child for child in layer._children.values() if isinstance(child, folium.Popup))
+    return ' '.join(_re.sub('<[^>]*>', ' ', _unescape(popup.html.render())).split())
+for _layer, _row in zip(_mortality, deaths_df.itertuples()):
+    assert list(_layer.location) == [float(_row.LAT), float(_row.LON)]
+    _text = _bound_popup_text(_layer)
+    _coordinate = _re.search(r'Location: *\(([-+0-9.eE]+), *([-+0-9.eE]+)\)', _text)
+    assert _coordinate and all(abs(float(value)-expected)<1e-12 for value,expected in zip(_coordinate.groups(),[_row.LAT,_row.LON]))
+    assert int(_re.search(r'Deaths: *(\d+)', _text).group(1)) == int(_row.DEATHS)
+for _layer, _row in zip(_pumps, pumps_df.itertuples()):
+    assert list(_layer.location) == [float(_row.LAT), float(_row.LON)]
+    _text = _bound_popup_text(_layer)
+    _coordinate = _re.search(r'Location: *\(([-+0-9.eE]+), *([-+0-9.eE]+)\)', _text)
+    assert _coordinate and all(abs(float(value)-expected)<1e-12 for value,expected in zip(_coordinate.groups(),[_row.LAT,_row.LON]))
+    assert _re.search(r'Street Name: *(.*)$', _text).group(1) == _row.Street
+assert list(map1.location) == [51.513578, -0.136722] and map1.options['zoom'] == 17
+assert folium.__version__ == '0.20.0'
+'''
+CHOLERA_MEAN_ASSERTIONS = '''
+assert abs(mean_LAT - 51.51339831083845) < 1e-12
+assert abs(mean_LON - (-0.1364029734151329)) < 1e-12
+assert tuple(mean_center_POINT) == (mean_LAT, mean_LON)
+_mean = [layer for layer in map1._children.values() if isinstance(layer, folium.CircleMarker) and layer.options['fillColor'] == 'yellowgreen']
+assert len(_mean) == 1 and list(_mean[0].location) == list(mean_center_POINT)
+'''
+
+# Original schematic test image, not a provider tile or geographic dataset.
+CHOLERA_TILE_SVG = '''<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+<rect width="256" height="256" fill="#e1e5df"/>
+<path d="M0 40H256M0 150H256M50 0V256M180 0V256" stroke="#fff" stroke-width="14"/>
+<path d="M0 40H256M0 150H256M50 0V256M180 0V256" stroke="#b6bdb2" stroke-width="1"/>
+<text x="65" y="105" fill="#58614f" font-size="13">TEST TILE</text></svg>'''
+CHOLERA_TILES_READY = '''() => {
+    const map=window[document.querySelector('.folium-map').id];
+    const layers=Object.values(map._layers).filter(layer=>layer instanceof L.TileLayer);
+    const images=[...map.getPane('tilePane').querySelectorAll('img.leaflet-tile')];
+    return layers.length===1 && !layers[0].isLoading() && images.length>0 &&
+        images.every(image=>image.complete && image.naturalWidth===256 && image.naturalHeight===256);
+}'''
 
 POPULATION_ASSERTIONS = '''
 assert len(data['layers']) == 4
@@ -106,6 +159,17 @@ for _row in assigned.itertuples():
 
 POPULATION_FILES = ['population_tools_real.py', 'population_tools.py', 'population.json', 'independent_oracle.json']
 CASES = [
+    {'label':'cholera-basic-1', 'notebook':'courses/cholera-1854-basic/NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb',
+     'files':['resources/library.py','resources/style.css','resources/cholera_deaths.csv','resources/pumps.csv'],
+     'assertions':CHOLERA_ASSERTIONS, 'interactive_cells':True,
+     'absent':['outputs/deaths_df.pickle','outputs/pumps_df.pickle'],
+     'maps':[{'red':0,'blue':0},{'red':0,'blue':0},{'red':0,'blue':0},
+             {'red':250,'blue':0},{'red':250,'blue':8},{'red':250,'blue':8}]},
+    {'label':'cholera-basic-2', 'notebook':'courses/cholera-1854-basic/NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb',
+     'files':['resources/library.py','resources/style.css','resources/cholera_deaths.csv','resources/pumps.csv'],
+     'assertions':CHOLERA_ASSERTIONS+CHOLERA_MEAN_ASSERTIONS, 'interactive_cells':True,
+     'absent':['outputs/deaths_df.pickle','outputs/pumps_df.pickle','outputs/mean_center_df.pickle'],
+     'maps':[{'red':250,'blue':8},{'red':250,'blue':8,'yellowgreen':1}]},
     {'label':'gis-workbench', 'notebook':'gis-workbench.ipynb',
      'files':['atlas_gis_handoff.py','assets/browser-gis-pathways.json','courses/onehealth/data/tracts.geojson','courses/onehealth/data/manifest.json'],
      'absent':['exports/fresno-2020-first12.geojson','exports/pyodide-changed.geojson'],
@@ -154,12 +218,118 @@ assert abs(half['population'] - cell['population']/2) < 1e-6
 ]
 
 
+def assert_cholera_row_correspondence(actual,deaths,pumps):
+    """Compare transient rendered rows with CSV rows; retain only a summary."""
+    for kind,rows in [('mortality',deaths),('pumps',pumps)]:
+        observed=actual[kind]
+        assert len(observed)==len(rows), f'{kind}: row count differs'
+        for index,(marker,row) in enumerate(zip(observed,rows)):
+            location=[float(row['LAT']),float(row['LON'])]
+            assert len(marker['location'])==len(marker['popup_location'])==2, (kind,index)
+            assert all(isinstance(a,(int,float)) and abs(a-b)<1e-12 for a,b in zip(marker['location'],location)), (kind,index,'marker coordinates')
+            assert all(isinstance(a,(int,float)) and abs(a-b)<1e-12 for a,b in zip(marker['popup_location'],location)), (kind,index,'popup coordinates')
+            if kind=='mortality':
+                assert marker['deaths']==int(row['DEATHS']) and marker['radius']==int(row['DEATHS']), (kind,index,'deaths/radius')
+                assert isinstance(marker['radius'],(int,float)), (kind,index,'nonnumeric radius')
+            else:assert marker['street']==row['Street'], (kind,index,'street')
+    return {'status':'passed','mortality_rows':len(deaths),'pump_rows':len(pumps),
+            'csv_rows_sha256':hashlib.sha256(json.dumps({'deaths':deaths,'pumps':pumps},sort_keys=True).encode()).hexdigest()}
+
+
+def inspect_cholera_maps(page,cell,expected,output,label,timeout,deaths,pumps):
+    """Inspect actual loaded Leaflet instances, rather than saved iframe HTML."""
+    frames=cell.locator('.jp-OutputArea-output iframe')
+    assert frames.count()==len(expected), f'{label}: missing per-cell map displays: {frames.count()}'
+    results=[]
+    for index,counts in enumerate(expected):
+        element=frames.nth(index);element.scroll_into_view_if_needed()
+        frame=element.element_handle().content_frame()
+        assert frame, 'Folium iframe is missing'
+        frame.wait_for_function("typeof L !== 'undefined' && [...document.querySelectorAll('.folium-map')].some(e=>window[e.id] instanceof L.Map)",timeout=timeout*1000)
+        # Browser tile requests are fulfilled with an original schematic image;
+        # this proves loading/rendering without bulk requests to OSM servers.
+        frame.wait_for_function(CHOLERA_TILES_READY,timeout=30000)
+        evidence=frame.evaluate(r'''() => {
+            const map=window[document.querySelector('.folium-map').id];
+            const layers=Object.values(map._layers), tiles=layers.filter(v=>v instanceof L.TileLayer);
+            const counts=Object.fromEntries(['red','blue','yellowgreen'].map(color=>[color,layers.filter(v=>v.options?.fillColor===color && v instanceof L.Path).length]));
+            const paintColors=Object.fromEntries(['red','blue','yellowgreen'].map(color=>[color,[...new Set(layers.filter(v=>v.options?.fillColor===color && v instanceof L.Path).flatMap(v=>{
+                const fill=v._path.getAttribute('fill'), gradient=fill.match(/^url\(#([^)]*)\)$/);
+                return gradient ? [...document.getElementById(gradient[1]).querySelectorAll('stop')].map(stop=>getComputedStyle(stop).stopColor) : [getComputedStyle(v._path).fill];
+            }))]]));
+            const panes=['tile','overlay','marker'].map(name=>[name,getComputedStyle(map.getPane(name+'Pane')).filter]);
+            const rows=color=>layers.filter(v=>v.options?.fillColor===color && v instanceof L.Path).map(layer=>{
+                const text=layer.getPopup().getContent().textContent.replace(/\s+/g,' ').trim();
+                const coordinate=text.match(/Location: *\(([-+0-9.eE]+), *([-+0-9.eE]+)\)/);
+                const location=L.latLng(layer.getLatLng());
+                return {location:[location.lat,location.lng],
+                    popup_location:coordinate ? coordinate.slice(1).map(Number) : [],
+                    ...(color==='red' ? {radius:layer.getRadius(),deaths:Number(text.match(/Deaths: *(\d+)/)?.[1])} : {street:text.match(/Street Name: *(.*)$/)?.[1]})};
+            });
+            return {layers:tiles.map(v=>v._url),counts,paint_colors:paintColors,panes:Object.fromEntries(panes),
+                tile_count:map.getPane('tilePane').querySelectorAll('img.leaflet-tile').length,
+                all_attached_tiles_verified:true,
+                attribution:document.querySelector('.leaflet-control-attribution').innerText,
+                center:[map.getCenter().lat,map.getCenter().lng],zoom:map.getZoom(),
+                row_data:{mortality:rows('red'),pumps:rows('blue')},
+                mean:layers.filter(v=>v.options?.fillColor==='yellowgreen').map(v=>[v.getLatLng().lat,v.getLatLng().lng])};
+        }''')
+        assert evidence['layers']==['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], evidence
+        assert evidence['counts']=={color:counts.get(color,0) for color in ('red','blue','yellowgreen')}, evidence
+        for color,rgb in [('red','rgb(255, 0, 0)'),('blue','rgb(0, 0, 255)'),('yellowgreen','rgb(154, 205, 50)')]:
+            if counts.get(color):assert rgb in evidence['paint_colors'][color], evidence
+        evidence['row_correspondence']=assert_cholera_row_correspondence(evidence.pop('row_data'),deaths if counts.get('red') else [],pumps if counts.get('blue') else [])
+        assert 'OpenStreetMap' in evidence['attribution'] and frame.locator('.leaflet-control-attribution').is_visible()
+        assert frame.locator('.leaflet-control-attribution a[href="https://www.openstreetmap.org/copyright"]').count()==1
+        assert 'grayscale(1)' in evidence['panes']['tile'] and 'brightness(1.12)' in evidence['panes']['tile'] and 'contrast(0.82)' in evidence['panes']['tile']
+        assert evidence['panes']['overlay']==evidence['panes']['marker']=='none', evidence
+        assert abs(evidence['center'][0]-51.513578)<1e-10 and abs(evidence['center'][1]-(-0.136722))<1e-10 and evidence['zoom']==17, evidence
+        for color in ('red','blue'):
+            if not counts.get(color):continue
+            # RegularPolygonMarker paints through an SVG gradient, so select
+            # the path attached to the Leaflet layer rather than fill="blue".
+            marker=frame.evaluate_handle('''color=>Object.values(window[document.querySelector('.folium-map').id]._layers).find(v=>v.options?.fillColor===color && v instanceof L.Path)?._path''',color).as_element()
+            assert marker and marker.is_visible(), f'{label}: {color} markers are not rendered'
+            marker.dispatch_event('click')
+            popup=frame.locator('.leaflet-popup-content').last
+            popup.wait_for(state='visible')
+            assert ('Deaths:' if color=='red' else 'Street Name:') in popup.inner_text()
+            frame.locator('.leaflet-popup-close-button').last.click()
+            popup.wait_for(state='detached')
+        if counts.get('yellowgreen'):
+            lat,lon=evidence['mean'][0]
+            assert abs(lat-51.51339831083845)<1e-12 and abs(lon-(-0.1364029734151329))<1e-12
+            frame.locator('.leaflet-overlay-pane path[fill="yellowgreen"]').dispatch_event('click')
+            popup=frame.locator('.leaflet-popup-content').last
+            assert 'Mean Center Point:' in popup.inner_text()
+            frame.locator('.leaflet-popup-close-button').last.click()
+            popup.wait_for(state='detached')
+        frame.locator('.leaflet-control-zoom-in').click()
+        frame.wait_for_function("(()=>{const m=window[document.querySelector('.folium-map').id];return m.getZoom()===18&&!m._animatingZoom;})()")
+        frame.locator('.leaflet-control-zoom-out').click()
+        frame.wait_for_function("(()=>{const m=window[document.querySelector('.folium-map').id];return m.getZoom()===17&&!m._animatingZoom;})()")
+        frame.wait_for_function(CHOLERA_TILES_READY,timeout=30000)
+        if index==len(expected)-1:
+            frame.locator('.folium-map').screenshot(path=str(output/f'map-{label}.png'))
+        results.append(evidence)
+    return results
+
+
 def execute_case(browser, base, output, timeout, case):
+    from check_runtime import select_python
     notebook_path=case['notebook'];canonical=ROOT/'content'/notebook_path
     nb=nbformat.read(canonical,as_version=4)
     code='\n\n'.join(c.source for c in nb.cells if c.cell_type=='code')
     asset_hashes={name:hashlib.sha256((canonical.parent/name).read_bytes()).hexdigest() for name in case['files']}
     context=browser.new_context(viewport={'width':1440,'height':1000})
+    tile_requests=[]
+    if case.get('maps'):
+        def fulfill_tile(route):
+            tile_requests.append(route.request.url)
+            route.fulfill(status=200,content_type='image/svg+xml',body=CHOLERA_TILE_SVG,headers={'Access-Control-Allow-Origin':'*'})
+        context.route('https://tile.openstreetmap.org/**',fulfill_tile)
+        # Block accidental reintroduction of the retired/credential-dependent providers.
+        context.route('**/*',lambda route:route.abort() if any(name in route.request.url for name in ('cartocdn','cartodb','stamen')) else route.fallback())
     page=context.new_page();errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
     # Jupyter Contents transports text with universal newlines and JSON models
     # via JSON.stringify (e.g. 0.0 becomes 0). Require exact raw HTTP bytes and
@@ -188,8 +358,18 @@ def execute_case(browser, base, output, timeout, case):
     export_proof=(f"\n_atlas_export_paths = {case.get('download_links',[])!r}\n"
                   "_atlas_export_bytes = {name:{'sha256':hashlib.sha256(Path(name).read_bytes()).hexdigest(),'bytes':len(Path(name).read_bytes())} for name in _atlas_export_paths}\n")
     proof=rerun+"\n"+case['assertions']+export_proof+f"\nprint({marker!r}, json.dumps({{'platform':sys.platform,'asset_sha256':_atlas_actual_assets,'exports':_atlas_export_bytes,'assertions':'passed'}}))\n"
-    source=prelude+case.get('setup','')+'\n\n'+code+proof
+    execution=code
+    if case.get('interactive_cells'):
+        cells=[c.source for c in nb.cells if c.cell_type=='code']
+        execution=(f'_atlas_canonical_cells = {cells!r}\n'
+                   'for _atlas_cell_number, _atlas_cell in enumerate(_atlas_canonical_cells):\n'
+                   '    _atlas_result = await get_ipython().run_cell_async(_atlas_cell, store_history=False)\n'
+                   '    if not _atlas_result.success:\n'
+                   '        raise RuntimeError("Canonical cell failed: "+str(_atlas_cell_number)) from (_atlas_result.error_before_exec or _atlas_result.error_in_exec)\n')
+    source=prelude+case.get('setup','')+'\n\n'+execution+proof
     try:
+        notebook_response=page.request.get(base+'lite/files/'+quote(notebook_path,safe='/'))
+        assert notebook_response.ok and hashlib.sha256(notebook_response.body()).hexdigest()==hashlib.sha256(canonical.read_bytes()).hexdigest(), 'Packaged canonical notebook bytes differ: '+notebook_path
         for name,expected in asset_hashes.items():
             relative=(Path(notebook_path).parent/name).as_posix()
             response=page.request.get(base+'lite/files/'+quote(relative,safe='/'))
@@ -250,14 +430,25 @@ def execute_case(browser, base, output, timeout, case):
         assert len(images)>=case.get('pngs',0), f'Missing fresh {case["label"]} PNG figures'
         if case.get('html'):
             assert case['html'] in cell.locator('.jp-OutputArea').inner_text(), 'Missing freshly displayed source comparison table'
+        deaths=[];pumps=[]
+        if case.get('maps'):
+            import csv
+            with (canonical.parent/'resources/cholera_deaths.csv').open(encoding='utf-8') as data:
+                deaths=list(csv.DictReader(data))
+            with (canonical.parent/'resources/pumps.csv').open(encoding='utf-8') as data:
+                pumps=list(csv.DictReader(data))
+        maps=inspect_cholera_maps(page,cell,case['maps'],output,case['label'],timeout,deaths,pumps) if case.get('maps') else []
+        if maps:assert tile_requests, 'No controlled tile responses were exercised'
         assert not errors,errors
         page.screenshot(path=str(output/f'executed-{case["label"]}.png'))
-        result={'status':'passed','notebook':notebook_path,'marker':marker,'proof':evidence,'pngs':images,'downloads':downloads,
+        result={'status':'passed','notebook':notebook_path,'marker':marker,'proof':evidence,'pngs':images,'downloads':downloads,'maps':maps,
                 'raw_http_asset_sha256':asset_hashes,'allowed_filesystem_sha256':filesystem_hashes,
                 'filesystem_text_transport':'Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8',
                 'canonical_sha256':hashlib.sha256(canonical.read_bytes()).hexdigest(),
-                'canonical_code_sha256':hashlib.sha256(code.encode()).hexdigest(),'numerical_assertions':case['assertions']}
-        print(f'PASS fresh source Pyodide {case["label"]}: notebook-relative assets, numerical/export assertions, unique marker, {len(images)} PNGs',flush=True)
+                'canonical_code_sha256':hashlib.sha256(code.encode()).hexdigest(),'numerical_assertions':case['assertions'],
+                'cell_execution':'IPython sequential run_cell_async; canonical bare expressions display' if case.get('interactive_cells') else 'Concatenated canonical code',
+                'tile_verification':{'requests':len(tile_requests),'method':'Intercepted OSM URLs; original schematic test tiles; no requests reach the provider. Verifies iframe rendering, layers, colored markers, popups and zoom, not live OSM availability.'} if maps else None}
+        print(f'PASS fresh source Pyodide {case["label"]}: notebook-relative assets, numerical/export assertions, unique marker, {len(images)} PNGs, {len(maps)} loaded map iframes',flush=True)
         return result
     except Exception:
         (output/f'failure-{case["label"]}-body.txt').write_text(page.locator('body').inner_text(),encoding='utf-8')
@@ -267,6 +458,7 @@ def execute_case(browser, base, output, timeout, case):
 
 
 def main():
+    from playwright.sync_api import sync_playwright
     parser=argparse.ArgumentParser()
     parser.add_argument('--browser-executable')
     parser.add_argument('--timeout',type=int,default=360,help='Per-case runtime/package startup and execution timeout in seconds')
@@ -295,8 +487,8 @@ def main():
         server.terminate();server.wait(timeout=10);log.close()
         (output/'results.json').write_text(json.dumps({'status':status,'cases':results,
             'selected_cases':[c['label'] for c in cases],
-            'method':'Separate fresh browser context and actual Pyodide kernel per case; canonical code runs against hash-checked packaged notebook-relative files, plus oracle/numerical/export assertions, unique executed markers and loaded PNG checks where relevant.',
-            'limits':'These explicitly selected source notebooks and the authored GIS workbench only. Initial runtime/package retrieval requires network access. No native, credential, external provider or live acquisition branch is certified. The existing seven-case SVG runtime gate remains separate.'},indent=2)+'\n',encoding='utf-8')
+            'method':'Separate fresh browser context and actual Pyodide kernel per case; canonical code runs against hash-checked packaged notebook-relative files, plus oracle/numerical/export assertions and unique executed markers. Basic map cases use sequential IPython cell semantics, inspect loaded Leaflet iframes, layers, numeric radii, colors, center, popups and zoom, and intercept OSM requests with original schematic test tiles. Other cases also check loaded PNGs where relevant.',
+            'limits':'These explicitly selected source notebooks and the authored GIS workbench only. Initial runtime/package retrieval and Folium JavaScript/CSS require network access. Controlled map tiles establish iframe rendering, not live OSM availability or an offline map. No native, credential or live acquisition branch is certified by this browser gate. The existing seven-case SVG runtime gate remains separate.'},indent=2)+'\n',encoding='utf-8')
 
 
 if __name__=='__main__':main()

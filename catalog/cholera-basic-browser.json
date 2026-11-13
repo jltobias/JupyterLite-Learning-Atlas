@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "evidence": "Observed local fresh Pyodide execution in headless Chrome; no CI result is asserted.",
+  "summarized_at_utc": "2026-11-13T21:14:53.817884+00:00",
+  "source_receipt_sha256": "a703139e8d0ec5612b876f998f70952afc2c0fdf07ba32511c0b6097384ffc33",
+  "limits": "Each fresh context executes canonical notebook code against hash-checked packaged support. OSM tile requests are intercepted and fulfilled with an original 256px schematic fixture; no provider tiles are fetched or redistributed. Runtime/packages and Folium JavaScript/CSS require network access. Controlled fixtures establish rendering and the listed checks, not live OSM availability, an offline map, historical street accuracy, causality or an at-risk denominator. Checks apply only to the recorded code digests; rerun after code changes.",
+  "cases": [
+    {
+      "notebook": "courses/cholera-1854-basic/NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb",
+      "status": "passed for recorded code",
+      "platform": "emscripten",
+      "canonical_code_sha256": "81dc6107b2da8da97283a0b12d8f7bd8130bd792ecdc58325155c79b08fed40c",
+      "canonical_file_sha256_at_run": "27ae02bf075b40705948813ba228ec062f86ca0386f5d2796211733de37a7d3d",
+      "current_code_matches_recorded_run": true,
+      "support_sha256": {
+        "resources/library.py": "277be4217d1db06cf33c75929591a3fe1b1ee57239ec4f26161d7ba93770b353",
+        "resources/style.css": "f1328a2d5b3100847616718823a0f35ee07161362e0e936527fe6af1d34d542b",
+        "resources/cholera_deaths.csv": "1be1926dca480fe8c9a83b663e62758e57c7ebe6c296d6a32c5e93a50d62b40a",
+        "resources/pumps.csv": "6ad041659f2dc2abf9048aa4c08c01a9a7d181bd19684f76c74b7df7a4b4b830"
+      },
+      "unique_execution_marker": "ATLAS_SOURCE_PYODIDE_PROOF_c3cc463ce7e84215b3f701a08e7dcda9",
+      "numerical_oracle": {
+        "mortality_locations": 250,
+        "deaths": 489,
+        "pumps": 8,
+        "death_weighted_center": [
+          51.51339831083845,
+          -0.1364029734151329
+        ]
+      },
+      "map_frames": [
+        {
+          "counts": {
+            "red": 0,
+            "blue": 0,
+            "yellowgreen": 0
+          },
+          "center": [
+            51.513578,
+            -0.136722
+          ],
+          "zoom": 17,
+          "mean_markers": [],
+          "base_layers": [
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ],
+          "attached_or_loaded_tile_count": 15,
+          "all_attached_tiles_verified": true,
+          "row_correspondence": {
+            "status": "passed",
+            "mortality_rows": 0,
+            "pump_rows": 0,
+            "csv_rows_sha256": "721be26a64c289af424a5bf0f6dc4d835189b40ef4eb4f5139442ce030cb0a80"
+          },
+          "tile_pane_filter": "grayscale(1) brightness(1.12) contrast(0.82)",
+          "colored_marker_paints": {
+            "red": [],
+            "blue": [],
+            "yellowgreen": []
+          },
+          "attribution": " Leaflet | © OpenStreetMap contributors"
+        },
+        {
+          "counts": {
+            "red": 0,
+            "blue": 0,
+            "yellowgreen": 0
+          },
+          "center": [
+            51.513578,
+            -0.136722
+          ],
+          "zoom": 17,
+          "mean_markers": [],
+          "base_layers": [
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ],
+          "attached_or_loaded_tile_count": 15,
+          "all_attached_tiles_verified": true,
+          "row_correspondence": {
+            "status": "passed",
+            "mortality_rows": 0,
+            "pump_rows": 0,
+            "csv_rows_sha256": "721be26a64c289af424a5bf0f6dc4d835189b40ef4eb4f5139442ce030cb0a80"
+          },
+          "tile_pane_filter": "grayscale(1) brightness(1.12) contrast(0.82)",
+          "colored_marker_paints": {
+            "red": [],
+            "blue": [],
+            "yellowgreen": []
+          },
+          "attribution": " Leaflet | © OpenStreetMap contributors"
+        },
+        {
+          "counts": {
+            "red": 0,
+            "blue": 0,
+            "yellowgreen": 0
+          },
+          "center": [
+            51.513578,
+            -0.136722
+          ],
+          "zoom": 17,
+          "mean_markers": [],
+          "base_layers": [
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ],
+          "attached_or_loaded_tile_count": 15,
+          "all_attached_tiles_verified": true,
+          "row_correspondence": {
+            "status": "passed",
+            "mortality_rows": 0,
+            "pump_rows": 0,
+            "csv_rows_sha256": "721be26a64c289af424a5bf0f6dc4d835189b40ef4eb4f5139442ce030cb0a80"
+          },
+          "tile_pane_filter": "grayscale(1) brightness(1.12) contrast(0.82)",
+          "colored_marker_paints": {
+            "red": [],
+            "blue": [],
+            "yellowgreen": []
+          },
+          "attribution": " Leaflet | © OpenStreetMap contributors"
+        },
+        {
+          "counts": {
+            "red": 250,
+            "blue": 0,
+            "yellowgreen": 0
+          },
+          "center": [
+            51.513578,
+            -0.136722
+          ],
+          "zoom": 17,
+          "mean_markers": [],
+          "base_layers": [
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ],
+          "attached_or_loaded_tile_count": 15,
+          "all_attached_tiles_verified": true,
+          "row_correspondence": {
+            "status": "passed",
+            "mortality_rows": 250,
+            "pump_rows": 0,
+            "csv_rows_sha256": "5e87947cc01b2dc02ebbf7ccb73455cf45fb98879d7d68458f789681028eb1ef"
+          },
+          "tile_pane_filter": "grayscale(1) brightness(1.12) contrast(0.82)",
+          "colored_marker_paints": {
+            "red": [
+              "rgb(255, 0, 0)"
+            ],
+            "blue": [],
+            "yellowgreen": []
+          },
+          "attribution": " Leaflet | © OpenStreetMap contributors"
+        },
+        {
+          "counts": {
+            "red": 250,
+            "blue": 8,
+            "yellowgreen": 0
+          },
+          "center": [
+            51.513578,
+            -0.136722
+          ],
+          "zoom": 17,
+          "mean_markers": [],
+          "base_layers": [
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ],
+          "attached_or_loaded_tile_count": 15,
+          "all_attached_tiles_verified": true,
+          "row_correspondence": {
+            "status": "passed",
+            "mortality_rows": 250,
+            "pump_rows": 8,
+            "csv_rows_sha256": "12a6d2c338739f6db452a52404d2c0f6e0fb207230c9415c9a9b8497857a0223"
+          },
+          "tile_pane_filter": "grayscale(1) brightness(1.12) contrast(0.82)",
+          "colored_marker_paints": {
+            "red": [
+              "rgb(255, 0, 0)"
+            ],
+            "blue": [
+              "rgb(255, 255, 255)",
+              "rgb(0, 0, 255)"
+            ],
+            "yellowgreen": []
+          },
+          "attribution": " Leaflet | © OpenStreetMap contributors"
+        },
+        {
+          "counts": {
+            "red": 250,
+            "blue": 8,
+            "yellowgreen": 0
+          },
+          "center": [
+            51.513578,
+            -0.136722
+          ],
+          "zoom": 17,
+          "mean_markers": [],
+          "base_layers": [
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ],
+          "attached_or_loaded_tile_count": 15,
+          "all_attached_tiles_verified": true,
+          "row_correspondence": {
+            "status": "passed",
+            "mortality_rows": 250,
+            "pump_rows": 8,
+            "csv_rows_sha256": "12a6d2c338739f6db452a52404d2c0f6e0fb207230c9415c9a9b8497857a0223"
+          },
+          "tile_pane_filter": "grayscale(1) brightness(1.12) contrast(0.82)",
+          "colored_marker_paints": {
+            "red": [
+              "rgb(255, 0, 0)"
+            ],
+            "blue": [
+              "rgb(255, 255, 255)",
+              "rgb(0, 0, 255)"
+            ],
+            "yellowgreen": []
+          },
+          "attribution": " Leaflet | © OpenStreetMap contributors"
+        }
+      ],
+      "popup_and_zoom_interactions": "passed",
+      "controlled_tiles": {
+        "requests": 270,
+        "method": "Intercepted OSM URLs; original schematic test tiles; no requests reach the provider. Verifies iframe rendering, layers, colored markers, popups and zoom, not live OSM availability."
+      }
+    },
+    {
+      "notebook": "courses/cholera-1854-basic/NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb",
+      "status": "passed for recorded code",
+      "platform": "emscripten",
+      "canonical_code_sha256": "f0ce95909bb4c0ae2e60382c68cbe56d7a5e9f0d9a1d8737355e36d748ad9f7f",
+      "canonical_file_sha256_at_run": "60763105f529fa5380f2d3c3b20d3c664a2df50af1577ab8d34d3fa2557be2fe",
+      "current_code_matches_recorded_run": true,
+      "support_sha256": {
+        "resources/library.py": "277be4217d1db06cf33c75929591a3fe1b1ee57239ec4f26161d7ba93770b353",
+        "resources/style.css": "f1328a2d5b3100847616718823a0f35ee07161362e0e936527fe6af1d34d542b",
+        "resources/cholera_deaths.csv": "1be1926dca480fe8c9a83b663e62758e57c7ebe6c296d6a32c5e93a50d62b40a",
+        "resources/pumps.csv": "6ad041659f2dc2abf9048aa4c08c01a9a7d181bd19684f76c74b7df7a4b4b830"
+      },
+      "unique_execution_marker": "ATLAS_SOURCE_PYODIDE_PROOF_5da698675c62405ba7eba7f555b9e176",
+      "numerical_oracle": {
+        "mortality_locations": 250,
+        "deaths": 489,
+        "pumps": 8,
+        "death_weighted_center": [
+          51.51339831083845,
+          -0.1364029734151329
+        ]
+      },
+      "map_frames": [
+        {
+          "counts": {
+            "red": 250,
+            "blue": 8,
+            "yellowgreen": 0
+          },
+          "center": [
+            51.513578,
+            -0.136722
+          ],
+          "zoom": 17,
+          "mean_markers": [],
+          "base_layers": [
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ],
+          "attached_or_loaded_tile_count": 15,
+          "all_attached_tiles_verified": true,
+          "row_correspondence": {
+            "status": "passed",
+            "mortality_rows": 250,
+            "pump_rows": 8,
+            "csv_rows_sha256": "12a6d2c338739f6db452a52404d2c0f6e0fb207230c9415c9a9b8497857a0223"
+          },
+          "tile_pane_filter": "grayscale(1) brightness(1.12) contrast(0.82)",
+          "colored_marker_paints": {
+            "red": [
+              "rgb(255, 0, 0)"
+            ],
+            "blue": [
+              "rgb(255, 255, 255)",
+              "rgb(0, 0, 255)"
+            ],
+            "yellowgreen": []
+          },
+          "attribution": " Leaflet | © OpenStreetMap contributors"
+        },
+        {
+          "counts": {
+            "red": 250,
+            "blue": 8,
+            "yellowgreen": 1
+          },
+          "center": [
+            51.513578,
+            -0.136722
+          ],
+          "zoom": 17,
+          "mean_markers": [
+            [
+              51.51339831083845,
+              -0.1364029734151329
+            ]
+          ],
+          "base_layers": [
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ],
+          "attached_or_loaded_tile_count": 15,
+          "all_attached_tiles_verified": true,
+          "row_correspondence": {
+            "status": "passed",
+            "mortality_rows": 250,
+            "pump_rows": 8,
+            "csv_rows_sha256": "12a6d2c338739f6db452a52404d2c0f6e0fb207230c9415c9a9b8497857a0223"
+          },
+          "tile_pane_filter": "grayscale(1) brightness(1.12) contrast(0.82)",
+          "colored_marker_paints": {
+            "red": [
+              "rgb(255, 0, 0)"
+            ],
+            "blue": [
+              "rgb(255, 255, 255)",
+              "rgb(0, 0, 255)"
+            ],
+            "yellowgreen": [
+              "rgb(154, 205, 50)"
+            ]
+          },
+          "attribution": " Leaflet | © OpenStreetMap contributors"
+        }
+      ],
+      "popup_and_zoom_interactions": "passed",
+      "controlled_tiles": {
+        "requests": 90,
+        "method": "Intercepted OSM URLs; original schematic test tiles; no requests reach the provider. Verifies iframe rendering, layers, colored markers, popups and zoom, not live OSM availability."
+      }
+    }
+  ]
+}

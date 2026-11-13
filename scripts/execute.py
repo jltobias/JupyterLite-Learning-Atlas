@@ -1,4 +1,4 @@
-"""Execute original companions and explicitly selected local source lessons."""
+"""Execute original companions and explicitly selected source calculation paths."""
 from __future__ import annotations
 
 import argparse
@@ -68,7 +68,7 @@ def main():
     (output / "execution-results.json").write_text(json.dumps({"network":"Python data-service connections blocked; fresh temporary working directory per notebook", "results":results}, indent=2)+"\n",encoding="utf-8")
     if args.write:
         source_results=[r for r in results if r['path'].removeprefix('content/') in sections]
-        receipt={'verification':'Fresh native Python kernels; not browser/Pyodide certification','network':'Python data-service connection guard; explicitly selected local lessons only','results':source_results}
+        receipt={'verification':'Fresh native Python kernels; not browser/Pyodide certification','network':'Python data-service connection guard; explicitly selected source calculation paths only. Map HTML may be emitted, but native verification does not fetch tiles or certify rendered browser maps.','results':source_results}
         (ROOT/'catalog/source-execution.json').write_text(json.dumps(receipt,indent=2)+'\n',encoding='utf-8')
     from collections import Counter
     print(f"Accounted for {len(results)} notebooks: {dict(Counter(r['status'] for r in results))}.")

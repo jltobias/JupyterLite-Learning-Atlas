@@ -14,3 +14,4 @@ PyYAML==6.0.2
 numpy==2.3.3
 pandas==2.3.2
 matplotlib==3.11.2
+folium==0.20.0

@@ -84,6 +84,31 @@ EXTRA = {
 PHI = {'cholera-1854-basic','cholera-1854-advanced-1','cholera-1854-advanced-2','mdr-tb-thailand-2005'}
 MEDIA = {'.png','.jpg','.jpeg','.gif','.webp','.mp4','.wav','.mp3','.pdf','.ogg','.ico'}
 SAFE_EXT = {'.py','.json','.geojson','.csv','.tsv','.txt','.md','.css','.html','.js','.mjs','.svg','.shp','.shx','.dbf','.prj','.cpg','.gpkg','.xlsx','.xls','.graphml','.xml','.yaml','.yml','.jgis','.jGIS','.npz','.npy','.zip','.whl','.ttl','.vtt','.srt','.wasm','.tif','.tiff','.feather'} | MEDIA
+BASIC_NOTEBOOKS = {
+    'NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb',
+    'NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb',
+}
+BASIC_SETUP = '''# Prepare browser packages before importing the lesson dependencies.
+import sys
+if sys.platform == "emscripten":
+    import piplite
+    await piplite.install(["numpy", "pandas", "folium==0.20.0"])
+# Native kernels use the Atlas pinned build requirements.
+%run ./resources/library.py'''
+BASIC_GRAY_MAP = '''# One keyless modern street layer; only its tile pane is desaturated.
+def gray_street_map(location, zoom_start=17):
+    street_map = folium.Map(location=location, zoom_start=zoom_start, tiles=None)
+    folium.TileLayer(
+        tiles="https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        name="OpenStreetMap streets", max_zoom=19,
+    ).add_to(street_map)
+    street_map.get_root().header.add_child(folium.Element(
+        "<style>.folium-map .leaflet-tile-pane {"
+        "filter: grayscale(1) brightness(1.12) contrast(0.82);"
+        "}</style>"
+    ))
+    return street_map'''
 
 
 def digest(data): return hashlib.sha256(data).hexdigest()
@@ -103,6 +128,67 @@ def adapt_support(slug,path,data):
         data=text.replace(old,new).encode('utf-8')
         changes.append({'kind':'portability','reason':'Absolute source continuation must not be prefixed by the Atlas worker origin','from':old,'to':new})
     return data,changes
+
+
+def adapt_basic_notebook(slug,path,nb):
+    """Audited adapters for exactly the two full Basic source notebooks.
+
+    Cell positions refer to immutable upstream cells, before Atlas provenance.
+    Assertions make an upstream revision require a new, deliberate audit.
+    """
+    if slug!='cholera-1854-basic' or path not in BASIC_NOTEBOOKS:return []
+    def replace(index,old,new):
+        assert old in nb.cells[index].source, f'Basic adapter source changed: {path} cell {index}'
+        nb.cells[index].source=nb.cells[index].source.replace(old,new)
+    replace(1,'%run ./resources/library.py',BASIC_SETUP)
+    nb.cells[0].source='Run all cells in order in a fresh Python (Pyodide) or native Python kernel. The first code cell prepares browser packages before imports; native dependencies come from the Atlas pinned build requirements. Maps require network access for OpenStreetMap tiles and Folium JavaScript/CSS. Tables and calculations use bundled historical CSVs.'
+    first=path.startswith('NB01-')
+    if first:
+        nb.cells[5].source='In this notebook, we will learn about the approach that Dr. John Snow used when he investigated the London cholera outbreak in 1854. The optional video is an external continuation; it is not required to run this notebook.'
+        for index in (6,7):
+            nb.cells[index]=nbformat.v4.new_markdown_cell('[Optional video continuation: John Snow and the 1854 cholera outbreak](https://www.youtube.com/watch?v=lNjrAXGRda4). The local video is excluded because its individual reuse rights have not been established.')
+        replace(25,'!pip install pandas numpy','# numpy and pandas are prepared in the first code cell; no shell install is needed.')
+        replace(40,'%pip install -q folium','# Folium 0.20.0 is prepared in the first code cell; no shell install is needed.')
+        replace(41,'folium.__version__','print(folium.__version__)')
+        nb.cells[41].source+='\n\n'+BASIC_GRAY_MAP
+        nb.cells[42].source='If `folium` is undefined, rerun the first code cell and then the Folium import cell above. Learn more in the [Folium documentation](https://python-visualization.github.io/folium/latest/).'
+        nb.cells[38].source='In this mapping exercise, we will place historical mortality and pump data on a modern street basemap (Steps 2–5). The light-gray OpenStreetMap background is geographic context, not a reproduction of Snow\'s 1854 cartography.\n\n[Original map continuation](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/blob/476f6dd5a8430e6eb823e79614fda1d7e12a78fb/images/20040209cholera.jpg)'
+        nb.cells[47].source='The map uses one [OpenStreetMap](https://www.openstreetmap.org/copyright) street tile layer, with visible contributor attribution. OpenStreetMap is a collaboratively maintained modern map. Tiles and Folium JavaScript/CSS require network access; no offline map or historical street reconstruction is bundled.'
+        nb.cells[49].source='Use the `gray_street_map()` helper to give every example a subdued light-gray background. Its original CSS affects only the Leaflet tile pane, so mortality and pump markers retain their teaching colors. This replaces the retired Stamen theme and credential-dependent CARTO choices.'
+        nb.cells[50].source='# map1 already has one OpenStreetMap street layer with tile-pane-only gray styling.'
+        nb.cells[54].source='A subdued background supports [amplified cognition](https://infovis-wiki.net/wiki/Amplified_cognition) by making the colored markers easier to see. We keep the same single OpenStreetMap layer and light-gray styling in the following examples.'
+        replace(57,'# Try to change the theme to "cartodbpositron" below\nfolium.TileLayer(\'cartodbpositron\').add_to(map1)','# The helper keeps one light-gray street basemap; adjust zoom_start to explore.')
+        replace(88,'# Pickling dataframes','# Optional local persistence exercise: create our output directory first.\nfrom pathlib import Path\nPath("outputs").mkdir(parents=True, exist_ok=True)\n\n# Pickling dataframes')
+        nb.cells[89].source='# Inspect the generated local files using browser-compatible Python.\n[(path.name, path.stat().st_size) for path in sorted(Path("outputs").glob("*.pickle"))]'
+        nb.cells[87].source+='\n\nThis local persistence exercise is optional for continuing to Notebook 2, which independently reads the bundled CSVs. Only load pickle files you created and trust; download valuable browser files before clearing site storage.'
+    else:
+        replace(8,'**Step 1.** Unpickle the dataframes from Notebook 1.','**Step 1.** Load the bundled historical CSVs independently of Notebook 1 outputs.')
+        nb.cells[9].source='## <font color=\'blue\'>Step 1. Load the Historical Dataframes</font>'
+        nb.cells[10].source='Load the same bundled historical CSVs used in Notebook 1. No previous notebook outputs are needed. As an optional persistence exercise, after running Notebook 1 you can use `pd.read_pickle("outputs/deaths_df.pickle")` and `pd.read_pickle("outputs/pumps_df.pickle")` instead. Only unpickle local files you created and trust.'
+        replace(11,"# Let's read the pickle files back into their dataframes.\ndeaths_df = pd.read_pickle('outputs/deaths_df.pickle')\npumps_df = pd.read_pickle('outputs/pumps_df.pickle')","# Load bundled inputs; Notebook 1 outputs are not prerequisites.\ndeaths_df = pd.read_csv('resources/cholera_deaths.csv')\npumps_df = pd.read_csv('resources/pumps.csv')")
+        replace(18,'mean_center_df.to_pickle(', 'from pathlib import Path\nPath("outputs").mkdir(parents=True, exist_ok=True)\nmean_center_df.to_pickle(')
+        nb.cells[13].source+='\n\nThis weighted mean uses mortality coordinates and death counts only. Pumps are displayed for context and do not enter the calculation. It supplies neither an at-risk population denominator nor a causal inference about pump use.'
+        replace(34,'Added Mean Center analysis to triangulate observations of pump and mortality locations on the map','Added a death-weighted mean of mortality coordinates. Pumps are displayed for context and do not enter the weighted mean; this supplies neither an at-risk population denominator nor a causal inference about pump use.')
+        nb.cells[28].source='Recreate Notebook 1\'s final map with one modern OpenStreetMap street layer. The helper below applies light-gray CSS only to tiles, leaving mortality, pump and mean-center marker colors intact. Tiles and Folium JavaScript/CSS require network access. This is modern geographic context, not Snow\'s historical cartography.'
+        replace(29,'%pip install -q folium','import folium\n\n'+BASIC_GRAY_MAP)
+    expected_maps=5 if first else 1
+    changed=0
+    for cell in nb.cells:
+        if cell.cell_type!='code':continue
+        old='map1 = folium.Map(location=SOHO_COORDINATES, zoom_start=17)'
+        changed+=cell.source.count(old)
+        cell.source=cell.source.replace(old,'map1 = gray_street_map(location=SOHO_COORDINATES, zoom_start=17)')
+        cell.source=cell.source.replace("\nfolium.TileLayer('cartodbpositron').add_to(map1)\n",'\n')
+        cell.source=cell.source.replace('radius=radiuslist[i],','radius=radiuslist[i][0],')
+    assert changed==expected_maps, f'Basic map constructors changed: {path}: {changed}'
+    # Keep one continuation after all source-position-based changes are done.
+    if first:del nb.cells[7]
+    return [
+        {'kind':'portability','adapter':'cholera-basic-browser-v1','reason':'Prepare numpy/pandas and pinned Folium 0.20.0 with piplite only in Pyodide; remove shell installers/listing; create owned output directories; use independent CSV prerequisites and external optional video continuations.'},
+        {'kind':'basemap','adapter':'cholera-basic-browser-v1','reason':'Replace stacked/retired Stamen and CARTO tiles with one explicit keyless OpenStreetMap street layer and original tile-pane-only light-gray CSS; preserve visible OSM attribution and marker colors. Modern street context requires network access, not historical cartography or an offline map.'},
+        {'kind':'marker','adapter':'cholera-basic-browser-v1','reason':'Pass each DEATHS value as a scalar CircleMarker radius, retaining the instructional radiuslist list-of-lists and the same mortality sizes/data.'},
+        {'kind':'teaching','adapter':'cholera-basic-browser-v1','reason':'Retain one optional video continuation and explicit Folium version display; clarify that the death-weighted mortality center excludes pump locations and provides no at-risk denominator or causal inference.'},
+    ]
 
 
 def generated_configs():
@@ -206,6 +292,13 @@ def runtime(slug,path,nb):
     # Small, explicitly audited local set. Other source code is never auto-run.
     selected=slug in {'population-data-comparison','onehealth'} or (slug=='spatial-analysis' and path.endswith('01_VC_vector-conversion.ipynb')) or (slug=='eo-satellite-guide' and path.endswith('02_sensor_comparison.ipynb'))
     if slug in {'population-data-comparison','onehealth'}: klass='browser-local'
+    if slug=='cholera-1854-basic' and path in BASIC_NOTEBOOKS:
+        klass='browser-network';selected=True
+        requirements=[
+            'Run either notebook independently in a fresh Pyodide kernel: the first code cell prepares numpy/pandas and Folium 0.20.0 with piplite. Native kernels use the pinned Atlas build requirements.',
+            'Bundled historical CSVs supply calculations; OpenStreetMap street tiles and Folium JavaScript/CSS require network access. One tile layer uses original light-gray CSS while markers retain their colors and OSM attribution remains visible. No offline or historical street-map claim.',
+            'Optional video is an external continuation. Local pickle persistence is an exercise, not a Notebook 2 prerequisite; output directories are created before writes.',
+        ]
     return {'class':klass,'requirements':requirements,'execution_selected':selected}
 
 
@@ -294,11 +387,75 @@ def normalize_headings(nb,changes):
     if count:changes.append({'kind':'format','reason':'Normalized nonconsecutive Markdown heading levels for strict MyST; heading text retained','count':count})
 
 
+def prepare_source_notebook(r,n,nb,local,disposition,license_text,aliases,available):
+    """Prepare a single pinned notebook; also used for narrowly scoped refreshes."""
+    slug=r['slug'];changes=[{'kind':'format','reason':'Normalized notebook v4.5 and deterministic unique cell IDs; inserted Atlas provenance/runtime cell; cleared unverified outputs and widget execution state.'}]
+    changes.extend(adapt_basic_notebook(slug,n['path'],nb))
+    run=runtime(slug,n['path'],nb)
+    for i,c in enumerate(nb.cells):
+        c['id']=digest((local+':'+str(i)).encode())[:16]
+        if c.cell_type=='code':c.outputs=[];c.execution_count=None
+        elif c.cell_type=='markdown':
+            c.source=normalize_markdown(c.source,n['path'],slug,local,aliases,available,changes)
+            if slug=='pyscript' and '{{HUB_BASE}}' in c.source:
+                c.source=c.source.replace('{{HUB_BASE}}','https://jltobias.github.io/JupyterLite-PyScript');changes.append({'kind':'config','reason':'Resolved HUB_BASE placeholder to exact upstream project continuation'})
+        if c.get('attachments'):
+            c.source=re.sub(r'!\[[^\]]*\]\(attachment:[^)]+\)','[Embedded image omitted: file-specific reuse rights not established; consult pinned source.]',c.source)
+            del c['attachments'];changes.append({'kind':'rights','reason':'Unclear historical attachment omitted'})
+    nb.metadata.pop('widgets',None)
+    if nb.metadata.get('language_info',{}).get('name','python').lower() in {'python','ipython'}:
+        nb.metadata['kernelspec']={'display_name':'Python (Pyodide)','language':'python','name':'python3'}
+    nb.nbformat_minor=5
+    title=re.sub(r'^#+\s*','',n.get('first_heading') or PurePosixPath(local).stem).strip()[:180]
+    compatibility='Compatibility appendix: inherited JupyterLite demonstration, not an authored cholera case lesson.' if slug=='cholera-1854-advanced-1' and not PurePosixPath(n['path']).name.startswith('NB') else ''
+    intro=f"# {title}\n\n**Atlas source reading copy · {run['class']}**\n\n[Course guide]("+__import__('posixpath').relpath(f'courses/{slug}/index.ipynb',str(PurePosixPath(local).parent))+f") · [Pinned original]({disposition['source_url']})\n\n{compatibility}\n\n"+' '.join(run['requirements'])+f"\n\n**Provenance:** `{n['path']}` at `{r['commit']}`; original SHA-256 `{disposition['source_sha256']}`. {license_text}\n\n**Verification:** imported by static inspection; saved upstream outputs cleared. Runtime compatibility is separate from executed verification. See the course guide for dependencies, excluded assets, aliases and original credits.\n"
+    normalize_headings(nb,changes)
+    adapted=cell_digest(nb)
+    nb.cells.insert(0,nbformat.v4.new_markdown_cell(intro,id=digest((local+':provenance').encode())[:16]))
+    nb.metadata['atlas']={'kind':'source-section','course':slug,'source_path':n['path'],'source_commit':r['commit'],'source_sha256':disposition['source_sha256'],'runtime':run['class'],'data_status':'source-specific; see preserved provider metadata','verification':'not-run'}
+    if slug=='cholera-1854-basic' and n['path'] in BASIC_NOTEBOOKS:
+        nb.metadata.atlas['modifications']=[change for change in changes if change.get('adapter')=='cholera-basic-browser-v1']
+    nbformat.validate(nb)
+    return nb,{'course':slug,'title':title,'notebook':local,'source_path':n['path'],'source_sha256':disposition['source_sha256'],'source_cell_sha256':disposition['source_cell_sha256'],'adapted_cell_sha256':adapted,'runtime':run,'verification':{'status':'not-run','reason':'Static import; execution receipts are separate under _build/'},'license':license_text,'modifications':changes,'collection':'compatibility' if compatibility else 'authored'}
+
+
+def refresh_basic_notebooks():
+    """Reapply only the audited Basic repair, preserving every other record/file."""
+    manifest=json.loads((ROOT/'catalog/source-library.json').read_text(encoding='utf-8'))
+    slug='cholera-1854-basic';record=next(c for c in manifest['courses'] if c['slug']==slug)
+    course_source[slug]=record
+    aliases={d['source_path']:d['notebook'] for d in manifest['dispositions'] if d['course']==slug and d['disposition']!='excluded'}
+    available={s['local_path'] for s in manifest['support_files']}|{s['notebook'] for s in manifest['sections']}
+    pending=[]
+    for index,section in enumerate(manifest['sections']):
+        if section['course']!=slug or section['source_path'] not in BASIC_NOTEBOOKS:continue
+        raw=(SOURCES/slug/section['source_path']).read_bytes()
+        assert digest(raw)==section['source_sha256'], 'Basic original source hash changed'
+        original=nbformat.reads(raw.decode('utf-8-sig'),as_version=4)
+        assert cell_digest(original)==section['source_cell_sha256'], 'Basic original cell hash changed'
+        disposition=next(d for d in manifest['dispositions'] if d['course']==slug and d['source_path']==section['source_path'])
+        prepared,current=prepare_source_notebook(record,{'path':section['source_path'],'first_heading':section['title']},original,
+            section['notebook'],disposition,section['license'],aliases,available)
+        pending.append((index,prepared,current))
+    assert len(pending)==len(BASIC_NOTEBOOKS), 'Basic refresh requires both canonical sections'
+    # No existing destination is touched until both sources and preparations pass.
+    for index,prepared,current in pending:
+        target=DEST/current['notebook'];target.parent.mkdir(parents=True,exist_ok=True)
+        nbformat.write(prepared,target);manifest['sections'][index]=current
+    write_json(ROOT/'catalog/source-library.json',manifest)
+    write_json(ROOT/'site/data/source-library.json',manifest)
+    return manifest
+
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true')
+    parser.add_argument('--cholera-basic-only',action='store_true',help='Reapply only the audited Basic pair from the pinned local checkout')
+    args=parser.parse_args()
     if args.check:
         from source_library import validate_library
         validate_library(verify_sources=True);print('PASS pinned source/support hashes and all 753 dispositions');return
+    if args.cholera_basic_only:
+        refresh_basic_notebooks();print('Prepared only the two Cholera Basic notebooks and their manifest records');return
     previous=json.loads((ROOT/'catalog/source-library.json').read_text(encoding='utf-8')) if (ROOT/'catalog/source-library.json').exists() else {}
     # Additional verified external license notices are tracked canonical files,
     # not necessarily present in the pinned course checkout. Preserve their
@@ -404,31 +561,9 @@ def main():
         data=source.encode();out=DEST/local;out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes(data)
         manifest['support_files'].append({'course':PurePosixPath(local).parts[1],'local_path':local,'sha256':digest(data),'license':'Original Atlas configuration/attribution text; cited provider terms apply to source data','modifications':'Intentionally serialized Atlas preparation/configuration; not claimed as an upstream tracked file'})
     for r,n,nb,local,disposition,license_text in candidates:
-        slug=r['slug'];changes=[{'kind':'format','reason':'Normalized notebook v4.5 and deterministic unique cell IDs; inserted Atlas provenance/runtime cell; cleared unverified outputs and widget execution state.'}]
-        run=runtime(slug,n['path'],nb)
-        for i,c in enumerate(nb.cells):
-            c['id']=digest((local+':'+str(i)).encode())[:16]
-            if c.cell_type=='code':c.outputs=[];c.execution_count=None
-            elif c.cell_type=='markdown':
-                c.source=normalize_markdown(c.source,n['path'],slug,local,aliases_by_course[slug],available,changes)
-                if slug=='pyscript' and '{{HUB_BASE}}' in c.source:
-                    c.source=c.source.replace('{{HUB_BASE}}','https://jltobias.github.io/JupyterLite-PyScript');changes.append({'kind':'config','reason':'Resolved HUB_BASE placeholder to exact upstream project continuation'})
-            if c.get('attachments'):
-                c.source=re.sub(r'!\[[^\]]*\]\(attachment:[^)]+\)','[Embedded image omitted: file-specific reuse rights not established; consult pinned source.]',c.source)
-                del c['attachments'];changes.append({'kind':'rights','reason':'Unclear historical attachment omitted'})
-        nb.metadata.pop('widgets',None)
-        if nb.metadata.get('language_info',{}).get('name','python').lower() in {'python','ipython'}:
-            nb.metadata['kernelspec']={'display_name':'Python (Pyodide)','language':'python','name':'python3'}
-        nb.nbformat_minor=5
-        title=re.sub(r'^#+\s*','',n.get('first_heading') or PurePosixPath(local).stem).strip()[:180]
-        compatibility='Compatibility appendix: inherited JupyterLite demonstration, not an authored cholera case lesson.' if slug=='cholera-1854-advanced-1' and not PurePosixPath(n['path']).name.startswith('NB') else ''
-        intro=f"# {title}\n\n**Atlas source reading copy · {run['class']}**\n\n[Course guide]("+__import__('posixpath').relpath(f'courses/{slug}/index.ipynb',str(PurePosixPath(local).parent))+f") · [Pinned original]({disposition['source_url']})\n\n{compatibility}\n\n"+' '.join(run['requirements'])+f"\n\n**Provenance:** `{n['path']}` at `{r['commit']}`; original SHA-256 `{disposition['source_sha256']}`. {license_text}\n\n**Verification:** imported by static inspection; saved upstream outputs cleared. Runtime compatibility is separate from executed verification. See the course guide for dependencies, excluded assets, aliases and original credits.\n"
-        normalize_headings(nb,changes)
-        adapted=cell_digest(nb)
-        nb.cells.insert(0,nbformat.v4.new_markdown_cell(intro,id=digest((local+':provenance').encode())[:16]))
-        nb.metadata['atlas']={'kind':'source-section','course':slug,'source_path':n['path'],'source_commit':r['commit'],'source_sha256':disposition['source_sha256'],'runtime':run['class'],'data_status':'source-specific; see preserved provider metadata','verification':'not-run'}
-        nbformat.validate(nb);out=DEST/local;out.parent.mkdir(parents=True,exist_ok=True);nbformat.write(nb,out)
-        manifest['sections'].append({'course':slug,'title':title,'notebook':local,'source_path':n['path'],'source_sha256':disposition['source_sha256'],'source_cell_sha256':disposition['source_cell_sha256'],'adapted_cell_sha256':adapted,'runtime':run,'verification':{'status':'not-run','reason':'Static import; execution receipts are separate under _build/'},'license':license_text,'modifications':changes,'collection':'compatibility' if compatibility else 'authored'})
+        prepared,section=prepare_source_notebook(r,n,nb,local,disposition,license_text,aliases_by_course[r['slug']],available)
+        out=DEST/local;out.parent.mkdir(parents=True,exist_ok=True);nbformat.write(prepared,out)
+        manifest['sections'].append(section)
     manifest['inventory']={'repositories':len(manifest['courses']),'inspected_notebook_paths':len(manifest['dispositions']),'imported_sections':len(manifest['sections']),'authored_sections':sum(s['collection']=='authored' for s in manifest['sections']),'compatibility_sections':sum(s['collection']=='compatibility' for s in manifest['sections']),'aliases':sum(d['disposition']=='alias' for d in manifest['dispositions']),'excluded_notebooks':sum(d['disposition']=='excluded' for d in manifest['dispositions']),'support_files':len(manifest['support_files'])}
     write_json(ROOT/'catalog/source-library.json',manifest)
     print(json.dumps(manifest['inventory']))
