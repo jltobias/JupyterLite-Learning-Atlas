@@ -6,10 +6,11 @@ The expanded Atlas includes original synthetic companions **and** permitted sour
 |---|---|
 | Public project catalog | 35 core JupyterLite repositories and 7 related/PHI projects; 42 project chapters. Prior 39 records are preserved; 3 targeted new chapters added 2026-11-13. |
 | Source library | 42 pinned courses, 724 source notebook sections, 42 guides; 753 source paths accounted for by 724 imports, 12 aliases and 17 exclusions. |
-| Canonical Book/Lab content | 818 notebooks, 770 code-bearing; each appears once in the recursive Book TOC and is copied exactly into Lab. |
+| Canonical Book/Lab content | 820 notebooks, 771 code-bearing; each appears once in the recursive Book TOC and is copied exactly into Lab. |
 | Local source-course support | 1071 declared helper/data/license/support placements, each with a checksum and scope. Runtime labels distinguish intended compatibility from actually executed receipts. |
 | Real-data map studio | 15 corrected WUR city/model terrain views; four native Lagos population products; Fresno Landsat/Census inputs; distinct published poster reporting scopes; two 672-hour JASL/UHSLC observation windows. Values, dates, units and missingness stay source-specific. |
 | Map evidence and observations | [Map data/assets](catalog/map-data.json) and [source map resources](catalog/map-resources.json) identify exact bytes, source versions, rights and preparation. New historical gauge JSON, original CSVs and full producer license metadata are bundled under site/data/. No ordinary build queries a data provider. |
+| Browser GIS pathways | 42 subject profiles across 84 canonical project/course landings, plus six introduction/foundation routes; two new shared guide/workbench notebooks. Default practice reuses the existing Census source; no invented subject observations or new provider dataset is added. |
 | Dataset attribution | [README register](README.md#dataset-citations-and-attribution-register-2026-11-13) and [file-mapped credits](catalog/data-attributions.json); creator, version, source, rights and modifications remain dataset-specific. |
 | Discovery | 68 public records; historical dates remain unchanged. |
 | Entry audit | 174 dated source entries; prior 168 rows retained, 6 new exact GET checks returned 200 on 2026-11-13. HTTP reachability is separate from notebook/scientific execution. |

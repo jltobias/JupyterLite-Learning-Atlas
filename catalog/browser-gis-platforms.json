@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "original_metadata_attribution": "James L. Tobias and JupyterLite Learning Atlas contributors (2026), CC BY 4.0. Original register of linked official sources; no upstream source content bundled.",
+  "retrieved_at_utc": "2026-11-13T18:10:05Z",
+  "method": "GitHub connector read-only file fetches pinned to captured main commit; official public websites read via web tool",
+  "scope": "Public source metadata captured during documentary research; live application handoff spot checks are recorded separately in VALIDATION.md. No Ollama inference or network configuration tested.",
+  "repositories": [
+    {
+      "repository": "opengeos/GeoLibre",
+      "commit": "2189afea6cef078577a2200b358a7dfcf40762f6"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "commit": "4d6d0d0f2323bdcac0c40bed2e286df92f7287d3"
+    },
+    {
+      "repository": "ollama/ollama",
+      "commit": "5632619189ab493c70bd3f9435214b8788cc1c80"
+    }
+  ],
+  "files": [
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "docs/user-guide/ai-assistant.md",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/docs/user-guide/ai-assistant.md",
+      "git_blob_sha": "3b2f4756ca0d117e788f23dd169908e2be6c32fb",
+      "line_count": 590,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "docs/data-formats.md",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/docs/data-formats.md",
+      "git_blob_sha": "35e11dc8d071721fcd1e0a42503c474b591aa782",
+      "line_count": 163,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "docs/user-guide/adding-data.md",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/docs/user-guide/adding-data.md",
+      "git_blob_sha": "184b7ee7eafba912bb178a427cf0814f5df63446",
+      "line_count": 221,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "docs/user-guide/layers.md",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/docs/user-guide/layers.md",
+      "git_blob_sha": "afcbdd6beb1df174517da437c5b44aa29a3c05ae",
+      "line_count": 189,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "docs/deployment-capabilities.md",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/docs/deployment-capabilities.md",
+      "git_blob_sha": "d971918b26d6a84ef24653672a8f9ffcc702c641",
+      "line_count": 156,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "docs/privacy.md",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/docs/privacy.md",
+      "git_blob_sha": "495844aab4d376d951771ebb34e886e6cc1275fa",
+      "line_count": 178,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "CITATION.cff",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/CITATION.cff",
+      "git_blob_sha": "ddbd3b2f197c682ab794c0f3ff4535e188a8d6b4",
+      "line_count": 28,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "LICENSE",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/LICENSE",
+      "git_blob_sha": "8e069993c30ac2e4acc800f5a2612077e4500060",
+      "line_count": 22,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "docs/user-guide/embedding.md",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/docs/user-guide/embedding.md",
+      "git_blob_sha": "09c92d41511d7487a5062c89d0eaa11707e83a39",
+      "line_count": 764,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "docs/citation.md",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/docs/citation.md",
+      "git_blob_sha": "695e4501ebe79db6e13bef09a4eb95f03dbd9844",
+      "line_count": 56,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "docs/user-guide/processing.md",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/docs/user-guide/processing.md",
+      "git_blob_sha": "01a4082582a44368274018a737228cc212978b9f",
+      "line_count": 413,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "apps/geolibre-desktop/src/lib/assistant/provider.ts",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/apps/geolibre-desktop/src/lib/assistant/provider.ts",
+      "git_blob_sha": "efdb873a49af4733692c8058a47c4e6ac59d25e4",
+      "line_count": 764,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "apps/geolibre-desktop/src/lib/assistant/ollama.ts",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/apps/geolibre-desktop/src/lib/assistant/ollama.ts",
+      "git_blob_sha": "ce7e2ad1fba6fcca4b2add682feb4e2114919ded",
+      "line_count": 131,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "apps/geolibre-desktop/src/lib/assistant/tools.ts",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/apps/geolibre-desktop/src/lib/assistant/tools.ts",
+      "git_blob_sha": "e721144a0a66fb8ced2f29ad64dcf47433e7df5a",
+      "line_count": 1134,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "apps/geolibre-desktop/src/lib/raster-export.ts",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/apps/geolibre-desktop/src/lib/raster-export.ts",
+      "git_blob_sha": "22dc357f9c8011ea9e90d22c92825b9c20d809db",
+      "line_count": 61,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "apps/geolibre-desktop/src/hooks/desktop-shell/useRasterFileHandlers.ts",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/apps/geolibre-desktop/src/hooks/desktop-shell/useRasterFileHandlers.ts",
+      "git_blob_sha": "211c2f83c927a4809da205528c75206514b7088c",
+      "line_count": 187,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/GeoLibre",
+      "path": "packages/plugins/src/plugins/native-raster-import.ts",
+      "url": "https://github.com/opengeos/GeoLibre/blob/2189afea6cef078577a2200b358a7dfcf40762f6/packages/plugins/src/plugins/native-raster-import.ts",
+      "git_blob_sha": "bcd5718691eb9f0118c74ccde367a41455ec9a4e",
+      "line_count": 127,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "docs/user-guide/assistant.md",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/docs/user-guide/assistant.md",
+      "git_blob_sha": "763102a308756034b76a58591be0e7ed8f60f9b3",
+      "line_count": 394,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "docs/user-guide/data-formats.md",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/docs/user-guide/data-formats.md",
+      "git_blob_sha": "387581c8d6d6a512f387d5be6c288bee040634c1",
+      "line_count": 718,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "docs/user-guide/data.md",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/docs/user-guide/data.md",
+      "git_blob_sha": "c5d8b761ae68f6d8abde7f6a9581cc26dfe42115",
+      "line_count": 1501,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "docs/user-guide/web-data.md",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/docs/user-guide/web-data.md",
+      "git_blob_sha": "256c2f655ca5fb9e00386bdaa38309e2de416b80",
+      "line_count": 785,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "docs/user-guide/sharing.md",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/docs/user-guide/sharing.md",
+      "git_blob_sha": "1ea5b78a77445859b13cead0b56308d6b50e41c4",
+      "line_count": 161,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "docs/privacy.md",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/docs/privacy.md",
+      "git_blob_sha": "296d332fa5723fcd1b04fcc16560b36733b216ff",
+      "line_count": 162,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "CITATION.cff",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/CITATION.cff",
+      "git_blob_sha": "8391f7e4896768b743e0debc23b33f32fede3952",
+      "line_count": 36,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "LICENSE",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/LICENSE",
+      "git_blob_sha": "1128ff83dc2c238b27b38af9334b55b661914ea7",
+      "line_count": 192,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "docs/citation.md",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/docs/citation.md",
+      "git_blob_sha": "80bcacd1ff84a1775d75a6a0f57c394d195979b7",
+      "line_count": 52,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "docs/installation.md",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/docs/installation.md",
+      "git_blob_sha": "7faa7b31c06ed5c1b0ee5ba9cbcbbe8e83317af0",
+      "line_count": 356,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "docs/cli.md",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/docs/cli.md",
+      "git_blob_sha": "d4e2d0a91bb10e315248deb53521a5be2a31e173",
+      "line_count": 181,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "crates/assistant/src/provider.rs",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/crates/assistant/src/provider.rs",
+      "git_blob_sha": "a7e2af3147bfc0a00099fddca5c70f3e185fe806",
+      "line_count": 1737,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "opengeos/RustGIS",
+      "path": "crates/assistant/src/http.rs",
+      "url": "https://github.com/opengeos/RustGIS/blob/4d6d0d0f2323bdcac0c40bed2e286df92f7287d3/crates/assistant/src/http.rs",
+      "git_blob_sha": "51512945f8fd53b467c26dc2c4a74f777dac05bf",
+      "line_count": 270,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "ollama/ollama",
+      "path": "docs/faq.mdx",
+      "url": "https://github.com/ollama/ollama/blob/5632619189ab493c70bd3f9435214b8788cc1c80/docs/faq.mdx",
+      "git_blob_sha": "b6bd6b35d021c642e80007b67036a8773ac8488b",
+      "line_count": 424,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "ollama/ollama",
+      "path": "docs/capabilities/tool-calling.mdx",
+      "url": "https://github.com/ollama/ollama/blob/5632619189ab493c70bd3f9435214b8788cc1c80/docs/capabilities/tool-calling.mdx",
+      "git_blob_sha": "30c994d9fb8abf4aaa3832105ecadfdc3a132068",
+      "line_count": 778,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "ollama/ollama",
+      "path": "docs/api/openai-compatibility.mdx",
+      "url": "https://github.com/ollama/ollama/blob/5632619189ab493c70bd3f9435214b8788cc1c80/docs/api/openai-compatibility.mdx",
+      "git_blob_sha": "88e7e7beac8f4a6ac16da0f8e33788b2cdf5b24c",
+      "line_count": 472,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "ollama/ollama",
+      "path": "docs/cloud/faq.mdx",
+      "url": "https://github.com/ollama/ollama/blob/5632619189ab493c70bd3f9435214b8788cc1c80/docs/cloud/faq.mdx",
+      "git_blob_sha": "3559437b4f4b6babe9029cfe3d5a5e17292c70ee",
+      "line_count": 51,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "ollama/ollama",
+      "path": "envconfig/config.go",
+      "url": "https://github.com/ollama/ollama/blob/5632619189ab493c70bd3f9435214b8788cc1c80/envconfig/config.go",
+      "git_blob_sha": "0379a2aec2a9573d542deb840766a93694f63ffe",
+      "line_count": 469,
+      "encoding": "utf-8"
+    },
+    {
+      "repository": "ollama/ollama",
+      "path": "LICENSE",
+      "url": "https://github.com/ollama/ollama/blob/5632619189ab493c70bd3f9435214b8788cc1c80/LICENSE",
+      "git_blob_sha": "8e3dc978a7ca8c53f56bbedc5b558116140fc02e",
+      "line_count": 22,
+      "encoding": "utf-8"
+    }
+  ],
+  "web_sources": [
+    {
+      "url": "https://geolibre.app/user-guide/ai-assistant/",
+      "retrieved": "2026-11-13"
+    },
+    {
+      "url": "https://rustgis.app/user-guide/assistant/",
+      "retrieved": "2026-11-13"
+    },
+    {
+      "url": "https://docs.ollama.com/faq",
+      "retrieved": "2026-11-13"
+    },
+    {
+      "url": "https://docs.ollama.com/capabilities/tool-calling",
+      "retrieved": "2026-11-13"
+    },
+    {
+      "url": "https://docs.ollama.com/api/openai-compatibility",
+      "retrieved": "2026-11-13"
+    },
+    {
+      "url": "https://docs.ollama.com/cloud/faq",
+      "retrieved": "2026-11-13"
+    },
+    {
+      "url": "https://developer.chrome.com/blog/local-network-access",
+      "retrieved": "2026-11-13",
+      "author": "Chris Thompson",
+      "published": "2025-06-09",
+      "rollout_update": "2025-09-29",
+      "license": "CC BY 4.0 prose; Apache-2.0 code samples"
+    }
+  ]
+}

@@ -14,6 +14,9 @@ parts:
           Cholera Outbreak'
       - file: courses/cholera-1854-basic/NB02-Cholera-Case-Study-Folium-Map-Part-2
         title: 'Notebook 2: Calculating the Mean Center Point for Mortality Locations'
+  - file: browser-gis
+    sections:
+    - file: gis-workbench
   - file: foundations/spatial-thinking
   - file: foundations/learning-a-model
   - file: foundations/evidence-ai

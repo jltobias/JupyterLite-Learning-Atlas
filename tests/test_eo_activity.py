@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 import generate
 from atlas_paths import canonical_notebooks
+from browser_gis_material import OWNER as GIS_OWNER
 from eo_material import ACTIVITY, BASE, COMMIT, FILES, PIN, bibliography, source_overview
 from lesson_material import PATHS
 from validate import validate_catalog_sources
@@ -267,11 +268,18 @@ class EOIntegrationTests(unittest.TestCase):
 
     def test_seed_matches_canonical_activity_and_never_overwrites(self):
         canonical = nbformat.read(EO,as_version=4)
+        owned = [c for c in canonical.cells if c.metadata.get('atlas_browser_gis',{}).get('owner') == GIS_OWNER]
+        self.assertEqual(len(owned),1)
+        pathway = owned[0]
+        self.assertEqual(pathway.cell_type,'markdown')
+        self.assertEqual(pathway.metadata.atlas_browser_gis.key,'subject:eo-satellite-guide')
+        self.assertEqual(pathway.metadata.atlas_browser_gis.generated_sha256,hashlib.sha256(pathway.source.encode('utf-8')).hexdigest())
+        original_cells = [c for c in canonical.cells if c is not pathway]
         with tempfile.TemporaryDirectory() as folder, patch.object(generate,'ROOT',Path(folder)):
             generate.seed_project(self.record)
             seeded_path = Path(folder)/'content'/self.record['notebook']
             seeded = nbformat.read(seeded_path,as_version=4)
-            self.assertEqual([(c.cell_type,c.source) for c in seeded.cells],[(c.cell_type,c.source) for c in canonical.cells])
+            self.assertEqual([(c.cell_type,c.source) for c in seeded.cells],[(c.cell_type,c.source) for c in original_cells])
             seeded_path.write_text('authored sentinel',encoding='utf-8')
             generate.seed_project(self.record)
             self.assertEqual(seeded_path.read_text(encoding='utf-8'),'authored sentinel')

@@ -16,7 +16,8 @@ import yaml
 from atlas_paths import canonical_notebooks
 from data_credits import validate_data_credits
 from prepare_maps import check as validate_map_assets
-from source_library import load_library, source_sections, toc_files, validate_library, publishable_files
+from source_library import load_library, source_sections, toc_files, validate_library, publishable_files, validate_authored_support
+from browser_gis_material import load_pathways, validate_pathway_blocks
 
 ROOT = Path(__file__).resolve().parents[1]
 PYODIDE_EXTENSION='@jupyterlite/pyodide-kernel-extension'
@@ -85,6 +86,11 @@ def main():
     toc=yaml.safe_load((ROOT/'content/_toc.yml').read_text(encoding='utf-8'))
     nav=list(toc_files(toc))
     library=validate_library();sections=source_sections(library)
+    authored=validate_authored_support()
+    pathways=load_pathways()
+    assert {p['slug'] for p in pathways['pathways']}=={r['slug'] for r in records} and len(pathways['pathways'])==len(records), 'Browser GIS pathway coverage differs'
+    validate_pathway_blocks(ROOT,pathways['pathways'])
+    assert (ROOT/'content/assets/browser-gis-pathways.json').read_bytes()==(ROOT/'catalog/browser-gis-pathways.json').read_bytes()
     notebooks=canonical_notebooks()
     paths={p.relative_to(ROOT/'content').as_posix().removesuffix('.ipynb') for p in notebooks}
     assert len(nav)==len(set(nav)) and set(nav)==paths,'TOC/canonical notebook mismatch'
@@ -114,7 +120,8 @@ def main():
                 if isinstance(node,ast.Import): imports=[n.name.split('.')[0] for n in node.names]
                 elif isinstance(node,ast.ImportFrom): imports=[(node.module or '').split('.')[0]]
                 else: continue
-                assert all(x in allowed and x not in {'urllib','socket','http','subprocess','os'} for x in imports), f'Unsupported runtime import in {p}: {imports}'
+                local_modules={Path(item).stem for item in authored['dependencies'].get(p.relative_to(ROOT/'content').as_posix(),[]) if item.endswith('.py')}
+                assert all((x in allowed or x in local_modules) and x not in {'urllib','socket','http','subprocess','os'} for x in imports), f'Unsupported runtime import in {p}: {imports}'
             assert not any(o.output_type=='error' for o in c.get('outputs',[])),f'Saved error: {p}'
         for c in nb.cells:
             if c.cell_type!='markdown':continue

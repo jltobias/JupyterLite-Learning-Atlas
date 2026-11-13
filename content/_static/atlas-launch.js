@@ -13,5 +13,10 @@ document.addEventListener("DOMContentLoaded",()=>{
   const home=document.createElement("a");home.href=prefix;home.textContent="← Atlas home";
   const run=document.createElement("a");run.href=prefix+"lite/lab/index.html?path="+encodeURIComponent(notebook);run.textContent="Run this notebook in Lab ↗";
   if(notebook.startsWith("courses/"))run.textContent="Open this source notebook in Lab ↗";
-  nav.append(home,run);article.prepend(nav);
+  const guide=document.createElement("a");guide.href=prefix+"book/browser-gis.html";guide.textContent="Browser GIS + optional AI";
+  const workbench=document.createElement("a");workbench.href=prefix+"lite/lab/index.html?path=gis-workbench.ipynb";workbench.textContent="GIS workbench in Lab ↗";
+  nav.append(home,run,guide,workbench);
+  const subject=notebook.match(/^(?:projects|courses)\/([^/]+)\//);
+  if(subject){const pathway=document.createElement("a");pathway.href=prefix+"book/courses/"+encodeURIComponent(subject[1])+"/index.html#browser-gis-pathway";pathway.textContent="This subject’s GIS pathway";nav.append(pathway);}
+  article.prepend(nav);
 });

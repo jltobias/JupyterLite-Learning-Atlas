@@ -137,3 +137,10 @@ Plotly.js 3.1.0 is reused from the pinned sea-level course distribution; its com
 WUR corrected MSL terrain and its rendered/exported adaptations retain CC BY-NC-SA 4.0, source credit and the sampling/NoData/rounding statements. Other products retain their separately recorded CC BY 4.0, public-domain or original source scopes. JASL/UHSLC observations preserve source readings, record IDs, the full license attribute and NOAA/UHSLC citation; station-zero data are not relabeled as MSL.
 
 Optional OpenStreetMap street context is an online service with visible contributor attribution and the OSMF tile usage policy. No OSM tiles are bundled, cached for offline redistribution or bulk-prefetched. Local Natural Earth context remains public domain.
+
+
+## Cross-book browser GIS pathways (2026-11-13)
+
+GeoLibre is credited to Qiusheng Wu and Daniel Hofbauer (source MIT); RustGIS to Qiusheng Wu, José Gregorio Rincón Albarracín, Elpidio Filho, Daniel Hofbauer, Mavrick Fitzgerald and Dominik Strebel (source Apache-2.0); Ollama to its project/contributors (runtime MIT). Full citations, immutable documentary pins and source-license links are in README.md, REFERENCES.md and catalog/browser-gis-platforms.json. Concept DOIs are not version pins. These educational pathways link the hosted tools and use original Atlas wording/code/visuals; they do not redistribute either GIS application, provider screenshots, model weights or upstream documentation. Existing source lessons retain their own notices.
+
+The new workbench's default Census practice layer retains Census attribution/public-domain scope; learner-selected inputs retain their own source/license/method metadata, including any noncommercial/share-alike conditions. An Atlas code or prose license does not relicense those data, rendered derivatives, provider services or model weights. Ollama setup/inference and any external-app file import are user initiated. No provider credentials or local-service configuration are supplied.

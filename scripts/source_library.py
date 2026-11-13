@@ -33,12 +33,41 @@ def source_sections(library=None):
     return {s['notebook']: s for s in (library or load_library())['sections']}
 
 
+def authored_support():
+    path=ROOT/'catalog/authored-support.json'
+    return json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'files':[], 'dependencies':{}}
+
+
+def validate_authored_support():
+    """Audit only explicitly declared first-party helpers; no blanket import allowance."""
+    import ast
+    import sys
+    manifest=authored_support()
+    declared={item['local_path'] for item in manifest['files']}
+    assert len(declared)==len(manifest['files']), 'Duplicate authored support file'
+    for item in manifest['files']:
+        relative=Path(item['local_path'])
+        path=(ROOT/'content'/relative).resolve()
+        assert not relative.is_absolute() and path.is_relative_to((ROOT/'content').resolve()) and path.is_file(), 'Unsafe authored support path'
+        assert sha256(path)==item['sha256'], f'Authored support hash differs; review and update the explicit manifest: {relative}'
+        if path.suffix=='.py':
+            tree=ast.parse(path.read_text(encoding='utf-8'))
+            for node in ast.walk(tree):
+                names=[n.name.split('.')[0] for n in node.names] if isinstance(node,ast.Import) else [(node.module or '').split('.')[0]] if isinstance(node,ast.ImportFrom) else []
+                assert all(name in sys.stdlib_module_names and name not in {'urllib','socket','http','subprocess','os'} for name in names), f'Unsupported authored helper import: {relative}: {names}'
+    allowed=declared | {item['local_path'] for item in load_library()['support_files']} | {'assets/browser-gis-pathways.json'}
+    for notebook,dependencies in manifest['dependencies'].items():
+        assert (ROOT/'content'/notebook).is_file() and notebook.endswith('.ipynb')
+        assert set(dependencies)<=allowed, f'Undeclared authored dependency: {notebook}'
+    return manifest
+
+
 def publishable_files(root=ROOT / 'content'):
     try:
         from atlas_paths import content_files
     except ModuleNotFoundError:
         from .atlas_paths import content_files
-    declared = {f['local_path'] for f in load_library()['support_files']}
+    declared = {f['local_path'] for f in load_library()['support_files']} | {f['local_path'] for f in authored_support()['files']}
     return [p for p in content_files(root) if p.suffix == '.ipynb' or 'assets' in p.relative_to(root).parts or p.relative_to(root).as_posix() in declared]
 
 
@@ -55,6 +84,10 @@ def stage_dependencies(notebook, destination, library=None):
                 dest = Path(destination) / item['local_path']
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(ROOT / 'content' / item['local_path'], dest)
+    for relative in authored_support()['dependencies'].get(notebook, []):
+        dest=Path(destination)/relative
+        dest.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(ROOT/'content'/relative,dest)
     return target.parent
 
 

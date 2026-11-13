@@ -15,6 +15,7 @@ from phi_case_material import CASES as PHI_CASES, chapter_cells as phi_chapter_c
 from eo_material import chapter_cells as eo_chapter_cells, STAC_CONNECTION
 from textbook_material import NEW, chapter_cells as textbook_chapter_cells, seed_library
 from source_library import load_library
+from browser_gis_material import seed_browser_gis, reconcile_pathways
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/repositories.json"
@@ -203,6 +204,8 @@ def make_toc(records):
     parts=[{'caption':'Start here','chapters':[{'file':path} for path in [
         'foundations/browser-python', *early, 'foundations/spatial-thinking','foundations/learning-a-model',
         'foundations/evidence-ai','synthesis/global-health']]}]
+    # Browser Python and Cholera Basic remain the first two learning chapters.
+    parts[0]['chapters'].insert(1+len(early), {'file':'browser-gis','sections':[{'file':'gis-workbench'}]})
     investigations = [by_slug[slug] for slug in PHI_CASES if slug != 'cholera-1854-basic' and slug in by_slug]
     if investigations:
         parts.append({'caption':'Outbreak investigations','chapters':[
@@ -237,6 +240,8 @@ def main():
     for r in records:
         seed_project(r)
     seed_library(notebook,md,records)
+    seed_browser_gis(notebook,md,code)
+    pathway_results = reconcile_pathways(ROOT)
     assets = ROOT / "content/assets"
     assets.mkdir(parents=True, exist_ok=True)
     for p in (ROOT / "assets").glob("*"):
@@ -248,6 +253,10 @@ def main():
     shutil.copyfile(CATALOG, data_dir / "catalog.json")
     if (ROOT/'catalog/source-library.json').exists():
         shutil.copyfile(ROOT/'catalog/source-library.json',data_dir/'source-library.json')
+    shutil.copyfile(ROOT/'catalog/browser-gis-pathways.json',assets/'browser-gis-pathways.json')
+    conflicts=[path for path,status in pathway_results.items() if status=='conflict']
+    if conflicts:
+        print(f'Browser GIS: preserved {len(conflicts)} edited/conflicting blocks; review reported paths before publication.')
     print(f"Generated navigation for {len(records)} projects. Existing notebooks preserved.")
 
 

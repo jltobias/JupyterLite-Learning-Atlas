@@ -12,3 +12,8 @@ site/map-studio.css -text
 
 # Catalog mirrors are hashed byte-for-byte against site/data copies.
 catalog/map-*.json -text
+# Original browser-GIS helper and mirrored metadata retain reviewed bytes.
+content/atlas_gis_handoff.py -text
+catalog/browser-gis-*.json -text
+catalog/authored-support.json -text
+content/assets/browser-gis-pathways.json -text

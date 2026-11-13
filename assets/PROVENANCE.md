@@ -1,6 +1,6 @@
 # Original atlas visuals
 
-All six SVGs are original vector compositions by James L. Tobias and JupyterLite Learning Atlas contributors (2026), generated from `scripts/make_assets.py` and licensed CC BY 4.0. No stock images, source screenshots, third-party infographics, logos, geographic boundaries, or remote fonts are embedded.
+The six foundational SVGs listed below are original vector compositions by James L. Tobias and JupyterLite Learning Atlas contributors (2026), generated from `scripts/make_assets.py` and licensed CC BY 4.0. No stock images, source screenshots, third-party infographics, logos, geographic boundaries, or remote fonts are embedded.
 
 | File | Meaning and provenance |
 |---|---|
@@ -36,3 +36,8 @@ The EO chapter draws five fictional product candidates across four fictional mis
 
 
 At the comprehensive textbook refresh (2026-11-13), the metadata chart reflects42 chapters (35core,7related). Bars scale to the available width, height follows theme count and the caption date comes from the catalog. The other five SVG compositions and the README/opening-notebook PNG remain unchanged. Imported source visuals retain their separately documented rights and provenance.
+
+
+## Original browser GIS workflow (2026-11-13)
+
+`browser-gis-workflow.svg` is an original Atlas diagram of the manual notebook → attributed GeoJSON → RustGIS/GeoLibre → human evidence review → revision loop. Text labels identify applications; no upstream logo, screenshot, user interface, map tile, provider figure or model output is reproduced. The diagram conveys an educational workflow, with optional assistant use, not an automatic data transfer or a live model run. James L. Tobias and JupyterLite Learning Atlas contributors (2026), CC BY 4.0. Original helper/exporter code is MIT. Platform and source-data credits remain separate in README and references. All prior cover/SVG artwork is preserved.

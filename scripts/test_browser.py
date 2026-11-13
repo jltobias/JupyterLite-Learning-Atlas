@@ -313,6 +313,68 @@ def check_source_library(page,output,checks):
     checks.append('Full source library, lesson search, recursive routes, runtime disclosure, four nested Book/Lab handoffs,390px source reading and real Population payload/helper alias')
 
 
+def check_explorer_pathway_fallback(browser,checks):
+    for label,status,body in [('http500',500,'unavailable'),('malformed',200,'{"pathways": {"unexpected": true}}'),('invalid-json',200,'{not-json')]:
+        context=browser.new_context()
+        try:
+            page=context.new_page()
+            page.route('**/catalog/browser-gis-pathways.json',lambda route:route.fulfill(status=status,body=body,content_type='application/json'))
+            page.goto(BASE+'explore/')
+            page.locator('.resource').first.wait_for()
+            assert page.locator('.resource').count()==42, label
+            assert not page.locator('#load-error').is_visible(), label
+            page.locator('#query').fill('qa_scaling')
+            page.locator('.resource[data-slug="onehealth"]').wait_for()
+            assert page.locator('.resource').count()==1, label
+            page.locator('.source-lessons summary').click()
+            assert page.locator('a[href="../book/courses/onehealth/03_qa_scaling.html"]').is_visible(),label
+        finally:context.close()
+    checks.append('Core/source explorer cards and lesson search survive optional GIS-sidecar HTTP500 and malformed data')
+
+
+def check_browser_gis(page,browser,output,checks):
+    """Visible subject guidance, new original visual and prefix-correct handoffs."""
+    check_explorer_pathway_fallback(browser,checks)
+    page.goto(BASE+'explore/?q=weak-contact')
+    card=page.locator('.resource[data-slug="mdr-tb-thailand-2005"]');card.wait_for()
+    assert page.locator('.resource').count()==1
+    card.locator('.gis-pathway summary').click()
+    assert card.locator('a[href="../book/courses/mdr-tb-thailand-2005/index.html#browser-gis-pathway"]').is_visible()
+    page.screenshot(path=str(output/'browser-gis-explorer.png'),full_page=True)
+    for route in ['browser-gis','gis-workbench','projects/cholera-1854-basic/index','courses/onehealth/index','courses/coral-reef-one-health/index']:
+        response=page.goto(BASE+'book/'+route+'.html');assert response.status==200
+        article=page.locator('article.bd-article');article.wait_for()
+        assert article.locator('a[href="/JupyterLite-Learning-Atlas/book/browser-gis.html"]').count()>=1
+        assert article.locator('a[href="/JupyterLite-Learning-Atlas/lite/lab/index.html?path=gis-workbench.ipynb"]').count()>=1
+        if route.startswith(('projects/','courses/')):
+            assert article.locator('#browser-gis-pathway').count()==1
+            assert 'Geographic question:' in article.inner_text()
+            assert article.locator('a[href="https://web.rustgis.app/"]').count()>=1
+            assert article.locator('a[href="https://web.geolibre.app/"]').count()>=1
+        if route=='browser-gis':
+            graphic=article.locator('img[src*="browser-gis-workflow.svg"]');graphic.wait_for()
+            page.wait_for_function('image=>image.complete&&image.naturalWidth>0',arg=graphic.element_handle())
+        page.screenshot(path=str(output/('gis-'+route.replace('/','-')+'-desktop.png')),full_page=True)
+        page.set_viewport_size({'width':390,'height':844});check_mobile_book_width(page,'gis-'+route)
+        page.screenshot(path=str(output/('gis-'+route.replace('/','-')+'-mobile.png')),full_page=True)
+        page.set_viewport_size({'width':1440,'height':1000})
+    context=browser.new_context(viewport={'width':390,'height':844})
+    try:
+        lab=context.new_page()
+        lab.goto(BASE+'lite/lab/index.html?path=browser-gis.ipynb',wait_until='domcontentloaded')
+        lab.locator('.jp-Notebook').wait_for(timeout=90000)
+        # At 390px the initially open file browser leaves a 60px notebook.
+        files=lab.get_by_role('tab',name='File Browser')
+        if files.get_attribute('aria-selected')=='true':files.click()
+        graphic=lab.get_by_role('img',name='A manual evidence loop from notebook to GIS and human review',exact=True)
+        graphic.wait_for(timeout=30000)
+        graphic.scroll_into_view_if_needed()
+        lab.wait_for_function('image=>image.complete&&image.naturalWidth>0',arg=graphic.element_handle())
+        lab.screenshot(path=str(output/'browser-gis-lab-mobile.png'))
+    finally:context.close()
+    checks.append('Subject GIS explorer search, five desktop/mobile Book routes, exact prefix handoffs and original visual loaded in fresh mobile Lab')
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--browser-executable');args=parser.parse_args()
     output=ROOT/'_build/browser';output.mkdir(parents=True,exist_ok=True)
@@ -371,6 +433,7 @@ def main():
             check_phi_cases(page,browser,records,output,checks)
             check_eo(page,browser,records,output,checks)
             check_source_library(page,output,checks)
+            check_browser_gis(page,browser,output,checks)
             from map_test_support import check_primary_maps
             check_primary_maps(page, BASE, output)
             checks.append('real georeferenced 2D, actual statistical mesh/terrain WebGL, elevation screen and keyboard camera')

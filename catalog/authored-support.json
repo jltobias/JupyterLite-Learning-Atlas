@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "description": "Explicit first-party authored helper; imported-source manifests/pins remain separate.",
+  "files": [
+    {
+      "local_path": "atlas_gis_handoff.py",
+      "sha256": "0987fa578fa6c1c2818fe5192e98e4215d12244148abd6f43afcf36827fac930",
+      "license": "MIT; original Atlas code"
+    }
+  ],
+  "dependencies": {
+    "gis-workbench.ipynb": [
+      "atlas_gis_handoff.py",
+      "assets/browser-gis-pathways.json",
+      "courses/onehealth/data/tracts.geojson",
+      "courses/onehealth/data/manifest.json"
+    ]
+  }
+}

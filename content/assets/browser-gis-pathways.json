@@ -1,0 +1,1208 @@
+{
+  "schema_version": 1,
+  "title": "Original cross-book browser GIS pathways",
+  "inspected_on": "2026-11-13",
+  "scope": "42 project companions and 42 course guides; imported lessons remain unchanged",
+  "apps": {
+    "RustGIS": "https://web.rustgis.app/",
+    "GeoLibre": "https://web.geolibre.app/"
+  },
+  "pathways": [
+    {
+      "slug": "data-visualization",
+      "title": "Data visualization",
+      "route": "B",
+      "question": "How can symbol choice misrepresent the same events?",
+      "data_readiness": "USGS scene lesson, event table, and manifest. The CSV contains longitude, latitude, depth in kilometres, UTC time and magnitude; its companion GeoJSON has third ordinates.",
+      "source_links": [
+        {
+          "label": "USGS scene lesson",
+          "path": "courses/data-visualization/repository_examples/07_usgs_earthquake_scenes.ipynb"
+        },
+        {
+          "label": "event table",
+          "path": "courses/data-visualization/repository_examples/data/usgs/events.csv"
+        },
+        {
+          "label": "manifest",
+          "path": "courses/data-visualization/repository_examples/data/manifest.json"
+        }
+      ],
+      "rustgis_task": "Export a small dated subset of the bundled USGS CSV as 2D points; retain depth_km. Compare legends and inspect IDs/units. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Export a small dated subset of the bundled USGS CSV as 2D points; retain depth_km. Compare legends and inspect IDs/units. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Critique a misleading magnitude legend using actual IDs.",
+      "geoai_extension": "Optional existing DBSCAN comparison; magnitude display is not fitting.",
+      "evidence_check": "Count, ID, magnitude, time and depth survive transfer."
+    },
+    {
+      "slug": "shiny-live-apps",
+      "title": "Shiny Live Apps",
+      "route": "O/N",
+      "question": "Does an inclusive filter show exactly the qualifying records?",
+      "data_readiness": "original threshold exercise; source guide confirms zero source notebooks. No actual Shiny app is supplied.",
+      "source_links": [
+        {
+          "label": "original threshold exercise",
+          "path": "projects/shiny-live-apps/index.ipynb"
+        },
+        {
+          "label": "source guide",
+          "path": "courses/shiny-live-apps/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Practice only: filter a declared shared Census field and compare selected IDs/counts. Preserve original nonspatial list exercise; source is README-only. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Practice only: filter a declared shared Census field and compare selected IDs/counts. Preserve original nonspatial list exercise; source is README-only. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Propose exact-threshold and missing-value checks.",
+      "geoai_extension": "A reactive rule is not GeoAI; future classification requires labels/validation.",
+      "evidence_check": "Null remains unknown; no claim of an existing Shiny application."
+    },
+    {
+      "slug": "south-sudan-dashboard",
+      "title": "South Sudan dashboard",
+      "route": "O + C",
+      "question": "Which missing input blocks a credible continuity map?",
+      "data_readiness": "original staffed-slots/access exercise and source dashboard notebook. Its required facility CSV, HSTP JSON, DEM overlay/bounds and H3 layers are absent locally. Its ACLED/IDP sample generators do not make the missing facility inputs available.",
+      "source_links": [
+        {
+          "label": "original staffed-slots/access exercise",
+          "path": "projects/south-sudan-dashboard/index.ipynb"
+        },
+        {
+          "label": "source dashboard notebook",
+          "path": "courses/south-sudan-dashboard/SouthSudanDashboard_JupyterLite.ipynb"
+        }
+      ],
+      "rustgis_task": "Inventory absent facility/HSTP/DEM/H3 inputs. Practice only unless a learner supplies an approved attributed geographic layer with actual capacity/access fields. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Inventory absent facility/HSTP/DEM/H3 inputs. Practice only unless a learner supplies an approved attributed geographic layer with actual capacity/access fields. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Separate capacity, physical access and missing evidence.",
+      "geoai_extension": "Real access modelling needs verified roads/times/facilities.",
+      "evidence_check": "No real facility/conflict/displacement status is fabricated."
+    },
+    {
+      "slug": "spatial-analysis",
+      "title": "Spatial analysis",
+      "route": "O; B/C continuation",
+      "question": "What does neighborhood support do to a local peak?",
+      "data_readiness": "focal-mean companion, 90-element source index, and raster-creation lesson.",
+      "source_links": [
+        {
+          "label": "focal-mean companion",
+          "path": "projects/spatial-analysis/index.ipynb"
+        },
+        {
+          "label": "90-element source index",
+          "path": "courses/spatial-analysis/00_Index.ipynb"
+        },
+        {
+          "label": "raster-creation lesson",
+          "path": "courses/spatial-analysis/59_RC_raster-creation.ipynb"
+        }
+      ],
+      "rustgis_task": "Keep original planar focal means. Practice only: inspect actual geometry/support of shared tracts or a learner-attributed raster-summary export. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Keep original planar focal means. Practice only: inspect actual geometry/support of shared tracts or a learner-attributed raster-summary export. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Explain edge denominators and smoothing loss.",
+      "geoai_extension": "Smoothing is not learned prediction; holdout needs observed targets.",
+      "evidence_check": "No line indices or arbitrary planar units relabeled as geographic cells."
+    },
+    {
+      "slug": "maps-and-spatial-analyses",
+      "title": "Maps and spatial analyses",
+      "route": "O + C",
+      "question": "Does a distance rule preserve its boundary and units?",
+      "data_readiness": "distance-rule companion, source proximity notebook, source index.",
+      "source_links": [
+        {
+          "label": "distance-rule companion",
+          "path": "projects/maps-and-spatial-analyses/index.ipynb"
+        },
+        {
+          "label": "source proximity notebook",
+          "path": "courses/maps-and-spatial-analyses/04_PX_proximity.ipynb"
+        },
+        {
+          "label": "source index",
+          "path": "courses/maps-and-spatial-analyses/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Keep the original exact planar rule. Practice with an attributed geographic layer; use app distance/buffer only after support and units are verified. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Keep the original exact planar rule. Practice with an attributed geographic layer; use app distance/buffer only after support and units are verified. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Compare planar and geographic distance assumptions.",
+      "geoai_extension": "A buffer is deterministic; clustering is a separate source extension.",
+      "evidence_check": "No degree buffers called kilometres; historical failed launcher not claimed working."
+    },
+    {
+      "slug": "geospatial-analyses-and-maps-old",
+      "title": "Geospatial analyses and maps, old edition",
+      "route": "B + O",
+      "question": "How can a geographically uneven extract bias a summary?",
+      "data_readiness": "sampling/extract companion, sample lesson, landcover teaching grid, and retained source description.",
+      "source_links": [
+        {
+          "label": "sampling/extract companion",
+          "path": "projects/geospatial-analyses-and-maps-old/index.ipynb"
+        },
+        {
+          "label": "sample lesson",
+          "path": "courses/geospatial-analyses-and-maps-old/38_SP_sampling.ipynb"
+        },
+        {
+          "label": "landcover teaching grid",
+          "path": "courses/geospatial-analyses-and-maps-old/data/landcover_grid.csv"
+        },
+        {
+          "label": "retained source description",
+          "path": "courses/geospatial-analyses-and-maps-old/notices/README.md"
+        }
+      ],
+      "rustgis_task": "Export deterministic full/subset IDs from bundled landcover_grid.csv, retaining selection flags and teaching status. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Export deterministic full/subset IDs from bundled landcover_grid.csv, retaining selection flags and teaching status. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Diagnose group overrepresentation before comparing means.",
+      "geoai_extension": "Optional spatially blocked holdout; extracts are not established canonical observations.",
+      "evidence_check": "Selection denominators/units remain explicit; preserve distinct edition identity."
+    },
+    {
+      "slug": "geospatial-analyses-and-maps",
+      "title": "Geospatial analyses and maps",
+      "route": "B",
+      "question": "Which facilities fail a spatial or identifier join?",
+      "data_readiness": "overlay lesson, synthetic polygons, facility points, and companion unmatched-join exercise.",
+      "source_links": [
+        {
+          "label": "overlay lesson",
+          "path": "courses/geospatial-analyses-and-maps/notebooks/03_OV_overlay.ipynb"
+        },
+        {
+          "label": "synthetic polygons",
+          "path": "courses/geospatial-analyses-and-maps/data/admin_boundaries.geojson"
+        },
+        {
+          "label": "facility points",
+          "path": "courses/geospatial-analyses-and-maps/data/health_facilities.geojson"
+        },
+        {
+          "label": "companion unmatched-join exercise",
+          "path": "projects/geospatial-analyses-and-maps/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Keep the companion F1-F4/A-D/X lookup separate from bundled geographic HF_001/ADM11 ID families; no crosswalk is supplied. Inspect bundled teaching facility/boundary IDs and their documented fields independently. In RustGIS import the bundled geographic layer, inspect its actual IDs and count its own features.",
+      "geolibre_task": "Keep the companion F1-F4/A-D/X lookup separate from bundled geographic HF_001/ADM11 ID families; no crosswalk is supplied. Inspect bundled teaching facility/boundary IDs and their documented fields independently. In GeoLibre compare the same bundled layer attributes and legend; do not attach companion lookup results.",
+      "ai_prompt": "Diagnose unmatched records without dropping them.",
+      "geoai_extension": "Overlay is deterministic; suitability models need separate validation.",
+      "evidence_check": "Companion F4 is unmatched only within the separate companion lookup. Audit bundled HF/ADM feature IDs and counts independently; no F1-F4 or A-D/X crosswalk is implied."
+    },
+    {
+      "slug": "geospatial-analyses-and-maps-revised",
+      "title": "Geospatial analyses and maps, revised edition",
+      "route": "B",
+      "question": "How do counts and within-district shares change comparison?",
+      "data_readiness": "Montreal choropleth notebook, 58 district features, election attributes, and dataset notes.",
+      "source_links": [
+        {
+          "label": "Montreal choropleth notebook",
+          "path": "courses/geospatial-analyses-and-maps-revised/notebooks/01_montreal_choropleth_real_boundaries.ipynb"
+        },
+        {
+          "label": "58 district features",
+          "path": "courses/geospatial-analyses-and-maps-revised/data/montreal_districts.geojson"
+        },
+        {
+          "label": "election attributes",
+          "path": "courses/geospatial-analyses-and-maps-revised/data/election.csv"
+        },
+        {
+          "label": "dataset notes",
+          "path": "courses/geospatial-analyses-and-maps-revised/notices/SOURCES.md"
+        }
+      ],
+      "rustgis_task": "Join bundled actual Montreal boundaries/election table by documented IDs; compare fixed-legend counts/shares. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Join bundled actual Montreal boundaries/election table by documented IDs; compare fixed-legend counts/shares. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Explain one denominator/district-size issue using IDs.",
+      "geoai_extension": "Aggregation is not GeoAI; prediction requires a target and holdout.",
+      "evidence_check": "Preserve actual boundaries/notices and reconcile matched counts/totals."
+    },
+    {
+      "slug": "jupytergis-storymap-gaborone-tb-abm",
+      "title": "JupyterGIS StoryMap Gaborone TB ABM",
+      "route": "B + C",
+      "question": "Can a convincing scenario map conceal calibration error?",
+      "data_readiness": "course guide, illustrative neighborhoods, commuting lines, and residual companion.",
+      "source_links": [
+        {
+          "label": "course guide",
+          "path": "courses/jupytergis-storymap-gaborone-tb-abm/index.ipynb"
+        },
+        {
+          "label": "illustrative neighborhoods",
+          "path": "courses/jupytergis-storymap-gaborone-tb-abm/data/gaborone_tb_neighborhoods.geojson"
+        },
+        {
+          "label": "commuting lines",
+          "path": "courses/jupytergis-storymap-gaborone-tb-abm/data/gaborone_tb_commuting_flows.geojson"
+        },
+        {
+          "label": "residual companion",
+          "path": "projects/jupytergis-storymap-gaborone-tb-abm/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Inspect illustrative neighborhoods/flows as separate layers. Keep four companion residuals separate from eight source polygons absent an explicit crosswalk. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Inspect illustrative neighborhoods/flows as separate layers. Keep four companion residuals separate from eight source polygons absent an explicit crosswalk. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Identify calibration evidence absent from the illustrative map.",
+      "geoai_extension": "Native ABM calibration is a continuation.",
+      "evidence_check": "No row-order join; geographic alignment/placeholders are independently checked."
+    },
+    {
+      "slug": "global-health-gis",
+      "title": "Global health GIS",
+      "route": "B",
+      "question": "Are rates compatible in measure, year and denominator?",
+      "data_readiness": "burden pipeline template, synthetic country-point layer, country reference, and ethics lesson.",
+      "source_links": [
+        {
+          "label": "burden pipeline template",
+          "path": "courses/global-health-gis/01_gbd_data_pipeline_template.ipynb"
+        },
+        {
+          "label": "synthetic country-point layer",
+          "path": "courses/global-health-gis/data/gbd_country_points_2021.geojson"
+        },
+        {
+          "label": "country reference",
+          "path": "courses/global-health-gis/data/country_reference.csv"
+        },
+        {
+          "label": "ethics lesson",
+          "path": "courses/global-health-gis/05_public_data_sources_and_ethics.ipynb"
+        }
+      ],
+      "rustgis_task": "Select one explicit slice of bundled synthetic country points; inspect ISO3, source, age, sex and intervals. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Select one explicit slice of bundled synthetic country points; inspect ISO3, source, age, sex and intervals. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "List incompatible measures before summarizing.",
+      "geoai_extension": "Observed labels/validation needed for spatial inference.",
+      "evidence_check": "Retain SYNTHETIC_DEMO_NOT_IHME; do not casually population-weight age-standardized rates."
+    },
+    {
+      "slug": "cross-border-ebola-risk-mapping-prototype",
+      "title": "Cross-border Ebola preparedness prototype",
+      "route": "O + C",
+      "question": "Can weights reverse a preparedness ranking?",
+      "data_readiness": "browser synthetic risk lesson, weight sensitivity, and native validation scaffold.",
+      "source_links": [
+        {
+          "label": "browser synthetic risk lesson",
+          "path": "courses/cross-border-ebola-risk-mapping-prototype/00_jupyterlite_synthetic_risk_demo.ipynb"
+        },
+        {
+          "label": "weight sensitivity",
+          "path": "courses/cross-border-ebola-risk-mapping-prototype/01_jupyterlite_weight_sensitivity.ipynb"
+        },
+        {
+          "label": "native validation scaffold",
+          "path": "courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/10_validation_sensitivity_export.ipynb"
+        }
+      ],
+      "rustgis_task": "Keep existing synthetic sensitivity table nonspatial. Practice only for GIS; actual preparedness work stays in native source continuation. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Keep existing synthetic sensitivity table nonspatial. Practice only for GIS; actual preparedness work stays in native source continuation. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Separate a weight-induced reversal from observed evidence change.",
+      "geoai_extension": "Native reservoir/risk models are continuations; weighted index is not a trained model.",
+      "evidence_check": "No new border cells, sensitive readiness locations or geocoded toy IDs."
+    },
+    {
+      "slug": "global-informal-settlements-storymap",
+      "title": "Global informal settlements storymap",
+      "route": "B + C",
+      "question": "Does a point or bbox carry the polygon's claim?",
+      "data_readiness": "normalization lesson, two synthetic XDM features, QA lesson, and classification schema.",
+      "source_links": [
+        {
+          "label": "normalization lesson",
+          "path": "courses/global-informal-settlements-storymap/notebooks/02_Normalize_Settlements.ipynb"
+        },
+        {
+          "label": "two synthetic XDM features",
+          "path": "courses/global-informal-settlements-storymap/data/settlements.geojson"
+        },
+        {
+          "label": "QA lesson",
+          "path": "courses/global-informal-settlements-storymap/notebooks/05_Quality_Assurance.ipynb"
+        },
+        {
+          "label": "classification schema",
+          "path": "courses/global-informal-settlements-storymap/schemas/settlement.schema.json"
+        }
+      ],
+      "rustgis_task": "Compare existing two synthetic XDM settlements with their point/bbox representations; retain source/classification metadata. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Compare existing two synthetic XDM settlements with their point/bbox representations; retain source/classification metadata. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Separate source-defined settlement status, morphology and unknown labels.",
+      "geoai_extension": "Remote classification/AI panel remains optional.",
+      "evidence_check": "Retain CC0 synthetic declaration; not_fetched context blanks are not zero."
+    },
+    {
+      "slug": "hivdb-drug-resistance-maps",
+      "title": "HIVDB drug-resistance maps",
+      "route": "O/N + C",
+      "question": "Which studies can contribute to a country estimate?",
+      "data_readiness": "denominator companion, country-map notebook, and data requirements. Generated country/study/metadata CSVs required by the source map are absent locally.",
+      "source_links": [
+        {
+          "label": "denominator companion",
+          "path": "projects/hivdb-drug-resistance-maps/index.ipynb"
+        },
+        {
+          "label": "country-map notebook",
+          "path": "courses/hivdb-drug-resistance-maps/02_global_tdr_choropleth.ipynb"
+        },
+        {
+          "label": "data requirements",
+          "path": "courses/hivdb-drug-resistance-maps/data/README.md"
+        }
+      ],
+      "rustgis_task": "Required generated 2015 tables are absent. Keep A/A+B denominator audit nonspatial; practice only unless an approved aggregate source export is supplied. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Required generated 2015 tables are absent. Keep A/A+B denominator audit nonspatial; practice only unless an approved aggregate source export is supplied. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Find multi-country double counting and incompatible denominators.",
+      "geoai_extension": "Patient/mutation modelling requires approved inputs; no clinical inference.",
+      "evidence_check": "Do not place A+B in every country or fabricate patient/current-HIVDB data."
+    },
+    {
+      "slug": "whitebox",
+      "title": "Whitebox",
+      "route": "O + C",
+      "question": "Is largest drop the same as steepest descent?",
+      "data_readiness": "orthogonal descent companion, hydrology lesson, architecture boundary, and dataset notes.",
+      "source_links": [
+        {
+          "label": "orthogonal descent companion",
+          "path": "projects/whitebox/index.ipynb"
+        },
+        {
+          "label": "hydrology lesson",
+          "path": "courses/whitebox/04_Hydrological_Analysis.ipynb"
+        },
+        {
+          "label": "architecture boundary",
+          "path": "courses/whitebox/01_Architecture_and_Compatibility.ipynb"
+        },
+        {
+          "label": "dataset notes",
+          "path": "courses/whitebox/datasets.md"
+        }
+      ],
+      "rustgis_task": "Preserve 3x3 planar descent. Practice only with an attributed terrain summary if supplied; otherwise shared Census mechanics. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Preserve 3x3 planar descent. Practice only with an attributed terrain summary if supplied; otherwise shared Census mechanics. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Explain diagonal-neighbor and unequal-spacing effects.",
+      "geoai_extension": "Native WhiteboxTools/raster workflows remain continuations.",
+      "evidence_check": "No invented terrain geography, routed stream or native Pyodide executable."
+    },
+    {
+      "slug": "ai-agents-and-orchestrator-six-thinking-hats",
+      "title": "AI agents and orchestrator Six Thinking Hats",
+      "route": "N + optional B",
+      "question": "Can reviewers separate evidence from values?",
+      "data_readiness": "foundation lesson, orchestrator lab, and original role-coverage exercise.",
+      "source_links": [
+        {
+          "label": "foundation lesson",
+          "path": "courses/ai-agents-and-orchestrator-six-thinking-hats/00_six_thinking_hats_foundations.ipynb"
+        },
+        {
+          "label": "orchestrator lab",
+          "path": "courses/ai-agents-and-orchestrator-six-thinking-hats/02_orchestrator_lab.ipynb"
+        },
+        {
+          "label": "original role-coverage exercise",
+          "path": "projects/ai-agents-and-orchestrator-six-thinking-hats/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Review an existing teaching/practice layer. Keep remarks in a decision log keyed to actual feature/layer IDs. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Review an existing teaching/practice layer. Keep remarks in a decision log keyed to actual feature/layer IDs. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "For each hat cite a supplied feature and label evidence, concern or preference.",
+      "geoai_extension": "Role orchestration is not spatial fitting.",
+      "evidence_check": "No invented coordinates for statements; role coverage does not establish correctness."
+    },
+    {
+      "slug": "drc-population-mobility-border-mapping",
+      "title": "DRC population mobility border mapping",
+      "route": "O + C",
+      "question": "What connects a flow count to endpoints and time?",
+      "data_readiness": "flow lesson, inventory, and original A–D flow exercise.",
+      "source_links": [
+        {
+          "label": "flow lesson",
+          "path": "courses/drc-population-mobility-border-mapping/contents/notebooks/02_mobility_flowmap.ipynb"
+        },
+        {
+          "label": "inventory",
+          "path": "courses/drc-population-mobility-border-mapping/contents/notebooks/01_data_inventory.ipynb"
+        },
+        {
+          "label": "original A–D flow exercise",
+          "path": "projects/drc-population-mobility-border-mapping/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Inventory remote/conditional inputs. Keep A-D flows nonspatial; geographic flow work needs a learner-approved attributed export with explicit endpoint coordinates/dates. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Inventory remote/conditional inputs. Keep A-D flows nonspatial; geographic flow work needs a learner-approved attributed export with explicit endpoint coordinates/dates. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Explain why connectivity does not establish infection/transmission.",
+      "geoai_extension": "Mobility/access models require dated flows, roads and denominators.",
+      "evidence_check": "No guessed geocoding, invented DRC flows or degrees-as-km catchments."
+    },
+    {
+      "slug": "geospatial-research-awareness-radar",
+      "title": "Geospatial research awareness radar",
+      "route": "N + optional O",
+      "question": "Which works have a verified study area?",
+      "data_readiness": "deduplication companion, morning-scan source, and sample metadata.",
+      "source_links": [
+        {
+          "label": "deduplication companion",
+          "path": "projects/geospatial-research-awareness-radar/index.ipynb"
+        },
+        {
+          "label": "morning-scan source",
+          "path": "courses/geospatial-research-awareness-radar/01_morning_scan.ipynb"
+        },
+        {
+          "label": "sample metadata",
+          "path": "courses/geospatial-research-awareness-radar/sample_results_2026-09-04.json"
+        }
+      ],
+      "rustgis_task": "Deduplicate sample metadata; attach study_area_feature_id only after human verification against a selected layer. Keep unknown areas in the table. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Deduplicate sample metadata; attach study_area_feature_id only after human verification against a selected layer. Keep unknown areas in the table. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Cite the supplied record supporting each geography; abstain otherwise.",
+      "geoai_extension": "Spatial literature coverage is an evidence audit, not hazard inference.",
+      "evidence_check": "No title/author-affiliation geocoding; distinct DOI counts reconcile."
+    },
+    {
+      "slug": "world-monitor-prototype",
+      "title": "World Monitor prototype",
+      "route": "B",
+      "question": "Is a severe signal useful when stale or incomplete?",
+      "data_readiness": "2D lesson, training districts, surveillance, facility table, and provenance.",
+      "source_links": [
+        {
+          "label": "2D lesson",
+          "path": "courses/world-monitor-prototype/03_2D_Maps.ipynb"
+        },
+        {
+          "label": "training districts",
+          "path": "courses/world-monitor-prototype/data/districts.geojson"
+        },
+        {
+          "label": "surveillance",
+          "path": "courses/world-monitor-prototype/data/surveillance.csv"
+        },
+        {
+          "label": "facility table",
+          "path": "courses/world-monitor-prototype/data/facilities.csv"
+        },
+        {
+          "label": "provenance",
+          "path": "courses/world-monitor-prototype/data/provenance.json"
+        }
+      ],
+      "rustgis_task": "Join a fixed date of bundled surveillance to training districts; preserve reporting completeness, denominators and data age. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Join a fixed date of bundled surveillance to training districts; preserve reporting completeness, denominators and data age. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Draft three ID/date-cited briefing claims with missingness limits.",
+      "geoai_extension": "Optional anomaly detection needs evaluation; freshness weighting is heuristic.",
+      "evidence_check": "No live-monitor claim; counts/rates/completeness remain distinct; depth retained for 2D export."
+    },
+    {
+      "slug": "astra-demos",
+      "title": "Astra demos",
+      "route": "O/B",
+      "question": "Which generated-scene claims transfer to real geography?",
+      "data_readiness": "terrain/water source, interpolation lesson, and procedural-terrain companion.",
+      "source_links": [
+        {
+          "label": "terrain/water source",
+          "path": "courses/astra-demos/07_terrain_water.ipynb"
+        },
+        {
+          "label": "interpolation lesson",
+          "path": "courses/astra-demos/14_spatial_interpolation.ipynb"
+        },
+        {
+          "label": "procedural-terrain companion",
+          "path": "projects/astra-demos/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Keep procedural terrain generated/nonspatial. Practice only with learner-attributed terrain-summary data or shared tracts. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Keep procedural terrain generated/nonspatial. Practice only with learner-attributed terrain-summary data or shared tracts. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Distinguish generated, observed and unknown attributes; explain smoothing loss.",
+      "geoai_extension": "Interpolation/model comparison needs support and held-out evidence.",
+      "evidence_check": "No geographic coordinates assigned to the generated world; no benchmark result claimed."
+    },
+    {
+      "slug": "gods-eye-view-satellite",
+      "title": "God's Eye View satellite",
+      "route": "B/O",
+      "question": "Does possible coverage establish usable observation?",
+      "data_readiness": "sensor footprint lesson, Riverbend synthetic sectors, and uncertainty lesson.",
+      "source_links": [
+        {
+          "label": "sensor footprint lesson",
+          "path": "courses/gods-eye-view-satellite/02_sensor_footprint.ipynb"
+        },
+        {
+          "label": "Riverbend synthetic sectors",
+          "path": "courses/gods-eye-view-satellite/data/riverbend.geojson"
+        },
+        {
+          "label": "uncertainty lesson",
+          "path": "courses/gods-eye-view-satellite/11_spatial_uncertainty.ipynb"
+        }
+      ],
+      "rustgis_task": "Inspect existing synthetic Riverbend sectors and idealized footprint assumptions. Actual footprint requires a documented provider/learner export. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Inspect existing synthetic Riverbend sectors and idealized footprint assumptions. Actual footprint requires a documented provider/learner export. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "List cloud/time/resolution/acquisition evidence absent from a coverage claim.",
+      "geoai_extension": "Image interpretation needs actual pixels and evaluation.",
+      "evidence_check": "No invented ephemeris, acquired imagery or real observation claim."
+    },
+    {
+      "slug": "worldview",
+      "title": "WorldView",
+      "route": "B",
+      "question": "How can equal allocation leave unmet demand?",
+      "data_readiness": "response source, synthetic districts, facilities, network, and allocation companion.",
+      "source_links": [
+        {
+          "label": "response source",
+          "path": "courses/worldview/04_eoc_response.ipynb"
+        },
+        {
+          "label": "synthetic districts",
+          "path": "courses/worldview/data/districts.geojson"
+        },
+        {
+          "label": "facilities",
+          "path": "courses/worldview/data/facilities.geojson"
+        },
+        {
+          "label": "network",
+          "path": "courses/worldview/data/network.json"
+        },
+        {
+          "label": "allocation companion",
+          "path": "projects/worldview/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Inspect existing synthetic district/facility/network fields and bounded scenarios. Keep A/B/C companion values separate without crosswalk. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Inspect existing synthetic district/facility/network fields and bounded scenarios. Keep A/B/C companion values separate without crosswalk. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Audit fairness, stock conservation and missing logistics.",
+      "geoai_extension": "Network optimization/inference are separate continuations.",
+      "evidence_check": "No unsupported join or real emergency claim; allocation remains within stock."
+    },
+    {
+      "slug": "custom-gpt-six-thinking-hats",
+      "title": "Custom GPT Six Thinking Hats",
+      "route": "N + optional B",
+      "question": "Does valid review JSON establish valid claims?",
+      "data_readiness": "JSON capture lesson, global-health example, and schema-check companion.",
+      "source_links": [
+        {
+          "label": "JSON capture lesson",
+          "path": "courses/custom-gpt-six-thinking-hats/02_prompt_and_capture.ipynb"
+        },
+        {
+          "label": "global-health example",
+          "path": "courses/custom-gpt-six-thinking-hats/examples/global_health.json"
+        },
+        {
+          "label": "schema-check companion",
+          "path": "projects/custom-gpt-six-thinking-hats/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Paste/manually author JSON about an existing practice layer; retain ID-keyed matched remarks and nonspatial unmatched remarks. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Paste/manually author JSON about an existing practice layer; retain ID-keyed matched remarks and nonspatial unmatched remarks. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Classify each claim as supported, judgment or unsupported.",
+      "geoai_extension": "Chat/schema validation is not GeoAI.",
+      "evidence_check": "Missing and empty hats differ; no invented statement coordinates or assumed plugin access."
+    },
+    {
+      "slug": "geolibre-geoai",
+      "title": "GeoLibre GeoAI",
+      "route": "B",
+      "question": "Do the same groups survive two GIS views?",
+      "data_readiness": "lesson 22: one result, two GIS apps, 20 invented points with fitted group properties, and spatial holdout companion.",
+      "source_links": [
+        {
+          "label": "lesson 22: one result, two GIS apps",
+          "path": "courses/geolibre-geoai/22_rustgis_geoai_bridge.ipynb"
+        },
+        {
+          "label": "20 invented points with fitted group properties",
+          "path": "courses/geolibre-geoai/data/rustgis-groups.geojson"
+        },
+        {
+          "label": "spatial holdout companion",
+          "path": "projects/geolibre-geoai/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Reuse existing lesson 22's 20 invented points and DBSCAN output; compare 150m/350m and import the same export in both apps. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Reuse existing lesson 22's 20 invented points and DBSCAN output; compare 150m/350m and import the same export in both apps. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Explain why groups are not disease risk and changing view does not refit.",
+      "geoai_extension": "Existing DBSCAN and spatial holdout are principal hands-on GeoAI paths; preserve pins.",
+      "evidence_check": "Keep unassigned -1/radius/method/synthetic labels; published link is not learner edits."
+    },
+    {
+      "slug": "gpt-6-astra-geospatial",
+      "title": "GPT-6 Astra geospatial",
+      "route": "B",
+      "question": "Can an explanation meet a spatial evidence contract?",
+      "data_readiness": "spatial contracts, spatial evaluation, and building geometry.",
+      "source_links": [
+        {
+          "label": "spatial contracts",
+          "path": "courses/gpt-6-astra-geospatial/01_spatial_contracts.ipynb"
+        },
+        {
+          "label": "spatial evaluation",
+          "path": "courses/gpt-6-astra-geospatial/09_astra_spatial_eval.ipynb"
+        },
+        {
+          "label": "building geometry",
+          "path": "courses/gpt-6-astra-geospatial/data/gaborone_buildings.geojson"
+        }
+      ],
+      "rustgis_task": "Select a few bundled building IDs; retain source/version/time and inspect coverage of required fields. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Select a few bundled building IDs; retain source/version/time and inspect coverage of required fields. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Answer from supplied fields; abstain on absent occupancy/population.",
+      "geoai_extension": "Evaluate candidate answers; no unrun benchmark or world-model result.",
+      "evidence_check": "Schema coverage is not accuracy; audit alignment with separate illustrative TB layers."
+    },
+    {
+      "slug": "zarr-sql-views",
+      "title": "Zarr SQL views",
+      "route": "B/O + C",
+      "question": "Which threshold changes retained spatial evidence?",
+      "data_readiness": "AR6 grid lesson, grid summary, FTW field-confidence lesson, Kenya polygons, and FTW provenance.",
+      "source_links": [
+        {
+          "label": "AR6 grid lesson",
+          "path": "courses/zarr-sql-views/15_ar6_grid_maps.ipynb"
+        },
+        {
+          "label": "grid summary",
+          "path": "courses/zarr-sql-views/data/ar6-grid-summary.json"
+        },
+        {
+          "label": "FTW field-confidence lesson",
+          "path": "courses/zarr-sql-views/24_ftw_fields_confidence.ipynb"
+        },
+        {
+          "label": "Kenya polygons",
+          "path": "courses/zarr-sql-views/data/ftw_kenya_fields.geojson"
+        },
+        {
+          "label": "FTW provenance",
+          "path": "courses/zarr-sql-views/data/ftw-provenance.json"
+        }
+      ],
+      "rustgis_task": "Select small existing FTW polygons with provenance; compare only actual supported confidence fields. Keep synthetic cube-support accounting separate. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Select small existing FTW polygons with provenance; compare only actual supported confidence fields. Keep synthetic cube-support accounting separate. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Separate predicted field, ownership, embedding, scenario and hazard.",
+      "geoai_extension": "Embeddings/classification/cube inference are source continuations.",
+      "evidence_check": "Preserve units and variable-specific support; no copied GPL binaries or claim helper runs cubes."
+    },
+    {
+      "slug": "global-fishing-watch-and-dark-vessels",
+      "title": "Global Fishing Watch and dark vessels",
+      "route": "B/O + C",
+      "question": "When does a wider gate trade unmatched for ambiguity?",
+      "data_readiness": "observed-ocean lesson, 1-degree historical activity, derived manifest, and matching-ambiguity companion.",
+      "source_links": [
+        {
+          "label": "observed-ocean lesson",
+          "path": "courses/global-fishing-watch-and-dark-vessels/01_observed_ocean.ipynb"
+        },
+        {
+          "label": "1-degree historical activity",
+          "path": "courses/global-fishing-watch-and-dark-vessels/data/sar_activity_1deg.csv"
+        },
+        {
+          "label": "derived manifest",
+          "path": "courses/global-fishing-watch-and-dark-vessels/data/derived_manifest.json"
+        },
+        {
+          "label": "matching-ambiguity companion",
+          "path": "projects/global-fishing-watch-and-dark-vessels/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Export fixed small window of bundled historical 1-degree activity as documented centers/rectangles; keep original planar gates separate. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Export fixed small window of bundled historical 1-degree activity as documented centers/rectangles; keep original planar gates separate. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Explain why unmatched detections imply neither wrongdoing nor catch.",
+      "geoai_extension": "SAR detection/matching models are source continuations; gate rule is deterministic.",
+      "evidence_check": "Retain 2017-2021 normalized units and deposit/platform rights distinction; no vessel tracks invented."
+    },
+    {
+      "slug": "rewiring-global-health",
+      "title": "Rewiring global health",
+      "route": "O/N + C",
+      "question": "Whose preferences change the next experiment?",
+      "data_readiness": "digital-twin source, privacy lesson, and priority-weight companion.",
+      "source_links": [
+        {
+          "label": "digital-twin source",
+          "path": "courses/rewiring-global-health/08_digital_twin_global_health.ipynb"
+        },
+        {
+          "label": "privacy lesson",
+          "path": "courses/rewiring-global-health/09_geoprivacy_map_encryption.ipynb"
+        },
+        {
+          "label": "priority-weight companion",
+          "path": "projects/rewiring-global-health/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Review existing practice layer with a weight/decision log. Keep privacy review/workshop as actions, not geographic sites. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Review existing practice layer with a weight/decision log. Keep privacy review/workshop as actions, not geographic sites. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Separate changed preferences, observations and community evidence.",
+      "geoai_extension": "Uncalibrated world models remain continuations; ranking is not prediction.",
+      "evidence_check": "No fake action locations; encryption exercise is not managed key service."
+    },
+    {
+      "slug": "sea-level-rise",
+      "title": "Sea-level rise",
+      "route": "B/O + C",
+      "question": "Does a dry floor guarantee accessible service?",
+      "data_readiness": "synthetic facility table, synthetic exposure, datum sensitivity lesson, and provenance.",
+      "source_links": [
+        {
+          "label": "synthetic facility table",
+          "path": "courses/sea-level-rise/data/synthetic_facilities.csv"
+        },
+        {
+          "label": "synthetic exposure",
+          "path": "courses/sea-level-rise/data/synthetic_exposure.csv"
+        },
+        {
+          "label": "datum sensitivity lesson",
+          "path": "courses/sea-level-rise/notebooks/17_datum_sensitivity.ipynb"
+        },
+        {
+          "label": "provenance",
+          "path": "courses/sea-level-rise/data/provenance.json"
+        }
+      ],
+      "rustgis_task": "Join bundled fictional facilities/exposure by exact ID and one scenario/year; preserve synthetic status, units, thresholds and coverage. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Join bundled fictional facilities/exposure by exact ID and one scenario/year; preserve synthetic status, units, thresholds and coverage. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Identify datum/baseline/road assumptions behind continuity claims.",
+      "geoai_extension": "Spatial scans/model evaluation stay source continuations; scenario is not probability.",
+      "evidence_check": "No governed facility reconstitution; poster city aggregates remain aggregate evidence."
+    },
+    {
+      "slug": "stac-browser",
+      "title": "STAC Browser",
+      "route": "O + B/C continuation",
+      "question": "Is a selected footprint a usable downloaded raster?",
+      "data_readiness": "metadata-selection companion, RustGIS discovery handoff, GeoLibre handoff, and catalog registry.",
+      "source_links": [
+        {
+          "label": "metadata-selection companion",
+          "path": "projects/stac-browser/index.ipynb"
+        },
+        {
+          "label": "RustGIS discovery handoff",
+          "path": "courses/stac-browser/04_discover_download_rustgis.ipynb"
+        },
+        {
+          "label": "GeoLibre handoff",
+          "path": "courses/stac-browser/05_discover_download_geolibre.ipynb"
+        },
+        {
+          "label": "catalog registry",
+          "path": "courses/stac-browser/public-catalogs.json"
+        }
+      ],
+      "rustgis_task": "Reuse existing RustGIS WorldPop item footprints/provenance for metadata-only practice; keep toy companion metadata nonspatial. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Reuse existing RustGIS WorldPop item footprints/provenance for metadata-only practice; keep toy companion metadata nonspatial. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Separate collection/item/asset/license/unknown cloud cover.",
+      "geoai_extension": "Optional GeoAI triage needs actual data and validation.",
+      "evidence_check": "No fabricated footprints, undocumented API/deep links or pixel-download claim."
+    },
+    {
+      "slug": "climate-and-health",
+      "title": "Climate and health",
+      "route": "B",
+      "question": "How do threshold and missing support change exceedance days?",
+      "data_readiness": "daily-heat lesson, synthetic daily heat, synthetic study-site geometry, source registry, and Healthsites provenance.",
+      "source_links": [
+        {
+          "label": "daily-heat lesson",
+          "path": "courses/climate-and-health/notebooks/03_daily_heat.ipynb"
+        },
+        {
+          "label": "synthetic daily heat",
+          "path": "courses/climate-and-health/data/daily-heat.csv"
+        },
+        {
+          "label": "synthetic study-site geometry",
+          "path": "courses/climate-and-health/data/study-sites.geojson"
+        },
+        {
+          "label": "source registry",
+          "path": "courses/climate-and-health/data/source-registry.json"
+        },
+        {
+          "label": "Healthsites provenance",
+          "path": "courses/climate-and-health/data/healthsites_provenance.json"
+        }
+      ],
+      "rustgis_task": "Join bundled synthetic daily heat by case_id to study-site IDs; export counts and observed-day denominators for fixed period. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Join bundled synthetic daily heat by case_id to study-site IDs; export counts and observed-day denominators for fixed period. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "List missing indoor/exposure/outcome evidence.",
+      "geoai_extension": "Threshold counts are not fitting; predictive exposure model requires labels.",
+      "evidence_check": "Separate synthetic scenarios, observed global series and OSM facilities; absent days are not zero."
+    },
+    {
+      "slug": "rustgis",
+      "title": "RustGIS",
+      "route": "B/O",
+      "question": "What must survive a changed-result handoff?",
+      "data_readiness": "existing reproducible handoff, teaching layer, WorldPop footprints, provenance, and original 2D export companion.",
+      "source_links": [
+        {
+          "label": "existing reproducible handoff",
+          "path": "courses/rustgis/03_rustgis_bridge.ipynb"
+        },
+        {
+          "label": "teaching layer",
+          "path": "courses/rustgis/data/demo_features.geojson"
+        },
+        {
+          "label": "WorldPop footprints",
+          "path": "courses/rustgis/data/worldpop_uga_items.geojson"
+        },
+        {
+          "label": "provenance",
+          "path": "courses/rustgis/data/worldpop_provenance.json"
+        },
+        {
+          "label": "original 2D export companion",
+          "path": "projects/rustgis/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Use bundled demo geometry or companion's existing 2D points; export data/method card and manually import into both apps. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Use bundled demo geometry or companion's existing 2D points; export data/method card and manually import into both apps. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Audit ID/count/bbox/units/source/missingness before and after transfer.",
+      "geoai_extension": "Reuse existing DBSCAN/holdout as optional GeoAI; projection is not training.",
+      "evidence_check": "Preserve source pins/properties; no native CPython wheel installed in Pyodide."
+    },
+    {
+      "slug": "osiris",
+      "title": "OSIRIS",
+      "route": "O + C",
+      "question": "How can unverified signals stay visible without appearing confirmed?",
+      "data_readiness": "common-picture source, verification lesson, sitrep lesson, and original report-state exercise.",
+      "source_links": [
+        {
+          "label": "common-picture source",
+          "path": "courses/osiris/02_2d_common_picture.ipynb"
+        },
+        {
+          "label": "verification lesson",
+          "path": "courses/osiris/06_cameras_and_verification.ipynb"
+        },
+        {
+          "label": "sitrep lesson",
+          "path": "courses/osiris/08_priorities_and_sitrep.ipynb"
+        },
+        {
+          "label": "original report-state exercise",
+          "path": "projects/osiris/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Use evidence-state fields of a learner-attributed geographic export if supplied; otherwise practice only and retain original report list nonspatial. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Use evidence-state fields of a learner-attributed geographic export if supplied; otherwise practice only and retain original report list nonspatial. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Draft evidence-state-labelled briefing without promoting plausibility to fact.",
+      "geoai_extension": "Anomaly/vision models need verified inputs and separate evaluation.",
+      "evidence_check": "No newly invented camera, live signal or operational report geometry."
+    },
+    {
+      "slug": "pyscript",
+      "title": "PyScript",
+      "route": "B",
+      "question": "Do two runtimes preserve the same portable result?",
+      "data_readiness": "data exploration, 24 simulated NYC observations, app-authoring lesson, and round-trip companion.",
+      "source_links": [
+        {
+          "label": "data exploration",
+          "path": "courses/pyscript/02-explore-data.ipynb"
+        },
+        {
+          "label": "24 simulated NYC observations",
+          "path": "courses/pyscript/data/nyc-observations.geojson"
+        },
+        {
+          "label": "app-authoring lesson",
+          "path": "courses/pyscript/03-author-an-app.ipynb"
+        },
+        {
+          "label": "round-trip companion",
+          "path": "projects/pyscript/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Select an hour from existing simulated NYC point GeoJSON; compare round-trip IDs/count/values after import. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Select an hour from existing simulated NYC point GeoJSON; compare round-trip IDs/count/values after import. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Diagnose a swapped coordinate or incompatible unit using supplied rows.",
+      "geoai_extension": "Runtime agreement is not model validation.",
+      "evidence_check": "Keep simulation labels; wait-time companion stays separate without ID/unit crosswalk."
+    },
+    {
+      "slug": "coral-reef-one-health",
+      "title": "Coral reef One Health",
+      "route": "O/N + C",
+      "question": "What can these descriptors support about reef/community health?",
+      "data_readiness": "initiative catalog lesson, synthetic nonspatial site descriptors, and missing-evidence/weight companion. The supplied CSV has no coordinates; the initiative catalog has no imagery or reef habitat polygons.",
+      "source_links": [
+        {
+          "label": "initiative catalog lesson",
+          "path": "courses/coral-reef-one-health/01-reef-mapping.ipynb"
+        },
+        {
+          "label": "synthetic nonspatial site descriptors",
+          "path": "courses/coral-reef-one-health/data/synthetic-reef-sites.csv"
+        },
+        {
+          "label": "missing-evidence/weight companion",
+          "path": "projects/coral-reef-one-health/index.ipynb"
+        }
+      ],
+      "rustgis_task": "CSV lacks coordinates and catalog lacks imagery/polygons. Keep sensitivity table; practice only or learner-selected attributed provider export. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "CSV lacks coordinates and catalog lacks imagery/polygons. Keep sensitivity table; practice only or learner-selected attributed provider export. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Explain preference/missingness rank changes and absent field evidence.",
+      "geoai_extension": "Habitat classification needs actual labelled imagery/validation.",
+      "evidence_check": "No invented reef coordinates/name geocoding; missing score remains null."
+    },
+    {
+      "slug": "cholera-1854-basic",
+      "title": "1854 cholera basic",
+      "route": "B; O planar fallback",
+      "question": "How do location and death-weighted summaries differ?",
+      "data_readiness": "historical map lesson, historical death-location CSV, pumps, and six invented planar locations.",
+      "source_links": [
+        {
+          "label": "historical map lesson",
+          "path": "courses/cholera-1854-basic/NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb"
+        },
+        {
+          "label": "historical death-location CSV",
+          "path": "courses/cholera-1854-basic/resources/cholera_deaths.csv"
+        },
+        {
+          "label": "pumps",
+          "path": "courses/cholera-1854-basic/resources/pumps.csv"
+        },
+        {
+          "label": "six invented planar locations",
+          "path": "projects/cholera-1854-basic/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Use bundled historical death/pump CSVs with retained notices; explicit LON/LAT conversion, deaths/zero. Original fictional planar centers stay separate. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Use bundled historical death/pump CSVs with retained notices; explicit LON/LAT conversion, deaths/zero. Original fictional planar centers stay separate. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Distinguish dots, centers, rates, pump use and causal evidence.",
+      "geoai_extension": "Optional clustering is descriptive, not causal/transmission modelling.",
+      "evidence_check": "No at-risk denominator; no toy points relabeled as historical London observations."
+    },
+    {
+      "slug": "cholera-1854-advanced-1",
+      "title": "1854 cholera advanced",
+      "route": "— O + B/C continuation",
+      "question": "How does a missing connection change reachability?",
+      "data_readiness": "invented graph companion, source network lesson, and source isochrone lesson.",
+      "source_links": [
+        {
+          "label": "invented graph companion",
+          "path": "projects/cholera-1854-advanced-1/index.ipynb"
+        },
+        {
+          "label": "source network lesson",
+          "path": "courses/cholera-1854-advanced-1/NB01-Cholera-Case-Study-OpenStreetMaps-Networkx.ipynb"
+        },
+        {
+          "label": "source isochrone lesson",
+          "path": "courses/cholera-1854-advanced-1/NB03-Cholera-Case-Study-Isochrone-Map.ipynb"
+        }
+      ],
+      "rustgis_task": "Keep seven-node schematic graph. Geographic work requires attributed source export with known CRS; practice only otherwise. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Keep seven-node schematic graph. Geographic work requires attributed source export with known CRS; practice only otherwise. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Explain inclusive budget, unreachable status and why a hull is not an isochrone.",
+      "geoai_extension": "Network access model needs verified costs/geometry and validation.",
+      "evidence_check": "No invented geographic layout for graph nodes; U remains unknown; no untrusted pickle load."
+    },
+    {
+      "slug": "cholera-1854-advanced-2",
+      "title": "1854 cholera advanced",
+      "route": "— O + B/C continuation",
+      "question": "What do ties and outside-domain records preserve?",
+      "data_readiness": "finite nearest-site companion, source Voronoi construction, and source building overlay.",
+      "source_links": [
+        {
+          "label": "finite nearest-site companion",
+          "path": "projects/cholera-1854-advanced-2/index.ipynb"
+        },
+        {
+          "label": "source Voronoi construction",
+          "path": "courses/cholera-1854-advanced-2/NB03-Constructing-Voronoi-Polygons.ipynb"
+        },
+        {
+          "label": "source building overlay",
+          "path": "courses/cholera-1854-advanced-2/NB05-Buildings-in-Voronoi-Cells.ipynb"
+        }
+      ],
+      "rustgis_task": "Keep finite planar assignments. Geographic polygons/overlays require supported native source or validated attributed export; practice only otherwise. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Keep finite planar assignments. Geographic polygons/overlays require supported native source or validated attributed export; practice only otherwise. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Separate sample counts, area, buildings and population coverage.",
+      "geoai_extension": "Exact nearest-site construction is deterministic, not population inference.",
+      "evidence_check": "Tie stays tie, outside stays outside; no fake geographic Voronoi output."
+    },
+    {
+      "slug": "mdr-tb-thailand-2005",
+      "title": "2005 MDR-TB Thailand",
+      "route": "N + optional O; C for source records",
+      "question": "Does a contact-component change establish transmission?",
+      "data_readiness": "invented contact/DST graph, source case introduction, and source guide.",
+      "source_links": [
+        {
+          "label": "invented contact/DST graph",
+          "path": "projects/mdr-tb-thailand-2005/index.ipynb"
+        },
+        {
+          "label": "source case introduction",
+          "path": "courses/mdr-tb-thailand-2005/NB01-MDR-TB-Case-Study-Case-Intro.ipynb"
+        },
+        {
+          "label": "source guide",
+          "path": "courses/mdr-tb-thailand-2005/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Required outcome is graph/missing-DST table. Practice only for GIS; no mapping of case spreadsheets, suspected links, homes or inferred locations. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Required outcome is graph/missing-DST table. Practice only for GIS; no mapping of case spreadsheets, suspected links, homes or inferred locations. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Explain weak-contact merging without changed laboratory evidence.",
+      "geoai_extension": "Approved suitable data and validation required for any later model; no clinical inference.",
+      "evidence_check": "Preserve isolate/unknown DST; no new case-linked patient/service-area dataset."
+    },
+    {
+      "slug": "eo-satellite-guide",
+      "title": "EO satellite guide",
+      "route": "B/O + C",
+      "question": "Can capability become discovery without invented mappings?",
+      "data_readiness": "swath/AOI lesson, geometry presets, research-to-STAC lesson, and bounded discovery companion.",
+      "source_links": [
+        {
+          "label": "swath/AOI lesson",
+          "path": "courses/eo-satellite-guide/08_swaths_orbits_study_area.ipynb"
+        },
+        {
+          "label": "geometry presets",
+          "path": "courses/eo-satellite-guide/data/geometry-presets.json"
+        },
+        {
+          "label": "research-to-STAC lesson",
+          "path": "courses/eo-satellite-guide/07_research_to_stac.ipynb"
+        },
+        {
+          "label": "bounded discovery companion",
+          "path": "projects/eo-satellite-guide/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Use existing declared AOI/preset or learner-attributed AOI; retain property/processing/date interval and actual route states. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Use existing declared AOI/preset or learner-attributed AOI; retain property/processing/date interval and actual route states. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Reject TOA/SR mismatch and identify unmapped collection IDs.",
+      "geoai_extension": "Image interpretation needs acquired pixels; capability curation is metadata.",
+      "evidence_check": "No invented collection/API route/acquisition claim; EarthCODE integration remains proposal."
+    },
+    {
+      "slug": "nasa-arset-experiments",
+      "title": "NASA ARSET experiments",
+      "route": "O + C",
+      "question": "Which support/revisit assumptions answer the question?",
+      "data_readiness": "original resolution/revisit companion and README-only source guide. No source dataset, source lesson, Book or Lab is supplied.",
+      "source_links": [
+        {
+          "label": "original resolution/revisit companion",
+          "path": "projects/nasa-arset-experiments/index.ipynb"
+        },
+        {
+          "label": "README-only source guide",
+          "path": "courses/nasa-arset-experiments/index.ipynb"
+        }
+      ],
+      "rustgis_task": "Keep existing fictional candidate table. Practice only for geometry/export mechanics; no new satellite pixel dataset or source lesson is implied. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Keep existing fictional candidate table. Practice only for geometry/export mechanics; no new satellite pixel dataset or source lesson is implied. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Choose among supplied options and identify missing spectral/cloud/validation evidence.",
+      "geoai_extension": "Expected opportunities are not observations or fitted predictions.",
+      "evidence_check": "README-only source; no copied ARSET slides/logos/media or NASA endorsement."
+    },
+    {
+      "slug": "population-data-comparison",
+      "title": "Population data comparison",
+      "route": "B",
+      "question": "How do coverage, concept and partial-cell support affect totals?",
+      "data_readiness": "real population lesson, coverage lesson, real export lesson, native-count JSON, and independent oracle.",
+      "source_links": [
+        {
+          "label": "real population lesson",
+          "path": "courses/population-data-comparison/01_real_population.ipynb"
+        },
+        {
+          "label": "coverage lesson",
+          "path": "courses/population-data-comparison/02_real_coverage.ipynb"
+        },
+        {
+          "label": "real export lesson",
+          "path": "courses/population-data-comparison/03_real_exports.ipynb"
+        },
+        {
+          "label": "native-count JSON",
+          "path": "courses/population-data-comparison/population.json"
+        },
+        {
+          "label": "independent oracle",
+          "path": "courses/population-data-comparison/independent_oracle.json"
+        }
+      ],
+      "rustgis_task": "Reuse existing stdlib helper, population.json and independent oracle. Export one actual native GHS-POP count rectangle as lesson 03 does. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Reuse existing stdlib helper, population.json and independent oracle. Export one actual native GHS-POP count rectangle as lesson 03 does. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Separate coverage, date, ambient/residential concept and allocation assumptions.",
+      "geoai_extension": "Population model comparison is meaningful; exporting one cell is not training.",
+      "evidence_check": "Preserve all metadata/CC BY notices; NoData differs from zero; oracle totals reproduce; no giant export."
+    },
+    {
+      "slug": "onehealth",
+      "title": "OneHealth",
+      "route": "B",
+      "question": "What do real sampled surfaces and tract denominators support?",
+      "data_readiness": "QA/scaling lesson, tract join, 6,890 sampled pixels, 166 tract features, manifest, and exact source metadata.",
+      "source_links": [
+        {
+          "label": "QA/scaling lesson",
+          "path": "courses/onehealth/03_qa_scaling.ipynb"
+        },
+        {
+          "label": "tract join",
+          "path": "courses/onehealth/07_eo_population_joins.ipynb"
+        },
+        {
+          "label": "6,890 sampled pixels",
+          "path": "courses/onehealth/data/pixels.csv"
+        },
+        {
+          "label": "166 tract features",
+          "path": "courses/onehealth/data/tracts.geojson"
+        },
+        {
+          "label": "manifest",
+          "path": "courses/onehealth/data/manifest.json"
+        },
+        {
+          "label": "exact source metadata",
+          "path": "courses/onehealth/data/source-metadata.json"
+        }
+      ],
+      "rustgis_task": "Use actual pixels/tracts/manifest/source metadata; export bounded points or existing GEOID summary with QA/time/units/sample counts. In RustGIS, import the reviewed geographic export through Add Data; inspect the selected feature IDs and attribute table before styling.",
+      "geolibre_task": "Use actual pixels/tracts/manifest/source metadata; export bounded points or existing GEOID summary with QA/time/units/sample counts. In GeoLibre, import that same reviewed file, compare a second legend/filter, and reconcile its count and one known attribute with the notebook.",
+      "ai_prompt": "Find the unsupported step from environmental proxy to disease/vulnerability.",
+      "geoai_extension": "Held-out prediction needs health/animal/community labels; proxy mapping alone is not inference.",
+      "evidence_check": "Surface C differs from air; 300m display differs from 30m footprint; 2024 samples/2020 population distinct."
+    }
+  ]
+}

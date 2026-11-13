@@ -106,6 +106,32 @@ for _row in assigned.itertuples():
 
 POPULATION_FILES = ['population_tools_real.py', 'population_tools.py', 'population.json', 'independent_oracle.json']
 CASES = [
+    {'label':'gis-workbench', 'notebook':'gis-workbench.ipynb',
+     'files':['atlas_gis_handoff.py','assets/browser-gis-pathways.json','courses/onehealth/data/tracts.geojson','courses/onehealth/data/manifest.json'],
+     'absent':['exports/fresno-2020-first12.geojson','exports/pyodide-changed.geojson'],
+     'download_links':['exports/'+stem+suffix for stem in ['fresno-2020-first12','pyodide-changed']
+                       for suffix in ['.geojson','.metadata.json','.review.md']],
+     'rerun_edits':{'minimum_value = 0':'minimum_value = 5000', 'selection_limit = 12':'selection_limit = 2', "output_stem = 'fresno-2020-first12'":"output_stem = 'pyodide-changed'"},
+     'assertions': '''
+assert input_summary['feature_count'] == 166
+assert input_summary['measurements']['POP100']['numeric_sum'] == 764468
+_default = json.loads(Path('exports/fresno-2020-first12.metadata.json').read_text())
+assert _default['selection']['output_count'] == 12
+assert package['method']['selection']['output_count'] == 2
+assert package['method']['selection']['input_count'] == 166
+assert package['method']['selection']['selected_ids'] == ['06019000400', '06019000902']
+_written = json.loads(Path('exports/pyodide-changed.geojson').read_text())
+assert len(_written['features']) == 2
+assert [(f['properties']['_atlas_source_id'], f['properties']['POP100']) for f in _written['features']] == [('06019000400', 5384), ('06019000902', 5263)]
+assert package['method']['selection_parameters']['minimum_value'] == 5000
+assert all(f['properties']['_atlas_source_id'] == str(f['id']) == f['properties']['GEOID'] for f in _written['features'])
+assert package['method']['source_id_property']['name'] == '_atlas_source_id'
+assert hashlib.sha256(Path('exports/pyodide-changed.geojson').read_bytes()).hexdigest() == package['method']['geojson_sha256']
+assert package['method']['sources'][0]['attribution'].startswith('U.S. Census Bureau')
+assert package['method']['sources'][0]['license_evidence'] == manifest['rights']['census']
+assert 'POP100' in package['review'] and 'Generated review instructions' in package['review']
+assert package['method']['geojson_sha256'] != _default['geojson_sha256']
+'''},
     {'label':'population-comparison', 'notebook':'courses/population-data-comparison/01_real_population.ipynb',
      'files':POPULATION_FILES, 'assertions':POPULATION_ASSERTIONS},
     {'label':'population-coverage', 'notebook':'courses/population-data-comparison/02_real_coverage.ipynb',
@@ -152,7 +178,16 @@ def execute_case(browser, base, output, timeout, case):
              "_atlas_actual_assets = {name:hashlib.sha256(Path(name).read_bytes()).hexdigest() for name in _atlas_expected_assets}\n"
              "assert all(_atlas_actual_assets[name] in expected for name,expected in _atlas_expected_assets.items()), 'Packaged notebook-relative input content differs: '+repr(_atlas_actual_assets)\n"
              f"assert not any(Path(name).exists() for name in {case.get('absent',[])!r}), 'A fresh context must not contain prior exports'\n")
-    proof="\n"+case['assertions']+f"\nprint({marker!r}, json.dumps({{'platform':sys.platform,'asset_sha256':_atlas_actual_assets,'assertions':'passed'}}))\n"
+    rerun=''
+    if case.get('rerun_edits'):
+        changed=code
+        for original,replacement in case['rerun_edits'].items():
+            assert changed.count(original)==1, 'Expected exactly one canonical parameter to edit'
+            changed=changed.replace(original,replacement)
+        rerun='\n\n'+changed
+    export_proof=(f"\n_atlas_export_paths = {case.get('download_links',[])!r}\n"
+                  "_atlas_export_bytes = {name:{'sha256':hashlib.sha256(Path(name).read_bytes()).hexdigest(),'bytes':len(Path(name).read_bytes())} for name in _atlas_export_paths}\n")
+    proof=rerun+"\n"+case['assertions']+export_proof+f"\nprint({marker!r}, json.dumps({{'platform':sys.platform,'asset_sha256':_atlas_actual_assets,'exports':_atlas_export_bytes,'assertions':'passed'}}))\n"
     source=prelude+case.get('setup','')+'\n\n'+code+proof
     try:
         for name,expected in asset_hashes.items():
@@ -178,6 +213,28 @@ def execute_case(browser, base, output, timeout, case):
         assert all(value in filesystem_hashes[name] for name,value in evidence['asset_sha256'].items())
         cell=proof_output.locator("xpath=ancestor::div[contains(@class, 'jp-CodeCell')][1]")
         assert not cell.locator('.jp-OutputArea .jp-mod-error').count(), f'Source {case["label"]} returned an error'
+        for href in case.get('download_links',[]):
+            download=cell.get_by_role('link',name=href,exact=True)
+            assert download.count()>=1 and download.first.get_attribute('href') not in (None,'','#'), 'Missing freshly rendered Lab FileLink: '+href
+        downloads=[]
+        if case.get('download_links'):
+            # Exercise actual browser download from Lab's live file browser;
+            # rendered FileLinks alone cannot prove generated bytes are retrievable.
+            files=page.get_by_role('tab',name='File Browser')
+            if files.get_attribute('aria-selected')!='true':files.click()
+            page.get_by_title('Refresh the file browser.',exact=True).click()
+            page.locator('.jp-DirListing-itemText').filter(has_text='exports').dblclick()
+            for relative,expected in evidence['exports'].items():
+                filename=Path(relative).name
+                item=page.locator('.jp-DirListing-item').filter(has=page.get_by_text(filename,exact=True))
+                item.click(button='right')
+                with page.expect_download(timeout=30000) as received:
+                    page.get_by_role('menuitem',name='Download',exact=True).click()
+                download=received.value
+                destination=output/('download-'+filename);download.save_as(destination)
+                data=destination.read_bytes();actual={'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data)}
+                assert actual==expected, f'Lab download bytes differ from fresh kernel: {relative}'
+                downloads.append({'path':relative,'suggested_filename':download.suggested_filename,**actual})
         images=[]
         for graphic in cell.locator('.jp-OutputArea-output img').all():
             rendered=graphic.evaluate('''async image=>{
@@ -195,7 +252,7 @@ def execute_case(browser, base, output, timeout, case):
             assert case['html'] in cell.locator('.jp-OutputArea').inner_text(), 'Missing freshly displayed source comparison table'
         assert not errors,errors
         page.screenshot(path=str(output/f'executed-{case["label"]}.png'))
-        result={'status':'passed','notebook':notebook_path,'marker':marker,'proof':evidence,'pngs':images,
+        result={'status':'passed','notebook':notebook_path,'marker':marker,'proof':evidence,'pngs':images,'downloads':downloads,
                 'raw_http_asset_sha256':asset_hashes,'allowed_filesystem_sha256':filesystem_hashes,
                 'filesystem_text_transport':'Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8',
                 'canonical_sha256':hashlib.sha256(canonical.read_bytes()).hexdigest(),
@@ -213,7 +270,7 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--browser-executable')
     parser.add_argument('--timeout',type=int,default=360,help='Per-case runtime/package startup and execution timeout in seconds')
-    parser.add_argument('--case',choices=[c['label'] for c in CASES],action='append',help='Debug a subset; CI runs all six cases')
+    parser.add_argument('--case',choices=[c['label'] for c in CASES],action='append',help='Debug a subset; CI runs all declared cases')
     parser.add_argument('--port',type=int,default=8768)
     args=parser.parse_args();cases=[c for c in CASES if not args.case or c['label'] in args.case]
     output=ROOT/'_build/runtime-source-browser';output.mkdir(parents=True,exist_ok=True)
@@ -239,7 +296,7 @@ def main():
         (output/'results.json').write_text(json.dumps({'status':status,'cases':results,
             'selected_cases':[c['label'] for c in cases],
             'method':'Separate fresh browser context and actual Pyodide kernel per case; canonical code runs against hash-checked packaged notebook-relative files, plus oracle/numerical/export assertions, unique executed markers and loaded PNG checks where relevant.',
-            'limits':'These six explicitly selected source notebooks only. Initial runtime/package retrieval requires network access. No native, credential, external provider or live acquisition branch is certified. The existing seven-case SVG runtime gate remains separate.'},indent=2)+'\n',encoding='utf-8')
+            'limits':'These explicitly selected source notebooks and the authored GIS workbench only. Initial runtime/package retrieval requires network access. No native, credential, external provider or live acquisition branch is certified. The existing seven-case SVG runtime gate remains separate.'},indent=2)+'\n',encoding='utf-8')
 
 
 if __name__=='__main__':main()

@@ -20,6 +20,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from atlas_paths import canonical_notebooks
+from browser_gis_material import OWNER as GIS_OWNER
 from generate import make_toc, seed_project
 from phi_case_material import CASES, OWNER, bibliography, source_overview
 from validate import validate_catalog_sources
@@ -293,9 +294,16 @@ class PHIIntegrationTests(unittest.TestCase):
             if record['slug'] not in CASES:
                 continue
             canonical = nbformat.read(ROOT/'content'/record['notebook'], as_version=4)
+            owned = [c for c in canonical.cells if c.metadata.get('atlas_browser_gis',{}).get('owner') == GIS_OWNER]
+            self.assertEqual(len(owned),1)
+            pathway = owned[0]
+            self.assertEqual(pathway.cell_type,'markdown')
+            self.assertEqual(pathway.metadata.atlas_browser_gis.key,'subject:'+record['slug'])
+            self.assertEqual(pathway.metadata.atlas_browser_gis.generated_sha256,hashlib.sha256(pathway.source.encode('utf-8')).hexdigest())
+            original_cells = [c for c in canonical.cells if c is not pathway]
             with patch('generate.notebook') as seeded:
                 seed_project(record)
-            self.assertEqual([c['source'].strip() for c in seeded.call_args.args[1]], [c.source.strip() for c in canonical.cells])
+            self.assertEqual([c['source'].strip() for c in seeded.call_args.args[1]], [c.source.strip() for c in original_cells])
             work = ROOT/'_build/test-phi-seed'; work.mkdir(parents=True, exist_ok=True)
             with tempfile.TemporaryDirectory(dir=work) as folder, patch('generate.ROOT', Path(folder)):
                 seed_project(record)
@@ -359,7 +367,9 @@ class PHIIntegrationTests(unittest.TestCase):
         intro = nbformat.read(ROOT/'content/index.ipynb', as_version=4)
         self.assertIn('projects/cholera-1854-basic/index.ipynb', intro.cells[0].source)
         browser = nbformat.read(ROOT/'content/foundations/browser-python.ipynb', as_version=4)
-        self.assertIn('../projects/cholera-1854-basic/index.ipynb', browser.cells[-1].source)
+        interpret = [c for c in browser.cells if c.cell_type == 'markdown' and c.source.startswith('## Interpret and try\n')]
+        self.assertEqual(len(interpret),1)
+        self.assertIn('../projects/cholera-1854-basic/index.ipynb', interpret[0].source)
 
 
 if __name__ == '__main__':
