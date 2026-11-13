@@ -1,5 +1,21 @@
 # Validation record
 
+## Real-data Map and Scene Atlas — 13 November 2026
+
+The primary 2D, 3D columns and 3D coastal scene use source data. Coverage includes 15 corrected terrain views, four native Lagos population grids, Fresno Landsat samples/166 whole Census tracts, published AIDS2024 reporting counts and two 672-hour UHSLC observation windows. The library records 85 documented external links from 64 public repositories, with separate evidence-status labels. Entry reachability is not upstream runtime certification.
+
+| Check | Evidence and limits |
+|---|---|
+| Automated checks | All 92 unit tests and 12 source UI tests pass. Actual WebGL mesh/surface rendering, geographic finite/null Canvas pixels, optical measures, source-derived downloads, slider state, gauge-hour readouts/markers, table paging, renderer timeouts/retry, context loss and settled mobile camera behavior are checked. No OSM tile requests are made by these tests. |
+| Numerical verification | Independent source-derived golden values match all 15 terrain grids, all four population products and all four Fresno measures in the assembled browser. Raw gauge timestamps, station metadata, quality, counts, values, means and anomalies reconcile against the three pinned original CSV/metadata responses offline. Mutation tests reject corrupted derivatives and source captures. |
+| Preservation | Against `f309bdc581a3a7fcf28cd8ecd6b1da1a8b442195`, code, execution counts and outputs in all 818 notebooks are unchanged. Source/catalog snapshots, imported support bytes and the README/opening cover remain unchanged. |
+| Strict assembly | Strict Book render passed with warnings as errors; complete Lite assembly and final frontend/catalog recopy pass all canonical Book/Lab routes, notebook/support byte equality and published map-asset equality. All retained assembled Chrome behavior checks pass, including source courses, cover, PHI/EO routes and Book/Lab handoffs. |
+| Sources and rights | 41 dataset families, 455 credited placements and all 414 required data/metadata placements are covered. The 36-asset ledger records hashes, renderer versions, immutable source URLs and separate data terms. Entirely undeclared site datasets are rejected. WUR NC-SA, UHSLC permission/disclaimer, Leaflet BSD 2-Clause and Plotly MIT scopes remain intact. |
+| Independent review | Three independent layers completed. All 25 individually triaged findings, grouped into 18 corrections, were addressed; nothing was deferred. Final desktop/mobile views were visually inspected. |
+| Scientific scope | Terrain screens do not predict flooding. Gauge windows retain station zero and are separate from MSL. Population alternatives are not summed; whole-tract counts and overlapping poster scopes remain distinct. The source presentation's protected graphics/private facility records are not reproduced. |
+
+Reproduce with the commands in [CONTRIBUTING.md](CONTRIBUTING.md), including `python scripts/prepare_maps.py --check`. Local receipts: `_build/real-maps-final-{units,ui,browser,parent}.log`, `_build/real-maps-build.log`, `_build/real-maps-preservation.json` and `_build/real-maps-parent/results.json`. Existing native/Pyodide checks remain required in the [Pages workflow](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml); source notebooks are not universally browser-certified. The workflow records the publication result for the committed revision.
+
 ## Comprehensive source textbook — 13 November 2026
 
 | Check | Evidence and limits |

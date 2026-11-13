@@ -31,7 +31,48 @@ class DatasetCreditsTests(unittest.TestCase):
             target=root/name
             target.parent.mkdir(parents=True,exist_ok=True)
             shutil.copyfile(ROOT/name,target)
+        ledger=ROOT/'catalog/map-data.json'
+        if ledger.exists():shutil.copyfile(ledger,root/'catalog/map-data.json')
+        register=json.loads((ROOT/'catalog/data-attributions.json').read_text(encoding='utf-8'))
+        for row in register['datasets']:
+            for name in row.get('site_files',[]):
+                target=root/'site'/name;target.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copyfile(ROOT/'site'/name,target)
         return root
+
+    def test_site_data_cannot_be_published_without_readme_citation(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=self.prepared_root(folder)
+            path=root/'catalog/map-data.json';path.parent.mkdir(exist_ok=True)
+            ledger=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'assets':[]}
+            ledger['assets'].append({'path':'site/data/new-observations.json'})
+            path.write_text(json.dumps(ledger),encoding='utf-8')
+            with self.assertRaisesRegex(AssertionError,'Site dataset files missing README attribution'):
+                validate_data_credits(root)
+
+    def test_entirely_undeclared_site_dataset_is_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=self.prepared_root(folder)
+            (root/'site/data/forgotten-observations.json').write_text('{"observed":42}',encoding='utf-8')
+            with self.assertRaisesRegex(AssertionError,'Undeclared published site dataset.*forgotten-observations'):
+                validate_data_credits(root)
+
+    def test_explicit_generated_site_metadata_still_allowed(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=self.prepared_root(folder)
+            for name in ['catalog.json','source-library.json']:
+                (root/'site/data'/name).write_text('{}',encoding='utf-8')
+            self.assertEqual(validate_data_credits(root),validate_data_credits(ROOT))
+
+    def test_site_citation_cannot_escape_public_site_tree(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=self.prepared_root(folder)
+            path=root/'catalog/data-attributions.json'
+            register=json.loads(path.read_text(encoding='utf-8'))
+            register['datasets'][0]['site_files']=['../README.md']
+            path.write_text(json.dumps(register),encoding='utf-8')
+            with self.assertRaisesRegex(AssertionError,'Unsafe site dataset path'):
+                validate_data_credits(root)
 
     def test_population_input_cannot_be_published_without_its_data_credits(self):
         with tempfile.TemporaryDirectory() as folder:

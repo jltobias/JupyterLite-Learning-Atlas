@@ -1,3 +1,14 @@
 # Manifested source courses retain exact audited bytes across Windows/Linux.
 # Git newline conversion would invalidate data/helper/license SHA-256 records.
 content/courses/** -text
+# Real-map observations, vendors and hashed front-end assets retain exact bytes.
+site/vendor/** -text
+site/data/uhslc-* -text
+site/data/map-* -text
+site/teach/index.html -text
+site/teaching.js -text
+site/map-*.js -text
+site/map-studio.css -text
+
+# Catalog mirrors are hashed byte-for-byte against site/data copies.
+catalog/map-*.json -text

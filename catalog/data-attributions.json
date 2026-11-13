@@ -457,9 +457,9 @@
     {
       "id": "wur-terrain",
       "title": "Corrected WUR terrain products and derived teaching summaries",
-      "credit": "Seeger & Minderhoud; exact corrected FABDEMv1.0, DeltaDTMv1.1 or GLL-DTMv2 product and underlying DEM/MDT/geoid providers identified in the [pinned source inventory](https://github.com/jltobias/JupyterLite-Sea-Level-Rise/blob/66065673b47f9bc5c0f6e5009ac1c924a9f5200c/content/data/nature-sources.json).",
+      "credit": "Seeger, K. & Minderhoud, P. S. J. (2026). MSL-referenced [GLL-DTM v2](https://doi.org/10.17887/WUR01-XGN3PK), [FABDEM v1.0](https://doi.org/10.17887/WUR01-6L9D2X) and [DeltaDTM v1.1](https://doi.org/10.17887/WUR01-GX7S1B), Wageningen University & Research. Underlying creators: Vernimmen & Hooijer ([GLL v2](https://doi.org/10.5281/zenodo.7228643)); Hawker & Neal (2021), University of Bristol ([FABDEM v1.0](https://doi.org/10.5523/bris.25wfy0f9ukoge2gs7a5mqpq2j7)); Pronk et al. ([DeltaDTM catalog v1.1 underlying v3 record](https://doi.org/10.4121/21997565.v3)); CLS ([HYBRID-CNES-CLS2022 MDT](https://doi.org/10.24400/527896/a01-2024.010)); ICGEM/GFZ geoid models ([Ince et al.2019](https://doi.org/10.5194/essd-11-647-2019)). See the pinned course inventory for exact source/raster hashes.",
       "rights": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); noncommercial and share-alike conditions remain scoped to these assets, not replaced by MIT/CC BY.",
-      "modifications": "Point-sampling/downsampling, derived portfolio aggregates and terrain display grids; not original protected facility data. Pending/no-data records do not claim observations.",
+      "modifications": "Source prepared sparse nearest-cell display grids for five public city anchors: GLL 30×30 at 0.01 degree and FABDEM/DeltaDTM 150×150 at 0.002 degree, null/<=-7m artefact masks and 0.01 m storage rounding. Atlas reuses the real values for geographic maps/columns/surfaces and disclosed display sampling, without applying another datum offset. Threshold counts describe valid samples, not flood extent or facility exposure.",
       "files": [
         "courses/sea-level-rise/data/nature-aggregates.json",
         "courses/sea-level-rise/data/nature-city-surfaces.json",
@@ -467,7 +467,7 @@
         "courses/sea-level-rise/data/nature-sources.json",
         "courses/sea-level-rise/data/nature-summary.csv"
       ],
-      "additional_notice": ""
+      "additional_notice": "MSL reference: HYBRID-CNES-CLS2022, 1993–2021. Corrected DeltaDTM v1.1/catalog v3 is distinct from the paper input version and the legacy v4 link recorded in older metadata. Missing values are not zero or necessarily water. Derived terrain images/exports retain NC-SA conditions; display spacing/precision is not source accuracy."
     },
     {
       "id": "wdi",
@@ -858,7 +858,11 @@
         "courses/stac-browser/public-catalogs.json",
         "courses/stac-browser/site-config.json"
       ],
-      "additional_notice": ""
+      "additional_notice": "",
+      "site_files": [
+        "data/map-resources.json",
+        "data/map-data.json"
+      ]
     },
     {
       "id": "countryinfo-demo",
@@ -871,6 +875,21 @@
         "courses/global-health-gis/data/gbd_country_points_2021_global.geojson",
         "courses/global-health-gis/data/gbd_country_points_2021.geojson",
         "courses/global-health-gis/data/gbd_country_points_generated.geojson"
+      ]
+    },
+    {
+      "id": "uhslc-observed-gauges",
+      "title": "JASL/UHSLC hourly sea-level observations: Lagos 2333/C and Mombasa 1011/A, 1–28 July 1994",
+      "credit": "Caldwell, Patrick C.; Merrifield, Mark A.; Thompson, Philip R. (2001). Sea level measured by tide gauges from global oceans as part of the Joint Archive for Sea Level (JASL) since 1846. Subset: UHSLC hourly records 2333 (Lagos C) and 1011 (Mombasa A), 1994-07-01 to 1994-07-28 UTC. NOAA National Centers for Environmental Information. Dataset. https://doi.org/10.7289/V5V40S7W. Accessed 2026-11-13 via UHSLC ERDDAP. Primary [NOAA metadata](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc%3AJIMAR-JASL); [UHSLC hourly archive](https://uhslc.soest.hawaii.edu/erddap/tabledap/global_hourly_rqds.html).",
+      "rights": "The source [ERDDAP license metadata](https://jltobias.github.io/JupyterLite-Learning-Atlas/data/uhslc-hourly-metadata.csv) explicitly permits free use and redistribution. Its complete accuracy/warranty/liability statement is retained. No CreativeCommons license is invented; cite JASL/UHSLC, NOAA NCEI and the exact subset. The separate SouthAfrican SANHO restrictions do not describe these Nigerian/Kenyan records.",
+      "modifications": "Two complete 672-hour windows extracted with raw millimetres, UTC timestamps, station/record versions, source coordinates and response hashes retained. Display anomalies subtract each record’s valid 28-day mean, divide by 1000 and round to 6 decimals; no interpolation. Original full-field source CSVs and metadata accompany the derived JSON.",
+      "additional_notice": "Station zero and a short-window mean are not long-term MSL. These historical observations are a separate chart/marker, not a terrain offset, king tide classification, current forecast or revised facility-risk model. Gauge record versions are not joined.",
+      "files": [],
+      "site_files": [
+        "data/uhslc-observed-candidate.json",
+        "data/uhslc-hourly-metadata.csv",
+        "data/uhslc-lagos-1994-july-28days.csv",
+        "data/uhslc-mombasa-1994-july-28days.csv"
       ]
     }
   ],

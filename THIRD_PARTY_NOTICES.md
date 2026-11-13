@@ -124,3 +124,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ```
+
+
+## Real-data map studio (2026-11-13)
+
+The three primary teaching-view URLs now render real source data. The viewer code is original Atlas MIT code; every data source keeps its own terms. The README real-map section and dataset register identify creators, versions, transformations, dates, source links and required notices. The supplied presentation/poster inform published aggregate facts and context; private site records, slide imagery and protected map screenshots are not reproduced.
+
+Leaflet 1.9.4 is distributed unchanged from its official tagged release. Copyright (c) 2010-2023 Volodymyr Agafonkin; copyright (c) 2010-2011 CloudMade. BSD 2-Clause conditions and disclaimer are retained in site/vendor/leaflet/LICENSE and published at vendor/leaflet/LICENSE. Its distribution metadata/hashes are in catalog/map-data.json.
+
+Plotly.js 3.1.0 is reused from the pinned sea-level course distribution; its complete MIT notice remains in content/courses/sea-level-rise/notices/licenses/plotly-js-MIT.txt. The new maps do not change or globally relicense that bundle.
+
+WUR corrected MSL terrain and its rendered/exported adaptations retain CC BY-NC-SA 4.0, source credit and the sampling/NoData/rounding statements. Other products retain their separately recorded CC BY 4.0, public-domain or original source scopes. JASL/UHSLC observations preserve source readings, record IDs, the full license attribute and NOAA/UHSLC citation; station-zero data are not relabeled as MSL.
+
+Optional OpenStreetMap street context is an online service with visible contributor attribution and the OSMF tile usage policy. No OSM tiles are bundled, cached for offline redistribution or bulk-prefetched. Local Natural Earth context remains public domain.

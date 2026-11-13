@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-11-13",
+  "preparation": "python scripts/prepare_maps.py --write; offline from reviewed public captures. No normal-build downloads.",
+  "scope": "Map studio inputs, public gauge subset/evidence, renderer distribution and original outputs. Imported source bytes remain unchanged.",
+  "source_metadata": {
+    "terrain": "book/courses/sea-level-rise/data/nature-sources.json",
+    "terrain_rasters": "book/courses/sea-level-rise/data/nature-raster-catalog.json",
+    "population": "book/courses/population-data-comparison/population.json",
+    "onehealth": "book/courses/onehealth/data/manifest.json",
+    "gauges": "data/uhslc-observed-candidate.json"
+  },
+  "scientific_limits": "Independent families, units, masks and epochs. No facility coordinates; no flood predictions. Gauge station zero/window anomalies are not MSL. Alternative population products are never summed.",
+  "assets": [
+    {
+      "path": "content/courses/sea-level-rise/data/nature-city-surfaces.json",
+      "site_path": "book/courses/sea-level-rise/data/nature-city-surfaces.json",
+      "role": "terrain",
+      "license": "CC-BY-NC-SA-4.0",
+      "source_url": "https://github.com/jltobias/JupyterLite-Sea-Level-Rise/blob/66065673b47f9bc5c0f6e5009ac1c924a9f5200c/content/data/nature-city-surfaces.json",
+      "source_sha256": "257aee413a0cd213bf981b29a62a2142b39f127adf9c31762fc543d140287cac",
+      "sha256": "257aee413a0cd213bf981b29a62a2142b39f127adf9c31762fc543d140287cac",
+      "bytes": 1264340
+    },
+    {
+      "path": "content/courses/sea-level-rise/data/nature-sources.json",
+      "site_path": "book/courses/sea-level-rise/data/nature-sources.json",
+      "role": "terrain-metadata",
+      "license": "source-specific",
+      "source_url": "https://github.com/jltobias/JupyterLite-Sea-Level-Rise/blob/66065673b47f9bc5c0f6e5009ac1c924a9f5200c/content/data/nature-sources.json",
+      "source_sha256": "367faa65adb289ff49e825f8ebfe2da2a581468ac854e4ade550a15c98063b52",
+      "sha256": "367faa65adb289ff49e825f8ebfe2da2a581468ac854e4ade550a15c98063b52",
+      "bytes": 6277
+    },
+    {
+      "path": "content/courses/sea-level-rise/data/nature-raster-catalog.json",
+      "site_path": "book/courses/sea-level-rise/data/nature-raster-catalog.json",
+      "role": "terrain-metadata",
+      "license": "source-specific",
+      "source_url": "https://github.com/jltobias/JupyterLite-Sea-Level-Rise/blob/66065673b47f9bc5c0f6e5009ac1c924a9f5200c/content/data/nature-raster-catalog.json",
+      "source_sha256": "2cb5d732fd946345820b6e785fa0d90e66baf36f9be53c76e0a0e65354075db6",
+      "sha256": "2cb5d732fd946345820b6e785fa0d90e66baf36f9be53c76e0a0e65354075db6",
+      "bytes": 18541
+    },
+    {
+      "path": "content/courses/sea-level-rise/data/poster-aggregates.json",
+      "site_path": "book/courses/sea-level-rise/data/poster-aggregates.json",
+      "role": "published-aggregates",
+      "license": "owner-authorized published transcription; retain source citation",
+      "source_url": "https://github.com/jltobias/JupyterLite-Sea-Level-Rise/blob/66065673b47f9bc5c0f6e5009ac1c924a9f5200c/content/data/poster-aggregates.json",
+      "source_sha256": "ea47555b210153c1991f3cdb222d211f91149c358002422eb661958db0bf2c72",
+      "sha256": "ea47555b210153c1991f3cdb222d211f91149c358002422eb661958db0bf2c72",
+      "bytes": 53988
+    },
+    {
+      "path": "content/courses/sea-level-rise/data/provenance.json",
+      "site_path": "book/courses/sea-level-rise/data/provenance.json",
+      "role": "poster-metadata",
+      "license": "source-specific",
+      "source_url": "https://github.com/jltobias/JupyterLite-Sea-Level-Rise/blob/66065673b47f9bc5c0f6e5009ac1c924a9f5200c/content/data/provenance.json",
+      "source_sha256": "7c97df14787f93609ff3992421648230701525f63ce739668471be98ad9de74a",
+      "sha256": "7c97df14787f93609ff3992421648230701525f63ce739668471be98ad9de74a",
+      "bytes": 7702
+    },
+    {
+      "path": "content/courses/sea-level-rise/data/natural-earth-land.geojson",
+      "site_path": "book/courses/sea-level-rise/data/natural-earth-land.geojson",
+      "role": "geographic-context",
+      "license": "public-domain",
+      "source_url": "https://github.com/jltobias/JupyterLite-Sea-Level-Rise/blob/66065673b47f9bc5c0f6e5009ac1c924a9f5200c/content/data/natural-earth-land.geojson",
+      "source_sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9",
+      "sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9",
+      "bytes": 138160
+    },
+    {
+      "path": "content/courses/sea-level-rise/assets/plotly.min.js",
+      "site_path": "book/courses/sea-level-rise/assets/plotly.min.js",
+      "role": "renderer",
+      "license": "MIT",
+      "source_url": "https://github.com/jltobias/JupyterLite-Sea-Level-Rise/blob/66065673b47f9bc5c0f6e5009ac1c924a9f5200c/content/assets/plotly.min.js",
+      "source_sha256": "3b6e15d45dbb7fca5bd2094291e961ddc5472cd887009e6009a56dab668d721f",
+      "sha256": "3b6e15d45dbb7fca5bd2094291e961ddc5472cd887009e6009a56dab668d721f",
+      "bytes": 4815814
+    },
+    {
+      "path": "content/courses/sea-level-rise/notices/licenses/plotly-js-MIT.txt",
+      "site_path": "book/courses/sea-level-rise/notices/licenses/plotly-js-MIT.txt",
+      "role": "renderer-license",
+      "license": "MIT",
+      "source_url": "https://github.com/jltobias/JupyterLite-Sea-Level-Rise/blob/66065673b47f9bc5c0f6e5009ac1c924a9f5200c/licenses/plotly-js-MIT.txt",
+      "source_sha256": "8c45d9eaf50c2f72dd9c7ab9ef440788ba58a3538484b5c51c1f17d5128752e7",
+      "sha256": "8c45d9eaf50c2f72dd9c7ab9ef440788ba58a3538484b5c51c1f17d5128752e7",
+      "bytes": 1086
+    },
+    {
+      "path": "content/courses/population-data-comparison/population.json",
+      "site_path": "book/courses/population-data-comparison/population.json",
+      "role": "population",
+      "license": "CC-BY-4.0; individual producer notices retained",
+      "source_url": "https://github.com/jltobias/JupyterLite-Population-Data-Comparison/blob/883792b4f390e4e021ccc262dd5d4fd9f6250f3e/data/population.json",
+      "source_sha256": "47af4721b74f64aa1b57a9ae01fb9d1780a8dda9060e140982e4d31e143efb59",
+      "sha256": "47af4721b74f64aa1b57a9ae01fb9d1780a8dda9060e140982e4d31e143efb59",
+      "bytes": 5235928
+    },
+    {
+      "path": "content/courses/onehealth/data/pixels.csv",
+      "site_path": "book/courses/onehealth/data/pixels.csv",
+      "role": "landsat",
+      "license": "US public-domain; USGS/NASA credit",
+      "source_url": "https://github.com/jltobias/JupyterLite-OneHealth/blob/bee8d844b22a37e65e3e34da3e922ebd8451874c/content/data/pixels.csv",
+      "source_sha256": "bbdd2896f963bf2423ff8fb4add66e9097118d096fc08b8d6d2de867e7e81732",
+      "sha256": "bbdd2896f963bf2423ff8fb4add66e9097118d096fc08b8d6d2de867e7e81732",
+      "bytes": 1363374
+    },
+    {
+      "path": "content/courses/onehealth/data/tracts.geojson",
+      "site_path": "book/courses/onehealth/data/tracts.geojson",
+      "role": "census",
+      "license": "US public-domain; Census credit",
+      "source_url": "https://github.com/jltobias/JupyterLite-OneHealth/blob/bee8d844b22a37e65e3e34da3e922ebd8451874c/content/data/tracts.geojson",
+      "source_sha256": "08c2bf5667c70c7755aa8e64b37790b8be8cf22f09d96356a300e2ec85cdb079",
+      "sha256": "08c2bf5667c70c7755aa8e64b37790b8be8cf22f09d96356a300e2ec85cdb079",
+      "bytes": 1484087
+    },
+    {
+      "path": "content/courses/onehealth/data/manifest.json",
+      "site_path": "book/courses/onehealth/data/manifest.json",
+      "role": "onehealth-metadata",
+      "license": "US public-domain source data; source-specific metadata",
+      "source_url": "https://github.com/jltobias/JupyterLite-OneHealth/blob/bee8d844b22a37e65e3e34da3e922ebd8451874c/content/data/manifest.json",
+      "source_sha256": "a79bf3627d5170638379cb38c53296d3ec92aa307635bf96a5a841cc8907f355",
+      "sha256": "a79bf3627d5170638379cb38c53296d3ec92aa307635bf96a5a841cc8907f355",
+      "bytes": 6236
+    },
+    {
+      "path": "site/data/uhslc-observed-candidate.json",
+      "site_path": "data/uhslc-observed-candidate.json",
+      "role": "gauge-data",
+      "license": "UHSLC producer free-use/redistribution statement and complete warranty/liability terms in uhslc-hourly-metadata.csv",
+      "source_url": "https://uhslc.soest.hawaii.edu/erddap/info/global_hourly_rqds/index.html",
+      "sha256": "697d4f353b15b0474329c3e1bd05f246b07067ed202edd2473480075e83fc0cc",
+      "bytes": 40270
+    },
+    {
+      "path": "site/data/uhslc-hourly-metadata.csv",
+      "site_path": "data/uhslc-hourly-metadata.csv",
+      "role": "gauge-source-evidence",
+      "license": "UHSLC producer free-use/redistribution statement and complete warranty/liability terms in uhslc-hourly-metadata.csv",
+      "source_url": "https://uhslc.soest.hawaii.edu/erddap/info/global_hourly_rqds/index.html",
+      "sha256": "600fd81e0fe388aaeb49cb5526ed46d4b8d5326bb0e6a21e0e919bdfdf93dcab",
+      "bytes": 9419
+    },
+    {
+      "path": "site/data/uhslc-lagos-1994-july-28days.csv",
+      "site_path": "data/uhslc-lagos-1994-july-28days.csv",
+      "role": "gauge-source-evidence",
+      "license": "UHSLC producer free-use/redistribution statement and complete warranty/liability terms in uhslc-hourly-metadata.csv",
+      "source_url": "https://uhslc.soest.hawaii.edu/erddap/info/global_hourly_rqds/index.html",
+      "sha256": "bdccadf2072d657838529ef2743034640fed598f858a5e00e17c45cdc9a71186",
+      "bytes": 48531
+    },
+    {
+      "path": "site/data/uhslc-mombasa-1994-july-28days.csv",
+      "site_path": "data/uhslc-mombasa-1994-july-28days.csv",
+      "role": "gauge-source-evidence",
+      "license": "UHSLC producer free-use/redistribution statement and complete warranty/liability terms in uhslc-hourly-metadata.csv",
+      "source_url": "https://uhslc.soest.hawaii.edu/erddap/info/global_hourly_rqds/index.html",
+      "sha256": "e791097129a424d2ae39ce642728f4cea56aa47ca9e3d6cc239b98170102c715",
+      "bytes": 52563
+    },
+    {
+      "path": "site/vendor/leaflet/dist/images/layers-2x.png",
+      "site_path": "vendor/leaflet/dist/images/layers-2x.png",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "066daca850d8ffbef007af00b06eac0015728dee279c51f3cb6c716df7c42edf",
+      "bytes": 1259
+    },
+    {
+      "path": "site/vendor/leaflet/dist/images/layers.png",
+      "site_path": "vendor/leaflet/dist/images/layers.png",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "1dbbe9d028e292f36fcba8f8b3a28d5e8932754fc2215b9ac69e4cdecf5107c6",
+      "bytes": 696
+    },
+    {
+      "path": "site/vendor/leaflet/dist/images/marker-icon-2x.png",
+      "site_path": "vendor/leaflet/dist/images/marker-icon-2x.png",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "00179c4c1ee830d3a108412ae0d294f55776cfeb085c60129a39aa6fc4ae2528",
+      "bytes": 2464
+    },
+    {
+      "path": "site/vendor/leaflet/dist/images/marker-icon.png",
+      "site_path": "vendor/leaflet/dist/images/marker-icon.png",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "574c3a5cca85f4114085b6841596d62f00d7c892c7b03f28cbfa301deb1dc437",
+      "bytes": 1466
+    },
+    {
+      "path": "site/vendor/leaflet/dist/images/marker-shadow.png",
+      "site_path": "vendor/leaflet/dist/images/marker-shadow.png",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "264f5c640339f042dd729062cfc04c17f8ea0f29882b538e3848ed8f10edb4da",
+      "bytes": 618
+    },
+    {
+      "path": "site/vendor/leaflet/dist/leaflet-src.esm.js",
+      "site_path": "vendor/leaflet/dist/leaflet-src.esm.js",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "9298ef57aa4a7371cccd45885bcc33af0149f0650b85d385ab8fd7baba112efb",
+      "bytes": 424600
+    },
+    {
+      "path": "site/vendor/leaflet/dist/leaflet-src.esm.js.map",
+      "site_path": "vendor/leaflet/dist/leaflet-src.esm.js.map",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "971637e327b53dfb2894543ca53b04b65801278b56ee96a708146c9b7e4735bb",
+      "bytes": 866200
+    },
+    {
+      "path": "site/vendor/leaflet/dist/leaflet-src.js",
+      "site_path": "vendor/leaflet/dist/leaflet-src.js",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "61d3428fb4fa2c763d78419e271cde0537ae8eae784904eee44aa8c366a466c9",
+      "bytes": 450240
+    },
+    {
+      "path": "site/vendor/leaflet/dist/leaflet-src.js.map",
+      "site_path": "vendor/leaflet/dist/leaflet-src.js.map",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "97b701c5dff0e9864e5c458a8b15c2ec33787a326c5de77b908f9ea13be2d56a",
+      "bytes": 866292
+    },
+    {
+      "path": "site/vendor/leaflet/dist/leaflet.css",
+      "site_path": "vendor/leaflet/dist/leaflet.css",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6",
+      "bytes": 14806
+    },
+    {
+      "path": "site/vendor/leaflet/dist/leaflet.js",
+      "site_path": "vendor/leaflet/dist/leaflet.js",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "85d455b4522415f6badc42a0e7d17c919d100347d6b8958bd0dc738fdecd6d50",
+      "bytes": 147563
+    },
+    {
+      "path": "site/vendor/leaflet/dist/leaflet.js.map",
+      "site_path": "vendor/leaflet/dist/leaflet.js.map",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "600a10dc5cd110de0699510d322afcbe01c7ca90b4c5f48adc20314c70aac753",
+      "bytes": 225544
+    },
+    {
+      "path": "site/vendor/leaflet/LICENSE",
+      "site_path": "vendor/leaflet/LICENSE",
+      "role": "renderer-license",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "53e8dc25862014e4324741ca18fbe3611e11d42ef69f59f86ea8c5389647d4cb",
+      "bytes": 1395
+    },
+    {
+      "path": "site/vendor/leaflet/PROVENANCE.md",
+      "site_path": "vendor/leaflet/PROVENANCE.md",
+      "role": "renderer",
+      "license": "BSD-2-Clause",
+      "source_url": "https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4",
+      "sha256": "5f87d368a1b74b83385717f69822d84013bb2f40b2a297623058c077b4feffe1",
+      "bytes": 542
+    },
+    {
+      "path": "site/teach/index.html",
+      "site_path": "teach/index.html",
+      "role": "atlas-output",
+      "license": "MIT code; original narrative CC-BY-4.0; data rights remain separate",
+      "sha256": "2cbb3b3f386bcd88042c9a7bf94130178541c023f168a5fe2bc9774fceaa53a7",
+      "bytes": 15970
+    },
+    {
+      "path": "site/teaching.js",
+      "site_path": "teaching.js",
+      "role": "atlas-output",
+      "license": "MIT code; original narrative CC-BY-4.0; data rights remain separate",
+      "sha256": "f7b87112f2ca15602bf50f37c2e99c8fc43b4fe05feaf6b413dfdc1c0606ae37",
+      "bytes": 22366
+    },
+    {
+      "path": "site/map-data.js",
+      "site_path": "map-data.js",
+      "role": "atlas-output",
+      "license": "MIT code; original narrative CC-BY-4.0; data rights remain separate",
+      "sha256": "382724e021b97c244e3c481ff9be6fe5fcdd735b6490c709c3b9b08d3c053abd",
+      "bytes": 13951
+    },
+    {
+      "path": "site/map-renderers.js",
+      "site_path": "map-renderers.js",
+      "role": "atlas-output",
+      "license": "MIT code; original narrative CC-BY-4.0; data rights remain separate",
+      "sha256": "31c3b3efd5f4324eaaf25b74fdfc2d4f59743bfc6cbc052fe45bc43e08abdccd",
+      "bytes": 17592
+    },
+    {
+      "path": "site/map-studio.css",
+      "site_path": "map-studio.css",
+      "role": "atlas-output",
+      "license": "MIT code; original narrative CC-BY-4.0; data rights remain separate",
+      "sha256": "95db978abe8395ce23a2557d8b4eccf7ad64c8a5855f313ee55d8629d7713948",
+      "bytes": 6741
+    },
+    {
+      "path": "site/data/map-resources.json",
+      "site_path": "data/map-resources.json",
+      "role": "atlas-output",
+      "license": "MIT code; original narrative CC-BY-4.0; data rights remain separate",
+      "sha256": "e70c9d858b7791f1ffd1c4a31b0db5edaa7c876b41fd1157686dbd8b4306ad53",
+      "bytes": 122068
+    }
+  ]
+}

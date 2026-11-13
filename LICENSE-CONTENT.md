@@ -13,3 +13,8 @@ The authoritative legal terms are at [CC BY 4.0 legal code](https://creativecomm
 ## Imported source-course scope
 
 The blanket original-Atlas grant above does **not** relicense `content/courses/**`, copied helpers/data, third-party media or software distributions. Each imported notebook identifies its source and modifications. Retained source licenses, dataset notices and owner-authorized reuse scopes govern those materials; see [README dataset credits](README.md#dataset-citations-and-attribution-register-2026-11-13), [source manifest](catalog/source-library.json) and [third-party notices](THIRD_PARTY_NOTICES.md). GPL, Apache, ISC, ODbL, CC BY, CC BY-NC-SA and public-domain components keep their stated scopes and conditions. A source with no selected public license is included at the owner's request without inventing a general license for subsequent reuse. Required copyright/attribution notices remain intact.
+
+
+## Real-data map and scene outputs
+
+The MIT license covers original Atlas viewer code. The original-content CC BY 4.0 grant does not relicense observations, population products, terrain datasets, tiles or their rendered/exported derivatives. Each selected dataset retains its cited terms. In particular, WUR corrected terrain data and adaptations retain CC BY-NC-SA 4.0, including noncommercial and share-alike conditions. UHSLC observations retain their explicit free-use/redistribution permission, attribution and source warranty/liability statement; no Creative Commons license is inferred. Leaflet remains BSD 2-Clause and Plotly.js remains MIT. See the README map section, dataset register and THIRD_PARTY_NOTICES.md.

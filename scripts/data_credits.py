@@ -49,20 +49,43 @@ def validate_data_credits(root=ROOT):
     rows=register['datasets']
     assert len({r['id'] for r in rows})==len(rows),'Duplicate dataset credit identifier'
     declared={entry['local_path'] for entry in library['support_files']}
-    credited=set()
+    credited=set();site_credited=set();site_required=set()
+    map_ledger=root/'catalog/map-data.json'
+    if map_ledger.exists():
+        for asset in json.loads(map_ledger.read_text(encoding='utf-8'))['assets']:
+            path=asset['path']
+            if path.startswith('site/data/') and Path(path).suffix.lower() in DATA_SUFFIXES:
+                site_required.add(path.removeprefix('site/'))
+    # Site files are published directly, even if an author forgets the ledger.
+    # Only the three explicit generated metadata files are exempt from it.
+    site_data=root/'site/data'
+    actual={path.relative_to(root/'site').as_posix() for path in site_data.rglob('*')
+            if path.is_file() and path.suffix.lower() in DATA_SUFFIXES}
+    generated_metadata={'data/catalog.json','data/source-library.json','data/map-data.json'}
+    assert actual<=site_required|generated_metadata,'Undeclared published site dataset: '+str(sorted(actual-site_required-generated_metadata))
     for row in rows:
-        assert all(row.get(key) for key in ['id','title','credit','rights','modifications','files']),row.get('id')
-        assert set(row['files'])<=declared,'Dataset credits refer to an undeclared support file'
-        credited.update(row['files'])
+        assert all(row.get(key) for key in ['id','title','credit','rights','modifications']),row.get('id')
+        files=row.get('files',[]);site_files=row.get('site_files',[])
+        assert files or site_files,'Dataset credit has no file placements: '+row['id']
+        assert set(files)<=declared,'Dataset credits refer to an undeclared support file'
+        credited.update(files)
+        for name in site_files:
+            path=(root/'site'/name).resolve()
+            assert path.is_relative_to((root/'site').resolve()),'Unsafe site dataset path: '+name
+            assert path.is_file(),'Missing credited site dataset: '+name
+            assert name in site_required or name=='data/map-data.json','Undeclared credited site dataset: '+name
+            site_credited.add(name)
     required={path for path in declared if Path(path).suffix.lower() in DATA_SUFFIXES}
     assert required<=credited,'Dataset files missing README attribution: '+str(sorted(required-credited))
+    assert site_required<=site_credited,'Site dataset files missing README attribution: '+str(sorted(site_required-site_credited))
     block=render(register)
     for name in ['README.md','REFERENCES.md']:
         text=(root/name).read_text(encoding='utf-8')
         assert replace_block(text,block)==text,'Stale dataset credits: '+name
     text=nbformat.read(root/'content/references.ipynb',as_version=4).cells[0].source
     assert replace_block(text,block)==text,'Stale Book dataset credits'
-    return {'dataset_families':len(rows),'credited_placements':len(credited),'required_data_placements':len(required)}
+    return {'dataset_families':len(rows),'credited_placements':len(credited)+len(site_credited),
+            'required_data_placements':len(required)+len(site_required)}
 
 
 def main():

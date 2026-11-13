@@ -371,24 +371,9 @@ def main():
             check_phi_cases(page,browser,records,output,checks)
             check_eo(page,browser,records,output,checks)
             check_source_library(page,output,checks)
-            page.goto(BASE+'teach/');page.locator('#teaching-table tr').first.wait_for()
-            assert page.locator('#teaching-table tr').count()==16
-            before=page.locator('#view-summary').inner_text()
-            page.locator('#water').focus()
-            for _ in range(4):page.keyboard.press('ArrowRight')
-            assert page.locator('#view-summary').inner_text()!=before
-            assert page.locator('#teaching-table').inner_text().count('Yes')==6
-            summary=page.locator('#view-summary').inner_text()
-            assert '6 of 16 cells' in summary and '84 of 227 invented demand units (37%)' in summary,summary
-            page.locator('#mode').select_option('3d-map')
-            assert page.locator('#view polygon').count()>60
-            old=page.locator('#view polygon').first.get_attribute('points')
-            page.locator('#rotation').focus();page.keyboard.press('ArrowRight')
-            assert page.locator('#view polygon').first.get_attribute('points')!=old
-            page.locator('#mode').select_option('3d-scene')
-            assert 'connectivity' in page.locator('#view-explanation').inner_text()
-            page.screenshot(path=str(output/'teaching-3d.png'),full_page=True)
-            checks.append('2D/3D-map/3D-scene controls, water summary/table parity, keyboard camera rotation')
+            from map_test_support import check_primary_maps
+            check_primary_maps(page, BASE, output)
+            checks.append('real georeferenced 2D, actual statistical mesh/terrain WebGL, elevation screen and keyboard camera')
             for route,notebook in [('book/','index.ipynb'),('book/projects/rewiring-global-health/','projects%2Frewiring-global-health%2Findex.ipynb'),('book/projects/rewiring-global-health/index.html','projects%2Frewiring-global-health%2Findex.ipynb')]:
                 page.goto(BASE+route)
                 run=page.get_by_role('link',name='Run this notebook in Lab')

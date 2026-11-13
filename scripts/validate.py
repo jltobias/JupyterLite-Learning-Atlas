@@ -15,6 +15,7 @@ import nbformat
 import yaml
 from atlas_paths import canonical_notebooks
 from data_credits import validate_data_credits
+from prepare_maps import check as validate_map_assets
 from source_library import load_library, source_sections, toc_files, validate_library, publishable_files
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,6 +65,7 @@ def main():
     schema=json.loads((ROOT/'catalog/repositories.schema.json').read_text(encoding='utf-8'))
     records=validate_catalog_sources(catalog,schema)
     validate_data_credits(ROOT)
+    validate_map_assets()
     discovery=json.loads((ROOT/'catalog/discovery.json').read_text(encoding='utf-8'))['repositories']
     assert all(r['visibility']=='public' for r in discovery), 'Nonpublic discovery metadata'
     expected={r['name'] for r in discovery if urlsplit(r['url']).path.strip('/').split('/')[0].lower()=='jltobias'
@@ -151,6 +153,9 @@ def main():
         assert json.loads((site/'data/catalog.json').read_text(encoding='utf-8'))==catalog,'Explorer catalog differs'
         for evidence in (ROOT/'catalog').glob('*.json'):
             assert (site/'catalog'/evidence.name).read_bytes()==evidence.read_bytes(),f'Published catalog evidence differs: {evidence.name}'
+        map_assets=json.loads((ROOT/'catalog/map-data.json').read_text(encoding='utf-8'))['assets']
+        for asset in map_assets:
+            assert (site/asset['site_path']).read_bytes()==(ROOT/asset['path']).read_bytes(), f"Published map asset differs: {asset['site_path']}"
         print('PASS assembled entry points, all Book chapters, exact canonical/Lab notebook bytes and explorer catalog')
     print(f'PASS schema, {len(expected)} public prefixed + {len(related)} related projects, {len(notebooks)} canonical notebooks, {links} local notebook links, 10 source lessons and SVG provenance')
 
