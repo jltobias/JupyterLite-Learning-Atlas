@@ -8,6 +8,7 @@ import subprocess
 import sys
 from pathlib import Path
 from atlas_paths import content_files
+from source_library import publishable_files
 
 ROOT=Path(__file__).resolve().parents[1]
 PYODIDE_EXTENSION='@jupyterlite/pyodide-kernel-extension'
@@ -36,7 +37,11 @@ def prepare_lite_project(project):
     shutil.copytree(pyodide_extension_assets(),extensions/PYODIDE_EXTENSION)
     shutil.copyfile(ROOT/'jupyter-lite.json',project/'jupyter-lite.json')
     config={
-        'LiteBuildConfig':{'ignore_sys_prefix':['federated_extensions']},
+        # Only reviewed publishable files enter this isolated staging tree.
+        # Lite's default /build/ and /lib/ exclusions would hide required
+        # upstream license notices and legitimate source support directories.
+        'LiteBuildConfig':{'ignore_sys_prefix':['federated_extensions'],
+                           'ignore_contents':[r'/\.', r'\.pyc$', r'\.*doit\.db$']},
         'FederatedExtensionAddon':{'extra_labextensions_path':[str(extensions.resolve())]},
     }
     (project/'jupyter_lite_config.json').write_text(json.dumps(config,indent=2)+'\n',encoding='utf-8')
@@ -64,8 +69,8 @@ def main():
     stage=ROOT/'_build/lite-contents';lite=ROOT/'_build/lite';book=ROOT/'_build/book';site=ROOT/'_site';project=ROOT/'_build/lite-project'
     for target in [stage,lite,book,site,project]:clean(target)
     run(sys.executable,'-c','from jupyter_book.cli.main import main; main()','build','content','--path-output',book,'--warningiserror','--keep-going','--nitpick')
-    for path in content_files():
-        if path.is_file() and (path.suffix=='.ipynb' or 'assets' in path.parts):
+    for path in publishable_files(ROOT/'content'):
+        if path.is_file():
             dest=stage/path.relative_to(ROOT/'content');dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(path,dest)
     prepare_lite_project(project)
     # doit keeps its state relative to cwd. The disposable project must own it:
@@ -75,6 +80,12 @@ def main():
     shutil.copytree(ROOT/'assets',site/'assets',dirs_exist_ok=True)
     shutil.copytree(ROOT/'catalog',site/'catalog',dirs_exist_ok=True)
     shutil.copytree(book/'_build/html',site/'book',dirs_exist_ok=True)
+    # Linked source helpers/data are available over HTTP as well as in the Lab
+    # virtual filesystem. Preserve the same topology and exact bytes.
+    for path in publishable_files(ROOT/'content'):
+        if path.suffix!='.ipynb':
+            dest=site/'book'/path.relative_to(ROOT/'content')
+            dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(path,dest)
     shutil.copytree(lite,site/'lite',dirs_exist_ok=True)
     for name in ['README.md','REFERENCES.md','DATA_SOURCES.md','THIRD_PARTY_NOTICES.md','LICENSE','LICENSE-CONTENT.md','CITATION.cff','VALIDATION.md','CONTRIBUTING.md']:
         if (ROOT/name).exists():shutil.copyfile(ROOT/name,site/name)

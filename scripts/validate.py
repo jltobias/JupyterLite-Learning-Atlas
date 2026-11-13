@@ -14,6 +14,8 @@ import jsonschema
 import nbformat
 import yaml
 from atlas_paths import canonical_notebooks
+from data_credits import validate_data_credits
+from source_library import load_library, source_sections, toc_files, validate_library, publishable_files
 
 ROOT = Path(__file__).resolve().parents[1]
 PYODIDE_EXTENSION='@jupyterlite/pyodide-kernel-extension'
@@ -61,6 +63,7 @@ def main():
     catalog=json.loads((ROOT/'catalog/repositories.json').read_text(encoding='utf-8'))
     schema=json.loads((ROOT/'catalog/repositories.schema.json').read_text(encoding='utf-8'))
     records=validate_catalog_sources(catalog,schema)
+    validate_data_credits(ROOT)
     discovery=json.loads((ROOT/'catalog/discovery.json').read_text(encoding='utf-8'))['repositories']
     assert all(r['visibility']=='public' for r in discovery), 'Nonpublic discovery metadata'
     expected={r['name'] for r in discovery if urlsplit(r['url']).path.strip('/').split('/')[0].lower()=='jltobias'
@@ -78,18 +81,21 @@ def main():
         assert f"/blob/{r['source_commit']}/README.md" in r['readme_url'], 'README not pinned'
         assert all(x['checked_on'] for x in r['resources'] if x['http_status']), 'Undated status'
     toc=yaml.safe_load((ROOT/'content/_toc.yml').read_text(encoding='utf-8'))
-    nav=[toc['root']]+[c['file'] for p in toc['parts'] for c in p['chapters']]
+    nav=list(toc_files(toc))
+    library=validate_library();sections=source_sections(library)
     notebooks=canonical_notebooks()
     paths={p.relative_to(ROOT/'content').as_posix().removesuffix('.ipynb') for p in notebooks}
     assert len(nav)==len(set(nav)) and set(nav)==paths,'TOC/canonical notebook mismatch'
-    assert {r['notebook'] for r in records}=={p.relative_to(ROOT/'content').as_posix() for p in notebooks if p.parts[-3]=='projects'}, 'Project/notebook mismatch'
+    landings={r['notebook'] for r in records}
+    assert landings=={p.relative_to(ROOT/'content').as_posix() for p in notebooks if p.name=='index.ipynb' and p.parent.parent.name=='projects'}, 'Project/notebook mismatch'
     computations=[]; links=0
     allowed=set(sys.stdlib_module_names)|{'IPython'}
     for p in notebooks:
         nb=nbformat.read(p,as_version=4);nbformat.validate(nb)
         assert not nb.metadata.get('atlas',{}).get('scaffold'),f'Incomplete scaffold: {p}'
         code_cells=[c for c in nb.cells if c.cell_type=='code']
-        if p.parent.parent.name=='projects':
+        source_section=sections.get(p.relative_to(ROOT/'content').as_posix())
+        if p.relative_to(ROOT/'content').as_posix() in landings:
             assert len(code_cells)>=2,f'No runnable exercise: {p}'
             assert any('image/svg+xml' in o.get('data',{}) for c in code_cells for o in c.get('outputs',[])), f'No executed visual: {p}'
             text='\n'.join(c.source for c in nb.cells if c.cell_type=='markdown')
@@ -99,6 +105,8 @@ def main():
             assert record['readme_url'] in text, f'Missing source citation: {p}'
             computations.append(code_cells[-1].source)
         for c in code_cells:
+            assert not any(o.output_type=='error' for o in c.get('outputs',[])),f'Saved error: {p}'
+            if source_section:continue
             tree=ast.parse(c.source)
             for node in ast.walk(tree):
                 if isinstance(node,ast.Import): imports=[n.name.split('.')[0] for n in node.names]
@@ -108,7 +116,9 @@ def main():
             assert not any(o.output_type=='error' for o in c.get('outputs',[])),f'Saved error: {p}'
         for c in nb.cells:
             if c.cell_type!='markdown':continue
-            for target in re.findall(r'!?\[[^\]]*\]\(([^\s)]+)\)',c.source):
+            targets=re.findall(r'!?\[[^\]]*\]\(([^\s)]+)\)',c.source)
+            targets+=re.findall(r'(?:src|href|poster)=[\"\']([^\"\']+)[\"\']',c.source)
+            for target in targets:
                 u=urlsplit(target)
                 if u.scheme or target.startswith('#'):continue
                 resolved=(p.parent/unquote(u.path)).resolve()
@@ -131,7 +141,13 @@ def main():
         for r in records:assert (site/r['book_path']).is_file(),f'Missing Book chapter: {r["name"]}'
         for p in notebooks:
             relative=p.relative_to(ROOT/'content')
+            assert (site/'book'/relative.with_suffix('.html')).is_file(),f'Missing recursive Book chapter: {relative}'
             assert (site/'lite/files'/relative).read_bytes()==p.read_bytes(),f'Lab bytes differ: {relative}'
+        for p in publishable_files():
+            if p.suffix=='.ipynb':continue
+            relative=p.relative_to(ROOT/'content')
+            assert (site/'lite/files'/relative).read_bytes()==p.read_bytes(),f'Lab support bytes differ: {relative}'
+            assert (site/'book'/relative).read_bytes()==p.read_bytes(),f'Book support bytes differ: {relative}'
         assert json.loads((site/'data/catalog.json').read_text(encoding='utf-8'))==catalog,'Explorer catalog differs'
         for evidence in (ROOT/'catalog').glob('*.json'):
             assert (site/'catalog'/evidence.name).read_bytes()==evidence.read_bytes(),f'Published catalog evidence differs: {evidence.name}'

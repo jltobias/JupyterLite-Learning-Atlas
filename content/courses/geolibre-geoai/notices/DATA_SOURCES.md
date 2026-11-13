@@ -1,0 +1,247 @@
+# Data and software source register
+
+Original source register reviewed: **2026-09-29**. Visual learning labs and Astra references added: **2026-10-02**.
+
+This file is the consolidated citation and provenance register for the JupyterLite/GeoLibre/GeoAI examples. Each notebook also contains a concise citation section.
+
+## Visual learning edition (2026-10-09)
+
+- All 18 notebooks include newly authored teaching copy, a vector infographic, a vector cartoon, a PNG preview, and a silent 32-second MP4 storyboard with WebVTT captions and an HTML transcript. Sources: `scripts/learning_content.py` and `scripts/build_learning_media.py`; outputs: `book/notebooks/assets/learning/`.
+- These are original schematic illustrations of methods, not observed geographic datasets, measured hazard maps, screenshots of live results or captured model conversations. The diagrams and fictional dialogue must be read with the notebook's source-specific analytical outputs.
+- These generated notebook companions contain no stock artwork or third-party videos. The supplied artwork and the two Esri documentation diagrams added to the Book are separately attributed below. The new generic cartoon figures do not depict real people.
+- Videos and posters are rendered from the same authored SVG/storyboard content. Transcripts also appear in notebook Markdown; static SVG alternatives remain available without video playback or a Python kernel.
+- Runtime, code and STAC explanations refer to the [Pyodide FAQ](https://pyodide.org/en/stable/usage/faq.html), [JupyterLite content documentation](https://jupyterlite.readthedocs.io/en/stable/howto/content/files.html), [scikit-learn clustering guide](https://scikit-learn.org/stable/modules/clustering.html#k-means), and [STAC specification overview](https://stacspec.org/en/about/stac-spec/), checked 2026-10-09.
+
+## Presentation graphics for the platform introductions (2026-10-11)
+
+- Source: **Tobias, J. L. (2026, July 10). *JupyterLite: Geospatial Data Science and Global Health* [Presentation]**. User-supplied originals: `Jim-Tobias-Peraton-JupyterLite-Geospatial-Data-Science-and-Global-Health-7102026.pptx` and the matching `.pdf`. The 47-slide originals remain outside the repository.
+- Seven original embedded PNGs are retained byte-for-byte in `book/assets/platforms/`. [Provenance manifest](book/assets/platforms/provenance.json): source-file SHA-256 hashes, slide numbers, PPTX member names, per-image hashes/dimensions, source URLs and credits. Extractor: `scripts/extract_platform_graphics.py`; offline verification: `python scripts/extract_platform_graphics.py --check`.
+- **Slides 11 and 17:** JupyterLite interface and deployment documentation, JupyterLite Contributors. [Documentation](https://jupyterlite.readthedocs.io/en/stable/) and [deployment guide](https://jupyterlite.readthedocs.io/en/stable/quickstart/deploy.html). BSD 3-Clause software notice retained in `JUPYTERLITE-LICENSE.txt`; GitHub UI and the incidental screenshot advertisement retain their respective ownership and do not imply endorsement.
+- **Slide 19:** ecosystem infographic supplied in the presentation. Separate illustrator/license not specified. It is not relabeled as original repository artwork or assigned a new open license. The JupyterLite chapter clarifies its packaging simplifications and conditional offline/security claims; project names/logos retain their respective credits.
+- **Slides 38, 39, 41 and 42:** GeoLibre Web, notebook integration docs, Python docs and sharing gallery. **Qiusheng Wu and contributors**; [official citation](https://geolibre.app/citation/), concept DOI [10.5281/zenodo.20785400](https://doi.org/10.5281/zenodo.20785400). Copyright (c) 2026 Qiusheng Wu; MIT software notice retained in `GEOLIBRE-LICENSE.txt`. These slides' presentation-level Wu citations are repeated in the new chapter text rather than lost when extracting embedded PNGs.
+- **Basemap and gallery credits:** retain OpenFreeMap, OpenMapTiles and [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) visible on slide 38. Gallery projects on slide 42 include authors **spatialthoughts** and **giswqs**; their underlying sources retain their own terms. The Python screenshot shows a historical v1.10.0; the repository's Python builders remain pinned to 3.0.0 and the hosted viewer evolves independently.
+- Figure captions and reading guides are in [What is JupyterLite?](book/platforms/jupyterlite.md) and [What is GeoLibre?](book/platforms/geolibre.md). None of these source graphics is an analytical output or health-program finding. Software licenses do not grant blanket rights to the full presentation, third-party imagery, logos, or data.
+
+## Software
+
+### GeoLibre
+- Project: https://geolibre.app/
+- Source: https://github.com/opengeos/GeoLibre
+- Python package used in live notebooks: `geolibre==3.0.0`
+- License: MIT (see upstream repository).
+- Role: interactive GIS, COG/PMTiles/GeoJSON rendering, notebook map widget.
+
+### GeoAI
+- Project/docs: https://opengeoai.org/
+- Source: https://github.com/opengeos/geoai
+- Citation: Wu, Q. (2026). “GeoAI: A Python package for integrating artificial intelligence with geospatial data analysis and visualization.” *Journal of Open Source Software*, 11(118), 9605. https://doi.org/10.21105/joss.09605
+- License: MIT.
+- Role: design reference and full-stack continuation for AI workflows. The full package is not installed in JupyterLite because its current dependency graph includes PyTorch/TorchGeo/Transformers. Browser notebooks use Pyodide-provided GeoPandas, rasterio, H3, scikit-learn and scikit-image to implement compatible workflow patterns.
+
+### Uber H3
+- Project: https://h3geo.org/
+- Python bindings: https://github.com/uber/h3-py
+- License: Apache-2.0.
+- Role: hierarchical hexagonal spatial indexing.
+
+### JupyterLite / Pyodide
+- JupyterLite: https://jupyterlite.readthedocs.io/
+- Pyodide packages: https://pyodide.org/en/stable/usage/packages-in-pyodide.html
+- Role: in-browser Python/WebAssembly runtime.
+
+## Data
+
+### Synthetic visual learning fixtures (labs 12–15 and rainfall exercise in 04)
+- Origin: deterministic functions and fixed-seed arrays authored in this repository, including `book/notebooks/cognition.py` and the notebook cells.
+- Fixtures: 8 × 8 invented temperature/canopy/population grid; paired 64 × 64 RGB scenes with a known change/cloud mask; analytic metric terrain; a 6 × 6 street network with two bridges; a fixed 30-day rainfall teaching series.
+- These are **not observed environmental, population, satellite, road, or service-access data**. The longitude/latitude anchor only demonstrates mapping and does not describe the real location beneath the basemap.
+- Cell areas and terrain derivatives are computed in local metric coordinates. The small-patch longitude/latitude conversion is a teaching approximation, not a surveyed projection or production georeferencing method.
+- No downloaded imagery is transmitted to Astra by default. Optional vision requests contain PNGs generated from the synthetic arrays and their numerical evidence.
+- Reproduction: run the cells in order. Lab 13 uses NumPy seed 42; other fixtures use fixed formulas or explicit values. Exports retain source labels.
+
+### Astra, plotting and concept diagrams
+- Model: `gpt-6-astra`, accessed optionally through the Responses API from full CPython, not locally installed in Pyodide.
+- Official sources checked 2026-10-02: [model](https://developers.openai.com/api/docs/models/gpt-6-astra), [structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs), [image inputs](https://developers.openai.com/api/docs/guides/images-vision), [function calling](https://developers.openai.com/api/docs/guides/function-calling).
+- The examples demonstrate general reasoning, image interpretation and tool use applied to geospatial evidence. No dedicated geospatial performance guarantee is asserted. Offline plans and tool calls are hand-authored fixtures, not model-generated responses.
+- [Matplotlib](https://matplotlib.org/stable/) provides static charts. [Plotly](https://plotly.com/python/) (`plotly==6.5.0`) provides a rotatable surface, loading its matching JavaScript bundle from the Plotly CDN.
+- The SVG concept maps under `book/notebooks/assets/` are authored diagrams, include text alternatives, and use no external diagram renderer.
+- GeoLibre 3.0 native extrusion properties render the synthetic elevation columns. [Terrain controls](https://geolibre.app/user-guide/map-controls/) provide separate terrain context; loaded COGs do not automatically become that elevation source.
+
+### GeoLibre hosted sample data
+- Hosted sample used by quickstart: `https://assets.geolibre.app/data/places.geojson`
+- Public DEM sample used by quickstart: `https://data.source.coop/giswqs/opengeos/dem.tif`
+- Product landing page: https://source.coop/giswqs/opengeos
+- Role: small, CORS-friendly demonstration assets.
+
+### WorldPop
+- Product family: WorldPop population counts, University of Southampton.
+- Example WorldPop-on-H3 PMTiles mirror: `https://data.source.coop/smartmaps/h3ys-worldpop/khm.pmtiles`
+- Mirror landing page: https://source.coop/smartmaps/h3ys-worldpop/khm.pmtiles
+- Recommended citation for 2020 population-count products: Bondarenko, M., Kerr, D., Sorichetta, A., & Tatem, A.J. (2020). *Census/projection-disaggregated gridded population datasets for 189 countries in 2020 using Built-Settlement Growth Model (BSGM) outputs.* WorldPop, University of Southampton. https://doi.org/10.5258/SOTON/WP00684
+- WorldPop license: CC BY 4.0 for the cited product family; verify license metadata for any substituted WorldPop layer.
+- Role: population surface and H3 aggregation example.
+
+### U.S. Census Bureau — Census 2020 / TIGERweb
+- Service: https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer
+- Example layer: Counties from the Census 2020 group, queried as GeoJSON.
+- Provider/copyright: U.S. Census Bureau.
+- Role: county polygons and 2020 population/housing attributes for feature engineering and clustering.
+- Note: the notebook intentionally uses TIGERweb attributes that do not require an API key. Current Census Data API endpoints may require an API key.
+
+### Major TOM Core multimodal chips
+- Landing page: https://source.coop/major-tom/core
+- Example tile prefix: `https://data.source.coop/major-tom/core/DATA/42/`
+- Modalities used: Sentinel-2 (`s2/data.tif`), Copernicus DEM (`dem/data.tif`), ESA WorldCover (`wc/data.tif`).
+- Major TOM is an AI-ready multimodal collection. Follow the landing page's per-source licensing and attribution requirements.
+- Role: aligned EO inputs for browser raster visualization and unsupervised classification.
+
+### Copernicus Sentinel-2
+- Data programme: Copernicus / European Union.
+- Source in these notebooks: Major TOM mirror on Source Cooperative.
+- Data terms: use the applicable Copernicus Sentinel data terms and attribution described by the source collection.
+- Role: multispectral Earth observation imagery.
+
+### Copernicus DEM GLO-30
+- Source in these notebooks: Major TOM mirror on Source Cooperative.
+- Native product: Copernicus DEM GLO-30.
+- Role: terrain/elevation context aligned to EO imagery.
+- Follow the Copernicus DEM licensing/attribution stated by the source collection.
+
+### ESA WorldCover
+- Source in these notebooks: Major TOM mirror on Source Cooperative.
+- Product: ESA WorldCover.
+- Role: land-cover reference layer aligned to the EO chip.
+- Follow ESA WorldCover citation/license requirements stated by the source collection.
+
+### CHIRPS v3
+- Producer: Climate Hazards Center (CHC), UC Santa Barbara.
+- Mirror/processor: WFP Food Security and Nutrition Analysis Service (VAM), hosted by Source Cooperative.
+- Landing page: https://source.coop/wfp/chirps-rnl-daily
+- Fixed example COG: `https://data.source.coop/wfp/chirps-rnl-daily/v3.0/2024/01/15/chirps-v3.0.rnl.2024.01.15.tif`
+- Citation: Climate Hazards Center CHIRPS3 Data Repository (2025), https://doi.org/10.15780/G2JQ0P
+- Peer-reviewed reference listed by the mirror: Funk et al., *Scientific Data* (2026), https://doi.org/10.1038/s41597-026-07096-4
+- License on the mirror: CC BY 4.0.
+- Important: **CHIRPS is not produced by NOAA.** It is a Climate Hazards Center product. NOAA weather/climate datasets such as HRRR should be cited separately.
+
+### USGS Earthquake Hazards Program
+- GeoJSON feed documentation: https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+- Live monthly feed used: `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson`
+- Provider: U.S. Geological Survey.
+- Role: live point events for H3 aggregation and anomaly detection.
+- Because the feed is live, results change over time; notebook output should record its run timestamp when used in research.
+
+### OpenStreetMap
+- GeoLibre basemaps may include OpenStreetMap-derived tiles.
+- Attribution: © OpenStreetMap contributors, https://www.openstreetmap.org/copyright
+- Role: contextual basemap.
+
+### STAC catalogs and browsers
+- STAC specification: https://stacspec.org/; STAC API specification: https://github.com/radiantearth/stac-api-spec.
+- UN Biodiversity Lab Browser: https://stac.unbiodiversitylab.org/?.language=en; public API root: `https://unbl-prod-stac.azurewebsites.net/`. Asset access may require a UNBL workspace/token.
+- Copernicus Data Space Browser: https://browser.stac.dataspace.copernicus.eu/; public API root: `https://stac.dataspace.copernicus.eu/v1/`.
+- USGS LandsatLook Browser: https://landsatlook.usgs.gov/stac-browser/?.language=en; public API root: `https://landsatlook.usgs.gov/stac-server/`.
+- WorldPop Browser: https://stac.worldpop.org/?.language=en; public API root: `https://api.stac.worldpop.org`.
+- Role: standards-based discovery of collections, items, footprints, temporal metadata, assets, and licensing information for the STAC notebooks.
+
+### GeoLibre Official Demos
+- Gallery: https://geolibre.app/gallery/
+- Collection: https://share.geolibre.app/giswqs/collections/official-demos
+- Portable project convention: `https://share.geolibre.app/giswqs/{slug}.geolibre.json`
+- Role: authored, portable examples that expose layer configuration, source attribution, inline GeoJSON, raster tile URLs, and visualization settings. Notebook 09 uses a compact, reviewed manifest of selected gallery descriptions; notebooks 10 and 11 read live project JSON directly.
+- Licensing: GeoLibre software is MIT licensed, but every demo can incorporate data under different terms. Read the project description and original-provider terms before reuse.
+
+### Sister Cities / Wikidata
+- GeoLibre project: https://share.geolibre.app/giswqs/sister-cities-of-major-world-cities
+- Project JSON: https://share.geolibre.app/giswqs/sister-cities-of-major-world-cities.geolibre.json
+- Original structured-data source identified by the demo: Wikidata, “twinned administrative body.”
+- Wikidata data access and CC0 statement: https://www.wikidata.org/wiki/Wikidata:Data_access
+- Role: 367 mapped cities and 1,108 sister-city relationships for graph feature engineering, clustering, and anomaly exploration.
+
+### NIFC WFIGS wildfire perimeters
+- GeoLibre project: https://share.geolibre.app/giswqs/us-wildfire-perimeters-2025
+- Project JSON: https://share.geolibre.app/giswqs/us-wildfire-perimeters-2025.geolibre.json
+- Source identified by the demo: NIFC WFIGS Interagency Fire Perimeters, National Interagency Fire Center.
+- Role: 2025 U.S. fire perimeters and attributes for spatial feature engineering and exploratory anomaly scoring.
+- Operational caveat: the notebook snapshot is educational and must not be used for emergency decisions.
+
+### User-supplied Power BI report / SaTScan teaching derivative
+- Source report: `Prototype-July-8-2024.pbix`, supplied by the repository author.
+- Committed derivative: `book/notebooks/data/pbix_top10_sat_scan.csv` contains the top ten rows from the report's `ALLMODELS` table plus city coordinate, elevation, and scenario summaries aggregated from `Climate-Sites-w-coords`.
+- Role: reproducible teaching snapshot for notebook 16; it is not the complete report model and is not an independent reanalysis or operational hazard forecast.
+- Interpretation: preserve the report's original source citations, terms, scenario definitions, and limitations when reusing these values.
+
+### Rewiring Global Health / Six Thinking Hats
+- Conceptual reference: https://github.com/jltobias/JupyterLite-Rewiring-Global-Health
+- User-supplied artwork: `book/notebooks/assets/six-thinking-hats-global-health.png`, copied unchanged at the user's request.
+- Role: structured reflection and sense-making prompts for responsible GeoAI learning. Six Thinking Hats concepts are associated with Edward de Bono; third-party names, concepts, and quotations retain their respective rights.
+- Book reference (added 2026-10-12): de Bono, E. (2000). *Six Thinking Hats* (revised and updated edition). Penguin Books. ISBN 9780140296662. [Requested Goodreads listing](https://www.goodreads.com/en/book/show/97030.Six_Thinking_Hats), [library record](https://search.worldcat.org/title/44652811), and [official book overview](https://www.debono.com/book-six-thinking-hats). The 2000 date identifies the cited edition. Purple orchestration is the supplied artwork's extension, not an original seventh hat. No book pages or cover art are copied.
+- Book reference (added 2026-10-12): Zuckerman, E. (2013). *Rewire: Digital Cosmopolitans in the Age of Connection*. W. W. Norton & Company. ISBN 9780393082838. [Requested Goodreads listing](https://www.goodreads.com/en/book/show/16233761-rewire); [author's page](https://ethanzuckerman.com/books/rewire/); [publisher record](https://wwnorton.co.uk/books/9780393082838-rewire). Goodreads restricted automated access; author/publisher pages support the metadata and brief paraphrase. GeoAI connections are this book's teaching interpretation, not Zuckerman's findings.
+- Additional supplied artwork (added 2026-10-12): `book/assets/rewiring/rewiring-global-health.png`, copied unchanged from the [companion repository revision 84bf945de91ad5ae3c8b2f67e9bd3e4781cf88b9](https://github.com/jltobias/JupyterLite-Rewiring-Global-Health/blob/84bf945de91ad5ae3c8b2f67e9bd3e4781cf88b9/assets/rewiring-global-health.png). Its source register credits James L. Tobias as supplier. Hash, dimensions and caveats are in `book/assets/rewiring/provenance.json`. Composite artwork, not analytical data; embedded quotation not verified verbatim; pictured benefits are aspirations, not validated health outcomes. Third-party elements retain their respective rights. Both images have reading guides and enlargement links in the primer.
+
+### Element 84 Earth Search / Sentinel-2
+- STAC API: https://earth-search.aws.element84.com/v1
+- Source/documentation: https://github.com/Element84/earth-search
+- Collection used: `sentinel-2-c1-l2a` (Copernicus Sentinel-2 Collection 1 Level-2A, exposed as cloud-optimized GeoTIFF assets).
+- Role: bbox/time/cloud-filtered scene discovery around a selected fire perimeter, metadata triage, footprint mapping, and direct streaming of the visual COG into GeoLibre.
+- Licensing: inspect the Earth Search STAC Collection and Copernicus terms for current attribution and reuse requirements.
+
+### Source Cooperative
+- Platform: https://source.coop/
+- Operator: Radiant Earth.
+- Role: cloud-native hosting/mirroring for several example assets.
+- License follows each individual product; Source Cooperative hosting does not replace source-product attribution.
+
+## GeoAI and global-health visual field guide
+
+- Seven authored chapters: `book/geoai/`. Their inline citations and `book/references.md` identify primary sources consulted on 2026-10-11 for definitions, public-health context, environmental measurement and governance.
+- **Esri perspective (added 2026-10-11):** [Esri's GeoAI overview](https://www.esri.com/en-us/capabilities/geoai/overview), accessed 2026-10-11 and rechecked 2026-10-12, informs a short, attributed paraphrase in `book/geoai/primer.md`. The full bibliographic entry is in `book/references.md`. Notebook mappings and the proposed health-program evaluation question are this book's interpretation, not Esri results. No Esri videos or text passages are reproduced; no ArcGIS dependency or Esri model is introduced, and no affiliation or endorsement is implied. The two diagrams below have a separate source and credit.
+- **Esri diagrams (added 2026-10-12):** both supplied diagrams were matched to [Esri's ArcGIS Pro 3.6 GeoAI documentation, Key concepts](https://pro.arcgis.com/en/pro-app/3.6/help/analysis/ai/geoai.htm), not the overview page. The original PNGs are copied unchanged to `book/assets/esri/` with source URLs, retrieval date, dimensions and hashes in `book/assets/esri/provenance.json`. Credit: © Esri. These images remain Esri's copyrighted artwork, not original repository diagrams or assets relicensed by the project's software license. Their captions and reference entry identify Esri; the reading guides and notebook examples are authored teaching interpretations. No Esri affiliation or endorsement is implied.
+- **Notebook 00 starter (added 2026-10-12):** six opening Markdown cells after the title introduce GeoAI, show each Esri diagram with its reading guide, explain the notebook's role, list both Esri sources, and transition to the existing quickstart. Their `learning_preamble` metadata keeps them ahead of generated lesson content on rebuild. `book/notebooks/assets/esri/` contains byte-identical PNGs and a mirrored provenance manifest so JupyterLite bundles them. Tests prevent the Book and notebook copies from drifting. Existing code cells, saved outputs and learning guides are unchanged; notebook 00 remains a mapping foundation, not a fitted AI model.
+- **AWS perspective (added 2026-10-12):** Amazon Web Services, [*What Is Geospatial Artificial Intelligence?*](https://aws.amazon.com/what-is/geospatial-artificial-intelligence/), accessed 2026-10-12. A brief paraphrase in `book/geoai/primer.md` complements the existing definitions; `book/references.md` records the citation. The notebook comparisons and proposed health-program question are authored teaching interpretations, not AWS results. No AWS artwork or text passages are copied, no affiliation or endorsement is implied, and no AWS dependencies or account requirements are introduced.
+- **Spatial intelligence (added 2026-10-12):** Stanford HAI, [*What is Spatial Intelligence?*](https://hai.stanford.edu/ai-definitions/what-is-spatial-intelligence), accessed 2026-10-12. The primer includes a brief attributed paraphrase and separately authored comparison with GIS, GeoAI and geospatial intelligence. Notebook examples do not claim physical-world understanding, a learned world model or validated simulation. This glossary source is distinct from the existing Zhang et al. policy reference; no Stanford artwork or text passages are copied.
+- Twenty-four original conceptual SVGs: `book/assets/geoai/`, reproducibly generated by `scripts/build_geoai_primer.py`. These are explanatory schematics, not third-party agency artwork, model results or measured health estimates. Titles, complete embedded text descriptions and chapter reading guides accompany the visuals.
+- The HIV cohort values (10,000; 8,000; 6,000; 5,400), score ranges, network sketches and coastal cross-section are explicitly invented illustrations. They are not additional data extracted from the PBIX report or a real program.
+- The program applications are proposed transfers of notebook methods. They do not claim that WHO, CDC, UNAIDS, GPEI, NASA, NOAA, FEWS NET or IPCC endorses or has validated these notebooks.
+- The supplied Six Thinking Hats artwork is unchanged. The purple-synthesis discussion and evidence-to-decision framing connect to the companion Rewiring Global Health repository; no new individual-level health data or external model calls were introduced.
+
+## Digital twins and map-encryption presentations
+
+The two explanatory chapters in `book/futures/` paraphrase the user-supplied Gaborone TB presentation (cover date 2026-08-27) and Map Encryption presentation (cover date 2026-09-21; PDF export 2026-10-04). `book/assets/futures/provenance.json` records filenames, SHA-256 checksums, cover credits, page counts and relevant PDF page numbers. The original PDFs and separately hosted implementations are not included. No new clinical data or secret keys are introduced.
+
+The chapters' public references are NIST digital-twin guidance, Starsim documentation, Baker et al. (2023) on Kopanyo geospatial/genomic research, NIST SP 800-38D and W3C Web Cryptography security considerations. Full links appear in `book/references.md`. Four original SVG illustrations explain the proposed concepts; they are not outputs of a disease model, security test or copied presentation graphics. Existing GeoLibre creator attribution remains separate.
+
+## Local Ollama assistant lessons (18–20)
+
+`book/notebooks/ollama_mapping.py` constructs twelve **invented** polygon cells near Gaborone and values named `heat_proxy_c`. Neither coordinates nor values identify patients, clinics, observed temperature, measured exposure or actual risk. A cutoff of 39 selects seven cells; a cutoff of 41 selects four. No observational dataset, STAC asset or model training is hidden behind these outputs. `data/ollama-demo.geolibre.json` is a reproducible public map recipe for exactly this fixture.
+
+Default plans are authored examples, not captured model responses. An explicitly enabled live request calls the learner's local Ollama service; errors are not replaced with fixtures. Exported audit records can contain prompts and must be reviewed before sharing. Model weights are installed separately and are not in the repository.
+
+Attribution and integration references: [GeoLibre by Qiusheng Wu and contributors](https://geolibre.app/citation/), [its native assistant](https://geolibre.app/user-guide/ai-assistant/), [Ollama](https://docs.ollama.com/), [Qwen3:4b](https://ollama.com/library/qwen3:4b), and [Global Nature Watch Horizon](https://horizon.globalnaturewatch.org/) as interaction inspiration only. The GeoAI primer cites [Zhang et al., Stanford HAI (2026)](https://hai.stanford.edu/policy/the-world-model-and-spatial-intelligence-era-governing-ai-beyond-language) and separately labels the book's synthesis. Three original diagrams live in `book/assets/assistant/`. See `book/references.md` for full credits; accessed 11 October 2026.
+
+## Historical cholera lesson (21)
+
+The unchanged `cholera_deaths.csv` and `pumps.csv` come from [PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic, revision 476f6dd5a8430e6eb823e79614fda1d7e12a78fb](https://github.com/PHI-Case-Studies/Jupyterlite-1854-Cholera-Basic/tree/476f6dd5a8430e6eb823e79614fda1d7e12a78fb). Credit: PHI-Case-Studies contributors. Their repository's GPL-3.0 license is retained verbatim in `book/notebooks/data/cholera/LICENSE`; the adjacent provenance manifest records source paths and SHA-256 checksums. No upstream notebook code or media was copied. Original digitization and completeness are not independently verified.
+
+The files contain 250 locations, 489 recorded deaths and eight pumps, not a claim about the complete outbreak. DBSCAN fits latitude/longitude coordinates only, using haversine distance and equal location weights. Death counts are descriptive totals; pumps are revealed only as context. Missing denominators, dates, water-use evidence and controls prevent disease-rate, temporal or causal inference. Seven original analytical SVGs, fitted-label snapshots and a GeoLibre project are rebuilt with `python scripts/build_cholera_lesson.py`. The Book presentation switches these **saved results**; notebook 21 performs live fits. This lesson uses scikit-learn, not the separate GeoAI deep-learning package.
+
+Method: [scikit-learn DBSCAN](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html). Historical interpretation: [CDC (2004), 150th Anniversary of John Snow and the Pump Handle](https://www.cdc.gov/Mmwr/preview/mmwrhtml/mm5334a1.htm). Runtime: [Pyodide package loading](https://pyodide.org/en/stable/usage/loading-packages.html). GeoLibre: Qiusheng Wu and contributors, [doi:10.5281/zenodo.20785400](https://doi.org/10.5281/zenodo.20785400). Accessed 11 October 2026.
+
+## Notebook 22: RustGIS / GeoLibre bridge (2026-10-30)
+
+- `book/notebooks/rustgis_bridge.py::sample_sites()` authors 20 invented WGS84 points near London: two nine-point grids plus two isolated points. These are not facilities, patients, observed events or extracted source data. Each feature preserves a stable `id` and `synthetic: true` property.
+- `book/notebooks/data/rustgis-groups.geojson` is the reproducible 350-meter DBSCAN snapshot generated by `scripts/build_rustgis_lesson.py`. Method: scikit-learn, haversine distance, `min_samples=3`, unweighted coordinates. Two groups of nine, two unassigned. Group labels are not risk ranks. The notebook's export includes a separate method/limits card; user exports are not automatically published.
+- `book/notebooks/assets/rustgis/bridge.svg` and the lab 22 infographic, cartoon and captioned video are original teaching materials, not upstream screenshots. No companion artwork or code was copied.
+- RustGIS software: Wu, Q., Rincón Albarracín, J. G., Filho, E., Hofbauer, D., Fitzgerald, M., & Strebel, D. (2026), *RustGIS*. [doi:10.5281/zenodo.23633281](https://doi.org/10.5281/zenodo.23633281). Apache-2.0. Reviewed [source revision 8b322b2](https://github.com/opengeos/RustGIS/tree/8b322b290448e468c8972df9b1f601d3a72f7d53); [web loading guide](https://github.com/opengeos/RustGIS/blob/8b322b290448e468c8972df9b1f601d3a72f7d53/docs/installation.md), [native Python documentation](https://github.com/opengeos/RustGIS/blob/8b322b290448e468c8972df9b1f601d3a72f7d53/docs/python.md).
+- Companion context: James L. Tobias, [JupyterLite-RustGIS, revision 64ee4e3](https://github.com/jltobias/JupyterLite-RustGIS/tree/64ee4e32222c07006ab28a634b759d985a002bda). Only links and attributed descriptions are used. The companion 2D/extruded maps use MapLibre GL JS and its scene uses Three.js; they are not labeled RustGIS renders. Its WorldPop STAC footprints and C3S-derived tables have their own source terms; none are redistributed by this lesson.
+- Native `rustgis` is not installed in Pyodide. The web launch uses a public GeoJSON URL; changed local files must be downloaded and imported. No new Ollama origin, local service, credential or external AI call is configured.
+
+## Additional high-value sources considered for future labs
+
+### Copernicus C3S / Interactive Climate Atlas
+- Atlas: https://atlas.climate.copernicus.eu/
+- Excellent source for climate projections and indicators.
+- A future notebook should use a stable, documented public API/download endpoint and preserve the dataset-specific citation and scenario metadata rather than scraping the interactive UI.
+
+### NOAA
+- NOAA open datasets (for example HRRR/GFS) are strong candidates for weather-focused labs, including cloud-native mirrors on Source Cooperative.
+- They are intentionally listed separately from CHIRPS to preserve correct provenance.

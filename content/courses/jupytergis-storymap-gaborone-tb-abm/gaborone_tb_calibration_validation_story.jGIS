@@ -1,0 +1,246 @@
+{
+  "layerTree": [
+    "7a7eec0e-c78d-4f0b-b65a-047719aa01bd",
+    "009e9c1d-4538-498f-b5d4-df8630a9edc3",
+    "dda5c6e3-4d1b-4ef1-bd02-cf0ec636318b",
+    "d8ac4a00-eae9-43a1-b165-95b6013311ee",
+    "c572a3a9-7aa0-4ef9-88bc-03e66175d02c",
+    "39380a3b-13f9-4cf9-86ff-df5aeca4f566",
+    "54633d23-6fa9-45d5-903e-717e9ab435d0",
+    "2bfedec0-52c5-4bae-9852-9f99761037fb"
+  ],
+  "layers": {
+    "7a7eec0e-c78d-4f0b-b65a-047719aa01bd": {
+      "name": "OpenStreetMap.Mapnik Layer",
+      "parameters": {
+        "opacity": 1.0,
+        "source": "5b4bc317-83f0-4f46-8844-0b898467d9dd"
+      },
+      "type": "RasterLayer",
+      "visible": true
+    },
+    "009e9c1d-4538-498f-b5d4-df8630a9edc3": {
+      "filters": {
+        "appliedFilters": [],
+        "logicalOp": "all"
+      },
+      "name": "Illustrative TB model neighborhoods",
+      "parameters": {
+        "opacity": 0.65,
+        "source": "bc6344e5-1f21-4925-9b8e-3acf12ec3c47",
+        "symbologyState": {}
+      },
+      "type": "VectorLayer",
+      "visible": true
+    },
+    "dda5c6e3-4d1b-4ef1-bd02-cf0ec636318b": {
+      "filters": {
+        "appliedFilters": [],
+        "logicalOp": "all"
+      },
+      "name": "TB diagnostic and care sites",
+      "parameters": {
+        "opacity": 1.0,
+        "source": "ed848c12-1c6d-437d-a054-b02060320c77",
+        "symbologyState": {}
+      },
+      "type": "VectorLayer",
+      "visible": true
+    },
+    "d8ac4a00-eae9-43a1-b165-95b6013311ee": {
+      "filters": {
+        "appliedFilters": [],
+        "logicalOp": "all"
+      },
+      "name": "Illustrative daily mobility flows",
+      "parameters": {
+        "opacity": 0.6,
+        "source": "7116109e-e43a-40d7-a4a8-afbc8774f6fb",
+        "symbologyState": {}
+      },
+      "type": "VectorLayer",
+      "visible": false
+    },
+    "c572a3a9-7aa0-4ef9-88bc-03e66175d02c": {
+      "name": "01 Calibration workflow",
+      "parameters": {
+        "content": {
+          "contentMode": "map",
+          "image": "",
+          "markdown": "This story map is intended for notebooks that compare simulated outputs with surveillance, facility, or demographic calibration targets.",
+          "title": "Calibration and validation geography"
+        },
+        "extent": [
+          2735971.6637259363,
+          -2840207.800078202,
+          2753971.6637259363,
+          -2826207.800078202
+        ],
+        "layerOverride": [],
+        "transition": {
+          "time": 2.0,
+          "type": "smooth"
+        },
+        "zoom": 11.4
+      },
+      "type": "StorySegmentLayer",
+      "visible": true
+    },
+    "39380a3b-13f9-4cf9-86ff-df5aeca4f566": {
+      "name": "02 Facility anchoring",
+      "parameters": {
+        "content": {
+          "contentMode": "map",
+          "image": "",
+          "markdown": "Facility locations help organize observed notifications, diagnostic volume, and treatment starts. They also make it easier to explain which data are facility-based versus residence-based.",
+          "title": "Facility-level anchors"
+        },
+        "extent": [
+          2741827.8860964747,
+          -2835511.826923287,
+          2748827.8860964747,
+          -2830511.826923287
+        ],
+        "layerOverride": [],
+        "transition": {
+          "time": 2.0,
+          "type": "smooth"
+        },
+        "zoom": 13.0
+      },
+      "type": "StorySegmentLayer",
+      "visible": true
+    },
+    "54633d23-6fa9-45d5-903e-717e9ab435d0": {
+      "name": "03 Spatial residuals",
+      "parameters": {
+        "content": {
+          "contentMode": "map",
+          "image": "",
+          "markdown": "Replace the illustrative neighborhood layer with observed-minus-expected residuals from model calibration. Large residuals suggest model assumptions to revisit, such as contact rates, mobility, or care-seeking delays.",
+          "title": "Spatial residuals and model fit"
+        },
+        "extent": [
+          2739836.204919845,
+          -2838914.936321235,
+          2747836.204919845,
+          -2832914.936321235
+        ],
+        "layerOverride": [],
+        "transition": {
+          "time": 2.0,
+          "type": "smooth"
+        },
+        "zoom": 12.8
+      },
+      "type": "StorySegmentLayer",
+      "visible": true
+    },
+    "2bfedec0-52c5-4bae-9852-9f99761037fb": {
+      "name": "04 Sensitivity storytelling",
+      "parameters": {
+        "content": {
+          "contentMode": "map",
+          "image": "",
+          "markdown": "Parameter sweeps can be translated into maps of uncertainty, ranking neighborhoods by sensitivity to transmission, treatment delay, or mobility parameters.",
+          "title": "Sensitivity analysis as a map story"
+        },
+        "extent": [
+          2743498.6161669437,
+          -2833194.9902549125,
+          2751498.6161669437,
+          -2827194.9902549125
+        ],
+        "layerOverride": [],
+        "transition": {
+          "time": 2.0,
+          "type": "smooth"
+        },
+        "zoom": 12.7
+      },
+      "type": "StorySegmentLayer",
+      "visible": true
+    }
+  },
+  "metadata": {
+    "generated_by": "ChatGPT",
+    "note": "Illustrative story maps; replace placeholder GeoJSON with repository model outputs where available."
+  },
+  "options": {
+    "bearing": 0.0,
+    "extent": [
+      2735971.6637259363,
+      -2840207.800078202,
+      2753971.6637259363,
+      -2826207.800078202
+    ],
+    "latitude": -24.6532,
+    "longitude": 24.6585,
+    "pitch": 0.0,
+    "projection": "EPSG:3857",
+    "zoom": 11.2
+  },
+  "schemaVersion": "0.6.0",
+  "sources": {
+    "5b4bc317-83f0-4f46-8844-0b898467d9dd": {
+      "name": "OpenStreetMap.Mapnik",
+      "parameters": {
+        "attribution": "(C) OpenStreetMap contributors",
+        "bounds": [],
+        "htmlAttribution": "",
+        "httpHeaders": "",
+        "interpolate": false,
+        "maxZoom": 19.0,
+        "minZoom": 0.0,
+        "provider": "OpenStreetMap",
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "urlParameters": {},
+        "useProxy": false
+      },
+      "type": "RasterSource"
+    },
+    "bc6344e5-1f21-4925-9b8e-3acf12ec3c47": {
+      "name": "Illustrative TB model neighborhoods Source",
+      "parameters": {
+        "httpHeaders": "",
+        "path": "data/gaborone_tb_neighborhoods.geojson",
+        "useProxy": false
+      },
+      "type": "GeoJSONSource"
+    },
+    "ed848c12-1c6d-437d-a054-b02060320c77": {
+      "name": "TB diagnostic and care sites Source",
+      "parameters": {
+        "httpHeaders": "",
+        "path": "data/gaborone_tb_facilities.geojson",
+        "useProxy": false
+      },
+      "type": "GeoJSONSource"
+    },
+    "7116109e-e43a-40d7-a4a8-afbc8774f6fb": {
+      "name": "Illustrative daily mobility flows Source",
+      "parameters": {
+        "httpHeaders": "",
+        "path": "data/gaborone_tb_commuting_flows.geojson",
+        "useProxy": false
+      },
+      "type": "GeoJSONSource"
+    }
+  },
+  "stories": {
+    "6d2c9df9-e79b-4561-adb9-4b0aa097a9aa": {
+      "presentationBgColor": "#171B2C",
+      "presentationTextColor": "#E6EDF7",
+      "showGradient": true,
+      "storySegments": [
+        "c572a3a9-7aa0-4ef9-88bc-03e66175d02c",
+        "39380a3b-13f9-4cf9-86ff-df5aeca4f566",
+        "54633d23-6fa9-45d5-903e-717e9ab435d0",
+        "2bfedec0-52c5-4bae-9852-9f99761037fb"
+      ],
+      "storyType": "guided",
+      "title": "Gaborone TB ABM: calibration and validation"
+    }
+  },
+  "viewState": {}
+}

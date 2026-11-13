@@ -13,6 +13,7 @@ import nbformat
 from playwright.sync_api import sync_playwright
 from phi_case_material import CASES as PHI_CASES
 from eo_material import FILES as EO_FILES, PIN as EO_PIN
+from atlas_paths import canonical_notebooks
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE='http://127.0.0.1:8766/JupyterLite-Learning-Atlas/'
@@ -22,6 +23,9 @@ def check_mobile_book_width(page, label):
     """Keep failure evidence useful across browser engines and build hosts."""
     try:
         page.wait_for_function('document.documentElement.scrollWidth<=innerWidth+2',timeout=10000)
+        # Wait for the theme's responsive sidebar transition before capturing
+        # a full-page screenshot; horizontal scroll alone misses an overlay.
+        page.wait_for_function("""()=>{const s=document.querySelector('.bd-sidebar-primary');return !s || s.getBoundingClientRect().right<=1;}""",timeout=10000)
     except Exception:
         layout=page.evaluate('''()=>({url:location.href,width:innerWidth,scroll:document.documentElement.scrollWidth,
           styles:[...document.styleSheets].map(s=>s.href),
@@ -54,8 +58,8 @@ def check_coral(page, browser, records, output, checks):
         assert page.locator('#query').evaluate('(e)=>e===document.activeElement')
         assert page.locator('#theme').input_value()==record['theme']
         assert parse_qs(urlsplit(page.url).query)['q']==[provider]
-        card.locator('summary').click()
-        assert card.locator('details').evaluate('(e)=>e.open')
+        card.locator('summary').first.click()
+        assert card.locator('details').first.evaluate('(e)=>e.open')
         for resource in record['resources']:
             assert card.locator(f'a[href="{resource["url"]}"]').is_visible()
         assert card.locator(f'a[href="{record["readme_url"]}"]').is_visible()
@@ -106,7 +110,7 @@ def check_coral(page, browser, records, output, checks):
 def check_phi_cases(page, browser, records, output, checks):
     """Assert public learning order, source disclosures, handoffs and actual figures."""
     page.goto(BASE+'book/index.html')
-    navigation=page.locator('nav.bd-links .toctree-l1 > a.reference.internal')
+    navigation=page.locator('nav.bd-links ul.bd-sidenav:not(.bd-sidenav__home-link) > .toctree-l1 > a.reference.internal')
     navigation.first.wait_for()
     links=navigation.evaluate_all('(links)=>links.map(link=>link.getAttribute("href"))')
     assert links[:2]==['foundations/browser-python.html','projects/cholera-1854-basic/index.html'],links[:2]
@@ -121,8 +125,8 @@ def check_phi_cases(page, browser, records, output, checks):
     for slug, case in PHI_CASES.items():
         record=next(r for r in records if r['slug']==slug)
         card=page.locator(f'.resource[data-slug="{slug}"]')
-        card.locator('summary').click()
-        assert card.locator('details').evaluate('(element)=>element.open')
+        card.locator('summary').first.click()
+        assert card.locator('details').first.evaluate('(element)=>element.open')
         assert card.locator(f'a[href="{record["readme_url"]}"]').is_visible()
         for resource in record['resources']:
             assert card.locator(f'a[href="{resource["url"]}"]').is_visible()
@@ -217,8 +221,8 @@ def check_eo(page, browser, records, output, checks):
         assert card.is_visible(),query
         assert page.locator('#query').evaluate('(element)=>element===document.activeElement')
         assert parse_qs(urlsplit(page.url).query)['q']==[query]
-        card.locator('summary').click()
-        assert card.locator('details').evaluate('(element)=>element.open')
+        card.locator('summary').first.click()
+        assert card.locator('details').first.evaluate('(element)=>element.open')
         for resource in record['resources']:
             assert card.locator(f'a[href="{resource["url"]}"]').is_visible()
         assert card.locator(f'a[href="{record["readme_url"]}"]').is_visible()
@@ -266,6 +270,49 @@ def check_eo(page, browser, records, output, checks):
     checks.append('EO/EarthCODE explorer, six pinned source lessons, ten resources, primary citations, reciprocal STAC links, Lab handoff, mobile width and actual unclipped route SVG')
 
 
+
+def check_source_library(page,output,checks):
+    page.goto(BASE+'book/notebook-library.html')
+    article=page.locator('article.bd-article');article.wait_for()
+    assert article.locator('a[href$="/index.html"]').count()>=42
+    page.goto(BASE+'explore/?q=WorldPop');card=page.locator('.resource[data-slug="population-data-comparison"]');card.wait_for()
+    card.locator('.source-lessons summary').click()
+    assert card.locator('a[href="../book/courses/population-data-comparison/01_real_population.html"]').is_visible()
+    # This filename exists only in source lessons, not repository catalog prose.
+    page.goto(BASE+'explore/?q=qa_scaling');card=page.locator('.resource[data-slug="onehealth"]');card.wait_for()
+    assert page.locator('.resource').count()==1
+    card.locator('.source-lessons summary').click()
+    assert card.locator('a[href="../book/courses/onehealth/03_qa_scaling.html"]').is_visible()
+    cases=['courses/population-data-comparison/01_real_population','courses/onehealth/03_qa_scaling','courses/spatial-analysis/01_VC_vector-conversion','courses/eo-satellite-guide/02_sensor_comparison']
+    for route in cases:
+        response=page.goto(BASE+'book/'+route+'.html');assert response.status==200
+        article=page.locator('article.bd-article');assert 'Atlas source reading copy' in article.inner_text()
+        assert 'browser-local' in article.inner_text()
+        sidebar=page.locator('nav[aria-label="Main"]')
+        assert sidebar.locator('a').count()==len(canonical_notebooks())
+        current=sidebar.locator('a[aria-current="page"]')
+        assert current.count()==1 and current.is_visible()
+        assert current.evaluate('(a)=>{for(let p=a.parentElement;p;p=p.parentElement){if(p.tagName==="DETAILS"&&!p.open)return false;}return true;}')
+        collapsed=sidebar.locator('details:not([open])').first
+        if collapsed.count():
+            disclosure=collapsed.element_handle()
+            summary=disclosure.query_selector('summary')
+            summary.click()
+            assert disclosure.evaluate('(d)=>d.open')
+            summary.click()
+        run=page.get_by_role('link',name='Open this source notebook in Lab');run.wait_for()
+        from urllib.parse import quote
+        assert run.get_attribute('href')=='/JupyterLite-Learning-Atlas/lite/lab/index.html?path='+quote(route+'.ipynb',safe='')
+        page.set_viewport_size({'width':390,'height':844});check_mobile_book_width(page,'source-'+route.split('/')[-1])
+        page.screenshot(path=str(output/('source-'+route.split('/')[-1]+'-mobile.png')),full_page=True)
+        page.set_viewport_size({'width':1440,'height':1000})
+    response=page.request.get(BASE+'lite/files/courses/population-data-comparison/population.json');assert response.ok
+    data=response.json();assert len(data['layers'])==4 and all(x['metadata']['synthetic'] is False for x in data['layers'])
+    helper=page.request.get(BASE+'lite/files/courses/population-data-comparison/population_tools.py').body()
+    alias=page.request.get(BASE+'lite/files/courses/population-data-comparison/population_tools_real.py').body();assert helper==alias
+    checks.append('Full source library, lesson search, recursive routes, runtime disclosure, four nested Book/Lab handoffs,390px source reading and real Population payload/helper alias')
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--browser-executable');args=parser.parse_args()
     output=ROOT/'_build/browser';output.mkdir(parents=True,exist_ok=True)
@@ -292,7 +339,7 @@ def main():
             assert page.locator('#related article').count()==counts['related']
             source_record=next(r for r in records if r['resources'])
             page.locator('#query').fill(source_record['name'])
-            details=page.locator(f'.resource[data-slug="{source_record["slug"]}"] details')
+            details=page.locator(f'.resource[data-slug="{source_record["slug"]}"] details').first
             details.locator('summary').click()
             assert details.evaluate('(element)=>element.open'),'First summary click after typing must open source details'
             source_links=details.locator('a')
@@ -307,7 +354,7 @@ def main():
             assert page.locator('#query').evaluate('(e)=>e===document.activeElement')
             page.locator('#kind').select_option('scene-3d')
             assert page.locator('.resource').count()>0
-            for d in page.locator('.resource details').all():
+            for d in page.locator('.resource details:not(.source-lessons)').all():
                 d.locator('summary').click()
                 assert d.locator('a').count()>=3
             page.locator('#reset').click();page.wait_for_function("n=>document.querySelectorAll('.resource').length===n",arg=total)
@@ -323,6 +370,7 @@ def main():
             check_coral(page,browser,records,output,checks)
             check_phi_cases(page,browser,records,output,checks)
             check_eo(page,browser,records,output,checks)
+            check_source_library(page,output,checks)
             page.goto(BASE+'teach/');page.locator('#teaching-table tr').first.wait_for()
             assert page.locator('#teaching-table tr').count()==16
             before=page.locator('#view-summary').inner_text()

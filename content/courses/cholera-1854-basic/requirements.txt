@@ -1,0 +1,12 @@
+# Core (match versions)
+jupyterlite-core==0.7.1
+jupyterlite-pyodide-kernel==0.7.0
+
+# Minimal UIs
+jupyterlab==4.5.1
+notebook==7.5.1
+
+# Optional but recommended for reproducible widget builds (only if you need widgets)
+# jupyterlite-pyodide-lock==0.2.0
+# jupyterlite-pyodide-lock-uv==0.2.0
+

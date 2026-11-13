@@ -1,0 +1,3 @@
+# Manifested source courses retain exact audited bytes across Windows/Linux.
+# Git newline conversion would invalidate data/helper/license SHA-256 records.
+content/courses/** -text

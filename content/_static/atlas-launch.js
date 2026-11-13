@@ -12,5 +12,6 @@ document.addEventListener("DOMContentLoaded",()=>{
   nav.style.cssText="display:flex;flex-wrap:wrap;gap:18px;margin:0 0 24px;font-size:.9rem";
   const home=document.createElement("a");home.href=prefix;home.textContent="← Atlas home";
   const run=document.createElement("a");run.href=prefix+"lite/lab/index.html?path="+encodeURIComponent(notebook);run.textContent="Run this notebook in Lab ↗";
+  if(notebook.startsWith("courses/"))run.textContent="Open this source notebook in Lab ↗";
   nav.append(home,run);article.prepend(nav);
 });

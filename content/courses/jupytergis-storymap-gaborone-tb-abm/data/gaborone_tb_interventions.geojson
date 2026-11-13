@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6483,
+          -24.6753
+        ]
+      },
+      "properties": {
+        "name": "Active case finding team A",
+        "intervention_type": "screening",
+        "description": "Targeted mobile screening and contact investigation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6812,
+          -24.6286
+        ]
+      },
+      "properties": {
+        "name": "Active case finding team B",
+        "intervention_type": "screening",
+        "description": "Community symptom screening and referral"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6617,
+          -24.6516
+        ]
+      },
+      "properties": {
+        "name": "Diagnostic turnaround pilot",
+        "intervention_type": "diagnostic",
+        "description": "Reduced time from symptoms to treatment start"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.7367,
+          -24.6687
+        ]
+      },
+      "properties": {
+        "name": "Cross-border referral coordination",
+        "intervention_type": "coordination",
+        "description": "Continuity of care for mobile populations"
+      }
+    }
+  ]
+}

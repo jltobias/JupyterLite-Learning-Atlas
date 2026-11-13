@@ -1,6 +1,6 @@
 # Contribute to the learning atlas
 
-The catalog drives navigation; **`content/**/*.ipynb` are the canonical authoring files** for both Book and Lab. The same bytes are copied into JupyterLite, preserving folders. Original notebook code is MIT; narrative, original figures and original synthetic fixtures are CC BY 4.0. Linked source works keep their own terms.
+The catalog drives navigation; **`content/**/*.ipynb` are the canonical authoring files** for both Book and Lab. The same bytes are copied into JupyterLite, preserving folders. Original Atlas companion code is MIT; original Atlas narrative, figures and synthetic fixtures are CC BY 4.0. Imported courses, software and datasets retain their individual licenses and notices in `catalog/source-library.json` and each course guide.
 
 Editor checkpoints and hidden working folders are excluded from execution, chapter discovery and the published Lab. Run `python -m unittest discover -s tests` when changing content selection or packaging.
 
@@ -20,7 +20,7 @@ python scripts/build.py
 python scripts/serve.py
 ```
 
-Open `http://localhost:8000/JupyterLite-Learning-Atlas/`. The preview deliberately uses the GitHub project subpath. `_site/` is generated output. Builds never publish, stage or commit anything. The first browser load of Pyodide still needs network; notebook computations need no remote data or credentials. Notebook edits live in browser storage. Download work before clearing browser data or changing profiles. Rebuild the site after changing notebooks.
+Open `http://localhost:8000/JupyterLite-Learning-Atlas/`. The preview deliberately uses the GitHub project subpath. `_site/` is generated output. Builds never publish, stage or commit anything. The first browser load of Pyodide still needs network. Original companion exercises use local fixtures; source lessons may require networks, credentials, native libraries or missing inputs, as their course guides explain. Notebook edits live in browser storage. Download work before clearing browser data or changing profiles. Rebuild the site after changing notebooks.
 
 `scripts/build.py` regenerates navigation, validates source, runs a strict Book build, copies canonical content into a Lite staging folder, builds JupyterLite and assembles `_site/`. It does not execute notebooks implicitly: run `execute.py --write` before building changed code. CI executes them before its build. The build only replaces its own `_build/` staging subfolders and `_site/`; output paths are checked to stay under this repository. It preserves `.git` and the source tree.
 
@@ -33,6 +33,16 @@ Open `http://localhost:8000/JupyterLite-Learning-Atlas/`. The preview deliberate
 5. After changing theme counts, refresh only metadata artwork with `python -c "from scripts.make_assets import make_repository_overview; make_repository_overview()"`, then `python scripts/generate.py` to copy assets. Review `assets/PROVENANCE.md`. Add citations to `REFERENCES.md` and synchronize the narrative-only `content/references.ipynb` if that page changes. Similarly synchronize the contributor notebook when this guide changes; generator preserves it by design.
 6. Execute changed notebooks, run validation/build/browser checks, and update `VALIDATION.md` with actual results and limits. Review canonical outputs and catalog diffs. The validation fails on omitted public prefixed projects, duplicates, missing notebooks, incomplete scaffolds, path mismatches and unsupported imports.
 
+## Add or refresh a source course
+
+Preserve source chapters as distinct editions. Review an immutable upstream commit, scoped licenses, dataset terms, sensitive inputs and embedded media before copying. The read-only checkouts used for an intentional import live in `_research/textbook-sources/<slug>`; normal builds never fetch them. `scripts/import_sources.py` records every inspected notebook as imported, an exact alias or a reasoned exclusion, with hashes, runtime requirements and adaptations in `catalog/source-library.json`. Extend its explicit course policy for a new source rather than silently skipping unfamiliar files. Never execute an upstream build script merely to collect its output. Run `python scripts/import_sources.py --check` against the reviewed checkouts after an import.
+
+Add each copied helper, data file, license and notice to the support manifest with its source and hash. Give actual datasets a creator/version citation, terms, source link and modification statement in `catalog/data-attributions.json`; then run `python scripts/data_credits.py --write` to refresh the marked README, references and Book blocks. `python scripts/data_credits.py` checks that they agree and that required bundled data is credited. Keep mandatory copyright, attribution, share-alike and corresponding-source notices. Unclear or restricted material belongs in the exclusion ledger with a continuation link. Owner-authorized original work without a public license must not receive an invented public license.
+
+Add the course guide and its ordered source sections to the generated TOC. The sidebar reads this recursive hierarchy without resolving the entire document tree on every page. Use `browser-local`, `browser-network`, `local-server` or `reference-only` to describe intended use; execution receipts are a separate fact. Select a lesson for automated execution only after reviewing its code and dependencies. New courses and existing sections can grow without changing a fixed chapter-count limit.
+
+The .gitattributes rule disables Git newline conversion within content/courses/** so the audited data, helper and license bytes survive Windows/Linux commits and checkouts. Preserve that rule when extending the collection. Hashes describe the inspected source-checkout bytes; upstream Git pins and ordered cell-source hashes separately identify provenance.
+
 ## Validation and browser checks
 
 ```bash
@@ -44,6 +54,7 @@ python -m pip install -r requirements-browser-test.txt
 python -m playwright install chromium
 python scripts/test_browser.py
 python scripts/check_runtime.py
+python scripts/check_source_runtime.py
 # Or: python scripts/test_browser.py --browser-executable "C:/Program Files/Google/Chrome/Application/chrome.exe"
 ```
 

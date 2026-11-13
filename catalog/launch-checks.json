@@ -1,7 +1,7 @@
 {
   "checked_on": "2026-11-02",
   "baseline_checked_on": "2026-11-01",
-  "method": "HTTP GET entry reachability only. Original 134 rows retained verbatim from checks on 2026-11-01; original rows without checked_on retain that 2026-11-01 date. Targeted Coral addition: eleven exact source/provider entry checks on 2026-11-02, first 512 bytes only. No full reinspection, notebook-target or service functional certification. Targeted PHI addition: thirteen source entry GETs on 2026-11-02, using reviewed README URLs or explicitly observed deployment workflow/manifests. Prior 145 rows preserved; no source execution or Binder build/session started. Published contents manifests are separately normalized under manifest_evidence; these metadata checks add no launch rows. Targeted EO addition: ten exact EO/ESA entry GETs on 2026-11-02, all HTTP 200, extending 158 preserved rows to 168 (166 HTTP 200, two historical HTTP 404). Separate normalized EO manifest metadata confirms six notebook filenames only.",
+  "method": "HTTP GET entry reachability only. Original 134 rows retained verbatim from checks on 2026-11-01; original rows without checked_on retain that 2026-11-01 date. Targeted Coral addition: eleven exact source/provider entry checks on 2026-11-02, first 512 bytes only. No full reinspection, notebook-target or service functional certification. Targeted PHI addition: thirteen source entry GETs on 2026-11-02, using reviewed README URLs or explicitly observed deployment workflow/manifests. Prior 145 rows preserved; no source execution or Binder build/session started. Published contents manifests are separately normalized under manifest_evidence; these metadata checks add no launch rows. Targeted EO addition: ten exact EO/ESA entry GETs on 2026-11-02, all HTTP 200, extending 158 preserved rows to 168 (166 HTTP 200, two historical HTTP 404). Separate normalized EO manifest metadata confirms six notebook filenames only. Targeted 2026-11-13 Population/OneHealth: six exact documented HTTPS GET entries, all200; prior168 rows and manifest evidence unchanged. No upstream runtime certification.",
   "results": [
     {
       "repository": "JupyterLite-Data-Visualization",
@@ -961,6 +961,48 @@
       "status": 200,
       "resolved_url": "https://opensciencedata.esa.int/products/catalog",
       "checked_on": "2026-11-02"
+    },
+    {
+      "repository": "JupyterLite-Population-Data-Comparison",
+      "url": "https://jltobias.github.io/JupyterLite-Population-Data-Comparison/book/intro.html",
+      "resolved_url": "https://jltobias.github.io/JupyterLite-Population-Data-Comparison/book/intro.html",
+      "status": 200,
+      "checked_on": "2026-11-13"
+    },
+    {
+      "repository": "JupyterLite-Population-Data-Comparison",
+      "url": "https://jltobias.github.io/JupyterLite-Population-Data-Comparison/lab/lab/index.html?path=01_real_population.ipynb",
+      "resolved_url": "https://jltobias.github.io/JupyterLite-Population-Data-Comparison/lab/lab/index.html?path=01_real_population.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-13"
+    },
+    {
+      "repository": "JupyterLite-Population-Data-Comparison",
+      "url": "https://jltobias.github.io/JupyterLite-Population-Data-Comparison/viewer/index.html",
+      "resolved_url": "https://jltobias.github.io/JupyterLite-Population-Data-Comparison/viewer/index.html",
+      "status": 200,
+      "checked_on": "2026-11-13"
+    },
+    {
+      "repository": "JupyterLite-OneHealth",
+      "url": "https://jltobias.github.io/JupyterLite-OneHealth/book/",
+      "resolved_url": "https://jltobias.github.io/JupyterLite-OneHealth/book/",
+      "status": 200,
+      "checked_on": "2026-11-13"
+    },
+    {
+      "repository": "JupyterLite-OneHealth",
+      "url": "https://jltobias.github.io/JupyterLite-OneHealth/lite/lab/index.html",
+      "resolved_url": "https://jltobias.github.io/JupyterLite-OneHealth/lite/lab/index.html",
+      "status": 200,
+      "checked_on": "2026-11-13"
+    },
+    {
+      "repository": "JupyterLite-OneHealth",
+      "url": "https://jltobias.github.io/JupyterLite-OneHealth/explorer/profile/",
+      "resolved_url": "https://jltobias.github.io/JupyterLite-OneHealth/explorer/profile/",
+      "status": 200,
+      "checked_on": "2026-11-13"
     }
   ],
   "baseline_results": {

@@ -1,0 +1,301 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.6405,
+              -24.667199999999998
+            ],
+            [
+              24.6765,
+              -24.667199999999998
+            ],
+            [
+              24.6765,
+              -24.6392
+            ],
+            [
+              24.6405,
+              -24.6392
+            ],
+            [
+              24.6405,
+              -24.667199999999998
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Central/Government Enclave",
+        "area_type": "core",
+        "note": "High administrative and commuter mixing; useful for contact-network interpretation.",
+        "relative_risk": 0.82,
+        "illustrative_incidence": 0.69
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.6632,
+              -24.642599999999998
+            ],
+            [
+              24.6992,
+              -24.642599999999998
+            ],
+            [
+              24.6992,
+              -24.6146
+            ],
+            [
+              24.6632,
+              -24.6146
+            ],
+            [
+              24.6632,
+              -24.642599999999998
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Broadhurst",
+        "area_type": "residential",
+        "note": "Dense residential and retail movement; illustrative hotspot for household/community transmission.",
+        "relative_risk": 0.75,
+        "illustrative_incidence": 0.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.7187,
+              -24.6827
+            ],
+            [
+              24.7547,
+              -24.6827
+            ],
+            [
+              24.7547,
+              -24.654700000000002
+            ],
+            [
+              24.7187,
+              -24.654700000000002
+            ],
+            [
+              24.7187,
+              -24.6827
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Tlokweng border corridor",
+        "area_type": "corridor",
+        "note": "Cross-border and commuting corridor; use for model boundary and importation assumptions.",
+        "relative_risk": 0.57,
+        "illustrative_incidence": 0.48
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.6085,
+              -24.6048
+            ],
+            [
+              24.6445,
+              -24.6048
+            ],
+            [
+              24.6445,
+              -24.576800000000002
+            ],
+            [
+              24.6085,
+              -24.576800000000002
+            ],
+            [
+              24.6085,
+              -24.6048
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Block 8 / Airport Road",
+        "area_type": "residential",
+        "note": "Growing residential zone with commuting flows into the city.",
+        "relative_risk": 0.49,
+        "illustrative_incidence": 0.42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.6068,
+              -24.6803
+            ],
+            [
+              24.6428,
+              -24.6803
+            ],
+            [
+              24.6428,
+              -24.6523
+            ],
+            [
+              24.6068,
+              -24.6523
+            ],
+            [
+              24.6068,
+              -24.6803
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Gaborone West",
+        "area_type": "residential",
+        "note": "Residential mixing and care-seeking delays can be explored with neighborhood outputs.",
+        "relative_risk": 0.68,
+        "illustrative_incidence": 0.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.6303,
+              -24.6893
+            ],
+            [
+              24.6663,
+              -24.6893
+            ],
+            [
+              24.6663,
+              -24.6613
+            ],
+            [
+              24.6303,
+              -24.6613
+            ],
+            [
+              24.6303,
+              -24.6893
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Old Naledi",
+        "area_type": "residential",
+        "note": "Illustrative high-contact neighborhood for targeted screening stories.",
+        "relative_risk": 0.91,
+        "illustrative_incidence": 0.74
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.6842,
+              -24.5861
+            ],
+            [
+              24.720200000000002,
+              -24.5861
+            ],
+            [
+              24.720200000000002,
+              -24.5581
+            ],
+            [
+              24.6842,
+              -24.5581
+            ],
+            [
+              24.6842,
+              -24.5861
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Phakalane",
+        "area_type": "residential",
+        "note": "Peripheral residential area; useful for spatial heterogeneity and commuting assumptions.",
+        "relative_risk": 0.36,
+        "illustrative_incidence": 0.31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              24.6113,
+              -24.703599999999998
+            ],
+            [
+              24.6473,
+              -24.703599999999998
+            ],
+            [
+              24.6473,
+              -24.6756
+            ],
+            [
+              24.6113,
+              -24.6756
+            ],
+            [
+              24.6113,
+              -24.703599999999998
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Kgale / Game City",
+        "area_type": "commercial",
+        "note": "Retail/employment draw; useful for location-based transmission events.",
+        "relative_risk": 0.61,
+        "illustrative_incidence": 0.53
+      }
+    }
+  ]
+}

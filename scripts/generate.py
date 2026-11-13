@@ -13,6 +13,8 @@ from ocean_earth_material import CUBE_CODE, CUBE_INTRO, CUBE_INTERPRET, EARTH_LE
 from coral_material import coral_overview
 from phi_case_material import CASES as PHI_CASES, chapter_cells as phi_chapter_cells
 from eo_material import chapter_cells as eo_chapter_cells, STAC_CONNECTION
+from textbook_material import NEW, chapter_cells as textbook_chapter_cells, seed_library
+from source_library import load_library
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/repositories.json"
@@ -101,6 +103,9 @@ def health_table():
 
 
 def seed_project(r):
+    if r['slug'] in NEW:
+        notebook(r['notebook'], textbook_chapter_cells(r, md, code, HELPERS), kind='project', repository=r['name'])
+        return
     if r['slug'] == 'eo-satellite-guide':
         notebook(r['notebook'], eo_chapter_cells(r, md, code, HELPERS), kind='project', repository=r['name'])
         return
@@ -211,7 +216,18 @@ def make_toc(records):
         {'file':r['notebook'].removesuffix('.ipynb'),'title':f"{r['name']} - {r['title']}"}
         for r in records if r['category']=='related' and r['slug'] not in PHI_CASES]})
     parts.append({'caption':'Keep exploring','chapters':[{'file':path} for path in [
-        'contributor-guide','references','visual-provenance']]})
+        'notebook-library','contributor-guide','references','visual-provenance']]})
+    library=load_library()
+    for part in parts:
+        for chapter in part['chapters']:
+            match=next((r for r in records if r['notebook'].removesuffix('.ipynb')==chapter['file']),None)
+            if match:
+                course=next((c for c in library['courses'] if c['slug']==match['slug']),None)
+                if course:
+                    sections=[{'file':s['notebook'].removesuffix('.ipynb'),'title':s['title']} for s in library['sections'] if s['course']==course['slug']]
+                    guide={'file':course['guide'].removesuffix('.ipynb'),'title':'Complete source course and requirements'}
+                    if sections:guide['sections']=sections
+                    chapter['sections']=[guide]
     return {'format':'jb-book','root':'index','parts':parts}
 
 
@@ -220,6 +236,7 @@ def main():
     seed_foundations(records)
     for r in records:
         seed_project(r)
+    seed_library(notebook,md,records)
     assets = ROOT / "content/assets"
     assets.mkdir(parents=True, exist_ok=True)
     for p in (ROOT / "assets").glob("*"):
@@ -229,6 +246,8 @@ def main():
     data_dir = ROOT / "site/data"
     data_dir.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(CATALOG, data_dir / "catalog.json")
+    if (ROOT/'catalog/source-library.json').exists():
+        shutil.copyfile(ROOT/'catalog/source-library.json',data_dir/'source-library.json')
     print(f"Generated navigation for {len(records)} projects. Existing notebooks preserved.")
 
 

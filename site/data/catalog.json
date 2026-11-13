@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "inspected_on": "2026-11-02",
-  "scope": "32 public core JupyterLite-named repositories owned by jltobias, plus 3 prior related browser projects and 4 external PHI-Case-Studies teaching projects (39 chapters); excludes the index. Baseline inventory/README inspection 2026-11-01; targeted Coral, PHI and EO reviews 2026-11-02, without full reinspection of prior sources.",
+  "scope": "32 public core JupyterLite-named repositories owned by jltobias, plus 3 prior related browser projects and 4 external PHI-Case-Studies teaching projects (39 chapters); excludes the index. Baseline inventory/README inspection 2026-11-01; targeted Coral, PHI and EO reviews 2026-11-02, without full reinspection of prior sources. Targeted source-textbook expansion 2026-11-13 adds NASA ARSET, Population Data Comparison and OneHealth (42 chapters), without rewriting historical records.",
   "repositories": [
     {
       "name": "JupyterLite-Data-Visualization",
@@ -2494,6 +2494,131 @@
       "launch_status": "Ten exact EO/ESA entry GETs returned HTTP 200 on 2026-11-02; entry reachability and separate manifest filenames only, not source execution or provider service certification.",
       "attribution": "jltobias / James L. Tobias and EO Satellite Guide contributors, original source MIT; third-party materials retain their terms. Natural Earth source geometry credited separately; atlas fixture, SVG and prose original.",
       "limitations": "The poster shows representative capability metadata, not live ephemerides or actual acquisitions. The original atlas default uses fictional IDs and no network. STAC Browser/EarthCODE integration is a documented proposal, not an importer, merged connector or published workflow. Provider rights, CORS, optional authentication, resources and review remain separate."
+    },
+    {
+      "name": "JupyterLite-NASA-ARSET-Experiments",
+      "title": "Choose an Earth observation before choosing an index",
+      "slug": "nasa-arset-experiments",
+      "theme": "Terrain & Earth observation",
+      "summary": "Original Atlas resolution and observation-design exercises complement official ARSET learning resources. The source repository is README-only.",
+      "status": "source stub",
+      "category": "jupyterlite",
+      "learning_question": "Which combination of pixel support, revisit time and spectral information could answer a bounded environmental question?",
+      "source_url": "https://github.com/jltobias/JupyterLite-NASA-ARSET-Experiments",
+      "readme_url": "https://github.com/jltobias/JupyterLite-NASA-ARSET-Experiments/blob/7f2ba5bf12ef44b07c839a441ea398aa08ad3569/README.md",
+      "default_branch": "main",
+      "source_commit": "7f2ba5bf12ef44b07c839a441ea398aa08ad3569",
+      "inspected_on": "2026-11-13",
+      "visibility": "public",
+      "notebook": "projects/nasa-arset-experiments/index.ipynb",
+      "book_path": "book/projects/nasa-arset-experiments/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/nasa-arset-experiments/index.ipynb",
+      "resources": [],
+      "launch_status": "README-only source, no published project launch supplied",
+      "attribution": "James L. Tobias / jltobias; source-specific notebook, software and dataset terms and provider credits retained separately.",
+      "limitations": "README-only source: no original source notebooks, dataset, Book, Lab or hosted project deployment are supplied. This is independently authored Atlas teaching material, not a NASA/ARSET course or endorsed product. Official slides, videos, handouts, NASA logos and third-party course repositories are not copied. Official ARSET resources remain external and retain their own terms."
+    },
+    {
+      "name": "JupyterLite-Population-Data-Comparison",
+      "title": "Compare population products on their native support",
+      "slug": "population-data-comparison",
+      "theme": "Global health",
+      "summary": "Three complete local source notebooks compare real Greater Lagos WorldPop, GRID3, LandScan and GHS-POP native count cells with an independent oracle.",
+      "status": "complete source course",
+      "category": "jupyterlite",
+      "learning_question": "How do coverage, population concept and partial-cell overlap change an estimate for the same rectangle?",
+      "source_url": "https://github.com/jltobias/JupyterLite-Population-Data-Comparison",
+      "readme_url": "https://github.com/jltobias/JupyterLite-Population-Data-Comparison/blob/883792b4f390e4e021ccc262dd5d4fd9f6250f3e/README.md",
+      "default_branch": "main",
+      "source_commit": "883792b4f390e4e021ccc262dd5d4fd9f6250f3e",
+      "inspected_on": "2026-11-13",
+      "visibility": "public",
+      "notebook": "projects/population-data-comparison/index.ipynb",
+      "book_path": "book/projects/population-data-comparison/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/population-data-comparison/index.ipynb",
+      "resources": [
+        {
+          "kind": "book",
+          "label": "Read source Book",
+          "url": "https://jltobias.github.io/JupyterLite-Population-Data-Comparison/book/intro.html",
+          "description": "Original project continuation; its data terms and runtime requirements apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-13",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Open source Lab",
+          "url": "https://jltobias.github.io/JupyterLite-Population-Data-Comparison/lab/lab/index.html?path=01_real_population.ipynb",
+          "description": "Original project continuation; its data terms and runtime requirements apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-13",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Open source explorer",
+          "url": "https://jltobias.github.io/JupyterLite-Population-Data-Comparison/viewer/index.html",
+          "description": "Original project continuation; its data terms and runtime requirements apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-13",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "Exact documented entries checked by HTTPS GET on 2026-11-13; reachability only, not runtime certification",
+      "attribution": "James L. Tobias / jltobias; source-specific notebook, software and dataset terms and provider credits retained separately.",
+      "limitations": "Source JSON contains real modelled Greater Lagos excerpts, not observed individual people. WorldPop 2025/GRID3 2025, LandScan ambient 2020 and GHS-POP projected residential 2025 differ in concept and date. All selected excerpts retain CC BY 4.0 creator/version/source/modification metadata. The broader TIFF viewer remains an external continuation; browser Range/CORS and provider restrictions are separate from local JSON notebook execution."
+    },
+    {
+      "name": "JupyterLite-OneHealth",
+      "title": "Connect environmental observations to bounded One Health questions",
+      "slug": "onehealth",
+      "theme": "Global health",
+      "summary": "Eleven complete source lessons join real Fresno Landsat samples and Census tracts while keeping environmental proxies, population denominators and health evidence distinct.",
+      "status": "complete source course",
+      "category": "jupyterlite",
+      "learning_question": "What can real surface observations and tract denominators support, and which One Health evidence is still missing?",
+      "source_url": "https://github.com/jltobias/JupyterLite-OneHealth",
+      "readme_url": "https://github.com/jltobias/JupyterLite-OneHealth/blob/bee8d844b22a37e65e3e34da3e922ebd8451874c/README.md",
+      "default_branch": "main",
+      "source_commit": "bee8d844b22a37e65e3e34da3e922ebd8451874c",
+      "inspected_on": "2026-11-13",
+      "visibility": "public",
+      "notebook": "projects/onehealth/index.ipynb",
+      "book_path": "book/projects/onehealth/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/onehealth/index.ipynb",
+      "resources": [
+        {
+          "kind": "book",
+          "label": "Read source Book",
+          "url": "https://jltobias.github.io/JupyterLite-OneHealth/book/",
+          "description": "Original project continuation; its data terms and runtime requirements apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-13",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Open source Lab",
+          "url": "https://jltobias.github.io/JupyterLite-OneHealth/lite/lab/index.html",
+          "description": "Original project continuation; its data terms and runtime requirements apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-13",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Open source explorer",
+          "url": "https://jltobias.github.io/JupyterLite-OneHealth/explorer/profile/",
+          "description": "Original project continuation; its data terms and runtime requirements apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-13",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "Exact documented entries checked by HTTPS GET on 2026-11-13; reachability only, not runtime certification",
+      "attribution": "James L. Tobias / jltobias; source-specific notebook, software and dataset terms and provider credits retained separately.",
+      "limitations": "Real public-domain USGS/NASA Landsat and U.S. Census inputs retain their exact source metadata. Original OneHealth source material is included at the owner request without a general license inferred. Agency articles, photographs, presentation figures and videos remain external. Environmental proxies are not validated disease or vulnerability scores. The live explorer has separate service/CORS/acquisition requirements."
     }
   ]
 }

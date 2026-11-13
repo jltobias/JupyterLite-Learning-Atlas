@@ -401,6 +401,24 @@
       "url": "https://github.com/jltobias/JupyterLite-EO-Satellite-Guide",
       "owner": "jltobias",
       "inspected_on": "2026-11-02"
+    },
+    {
+      "name": "JupyterLite-NASA-ARSET-Experiments",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-NASA-ARSET-Experiments"
+    },
+    {
+      "name": "JupyterLite-Population-Data-Comparison",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Population-Data-Comparison"
+    },
+    {
+      "name": "JupyterLite-OneHealth",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-OneHealth"
     }
   ],
   "method": "Public-only GitHub connector inventory inspected 2026-11-01 (59 records), plus one targeted public Coral Reef One Health source addition verified 2026-11-02 (60 records). Existing records were retained without full reinspection; included source README is pinned to its inspected commit.; index record renamed to JupyterLite-Learning-Atlas on 2026-11-02 with repository identity verified (catalog/repository-rename.json); four external PHI-Case-Studies sources added through targeted commit/notebook/rights/deployment review on 2026-11-02 (64 public records total). The owner field describes the baseline inventory; external records have their own explicit owner. One targeted EO Satellite Guide source added on 2026-11-02: 65 public records total; all 64 prior records retained.",

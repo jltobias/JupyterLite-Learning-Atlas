@@ -1,8 +1,8 @@
 # Third-party notices
 
-Original executable code is MIT (`LICENSE`). Original narrative, SVG artwork, generated teaching figures and synthetic fixtures are CC BY 4.0 (`LICENSE-CONTENT.md`). An `.ipynb` is a mixed document: code cells use MIT; original narrative and figures use CC BY 4.0. These grants do not change the terms of linked third-party works.
+Original executable code is MIT (`LICENSE`). Original narrative, SVG artwork, generated teaching figures and synthetic fixtures are CC BY 4.0 (`LICENSE-CONTENT.md`). An original Atlas `.ipynb` is a mixed document: its original code uses MIT and its original narrative/figures CC BY4.0. Imported source-course notebooks retain their own scoped terms. These grants do not change the terms of linked third-party works.
 
-The site links source repositories and exact resources from reviewed READMEs or explicitly observed published deployment workflows/manifests rather than cloning their code, media, datasets or branding. Each source repository and upstream attribution remains authoritative. Consult its reviewed README and license before reuse; availability or ownership by the same GitHub profile does not grant a blanket license. Source-course images and original presentation slides are not bundled here.
+The original companions link reviewed source resources. The expanded textbook also incorporates permitted source-course notebooks and declared local support files with immutable provenance and source-specific notices. Each source repository and upstream attribution remains authoritative. Consult its reviewed README and license before reuse; availability or ownership by the same GitHub profile does not grant a blanket license. Source slides, unclear third-party images/media and restricted datasets are excluded; permitted original source figures and declared data are scoped separately.
 
 | Referenced work | Attribution and boundary |
 |---|---|
@@ -20,11 +20,11 @@ Generated `_site/book/` and `_site/lite/` include third-party software files sup
 
 ## Ocean Watch and Earth studios (linked works)
 
-James L. Tobias / jltobias's [Ocean Watch](https://github.com/jltobias/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels/blob/145a73e500cb06070f399a040206802cc279174e/README.md) source code is MIT and its original prose/figures CC BY 4.0 where applicable; [Earth in the Browser](https://github.com/jltobias/JupyterLite-zarr-sql-views/blob/9a191f1fd30c40e09b48b9f92a9b5fdd9676509e/README.md) and its dzole0311/Zarr SQL Views inspiration retain ISC for original source material. Those terms do not cover every linked dataset or dependency. This index copies none of the source data, code, imagery, infographics, cover illustration or model weights.
+James L. Tobias / jltobias's [Ocean Watch](https://github.com/jltobias/JupyterLite-Global-Fishing-Watch-and-Dark-Vessels/blob/145a73e500cb06070f399a040206802cc279174e/README.md) source code is MIT and its original prose/figures CC BY 4.0 where applicable; [Earth in the Browser](https://github.com/jltobias/JupyterLite-zarr-sql-views/blob/9a191f1fd30c40e09b48b9f92a9b5fdd9676509e/README.md) and its dzole0311/Zarr SQL Views inspiration retain ISC for original source material. Those terms do not cover every linked dataset or dependency. The original index exercises remain authored. The expanded course now incorporates permitted notebooks, declared datasets/helpers and notices; excluded imagery/media and model weights are not added.
 
-- Paolo et al.'s 2017–2021 [analysis-data deposit v4](https://doi.org/10.6084/m9.figshare.24309475.v4) is **CC BY 4.0**. [GFW platform/service terms](https://globalfishingwatch.org/terms-of-use/) were **CC BY-NC 4.0** when inspected; use export-specific metadata, not the publication deposit's license. NOAA OISST v2.1 has provider-specific terms; source Sentinel-1 acknowledgement is “Contains modified Copernicus Sentinel data (2024), processed by Microsoft Planetary Computer”; Natural Earth is public domain. No data or coastline is bundled here. ICEYE retains its article/imagery rights; only context is linked.
+- Paolo et al.'s 2017–2021 [analysis-data deposit v4](https://doi.org/10.6084/m9.figshare.24309475.v4) is **CC BY 4.0**. [GFW platform/service terms](https://globalfishingwatch.org/terms-of-use/) were **CC BY-NC 4.0** when inspected; use export-specific metadata, not the publication deposit's license. NOAA OISST v2.1 has provider-specific terms; source Sentinel-1 acknowledgement is “Contains modified Copernicus Sentinel data (2024), processed by Microsoft Planetary Computer”; Natural Earth is public domain. The original index exercise uses its own fixture; the expanded source course separately bundles declared permitted data/coastline with their source notices. ICEYE retains its article/imagery rights; only context is linked.
 - [SeasFire v0.4](https://doi.org/10.5281/zenodo.13834057), **CC BY 4.0**: credit Alonso et al., Karasante et al., SeasFire consortium/ESA, JRC/GWIS, ECMWF/Copernicus ERA5, NASA MODIS and ESA EarthCODE/CloudFerro. Data and original source-course ISC lessons/artwork have distinct terms.
-- **LexCube 2.0.1**, Maximilian Söchting and contributors, **GPL-3.0-or-later**. Credit RSC4Earth/Leipzig University and ESA DeepESDL/DFG NFDI4Earth; Söchting et al. (2025), Big Earth Data 9(2), 321–335, [DOI](https://doi.org/10.1080/20964471.2025.2471646). The linked [source, license and Pyodide adaptation](https://jltobias.github.io/JupyterLite-zarr-sql-views/vendor/lexcube/README.md) belong to the source course. No wheel/frontend/source archive is embedded in this index, and ISC/MIT do not replace GPL.
+- **LexCube 2.0.1**, Maximilian Söchting and contributors, **GPL-3.0-or-later**. Credit RSC4Earth/Leipzig University and ESA DeepESDL/DFG NFDI4Earth; Söchting et al. (2025), Big Earth Data 9(2), 321–335, [DOI](https://doi.org/10.1080/20964471.2025.2471646). The linked [source, license and Pyodide adaptation](https://jltobias.github.io/JupyterLite-zarr-sql-views/vendor/lexcube/README.md) belong to the source course. The expanded source course includes the LexCube wheel and corresponding source archive with GPL notices; ISC/MIT do not replace GPL.
 - [Global FTW alpha 2024/2025](https://source.coop/ftw/global-data), **CC BY 4.0**: credit Robinson et al. (2026), Taylor Geospatial/collaborators, Microsoft AI for Good, participating universities, Copernicus Sentinel-2, Source Cooperative/Radiant Earth. Predictions are not property boundaries or ownership records.
 - [TESSERA v1.1 / dClimate](https://doi.org/10.48550/arXiv.2506.20380): credit Feng et al., TESSERA/University of Cambridge and collaborators, dClimate inference/hosting and GeoTessera contributors. The explicit [data declaration](https://github.com/ucam-eo/tessera/blob/master/aup.md) is **CC0**, ethical guidance advisory, with inconsistent legacy CC-BY wording retained upstream. GeoTessera code is MIT; source course original lessons/artwork ISC.
 - [IPCC AR6 projections v20210809](https://doi.org/10.5281/zenodo.5914709), **CC BY 4.0**: credit Garner et al. (2021), Fox-Kemper et al. (2021) WG1 Chapter 9 and Kopp et al. (2023) FACTS v1.0. Retain Rutgers-ESSP attribution and thank projection authors, supporting funders and NASA Sea Level Change Team. [Pinned full source credits](https://github.com/jltobias/JupyterLite-zarr-sql-views/blob/9a191f1fd30c40e09b48b9f92a9b5fdd9676509e/book/credits.md) supply required citations and acknowledgements.
@@ -33,7 +33,7 @@ The original index fixtures and generated SVGs are CC BY 4.0 and executable code
 
 ## Coral Reef One Health (linked works; 2026-11-02)
 
-James L. Tobias / jltobias, [*Coral Reef One Health*](https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health/blob/6b76d79a9b4b683a52bbf0ba019f204e7635aaf9/README.md), commit `6b76d79a9b4b683a52bbf0ba019f204e7635aaf9`, has **no repository-wide license selected**. This atlas links its notebooks and guides without copying source code, CSV, prose or splash artwork. Common authorship and public access grant no blanket reuse permission.
+James L. Tobias / jltobias, [*Coral Reef One Health*](https://github.com/jltobias/JupyterLite-Coral-Reef-One-Health/blob/6b76d79a9b4b683a52bbf0ba019f204e7635aaf9/README.md), commit `6b76d79a9b4b683a52bbf0ba019f204e7635aaf9`, has **no repository-wide license selected**. The original Atlas companion links the source. The expanded source course now incorporates permitted notebooks and local support at the repository owner’s request, with separate provenance; source splash artwork is excluded. Common authorship and public access grant no blanket reuse permission.
 
 Credit Allen Coral Atlas/ASU Center for Global Discovery and Conservation Science and partners (Paul Allen's Vulcan, Planet, Coral Reef Alliance, University of Queensland), KSLOF, NASA/USF IMaRS Millennium mapping, WHO, Sweet/Burian/Bulling (2021), and NOAA. [Atlas Terms of Use](https://allencoralatlas.org/tou/) are separate website/content terms, not a blanket CC BY license; consult product permissions. KSLOF viewing and data-request permissions differ. Historical NASA mapping does not establish a current compilation's license; follow provider metadata, version and requested citations.
 
@@ -47,13 +47,80 @@ The README uses original AI-generated conceptual artwork created with OpenAI's b
 
 Credit PHI-Case-Studies and contributors as course creators. Cholera notebook contact credits name Herman Tolentino, Jan MacGregor, James Tobias and Zhanar Haimovich, without establishing sole authorship. The MDR source credits John Oeltmann; Oeltmann et al. (2008), CDC, Thailand Ministry of Public Health and International Organization for Migration are research credits.
 
-Basic root LICENSE is GPLv3. Later Jupyterlite Advanced1 has GPLv3 at the root and Apache 2.0 at content/LICENSE with Apache content README wording: both layers remain recorded, with no blanket resolution. Advanced2 and MDR root licenses are Apache 2.0. Their pinned commits and all 20 source notebooks are linked in README.md and REFERENCES.md. The earlier native Advanced1 is background, not an additional chapter. OSM contributors' ODbL attribution, external Folium/CARTO tile terms and pandas/NumPy/Folium/OSMnx/NetworkX/GeoPandas/Shapely/SciPy/Bokeh/Plotly terms belong to source continuations. No source code, source prose, data, historical/patient maps, graph objects, images or tiles are redistributed.
+Basic root LICENSE is GPLv3. Later Jupyterlite Advanced1 has GPLv3 at the root and Apache 2.0 at content/LICENSE with Apache content README wording: both layers remain recorded, with no blanket resolution. Advanced2 and MDR root licenses are Apache 2.0. Their pinned commits and all 20 source notebooks are linked in README.md and REFERENCES.md. The earlier native Advanced1 is background, not an additional chapter. OSM contributors' ODbL attribution, external Folium/CARTO tile terms and pandas/NumPy/Folium/OSMnx/NetworkX/GeoPandas/Shapely/SciPy/Bokeh/Plotly terms belong to source continuations. The expanded source collection separately incorporates permitted lesson code/prose and declared data/derivatives with source notices. Unclear third-party imagery/media and restricted inputs are excluded.
 
 Snow (1855), Cheffins, UCLA/Frerichs and contributors, Brody et al. (2000), CDC (2004), WHO cholera (2026), Oeltmann et al. (2008), WHO MDR-TB (2024), NetworkX and SciPy are linked with full credits in the bibliography; source medical/historical material is contextual, not current guidance. Atlas fixture/code/SVGs are original: MIT code; CC BY 4.0 narrative/fixtures/figures, James L. Tobias and contributors (2026). No clinical decision, causal estimate, directed transmission or provider endorsement is supplied.
 
 
 ## EO Satellite Guide / STAC / EarthCODE addition (2026-11-02)
 
-The EO Satellite Guide is by **jltobias / James L. Tobias and EO Satellite Guide contributors**. Its [root MIT license](https://github.com/jltobias/JupyterLite-EO-Satellite-Guide/blob/2c607525ab06f52c77192889b2f01c5621714d0e/LICENSE) covers its original work; third-party materials keep separate terms. The source poster uses Natural Earth 1:110m public-domain land geometry: credit **Tom Patterson, Nathaniel Vaughn Kelso and Natural Earth contributors**, [terms](https://www.naturalearthdata.com/about/terms-of-use/). No source geography, screenshot, mission records, code, prose or imagery is copied here. The source-supplied raster has unestablished original rights and is excluded. This atlas's original executable code is MIT; narrative, fictional fixtures and generated SVG are CC BY 4.0, **James L. Tobias and JupyterLite Learning Atlas contributors (2026)**. Linked standards, ESA resources and source courses retain their creators' terms; no endorsement is implied.
+The EO Satellite Guide is by **jltobias / James L. Tobias and EO Satellite Guide contributors**. Its [root MIT license](https://github.com/jltobias/JupyterLite-EO-Satellite-Guide/blob/2c607525ab06f52c77192889b2f01c5621714d0e/LICENSE) covers its original work; third-party materials keep separate terms. The source poster uses Natural Earth 1:110m public-domain land geometry: credit **Tom Patterson, Nathaniel Vaughn Kelso and Natural Earth contributors**, [terms](https://www.naturalearthdata.com/about/terms-of-use/). The original Atlas companion uses authored teaching inputs; the separate expanded source course contains permitted source notebooks and declared support files under their scoped notices. The source-supplied raster has unestablished original rights and is excluded. This atlas's original executable code is MIT; narrative, fictional fixtures and generated SVG are CC BY 4.0, **James L. Tobias and JupyterLite Learning Atlas contributors (2026)**. Linked standards, ESA resources and source courses retain their creators' terms; no endorsement is implied.
 
 The atlas adds five invented product candidates across four invented missions, not source mission data or observations. Its local figure/calculation and printed search envelopes are original and perform no network/model calls or external publication. The [pinned EO README](https://github.com/jltobias/JupyterLite-EO-Satellite-Guide/blob/2c607525ab06f52c77192889b2f01c5621714d0e/README.md) and all six notebook paths are credited in [central references](REFERENCES.md). [STAC API Item Search v1.0.0](https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md), [SSN/SOSA](https://www.w3.org/TR/vocab-ssn/), [DCAT 3](https://www.w3.org/TR/vocab-dcat-3/), [PROV-O](https://www.w3.org/TR/prov-o/) and [ESA EarthCODE](https://earthcode.esa.int/) inform an explicitly proposed mapping/workflow design. Their standards, metadata, software, services and workflow assets retain their own terms. No source material is relicensed by the atlas. Catalog/entry/manifest evidence does not establish provider functionality, data rights or reproducibility.
+
+## Comprehensive source textbook (2026-11-13)
+
+See the [README dataset register](README.md#dataset-citations-and-attribution-register-2026-11-13) and [source-course register](README.md#complete-source-course-register-2026-11-13) for creators, exact versions, licenses, modification descriptions and required credits. `catalog/data-attributions.json` maps these credits to actual local files. The source-library manifest records all imported notebook hashes, aliases and exclusions. No root software/content grant replaces dataset or upstream notebook terms.
+
+- Preserve complete scoped GPL/Apache/ISC/MIT notices from each course. Basic cholera retains GPLv3; Advanced1 retains both its root GPLv3 and content Apache2.0 scopes; Advanced2/MDR retain Apache2.0. Inferred broad licensing is not substituted for those layers.
+- LexCube2.0.1, Maximilian Söchting and contributors, GPL-3.0-or-later: wheel and corresponding source are available together in `content/courses/zarr-sql-views/wheels/`; preserve the GPL notice, source availability and source-course credits. The AsciiTree wheel retains its own upstream license.
+- OSM-derived editable databases retain ODbL1.0 and ©OpenStreetMap contributors; Healthsites extraction credit remains alongside its dated subset. London boundaries retain the GLA OGLv2 and Crown notices. Corrected WUR terrain derivatives retain CC BY-NC-SA4.0 and their noncommercial/share-alike scope.
+- Copyright screening excludes GADM, controlled or preliminary inputs without suitable permission, undocumented South Sudan inputs, unlicensed historical/presentation/media content, unsafe cached responses and17legacy notebooks with unresolved component rights. Authorised lesson text/code remains available where those optional inputs are omitted; requirements and source continuations identify the consequence. No agency logos or third-party presentation figures are promoted as original Atlas art.
+
+### Plotly package example distribution notice
+
+The revised spatial course retains Plotly package example tables/geometry with provider credits. Source: [plotly.py v6.5.0 LICENSE.txt](https://github.com/plotly/plotly.py/blob/v6.5.0/LICENSE.txt). This package notice does not replace the separately identified rights of other observation products.
+
+```text
+MIT License
+
+Copyright (c) 2016-2024 Plotly Technologies Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
+
+## CountryInfo factual demo metadata
+
+The Global Health GIS synthetic point demonstration credits CountryInfo for approximate country coordinates/metadata. Its health fields are artificial, not IHME estimates. No Wikipedia article prose or boundary geometry is copied. CountryInfo package version was not recorded in the source. Source: https://github.com/porimol/countryinfo/blob/main/LICENSE. Preserve the complete package notice:
+
+```text
+MIT License
+
+Copyright (c) 2018 Porimol Chandro
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+```

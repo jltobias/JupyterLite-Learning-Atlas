@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open DRC mobility map in GeoLibre Web</title>
+</head>
+<body>
+  <p>Opening the DRC demonstration layers in <a id="launch" href="#">GeoLibre Web</a>…</p>
+  <script>
+    const target = new URL('https://web.geolibre.app/');
+    target.searchParams.set('url', 'https://raw.githubusercontent.com/jltobias/JupyterLite-DRC-Population-Mobility-Border-Mapping/main/maps/drc-mobility-map.geolibre.json');
+    target.searchParams.set('layout', 'viewer');
+    target.searchParams.set('config_version', 'repository-gadm-20260904');
+    document.getElementById('launch').href = target;
+    window.location.replace(target);
+  </script>
+</body>
+</html>

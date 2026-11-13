@@ -1,0 +1,29 @@
+{# Original Atlas navigation; the complete authored hierarchy stays available. #}
+{% macro chapter_link(item, depth=1) -%}
+<li class="toctree-l{{ depth }}{% if item.active %} current active{% endif %}{% if item.children %} has-children{% endif %}">
+  <a class="reference internal" href="{{ pathto(item.file) }}"{% if item.current %} aria-current="page"{% endif %}>{{ item.title | e }}</a>
+  {% if item.children %}
+  <details{% if item.active %} open{% endif %}>
+    <summary aria-label="Show sections for {{ item.title | e }}">Sections ({{ item.children | length }})</summary>
+    <ul>
+      {% for child in item.children %}{{ chapter_link(child, depth + 1) }}{% endfor %}
+    </ul>
+  </details>
+  {% endif %}
+</li>
+{%- endmacro %}
+<nav class="bd-links bd-docs-nav" aria-label="Main">
+  <div class="bd-toc-item navbar-nav active">
+    <ul class="nav bd-sidenav bd-sidenav__home-link">
+      <li class="toctree-l1{% if pagename == atlas_sidebar_root %} current active{% endif %}">
+        <a class="reference internal" href="{{ pathto(atlas_sidebar_root) }}"{% if pagename == atlas_sidebar_root %} aria-current="page"{% endif %}>{{ root_title }}</a>
+      </li>
+    </ul>
+    {% for part in atlas_sidebar_parts %}
+    <p class="caption" role="heading" aria-level="2"><span class="caption-text">{{ part.caption | e }}</span></p>
+    <ul class="nav bd-sidenav">
+      {% for chapter in part.chapters %}{{ chapter_link(chapter) }}{% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+</nav>

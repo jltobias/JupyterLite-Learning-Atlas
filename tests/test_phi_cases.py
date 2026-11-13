@@ -284,7 +284,8 @@ class PHIIntegrationTests(unittest.TestCase):
         investigations = next(p for p in toc['parts'] if p['caption'] == 'Outbreak investigations')
         self.assertEqual([c['file'] for c in investigations['chapters']],
                          [f'projects/{slug}/index' for slug in list(CASES)[1:]])
-        navigation = [toc['root']] + [c['file'] for p in toc['parts'] for c in p['chapters']]
+        from source_library import toc_files
+        navigation = list(toc_files(toc))
         notebooks = canonical_notebooks()
         self.assertEqual(len(navigation), len(set(navigation)))
         self.assertEqual(set(navigation), {p.relative_to(ROOT/'content').as_posix().removesuffix('.ipynb') for p in notebooks})

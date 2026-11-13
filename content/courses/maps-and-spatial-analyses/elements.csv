@@ -1,0 +1,91 @@
+number,symbol,name,category,description,notebook
+1,VC,Vector Conversion,Vector Analysis and Conversion,Converts between vector and raster representations.,notebooks/01_VC_vector-conversion.ipynb
+2,EX,Extract,Vector Analysis and Conversion,"Creates a subset by clipping, selecting, or splitting features.",notebooks/02_EX_extract.ipynb
+3,OV,Overlay,Vector Analysis and Conversion,Combines layers based on overlapping features.,notebooks/03_OV_overlay.ipynb
+4,PX,Proximity,Vector Analysis and Conversion,Uses distance relationships such as buffers and nearest features.,notebooks/04_PX_proximity.ipynb
+5,SJ,Spatial Join,Vector Analysis and Conversion,Transfers attributes based on spatial relationships.,notebooks/05_SJ_spatial-join.ipynb
+6,PD,Plot Diagrams,Vector Analysis and Conversion,Builds charts from attributes and locations.,notebooks/06_PD_plot-diagrams.ipynb
+7,GS,Geometry Shape,Vector Analysis and Conversion,Computes shape metrics such as compactness.,notebooks/07_GS_geometry-shape.ipynb
+8,TB,Table Tools,Tables,"Creates, stores, and transforms attribute fields.",notebooks/08_TB_table-tools.ipynb
+9,XY,Add XY Coordinates,Tables,Turns coordinate columns into point locations.,notebooks/09_XY_add-xy-coordinates.ipynb
+10,CG,Calculate Geometry,Tables,"Computes lengths, areas, and other geometry measures.",notebooks/10_CG_calculate-geometry.ipynb
+11,JT,Join Table,Tables,Adds attributes by matching keys.,notebooks/11_JT_join-table.ipynb
+12,RL,Relate,Tables,Connects records using one-to-many or many-to-many relationships.,notebooks/12_RL_relate.ipynb
+13,ST,Statistics,Tables,Summarizes attributes with statistics.,notebooks/13_ST_statistics.ipynb
+14,ED,Editing,Editing and Cartography,Modifies vertices and feature geometry.,notebooks/14_ED_editing.ipynb
+15,CF,Conflation,Editing and Cartography,Reconciles two representations of the same features.,notebooks/15_CF_conflation.ipynb
+16,GI,Grid Index,Editing and Cartography,Creates rectangular map sheets or tessellations.,notebooks/16_GI_grid-index.ipynb
+17,CA,Cartographic,Editing and Cartography,Generalizes or simplifies features for map display.,notebooks/17_CA_cartographic.ipynb
+18,3D,3D Analysis,3D Analysis,Analyzes three-dimensional features.,notebooks/18_3D_3d-analysis.ipynb
+19,LS,Line of Sight Visibility,3D Analysis,Checks obstruction between observer and target.,notebooks/19_LS_line-of-sight-visibility.ipynb
+20,VS,Volume,3D Analysis,Estimates volume above or below a reference surface.,notebooks/20_VS_volume.ipynb
+21,VW,Viewshed,3D Analysis,Finds areas visible from an observer.,notebooks/21_VW_viewshed.ipynb
+22,SL,Skyline,3D Analysis,Represents visible and obstructed horizons.,notebooks/22_SL_skyline.ipynb
+23,SC,Space-time Cubes,3D Analysis,Represents geographic change through time slices.,notebooks/23_SC_space-time-cubes.ipynb
+24,RT,Route,Network Analysis,Finds shortest or least-cost paths on a network.,notebooks/24_RT_route.ipynb
+25,DR,Directions,Network Analysis,Translates a route into stepwise movement instructions.,notebooks/25_DR_directions.ipynb
+26,OS,Optimal Site,Network Analysis,Chooses facility sites that best serve demand.,notebooks/26_OS_optimal-site.ipynb
+27,CV,Coverage,Network Analysis,Measures access from facilities within distance or time limits.,notebooks/27_CV_coverage.ipynb
+28,CM,OD Cost Matrix,Network Analysis,Computes travel cost from origins to destinations.,notebooks/28_CM_od-cost-matrix.ipynb
+29,HM,Huff Model,Network Analysis,Models store attraction using size and distance.,notebooks/29_HM_huff-model.ipynb
+30,DM,Data Management,Data Management,"Maintains, merges, compares, or alters geospatial layers.",notebooks/30_DM_data-management.ipynb
+31,PJ,Projections,Data Management,Defines and transforms coordinate reference systems.,notebooks/31_PJ_projections.ipynb
+32,GV,Generalize Vector,Data Management,Combines adjacent features such as dissolve operations.,notebooks/32_GV_generalize-vector.ipynb
+33,AD,Address Geocoding,Data Management,Converts addresses to coordinates or reverse-geocodes coordinates.,notebooks/33_AD_address-geocoding.ipynb
+34,TP,Topology,Data Management,"Finds geometry errors such as gaps, overlaps, and dangling lines.",notebooks/34_TP_topology.ipynb
+35,LR,Linear Referencing,Data Management,Locates events along lines using measures.,notebooks/35_LR_linear-referencing.ipynb
+36,SA,Spatial Adjustment,Data Management,Transforms displaced vector data into alignment.,notebooks/36_SA_spatial-adjustment.ipynb
+37,GE,GeoEnrich,Data Management,Adds demographic or contextual attributes to locations.,notebooks/37_GE_geoenrich.ipynb
+38,SP,Sampling,Data Management,Creates regular or random sample locations.,notebooks/38_SP_sampling.ipynb
+39,GT,Geotagging,Data Management,Associates photos or media with coordinates.,notebooks/39_GT_geotagging.ipynb
+40,PF,Parcel Fabric,Data Management,Manages cadastral parcel divisions.,notebooks/40_PF_parcel-fabric.ipynb
+41,AT,Attachments,Data Management,Stores related photos or files as feature attachments.,notebooks/41_AT_attachments.ipynb
+42,FMV,Full Motion Video,Data Management,Connects video frames with geographic footprints.,notebooks/42_FMV_full-motion-video.ipynb
+43,CO,COGO,Data Management,"Builds geometry from bearings, distances, and coordinates.",notebooks/43_CO_cogo.ipynb
+44,PC,Point Cloud,Data Management,Stores and analyzes dense x-y-z point observations.,notebooks/44_PC_point-cloud.ipynb
+45,WS,Web Service,Data Management,Publishes or consumes web feature and map services.,notebooks/45_WS_web-service.ipynb
+46,TIN,TIN,Data Management,Builds triangular irregular network terrain surfaces.,notebooks/46_TIN_tin.ipynb
+47,IM,Indoor Mapping,Data Management,"Represents rooms, floors, and indoor networks.",notebooks/47_IM_indoor-mapping.ipynb
+48,TM,Temporal,Data Management,Adds or analyzes time-enabled attributes.,notebooks/48_TM_temporal.ipynb
+49,TR,Real-time Tracking,Data Management,Processes streaming movement or status updates.,notebooks/49_TR_real-time-tracking.ipynb
+50,BD,Big Data,Emerging Technology,Summarizes very large spatial datasets.,notebooks/50_BD_big-data.ipynb
+51,ML,Machine Learning,Emerging Technology,Classifies or predicts spatial patterns from training data.,notebooks/51_ML_machine-learning.ipynb
+52,DE,Data Engineering,Emerging Technology,Cleans and validates data for analysis.,notebooks/52_DE_data-engineering.ipynb
+53,IOT,IoT,Emerging Technology,Analyzes streams from sensors and connected devices.,notebooks/53_IOT_iot.ipynb
+54,AS,Agent-based Simulation and Modeling,Emerging Technology,Simulates individual actors interacting in space.,notebooks/54_AS_agent-based-simulation-and-modeling.ipynb
+55,VR,Virtual Reality,Emerging Technology,Explores spatial environments in immersive interfaces.,notebooks/55_VR_virtual-reality.ipynb
+56,AR,Augmented Reality,Emerging Technology,Overlays spatial information onto the physical world.,notebooks/56_AR_augmented-reality.ipynb
+57,GR,Georeferencing,Raster Data Management,Aligns raster images to map coordinates.,notebooks/57_GR_georeferencing.ipynb
+58,MO,Mosaic,Raster Data Management,Combines raster tiles into a seamless surface.,notebooks/58_MO_mosaic.ipynb
+59,RC,Raster Creation,Raster Data Management,Creates raster grids from extents and cell sizes.,notebooks/59_RC_raster-creation.ipynb
+60,AL,Spatial Autocorrelation,Raster Data Management,Measures clustered or dispersed raster values.,notebooks/60_AL_spatial-autocorrelation.ipynb
+61,RG,Generalization,Raster Data Management,Smooths or cleans raster cell patterns.,notebooks/61_RG_generalization.ipynb
+62,MD,Multidimensional,Raster Data Management,"Works with arrays organized by variables, time, or depth.",notebooks/62_MD_multidimensional.ipynb
+63,RS,Resample,Raster Data Management,Changes raster resolution.,notebooks/63_RS_resample.ipynb
+64,PA,Raster Painting,Raster Data Management,Edits raster cells interactively.,notebooks/64_PA_raster-painting.ipynb
+65,RA,Raster Analysis,Raster Analysis,Analyzes patterns in grid data.,notebooks/65_RA_raster-analysis.ipynb
+66,MA,Map Algebra,Raster Analysis,Combines raster cells using mathematical expressions.,notebooks/66_MA_map-algebra.ipynb
+67,CN,Contours,Raster Analysis,Creates isolines from continuous surfaces.,notebooks/67_CN_contours.ipynb
+68,ZS,Zonal Statistics,Raster Analysis,Summarizes raster values inside zones.,notebooks/68_ZS_zonal-statistics.ipynb
+69,CP,Cost Path,Raster Analysis,Finds least accumulated cost across a raster surface.,notebooks/69_CP_cost-path.ipynb
+70,RP,Raster Processing,Raster Analysis,Clips or subsets raster grids.,notebooks/70_RP_raster-processing.ipynb
+71,RE,Spatial Regression,Raster Analysis,Predicts a surface from explanatory variables.,notebooks/71_RE_spatial-regression.ipynb
+72,TA,Terrain Analysis,Raster Analysis,"Derives slope, roughness, and landform measures.",notebooks/72_TA_terrain-analysis.ipynb
+73,MF,Math Function,Raster Analysis,Applies cell-by-cell mathematical transformations.,notebooks/73_MF_math-function.ipynb
+74,SU,Suitability,Raster Analysis,Combines criteria to rate locations.,notebooks/74_SU_suitability.ipynb
+75,CON,Conditional,Raster Analysis,Creates raster outputs from if/then rules.,notebooks/75_CON_conditional.ipynb
+76,BA,Band Index,Remote Sensing,Computes spectral indices such as NDVI.,notebooks/76_BA_band-index.ipynb
+77,IS,Image Stretching,Remote Sensing,Improves display through contrast transformations.,notebooks/77_IS_image-stretching.ipynb
+78,IC,Image Classification,Remote Sensing,Assigns pixels to land-cover classes.,notebooks/78_IC_image-classification.ipynb
+79,CB,Composite Bands,Remote Sensing,Stacks bands into multiband imagery.,notebooks/79_CB_composite-bands.ipynb
+80,PS,Pansharpening,Remote Sensing,Combines high-resolution panchromatic and color bands.,notebooks/80_PS_pansharpening.ipynb
+81,AC,Atmosphere Correction,Remote Sensing,Reduces atmospheric scattering or haze effects.,notebooks/81_AC_atmosphere-correction.ipynb
+82,SG,Segmentation,Remote Sensing,Groups similar pixels into image objects.,notebooks/82_SG_segmentation.ipynb
+83,DN,Data Mining,Remote Sensing,Reduces redundant image variables.,notebooks/83_DN_data-mining.ipynb
+84,ME,Mensuration,Remote Sensing,Measures image features such as height or area.,notebooks/84_ME_mensuration.ipynb
+85,PH,Photogrammetry,Remote Sensing,Estimates 3D structure from overlapping images.,notebooks/85_PH_photogrammetry.ipynb
+86,OB,Oblique,Remote Sensing,Works with angled imagery.,notebooks/86_OB_oblique.ipynb
+87,RD,Radar,Remote Sensing,Analyzes backscatter from microwave sensors.,notebooks/87_RD_radar.ipynb
+88,IP,Interpolation,Interpolation,Predicts unknown values from sampled locations.,notebooks/88_IP_interpolation.ipynb
+89,KR,Kriging,Interpolation,Interpolates with spatial covariance and uncertainty.,notebooks/89_KR_kriging.ipynb
+90,KD,Kernel Density,Interpolation,Creates intensity surfaces from point events.,notebooks/90_KD_kernel-density.ipynb

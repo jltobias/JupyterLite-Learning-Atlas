@@ -9,7 +9,7 @@ All six SVGs are original vector compositions by James L. Tobias and JupyterLite
 | `capabilities.svg` | Original explanation of browser activities and separate native/GPU/service continuation paths. |
 | `evidence-to-action.svg` | Original evidence/review/action learning loop; conceptually informed by WHO AI governance and the Rewiring source course. |
 | `empathy-iteration.svg` | Original listen/frame/prototype/learn diagram; conceptually informed by IDEO.org Design Kit. |
-| `repository-overview.svg` | Actual counts of 39 projects (32 core JupyterLite-named plus 7 related) across seven themes from `catalog/repositories.json`, not synthetic observations. Regenerate after catalog changes. |
+| `repository-overview.svg` | Actual counts of 42 projects (35 core JupyterLite-named plus 7 related) across seven themes from `catalog/repositories.json`, not synthetic observations. Regenerate after catalog changes. |
 
 Each file has a title, description and ARIA labeling. Notebook-generated SVG figures are original deterministic drawings of their labeled synthetic data (or explicit catalog metadata); every chart prints values as a text alternative. The interactive teaching views use original projected SVG geometry and a fictional 4×4 grid. No actual country, settlement, facility or person is represented.
 
@@ -33,3 +33,6 @@ At the PHI addition, only `repository-overview.svg` was refreshed from its then-
 ## Original EO routing figure (2026-11-02)
 
 The EO chapter draws five fictional product candidates across four fictional missions. Current route lanes, badge geometry, counts, collection unknowns and accessible/printed text follow each edit; these are authored capability-discovery metadata, not actual missions, acquisitions or measurements. No source poster, Natural Earth geometry, raster, source code or mission record is copied. Figure/fixture/prose: CC BY 4.0, James L. Tobias and JupyterLite Learning Atlas contributors (2026); executable code MIT. Only `repository-overview.svg` is refreshed from the current 39-project catalog; all other artwork bytes are preserved. The opening notebook now displays the existing 1774×887 README PNG, with its original SHA-256 and full prompt unchanged.
+
+
+At the comprehensive textbook refresh (2026-11-13), the metadata chart reflects42 chapters (35core,7related). Bars scale to the available width, height follows theme count and the caption date comes from the catalog. The other five SVG compositions and the README/opening-notebook PNG remain unchanged. Imported source visuals retain their separately documented rights and provenance.

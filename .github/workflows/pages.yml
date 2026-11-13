@@ -32,6 +32,17 @@ jobs:
       - run: python scripts/test_ui_repairs.py
       - run: python scripts/test_browser.py
       - run: python scripts/check_runtime.py
+      - name: Verify imported source notebooks in fresh Pyodide kernels
+        run: python scripts/check_source_runtime.py
+      - name: Preserve browser runtime evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-runtime-evidence
+          path: |
+            _build/runtime-browser/
+            _build/runtime-source-browser/
+          if-no-files-found: ignore
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

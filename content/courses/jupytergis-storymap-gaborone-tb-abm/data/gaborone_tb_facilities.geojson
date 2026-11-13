@@ -1,0 +1,89 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6617,
+          -24.6516
+        ]
+      },
+      "properties": {
+        "name": "Princess Marina Hospital",
+        "facility_type": "hospital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6661,
+          -24.6619
+        ]
+      },
+      "properties": {
+        "name": "Extension 2 Clinic",
+        "facility_type": "clinic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6796,
+          -24.6267
+        ]
+      },
+      "properties": {
+        "name": "Broadhurst Clinic",
+        "facility_type": "clinic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6504,
+          -24.6776
+        ]
+      },
+      "properties": {
+        "name": "Old Naledi Clinic",
+        "facility_type": "clinic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.7379,
+          -24.6697
+        ]
+      },
+      "properties": {
+        "name": "Tlokweng Clinic",
+        "facility_type": "clinic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.623,
+          -24.6666
+        ]
+      },
+      "properties": {
+        "name": "Gaborone West Clinic",
+        "facility_type": "clinic"
+      }
+    }
+  ]
+}

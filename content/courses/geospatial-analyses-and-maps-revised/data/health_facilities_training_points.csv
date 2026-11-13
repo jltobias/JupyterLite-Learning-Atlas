@@ -1,0 +1,11 @@
+name,type,city,lat,lon,source
+NYC Health + Hospitals/Bellevue,hospital,New York,40.7393,-73.976,public facility coordinates
+NYC Health + Hospitals/Elmhurst,hospital,New York,40.7449,-73.8854,public facility coordinates
+NYC Health + Hospitals/Kings County,hospital,New York,40.6567,-73.9441,public facility coordinates
+NYC Health + Hospitals/Harlem,hospital,New York,40.8144,-73.9406,public facility coordinates
+Montreal General Hospital,hospital,Montreal,45.4972,-73.5906,public facility coordinates
+CHUM - Centre hospitalier de l Universite de Montreal,hospital,Montreal,45.5123,-73.5567,public facility coordinates
+Jewish General Hospital,hospital,Montreal,45.4987,-73.6305,public facility coordinates
+The Ottawa Hospital - General Campus,hospital,Ottawa,45.4017,-75.6484,public facility coordinates
+MedStar Washington Hospital Center,hospital,"Washington, DC",38.9284,-77.0147,public facility coordinates
+Howard University Hospital,hospital,"Washington, DC",38.922,-77.0203,public facility coordinates

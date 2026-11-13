@@ -1,0 +1,152 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.6812,
+            -24.6286
+          ],
+          [
+            24.6585,
+            -24.6532
+          ]
+        ]
+      },
+      "properties": {
+        "from": "Broadhurst",
+        "to": "Central/Government Enclave",
+        "relative_flow": 0.69
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7367,
+            -24.6687
+          ],
+          [
+            24.6585,
+            -24.6532
+          ]
+        ]
+      },
+      "properties": {
+        "from": "Tlokweng border corridor",
+        "to": "Central/Government Enclave",
+        "relative_flow": 0.52
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.6265,
+            -24.5908
+          ],
+          [
+            24.6585,
+            -24.6532
+          ]
+        ]
+      },
+      "properties": {
+        "from": "Block 8 / Airport Road",
+        "to": "Central/Government Enclave",
+        "relative_flow": 0.45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.6248,
+            -24.6663
+          ],
+          [
+            24.6585,
+            -24.6532
+          ]
+        ]
+      },
+      "properties": {
+        "from": "Gaborone West",
+        "to": "Central/Government Enclave",
+        "relative_flow": 0.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.6483,
+            -24.6753
+          ],
+          [
+            24.6585,
+            -24.6532
+          ]
+        ]
+      },
+      "properties": {
+        "from": "Old Naledi",
+        "to": "Central/Government Enclave",
+        "relative_flow": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7022,
+            -24.5721
+          ],
+          [
+            24.6585,
+            -24.6532
+          ]
+        ]
+      },
+      "properties": {
+        "from": "Phakalane",
+        "to": "Central/Government Enclave",
+        "relative_flow": 0.33
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.6293,
+            -24.6896
+          ],
+          [
+            24.6585,
+            -24.6532
+          ]
+        ]
+      },
+      "properties": {
+        "from": "Kgale / Game City",
+        "to": "Central/Government Enclave",
+        "relative_flow": 0.57
+      }
+    }
+  ]
+}

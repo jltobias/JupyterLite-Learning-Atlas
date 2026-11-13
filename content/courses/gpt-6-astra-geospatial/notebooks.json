@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "01_spatial_contracts",
+    "title": "01 \u00b7 Spatial contracts and a tiny city",
+    "question": "Can we preserve coordinates, units and feature identities across a twin pipeline?"
+  },
+  {
+    "slug": "02_buildings_population",
+    "title": "02 \u00b7 Buildings, 3D massing and population",
+    "question": "How do building assumptions change a synthetic population allocation?"
+  },
+  {
+    "slug": "03_network_access",
+    "title": "03 \u00b7 Walking access and facility siting",
+    "question": "Which households are poorly served once streets and barriers are included?"
+  },
+  {
+    "slug": "04_heat_raster",
+    "title": "04 \u00b7 Urban heat and greening scenarios",
+    "question": "How does a raster intervention affect population-weighted exposure?"
+  },
+  {
+    "slug": "05_flood_disruption",
+    "title": "05 \u00b7 Flood disruption and network resilience",
+    "question": "Which routes and residents lose access when low streets close?"
+  },
+  {
+    "slug": "06_mobility_exposure",
+    "title": "06 \u00b7 Mobility and shared-setting exposure",
+    "question": "How can an event log connect daily activity to a toy exposure model?"
+  },
+  {
+    "slug": "07_sensor_assimilation",
+    "title": "07 \u00b7 Sensor streams and uncertainty",
+    "question": "Can an uncertain model track a changing urban heat signal from noisy observations?"
+  },
+  {
+    "slug": "08_world_model",
+    "title": "08 \u00b7 Learn a tiny urban world model",
+    "question": "Can a learned transition model support multi-step counterfactual rollouts?"
+  },
+  {
+    "slug": "09_astra_spatial_eval",
+    "title": "09 \u00b7 Measure Astra spatial reasoning",
+    "question": "How can we evaluate coordinate, map-reading and structured-answer tasks without confusing fixtures with model output?"
+  },
+  {
+    "slug": "10_rust_wasm",
+    "title": "10 \u00b7 Rust/WASM spatial computation",
+    "question": "When does a compiled spatial kernel help, and what does boundary overhead cost?"
+  },
+  {
+    "slug": "11_raster_change",
+    "title": "11 \u00b7 Raster change, clouds and missing evidence",
+    "question": "Can a model distinguish vegetation change from missing pixels?"
+  },
+  {
+    "slug": "12_equitable_siting",
+    "title": "12 \u00b7 Facility siting and equity tradeoffs",
+    "question": "Does the best average travel time also provide the fairest access?"
+  },
+  {
+    "slug": "13_spatial_benchmark",
+    "title": "13 \u00b7 Repeatable Astra spatial evaluation",
+    "question": "Can we compare spatial reasoning trials without leaking answers or hiding failures?"
+  },
+  {
+    "slug": "14_maplibre_3d",
+    "title": "14 \u00b7 Geographic building scenes with MapLibre",
+    "question": "How can a 3D map preserve geographic position and honest building heights?"
+  },
+  {
+    "slug": "15_deckgl_layers",
+    "title": "15 \u00b7 Layered 3D access maps with deck.gl",
+    "question": "Can an interactive map compare access scenarios without confusing people with metres?"
+  },
+  {
+    "slug": "16_terrain_3d",
+    "title": "16 \u00b7 Terrain and water-level exploration in 3D",
+    "question": "How much of a dramatic terrain scene is data, and how much is display exaggeration?"
+  }
+]

@@ -5,6 +5,15 @@ parts:
   chapters:
   - file: foundations/browser-python
   - file: projects/cholera-1854-basic/index
+    sections:
+    - file: courses/cholera-1854-basic/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/cholera-1854-basic/NB01-Cholera-Case-Study-Folium-Map-Part-1
+        title: 'Notebook 1: Basic Web Mapping Techniques with Data from the John Snow
+          Cholera Outbreak'
+      - file: courses/cholera-1854-basic/NB02-Cholera-Case-Study-Folium-Map-Part-2
+        title: 'Notebook 2: Calculating the Mean Center Point for Mortality Locations'
   - file: foundations/spatial-thinking
   - file: foundations/learning-a-model
   - file: foundations/evidence-ai
@@ -13,99 +22,1719 @@ parts:
   chapters:
   - file: projects/cholera-1854-advanced-1/index
     title: '1854 Cholera Advanced1: routes and reachable nodes'
+    sections:
+    - file: courses/cholera-1854-advanced-1/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/cholera-1854-advanced-1/NB01-Cholera-Case-Study-OpenStreetMaps-Networkx
+        title: 'Notebook 1 - Advanced: Analyzing the John Snow Cholera Outbreak Using
+          OpenStreetMaps and Networkx - Part 1'
+      - file: courses/cholera-1854-advanced-1/NB02-Cholera-Case-Study-OpenStreetMaps-Networkx
+        title: 'Notebook 2 - Advanced: Analyzing the John Snow Cholera Outbreak Using
+          OpenStreetMaps and Networkx - Part 2'
+      - file: courses/cholera-1854-advanced-1/NB03-Cholera-Case-Study-Isochrone-Map
+        title: Notebook 3 - Drawing an Isochrone Map with OSMnx for Soho District
+          in London (Part 1)
+      - file: courses/cholera-1854-advanced-1/NB04-Cholera-Case-Study-Isochrone-Map
+        title: Notebook 4 - Drawing an Isochrone Map with OSMnx for Soho District
+          in London (Part 2)
+      - file: courses/cholera-1854-advanced-1/NB05-Cholera-Case-Study-Inspiration-and-To-Do-List
+        title: 'Notebook 5 - Advanced: Further Inspiration and To-Do List'
+      - file: courses/cholera-1854-advanced-1/javascript
+        title: JavaScript in `JupyterLite`
+      - file: courses/cholera-1854-advanced-1/p5
+        title: p5 notebook
+      - file: courses/cholera-1854-advanced-1/pyodide/altair
+        title: Altair in `JupyterLite`
+      - file: courses/cholera-1854-advanced-1/pyodide/folium
+        title: '`folium` Interactive Map Demo'
+      - file: courses/cholera-1854-advanced-1/pyodide/interactive-widgets
+        title: '`ipywidgets` Interactive Demo'
+      - file: courses/cholera-1854-advanced-1/pyodide/ipycanvas
+        title: 'ipycanvas: John Conway''s Game Of Life'
+      - file: courses/cholera-1854-advanced-1/pyodide/ipyleaflet
+        title: ipyleaflet
+      - file: courses/cholera-1854-advanced-1/pyodide/matplotlib
+        title: Matplotlib
+      - file: courses/cholera-1854-advanced-1/pyodide/plotly
+        title: Plotly in JupyterLite
+      - file: courses/cholera-1854-advanced-1/pyodide/pyb2d/0_tutorial
+        title: 'Tutorial 0: A free falling body'
+      - file: courses/cholera-1854-advanced-1/pyodide/pyb2d/color_mixing
+        title: color_mixing
+      - file: courses/cholera-1854-advanced-1/pyodide/pyb2d/games/angry_shapes
+        title: Controlls
+      - file: courses/cholera-1854-advanced-1/pyodide/pyb2d/games/billiard
+        title: Controlls
+      - file: courses/cholera-1854-advanced-1/pyodide/pyb2d/games/goo
+        title: Controlls
+      - file: courses/cholera-1854-advanced-1/pyodide/pyb2d/games/rocket
+        title: Controlls
+      - file: courses/cholera-1854-advanced-1/pyodide/pyb2d/gauss_machine
+        title: gauss_machine
+      - file: courses/cholera-1854-advanced-1/pyodide/pyb2d/newtons_cradle
+        title: newtons_cradle
+      - file: courses/cholera-1854-advanced-1/pyodide/renderers
+        title: JupyterLab Renderers
+      - file: courses/cholera-1854-advanced-1/python
+        title: A Python kernel backed by Pyodide
   - file: projects/cholera-1854-advanced-2/index
     title: '1854 Cholera Advanced2: nearest sites, ties and buildings'
+    sections:
+    - file: courses/cholera-1854-advanced-2/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/cholera-1854-advanced-2/NB01-Intro-Voronoi-Diagrams
+        title: Introduction to Voronoi Tessellation Method
+      - file: courses/cholera-1854-advanced-2/NB02-Computing-Convex-Hulls
+        title: 'Notebook 2: Computing Convex Hulls - Part 1'
+      - file: courses/cholera-1854-advanced-2/NB03-Constructing-Voronoi-Polygons
+        title: 'Notebook 4: Constructing Voronoi Polygons'
+      - file: courses/cholera-1854-advanced-2/NB04-Interactive-Voronoi-Map-Folium
+        title: 'Notebook 5: Plotting Voronoi Polygons with Folium'
+      - file: courses/cholera-1854-advanced-2/NB05-Buildings-in-Voronoi-Cells
+        title: 'Notebook 6: Counting Soho District Building Footprints in Voronoi
+          Cells'
+      - file: courses/cholera-1854-advanced-2/NB99-Computing-Convex-Hulls-Part-2
+        title: 'Notebook 3: Computing Convex Hulls Using `alphashape` - Part 2'
   - file: projects/mdr-tb-thailand-2005/index
     title: '2005 MDR-TB Thailand: contact evidence and unknown results'
+    sections:
+    - file: courses/mdr-tb-thailand-2005/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/mdr-tb-thailand-2005/NB01-MDR-TB-Case-Study-Case-Intro
+        title: Notebook 1 - Introduction to the MDR-TB Case Study
+      - file: courses/mdr-tb-thailand-2005/NB02-World-TB-Notebook-Part-1
+        title: 'Notebook 2: Exploring TB and Socio-economic Indicators, Part 1'
+      - file: courses/mdr-tb-thailand-2005/NB03-World-TB-Notebook-Part-2
+        title: 'Notebook 3: Exploring TB and Socio-economic Indicators, Part 2'
+      - file: courses/mdr-tb-thailand-2005/NB04-World-TB-Notebook-Part-3
+        title: 'Notebook 4: Exploring TB and Socio-economic Indicators, Part 3'
+      - file: courses/mdr-tb-thailand-2005/NB05-MDR-TB-Case-Study-Part-1
+        title: 'Notebook 5, Part 1: Mapping the 2005 MDR-TB Outbreak in Thailand'
+      - file: courses/mdr-tb-thailand-2005/NB06-MDR-TB-Case-Study-Part-2
+        title: 'Note: Work in progress...'
+      - file: courses/mdr-tb-thailand-2005/NB07-MDR-TB-Case-Study-Part-3
+        title: 'Notebook 7, Part 3: Social Network Analysis'
 - caption: Foundations
   chapters:
   - file: projects/data-visualization/index
     title: Data-Visualization - See the same evidence two ways
+    sections:
+    - file: courses/data-visualization/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/data-visualization/ai_visualization_starter
+        title: AI-assisted data visualization starter
+      - file: courses/data-visualization/periodic_table_visualization_methods_python_examples_jupyterlite_REVISED
+        title: 'Periodic Table of Visualization Methods: JupyterLite / Pyodide Notebook'
+      - file: courses/data-visualization/repository_examples/01_repository_atlas
+        title: 'A repository atlas: connect evidence to visual questions'
+      - file: courses/data-visualization/repository_examples/02_nasa_climate
+        title: 'NASA climate: baselines change the question'
+      - file: courses/data-visualization/repository_examples/03_noaa_sea_level
+        title: 'NOAA sea level: separate seasonal variation and trend'
+      - file: courses/data-visualization/repository_examples/04_historical_cholera
+        title: 'Historical cholera: a location is not a person'
+      - file: courses/data-visualization/repository_examples/05_spatial_privacy
+        title: 'Spatial privacy: measure a hypothetical perturbation'
+      - file: courses/data-visualization/repository_examples/06_stac_discovery
+        title: 'STAC discovery: a footprint is not a raster measurement'
+      - file: courses/data-visualization/repository_examples/07_usgs_earthquake_scenes
+        title: 'USGS earthquakes: inspect depth before adding a third dimension'
+      - file: courses/data-visualization/repository_examples/08_coralwatch
+        title: 'CoralWatch: preserve the pair within each colony'
+      - file: courses/data-visualization/repository_examples/09_storytelling_and_gis
+        title: Geographic storytelling and honest GIS handoffs
   - file: projects/shiny-live-apps/index
     title: Shiny-Live-Apps - Prototype a reactive rule before an app
+    sections:
+    - file: courses/shiny-live-apps/index
+      title: Complete source course and requirements
 - caption: Global health
   chapters:
   - file: projects/south-sudan-dashboard/index
     title: South-Sudan-Dashboard - Service continuity as a dependency
+    sections:
+    - file: courses/south-sudan-dashboard/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/south-sudan-dashboard/SouthSudanDashboard_JupyterLite
+        title: South Sudan Health & Humanitarian Dashboard - JupyterLite version
   - file: projects/global-health-gis/index
     title: Global-Health-GIS - Weight burden without hiding assumptions
+    sections:
+    - file: courses/global-health-gis/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/global-health-gis/00_welcome_global_health_gis
+        title: 'Welcome: Global Health GIS in the Browser'
+      - file: courses/global-health-gis/01_gbd_data_pipeline_template
+        title: GBD-style data pipeline template
+      - file: courses/global-health-gis/02_jupytergis_global_health_points
+        title: 'JupyterGIS: global health point layers'
+      - file: courses/global-health-gis/03_geolibre_project_launcher
+        title: GeoLibre project launcher
+      - file: courses/global-health-gis/04_program_demo_storyboard
+        title: Program demonstration storyboard
+      - file: courses/global-health-gis/05_public_data_sources_and_ethics
+        title: Public data sources, citation, and ethics checklist
   - file: projects/hivdb-drug-resistance-maps/index
     title: HIVDB-Drug-Resistance-Maps - Audit the surveillance denominator
+    sections:
+    - file: courses/hivdb-drug-resistance-maps/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/hivdb-drug-resistance-maps/00_hiv_drug_resistance_fundamentals
+        title: 00 — HIV drug resistance fundamentals
+      - file: courses/hivdb-drug-resistance-maps/01_data_coverage
+        title: 01 — HIVDB surveillance data coverage
+      - file: courses/hivdb-drug-resistance-maps/02_global_tdr_choropleth
+        title: 02 — Global transmitted HIV drug resistance choropleth
+      - file: courses/hivdb-drug-resistance-maps/03_drug_class_and_time
+        title: 03 — Drug-class patterns and time
+      - file: courses/hivdb-drug-resistance-maps/04_pediatric_hivdr_mch_case_study
+        title: 04 — Pediatric HIV drug resistance in the dolutegravir era
+      - file: courses/hivdb-drug-resistance-maps/05_mutation_geographic_clusters
+        title: 05 - Geographic clusters of resistance mutations
+      - file: courses/hivdb-drug-resistance-maps/06_resistance_stratification
+        title: 06 - Resistance patterns by patient and mutation subtype
+      - file: courses/hivdb-drug-resistance-maps/07_subtype_standardized_geography
+        title: 07 - Geographic variation after controlling for subtype
+      - file: courses/hivdb-drug-resistance-maps/08_nnrtI_to_dtg_geographic_history
+        title: 08 - From NNRTI patterns to DTG resistance
   - file: projects/drc-population-mobility-border-mapping/index
     title: DRC-Population-Mobility-Border-Mapping - Flows are connections, not infections
+    sections:
+    - file: courses/drc-population-mobility-border-mapping/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/drc-population-mobility-border-mapping/contents/notebooks/01_data_inventory
+        title: Data inventory and provenance
+      - file: courses/drc-population-mobility-border-mapping/contents/notebooks/02_mobility_flowmap
+        title: IOM Displacement Tracking Matrix (DTM)
+      - file: courses/drc-population-mobility-border-mapping/contents/notebooks/03_health_access_layers
+        title: IOM Displacement Tracking Matrix (DTM)
+      - file: courses/drc-population-mobility-border-mapping/contents/notebooks/04_maplibre_experience
+        title: IOM DTM displacement layer
+      - file: courses/drc-population-mobility-border-mapping/contents/storymaps/drc-ebola-mobility-storymap
+        title: IOM Displacement Tracking Matrix (DTM)
+      - file: courses/drc-population-mobility-border-mapping/contents/storymaps/drc-ebola-outbreak-storymap
+        title: 'DRC Ebola outbreak: a place-and-time storymap'
+      - file: courses/drc-population-mobility-border-mapping/contents/storymaps/ebola-weekly-map-tour
+        title: Ebola weekly map tour — DRC
   - file: projects/rewiring-global-health/index
     title: Rewiring-Global-Health - Rewiring Global Health in the Age of AI
+    sections:
+    - file: courses/rewiring-global-health/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/rewiring-global-health/00_rewiring_global_health
+        title: 00 · Rewiring decisions, relationships, and evidence
+      - file: courses/rewiring-global-health/01_climate_stac_c3s
+        title: 01 · Climate, STAC, and Copernicus C3S
+      - file: courses/rewiring-global-health/02_geospatial_intelligence_2d_3d
+        title: 02 · 2D maps, 3D surfaces, and access
+      - file: courses/rewiring-global-health/03_geolibre_3d_scene
+        title: 03 · GeoLibre, interoperable layers, and 3D scenes
+      - file: courses/rewiring-global-health/04_animated_health_climate_timeseries
+        title: 04 · Animated maps, small multiples, and lag
+      - file: courses/rewiring-global-health/05_zarr_sql_views
+        title: 05 · Zarr space–time cubes and SQL views
+      - file: courses/rewiring-global-health/06_geoai_world_models
+        title: 06 · GeoAI, spatial validation, and world models
+      - file: courses/rewiring-global-health/07_ai_orchestrator_privacy
+        title: 07 · AI chat, six perspectives, and accountable orchestration
+      - file: courses/rewiring-global-health/08_digital_twin_global_health
+        title: 08 · Spatial agents, digital twins, and scenario uncertainty
+      - file: courses/rewiring-global-health/09_geoprivacy_map_encryption
+        title: 09 · Geoprivacy, aggregation, and authenticated encryption
   - file: projects/sea-level-rise/index
     title: Sea-Level-Rise - Separate hazard from service impact
+    sections:
+    - file: courses/sea-level-rise/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/sea-level-rise/notebooks/00_start_here
+        title: 'Start here: a coastline, a clinic, a question'
+      - file: courses/sea-level-rise/notebooks/01_read_the_poster
+        title: Read and audit the entire poster
+      - file: courses/sea-level-rise/notebooks/02_three_rcp_pathways
+        title: Three RCP pathways, many possible futures
+      - file: courses/sea-level-rise/notebooks/03_probability_and_thresholds
+        title: Flood probabilities, frequencies and thresholds
+      - file: courses/sea-level-rise/notebooks/04_data_and_geography
+        title: From spreadsheets to defensible maps
+      - file: courses/sea-level-rise/notebooks/05_dashboard_lab
+        title: 'Power BI ideas in a browser: slicers, cards and listings'
+      - file: courses/sea-level-rise/notebooks/06_time_series_maps
+        title: 'Watch the decades: animated maps and temporal comparisons'
+      - file: courses/sea-level-rise/notebooks/07_three_dimensions
+        title: '3D coasts: useful depth, dangerous certainty'
+      - file: courses/sea-level-rise/notebooks/08_space_time_cube
+        title: Space–time cubes and cohort histories
+      - file: courses/sea-level-rise/notebooks/09_hotspots
+        title: 'Hotspots: exposure rates and a spatial scan experiment'
+      - file: courses/sea-level-rise/notebooks/10_continuity_and_equity
+        title: From exposed facilities to continuity of care
+      - file: courses/sea-level-rise/notebooks/11_capstone
+        title: 'Capstone: a coastal continuity briefing'
+      - file: courses/sea-level-rise/notebooks/12_reproduce_and_extend
+        title: Reproduce, audit and extend the study responsibly
+      - file: courses/sea-level-rise/notebooks/13_powerbi_in_browser
+        title: Open the original Power BI report in the browser
+      - file: courses/sea-level-rise/notebooks/14_vertical_datums
+        title: 'Vertical datums: what does zero metres mean?'
+      - file: courses/sea-level-rise/notebooks/15_nature_data_and_sampling
+        title: 'Nature 2026: sources, sampling and coverage'
+      - file: courses/sea-level-rise/notebooks/16_facility_comparison
+        title: Compare facility screening with the AIDS 2024 baseline
+      - file: courses/sea-level-rise/notebooks/17_datum_sensitivity
+        title: Datum sensitivity and a defensible interpretation
   - file: projects/climate-and-health/index
     title: Climate-and-Health - Count heat exposure, preserve uncertainty
+    sections:
+    - file: courses/climate-and-health/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/climate-and-health/START_HERE
+        title: 'Start here: original Climate & Health course'
+      - file: courses/climate-and-health/notebooks/00_start_here
+        title: 'Start here: climate, health and evidence'
+      - file: courses/climate-and-health/notebooks/01_global_temperature
+        title: A global signal is not local heat exposure
+      - file: courses/climate-and-health/notebooks/02_climate_data_literacy
+        title: Units, area weights and model ensembles
+      - file: courses/climate-and-health/notebooks/03_daily_heat
+        title: 'Daily heat: counts, runs and nighttime exposure'
+      - file: courses/climate-and-health/notebooks/04_urban_cooling
+        title: Shade, albedo and the urban environment
+      - file: courses/climate-and-health/notebooks/05_coastal_access
+        title: Coastal water levels and a dry but isolated clinic
+      - file: courses/climate-and-health/notebooks/06_service_continuity
+        title: 'HIV/TB service continuity: dependencies and bottlenecks'
+      - file: courses/climate-and-health/notebooks/07_mobility
+        title: Displacement, migration and continuity across places
+      - file: courses/climate-and-health/notebooks/08_coral_bleaching
+        title: Coral thermal stress and coastal livelihoods
+      - file: courses/climate-and-health/notebooks/09_food_water
+        title: 'Food and water insecurity: a transparent mass balance'
+      - file: courses/climate-and-health/notebooks/10_compound_hazards
+        title: Compound hazards without a conflict prediction score
+      - file: courses/climate-and-health/notebooks/11_adaptation
+        title: Adaptation portfolios, equity and maladaptation
+      - file: courses/climate-and-health/notebooks/12_capstone
+        title: 'Capstone: tell a defensible climate-health story'
+      - file: courses/climate-and-health/notebooks/13_evidence_atlas
+        title: 13 · From a source to a defensible map story
   - file: projects/coral-reef-one-health/index
     title: 'Coral-Reef-One-Health - Coral Reef One Health: maps, evidence and priorities'
+    sections:
+    - file: courses/coral-reef-one-health/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/coral-reef-one-health/01-reef-mapping
+        title: Explore the reef mapping catalogue
+      - file: courses/coral-reef-one-health/02-one-health
+        title: Explore One Health indicators with fictional reef sites
+  - file: projects/population-data-comparison/index
+    title: Population-Data-Comparison - Compare population products on their native
+      support
+    sections:
+    - file: courses/population-data-comparison/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/population-data-comparison/01_real_population
+        title: 1. Compare real population products
+      - file: courses/population-data-comparison/02_real_coverage
+        title: 2. Native cells, area weighting and NoData
+      - file: courses/population-data-comparison/03_real_exports
+        title: 3. Export real comparisons with provenance
+  - file: projects/onehealth/index
+    title: OneHealth - Connect environmental observations to bounded One Health questions
+    sections:
+    - file: courses/onehealth/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/onehealth/00_provenance_profile
+        title: Start with provenance and a study-area profile
+      - file: courses/onehealth/01_agency_questions
+        title: Five perspectives, one evidence inventory
+      - file: courses/onehealth/02_population
+        title: Population has a date and a boundary
+      - file: courses/onehealth/03_qa_scaling
+        title: Mask first, scale second
+      - file: courses/onehealth/04_vegetation_water
+        title: Vegetation and water are proxies
+      - file: courses/onehealth/05_surface_heat
+        title: A warm surface is not an air thermometer
+      - file: courses/onehealth/06_spatial_scale
+        title: Scale changes the evidence you see
+      - file: courses/onehealth/07_eo_population_joins
+        title: 'Join carefully: pixels and populations'
+      - file: courses/onehealth/08_equity_evidence_gaps
+        title: Global Health starts with the missing voices
+      - file: courses/onehealth/09_visualization_3d
+        title: Display choices are analytical choices
+      - file: courses/onehealth/10_capstone
+        title: Build an evidence brief, not a risk score
 - caption: Spatial methods
   chapters:
   - file: projects/spatial-analysis/index
     title: Spatial-Analysis - Neighborhoods change a summary
+    sections:
+    - file: courses/spatial-analysis/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/spatial-analysis/00_Index
+        title: 'Periodic Table of Geospatial Analysis: JupyterLite Learning Lab'
+      - file: courses/spatial-analysis/01_VC_vector-conversion
+        title: 'VC: Vector Conversion'
+      - file: courses/spatial-analysis/02_EX_extract
+        title: 'EX: Extract'
+      - file: courses/spatial-analysis/03_OV_overlay
+        title: 'OV: Overlay'
+      - file: courses/spatial-analysis/04_PX_proximity
+        title: 'PX: Proximity'
+      - file: courses/spatial-analysis/05_SJ_spatial-join
+        title: 'SJ: Spatial Join'
+      - file: courses/spatial-analysis/06_PD_plot-diagrams
+        title: 'PD: Plot Diagrams'
+      - file: courses/spatial-analysis/07_GS_geometry-shape
+        title: 'GS: Geometry Shape'
+      - file: courses/spatial-analysis/08_TB_table-tools
+        title: 'TB: Table Tools'
+      - file: courses/spatial-analysis/09_XY_add-xy-coordinates
+        title: 'XY: Add XY Coordinates'
+      - file: courses/spatial-analysis/10_CG_calculate-geometry
+        title: 'CG: Calculate Geometry'
+      - file: courses/spatial-analysis/11_JT_join-table
+        title: 'JT: Join Table'
+      - file: courses/spatial-analysis/12_RL_relate
+        title: 'RL: Relate'
+      - file: courses/spatial-analysis/13_ST_statistics
+        title: 'ST: Statistics'
+      - file: courses/spatial-analysis/14_ED_editing
+        title: 'ED: Editing'
+      - file: courses/spatial-analysis/15_CF_conflation
+        title: 'CF: Conflation'
+      - file: courses/spatial-analysis/16_GI_grid-index
+        title: 'GI: Grid Index'
+      - file: courses/spatial-analysis/17_CA_cartographic
+        title: 'CA: Cartographic'
+      - file: courses/spatial-analysis/18_3D_3d-analysis
+        title: '3D: 3D Analysis'
+      - file: courses/spatial-analysis/19_LS_line-of-sight-visibility
+        title: 'LS: Line of Sight Visibility'
+      - file: courses/spatial-analysis/20_VS_volume
+        title: 'VS: Volume'
+      - file: courses/spatial-analysis/21_VW_viewshed
+        title: 'VW: Viewshed'
+      - file: courses/spatial-analysis/22_SL_skyline
+        title: 'SL: Skyline'
+      - file: courses/spatial-analysis/23_SC_space-time-cubes
+        title: 'SC: Space-time Cubes'
+      - file: courses/spatial-analysis/24_RT_route
+        title: 'RT: Route'
+      - file: courses/spatial-analysis/25_DR_directions
+        title: 'DR: Directions'
+      - file: courses/spatial-analysis/26_OS_optimal-site
+        title: 'OS: Optimal Site'
+      - file: courses/spatial-analysis/27_CV_coverage
+        title: 'CV: Coverage'
+      - file: courses/spatial-analysis/28_CM_od-cost-matrix
+        title: 'CM: OD Cost Matrix'
+      - file: courses/spatial-analysis/29_HM_huff-model
+        title: 'HM: Huff Model'
+      - file: courses/spatial-analysis/30_DM_data-management
+        title: 'DM: Data Management'
+      - file: courses/spatial-analysis/31_PJ_projections
+        title: 'PJ: Projections'
+      - file: courses/spatial-analysis/32_GV_generalize-vector
+        title: 'GV: Generalize Vector'
+      - file: courses/spatial-analysis/33_AD_address-geocoding
+        title: 'AD: Address Geocoding'
+      - file: courses/spatial-analysis/34_TP_topology
+        title: 'TP: Topology'
+      - file: courses/spatial-analysis/35_LR_linear-referencing
+        title: 'LR: Linear Referencing'
+      - file: courses/spatial-analysis/36_SA_spatial-adjustment
+        title: 'SA: Spatial Adjustment'
+      - file: courses/spatial-analysis/37_GE_geoenrich
+        title: 'GE: GeoEnrich'
+      - file: courses/spatial-analysis/38_SP_sampling
+        title: 'SP: Sampling'
+      - file: courses/spatial-analysis/39_GT_geotagging
+        title: 'GT: Geotagging'
+      - file: courses/spatial-analysis/40_PF_parcel-fabric
+        title: 'PF: Parcel Fabric'
+      - file: courses/spatial-analysis/41_AT_attachments
+        title: 'AT: Attachments'
+      - file: courses/spatial-analysis/42_FMV_full-motion-video
+        title: 'FMV: Full Motion Video'
+      - file: courses/spatial-analysis/43_CO_cogo
+        title: 'CO: COGO'
+      - file: courses/spatial-analysis/44_PC_point-cloud
+        title: 'PC: Point Cloud'
+      - file: courses/spatial-analysis/45_WS_web-service
+        title: 'WS: Web Service'
+      - file: courses/spatial-analysis/46_TIN_tin
+        title: 'TIN: TIN'
+      - file: courses/spatial-analysis/47_IM_indoor-mapping
+        title: 'IM: Indoor Mapping'
+      - file: courses/spatial-analysis/48_TM_temporal
+        title: 'TM: Temporal'
+      - file: courses/spatial-analysis/49_TR_real-time-tracking
+        title: 'TR: Real-time Tracking'
+      - file: courses/spatial-analysis/50_BD_big-data
+        title: 'BD: Big Data'
+      - file: courses/spatial-analysis/51_ML_machine-learning
+        title: 'ML: Machine Learning'
+      - file: courses/spatial-analysis/52_DE_data-engineering
+        title: 'DE: Data Engineering'
+      - file: courses/spatial-analysis/53_IOT_iot
+        title: 'IOT: IoT'
+      - file: courses/spatial-analysis/54_AS_agent-based-simulation-and-modeling
+        title: 'AS: Agent-based Simulation and Modeling'
+      - file: courses/spatial-analysis/55_VR_virtual-reality
+        title: 'VR: Virtual Reality'
+      - file: courses/spatial-analysis/56_AR_augmented-reality
+        title: 'AR: Augmented Reality'
+      - file: courses/spatial-analysis/57_GR_georeferencing
+        title: 'GR: Georeferencing'
+      - file: courses/spatial-analysis/58_MO_mosaic
+        title: 'MO: Mosaic'
+      - file: courses/spatial-analysis/59_RC_raster-creation
+        title: 'RC: Raster Creation'
+      - file: courses/spatial-analysis/60_AL_spatial-autocorrelation
+        title: 'AL: Spatial Autocorrelation'
+      - file: courses/spatial-analysis/61_RG_generalization
+        title: 'RG: Generalization'
+      - file: courses/spatial-analysis/62_MD_multidimensional
+        title: 'MD: Multidimensional'
+      - file: courses/spatial-analysis/63_RS_resample
+        title: 'RS: Resample'
+      - file: courses/spatial-analysis/64_PA_raster-painting
+        title: 'PA: Raster Painting'
+      - file: courses/spatial-analysis/65_RA_raster-analysis
+        title: 'RA: Raster Analysis'
+      - file: courses/spatial-analysis/66_MA_map-algebra
+        title: 'MA: Map Algebra'
+      - file: courses/spatial-analysis/67_CN_contours
+        title: 'CN: Contours'
+      - file: courses/spatial-analysis/68_ZS_zonal-statistics
+        title: 'ZS: Zonal Statistics'
+      - file: courses/spatial-analysis/69_CP_cost-path
+        title: 'CP: Cost Path'
+      - file: courses/spatial-analysis/70_RP_raster-processing
+        title: 'RP: Raster Processing'
+      - file: courses/spatial-analysis/71_RE_spatial-regression
+        title: 'RE: Spatial Regression'
+      - file: courses/spatial-analysis/72_TA_terrain-analysis
+        title: 'TA: Terrain Analysis'
+      - file: courses/spatial-analysis/73_MF_math-function
+        title: 'MF: Math Function'
+      - file: courses/spatial-analysis/74_SU_suitability
+        title: 'SU: Suitability'
+      - file: courses/spatial-analysis/75_CON_conditional
+        title: 'CON: Conditional'
+      - file: courses/spatial-analysis/76_BA_band-index
+        title: 'BA: Band Index'
+      - file: courses/spatial-analysis/77_IS_image-stretching
+        title: 'IS: Image Stretching'
+      - file: courses/spatial-analysis/78_IC_image-classification
+        title: 'IC: Image Classification'
+      - file: courses/spatial-analysis/79_CB_composite-bands
+        title: 'CB: Composite Bands'
+      - file: courses/spatial-analysis/80_PS_pansharpening
+        title: 'PS: Pansharpening'
+      - file: courses/spatial-analysis/81_AC_atmosphere-correction
+        title: 'AC: Atmosphere Correction'
+      - file: courses/spatial-analysis/82_SG_segmentation
+        title: 'SG: Segmentation'
+      - file: courses/spatial-analysis/83_DN_data-mining
+        title: 'DN: Data Mining'
+      - file: courses/spatial-analysis/84_ME_mensuration
+        title: 'ME: Mensuration'
+      - file: courses/spatial-analysis/85_PH_photogrammetry
+        title: 'PH: Photogrammetry'
+      - file: courses/spatial-analysis/86_OB_oblique
+        title: 'OB: Oblique'
+      - file: courses/spatial-analysis/87_RD_radar
+        title: 'RD: Radar'
+      - file: courses/spatial-analysis/88_IP_interpolation
+        title: 'IP: Interpolation'
+      - file: courses/spatial-analysis/89_KR_kriging
+        title: 'KR: Kriging'
+      - file: courses/spatial-analysis/90_KD_kernel-density
+        title: 'KD: Kernel Density'
   - file: projects/maps-and-spatial-analyses/index
     title: Maps-and-Spatial-Analyses - A buffer is a declared rule
+    sections:
+    - file: courses/maps-and-spatial-analyses/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/maps-and-spatial-analyses/01_VC_vector-conversion
+        title: 01. Vector Conversion (VC) — Vector Analysis and Conversion
+      - file: courses/maps-and-spatial-analyses/02_EX_extract
+        title: 02. Extract (EX) — Vector Analysis and Conversion
+      - file: courses/maps-and-spatial-analyses/03_OV_overlay
+        title: 03. Overlay (OV) — Vector Analysis and Conversion
+      - file: courses/maps-and-spatial-analyses/04_PX_proximity
+        title: 04. Proximity (PX) — Vector Analysis and Conversion
+      - file: courses/maps-and-spatial-analyses/05_SJ_spatial-join
+        title: 05. Spatial Join (SJ) — Vector Analysis and Conversion
+      - file: courses/maps-and-spatial-analyses/06_PD_plot-diagrams
+        title: 06. Plot Diagrams (PD) — Vector Analysis and Conversion
+      - file: courses/maps-and-spatial-analyses/07_GS_geometry-shape
+        title: 07. Geometry Shape (GS) — Vector Analysis and Conversion
+      - file: courses/maps-and-spatial-analyses/08_TB_table-tools
+        title: 08. Table Tools (TB) — Tables
+      - file: courses/maps-and-spatial-analyses/09_XY_add-xy-coordinates
+        title: 09. Add XY Coordinates (XY) — Tables
+      - file: courses/maps-and-spatial-analyses/10_CG_calculate-geometry
+        title: 10. Calculate Geometry (CG) — Tables
+      - file: courses/maps-and-spatial-analyses/11_JT_join-table
+        title: 11. Join Table (JT) — Tables
+      - file: courses/maps-and-spatial-analyses/12_RL_relate
+        title: 12. Relate (RL) — Tables
+      - file: courses/maps-and-spatial-analyses/13_ST_statistics
+        title: 13. Statistics (ST) — Tables
+      - file: courses/maps-and-spatial-analyses/14_ED_editing
+        title: 14. Editing (ED) — Editing and Cartography
+      - file: courses/maps-and-spatial-analyses/15_CF_conflation
+        title: 15. Conflation (CF) — Editing and Cartography
+      - file: courses/maps-and-spatial-analyses/16_GI_grid-index
+        title: 16. Grid Index (GI) — Editing and Cartography
+      - file: courses/maps-and-spatial-analyses/17_CA_cartographic
+        title: 17. Cartographic (CA) — Editing and Cartography
+      - file: courses/maps-and-spatial-analyses/18_3D_3d-analysis
+        title: 18. 3D Analysis (3D) — 3D Analysis
+      - file: courses/maps-and-spatial-analyses/19_LS_line-of-sight-visibility
+        title: 19. Line of Sight Visibility (LS) — 3D Analysis
+      - file: courses/maps-and-spatial-analyses/20_VS_volume
+        title: 20. Volume (VS) — 3D Analysis
+      - file: courses/maps-and-spatial-analyses/21_VW_viewshed
+        title: 21. Viewshed (VW) — 3D Analysis
+      - file: courses/maps-and-spatial-analyses/22_SL_skyline
+        title: 22. Skyline (SL) — 3D Analysis
+      - file: courses/maps-and-spatial-analyses/23_SC_space-time-cubes
+        title: 23. Space-time Cubes (SC) — 3D Analysis
+      - file: courses/maps-and-spatial-analyses/24_RT_route
+        title: 24. Route (RT) — Network Analysis
+      - file: courses/maps-and-spatial-analyses/25_DR_directions
+        title: 25. Directions (DR) — Network Analysis
+      - file: courses/maps-and-spatial-analyses/26_OS_optimal-site
+        title: 26. Optimal Site (OS) — Network Analysis
+      - file: courses/maps-and-spatial-analyses/27_CV_coverage
+        title: 27. Coverage (CV) — Network Analysis
+      - file: courses/maps-and-spatial-analyses/28_CM_od-cost-matrix
+        title: 28. OD Cost Matrix (CM) — Network Analysis
+      - file: courses/maps-and-spatial-analyses/29_HM_huff-model
+        title: 29. Huff Model (HM) — Network Analysis
+      - file: courses/maps-and-spatial-analyses/30_DM_data-management
+        title: 30. Data Management (DM) — Data Management
+      - file: courses/maps-and-spatial-analyses/31_PJ_projections
+        title: 31. Projections (PJ) — Data Management
+      - file: courses/maps-and-spatial-analyses/32_GV_generalize-vector
+        title: 32. Generalize Vector (GV) — Data Management
+      - file: courses/maps-and-spatial-analyses/33_AD_address-geocoding
+        title: 33. Address Geocoding (AD) — Data Management
+      - file: courses/maps-and-spatial-analyses/34_TP_topology
+        title: 34. Topology (TP) — Data Management
+      - file: courses/maps-and-spatial-analyses/35_LR_linear-referencing
+        title: 35. Linear Referencing (LR) — Data Management
+      - file: courses/maps-and-spatial-analyses/36_SA_spatial-adjustment
+        title: 36. Spatial Adjustment (SA) — Data Management
+      - file: courses/maps-and-spatial-analyses/37_GE_geoenrich
+        title: 37. GeoEnrich (GE) — Data Management
+      - file: courses/maps-and-spatial-analyses/38_SP_sampling
+        title: 38. Sampling (SP) — Data Management
+      - file: courses/maps-and-spatial-analyses/39_GT_geotagging
+        title: 39. Geotagging (GT) — Data Management
+      - file: courses/maps-and-spatial-analyses/40_PF_parcel-fabric
+        title: 40. Parcel Fabric (PF) — Data Management
+      - file: courses/maps-and-spatial-analyses/41_AT_attachments
+        title: 41. Attachments (AT) — Data Management
+      - file: courses/maps-and-spatial-analyses/42_FMV_full-motion-video
+        title: 42. Full Motion Video (FMV) — Data Management
+      - file: courses/maps-and-spatial-analyses/43_CO_cogo
+        title: 43. COGO (CO) — Data Management
+      - file: courses/maps-and-spatial-analyses/44_PC_point-cloud
+        title: 44. Point Cloud (PC) — Data Management
+      - file: courses/maps-and-spatial-analyses/45_WS_web-service
+        title: 45. Web Service (WS) — Data Management
+      - file: courses/maps-and-spatial-analyses/46_TIN_tin
+        title: 46. TIN (TIN) — Data Management
+      - file: courses/maps-and-spatial-analyses/47_IM_indoor-mapping
+        title: 47. Indoor Mapping (IM) — Data Management
+      - file: courses/maps-and-spatial-analyses/48_TM_temporal
+        title: 48. Temporal (TM) — Data Management
+      - file: courses/maps-and-spatial-analyses/49_TR_real-time-tracking
+        title: 49. Real-time Tracking (TR) — Data Management
+      - file: courses/maps-and-spatial-analyses/50_BD_big-data
+        title: 50. Big Data (BD) — Emerging Technology
+      - file: courses/maps-and-spatial-analyses/51_ML_machine-learning
+        title: 51. Machine Learning (ML) — Emerging Technology
+      - file: courses/maps-and-spatial-analyses/52_DE_data-engineering
+        title: 52. Data Engineering (DE) — Emerging Technology
+      - file: courses/maps-and-spatial-analyses/53_IOT_iot
+        title: 53. IoT (IOT) — Emerging Technology
+      - file: courses/maps-and-spatial-analyses/54_AS_agent-based-simulation-and-modeling
+        title: 54. Agent-based Simulation and Modeling (AS) — Emerging Technology
+      - file: courses/maps-and-spatial-analyses/55_VR_virtual-reality
+        title: 55. Virtual Reality (VR) — Emerging Technology
+      - file: courses/maps-and-spatial-analyses/56_AR_augmented-reality
+        title: 56. Augmented Reality (AR) — Emerging Technology
+      - file: courses/maps-and-spatial-analyses/57_GR_georeferencing
+        title: 57. Georeferencing (GR) — Raster Data Management
+      - file: courses/maps-and-spatial-analyses/58_MO_mosaic
+        title: 58. Mosaic (MO) — Raster Data Management
+      - file: courses/maps-and-spatial-analyses/59_RC_raster-creation
+        title: 59. Raster Creation (RC) — Raster Data Management
+      - file: courses/maps-and-spatial-analyses/60_AL_spatial-autocorrelation
+        title: 60. Spatial Autocorrelation (AL) — Raster Data Management
+      - file: courses/maps-and-spatial-analyses/61_RG_generalization
+        title: 61. Generalization (RG) — Raster Data Management
+      - file: courses/maps-and-spatial-analyses/62_MD_multidimensional
+        title: 62. Multidimensional (MD) — Raster Data Management
+      - file: courses/maps-and-spatial-analyses/63_RS_resample
+        title: 63. Resample (RS) — Raster Data Management
+      - file: courses/maps-and-spatial-analyses/64_PA_raster-painting
+        title: 64. Raster Painting (PA) — Raster Data Management
+      - file: courses/maps-and-spatial-analyses/65_RA_raster-analysis
+        title: 65. Raster Analysis (RA) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/66_MA_map-algebra
+        title: 66. Map Algebra (MA) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/67_CN_contours
+        title: 67. Contours (CN) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/68_ZS_zonal-statistics
+        title: 68. Zonal Statistics (ZS) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/69_CP_cost-path
+        title: 69. Cost Path (CP) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/70_RP_raster-processing
+        title: 70. Raster Processing (RP) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/71_RE_spatial-regression
+        title: 71. Spatial Regression (RE) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/72_TA_terrain-analysis
+        title: 72. Terrain Analysis (TA) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/73_MF_math-function
+        title: 73. Math Function (MF) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/74_SU_suitability
+        title: 74. Suitability (SU) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/75_CON_conditional
+        title: 75. Conditional (CON) — Raster Analysis
+      - file: courses/maps-and-spatial-analyses/76_BA_band-index
+        title: 76. Band Index (BA) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/77_IS_image-stretching
+        title: 77. Image Stretching (IS) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/78_IC_image-classification
+        title: 78. Image Classification (IC) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/79_CB_composite-bands
+        title: 79. Composite Bands (CB) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/80_PS_pansharpening
+        title: 80. Pansharpening (PS) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/81_AC_atmosphere-correction
+        title: 81. Atmosphere Correction (AC) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/82_SG_segmentation
+        title: 82. Segmentation (SG) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/83_DN_data-mining
+        title: 83. Data Mining (DN) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/84_ME_mensuration
+        title: 84. Mensuration (ME) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/85_PH_photogrammetry
+        title: 85. Photogrammetry (PH) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/86_OB_oblique
+        title: 86. Oblique (OB) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/87_RD_radar
+        title: 87. Radar (RD) — Remote Sensing
+      - file: courses/maps-and-spatial-analyses/88_IP_interpolation
+        title: 88. Interpolation (IP) — Interpolation
+      - file: courses/maps-and-spatial-analyses/89_KR_kriging
+        title: 89. Kriging (KR) — Interpolation
+      - file: courses/maps-and-spatial-analyses/90_KD_kernel-density
+        title: 90. Kernel Density (KD) — Interpolation
   - file: projects/geospatial-analyses-and-maps-old/index
     title: Geospatial-Analyses-and-Maps-old - A teaching extract is not a census
+    sections:
+    - file: courses/geospatial-analyses-and-maps-old/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/geospatial-analyses-and-maps-old/00_Index
+        title: 'Periodic Table of Geospatial Analysis: JupyterLite Learning Lab'
+      - file: courses/geospatial-analyses-and-maps-old/01_VC_vector-conversion
+        title: '01 VC: Vector Conversion'
+      - file: courses/geospatial-analyses-and-maps-old/02_EX_extract
+        title: '02 EX: Extract'
+      - file: courses/geospatial-analyses-and-maps-old/03_OV_overlay
+        title: '03 OV: Overlay'
+      - file: courses/geospatial-analyses-and-maps-old/04_PX_proximity
+        title: '04 PX: Proximity'
+      - file: courses/geospatial-analyses-and-maps-old/05_SJ_spatial-join
+        title: '05 SJ: Spatial Join'
+      - file: courses/geospatial-analyses-and-maps-old/06_PD_plot-diagrams
+        title: '06 PD: Plot Diagrams'
+      - file: courses/geospatial-analyses-and-maps-old/07_GS_geometry-shape
+        title: '07 GS: Geometry Shape'
+      - file: courses/geospatial-analyses-and-maps-old/08_TB_table-tools
+        title: '08 TB: Table Tools'
+      - file: courses/geospatial-analyses-and-maps-old/09_XY_add-xy-coordinates
+        title: '09 XY: Add XY Coordinates'
+      - file: courses/geospatial-analyses-and-maps-old/10_CG_calculate-geometry
+        title: '10 CG: Calculate Geometry'
+      - file: courses/geospatial-analyses-and-maps-old/11_JT_join-table
+        title: '11 JT: Join Table'
+      - file: courses/geospatial-analyses-and-maps-old/12_RL_relate
+        title: '12 RL: Relate'
+      - file: courses/geospatial-analyses-and-maps-old/13_ST_statistics
+        title: '13 ST: Statistics'
+      - file: courses/geospatial-analyses-and-maps-old/14_ED_editing
+        title: '14 ED: Editing'
+      - file: courses/geospatial-analyses-and-maps-old/15_CF_conflation
+        title: '15 CF: Conflation'
+      - file: courses/geospatial-analyses-and-maps-old/16_GI_grid-index
+        title: '16 GI: Grid Index'
+      - file: courses/geospatial-analyses-and-maps-old/17_CA_cartographic
+        title: '17 CA: Cartographic'
+      - file: courses/geospatial-analyses-and-maps-old/18_3D_3d-analysis
+        title: '18 3D: 3D Analysis'
+      - file: courses/geospatial-analyses-and-maps-old/19_LS_line-of-sight-visibility
+        title: '19 LS: Line of Sight Visibility'
+      - file: courses/geospatial-analyses-and-maps-old/20_VS_volume
+        title: '20 VS: Volume'
+      - file: courses/geospatial-analyses-and-maps-old/21_VW_viewshed
+        title: '21 VW: Viewshed'
+      - file: courses/geospatial-analyses-and-maps-old/22_SL_skyline
+        title: '22 SL: Skyline'
+      - file: courses/geospatial-analyses-and-maps-old/23_SC_space-time-cubes
+        title: '23 SC: Space-time Cubes'
+      - file: courses/geospatial-analyses-and-maps-old/24_RT_route
+        title: '24 RT: Route'
+      - file: courses/geospatial-analyses-and-maps-old/25_DR_directions
+        title: '25 DR: Directions'
+      - file: courses/geospatial-analyses-and-maps-old/26_OS_optimal-site
+        title: '26 OS: Optimal Site'
+      - file: courses/geospatial-analyses-and-maps-old/27_CV_coverage
+        title: '27 CV: Coverage'
+      - file: courses/geospatial-analyses-and-maps-old/28_CM_od-cost-matrix
+        title: '28 CM: OD Cost Matrix'
+      - file: courses/geospatial-analyses-and-maps-old/29_HM_huff-model
+        title: '29 HM: Huff Model'
+      - file: courses/geospatial-analyses-and-maps-old/30_DM_data-management
+        title: '30 DM: Data Management'
+      - file: courses/geospatial-analyses-and-maps-old/31_PJ_projections
+        title: '31 PJ: Projections'
+      - file: courses/geospatial-analyses-and-maps-old/32_GV_generalize-vector
+        title: '32 GV: Generalize Vector'
+      - file: courses/geospatial-analyses-and-maps-old/33_AD_address-geocoding
+        title: '33 AD: Address Geocoding'
+      - file: courses/geospatial-analyses-and-maps-old/34_TP_topology
+        title: '34 TP: Topology'
+      - file: courses/geospatial-analyses-and-maps-old/35_LR_linear-referencing
+        title: '35 LR: Linear Referencing'
+      - file: courses/geospatial-analyses-and-maps-old/36_SA_spatial-adjustment
+        title: '36 SA: Spatial Adjustment'
+      - file: courses/geospatial-analyses-and-maps-old/37_GE_geoenrich
+        title: '37 GE: GeoEnrich'
+      - file: courses/geospatial-analyses-and-maps-old/38_SP_sampling
+        title: '38 SP: Sampling'
+      - file: courses/geospatial-analyses-and-maps-old/39_GT_geotagging
+        title: '39 GT: Geotagging'
+      - file: courses/geospatial-analyses-and-maps-old/40_PF_parcel-fabric
+        title: '40 PF: Parcel Fabric'
+      - file: courses/geospatial-analyses-and-maps-old/41_AT_attachments
+        title: '41 AT: Attachments'
+      - file: courses/geospatial-analyses-and-maps-old/42_FMV_full-motion-video
+        title: '42 FMV: Full Motion Video'
+      - file: courses/geospatial-analyses-and-maps-old/43_CO_cogo
+        title: '43 CO: COGO'
+      - file: courses/geospatial-analyses-and-maps-old/44_PC_point-cloud
+        title: '44 PC: Point Cloud'
+      - file: courses/geospatial-analyses-and-maps-old/45_WS_web-service
+        title: '45 WS: Web Service'
+      - file: courses/geospatial-analyses-and-maps-old/46_TIN_tin
+        title: '46 TIN: TIN'
+      - file: courses/geospatial-analyses-and-maps-old/47_IM_indoor-mapping
+        title: '47 IM: Indoor Mapping'
+      - file: courses/geospatial-analyses-and-maps-old/48_TM_temporal
+        title: '48 TM: Temporal'
+      - file: courses/geospatial-analyses-and-maps-old/49_TR_real-time-tracking
+        title: '49 TR: Real-time Tracking'
+      - file: courses/geospatial-analyses-and-maps-old/50_BD_big-data
+        title: '50 BD: Big Data'
+      - file: courses/geospatial-analyses-and-maps-old/51_ML_machine-learning
+        title: '51 ML: Machine Learning'
+      - file: courses/geospatial-analyses-and-maps-old/52_DE_data-engineering
+        title: '52 DE: Data Engineering'
+      - file: courses/geospatial-analyses-and-maps-old/53_IOT_iot
+        title: '53 IOT: IoT'
+      - file: courses/geospatial-analyses-and-maps-old/54_AS_agent-based-simulation-and-modeling
+        title: '54 AS: Agent-based Simulation and Modeling'
+      - file: courses/geospatial-analyses-and-maps-old/55_VR_virtual-reality
+        title: '55 VR: Virtual Reality'
+      - file: courses/geospatial-analyses-and-maps-old/56_AR_augmented-reality
+        title: '56 AR: Augmented Reality'
+      - file: courses/geospatial-analyses-and-maps-old/57_GR_georeferencing
+        title: '57 GR: Georeferencing'
+      - file: courses/geospatial-analyses-and-maps-old/58_MO_mosaic
+        title: '58 MO: Mosaic'
+      - file: courses/geospatial-analyses-and-maps-old/59_RC_raster-creation
+        title: '59 RC: Raster Creation'
+      - file: courses/geospatial-analyses-and-maps-old/60_AL_spatial-autocorrelation
+        title: '60 AL: Spatial Autocorrelation'
+      - file: courses/geospatial-analyses-and-maps-old/61_RG_generalization
+        title: '61 RG: Generalization'
+      - file: courses/geospatial-analyses-and-maps-old/62_MD_multidimensional
+        title: '62 MD: Multidimensional'
+      - file: courses/geospatial-analyses-and-maps-old/63_RS_resample
+        title: '63 RS: Resample'
+      - file: courses/geospatial-analyses-and-maps-old/64_PA_raster-painting
+        title: '64 PA: Raster Painting'
+      - file: courses/geospatial-analyses-and-maps-old/65_RA_raster-analysis
+        title: '65 RA: Raster Analysis'
+      - file: courses/geospatial-analyses-and-maps-old/66_MA_map-algebra
+        title: '66 MA: Map Algebra'
+      - file: courses/geospatial-analyses-and-maps-old/67_CN_contours
+        title: '67 CN: Contours'
+      - file: courses/geospatial-analyses-and-maps-old/68_ZS_zonal-statistics
+        title: '68 ZS: Zonal Statistics'
+      - file: courses/geospatial-analyses-and-maps-old/69_CP_cost-path
+        title: '69 CP: Cost Path'
+      - file: courses/geospatial-analyses-and-maps-old/70_RP_raster-processing
+        title: '70 RP: Raster Processing'
+      - file: courses/geospatial-analyses-and-maps-old/71_RE_spatial-regression
+        title: '71 RE: Spatial Regression'
+      - file: courses/geospatial-analyses-and-maps-old/72_TA_terrain-analysis
+        title: '72 TA: Terrain Analysis'
+      - file: courses/geospatial-analyses-and-maps-old/73_MF_math-function
+        title: '73 MF: Math Function'
+      - file: courses/geospatial-analyses-and-maps-old/74_SU_suitability
+        title: '74 SU: Suitability'
+      - file: courses/geospatial-analyses-and-maps-old/75_CON_conditional
+        title: '75 CON: Conditional'
+      - file: courses/geospatial-analyses-and-maps-old/76_BA_band-index
+        title: '76 BA: Band Index'
+      - file: courses/geospatial-analyses-and-maps-old/77_IS_image-stretching
+        title: '77 IS: Image Stretching'
+      - file: courses/geospatial-analyses-and-maps-old/78_IC_image-classification
+        title: '78 IC: Image Classification'
+      - file: courses/geospatial-analyses-and-maps-old/79_CB_composite-bands
+        title: '79 CB: Composite Bands'
+      - file: courses/geospatial-analyses-and-maps-old/80_PS_pansharpening
+        title: '80 PS: Pansharpening'
+      - file: courses/geospatial-analyses-and-maps-old/81_AC_atmosphere-correction
+        title: '81 AC: Atmosphere Correction'
+      - file: courses/geospatial-analyses-and-maps-old/82_SG_segmentation
+        title: '82 SG: Segmentation'
+      - file: courses/geospatial-analyses-and-maps-old/83_DN_data-mining
+        title: '83 DN: Data Mining'
+      - file: courses/geospatial-analyses-and-maps-old/84_ME_mensuration
+        title: '84 ME: Mensuration'
+      - file: courses/geospatial-analyses-and-maps-old/85_PH_photogrammetry
+        title: '85 PH: Photogrammetry'
+      - file: courses/geospatial-analyses-and-maps-old/86_OB_oblique
+        title: '86 OB: Oblique'
+      - file: courses/geospatial-analyses-and-maps-old/87_RD_radar
+        title: '87 RD: Radar'
+      - file: courses/geospatial-analyses-and-maps-old/88_IP_interpolation
+        title: '88 IP: Interpolation'
+      - file: courses/geospatial-analyses-and-maps-old/89_KR_kriging
+        title: '89 KR: Kriging'
+      - file: courses/geospatial-analyses-and-maps-old/90_KD_kernel-density
+        title: '90 KD: Kernel Density'
   - file: projects/geospatial-analyses-and-maps/index
     title: Geospatial-Analyses-and-Maps - Overlay with an explicit layer contract
+    sections:
+    - file: courses/geospatial-analyses-and-maps/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/geospatial-analyses-and-maps/notebooks/00_Index
+        title: JupyterLite Geospatial Analyses and Maps
+      - file: courses/geospatial-analyses-and-maps/notebooks/01_VC_vector-conversion
+        title: '01 VC: Vector Conversion'
+      - file: courses/geospatial-analyses-and-maps/notebooks/02_EX_extract
+        title: '02 EX: Extract'
+      - file: courses/geospatial-analyses-and-maps/notebooks/03_OV_overlay
+        title: '03 OV: Overlay'
+      - file: courses/geospatial-analyses-and-maps/notebooks/04_PX_proximity
+        title: '04 PX: Proximity'
+      - file: courses/geospatial-analyses-and-maps/notebooks/05_SJ_spatial-join
+        title: '05 SJ: Spatial Join'
+      - file: courses/geospatial-analyses-and-maps/notebooks/06_PD_plot-diagrams
+        title: '06 PD: Plot Diagrams'
+      - file: courses/geospatial-analyses-and-maps/notebooks/07_GS_geometry-shape
+        title: '07 GS: Geometry Shape'
+      - file: courses/geospatial-analyses-and-maps/notebooks/08_TB_table-tools
+        title: '08 TB: Table Tools'
+      - file: courses/geospatial-analyses-and-maps/notebooks/09_XY_add-xy-coordinates
+        title: '09 XY: Add XY Coordinates'
+      - file: courses/geospatial-analyses-and-maps/notebooks/10_CG_calculate-geometry
+        title: '10 CG: Calculate Geometry'
+      - file: courses/geospatial-analyses-and-maps/notebooks/11_JT_join-table
+        title: '11 JT: Join Table'
+      - file: courses/geospatial-analyses-and-maps/notebooks/12_RL_relate
+        title: '12 RL: Relate'
+      - file: courses/geospatial-analyses-and-maps/notebooks/13_ST_statistics
+        title: '13 ST: Statistics'
+      - file: courses/geospatial-analyses-and-maps/notebooks/14_ED_editing
+        title: '14 ED: Editing'
+      - file: courses/geospatial-analyses-and-maps/notebooks/15_CF_conflation
+        title: '15 CF: Conflation'
+      - file: courses/geospatial-analyses-and-maps/notebooks/16_GI_grid-index
+        title: '16 GI: Grid Index'
+      - file: courses/geospatial-analyses-and-maps/notebooks/17_CA_cartographic
+        title: '17 CA: Cartographic'
+      - file: courses/geospatial-analyses-and-maps/notebooks/18_3D_3d-analysis
+        title: '18 3D: 3D Analysis'
+      - file: courses/geospatial-analyses-and-maps/notebooks/19_LS_line-of-sight-visibility
+        title: '19 LS: Line of Sight Visibility'
+      - file: courses/geospatial-analyses-and-maps/notebooks/20_VS_volume
+        title: '20 VS: Volume'
+      - file: courses/geospatial-analyses-and-maps/notebooks/21_VW_viewshed
+        title: '21 VW: Viewshed'
+      - file: courses/geospatial-analyses-and-maps/notebooks/22_SL_skyline
+        title: '22 SL: Skyline'
+      - file: courses/geospatial-analyses-and-maps/notebooks/23_SC_space-time-cubes
+        title: '23 SC: Space-time Cubes'
+      - file: courses/geospatial-analyses-and-maps/notebooks/24_RT_route
+        title: '24 RT: Route'
+      - file: courses/geospatial-analyses-and-maps/notebooks/25_DR_directions
+        title: '25 DR: Directions'
+      - file: courses/geospatial-analyses-and-maps/notebooks/26_OS_optimal-site
+        title: '26 OS: Optimal Site'
+      - file: courses/geospatial-analyses-and-maps/notebooks/27_CV_coverage
+        title: '27 CV: Coverage'
+      - file: courses/geospatial-analyses-and-maps/notebooks/28_CM_od-cost-matrix
+        title: '28 CM: OD Cost Matrix'
+      - file: courses/geospatial-analyses-and-maps/notebooks/29_HM_huff-model
+        title: '29 HM: Huff Model'
+      - file: courses/geospatial-analyses-and-maps/notebooks/30_DM_data-management
+        title: '30 DM: Data Management'
+      - file: courses/geospatial-analyses-and-maps/notebooks/31_PJ_projections
+        title: '31 PJ: Projections'
+      - file: courses/geospatial-analyses-and-maps/notebooks/32_GV_generalize-vector
+        title: '32 GV: Generalize Vector'
+      - file: courses/geospatial-analyses-and-maps/notebooks/33_AD_address-geocoding
+        title: '33 AD: Address Geocoding'
+      - file: courses/geospatial-analyses-and-maps/notebooks/34_TP_topology
+        title: '34 TP: Topology'
+      - file: courses/geospatial-analyses-and-maps/notebooks/35_LR_linear-referencing
+        title: '35 LR: Linear Referencing'
+      - file: courses/geospatial-analyses-and-maps/notebooks/36_SA_spatial-adjustment
+        title: '36 SA: Spatial Adjustment'
+      - file: courses/geospatial-analyses-and-maps/notebooks/37_GE_geoenrich
+        title: '37 GE: GeoEnrich'
+      - file: courses/geospatial-analyses-and-maps/notebooks/38_SP_sampling
+        title: '38 SP: Sampling'
+      - file: courses/geospatial-analyses-and-maps/notebooks/39_GT_geotagging
+        title: '39 GT: Geotagging'
+      - file: courses/geospatial-analyses-and-maps/notebooks/40_PF_parcel-fabric
+        title: '40 PF: Parcel Fabric'
+      - file: courses/geospatial-analyses-and-maps/notebooks/41_AT_attachments
+        title: '41 AT: Attachments'
+      - file: courses/geospatial-analyses-and-maps/notebooks/42_FMV_full-motion-video
+        title: '42 FMV: Full Motion Video'
+      - file: courses/geospatial-analyses-and-maps/notebooks/43_CO_cogo
+        title: '43 CO: COGO'
+      - file: courses/geospatial-analyses-and-maps/notebooks/44_PC_point-cloud
+        title: '44 PC: Point Cloud'
+      - file: courses/geospatial-analyses-and-maps/notebooks/45_WS_web-service
+        title: '45 WS: Web Service'
+      - file: courses/geospatial-analyses-and-maps/notebooks/46_TIN_tin
+        title: '46 TIN: TIN'
+      - file: courses/geospatial-analyses-and-maps/notebooks/47_IM_indoor-mapping
+        title: '47 IM: Indoor Mapping'
+      - file: courses/geospatial-analyses-and-maps/notebooks/48_TM_temporal
+        title: '48 TM: Temporal'
+      - file: courses/geospatial-analyses-and-maps/notebooks/49_TR_real-time-tracking
+        title: '49 TR: Real-time Tracking'
+      - file: courses/geospatial-analyses-and-maps/notebooks/50_BD_big-data
+        title: '50 BD: Big Data'
+      - file: courses/geospatial-analyses-and-maps/notebooks/51_ML_machine-learning
+        title: '51 ML: Machine Learning'
+      - file: courses/geospatial-analyses-and-maps/notebooks/52_DE_data-engineering
+        title: '52 DE: Data Engineering'
+      - file: courses/geospatial-analyses-and-maps/notebooks/53_IOT_iot
+        title: '53 IOT: IoT'
+      - file: courses/geospatial-analyses-and-maps/notebooks/54_AS_agent-based-simulation-and-modeling
+        title: '54 AS: Agent-based Simulation and Modeling'
+      - file: courses/geospatial-analyses-and-maps/notebooks/55_VR_virtual-reality
+        title: '55 VR: Virtual Reality'
+      - file: courses/geospatial-analyses-and-maps/notebooks/56_AR_augmented-reality
+        title: '56 AR: Augmented Reality'
+      - file: courses/geospatial-analyses-and-maps/notebooks/57_GR_georeferencing
+        title: '57 GR: Georeferencing'
+      - file: courses/geospatial-analyses-and-maps/notebooks/58_MO_mosaic
+        title: '58 MO: Mosaic'
+      - file: courses/geospatial-analyses-and-maps/notebooks/59_RC_raster-creation
+        title: '59 RC: Raster Creation'
+      - file: courses/geospatial-analyses-and-maps/notebooks/60_AL_spatial-autocorrelation
+        title: '60 AL: Spatial Autocorrelation'
+      - file: courses/geospatial-analyses-and-maps/notebooks/61_RG_generalization
+        title: '61 RG: Generalization'
+      - file: courses/geospatial-analyses-and-maps/notebooks/62_MD_multidimensional
+        title: '62 MD: Multidimensional'
+      - file: courses/geospatial-analyses-and-maps/notebooks/63_RS_resample
+        title: '63 RS: Resample'
+      - file: courses/geospatial-analyses-and-maps/notebooks/64_PA_raster-painting
+        title: '64 PA: Raster Painting'
+      - file: courses/geospatial-analyses-and-maps/notebooks/65_RA_raster-analysis
+        title: '65 RA: Raster Analysis'
+      - file: courses/geospatial-analyses-and-maps/notebooks/66_MA_map-algebra
+        title: '66 MA: Map Algebra'
+      - file: courses/geospatial-analyses-and-maps/notebooks/67_CN_contours
+        title: '67 CN: Contours'
+      - file: courses/geospatial-analyses-and-maps/notebooks/68_ZS_zonal-statistics
+        title: '68 ZS: Zonal Statistics'
+      - file: courses/geospatial-analyses-and-maps/notebooks/69_CP_cost-path
+        title: '69 CP: Cost Path'
+      - file: courses/geospatial-analyses-and-maps/notebooks/70_RP_raster-processing
+        title: '70 RP: Raster Processing'
+      - file: courses/geospatial-analyses-and-maps/notebooks/71_RE_spatial-regression
+        title: '71 RE: Spatial Regression'
+      - file: courses/geospatial-analyses-and-maps/notebooks/72_TA_terrain-analysis
+        title: '72 TA: Terrain Analysis'
+      - file: courses/geospatial-analyses-and-maps/notebooks/73_MF_math-function
+        title: '73 MF: Math Function'
+      - file: courses/geospatial-analyses-and-maps/notebooks/74_SU_suitability
+        title: '74 SU: Suitability'
+      - file: courses/geospatial-analyses-and-maps/notebooks/75_CON_conditional
+        title: '75 CON: Conditional'
+      - file: courses/geospatial-analyses-and-maps/notebooks/76_BA_band-index
+        title: '76 BA: Band Index'
+      - file: courses/geospatial-analyses-and-maps/notebooks/77_IS_image-stretching
+        title: '77 IS: Image Stretching'
+      - file: courses/geospatial-analyses-and-maps/notebooks/78_IC_image-classification
+        title: '78 IC: Image Classification'
+      - file: courses/geospatial-analyses-and-maps/notebooks/79_CB_composite-bands
+        title: '79 CB: Composite Bands'
+      - file: courses/geospatial-analyses-and-maps/notebooks/80_PS_pansharpening
+        title: '80 PS: Pansharpening'
+      - file: courses/geospatial-analyses-and-maps/notebooks/81_AC_atmosphere-correction
+        title: '81 AC: Atmosphere Correction'
+      - file: courses/geospatial-analyses-and-maps/notebooks/82_SG_segmentation
+        title: '82 SG: Segmentation'
+      - file: courses/geospatial-analyses-and-maps/notebooks/83_DN_data-mining
+        title: '83 DN: Data Mining'
+      - file: courses/geospatial-analyses-and-maps/notebooks/84_ME_mensuration
+        title: '84 ME: Mensuration'
+      - file: courses/geospatial-analyses-and-maps/notebooks/85_PH_photogrammetry
+        title: '85 PH: Photogrammetry'
+      - file: courses/geospatial-analyses-and-maps/notebooks/86_OB_oblique
+        title: '86 OB: Oblique'
+      - file: courses/geospatial-analyses-and-maps/notebooks/87_RD_radar
+        title: '87 RD: Radar'
+      - file: courses/geospatial-analyses-and-maps/notebooks/88_IP_interpolation
+        title: '88 IP: Interpolation'
+      - file: courses/geospatial-analyses-and-maps/notebooks/89_KR_kriging
+        title: '89 KR: Kriging'
+      - file: courses/geospatial-analyses-and-maps/notebooks/90_KD_kernel-density
+        title: '90 KD: Kernel Density'
   - file: projects/geospatial-analyses-and-maps-revised/index
     title: Geospatial-Analyses-and-Maps-revised - Show what aggregation hides
+    sections:
+    - file: courses/geospatial-analyses-and-maps-revised/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/01_montreal_choropleth_real_boundaries
+        title: 'Montreal electoral districts: real boundaries, real attributes'
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/02_health_facilities_accessibility
+        title: Health facilities, buffers, and service-distance thinking
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/03_nyc_taxi_h3_hexagons
+        title: NYC taxi pickups with Uber H3-style hexagons
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/04_deckgl_3d_pickups_and_facilities
+        title: '3D mapping with deck.gl: pickups, facilities, and height as data'
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/05_nasa_gibs_admin_overlay
+        title: NASA GIBS satellite tiles with an administrative overlay
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/06_copernicus_sentinel2_tile_thinking
+        title: Copernicus Sentinel-2 thinking without large downloads
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/07_openstreetmap_overpass_public_assets
+        title: OpenStreetMap amenities with browser-safe fallback
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/08_meuse_point_pollution_interpolation
+        title: 'Meuse heavy-metal points: mapping gradients before modeling'
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/09_data_gov_earthquake_live_api
+        title: Data.gov/USGS live earthquake feed with graceful fallback
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/10_small_multiples_story_maps
+        title: 'Small multiples: the same boundary, different question'
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/11_temporal_geojson_facility_scenarios
+        title: Animated scenario mapping with TimestampedGeoJson
+      - file: courses/geospatial-analyses-and-maps-revised/notebooks/12_capstone_browser_safe_geospatial_design
+        title: 'Capstone: design a browser-safe geospatial investigation'
 - caption: Terrain & Earth observation
   chapters:
   - file: projects/whitebox/index
     title: Whitebox - Trace downhill, then change runtimes
+    sections:
+    - file: courses/whitebox/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/whitebox/00_Welcome
+        title: Welcome to JupyterLite + Whitebox
+      - file: courses/whitebox/01_Architecture_and_Compatibility
+        title: Architecture and JupyterLite compatibility
+      - file: courses/whitebox/02_Data_Tools
+        title: Data Tools
+      - file: courses/whitebox/03_GIS_Analysis
+        title: GIS Analysis
+      - file: courses/whitebox/04_Hydrological_Analysis
+        title: Hydrological Analysis
+      - file: courses/whitebox/05_Image_Analysis
+        title: Image Analysis
+      - file: courses/whitebox/06_LiDAR_Analysis
+        title: LiDAR Analysis
+      - file: courses/whitebox/07_Math_and_Stats
+        title: Math and Statistics
+      - file: courses/whitebox/08_Stream_Network_Analysis
+        title: Stream Network Analysis
+      - file: courses/whitebox/09_Terrain_Analysis
+        title: Terrain Analysis
+      - file: courses/whitebox/10_API_Catalog
+        title: Searchable Whitebox Python API catalog
   - file: projects/astra-demos/index
     title: Astra-demos - Procedural terrain, transparent assumptions
+    sections:
+    - file: courses/astra-demos/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/astra-demos/00_start_here
+        title: 'Start here: from a map to a world'
+      - file: courses/astra-demos/01_aquarium_motion
+        title: Aquarium motion model
+      - file: courses/astra-demos/02_robot_duel
+        title: Robot duel dynamics
+      - file: courses/astra-demos/03_procedural_train
+        title: Procedural train assembly
+      - file: courses/astra-demos/04_glass_drying
+        title: Glass drying model
+      - file: courses/astra-demos/05_model_railroad
+        title: Model railroad scheduler
+      - file: courses/astra-demos/06_globe_projections
+        title: Globe, projections and great-circle routes
+      - file: courses/astra-demos/07_terrain_water
+        title: Terrain, contours and connected water
+      - file: courses/astra-demos/08_neighborhood_3d
+        title: From a map pin to a procedural neighborhood
+      - file: courses/astra-demos/09_route_networks
+        title: 'Networks: shortest distance or fastest access?'
+      - file: courses/astra-demos/10_ocean_flow
+        title: 'Ocean motion: fields, paths and waves'
+      - file: courses/astra-demos/11_point_cloud_repair
+        title: 'Point clouds: reconstructing a missing patch'
+      - file: courses/astra-demos/12_voxel_world
+        title: 'Voxel island: fields become materials'
+      - file: courses/astra-demos/13_lorenz_chaos
+        title: 'Lorenz chaos: close starts, different futures'
+      - file: courses/astra-demos/14_spatial_interpolation
+        title: Sparse sensors, smooth maps and uncertainty
+      - file: courses/astra-demos/15_sunlight_shadows
+        title: Sunlight, buildings and a 3D shadow map
   - file: projects/gods-eye-view-satellite/index
     title: Gods-Eye-View-Satellite - Inspect the viewing geometry
+    sections:
+    - file: courses/gods-eye-view-satellite/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/gods-eye-view-satellite/01_orbit_ground_track
+        title: 01 — Orbital ground track
+      - file: courses/gods-eye-view-satellite/02_sensor_footprint
+        title: 02 — Sensor / line-of-sight footprint
+      - file: courses/gods-eye-view-satellite/03_constellation_dashboard
+        title: 03 — Synthetic constellation situational view
+      - file: courses/gods-eye-view-satellite/04_akobo_satellite_imagery
+        title: '04 — Akobo, South Sudan: Satellite Imagery HUD'
+      - file: courses/gods-eye-view-satellite/05_eoc_common_operating_picture
+        title: 05 · Build a browser EOC common operating picture
+      - file: courses/gods-eye-view-satellite/06_spatial_epidemiology
+        title: '06 · Spatial epidemiology: time, place, denominator'
+      - file: courses/gods-eye-view-satellite/07_health_access_logistics
+        title: 07 · Health access under disruption
+      - file: courses/gods-eye-view-satellite/08_worldview_remote_sensing
+        title: 08 · NASA Worldview, imagery provenance, and change
+      - file: courses/gods-eye-view-satellite/09_cesium_3d_scenes
+        title: 09 · 3D scenes, terrain intuition, and time
+      - file: courses/gods-eye-view-satellite/10_astra_geospatial_analyst
+        title: 10 · GPT-6 Astra as a geospatial analysis partner
+      - file: courses/gods-eye-view-satellite/11_spatial_uncertainty
+        title: 11 · Spatial pattern, uncertainty, and scale
+      - file: courses/gods-eye-view-satellite/12_capstone_response
+        title: '12 · Capstone: from notebooks to God’s Eye View'
   - file: projects/zarr-sql-views/index
     title: zarr-sql-views - Query a cube, account for the work
+    sections:
+    - file: courses/zarr-sql-views/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/zarr-sql-views/01_start_here
+        title: 01 · A browser is a scientific workspace
+      - file: courses/zarr-sql-views/02_zarr_sql
+        title: 02 · From Zarr chunks to SQL rows
+      - file: courses/zarr-sql-views/03_deafrica_water
+        title: '03 · Lake Ngami: water observations and missing evidence'
+      - file: courses/zarr-sql-views/04_maps_and_cubes
+        title: 04 · 2D maps, 3D maps, and a space–time cube
+      - file: courses/zarr-sql-views/05_c3s_atlas
+        title: '05 · C3S Atlas: scenarios, warming levels, and model spread'
+      - file: courses/zarr-sql-views/06_heat_stress
+        title: 06 · Global heat questions, African heat laboratory
+      - file: courses/zarr-sql-views/07_coastal_scenes
+        title: 07 · Sea-level rise and the meaning of a 3D scene
+      - file: courses/zarr-sql-views/08_air_quality
+        title: '08 · Air quality: a map is not an exposure estimate'
+      - file: courses/zarr-sql-views/09_water_quality
+        title: '09 · Water quality: from optical signal to a testable hypothesis'
+      - file: courses/zarr-sql-views/10_food_water
+        title: '10 · Food and water insecurity: separate the signal from the claim'
+      - file: courses/zarr-sql-views/11_stac_geolibre
+        title: 11 · STAC discovery and GeoLibre handoff
+      - file: courses/zarr-sql-views/12_capstone
+        title: '12 · Capstone: an evidence-led climate story'
+      - file: courses/zarr-sql-views/13_ar6_archive
+        title: 13 · Open the AR6 archive without downloading the world
+      - file: courses/zarr-sql-views/14_ar6_port_cities
+        title: 14 · Five port cities, four tide-gauge proxies
+      - file: courses/zarr-sql-views/15_ar6_grid_maps
+        title: 15 · Regional grids, 3D maps, and sea-level time cubes
+      - file: courses/zarr-sql-views/16_ar6_uncertainty
+        title: 16 · Threshold questions without false flood probabilities
+      - file: courses/zarr-sql-views/17_tessera_embeddings
+        title: '17 · GeoTessera: from satellite years to embedding vectors'
+      - file: courses/zarr-sql-views/18_tessera_similarity
+        title: '18 · Similarity search: vectors, maps, Zarr and SQL'
+      - file: courses/zarr-sql-views/19_tessera_pca
+        title: 19 · PCA colors and a three-dimensional embedding space
+      - file: courses/zarr-sql-views/20_tessera_clusters
+        title: 20 · Clusters, transfer and the need for independent labels
+      - file: courses/zarr-sql-views/21_tessera_change
+        title: 21 · Annual embedding differences and coastal evidence
+      - file: courses/zarr-sql-views/22_ftw_discovery
+        title: '22 · Global FTW: discover fields, probabilities and confidence'
+      - file: courses/zarr-sql-views/23_ftw_probability_sql
+        title: '23 · FTW probability cubes: maps, SQL and 3D'
+      - file: courses/zarr-sql-views/24_ftw_fields_confidence
+        title: 24 · Field polygons, confidence and selection bias
+      - file: courses/zarr-sql-views/25_ftw_change_food_water
+        title: 25 · Annual field predictions and food–water questions
+      - file: courses/zarr-sql-views/26_seasfire_discovery
+        title: '26 · SeasFire: read the cube before reading the fire'
+      - file: courses/zarr-sql-views/27_seasfire_maps_sql
+        title: '27 · Burned area: maps, SQL and a moving season'
+      - file: courses/zarr-sql-views/28_seasfire_seasons_lags
+        title: 28 · Seasons, anomalies and lagged relationships
+      - file: courses/zarr-sql-views/29_seasfire_lexcube
+        title: '29 · LexCube: slice a real fire cube in the browser'
+      - file: courses/zarr-sql-views/30_seasfire_lexcube_compare
+        title: '30 · LexCube comparisons: fire, dryness and evidence'
   - file: projects/global-fishing-watch-and-dark-vessels/index
     title: Global-Fishing-Watch-and-Dark-Vessels - Observe vessels, preserve uncertainty
+    sections:
+    - file: courses/global-fishing-watch-and-dark-vessels/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/global-fishing-watch-and-dark-vessels/01_observed_ocean
+        title: 01 · The observed ocean
+      - file: courses/global-fishing-watch-and-dark-vessels/02_ocean_in_3d
+        title: 02 · Think in three dimensions
+      - file: courses/global-fishing-watch-and-dark-vessels/03_matching_and_uncertainty
+        title: 03 · When is a detection unmatched?
+      - file: courses/global-fishing-watch-and-dark-vessels/04_sar_detection
+        title: 04 · A radar return is not a vessel label
+      - file: courses/global-fishing-watch-and-dark-vessels/05_satellite_catalog
+        title: 05 · Find the satellite evidence
+      - file: courses/global-fishing-watch-and-dark-vessels/06_environment_and_health
+        title: 06 · Shared seasonality can look like a health signal
+      - file: courses/global-fishing-watch-and-dark-vessels/07_food_and_equity
+        title: 07 · Follow the food, not just the fleet
+      - file: courses/global-fishing-watch-and-dark-vessels/08_fish_stocks
+        title: 08 · Fishing pressure, stock resilience and recovery
+      - file: courses/global-fishing-watch-and-dark-vessels/09_gfw_workbench
+        title: 09 · Bring your Global Fishing Watch export
   - file: projects/stac-browser/index
     title: STAC-Browser - Discover assets without reading pixels
+    sections:
+    - file: courses/stac-browser/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/stac-browser/01_launch_map
+        title: 1 · Launch the map
+      - file: courses/stac-browser/02_worldpop_search
+        title: 2 · Search WorldPop with browser Python
+      - file: courses/stac-browser/03_other_catalogs_and_export
+        title: 3 · Other catalogs and reusable exports
+      - file: courses/stac-browser/04_discover_download_rustgis
+        title: 4 · Discover, download, and add a layer to RustGIS
+      - file: courses/stac-browser/05_discover_download_geolibre
+        title: 5 · Discover, download, and add a layer to GeoLibre
   - file: projects/eo-satellite-guide/index
     title: EO-Satellite-Guide - From an EO poster to defensible discovery
+    sections:
+    - file: courses/eo-satellite-guide/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/eo-satellite-guide/01_constellation_poster
+        title: 01 · Explore the global constellation
+      - file: courses/eo-satellite-guide/02_sensor_comparison
+        title: 02 · Ask the catalog a scientific question
+      - file: courses/eo-satellite-guide/03_hyperspectral_land
+        title: 03 · Hyperspectral land and coastal systems
+      - file: courses/eo-satellite-guide/04_orbits_and_resolution
+        title: 04 · Orbits, cadence and resolution
+      - file: courses/eo-satellite-guide/05_observation_to_public_health
+        title: 05 · From an observation to a public-health question
+      - file: courses/eo-satellite-guide/06_knowledge_graph_and_curation
+        title: 06 · Curate evidence and connect the knowledge graph
+      - file: courses/eo-satellite-guide/07_research_to_stac
+        title: 07 · Research question → measurement → STAC
+      - file: courses/eo-satellite-guide/08_swaths_orbits_study_area
+        title: 08 · Research question, study area, swath and sampling
+  - file: projects/nasa-arset-experiments/index
+    title: NASA-ARSET-Experiments - Choose an Earth observation before choosing an
+      index
+    sections:
+    - file: courses/nasa-arset-experiments/index
+      title: Complete source course and requirements
 - caption: AI & human decisions
   chapters:
   - file: projects/ai-agents-and-orchestrator-six-thinking-hats/index
     title: AI-Agents-and-Orchestrator-Six-Thinking-Hats - Route perspectives before
       synthesis
+    sections:
+    - file: courses/ai-agents-and-orchestrator-six-thinking-hats/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/ai-agents-and-orchestrator-six-thinking-hats/00_six_thinking_hats_foundations
+        title: 'Notebook 00 — Six Thinking Hats: concepts, context, and global health
+          applications'
+      - file: courses/ai-agents-and-orchestrator-six-thinking-hats/01_six_hats_agents
+        title: Lab 1 — Build and run the Six Thinking Hats agents
+      - file: courses/ai-agents-and-orchestrator-six-thinking-hats/02_orchestrator_lab
+        title: Lab 2 — Orchestrate the six perspectives and look for the whole elephant
+      - file: courses/ai-agents-and-orchestrator-six-thinking-hats/03_backend_adapter
+        title: Lab 3 — Swap in a real model backend safely
   - file: projects/geospatial-research-awareness-radar/index
     title: Geospatial-Research-Awareness-Radar - Rank leads without endorsing claims
+    sections:
+    - file: courses/geospatial-research-awareness-radar/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/geospatial-research-awareness-radar/00_profile_and_queries
+        title: 'Geospatial Research Radar - 00: profile and query design'
+      - file: courses/geospatial-research-awareness-radar/01_morning_scan
+        title: 'Geospatial Research Radar - 01: morning scan'
+      - file: courses/geospatial-research-awareness-radar/02_one_page_report
+        title: 'Geospatial Research Radar - 02: one-page report'
+      - file: courses/geospatial-research-awareness-radar/03_web_index_bridge
+        title: 'Geospatial Research Radar - 03: optional web/social index bridge'
   - file: projects/custom-gpt-six-thinking-hats/index
     title: Custom-GPT-Six-Thinking-Hats - Validate a structured conversation
+    sections:
+    - file: courses/custom-gpt-six-thinking-hats/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/custom-gpt-six-thinking-hats/01_six_thinking_hats_method
+        title: 01 — Frame a decision and learn the schema
+      - file: courses/custom-gpt-six-thinking-hats/02_prompt_and_capture
+        title: 02 — Prompt, capture, and save one decision
+      - file: courses/custom-gpt-six-thinking-hats/03_render_mind_map
+        title: 03 — Reopen and visualize your decision
+      - file: courses/custom-gpt-six-thinking-hats/04_global_health_example
+        title: 04 — Build the supplied graphic, one perspective at a time
+      - file: courses/custom-gpt-six-thinking-hats/05_export_and_share
+        title: 05 — Download and share your saved decision
+      - file: courses/custom-gpt-six-thinking-hats/06_purple_hat_orchestrator
+        title: 06 — Author a Purple Hat synthesis
   - file: projects/geolibre-geoai/index
     title: GeoLibre-GeoAI - Check a spatial holdout
+    sections:
+    - file: courses/geolibre-geoai/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/geolibre-geoai/00_geolibre_quickstart
+        title: 00 — GeoLibre quickstart in JupyterLite
+      - file: courses/geolibre-geoai/01_worldpop_h3
+        title: 01 — WorldPop + H3 population exploration
+      - file: courses/geolibre-geoai/02_census_geoai_counties
+        title: 02 — U.S. Census counties + browser GeoAI clustering
+      - file: courses/geolibre-geoai/03_earth_observation_geoai
+        title: '03 — Earth observation GeoAI: Major TOM + NASA GIBS'
+      - file: courses/geolibre-geoai/04_chirps_climate
+        title: 04 — CHIRPS v3 climate raster in GeoLibre
+      - file: courses/geolibre-geoai/05_h3_earthquake_geoai
+        title: 05 — Live USGS earthquakes → H3 → anomaly detection
+      - file: courses/geolibre-geoai/06_geoai_compatibility
+        title: '06 — GeoAI compatibility: JupyterLite vs full GeoAI'
+      - file: courses/geolibre-geoai/07_stac_browser_catalogs
+        title: 07 — Discovering STAC catalogs from browser-native notebooks
+      - file: courses/geolibre-geoai/08_stac_geoai_footprints
+        title: 08 — STAC search → GeoAI feature engineering → GeoLibre
+      - file: courses/geolibre-geoai/09_geolibre_demo_recommender
+        title: 09 — GeoLibre demos → a GeoAI discovery assistant
+      - file: courses/geolibre-geoai/10_sister_cities_graph_geoai
+        title: 10 — Sister Cities demo → graph GeoAI
+      - file: courses/geolibre-geoai/11_wildfire_stac_triage
+        title: 11 — Wildfire demo → GeoAI triage → Sentinel-2 STAC
+      - file: courses/geolibre-geoai/12_astra_spatial_copilot
+        title: '12 — Astra spatial copilot: question → plan → map'
+      - file: courses/geolibre-geoai/13_astra_vision_change
+        title: '13 — Astra vision + GeoAI: explain a change map'
+      - file: courses/geolibre-geoai/14_astra_terrain_3d
+        title: 14 — 3D terrain reasoning with Astra and GeoLibre
+      - file: courses/geolibre-geoai/15_astra_network_accessibility
+        title: '15 — Astra tools: network accessibility and uncertainty'
+      - file: courses/geolibre-geoai/16_sea_level_rise_sat_scan_geoai
+        title: '16 — Sea-level-rise risk: SaTScan clusters → GeoAI story map'
+      - file: courses/geolibre-geoai/17_rewiring_global_health_six_hats
+        title: 17 — Rewiring global health in the age of GeoAI
+      - file: courses/geolibre-geoai/18_ollama_geolibre_setup
+        title: 18 — Local Ollama and GeoLibre's native assistant
+      - file: courses/geolibre-geoai/19_ollama_chat_to_map
+        title: 19 — From local chat to a checked map plan
+      - file: courses/geolibre-geoai/20_ollama_evidence_review
+        title: 20 — Follow-up chat, evidence and human judgment
+      - file: courses/geolibre-geoai/21_cholera_geoai_first_steps
+        title: 21 — From John Snow’s map to GeoAI
+      - file: courses/geolibre-geoai/22_rustgis_geoai_bridge
+        title: 22 — One GeoAI result, GeoLibre and RustGIS
   - file: projects/gpt-6-astra-geospatial/index
     title: GPT-6-Astra-Geospatial - Evaluate claims against a contract
+    sections:
+    - file: courses/gpt-6-astra-geospatial/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/gpt-6-astra-geospatial/01_spatial_contracts
+        title: 01 · Spatial contracts and a tiny city
+      - file: courses/gpt-6-astra-geospatial/02_buildings_population
+        title: 02 · Buildings, 3D massing and population
+      - file: courses/gpt-6-astra-geospatial/03_network_access
+        title: 03 · Walking access and facility siting
+      - file: courses/gpt-6-astra-geospatial/04_heat_raster
+        title: 04 · Urban heat and greening scenarios
+      - file: courses/gpt-6-astra-geospatial/05_flood_disruption
+        title: 05 · Flood disruption and network resilience
+      - file: courses/gpt-6-astra-geospatial/06_mobility_exposure
+        title: 06 · Mobility and shared-setting exposure
+      - file: courses/gpt-6-astra-geospatial/07_sensor_assimilation
+        title: 07 · Sensor streams and uncertainty
+      - file: courses/gpt-6-astra-geospatial/08_world_model
+        title: 08 · Learn a tiny urban world model
+      - file: courses/gpt-6-astra-geospatial/09_astra_spatial_eval
+        title: 09 · Measure Astra spatial reasoning
+      - file: courses/gpt-6-astra-geospatial/10_rust_wasm
+        title: 10 · Rust/WASM spatial computation
+      - file: courses/gpt-6-astra-geospatial/11_raster_change
+        title: 11 · Raster change, clouds and missing evidence
+      - file: courses/gpt-6-astra-geospatial/12_equitable_siting
+        title: 12 · Facility siting and equity tradeoffs
+      - file: courses/gpt-6-astra-geospatial/13_spatial_benchmark
+        title: 13 · Repeatable Astra spatial evaluation
+      - file: courses/gpt-6-astra-geospatial/14_maplibre_3d
+        title: 14 · Geographic building scenes with MapLibre
+      - file: courses/gpt-6-astra-geospatial/15_deckgl_layers
+        title: 15 · Layered 3D access maps with deck.gl
+      - file: courses/gpt-6-astra-geospatial/16_terrain_3d
+        title: 16 · Terrain and water-level exploration in 3D
 - caption: Emergency operations
   chapters:
   - file: projects/world-monitor-prototype/index
     title: World-Monitor-Prototype - Put freshness in the situation report
+    sections:
+    - file: courses/world-monitor-prototype/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/world-monitor-prototype/00_Start_Here
+        title: 00 · A shared picture, an inspectable analysis
+      - file: courses/world-monitor-prototype/01_Sandbox_Catalog
+        title: 01 · Sources, schemas and provenance
+      - file: courses/world-monitor-prototype/02_Cross_Domain_Monitor
+        title: 02 · Build an EOC common operating picture
+      - file: courses/world-monitor-prototype/03_2D_Maps
+        title: 03 · Make a map that answers a question
+      - file: courses/world-monitor-prototype/04_3D_Globe
+        title: 04 · A globe for context, 3D columns for comparison
+      - file: courses/world-monitor-prototype/05_Spatial_Epidemiology
+        title: 05 · Time, place and the denominator
+      - file: courses/world-monitor-prototype/06_Data_Quality
+        title: 06 · Missing data is part of the picture
+      - file: courses/world-monitor-prototype/07_EOC_Planning
+        title: 07 · Compare priorities and expose assumptions
+      - file: courses/world-monitor-prototype/08_Situation_Reports
+        title: 08 · Publish a reproducible situation report
+      - file: courses/world-monitor-prototype/09_Live_Data
+        title: 09 · Connect a public feed without hiding failures
+      - file: courses/world-monitor-prototype/10_Teaching_and_Sharing
+        title: 10 · Teach, adapt and share the field guide
+      - file: courses/world-monitor-prototype/11_Capstone
+        title: '11 · Tabletop: the next operational period'
   - file: projects/worldview/index
     title: WorldView - Allocate supplies with visible constraints
+    sections:
+    - file: courses/worldview/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/worldview/00_start_here
+        title: 00 · See, calculate, explain
+      - file: courses/worldview/01_live_seismic
+        title: 01 · Live seismic data, honest freshness
+      - file: courses/worldview/02_worldview_dashboard
+        title: 02 · Read the common operating picture
+      - file: courses/worldview/03_build_your_own_layer
+        title: 03 · Build a portable geospatial layer
+      - file: courses/worldview/04_eoc_response
+        title: '04 · EOC: proximity, capacity, and a briefing'
+      - file: courses/worldview/05_spatial_epidemiology
+        title: '05 · Outbreak investigation: counts, rates, uncertainty'
+      - file: courses/worldview/06_health_access
+        title: '06 · Global health: access when roads close'
+      - file: courses/worldview/07_3d_scenes
+        title: 07 · 3D scenes, extrusion, and time
+      - file: courses/worldview/08_astra_geospatial_copilot
+        title: '08 · Astra: evidence in, reviewable briefing out'
+      - file: courses/worldview/09_raster_change
+        title: 09 · Raster change and multimodal interpretation
+      - file: courses/worldview/10_capstone
+        title: '10 · Capstone: an evidence-based shift handoff'
   - file: projects/osiris/index
     title: Osiris - Turn signals into a reviewed brief
+    sections:
+    - file: courses/osiris/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/osiris/00_start_here
+        title: 00 Â· Enter the virtual EOC
+      - file: courses/osiris/01_osiris_layer_atlas
+        title: 01 Â· OSIRIS layer atlas
+      - file: courses/osiris/02_2d_common_picture
+        title: 02 Â· 2D common operating picture
+      - file: courses/osiris/03_3d_terrain_scene
+        title: 03 Â· 3D scene and vertical scale
+      - file: courses/osiris/04_hazards_and_feeds
+        title: 04 Â· Hazards and public feeds
+      - file: courses/osiris/05_aviation_maritime_logistics
+        title: 05 Â· Aviation, maritime and logistics
+      - file: courses/osiris/06_cameras_and_verification
+        title: 06 Â· Camera verification desk
+      - file: courses/osiris/07_health_and_access
+        title: 07 Â· Health access and population
+      - file: courses/osiris/08_priorities_and_sitrep
+        title: 08 Â· Priorities and situation report
+      - file: courses/osiris/09_cockpit_and_beyond
+        title: 09 Â· Cockpit and beyond the VEOC
+      - file: courses/osiris/10_veoc_mission_control
+        title: 10 · VEOC mission control dashboard
 - caption: Browser GIS
   chapters:
   - file: projects/rustgis/index
     title: RustGIS - Export a small layer with a contract
+    sections:
+    - file: courses/rustgis/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/rustgis/00_start_here
+        title: '0 · Start here: the RustGIS field guide'
+      - file: courses/rustgis/01_explore_geojson
+        title: 1 · Read a GeoJSON layer like an analyst
+      - file: courses/rustgis/02_map_links
+        title: 2 · One dataset, three spatial views
+      - file: courses/rustgis/03_rustgis_bridge
+        title: 3 · Make a reproducible RustGIS handoff
+      - file: courses/rustgis/04_stac_worldpop
+        title: '4 · WorldPop STAC: from discovery to RustGIS'
+      - file: courses/rustgis/05_stac_catalogs
+        title: 5 · Compare STAC catalog choices
+      - file: courses/rustgis/06_climate_scenarios
+        title: 6 · Climate scenario table from a sister repository
+      - file: courses/rustgis/07_ollama_assistance
+        title: 7 · AI assistance with Ollama and RustGIS
+      - file: courses/rustgis/08_globe_and_scene
+        title: 8 · Globe, 3D map, and 3D scene
+      - file: courses/rustgis/09_capstone
+        title: '9 · Capstone: a defensible STAC-to-RustGIS brief'
+      - file: courses/rustgis/native/04_native_rustgis
+        title: 'Native RustGIS: render, buffer, inspect'
   - file: projects/pyscript/index
     title: PyScript - One data contract, two browser runtimes
+    sections:
+    - file: courses/pyscript/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/pyscript/01-welcome
+        title: Welcome to browser geospatial Python
+      - file: courses/pyscript/02-explore-data
+        title: One dataset, several views
+      - file: courses/pyscript/03-author-an-app
+        title: Read a working PyScript app
+      - file: courses/pyscript/04-d3-hourly-bars
+        title: 'D3 hourly bars: Python rows to SVG'
+      - file: courses/pyscript/05-d3-projected-points
+        title: D3 projected NYC points
+      - file: courses/pyscript/06-d3plus-neighborhood-bars
+        title: D3plus neighborhood bars
+      - file: courses/pyscript/07-d3plus-neighborhood-treemap
+        title: D3plus neighborhood treemap
 - caption: Related browser projects
   chapters:
   - file: projects/jupytergis-storymap-gaborone-tb-abm/index
     title: JupyterGIS-StoryMap-Gaborone-TB-ABM - Storytelling needs a residual check
+    sections:
+    - file: courses/jupytergis-storymap-gaborone-tb-abm/index
+      title: Complete source course and requirements
   - file: projects/cross-border-ebola-risk-mapping-prototype/index
     title: Cross-Border-Ebola-Risk-Mapping-Prototype - Sensitivity before a risk label
+    sections:
+    - file: courses/cross-border-ebola-risk-mapping-prototype/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/00_repository_orientation
+        title: Repository orientation
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/01_data_inventory_gis_folder
+        title: GIS folder data inventory
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/02_area_of_interest_border_corridor
+        title: Area of interest and border corridor
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/03_standardize_layers
+        title: Layer standardization
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/04_feature_engineering_interface_layers
+        title: Human-animal interface features
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/05_bat_reservoir_enm_elapid
+        title: Bat reservoir ENM with elapid
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/06_importation_pressure_mobility_corridors
+        title: Importation pressure and mobility corridors
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/07_facility_catchment_vulnerability
+        title: Facility and catchment vulnerability
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/08_deterministic_risk_index
+        title: Deterministic risk index
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/09_stochastic_scenarios_uncertainty
+        title: Stochastic scenarios and uncertainty
+      - file: courses/cross-border-ebola-risk-mapping-prototype/native/notebooks/10_validation_sensitivity_export
+        title: Validation, sensitivity, and export
+      - file: courses/cross-border-ebola-risk-mapping-prototype/00_jupyterlite_synthetic_risk_demo
+        title: JupyterLite synthetic risk demo
+      - file: courses/cross-border-ebola-risk-mapping-prototype/01_jupyterlite_weight_sensitivity
+        title: JupyterLite weight sensitivity demo
   - file: projects/global-informal-settlements-storymap/index
     title: global-informal-settlements-storymap - A settlement label needs evidence
+    sections:
+    - file: courses/global-informal-settlements-storymap/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/global-informal-settlements-storymap/notebooks/00_Welcome
+        title: Global Informal Settlements Storymap
+      - file: courses/global-informal-settlements-storymap/notebooks/01_Data_Catalog
+        title: Data catalog and coverage
+      - file: courses/global-informal-settlements-storymap/notebooks/02_Normalize_Settlements
+        title: Normalize settlement geometry
+      - file: courses/global-informal-settlements-storymap/notebooks/03_Global_Index
+        title: Global country index
+      - file: courses/global-informal-settlements-storymap/notebooks/04_Country_Storymap_Builder
+        title: Country storymap builder
+      - file: courses/global-informal-settlements-storymap/notebooks/05_Quality_Assurance
+        title: Quality assurance
+      - file: courses/global-informal-settlements-storymap/notebooks/06_Add_New_Source
+        title: Add a new source
+      - file: courses/global-informal-settlements-storymap/notebooks/08_GHSL_Tour_and_AI_Chat
+        title: GHSL Global Tour + AI Chat
 - caption: Keep exploring
   chapters:
+  - file: notebook-library
   - file: contributor-guide
   - file: references
   - file: visual-provenance

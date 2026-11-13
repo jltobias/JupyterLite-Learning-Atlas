@@ -1,0 +1,297 @@
+{
+  "layerTree": [
+    "87db2a43-45cf-413a-9684-d85cb3bce3e3",
+    "e00ac7d3-f807-4dc1-a9a4-74f82dae949f",
+    "7359439e-08b1-4749-998f-1f3c52312eaf",
+    "889004a4-aca6-46d3-a5c6-e68765a4e93b",
+    "7a8e8000-4bc2-466a-8541-421382ea69fa",
+    "c2b37ade-e8a5-4e63-8fda-da0879e1a3bf",
+    "58fc3b7d-e49f-4c5c-b7b2-bfc62ba83634",
+    "0538f264-6f05-4968-89a2-747783654566",
+    "faeb3156-4e3c-49d5-8074-8cfb4b03c09f",
+    "b550764b-502b-485c-a887-bf398d665002"
+  ],
+  "layers": {
+    "87db2a43-45cf-413a-9684-d85cb3bce3e3": {
+      "name": "OpenStreetMap.Mapnik Layer",
+      "parameters": {
+        "opacity": 1.0,
+        "source": "5b4bc317-83f0-4f46-8844-0b898467d9dd"
+      },
+      "type": "RasterLayer",
+      "visible": true
+    },
+    "e00ac7d3-f807-4dc1-a9a4-74f82dae949f": {
+      "filters": {
+        "appliedFilters": [],
+        "logicalOp": "all"
+      },
+      "name": "Illustrative TB model neighborhoods",
+      "parameters": {
+        "opacity": 0.65,
+        "source": "fed1c727-4846-46d4-8103-741dce893e5b",
+        "symbologyState": {}
+      },
+      "type": "VectorLayer",
+      "visible": true
+    },
+    "7359439e-08b1-4749-998f-1f3c52312eaf": {
+      "filters": {
+        "appliedFilters": [],
+        "logicalOp": "all"
+      },
+      "name": "TB diagnostic and care sites",
+      "parameters": {
+        "opacity": 1.0,
+        "source": "ef2d2c65-ad72-48ba-a2ad-d7ebb9bdb770",
+        "symbologyState": {}
+      },
+      "type": "VectorLayer",
+      "visible": true
+    },
+    "889004a4-aca6-46d3-a5c6-e68765a4e93b": {
+      "filters": {
+        "appliedFilters": [],
+        "logicalOp": "all"
+      },
+      "name": "Illustrative daily mobility flows",
+      "parameters": {
+        "opacity": 0.6,
+        "source": "585b528c-9dbc-4571-beeb-45ddb65d4bec",
+        "symbologyState": {}
+      },
+      "type": "VectorLayer",
+      "visible": false
+    },
+    "7a8e8000-4bc2-466a-8541-421382ea69fa": {
+      "filters": {
+        "appliedFilters": [],
+        "logicalOp": "all"
+      },
+      "name": "Intervention scenario points",
+      "parameters": {
+        "opacity": 1.0,
+        "source": "d3fc338a-5d57-4390-8666-05066a6f34ca",
+        "symbologyState": {}
+      },
+      "type": "VectorLayer",
+      "visible": true
+    },
+    "c2b37ade-e8a5-4e63-8fda-da0879e1a3bf": {
+      "name": "01 Baseline burden",
+      "parameters": {
+        "content": {
+          "contentMode": "map",
+          "image": "",
+          "markdown": "Use this opening segment for baseline ABM results: incidence, prevalence, infectious person-days, or missed diagnoses by neighborhood. Current values are placeholders for demonstration.",
+          "title": "Baseline modeled burden"
+        },
+        "extent": [
+          2735971.6637259363,
+          -2840207.800078202,
+          2753971.6637259363,
+          -2826207.800078202
+        ],
+        "layerOverride": [],
+        "transition": {
+          "time": 2.0,
+          "type": "smooth"
+        },
+        "zoom": 11.4
+      },
+      "type": "StorySegmentLayer",
+      "visible": true
+    },
+    "58fc3b7d-e49f-4c5c-b7b2-bfc62ba83634": {
+      "name": "02 Targeted screening",
+      "parameters": {
+        "content": {
+          "contentMode": "map",
+          "image": "",
+          "markdown": "This segment highlights possible screening locations in neighborhoods where the model identifies concentrated transmission or longer diagnostic delays.",
+          "title": "Targeted active case finding"
+        },
+        "extent": [
+          2741248.0870357803,
+          -2838010.6728501725,
+          2747248.0870357803,
+          -2833010.6728501725
+        ],
+        "layerOverride": [],
+        "transition": {
+          "time": 2.0,
+          "type": "smooth"
+        },
+        "zoom": 13.2
+      },
+      "type": "StorySegmentLayer",
+      "visible": true
+    },
+    "0538f264-6f05-4968-89a2-747783654566": {
+      "name": "03 Diagnostic delay",
+      "parameters": {
+        "content": {
+          "contentMode": "map",
+          "image": "",
+          "markdown": "A diagnostic turnaround scenario can be narrated through changes in time-to-treatment and onward transmission. Connect this segment to notebooks that compare baseline and faster-diagnosis runs.",
+          "title": "Diagnostic turnaround scenario"
+        },
+        "extent": [
+          2742827.8860964747,
+          -2835011.826923287,
+          2747827.8860964747,
+          -2831011.826923287
+        ],
+        "layerOverride": [],
+        "transition": {
+          "time": 2.0,
+          "type": "smooth"
+        },
+        "zoom": 13.4
+      },
+      "type": "StorySegmentLayer",
+      "visible": true
+    },
+    "faeb3156-4e3c-49d5-8074-8cfb4b03c09f": {
+      "name": "04 Cross-border coordination",
+      "parameters": {
+        "content": {
+          "contentMode": "map",
+          "image": "",
+          "markdown": "For agents who move across the Tlokweng corridor, scenarios can test continuity of care, loss to follow-up, and detection of imported or exported infections.",
+          "title": "Cross-border and mobile-population coordination"
+        },
+        "extent": [
+          2750176.84790597,
+          -2837606.420074587,
+          2757176.84790597,
+          -2832606.420074587
+        ],
+        "layerOverride": [],
+        "transition": {
+          "time": 2.0,
+          "type": "smooth"
+        },
+        "zoom": 13.1
+      },
+      "type": "StorySegmentLayer",
+      "visible": true
+    },
+    "b550764b-502b-485c-a887-bf398d665002": {
+      "name": "05 Scenario comparison",
+      "parameters": {
+        "content": {
+          "contentMode": "map",
+          "image": "",
+          "markdown": "Use this final view as a spatial summary for notebook tables and plots: percent reduction in cases, diagnoses accelerated, treatment starts, and equity across neighborhoods.",
+          "title": "Scenario comparison dashboard companion"
+        },
+        "extent": [
+          2737695.2404160923,
+          -2837836.040727725,
+          2753695.2404160923,
+          -2825836.040727725
+        ],
+        "layerOverride": [],
+        "transition": {
+          "time": 2.0,
+          "type": "smooth"
+        },
+        "zoom": 11.8
+      },
+      "type": "StorySegmentLayer",
+      "visible": true
+    }
+  },
+  "metadata": {
+    "generated_by": "ChatGPT",
+    "note": "Illustrative story maps; replace placeholder GeoJSON with repository model outputs where available."
+  },
+  "options": {
+    "bearing": 0.0,
+    "extent": [
+      2735971.6637259363,
+      -2840207.800078202,
+      2753971.6637259363,
+      -2826207.800078202
+    ],
+    "latitude": -24.6532,
+    "longitude": 24.6585,
+    "pitch": 0.0,
+    "projection": "EPSG:3857",
+    "zoom": 11.2
+  },
+  "schemaVersion": "0.6.0",
+  "sources": {
+    "5b4bc317-83f0-4f46-8844-0b898467d9dd": {
+      "name": "OpenStreetMap.Mapnik",
+      "parameters": {
+        "attribution": "(C) OpenStreetMap contributors",
+        "bounds": [],
+        "htmlAttribution": "",
+        "httpHeaders": "",
+        "interpolate": false,
+        "maxZoom": 19.0,
+        "minZoom": 0.0,
+        "provider": "OpenStreetMap",
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "urlParameters": {},
+        "useProxy": false
+      },
+      "type": "RasterSource"
+    },
+    "fed1c727-4846-46d4-8103-741dce893e5b": {
+      "name": "Illustrative TB model neighborhoods Source",
+      "parameters": {
+        "httpHeaders": "",
+        "path": "data/gaborone_tb_neighborhoods.geojson",
+        "useProxy": false
+      },
+      "type": "GeoJSONSource"
+    },
+    "ef2d2c65-ad72-48ba-a2ad-d7ebb9bdb770": {
+      "name": "TB diagnostic and care sites Source",
+      "parameters": {
+        "httpHeaders": "",
+        "path": "data/gaborone_tb_facilities.geojson",
+        "useProxy": false
+      },
+      "type": "GeoJSONSource"
+    },
+    "585b528c-9dbc-4571-beeb-45ddb65d4bec": {
+      "name": "Illustrative daily mobility flows Source",
+      "parameters": {
+        "httpHeaders": "",
+        "path": "data/gaborone_tb_commuting_flows.geojson",
+        "useProxy": false
+      },
+      "type": "GeoJSONSource"
+    },
+    "d3fc338a-5d57-4390-8666-05066a6f34ca": {
+      "name": "Intervention scenario points Source",
+      "parameters": {
+        "httpHeaders": "",
+        "path": "data/gaborone_tb_interventions.geojson",
+        "useProxy": false
+      },
+      "type": "GeoJSONSource"
+    }
+  },
+  "stories": {
+    "7f6bd0f0-4334-427d-be12-b7185e37b1f7": {
+      "presentationBgColor": "#171B2C",
+      "presentationTextColor": "#E6EDF7",
+      "showGradient": true,
+      "storySegments": [
+        "c2b37ade-e8a5-4e63-8fda-da0879e1a3bf",
+        "58fc3b7d-e49f-4c5c-b7b2-bfc62ba83634",
+        "0538f264-6f05-4968-89a2-747783654566",
+        "faeb3156-4e3c-49d5-8074-8cfb4b03c09f",
+        "b550764b-502b-485c-a887-bf398d665002"
+      ],
+      "storyType": "guided",
+      "title": "Gaborone TB ABM: intervention scenarios"
+    }
+  },
+  "viewState": {}
+}

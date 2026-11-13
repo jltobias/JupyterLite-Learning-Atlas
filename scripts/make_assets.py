@@ -51,14 +51,17 @@ def make_repository_overview():
     data=json.loads((ROOT/'catalog/repositories.json').read_text(encoding='utf-8'))['repositories']
     counts={}
     for r in data:counts[r['theme']]=counts.get(r['theme'],0)+1
-    b='<rect width="960" height="445" rx="20" fill="#f5f4ed"/><text x="35" y="45" font-size="25" fill="#153740">A connected collection, with distinct questions.</text>'
+    height=110+len(counts)*48
+    scale=500/max(counts.values())
+    b=f'<rect width="960" height="{height}" rx="20" fill="#f5f4ed"/><text x="35" y="45" font-size="25" fill="#153740">A connected collection, with distinct questions.</text>'
     for i,(theme,n) in enumerate(counts.items()):
         y=80+i*48
-        b+=f'<text x="35" y="{y+21}" font-size="16" fill="#153740">{escape(theme)}</text><rect x="345" y="{y}" width="{n*40}" height="31" rx="4" fill="#217a6d"/><text x="{355+n*40}" y="{y+21}" font-size="16" fill="#153740">{n}</text>'
+        b+=f'<text x="35" y="{y+21}" font-size="16" fill="#153740">{escape(theme)}</text><rect x="345" y="{y}" width="{n*scale}" height="31" rx="4" fill="#217a6d"/><text x="{355+n*scale}" y="{y+21}" font-size="16" fill="#153740">{n}</text>'
     prefixed=sum(r['category']=='jupyterlite' for r in data)
     related=sum(r['category']=='related' for r in data)
-    b+=f'<text x="35" y="410" font-size="13" fill="#53676b">{len(data)} public project chapters · {prefixed} core + {related} related · catalog metadata, 2026-11-02</text>'
-    save('repository-overview.svg','Repository overview by learning theme',f'Actual curated catalog metadata, not synthetic observations. Counts group {len(data)} public project chapters into {len(counts)} themes.',b,960,445)
+    inspected=max(r['inspected_on'] for r in data)
+    b+=f'<text x="35" y="{height-35}" font-size="13" fill="#53676b">{len(data)} public project chapters · {prefixed} core + {related} related · catalog metadata, {inspected}</text>'
+    save('repository-overview.svg','Repository overview by learning theme',f'Actual curated catalog metadata, not synthetic observations. Counts group {len(data)} public project chapters into {len(counts)} themes.',b,960,height)
 
 
 if __name__=='__main__':main()

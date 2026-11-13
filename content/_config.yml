@@ -14,10 +14,12 @@ repository:
 html:
   use_repository_button: true
   use_edit_page_button: true
-  extra_navbar: 'Original teaching content CC BY 4.0 · code MIT'
-  extra_footer: 'Synthetic teaching examples. Download notebook edits before clearing browser storage.'
+  extra_navbar: 'Original Atlas content CC BY 4.0 · code MIT · source-course licenses vary'
+  extra_footer: 'See each course for data, runtime and rights. Download notebook edits before clearing browser storage.'
   home_page_in_navbar: true
 sphinx:
+  local_extensions:
+    atlas_navigation: _ext
   config:
     # Execution is provided by the matching JupyterLite notebook, so the
     # unused Thebe initializer (duplicated by this v1 stack) is excluded.
@@ -31,10 +33,14 @@ sphinx:
       - sphinx.ext.intersphinx
       - sphinx_design
       - sphinx_book_theme
+      - atlas_navigation
+    templates_path: ["_templates"]
     html_static_path: ["_static"]
     html_js_files: ["atlas-launch.js"]
     html_css_files: ["atlas-book.css"]
     html_theme_options:
       show_navbar_depth: 1
+      collapse_navbar: true
+      max_navbar_depth: 3
     html_show_sourcelink: true
     nb_execution_mode: "off"

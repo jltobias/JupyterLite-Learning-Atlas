@@ -1,0 +1,128 @@
+# JupyterLite HIV Drug Resistance Maps
+
+Browser-based, reproducible examples for learning the fundamentals of **HIV drug resistance (HIVDR)** and mapping **transmitted HIV drug resistance (TDR)** using public data associated with the Stanford HIV Drug Resistance Database (HIVDB).
+
+## Launch the live JupyterLite notebooks
+
+Open the browser-based notebook environment here:
+
+**[Launch JupyterLite](https://jltobias.github.io/JupyterLite-HIVDB-Drug-Resistance-Maps/)**
+
+No local Python or Jupyter installation is required once the GitHub Pages deployment is active.
+
+### Fresh notebooks after each deployment
+
+JupyterLite stores edited notebooks in browser storage, and a locally modified copy can otherwise take precedence over a newer server copy. This repository therefore gives each GitHub Pages deployment a new JupyterLite content-storage namespace based on the deployment commit SHA and explicitly disables service-worker caching. After a successful Pages deployment, reopening the launch link should show the notebook set published by that deployment without requiring a manual browser-cache clear.
+
+Because browser-local edits belong to the deployment in which they were created, edits from an older deployment will not automatically appear in a newer deployment. Export or download any work you want to preserve before moving to a newly deployed version. If the browser still shows stale content, use **Help → Clear Browser Data** in JupyterLite as a manual reset.
+
+## What this repository does
+
+- introduces HIV drug-resistance fundamentals with a visual, citation-rich Notebook 00;
+- builds a JupyterLite site that runs entirely in the browser;
+- downloads and normalizes the openly published 2015 HIVDB/PLOS surveillance study table (287 studies, 111 countries, 50,870 ART-naive people) as a reproducible baseline;
+- creates country-level coverage and sample-size-weighted TDR summaries from **single-country studies**;
+- maps overall, NRTI, NNRTI, and PI TDR with Plotly choropleths;
+- adds an MCH-centered pediatric HIVDR case study linking presentation-derived pediatric DTG-resistance examples to Stanford HIVDB mutation-interpretation concepts;
+- provides an experimental, low-request Playwright network-capture utility for discovering the current HIVDB surveillance map's machine-readable payload without mass crawling;
+- provides a generic importer for a current HIVDB CSV/JSON/XLS/XLSX export once a stable export/API URL is documented.
+
+> **Important:** Stanford HIVDB's Sierra web service is a sequence interpretation service. It should not be treated as the source of country-level surveillance prevalence. This repository keeps sequence interpretation and epidemiologic surveillance data separate.
+
+## Data status
+
+The reproducible default dataset is the public-domain supporting spreadsheet from:
+
+> Rhee S-Y, Blanco JL, Jordan MR, et al. (2015). *Geographic and Temporal Trends in the Molecular Epidemiology and Genetic Mechanisms of Transmitted HIV-1 Drug Resistance: An Individual-Patient- and Sequence-Level Meta-Analysis.* PLOS Medicine 12(4): e1001810. https://doi.org/10.1371/journal.pmed.1001810
+
+HIVDB's current homepage describes a larger Transmitted Resistance Surveillance Map with published sequences from **more than 95,000 ART-naive persons in more than 120 countries**. During repository preparation, no stable documented download/API endpoint for that map was found in HIVDB's public documentation. For that reason, this project does **not** pretend that the 2015 snapshot is the current database.
+
+See [DATA_SOURCES.md](DATA_SOURCES.md), [METHODOLOGY.md](METHODOLOGY.md), and the [optional patient-level input schema](docs/schema.md).
+
+## JupyterLite notebooks
+
+The `content/` directory contains:
+
+0. **00_hiv_drug_resistance_fundamentals.ipynb** — learn the biology, vocabulary, drug classes, mutation notation, resistance categories, and Stanford HIVDB interpretation concepts before working with surveillance data.
+1. **01_data_coverage.ipynb** — inspect provenance, country coverage, sample sizes, and missingness.
+2. **02_global_tdr_choropleth.ipynb** — create a global choropleth of overall or drug-class TDR.
+3. **03_drug_class_and_time.ipynb** — compare NRTI/NNRTI/PI patterns and explore study-year distributions.
+4. **04_pediatric_hivdr_mch_case_study.ipynb** — explore pediatric HIVDR in the dolutegravir era using an MCH-centered case study, presentation-derived CADRE examples, synthetic pediatric mutation profiles, and Stanford HIVDB interpretation concepts. The MCH presentation is credited to Spencer Lloyd, MPH, MD; Laura Broyles, MD; and Jason Bacha, MD.
+5. **05_mutation_geographic_clusters.ipynb** — screen patient-level mutation prevalence by geography and define a spatial-clustering analysis.
+6. **06_resistance_stratification.ipynb** — drill down by subtype, ART experience, acquired/transmitted status, mutation, and drug class.
+7. **07_subtype_standardized_geography.ipynb** — compare crude and directly subtype-standardized geographic estimates.
+8. **08_nnrtI_to_dtg_geographic_history.ipynb** — compare earlier NNRTI resistance with later DTG resistance using paired country-time observations.
+
+Notebook 00 is primarily narrative and visual. Notebooks 01–03 read static CSV files packaged into JupyterLite. Notebook 04 is a self-contained educational case study with synthetic genotype profiles and presentation-derived aggregate examples. Notebooks 05–08 are deliberately conditional templates: the 2015 aggregate snapshot cannot estimate patient-level mutation clusters, subtype-adjusted rates, treatment-stratified resistance, or DTG-era temporal associations. Network retrieval happens during the GitHub Actions build, not in the browser, which avoids CORS and reproducibility problems.
+
+## Local quick start
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+python -m pip install -r requirements-dev.txt
+python scripts/fetch_plos_2015.py --output-dir content/data
+pytest -q
+jupyter lite build --contents content --output-dir dist
+python -m http.server -d dist 8000
+```
+
+Then open `http://localhost:8000`.
+
+## Current HIVDB data: two supported paths
+
+### Preferred: use a documented machine-readable export
+
+If Stanford provides a stable CSV/JSON/XLS/XLSX URL for the current surveillance map:
+
+```bash
+python scripts/fetch_current_hivdb.py \
+  --source-url "https://...official-hivdb-export..." \
+  --output-dir content/data/current
+```
+
+The importer is deliberately schema-tolerant and writes a field-mapping report. Review that report before treating results as analytic data.
+
+### Experimental: discover the map's network payload
+
+The current surveillance map is a JavaScript application. A single-page Playwright capture can record JSON responses and identify candidate records containing country plus TDR/resistance fields:
+
+```bash
+python -m playwright install chromium
+python scripts/capture_current_hivdb.py --output-dir captured_hivdb
+```
+
+This is **discovery**, not a guaranteed stable API. Do not schedule it aggressively. Once a stable response URL/schema is confirmed, use `fetch_current_hivdb.py` and pin the source URL/schema in version control.
+
+## Epidemiologic aggregation rule
+
+For a study that reports several countries but only one combined sample size, assigning the full denominator (or an arbitrary fraction) to each country would bias a country estimate. Therefore:
+
+- all parsed countries are retained in the **coverage** table;
+- only **single-country** studies contribute to sample-size-weighted country prevalence by default;
+- multi-country studies can be added to country prevalence only when country-specific denominators are available.
+
+This is a teaching repository, not a replacement for HIVDB, WHO guidance, or a formal surveillance analysis.
+
+## GitHub Pages
+
+The included workflow builds JupyterLite and deploys it with GitHub Pages. In repository settings, set **Pages → Build and deployment → Source = GitHub Actions**.
+
+Each deployment writes a runtime `jupyter-lite.json` that sets `contentsStorageName` to a value derived from the GitHub commit SHA and sets `enableServiceWorkerCache` to `false`. This prevents browser-local notebook copies from an older deployment from silently overriding newer published notebooks.
+
+## Repository layout
+
+```text
+content/                     JupyterLite notebooks and browser-side helper code
+content/data/                generated normalized CSV files
+scripts/fetch_plos_2015.py   reproducible baseline data fetch + normalization
+scripts/fetch_current_hivdb.py generic current-export importer
+scripts/capture_current_hivdb.py experimental current-map network discovery
+scripts/validate_outputs.py  data validation
+.github/workflows/           CI, JupyterLite Pages deployment, manual discovery
+tests/                       transformation and aggregation tests
+```
+
+## Citation and attribution
+
+Please cite Stanford HIVDB and the source studies used in your analysis. Notebook 04 also cites and attributes the MCH Office Hours presentation *HIV Drug Resistance in MCH Populations* to Spencer Lloyd, MPH, MD; Laura Broyles, MD; and Jason Bacha, MD. The repository's code is MIT licensed; source datasets retain their own terms/licensing. The 2015 PLOS Medicine article and its supporting material are dedicated to the public domain under CC0.

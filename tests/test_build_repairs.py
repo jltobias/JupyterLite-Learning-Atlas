@@ -65,6 +65,14 @@ class BuildRepairs(unittest.TestCase):
                 build.prepare_lite_project(project)
             config=json.loads((project/'jupyter_lite_config.json').read_text())
             self.assertEqual(config['LiteBuildConfig']['ignore_sys_prefix'],['federated_extensions'])
+            from jupyterlite_core.addons.contents import ContentsAddon
+            manager=LiteManager(config=Config(config))
+            source=root/'reviewed';notice=source/'course/notices/pkg/build/index.js.LICENSE.txt'
+            notice.parent.mkdir(parents=True);notice.write_text('required license notice')
+            hidden=source/'.git/config';hidden.parent.mkdir();hidden.write_text('unpublished')
+            paths=list(ContentsAddon(manager).maybe_add_one_path(source))
+            self.assertIn(notice,paths)
+            self.assertNotIn(hidden,paths)
             addon=FederatedExtensionAddon(LiteManager(config=Config(config)),config=Config(config))
             self.assertEqual([p.parent for p in addon.env_extensions(Path(addon.extra_labextensions_path[0]))],[(project/'extensions'/PYODIDE_EXTENSION).resolve()])
             self.assertEqual((project/'jupyter-lite.json').read_bytes(),(ROOT/'jupyter-lite.json').read_bytes())

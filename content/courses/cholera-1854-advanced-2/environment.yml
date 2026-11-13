@@ -1,0 +1,15 @@
+channels:
+  - conda-forge
+dependencies:
+  - folium
+  - jinja2
+  - osmnx=1.*
+  - matplotlib
+  - pandas=1.*
+  - geopandas
+  - descartes
+  - shapely
+  - poppler
+  - numpy
+  - scipy
+  - alphashape
