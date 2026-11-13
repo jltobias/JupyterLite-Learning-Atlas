@@ -105,7 +105,7 @@ export async function dataset(state) {
         title: 'Fresno · 2020 whole-tract population', unit: 'people / whole tract', epoch: '2020-04-01 Census',
         source: manifest.credits.join('; '), credit: manifest.credits.join('; '), license: 'US public-domain source data',
         licenseURL: manifest.rights.census, sourceURL: manifest.census_query.url, sourcePath: onehealth + 'tracts.geojson',
-        note: '166 actual tract geometries. POP100 belongs to each entire tract, including portions outside the Fresno sampling box. The 764,468 total is whole-tract population, not bbox population. Column anchors are Census internal points, not buildings.',
+        note: '166 actual tract geometries. POP100 belongs to each entire tract, including portions outside the Fresno sampling box. The 764,468 total is whole-tract population, not bbox population. Column anchors are Census-provided tract centroids (CENTLON/CENTLAT), not buildings.',
         sampling: 'All 166 whole tracts; no area allocation or aggregation in this view.', metadata: manifest};
     }
     const rows = parseCSV(await read(onehealth + 'pixels.csv', 'text'));

@@ -79,9 +79,9 @@
     {
       "id": "fresno-census",
       "title": "Census 2020 TIGERweb tracts and POP100",
-      "credit": "U.S. Census Bureau (2020), [Census2020 tract layer 6](https://tigerweb.geo.census.gov/arcgis/rest/services/Census2020/tigerWMS_Census2020/MapServer/6). Retrieved 2026-11-07.",
+      "credit": "U.S. Census Bureau (2020), [Census2020 tract layer 6](https://tigerweb.geo.census.gov/arcgis/rest/services/Census2020/tigerWMS_Census2020/MapServer/6). Retrieved 2026-11-07. Coordinate fields: [official TIGERweb attribute glossary](https://tigerweb.geo.census.gov/tigerwebmain/TIGERweb_attribute_glossary.html).",
       "rights": "[Census public-domain statement](https://www.census.gov/newsroom/archives/2014-pr/cb14-208.html)",
-      "modifications": "166 source tract polygons and whole-tract counts; 764,468 is the whole-tract sum, not the bounding-box population. Any area-fraction estimate assumes uniform population within tracts.",
+      "modifications": "166 source tract polygons and whole-tract counts; 764,468 is the whole-tract sum, not the bounding-box population. Any area-fraction estimate assumes uniform population within tracts. Map columns use source CENTLON/CENTLAT tract centroids; the Atlas does not recompute these points.",
       "files": [
         "courses/onehealth/data/profile-package.json",
         "courses/onehealth/data/tracts.geojson"

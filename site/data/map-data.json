@@ -315,8 +315,8 @@
       "site_path": "map-data.js",
       "role": "atlas-output",
       "license": "MIT code; original narrative CC-BY-4.0; data rights remain separate",
-      "sha256": "382724e021b97c244e3c481ff9be6fe5fcdd735b6490c709c3b9b08d3c053abd",
-      "bytes": 13951
+      "sha256": "fdbcfe9b5e4a0f7c6bdd8f58a59368784fb03f74e28b988c08ed0740a0b817a1",
+      "bytes": 13978
     },
     {
       "path": "site/map-renderers.js",

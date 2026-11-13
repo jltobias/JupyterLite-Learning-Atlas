@@ -106,7 +106,7 @@ class UiRepairs(unittest.TestCase):
               const poster=await m.dataset({family:'poster',scenario:'RCP 2.6',year:'2030',scope:'city'});
               const syntheticMask={family:'terrain',count:4,value:i=>[0,null,-1,3][i],record:i=>({id:String(i),lon:1,lat:2,value:[0,null,-1,3][i]}),
                 bounds:[[1,1],[3,3]],metadata:{},unit:'m',note:'test fixture only'};
-              return {terrain,pop,tracts:{stats:m.statistics(tracts),first:tracts.record(0)},
+              return {terrain,pop,tracts:{stats:m.statistics(tracts),first:tracts.record(0),note:tracts.note},
                 pixels:{stats:m.statistics(pixels),first:pixels.record(0)},
                 poster:{rows:Array.from({length:poster.count},(_,i)=>poster.record(i)),portfolio:poster.portfolio},
                 mask:m.statistics(syntheticMask),maskExport:m.exportSelection(syntheticMask,{threshold:0})};
@@ -125,6 +125,7 @@ class UiRepairs(unittest.TestCase):
                 self.assertTrue(all(len(f['geometry']['coordinates'])==2 for f in exported['features']))
             self.assertEqual(result['tracts']['stats']['count'],166)
             self.assertEqual(result['tracts']['stats']['sum'],764468)
+            self.assertIn('Column anchors are Census-provided tract centroids (CENTLON/CENTLAT), not buildings.',result['tracts']['note'])
             self.assertEqual(result['tracts']['first']['geometry']['type'],'Polygon')
             self.assertEqual(result['pixels']['stats']['count'],6890)
             self.assertAlmostEqual(result['pixels']['first']['value'],43.9413876,places=7)
