@@ -1,12 +1,31 @@
 # JupyterLite Learning Atlas
 
+## Read, run and explore
+
+The source visibility changes are complete. GitHub Actions builds and publishes this index from `main`; see the [publication workflow](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) for the latest build and deployment status. Source companion availability is recorded independently.
+
+Use the published entry points below. Availability follows the latest successful Pages deployment:
+
+| Experience | Published link | What you do |
+|---|---|---|
+| Learning hub | [Open the atlas](https://jltobias.github.io/JupyterLite-Learning-Atlas/) | Choose a question and a learning path |
+| Jupyter Book | [Read the Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/index.html) | Read explanations and executed outputs |
+| JupyterLite Lab | [Open the same notebooks](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=index.ipynb) | Edit assumptions and run Python in a browser |
+| Complete notebook library | [Read course guides](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/notebook-library.html) / [Open library in Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=notebook-library.ipynb) | Browse full source lessons, prerequisites and local Book/Lab links |
+| Resource explorer | [Search the collection](https://jltobias.github.io/JupyterLite-Learning-Atlas/explore/) | Filter exact Book, Lab, 2D map, 3D map, scene and explorer links |
+| Browser GIS across chapters | [Read the guide](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/browser-gis.html) / [Run the GIS workbench](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=gis-workbench.ipynb) | Export/review evidence, then inspect it in RustGIS or GeoLibre; optional AI/Ollama guidance |
+| Real-data map studio | [2D map](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/?view=2d) / [3D map](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/?view=3d-map) / [3D scene](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/?view=3d-scene) | Explore real terrain, population, Earth observation and published study data with visible sources |
+
+For a local preview, build the site, run `python scripts/serve.py`, and open [localhost](http://localhost:8000/JupyterLite-Learning-Atlas/).
+
+
 **James L. Tobias / browser geospatial science, global health and shared decisions**
 
 ![The JupyterLite Learning Atlas: an open notebook becomes a coastal landscape and coral reef, with an Earth globe, satellite and people learning together.](assets/splash-v2.png)
 
 *AI-generated conceptual illustration. [Generation prompt, provenance and credits](assets/SPLASH-PROVENANCE.md).*
 
-This repository is now **[JupyterLite-Learning-Atlas](https://github.com/jltobias/JupyterLite-Learning-Atlas)**, renamed on 2 November 2026. [Repository identity record](catalog/repository-rename.json). Its live Book and Lab use the updated links below.
+This repository is now **[JupyterLite-Learning-Atlas](https://github.com/jltobias/JupyterLite-Learning-Atlas)**, renamed on 2 November 2026. [Repository identity record](catalog/repository-rename.json). Its live Book and Lab use the updated links above.
 
 A growing comprehensive textbook of browser geospatial science, built as a Jupyter Book and a matching JupyterLite notebook library. Follow six paths through GIS, remote sensing, Earth observation, AI/ML, GeoAI/GeoML, global health and human-centered experiments. Every project has a distinct explained exercise, visual output, interpretation, extension and source citation.
 
@@ -258,25 +277,6 @@ The Atlas records these targeted compatibility adaptations in its [source-librar
 
 See [validation evidence](https://github.com/jltobias/JupyterLite-Learning-Atlas/blob/main/VALIDATION.md) for precisely tested kernels/maps and limits. Provider availability remains distinct from controlled regression results. The repair adds no patient records or provider imagery cache.
 <!-- CHOLERA_BASIC_REPAIR:END -->
-
-## Read, run and explore
-
-The source visibility changes are complete. GitHub Actions builds and publishes this index from `main`; see the [publication workflow](https://github.com/jltobias/JupyterLite-Learning-Atlas/actions/workflows/pages.yml) for the latest build and deployment status. Source companion availability is recorded independently.
-
-Use the published entry points below. Availability follows the latest successful Pages deployment:
-
-| Experience | Published link | What you do |
-|---|---|---|
-| Learning hub | [Open the atlas](https://jltobias.github.io/JupyterLite-Learning-Atlas/) | Choose a question and a learning path |
-| Jupyter Book | [Read the Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/index.html) | Read explanations and executed outputs |
-| JupyterLite Lab | [Open the same notebooks](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=index.ipynb) | Edit assumptions and run Python in a browser |
-| Complete notebook library | [Read course guides](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/notebook-library.html) / [Open library in Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=notebook-library.ipynb) | Browse full source lessons, prerequisites and local Book/Lab links |
-| Resource explorer | [Search the collection](https://jltobias.github.io/JupyterLite-Learning-Atlas/explore/) | Filter exact Book, Lab, 2D map, 3D map, scene and explorer links |
-| Browser GIS across chapters | [Read the guide](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/browser-gis.html) / [Run the GIS workbench](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=gis-workbench.ipynb) | Export/review evidence, then inspect it in RustGIS or GeoLibre; optional AI/Ollama guidance |
-| Real-data map studio | [2D map](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/?view=2d) / [3D map](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/?view=3d-map) / [3D scene](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/?view=3d-scene) | Explore real terrain, population, Earth observation and published study data with visible sources |
-
-For a local preview, build the site, run `python scripts/serve.py`, and open [localhost](http://localhost:8000/JupyterLite-Learning-Atlas/).
-
 
 <!-- BROWSER_GIS_PATHWAYS:START -->
 ## Browser GIS throughout the Atlas
