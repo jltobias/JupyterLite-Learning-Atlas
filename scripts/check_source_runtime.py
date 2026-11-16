@@ -21,6 +21,7 @@ from urllib.parse import quote
 import nbformat
 from expansion_runtime_contracts import reviewed_widget_indices
 from climate_plot_oracles import assert_climate_plot
+from browser_runtime_diagnostics import attach_diagnostics, sanitized_text, EXECUTION_STATE_JS, guarded_execution
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -326,6 +327,7 @@ def execute_case(browser, base, output, timeout, case):
     if case.get('skip_widgets'):assert len(skipped)==1, 'Expected one explicit optional widget-only cell'
     asset_hashes={name:hashlib.sha256((canonical.parent/name).read_bytes()).hexdigest() for name in case['files']}
     context=browser.new_context(viewport={'width':1440,'height':1000})
+    diagnostics=attach_diagnostics(context)
     tile_requests=[]
     if case.get('maps'):
         def fulfill_tile(route):
@@ -334,7 +336,7 @@ def execute_case(browser, base, output, timeout, case):
         context.route('https://tile.openstreetmap.org/**',fulfill_tile)
         # Block accidental reintroduction of the retired/credential-dependent providers.
         context.route('**/*',lambda route:route.abort() if any(name in route.request.url for name in ('cartocdn','cartodb','stamen')) else route.fallback())
-    page=context.new_page();errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
+    page=context.new_page();errors=[];page.on('pageerror',lambda error:errors.append(sanitized_text(error)))
     # Jupyter Contents transports text with universal newlines and JSON models
     # via JSON.stringify (e.g. 0.0 becomes 0). Require exact raw HTTP bytes and
     # only these precisely computed transport forms inside the mounted kernel.
@@ -361,7 +363,7 @@ def execute_case(browser, base, output, timeout, case):
         rerun='\n\n'+changed
     export_proof=(f"\n_atlas_export_paths = {case.get('download_links',[])!r}\n"
                   "_atlas_export_bytes = {name:{'sha256':hashlib.sha256(Path(name).read_bytes()).hexdigest(),'bytes':len(Path(name).read_bytes())} for name in _atlas_export_paths}\n")
-    proof=rerun+"\n"+case['assertions']+export_proof+f"\nprint({marker!r}, json.dumps({{'platform':sys.platform,'asset_sha256':_atlas_actual_assets,'exports':_atlas_export_bytes,'assertions':'passed'}}))\n"
+    proof=rerun+"\n"+case['assertions']+export_proof+f"\nprint({marker!r}, json.dumps({{'platform':sys.platform,'asset_sha256':_atlas_actual_assets,'exports':_atlas_export_bytes,'assertions':'passed','package_preparation':globals().get('_atlas_browser_package_status')}}))\n"
     execution=code
     if case.get('expected_error'):
         import textwrap
@@ -375,8 +377,11 @@ def execute_case(browser, base, output, timeout, case):
                    'for _atlas_cell_number, _atlas_cell in enumerate(_atlas_canonical_cells):\n'
                    '    _atlas_result = await get_ipython().run_cell_async(_atlas_cell, store_history=False)\n'
                    '    if not _atlas_result.success:\n'
-                   '        raise RuntimeError("Canonical cell failed: "+str(_atlas_cell_number)) from (_atlas_result.error_before_exec or _atlas_result.error_in_exec)\n')
+                   '        _atlas_cell_error = _atlas_result.error_before_exec or _atlas_result.error_in_exec\n'
+                   '        raise RuntimeError("Canonical cell failed: "+str(_atlas_cell_number)+": "+str(_atlas_cell_error)) from _atlas_cell_error\n')
     source=prelude+case.get('setup','')+'\n\n'+execution+proof
+    error_marker='ATLAS_SOURCE_PYODIDE_ERROR_'+uuid.uuid4().hex
+    source=guarded_execution(source,error_marker)
     try:
         notebook_response=page.request.get(base+'lite/files/'+quote(notebook_path,safe='/'))
         assert notebook_response.ok and hashlib.sha256(notebook_response.body()).hexdigest()==hashlib.sha256(canonical.read_bytes()).hexdigest(), 'Packaged canonical notebook bytes differ: '+notebook_path
@@ -390,10 +395,12 @@ def execute_case(browser, base, output, timeout, case):
         editor=page.locator('.jp-Notebook .jp-CodeCell .cm-content').first
         editor.wait_for(timeout=30000);editor.click();page.keyboard.press('ControlOrMeta+a');page.keyboard.insert_text(source)
         assert marker in editor.inner_text()
+        executed_cell=editor.locator("xpath=ancestor::div[contains(@class, 'jp-CodeCell')][1]")
         page.keyboard.press('ControlOrMeta+Enter')
-        page.wait_for_function("""marker=>[...document.querySelectorAll('.jp-Notebook .jp-OutputArea-output')].some(e=>e.textContent.includes(marker) || e.textContent.includes('Traceback (most recent call last)'))""",arg=marker,timeout=timeout*1000)
-        failure=page.locator('.jp-Notebook .jp-OutputArea-output').filter(has_text='Traceback (most recent call last)')
-        if failure.count():raise RuntimeError('Fresh source execution failed: '+failure.first.inner_text())
+        state=page.wait_for_function(EXECUTION_STATE_JS,arg={'cell':executed_cell.element_handle(),'marker':marker,'errorMarker':error_marker},timeout=timeout*1000).json_value()
+        if state['status']=='error':
+            diagnostics['python_error']={'text':sanitized_text(state['text']),'mime':state.get('mime')}
+            raise RuntimeError('Fresh source execution failed: '+sanitized_text(state['text']))
         proof_output=page.locator('.jp-Notebook .jp-OutputArea-output').filter(has_text=marker)
         proof_output.wait_for(state='attached',timeout=timeout*1000);proof_output.scroll_into_view_if_needed()
         text=proof_output.inner_text();line=next(line for line in text.splitlines() if line.startswith(marker+' '))
@@ -540,7 +547,9 @@ def execute_case(browser, base, output, timeout, case):
         (output/f'failure-{case["label"]}-body.txt').write_text(page.locator('body').inner_text(),encoding='utf-8')
         page.screenshot(path=str(output/f'failure-{case["label"]}.png'))
         raise
-    finally:context.close()
+    finally:
+        (output/f'diagnostics-{case["label"]}.json').write_text(json.dumps(diagnostics,indent=2)+'\n',encoding='utf-8')
+        context.close()
 
 
 def main():

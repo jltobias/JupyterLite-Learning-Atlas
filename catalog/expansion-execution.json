@@ -12,7 +12,7 @@
         "image/svg+xml"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "0ac7841d711602ee3fa032c81f37c3afdd4be62dfeee59e1561b1f0c7c0a5a90"
+      "canonical_sha256": "e33c33a7cff5dc59cdadabe433f733aaa5aa13799908cade3ea27fe5c49502c3"
     },
     {
       "notebook": "projects/destination-earth-digital-twin/index.ipynb",
@@ -57,7 +57,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "9c20e9c1f4ddd5b0007d47d2c2210f3ce7b3737b3b06578657815876927b0b8b"
+      "canonical_sha256": "6790bf25a9a1d9d553c051a3a98ead709207e88afb28e772733d173421eadf7a"
     },
     {
       "notebook": "courses/c3s-atlas/02-data-and-provenance.ipynb",
@@ -69,7 +69,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "1753472383a1a299e60b9cbc92d22047d8191fe8b21d5b64680598265953087c"
+      "canonical_sha256": "3bdea042a65c5127b164ece28f1aaa5b48a5620d9306389e03d76ce6ccabc630"
     },
     {
       "notebook": "courses/c3s-atlas/03-baselines-and-anomalies.ipynb",
@@ -81,7 +81,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "dc30c74722b99541f5ce3215ee266177fbde88e2039af9b3178feabb72f5f7b2"
+      "canonical_sha256": "c785e730c143c43d79f0d63571e4013f4be5c0b4c2fb4811320dc5c1aa0a0918"
     },
     {
       "notebook": "courses/c3s-atlas/04-seasons-and-stripes.ipynb",
@@ -94,7 +94,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "3a99062c0f2a01b2b98b24c68a02e038cc2a652f7a630e105a0cb0b3e776476b"
+      "canonical_sha256": "b80f243df8670b63b778e2c243f0dae54e3150107f516d42a1c0b4c8428facac"
     },
     {
       "notebook": "courses/c3s-atlas/05-heat-and-cold.ipynb",
@@ -107,7 +107,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "8d8675fe917c2e3b7b7ad473a3f5f869d4697bc40dfaea54f46b192515f8b898"
+      "canonical_sha256": "3c91a7d84934ff3dffb288abf1b9a4c706c3a50ae0294e8c3c862a5369c239da"
     },
     {
       "notebook": "courses/c3s-atlas/06-rain-and-water.ipynb",
@@ -120,7 +120,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "03a6b06961f3a6d5d7049d2ede0128a1cd1e563dcd9dcbcbd1986bf630341d3a"
+      "canonical_sha256": "ad5fe656908010c6ffd7a9aa890a1c61fb4f72792bfff97f8bc4e712bafd27fb"
     },
     {
       "notebook": "courses/c3s-atlas/07-drought.ipynb",
@@ -131,7 +131,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "d1c023bb143abba4a45b308e188cbf690c6d046c7db7d9f3bfd6b782b270ac3d"
+      "canonical_sha256": "d2b62a6fd0d3e2a454213e95ec7aeba2a559dd49e053c862a8a6f80d85e769fd"
     },
     {
       "notebook": "courses/c3s-atlas/08-wind-and-radiation.ipynb",
@@ -143,7 +143,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "ce63cc72df340995d181a329d92f0f8397b60a71958eaf16d9db586bf7f09ff6"
+      "canonical_sha256": "89f9b90f6daaf9afe9abd9fc337e23b9fd0f4bf3f966644ff7095037e9f65e2f"
     },
     {
       "notebook": "courses/c3s-atlas/09-snow-and-ice.ipynb",
@@ -154,7 +154,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "71ea2f63d31d6d70a20b10284f7535f88216372c5ab0c35fb22aa8a35698ded3"
+      "canonical_sha256": "60b0727797cad9fe1c76ba51764d432d914d3b2742a5d30f80fe7c84dca48dc7"
     },
     {
       "notebook": "courses/c3s-atlas/10-ocean-and-circulation.ipynb",
@@ -166,7 +166,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "8b71cef85977efa7c7c32a6c695b8db953dfcd8e79dd6493cc8671b4020339e6"
+      "canonical_sha256": "02fd688660e0446aa4517eb0e96cf29c4f4f73b291d538608fdb4fd9e5fb2df5"
     },
     {
       "notebook": "courses/c3s-atlas/11-scenarios-and-ensembles.ipynb",
@@ -178,7 +178,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "4487fa8487286ba1474fbe25caa508beac0491f7d46cbaa9416c081d078189ab"
+      "canonical_sha256": "0fa9305352b1b83def3b7510ba1d23b25e51a363da6a44bf383254b9bea2707e"
     },
     {
       "notebook": "courses/c3s-atlas/12-global-warming-levels.ipynb",
@@ -192,7 +192,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "6f91a38f9812a36fa8a554dccbd9ba9396c3dcea074f8de0b9931191332f4de1"
+      "canonical_sha256": "ee3b799da362cd95416cfd8b5b75cd95da0bb33c12a412c23a7c1bd971af76b7"
     },
     {
       "notebook": "courses/c3s-atlas/13-uncertainty-and-bias.ipynb",
@@ -204,7 +204,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "88f724f64c65bb9301ca6685f6cc32d4c50af45f366dbc888caee23e5a662ca3"
+      "canonical_sha256": "79283df84c6aa8b819d59a54c77294473f28490a448d230daf14949f6cc587c6"
     },
     {
       "notebook": "courses/c3s-atlas/14-regions-and-weights.ipynb",
@@ -215,7 +215,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "5d0d001b9629b5de771ce073f9a317cea02536309d8c266e30454792f8c8f345"
+      "canonical_sha256": "c19b6db1e240d0938843b26b1d56e07e208616ea24cf7b12ed7fad3ee3fcb18f"
     },
     {
       "notebook": "courses/c3s-atlas/15-interactive-2d-maps.ipynb",
@@ -228,7 +228,7 @@
         "image/png"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "d38131cfe55e63ba827da1fd04be17fb07caf76d8eec93f64771574a5c373564"
+      "canonical_sha256": "74a8a1716b67e933085f0db399631348b74c4ad8bfc9b6776906022cb0c13c44"
     },
     {
       "notebook": "courses/c3s-atlas/16-globes-and-3d-maps.ipynb",
@@ -240,7 +240,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "b482d10d7511ed6896c955f3afa47a93a0c803a4024b0fc6b647cb5c35e207c8"
+      "canonical_sha256": "bc8ad5247dfbb3a39599a35ee4bf0a1db2ae8026f5d6585914d4e84d74e28967"
     },
     {
       "notebook": "courses/c3s-atlas/17-3d-scenes.ipynb",
@@ -253,7 +253,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "3a9805c94bd4c17863517a772e3c8c4da8e3b93f496ae21d2ea9b15341175e0b"
+      "canonical_sha256": "50143e262dd2179eca69c3cba157d49a4ea8d17aeb24b6ec550b950dd0590634"
     },
     {
       "notebook": "courses/c3s-atlas/18-monitoring-and-urban.ipynb",
@@ -266,7 +266,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "a76091597711a3ee5949fae2d2d47d3b98e3184abe5cf4be4a95127077e19c32"
+      "canonical_sha256": "0f7fd1bde42ab10cd511695b0fa9b2e8eefea186f213490060e38002f49dc7c8"
     },
     {
       "notebook": "courses/c3s-atlas/19-bring-real-data.ipynb",
@@ -278,7 +278,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "0cf7a778187158e8ffb878d198ce860b0a3f89cc071d05a4c539dc4c00dfaa15"
+      "canonical_sha256": "47e9b272c78821aa01ae17382e891b531db05c248b32191058a621523bb3e231"
     },
     {
       "notebook": "courses/c3s-atlas/20-capstone.ipynb",
@@ -291,7 +291,7 @@
         "text/html"
       ],
       "independent_oracle": true,
-      "canonical_sha256": "fa6513f28ffb3755082b461335eaa4a0383812013a35225e511b8cbb9f2490ab"
+      "canonical_sha256": "37635628ea0b4af05db9045a98ae9416ae39f42b25fa444734f922914406d232"
     },
     {
       "notebook": "courses/destination-earth-digital-twin/01-system.ipynb",

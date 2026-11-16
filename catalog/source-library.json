@@ -22998,7 +22998,7 @@
       "source_path": "content/01-atlas-orientation.ipynb",
       "source_sha256": "73a694fe6403055c700eca4ba66819c4ec17e31b2937b2410b3ed643d260c297",
       "source_cell_sha256": "6d5097f80561e168ca72add057c8d9bf763e6c9cd3108696f13d91a79e202274",
-      "adapted_cell_sha256": "dfeddc3ccefe6b2af1294e0518de6d272e1cb0936ac38047b5d6cc099c0c7d7e",
+      "adapted_cell_sha256": "e5de8dff6a1a46f884c5190104c686c22b484187a508e73ffccb8c04b5cb1b45",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23028,6 +23028,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23039,7 +23044,7 @@
       "source_path": "content/02-data-and-provenance.ipynb",
       "source_sha256": "527beafd3b1c655de98b675a72b89b911564533b7ff88ea78f60451c1557d334",
       "source_cell_sha256": "9ea9f000e184829269a9d265f27cf590004e7e01bca708106633300e3f751947",
-      "adapted_cell_sha256": "2ed5591cf30ed97e822e1930d6b5321b5128521d413abb56ddcdda2c3e01ed9c",
+      "adapted_cell_sha256": "ff600afee6f2fdf52453b0159c6fa08e36f35fbbacf7406c792ba1c8a9b9d671",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23074,6 +23079,11 @@
           "kind": "integrity",
           "adapter": "c3s-reference-transport-v1",
           "reason": "Authenticate exact bundled raw bytes and pinned identities, then allow only raw bytes or the exact JavaScript JSON.stringify(JSON.parse(authenticated raw)) Jupyter Contents representation. No arbitrary object changes accepted."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23085,7 +23095,7 @@
       "source_path": "content/03-baselines-and-anomalies.ipynb",
       "source_sha256": "2e1f67718e5e8ac634f1efd18bf00ec5a466dafa34ad0b1a78f9b70ff789a3d5",
       "source_cell_sha256": "dff8e573d7fb708480d139e6cae81b9ca2b5d61b88fbbdc9ede960764cac3407",
-      "adapted_cell_sha256": "dfd1822c9a739d1431b1aedd87295daff0b9b1279a8c4845129e3b54b90b78b4",
+      "adapted_cell_sha256": "362536c1cbdf256d81c509bfa41a59f6457fbc6f1d72d2da49331ed21f66e70f",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23115,6 +23125,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23126,7 +23141,7 @@
       "source_path": "content/04-seasons-and-stripes.ipynb",
       "source_sha256": "2901a1a3a9676d93411d17e327f0fce7739366e66af05bd8ee743e22c3a2a337",
       "source_cell_sha256": "392931f6a993b5a66c378a75451780c5b9b6191d80763d80193d63de00f2d1af",
-      "adapted_cell_sha256": "0f29f63465c4bc67f9769570fea0d1dbcfcc93767f6a0533c4d51f78247f9076",
+      "adapted_cell_sha256": "9d64c0a045a2b0b9132f7f327e69b377c419d938e5a6a0200be06c6547d512d9",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23156,6 +23171,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23167,7 +23187,7 @@
       "source_path": "content/05-heat-and-cold.ipynb",
       "source_sha256": "c59785afacdb15fc1c488a9dba2a129cff6b3a7ffdd89df99c5147c3eb1f9498",
       "source_cell_sha256": "226092c55b0d934003d40cd683df5ab20ed06c9d86fa2a37e02816acbba4598c",
-      "adapted_cell_sha256": "53d2f4f81478f12115445a8002f0ec66c8d6b0ec1b40688bf0d4356c88ae7170",
+      "adapted_cell_sha256": "4e5a563f2fab14629edcb13736fffb684e20875c5d3e74931b46e67a2ca7f212",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23197,6 +23217,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23208,7 +23233,7 @@
       "source_path": "content/06-rain-and-water.ipynb",
       "source_sha256": "8266a0156a36af9bf8669f124e1dad44fc5c80bc75dca8cf04c16c48e49adb84",
       "source_cell_sha256": "7bdce42d3a0b287971744c75008c0ff061de90cc0629b54da05ebc74a96a1bd8",
-      "adapted_cell_sha256": "55a40c2419e1584024e0662db460339631798eeead3d4f26c72bf8f49ad2ffd4",
+      "adapted_cell_sha256": "f1e2ceb6ca1206684e9a80b863164f94e7dd22d569c15c284ee59c3ecdd28244",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23238,6 +23263,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23249,7 +23279,7 @@
       "source_path": "content/07-drought.ipynb",
       "source_sha256": "27dc10f5aeb3fb3ab5cdbc29c954643cfd51e54765786046ab9cab65654f99d9",
       "source_cell_sha256": "d20eec95b086b03ae0f0b382880676c3d470336e1daa4d7e912c910da1b39374",
-      "adapted_cell_sha256": "2e1c58c1c650fc086d51d162cd197f849690296da3cd7849a8e6b612749e7836",
+      "adapted_cell_sha256": "cea718f8e6a61fe53f6ee36ccb4e72eceaa35cd7ae8233e4e8f83dc01626523e",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23279,6 +23309,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23290,7 +23325,7 @@
       "source_path": "content/08-wind-and-radiation.ipynb",
       "source_sha256": "eb7d78ad4ebce91b3ec4f53f3e54094867436ae5d804d0fbe614071e25613b49",
       "source_cell_sha256": "31dce94a68aa28e8a99402dd9eb271e5f54330661528ba3ef1f148f635e55227",
-      "adapted_cell_sha256": "f24b3362b638c3fa5733f7ad2e80c931d068773caa3c214e2a86ca8fe70a243d",
+      "adapted_cell_sha256": "9611f70ce4b1b4775ac2f63a933cc909725c4539bcf7ddb69f316d1f0190803f",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23320,6 +23355,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23331,7 +23371,7 @@
       "source_path": "content/09-snow-and-ice.ipynb",
       "source_sha256": "60d223f84dbb2c5d221aa5770fd91ba6e8a3faa7594e336a6660b9ffe72ca150",
       "source_cell_sha256": "6548ff239256fbc66890e756cbd1646ed497a1dc164135c1d9e115d67d5c8679",
-      "adapted_cell_sha256": "20f561ce51e95e0503d6f3c4c4ea1aa5dcdc1a33ea46aad0ff69a589b12370e1",
+      "adapted_cell_sha256": "c5b185f6691e8e91d5c8ee0cd86f217cc45e80d6f47f1d7f9b6b3cc185514719",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23361,6 +23401,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23372,7 +23417,7 @@
       "source_path": "content/10-ocean-and-circulation.ipynb",
       "source_sha256": "d10334a3a3e536f94b703a583f55e362093a6103d9519fdd56bb1a8922f741e7",
       "source_cell_sha256": "dcac44c583bf2a2adda432b48fd458e345d1ec0d937b7020037ea2afefd61414",
-      "adapted_cell_sha256": "693264e35812d84abff584cdcc350aef0c6e03e1aacd4236f204c5a3d799bca0",
+      "adapted_cell_sha256": "d582a4a523925449fe98e2af1b988c646692b4ed97395936a9fb5d8943827ab7",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23402,6 +23447,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23413,7 +23463,7 @@
       "source_path": "content/11-scenarios-and-ensembles.ipynb",
       "source_sha256": "776bf60314ef830f5855cfbc7cf9deb34093c936944ecad585e884a0a374f765",
       "source_cell_sha256": "67f290efc83729c5427721221a63f6f24c243d28fe89dbbad91194b8b36ef7ff",
-      "adapted_cell_sha256": "a2ff8cbb28b9869e44c048063b6202e820124de30e2715022290a6e2d9ecf54e",
+      "adapted_cell_sha256": "134df216f6b25e925a87e4d418585420a542a02ae9b5ba6d4e8a0a72cc125cff",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23443,6 +23493,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23454,7 +23509,7 @@
       "source_path": "content/12-global-warming-levels.ipynb",
       "source_sha256": "c8572b87c89a7ad89c2585c8fe5eefccf21b8b2c8be54483a8b08bc0082ab685",
       "source_cell_sha256": "5455d6df254a21e1e0138e7867dbb47da97385cd5d13279829f9ce47d3d905d1",
-      "adapted_cell_sha256": "4a437d31708ec86b31c73221a481007c4f71949bf016442aa5e7977033407b11",
+      "adapted_cell_sha256": "e5ee5491c383aef4ffed78d4c6c66a186a38a2665f6b514ce64ee04af3b37b07",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23484,6 +23539,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23495,7 +23555,7 @@
       "source_path": "content/13-uncertainty-and-bias.ipynb",
       "source_sha256": "8fb00f2a2801dd71ed5fc85c6f09010496816185ce392709ed202ce787b119c7",
       "source_cell_sha256": "e2d9ccbdf41a343b668158c97668b7b4eb1862b4ec7a25470442383d3e9f4738",
-      "adapted_cell_sha256": "37eb2b6ae533cd12de526e6e2191326f4cad42a1705d69779d05828240738815",
+      "adapted_cell_sha256": "11a6ebe3bbc0c33d33da223db0e8afbacac275b961f88d3edd30f81866bb2fe0",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23525,6 +23585,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23536,7 +23601,7 @@
       "source_path": "content/14-regions-and-weights.ipynb",
       "source_sha256": "39bc238bf3434109fc5923b39757ee2bda51eb3fbe5de5f7fc4b2cdee4c07e13",
       "source_cell_sha256": "82c5aedba42aa69485c590bab5a5bb928e3c078824ab2f0a6b44d104ae69085d",
-      "adapted_cell_sha256": "6fc8513f1434ca12bd6d5ca8f0a75a990c83edb46e4ad9119eabbbad3d408a0a",
+      "adapted_cell_sha256": "ed632f5792ea4860c4760ff7b6ba487053f987f6ad2e698d623844cdf7c94a87",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23566,6 +23631,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23577,7 +23647,7 @@
       "source_path": "content/15-interactive-2d-maps.ipynb",
       "source_sha256": "ffe97fd17134bde70b7a1d302d9f1b22abf22c0782c8b8aab88fd048955e7939",
       "source_cell_sha256": "ad45202c63b5d5500feeb7a2782093ac573757a43dae26f2bcefb7558b1a1171",
-      "adapted_cell_sha256": "fdc22163240b79a21a60503b750ea843b5d9a698ad9af51ac8823cbd810f5467",
+      "adapted_cell_sha256": "a7ea9f54e60aa44e816b870a876930e0b6a74890259e81fe3096fd3db76dec0c",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23607,6 +23677,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23618,7 +23693,7 @@
       "source_path": "content/16-globes-and-3d-maps.ipynb",
       "source_sha256": "1f28566112113cb55d3d6e148bfe057245347d2422229adeaf8431b72a8688c3",
       "source_cell_sha256": "199a33d07e0ebcb89b01d0b7e0d08972941206d33d1987b6e950f271feeede04",
-      "adapted_cell_sha256": "9da8dd9a9976723435f86effffc757cf9874bce329be1343ae82c9887c58c7f4",
+      "adapted_cell_sha256": "34a736449050de7b8c06db27560023bf8dfb4c12e0a714c5725c577dd7d490f2",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23648,6 +23723,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23659,7 +23739,7 @@
       "source_path": "content/17-3d-scenes.ipynb",
       "source_sha256": "eb4f4484937b263e50ee955c77e5cadf25156f4cbff02fe29b5555e886c3e715",
       "source_cell_sha256": "30e8f00d9ee1b3492a4c0304f4446eefa45ccddab0de1032867e008176c40bfb",
-      "adapted_cell_sha256": "1ca496161d4269f5acc6c7cf5d21b0157f8090a912070519b377ade5a7114529",
+      "adapted_cell_sha256": "6b54dfa73fb9cba6471a22d80f6e2921c28ccb4a65a99ddf31656af46aa81345",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23689,6 +23769,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23700,7 +23785,7 @@
       "source_path": "content/18-monitoring-and-urban.ipynb",
       "source_sha256": "258aed387f9517ebd2af5f1351c0f9cfb33b8eab5f3fc75ba0020fa669465a72",
       "source_cell_sha256": "ffbc20d6327761eea5465dcf2368c96ea72a2bd8bf4276c7d199f9edbc894c3d",
-      "adapted_cell_sha256": "272a270562226ce52a1e9b03f500eb9c332840b39896b1957f3a21c46d7cf621",
+      "adapted_cell_sha256": "ddbb3dcfe67c551dd6481c2f643f8ce297ce042b510ea58274b5905d80758251",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23730,6 +23815,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23741,7 +23831,7 @@
       "source_path": "content/19-bring-real-data.ipynb",
       "source_sha256": "8fe1f350fb97a6f2797ac88d4208e5da681f3ebd546854c811b9eb4622c0bfbe",
       "source_cell_sha256": "7903a001c8ab01730f31eefc81b93cdf2200bec9547201fca6e4449a0198214d",
-      "adapted_cell_sha256": "09dba74d11942006cdd2698db8c087b97e0f11fda17c6259b245377ffea9c5eb",
+      "adapted_cell_sha256": "90f237b5f665f6422bd11f1fadf2cdbe3a03aebbb48af537a92b6e46ff58f1ea",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23776,6 +23866,11 @@
           "kind": "integrity",
           "adapter": "c3s-upload-provenance-v1",
           "reason": "Required uploaded provenance values must be nonblank strings; reject null, nonstring and missing fields before plotting."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"
@@ -23787,7 +23882,7 @@
       "source_path": "content/20-capstone.ipynb",
       "source_sha256": "71682270d38db090d963dd40b4c6e1b33f94e7c462bb10099999403042c82b82",
       "source_cell_sha256": "0cb335c05e1ee91e1caae1d1d364bb04fd87bae626798cf8a05d8b642af4a72e",
-      "adapted_cell_sha256": "f0202e82caadf2f20acbf35100ad2f0c60311ddc8500f68f0920859ede38145c",
+      "adapted_cell_sha256": "17d4f58b205dd33d0877f511e16953e5ec82dbfa08a05b79141640655f447e20",
       "runtime": {
         "class": "browser-network",
         "requirements": [
@@ -23817,6 +23912,11 @@
           "from": "data-guide.md",
           "to": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data-guide.md",
           "reason": "Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference."
+        },
+        {
+          "kind": "portability",
+          "adapter": "c3s-package-verification-v1",
+          "reason": "After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged."
         }
       ],
       "collection": "authored"

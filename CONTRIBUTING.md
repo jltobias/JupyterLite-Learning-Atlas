@@ -13,12 +13,15 @@ python -m venv .venv
 # Windows PowerShell: .venv\Scripts\Activate.ps1
 # macOS/Linux: source .venv/bin/activate
 python -m pip install -r requirements-build.txt
+python -c "from importlib.metadata import version; print({p: version(p) for p in ['jupyterlite-core', 'jupyterlite-pyodide-kernel']})"
 python scripts/generate.py
 python scripts/validate.py
 python scripts/execute.py --write
 python scripts/build.py
 python scripts/serve.py
 ```
+
+Check the printed versions against `requirements-build.txt` before runtime verification. The deployment pins are JupyterLite core 0.8.2 and Pyodide kernel 0.8.3 for this snapshot; record the active build versions alongside browser evidence.
 
 Open `http://localhost:8000/JupyterLite-Learning-Atlas/`. The preview deliberately uses the GitHub project subpath. `_site/` is generated output. Builds never publish, stage or commit anything. The first browser load of Pyodide still needs network. Original companion exercises use local fixtures; source lessons may require networks, credentials, native libraries or missing inputs, as their course guides explain. Notebook edits live in browser storage. Download work before clearing browser data or changing profiles. Rebuild the site after changing notebooks.
 

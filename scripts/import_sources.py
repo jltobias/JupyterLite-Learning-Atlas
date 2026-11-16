@@ -172,6 +172,40 @@ for item in manifest:
     audit.append({"file": item["file"], "bytes": item["bytes"], "licence": item["licence"], "verified": verified})
 assert all(row["verified"] for row in audit), "A reference file changed. Review provenance."
 display(pd.DataFrame(audit))'''
+C3S_BROWSER_PACKAGES='''import importlib
+import piplite
+_atlas_browser_requirements = {"numpy": "numpy", "pandas": "pandas", "matplotlib": "matplotlib", "plotly": "plotly==6.5.0"}
+_atlas_browser_package_status = {"retried": [], "verified": []}
+await piplite.install(list(_atlas_browser_requirements.values()))
+
+def _atlas_missing_browser_packages():
+    importlib.invalidate_caches()
+    missing = []
+    for module in _atlas_browser_requirements:
+        try:
+            importlib.import_module(module)
+        except ModuleNotFoundError as error:
+            if error.name != module:
+                raise RuntimeError(f"Browser package {module} has a missing dependency ({error.name}); preparation stopped without retrying an unrelated failure.") from error
+            missing.append(module)
+    return missing
+
+_atlas_missing = _atlas_missing_browser_packages()
+if _atlas_missing:
+    _atlas_browser_package_status["retried"] = list(_atlas_missing)
+    print("ATLAS_PACKAGE_RETRY", _atlas_missing, flush=True)
+    # One bounded retrieval retry, only for directly confirmed missing modules.
+    await piplite.install([_atlas_browser_requirements[module] for module in _atlas_missing])
+    _atlas_missing = _atlas_missing_browser_packages()
+if _atlas_missing:
+    raise RuntimeError("Browser package preparation failed after one missing-module retry: " + ", ".join(_atlas_missing) + ". Check package/network diagnostics, then restart the kernel.")
+_atlas_browser_package_status["verified"] = list(_atlas_browser_requirements)'''
+C3S_SETUP_NOTEBOOKS=(
+    '01-atlas-orientation','02-data-and-provenance','03-baselines-and-anomalies','04-seasons-and-stripes',
+    '05-heat-and-cold','06-rain-and-water','07-drought','08-wind-and-radiation','09-snow-and-ice',
+    '10-ocean-and-circulation','11-scenarios-and-ensembles','12-global-warming-levels','13-uncertainty-and-bias',
+    '14-regions-and-weights','15-interactive-2d-maps','16-globes-and-3d-maps','17-3d-scenes',
+    '18-monitoring-and-urban','19-bring-real-data','20-capstone')
 BASIC_GRAY_MAP = '''# One keyless modern street layer; only its tile pane is desaturated.
 def gray_street_map(location, zoom_start=17):
     street_map = folium.Map(location=location, zoom_start=zoom_start, tiles=None)
@@ -259,7 +293,7 @@ def prepare_support(slug,path,local,raw,aliases,available):
 
 def adapt_expansion_notebook(slug,path,nb):
     if slug!='c3s-atlas':return []
-    changes=[]
+    changes=adapt_c3s_setup(path,nb)
     contracts={
         'content/02-data-and-provenance.ipynb':('65c79ef897a887aa36b86a243cf0906ea55ba50977025a7c22b989692bc22bc1','c3s-reference-transport-v1'),
         'content/19-bring-real-data.ipynb':('f7937e4e4fe85da5179a8f639b148cb8306db53b07da6f6b2be3913037ecbb89','c3s-upload-provenance-v1'),
@@ -276,6 +310,16 @@ def adapt_expansion_notebook(slug,path,nb):
         reason='Required uploaded provenance values must be nonblank strings; reject null, nonstring and missing fields before plotting.'
     changes.append({'kind':'integrity','adapter':adapter,'reason':reason})
     return changes
+
+
+def adapt_c3s_setup(path,nb):
+    if path not in {f'content/{name}.ipynb' for name in C3S_SETUP_NOTEBOOKS}:return []
+    cells=[c for c in nb.cells if c.cell_type=='code' and digest(c.source.encode())=='3cf02616e2775971774b493eaba1778ab0996660d1bfb9458b285815f2038d0f']
+    assert len(cells)==1,'Reviewed C3S package setup cell changed: '+path
+    old='    import piplite\n    await piplite.install(["numpy", "pandas", "matplotlib", "plotly==6.5.0"])'
+    assert cells[0].source.count(old)==1
+    cells[0].source=cells[0].source.replace(old,'\n'.join('    '+line if line else '' for line in C3S_BROWSER_PACKAGES.splitlines()))
+    return [{'kind':'portability','adapter':'c3s-package-verification-v1','reason':'After awaited browser package preparation, verify actual module imports. Retry at most once and only directly missing requested modules, retain the retried list, and fail explicitly if still absent. Nested dependency/import/installer/calculation failures are not retried. Native branches and scientific calculations are unchanged.'}]
 
 
 def adapt_basic_notebook(slug,path,nb):
