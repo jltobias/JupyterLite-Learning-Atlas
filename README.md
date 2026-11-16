@@ -1,3 +1,7 @@
+![The JupyterLite Learning Atlas: an open notebook becomes a coastal landscape and coral reef, with an Earth globe, satellite and people learning together.](assets/splash-v2.png)
+
+*AI-generated conceptual illustration. [Generation prompt, provenance and credits](assets/SPLASH-PROVENANCE.md).*
+
 # JupyterLite Learning Atlas
 
 ## Read, run and explore
@@ -20,10 +24,6 @@ For a local preview, build the site, run `python scripts/serve.py`, and open [lo
 
 
 **James L. Tobias / browser geospatial science, global health and shared decisions**
-
-![The JupyterLite Learning Atlas: an open notebook becomes a coastal landscape and coral reef, with an Earth globe, satellite and people learning together.](assets/splash-v2.png)
-
-*AI-generated conceptual illustration. [Generation prompt, provenance and credits](assets/SPLASH-PROVENANCE.md).*
 
 This repository is now **[JupyterLite-Learning-Atlas](https://github.com/jltobias/JupyterLite-Learning-Atlas)**, renamed on 2 November 2026. [Repository identity record](catalog/repository-rename.json). Its live Book and Lab use the updated links above.
 
