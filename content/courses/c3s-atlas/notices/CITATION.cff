@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Cite this educational repository and the original data sources used in your analysis."
+title: "JupyterLite-C3S-Atlas: browser-based climate learning"
+type: software
+authors:
+  - name: "JupyterLite-C3S-Atlas contributors"
+repository-code: "https://github.com/jltobias/JupyterLite-C3S-Atlas"
+url: "https://jltobias.github.io/JupyterLite-C3S-Atlas/"
+license: MIT
+date-released: 2026-11-15
+abstract: "Independent educational notebooks exploring C3S Atlas concepts, with explicit synthetic examples, real auxiliary reference data, and reproducible browser visualizations."

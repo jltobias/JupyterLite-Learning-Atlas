@@ -321,7 +321,7 @@ def check_explorer_pathway_fallback(browser,checks):
             page.route('**/catalog/browser-gis-pathways.json',lambda route:route.fulfill(status=status,body=body,content_type='application/json'))
             page.goto(BASE+'explore/')
             page.locator('.resource').first.wait_for()
-            assert page.locator('.resource').count()==42, label
+            assert page.locator('.resource').count()==len(json.loads((ROOT/'catalog/repositories.json').read_text(encoding='utf-8'))['repositories']), label
             assert not page.locator('#load-error').is_visible(), label
             page.locator('#query').fill('qa_scaling')
             page.locator('.resource[data-slug="onehealth"]').wait_for()

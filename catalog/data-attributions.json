@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "inspected_on": "2026-11-13",
-  "scope": "Dataset credits for actual source-course support files; immutable source/file provenance remains in source-library.json.",
+  "inspected_on": "2026-11-16",
+  "scope": "Dataset credits for actual source-course support files; immutable source/file provenance remains in source-library.json. Targeted four-course additions on2026-11-16; all prior dataset rows retain their historical source/version evidence.",
   "datasets": [
     {
       "id": "worldpop-2025",
@@ -891,6 +891,71 @@
         "data/uhslc-lagos-1994-july-28days.csv",
         "data/uhslc-mombasa-1994-july-28days.csv"
       ]
+    },
+    {
+      "id": "c3s-warming-levels",
+      "title": "C3S Atlas CMIP6 global-warming-level windows",
+      "credit": "European Union; C3S Atlas User Tools contributors; underlying CMIP6 modelling groups. ecmwf-projects/c3s-atlas commit 8d80d4e98053d96077ba67f29464b4f373ff4037, auxiliar/GWLs/CMIP6_WarmingLevels.csv. Gutiérrez et al. (2024), DOI 10.21957/ah52ufc369; Iturbide et al. (2020), DOI 10.5194/essd-12-2959-2020.",
+      "rights": "Apache-2.0; retained licenses/C3S-Atlas-Apache-2.0.txt and source credit.",
+      "modifications": "Unmodified 5,095-byte auxiliary CSV; model/scenario/threshold time windows, not observed local temperatures.",
+      "files": [
+        "courses/c3s-atlas/data/reference/CMIP6_WarmingLevels.csv"
+      ]
+    },
+    {
+      "id": "c3s-natural-earth-coastline",
+      "title": "Natural Earth 1:110m coastline",
+      "credit": "Made with Natural Earth. Nathaniel Vaughn Kelso, Tom Patterson and contributors; natural-earth-vector commit ca96624a56bd078437bca8184e78163e5039ad19, geojson/ne_110m_coastline.geojson.",
+      "rights": "Public domain; retain Natural Earth source/credit notice.",
+      "modifications": "Unmodified 139,907-byte generalized geographic context; no boundary authority or precision claim.",
+      "files": [
+        "courses/c3s-atlas/data/reference/ne_110m_coastline.geojson"
+      ]
+    },
+    {
+      "id": "c3s-cds-catalogue",
+      "title": "C3S Atlas CDS catalogue snapshot (2026-11-15)",
+      "credit": "Copernicus Climate Change Service / ECMWF / European Union, multi-origin-c3s-atlas catalogue; dataset DOI 10.24381/cds.h35hb680.",
+      "rights": "CC BY 4.0 as declared by the retained source manifest; source credits and adaptation notice retained.",
+      "modifications": "Unmodified 5,461-byte metadata snapshot; full gridded climate archive not used or redistributed.",
+      "files": [
+        "courses/c3s-atlas/data/reference/atlas-catalogue.json"
+      ]
+    },
+    {
+      "id": "c3s-synthetic-monthly",
+      "title": "C3S companion synthetic monthly teaching series",
+      "credit": "James L. Tobias / JupyterLite-C3S-Atlas, atlas_helpers.py monthly_demo(), seed 381; explicitly synthetic temperature examples.",
+      "rights": "Original teaching fixtures MIT; no Copernicus observation claim.",
+      "modifications": "Unmodified CSV and JSON sidecar retained, including units, rounding and generator labels.",
+      "files": [
+        "courses/c3s-atlas/data/examples/monthly_series.csv",
+        "courses/c3s-atlas/data/examples/monthly_series.json"
+      ]
+    },
+    {
+      "id": "terrio-natural-earth-countries",
+      "title": "Natural Earth countries v5.1.2 (177 features)",
+      "credit": "Made with Natural Earth. Tom Patterson, Nathaniel Vaughn Kelso and contributors; countries v5.1.2. Source/version/checksum retained in sources.json.",
+      "rights": "Public domain; preserve source attribution and generalized-boundary limitations.",
+      "modifications": "Unmodified 838,726-byte GeoJSON; SHA-256 6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f. Generalized geography, not authoritative borders.",
+      "files": [
+        "courses/terrio/data/countries.geojson",
+        "courses/terrio/data/sources.json"
+      ]
+    },
+    {
+      "id": "expansion-course-metadata",
+      "title": "C3S/DestinE/TerrIO source course registries and provenance metadata",
+      "credit": "James L. Tobias and named source-course contributors (2026); original curriculum/chapter/lesson registries and file-provenance manifests. C3S manifests identify separately credited reference data.",
+      "rights": "Source-specific: C3S original metadata MIT; DestinE original prose/generated data CC BY 4.0; TerrIO original teaching metadata CC0. Provider datasets retain separate terms.",
+      "modifications": "Exact pinned local metadata; no observational/DT/model-service output implied. DestinE and Urbanity numerical teaching fixtures are synthetic equations/code, not downloaded datasets.",
+      "files": [
+        "courses/c3s-atlas/data/manifest.json",
+        "courses/c3s-atlas/curriculum.json",
+        "courses/destination-earth-digital-twin/lessons.json",
+        "courses/terrio/chapters.json"
+      ]
     }
   ],
   "introduction": "This register identifies the data actually bundled with the expanded source courses. Exact source-file hashes, local placements, source commits and retained notices are in [the source-library manifest](https://jltobias.github.io/JupyterLite-Learning-Atlas/catalog/source-library.json). The source snapshots retain their own credits and rights; a project software license does not relicense provider data. Atlas import changes are recorded per notebook. No agency or producer endorsement is implied.",
@@ -899,6 +964,7 @@
     "**Underlying SeasFire variables:** [ERA5](https://doi.org/10.24381/cds.adbb2d47), [MODIS MOD13C1v6](https://doi.org/10.5067/MODIS/MOD13C1.006), and [JRC/GWIS](https://gwis.jrc.ec.europa.eu/) retain their producer identification; a selected cube variable is not a direct local health observation.",
     "**Original teaching fixtures and factual registries:** James L. Tobias and the named source-course contributors (2026); source-specific deterministic arrays, conceptual grids, simulated health/facility records and original curated capability/initiative/catalog registries. Preserve synthetic, placeholder and metadata-only labels. Their source license or owner-authorized reuse scope is shown in each course guide; no third-party dataset grant is inferred from a familiar place name.",
     "**Excluded or external inputs:** restricted GADM; unclear historical images, PDFs, music and screenshots; the17 rights-unclear climate legacy notebooks; undocumented South Sudan inputs; preliminary epidemiological inputs requiring extra permission; legacy WHO/IMF inputs without a suitable item-specific open grant; raw controlled data and unverified source outputs. Exclusions name exact source paths/reasons and the effect on affected lessons. Linked resources retain their creators’ rights. Copyright and license notices needed by retained open material are preserved.",
-    "**Optional live inputs:** source notebooks retain their provider/product citations and query instructions for OpenStreetMap/Overpass and tile services, USGS earthquake feeds, NASA GIBS, Copernicus, WorldPop, GeoLibre hosted samples, Major TOM, ESA WorldCover, CHIRPS and other named gateways. These are external continuations, not silently mirrored data or a blanket license to download every provider asset. Preserve the selected product’s own citation and terms when running such a branch.\n"
+    "**Optional live inputs:** source notebooks retain their provider/product citations and query instructions for OpenStreetMap/Overpass and tile services, USGS earthquake feeds, NASA GIBS, Copernicus, WorldPop, GeoLibre hosted samples, Major TOM, ESA WorldCover, CHIRPS and other named gateways. These are external continuations, not silently mirrored data or a blanket license to download every provider asset. Preserve the selected product’s own citation and terms when running such a branch.\n",
+    "**2026-11-16 expansion:** Urbanity owner authorization does not imply a public license. DestinE arrays are synthetic, not real twin output; original numerical data/prose CC BY 4.0 and code MIT. TerrIO original synthetic fixtures and 13 SVGs are CC0, original code MIT; TerrIO/software/dependency/EPSG/IOGP rights remain separate. TerrIO reading copies require the matched Pyodide 0.29 source Lab; Atlas stays on 314. Only file-specifically cleared original C3S/DestinE PNGs and original Urbanity/TerrIO SVGs are imported with provenance."
   ]
 }

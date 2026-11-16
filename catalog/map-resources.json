@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_on": "2026-11-13",
+  "checked_on": "2026-11-16",
   "verification_note": "Links are exact README/source routes. HTTP entry reachability is checked separately; no iframe, JS, WebGL, notebook, data-service or provider runtime certification.",
   "source_capture_sha256": "28edefe79b69dac8ba10b83929a936f7424edde44f7708bbf0a24da398c4ecaa",
   "resources": [
@@ -1873,6 +1873,306 @@
         "sample_bytes": 4096,
         "html_prefix": true
       }
+    },
+    {
+      "id": "map-086",
+      "repository": "JupyterLite-C3S-Atlas",
+      "title": "C3S teaching maps",
+      "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/maps/",
+      "mode": "2d-map",
+      "data_class": "synthetic-with-reference-context",
+      "description": "Twenty complete source lessons connect anomalies, regions and uncertainty with a real model-window table, real generalized coastline, catalogue metadata and separately labelled synthetic arrays. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-086",
+        "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/maps/",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-087",
+      "repository": "JupyterLite-C3S-Atlas",
+      "title": "C3S teaching globe",
+      "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/globe/",
+      "mode": "3d-map",
+      "data_class": "synthetic-with-reference-context",
+      "description": "Twenty complete source lessons connect anomalies, regions and uncertainty with a real model-window table, real generalized coastline, catalogue metadata and separately labelled synthetic arrays. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-087",
+        "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/globe/",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-088",
+      "repository": "JupyterLite-C3S-Atlas",
+      "title": "C3S teaching scenes",
+      "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/scenes/",
+      "mode": "3d-scene",
+      "data_class": "synthetic-with-reference-context",
+      "description": "Twenty complete source lessons connect anomalies, regions and uncertainty with a real model-window table, real generalized coastline, catalogue metadata and separately labelled synthetic arrays. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-088",
+        "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/scenes/",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-089",
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "title": "synthetic map gallery",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/map/",
+      "mode": "2d-map",
+      "data_class": "synthetic",
+      "description": "Thirty-two complete synthetic experiments introduce Destination Earth architecture, grids, interpolation, validation, ensembles and bounded service handoffs. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "0e32b2477ba5c0030985e25f1071d94cddabf130",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/blob/0e32b2477ba5c0030985e25f1071d94cddabf130/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-089",
+        "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/map/",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-090",
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "title": "synthetic terrain gallery",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/terrain/",
+      "mode": "3d-map",
+      "data_class": "synthetic",
+      "description": "Thirty-two complete synthetic experiments introduce Destination Earth architecture, grids, interpolation, validation, ensembles and bounded service handoffs. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "0e32b2477ba5c0030985e25f1071d94cddabf130",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/blob/0e32b2477ba5c0030985e25f1071d94cddabf130/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-090",
+        "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/terrain/",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-091",
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "title": "synthetic globe gallery",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/globe/",
+      "mode": "3d-scene",
+      "data_class": "synthetic",
+      "description": "Thirty-two complete synthetic experiments introduce Destination Earth architecture, grids, interpolation, validation, ensembles and bounded service handoffs. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "0e32b2477ba5c0030985e25f1071d94cddabf130",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/blob/0e32b2477ba5c0030985e25f1071d94cddabf130/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-091",
+        "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/globe/",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-092",
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "title": "synthetic dashboard",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/dashboard/",
+      "mode": "explorer",
+      "data_class": "synthetic",
+      "description": "Thirty-two complete synthetic experiments introduce Destination Earth architecture, grids, interpolation, validation, ensembles and bounded service handoffs. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "0e32b2477ba5c0030985e25f1071d94cddabf130",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/blob/0e32b2477ba5c0030985e25f1071d94cddabf130/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-092",
+        "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/dashboard/",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-093",
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "title": "synthetic vector flow",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/flow/",
+      "mode": "explorer",
+      "data_class": "synthetic",
+      "description": "Thirty-two complete synthetic experiments introduce Destination Earth architecture, grids, interpolation, validation, ensembles and bounded service handoffs. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "0e32b2477ba5c0030985e25f1071d94cddabf130",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/blob/0e32b2477ba5c0030985e25f1071d94cddabf130/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-093",
+        "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/flow/",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-094",
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "title": "synthetic comparison",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/compare/",
+      "mode": "explorer",
+      "data_class": "synthetic",
+      "description": "Thirty-two complete synthetic experiments introduce Destination Earth architecture, grids, interpolation, validation, ensembles and bounded service handoffs. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "0e32b2477ba5c0030985e25f1071d94cddabf130",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/blob/0e32b2477ba5c0030985e25f1071d94cddabf130/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-094",
+        "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/compare/",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-095",
+      "repository": "JupyterLite-Urbanity",
+      "title": "synthetic urban map",
+      "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/2d-map.html",
+      "mode": "2d-map",
+      "data_class": "synthetic",
+      "description": "Seven complete standard-library lessons connect streets, urban graphs, contextual summaries, synthetic imagery labels, visualisation and reproducible exports. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-Urbanity/blob/a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-095",
+        "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/2d-map.html",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-096",
+      "repository": "JupyterLite-Urbanity",
+      "title": "synthetic urban heights",
+      "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/3d-map.html",
+      "mode": "3d-map",
+      "data_class": "synthetic",
+      "description": "Seven complete standard-library lessons connect streets, urban graphs, contextual summaries, synthetic imagery labels, visualisation and reproducible exports. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-Urbanity/blob/a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-096",
+        "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/3d-map.html",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-097",
+      "repository": "JupyterLite-Urbanity",
+      "title": "synthetic urban scene",
+      "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/3d-scene.html",
+      "mode": "3d-scene",
+      "data_class": "synthetic",
+      "description": "Seven complete standard-library lessons connect streets, urban graphs, contextual summaries, synthetic imagery labels, visualisation and reproducible exports. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-Urbanity/blob/a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-097",
+        "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/3d-scene.html",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-098",
+      "repository": "JupyterLite-terrio",
+      "title": "TerrIO 2D maps",
+      "url": "https://jltobias.github.io/JupyterLite-terrio/maps/2d.html",
+      "mode": "2d-map",
+      "data_class": "synthetic-with-reference-context",
+      "description": "Thirteen complete TerrIO reading/editing copies preserve real Natural Earth countries, original SVG chapter cards, helpers and synthetic raster/vector/point-cloud workflows. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "18574d4e7a8dabb99d3db65b20c6180185578482",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-terrio/blob/18574d4e7a8dabb99d3db65b20c6180185578482/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-098",
+        "url": "https://jltobias.github.io/JupyterLite-terrio/maps/2d.html",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-099",
+      "repository": "JupyterLite-terrio",
+      "title": "TerrIO 3D maps",
+      "url": "https://jltobias.github.io/JupyterLite-terrio/maps/3d.html",
+      "mode": "3d-map",
+      "data_class": "synthetic-with-reference-context",
+      "description": "Thirteen complete TerrIO reading/editing copies preserve real Natural Earth countries, original SVG chapter cards, helpers and synthetic raster/vector/point-cloud workflows. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "18574d4e7a8dabb99d3db65b20c6180185578482",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-terrio/blob/18574d4e7a8dabb99d3db65b20c6180185578482/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-099",
+        "url": "https://jltobias.github.io/JupyterLite-terrio/maps/3d.html",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
+    },
+    {
+      "id": "map-100",
+      "repository": "JupyterLite-terrio",
+      "title": "TerrIO scene and globe",
+      "url": "https://jltobias.github.io/JupyterLite-terrio/maps/scenes.html",
+      "mode": "3d-scene",
+      "data_class": "synthetic-with-reference-context",
+      "description": "Thirteen complete TerrIO reading/editing copies preserve real Natural Earth countries, original SVG chapter cards, helpers and synthetic raster/vector/point-cloud workflows. Runtime, geographic/reference and synthetic status remain separate.",
+      "source_commit": "18574d4e7a8dabb99d3db65b20c6180185578482",
+      "evidence_url": "https://github.com/jltobias/JupyterLite-terrio/blob/18574d4e7a8dabb99d3db65b20c6180185578482/README.md",
+      "evidence_type": "exact-readme-and-build-layout",
+      "runtime_verification": "not run; reviewed source routes only",
+      "entry_check": {
+        "id": "map-100",
+        "url": "https://jltobias.github.io/JupyterLite-terrio/maps/scenes.html",
+        "status": 200,
+        "checked_on": "2026-11-16",
+        "verification": "Finite GET first512bytes; entry only; no source JS, WebGL, model, notebook or provider certification."
+      }
     }
   ],
   "repository_coverage": [
@@ -2540,6 +2840,50 @@
       "readme_available": true,
       "verified_head_commit": "fcbf8b57c084fdb9df80a2500d80c8dd7bd2f21b",
       "map_status": "indexed-experiences"
+    },
+    {
+      "repository": "JupyterLite-C3S-Atlas",
+      "url": "https://github.com/jltobias/JupyterLite-C3S-Atlas",
+      "visibility": "public",
+      "default_branch": "main",
+      "readme_path": "README.md",
+      "readme_blob_sha": "048596d1c4cdd407893603d1d8d4c38272319763",
+      "readme_available": true,
+      "verified_head_commit": "b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a",
+      "map_status": "indexed-experiences; source-route review only; synthetic fields and real reference/geographic data distinguished"
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin",
+      "visibility": "public",
+      "default_branch": "main",
+      "readme_path": "README.md",
+      "readme_blob_sha": "338ea63ee6a226ed7189ff6dd0e1b8430bed92b3",
+      "readme_available": true,
+      "verified_head_commit": "0e32b2477ba5c0030985e25f1071d94cddabf130",
+      "map_status": "indexed-experiences; source-route review only; synthetic fields and real reference/geographic data distinguished"
+    },
+    {
+      "repository": "JupyterLite-Urbanity",
+      "url": "https://github.com/jltobias/JupyterLite-Urbanity",
+      "visibility": "public",
+      "default_branch": "main",
+      "readme_path": "README.md",
+      "readme_blob_sha": "b3f98942988eedecb6215192672b78fef97d670d",
+      "readme_available": true,
+      "verified_head_commit": "a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f",
+      "map_status": "indexed-experiences; source-route review only; synthetic fields and real reference/geographic data distinguished"
+    },
+    {
+      "repository": "JupyterLite-terrio",
+      "url": "https://github.com/jltobias/JupyterLite-terrio",
+      "visibility": "public",
+      "default_branch": "main",
+      "readme_path": "README.md",
+      "readme_blob_sha": "c7d8fa1a0c796cad36f85d121bdacb3eeab020cf",
+      "readme_available": true,
+      "verified_head_commit": "18574d4e7a8dabb99d3db65b20c6180185578482",
+      "map_status": "indexed-experiences; source-route review only; synthetic fields and real reference/geographic data distinguished"
     }
   ]
 }

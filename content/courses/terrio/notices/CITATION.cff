@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Cite this course with the repository commit or release and access date. Cite TerrIO and data sources separately."
+title: "JupyterLite-terrio: A geospatial field guide"
+type: software
+authors:
+  - name: "JupyterLite-terrio contributors"
+repository-code: "https://github.com/jltobias/JupyterLite-terrio"
+url: "https://github.com/jltobias/JupyterLite-terrio"
+license: MIT
+abstract: "Original notebook lessons, a Jupyter Book, and a JupyterLite Lab exploring TerrIO with synthetic teaching data and public-domain Natural Earth outlines."
+keywords: [geospatial, education, TerrIO, JupyterLite, Jupyter Book]

@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "01-first-contact",
+    "title": "First contact with TerrIO",
+    "subtitle": "From a file to a question",
+    "goals": "Inspect a raster; distinguish coordinates from array indices; export a reproducible result."
+  },
+  {
+    "slug": "02-coordinates",
+    "title": "Coordinates tell a story",
+    "subtitle": "Units, projections, and honest distances",
+    "goals": "Transform coordinates with TerrIO; check a round trip; quantify Mercator scale distortion."
+  },
+  {
+    "slug": "03-vectors-2d-maps",
+    "title": "Vectors and 2D maps",
+    "subtitle": "Explore a public-domain world",
+    "goals": "Read Natural Earth features; filter attributes with TerrIO; make an interactive outline map."
+  },
+  {
+    "slug": "04-vector-analysis",
+    "title": "Vector analysis",
+    "subtitle": "Buffers, topology, and scale",
+    "goals": "Create projected features; buffer them in metres; test geometry and dissolve overlapping zones."
+  },
+  {
+    "slug": "05-rasters-and-cogs",
+    "title": "Rasters and cloud-ready files",
+    "subtitle": "Pixels, missing values, and windows",
+    "goals": "Handle nodata; write a COG; compare a window with an array slice and resampled overview."
+  },
+  {
+    "slug": "06-terrain",
+    "title": "Reading the shape of terrain",
+    "subtitle": "Slope, hillshade, contours, and 3D",
+    "goals": "Derive terrain products with TerrIO; compare shading with elevation; inspect an interactive surface."
+  },
+  {
+    "slug": "07-imagery",
+    "title": "Spectral indices without shortcuts",
+    "subtitle": "Synthetic reflectance and NDVI",
+    "goals": "Compute NDVI with TerrIO; handle zero denominators; inspect threshold sensitivity and quality masks."
+  },
+  {
+    "slug": "08-point-clouds",
+    "title": "From points to surfaces",
+    "subtitle": "A synthetic lidar laboratory",
+    "goals": "Write and read a LAS file; filter ground points; compare ground and canopy elevations in 3D."
+  },
+  {
+    "slug": "09-scenes-and-globes",
+    "title": "Scenes, maps, and globes",
+    "subtitle": "Choose a view that answers the question",
+    "goals": "Build a geographic globe; compare display projections; disclose scene scale and vertical exaggeration."
+  },
+  {
+    "slug": "10-data-cubes",
+    "title": "Beyond a single image",
+    "subtitle": "Named dimensions and seasonal change",
+    "goals": "Use TerrIO with xarray; make a labelled time cube; distinguish anomalies from long-term trends."
+  },
+  {
+    "slug": "11-cloud-and-catalogs",
+    "title": "Cloud data and discovery",
+    "subtitle": "STAC, range reads, and honest budgets",
+    "goals": "Build a local STAC Item; inspect metadata; estimate window size; distinguish browser download from remote range I/O."
+  },
+  {
+    "slug": "12-interoperability",
+    "title": "Formats and reproducibility",
+    "subtitle": "Round trips are experiments",
+    "goals": "Compare GeoJSON, FlatGeobuf, and GeoPackage; verify attributes; build a small provenance record."
+  },
+  {
+    "slug": "13-capstone",
+    "title": "A reproducible terrain investigation",
+    "subtitle": "From question to evidence",
+    "goals": "Combine terrain analysis, threshold sensitivity, 3D inspection, exported products, and a concise cited report."
+  }
+]

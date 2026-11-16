@@ -1,0 +1,787 @@
+{
+  "checked_on": "2026-11-16",
+  "method": "Fresh native Python kernel and temporary course layout per notebook; Python data-service connections guarded; no upstream script execution.",
+  "limits": "Native calculations only. Five widget-only frontend cells skipped. TerrIO source copies remain unexecuted reference copies; matching Pyodide0.29 source runtime required. Browser/CDN/WebGL/service certification is separate.",
+  "results": [
+    {
+      "notebook": "projects/c3s-atlas/index.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/svg+xml"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "0ac7841d711602ee3fa032c81f37c3afdd4be62dfeee59e1561b1f0c7c0a5a90"
+    },
+    {
+      "notebook": "projects/destination-earth-digital-twin/index.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/svg+xml"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "b11e6f7489dfcdcc996ae4b7083cc1abe4a3e79c660ddfb99c632945d7bb26ed"
+    },
+    {
+      "notebook": "projects/urbanity/index.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/svg+xml"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "7d61e80350d1954ea0c0445ab7036e73e80789668d2a7c31cd099f8e5e760ef6"
+    },
+    {
+      "notebook": "projects/terrio/index.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/svg+xml"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "e97caa2b7fdcd312b30ccb4adf3a510f8a9b492ce471b24288cfb7b19ea7dad3"
+    },
+    {
+      "notebook": "courses/c3s-atlas/01-atlas-orientation.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "9c20e9c1f4ddd5b0007d47d2c2210f3ce7b3737b3b06578657815876927b0b8b"
+    },
+    {
+      "notebook": "courses/c3s-atlas/02-data-and-provenance.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "1753472383a1a299e60b9cbc92d22047d8191fe8b21d5b64680598265953087c"
+    },
+    {
+      "notebook": "courses/c3s-atlas/03-baselines-and-anomalies.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "dc30c74722b99541f5ce3215ee266177fbde88e2039af9b3178feabb72f5f7b2"
+    },
+    {
+      "notebook": "courses/c3s-atlas/04-seasons-and-stripes.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "3a99062c0f2a01b2b98b24c68a02e038cc2a652f7a630e105a0cb0b3e776476b"
+    },
+    {
+      "notebook": "courses/c3s-atlas/05-heat-and-cold.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "8d8675fe917c2e3b7b7ad473a3f5f869d4697bc40dfaea54f46b192515f8b898"
+    },
+    {
+      "notebook": "courses/c3s-atlas/06-rain-and-water.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "03a6b06961f3a6d5d7049d2ede0128a1cd1e563dcd9dcbcbd1986bf630341d3a"
+    },
+    {
+      "notebook": "courses/c3s-atlas/07-drought.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "d1c023bb143abba4a45b308e188cbf690c6d046c7db7d9f3bfd6b782b270ac3d"
+    },
+    {
+      "notebook": "courses/c3s-atlas/08-wind-and-radiation.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "ce63cc72df340995d181a329d92f0f8397b60a71958eaf16d9db586bf7f09ff6"
+    },
+    {
+      "notebook": "courses/c3s-atlas/09-snow-and-ice.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "71ea2f63d31d6d70a20b10284f7535f88216372c5ab0c35fb22aa8a35698ded3"
+    },
+    {
+      "notebook": "courses/c3s-atlas/10-ocean-and-circulation.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "8b71cef85977efa7c7c32a6c695b8db953dfcd8e79dd6493cc8671b4020339e6"
+    },
+    {
+      "notebook": "courses/c3s-atlas/11-scenarios-and-ensembles.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "4487fa8487286ba1474fbe25caa508beac0491f7d46cbaa9416c081d078189ab"
+    },
+    {
+      "notebook": "courses/c3s-atlas/12-global-warming-levels.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html",
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "6f91a38f9812a36fa8a554dccbd9ba9396c3dcea074f8de0b9931191332f4de1"
+    },
+    {
+      "notebook": "courses/c3s-atlas/13-uncertainty-and-bias.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "88f724f64c65bb9301ca6685f6cc32d4c50af45f366dbc888caee23e5a662ca3"
+    },
+    {
+      "notebook": "courses/c3s-atlas/14-regions-and-weights.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "5d0d001b9629b5de771ce073f9a317cea02536309d8c266e30454792f8c8f345"
+    },
+    {
+      "notebook": "courses/c3s-atlas/15-interactive-2d-maps.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html",
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "d38131cfe55e63ba827da1fd04be17fb07caf76d8eec93f64771574a5c373564"
+    },
+    {
+      "notebook": "courses/c3s-atlas/16-globes-and-3d-maps.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "b482d10d7511ed6896c955f3afa47a93a0c803a4024b0fc6b647cb5c35e207c8"
+    },
+    {
+      "notebook": "courses/c3s-atlas/17-3d-scenes.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "3a9805c94bd4c17863517a772e3c8c4da8e3b93f496ae21d2ea9b15341175e0b"
+    },
+    {
+      "notebook": "courses/c3s-atlas/18-monitoring-and-urban.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "a76091597711a3ee5949fae2d2d47d3b98e3184abe5cf4be4a95127077e19c32"
+    },
+    {
+      "notebook": "courses/c3s-atlas/19-bring-real-data.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "0cf7a778187158e8ffb878d198ce860b0a3f89cc071d05a4c539dc4c00dfaa15"
+    },
+    {
+      "notebook": "courses/c3s-atlas/20-capstone.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "text/html",
+        "text/html",
+        "text/html"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "fa6513f28ffb3755082b461335eaa4a0383812013a35225e511b8cbb9f2490ab"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/01-system.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "074b42d0b0dcf579d9ee0f4c9065a103eb8c7e11d910a579238293b57079e2dc"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/02-grids.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "1c9af4093b43ebcfa8117b9633596738c59f07c9847a5a6fb575bd827291ccf6"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/03-access.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "c2a3d40352206568c55872aa7d1f3e2ef6c5b6d85258bd1ab8ca5ecd69e55c11"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/04-validation.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "db375db22549d1d5ab426b0af73c66d1735dd83530a10e48ac76d3ae8fe31c94"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/05-labelled-arrays.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "fe42004510e76af2e7ede854c34fbcb86ec051ab5b004f7c3c1a7d6bbad19e8f"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/06-area-means.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "ba52bf9e90647610676afa64a7d25286513ec0f52ad08bd952b898301232bc91"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/07-climate.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "95eb93a4a09b98eb323dd908f2bf25d9830f58ffbd32152e437ee16bd12466af"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/08-extremes.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "95f80626eebda74076d7cf8d15d7af451f30001b0f8debde0096942ee5e58fc2"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/09-water.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "8ed6224153587dc04551df349d7e3f0e8e2372bf701d87c1d17b91612327b833"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/10-wind.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "ba2b069150da786a0cf8ff9586b0a007dcea93d28314501a464b0f2c79b166cf"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/11-interpolation.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "e301e98f946b06119cd1f762062d1bbee016c99a8f4ab8ed5e5cb65b437852ef"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/12-ensembles.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "0bfe2e1723ba7036af2593703194674d370864965f2529a29dfd33e7e540d3b1"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/13-verification.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "c65c8c56af98b251fa5b029fc3b830a5f69a6d5d2d95db44c073dfa85dae00ca"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/14-maps.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [
+        9
+      ],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "6725103a252d3b758f54263b4158528135360aac201b0d7f62720eb1c07bfa88"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/15-projections.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "6a4e220ffe4b67f4c88d3378fff234adf5b08737e0189658d948da0795e8f16b"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/16-terrain.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [
+        9
+      ],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "27596ca6cb471bc774e6300af8923eab811734002ef0ea17270799c65042bf03"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/17-globe.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [
+        9
+      ],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "4a11a826113d9685619e90f3fabf85708f0c06ae8a3feea4d74497fd02e0d071"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/18-time.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [
+        9
+      ],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "9f0c82f2124e41a217d06d9df2c23a5d36163443cad443b72ff68e85503eef24"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/19-dashboard.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [
+        9
+      ],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "b726f021e6b028c7254eae22b2ded66a0f66c9918e3c16164f6e8aad73a38ad1"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/20-performance.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "29a23b46f667730e492249f422ec558c1e1548f9014efbe5544f563765b7402d"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/21-reproducibility.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "99c6dfcf599978b1dd75d281473e5604af9561ea8d306e7b9b7211498cc1489e"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/22-capstone.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "5af9ad5d762d0b320a80f00696914903a42d4761fa24511ebcbec8d022237654"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/23-dte-workflows.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "f2f7f5e7b66385dffd8b82e1f049381a579d71ff7b415c1727e6b9f22f4784cd"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/24-polytope.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "80c1055c928a2825500b977c2ade94966afedc6174a6ebf679e806ca7d293921"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/25-earthkit-export.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "56c27ad777cb5f375d06eda87207d6126c5b6287cafa6e2c766d66aeae2fc3ac"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/26-data-lake.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "d56776635fcde98abdf8d37c57792e8ff192bb72cadd24b71510eced4f707091"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/27-ai-validation.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "382b779d798eb8ac2ac84936454b6522650a51340f06dd14728d777e5d263a98"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/28-regional-extremes.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "b6f52c8a0e3c7891f7b99fa5d05ff9cf67e899a7139c3d271f8e8741cfa81e2e"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/29-land.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "77b448ce14181b5a26a6ece4b6f3fa6ade590930fcfce7148c7f2c8ed4ce311a"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/30-waves.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "8040f749750a8d36d55fbbcf602a16d1a2525ca5d1bee72e9e027b6a1587b9e4"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/31-sea-ice.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "2c7cae47c903f4f5d637e27e4ca328431f6bf465c43e3cc50d7414943a8f7883"
+    },
+    {
+      "notebook": "courses/destination-earth-digital-twin/32-ocean.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [
+        "image/png"
+      ],
+      "independent_oracle": true,
+      "canonical_sha256": "bfa82ddcc11250ea524886c967c2d19418fd0585f1872f9ac65462ae945a26eb"
+    },
+    {
+      "notebook": "courses/urbanity/notebooks/street-networks.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [],
+      "independent_oracle": true,
+      "canonical_sha256": "3149e8563eb63266fd45822d1d3ab369927f52b3e3c9dd1a5e14a6f21d6b0971"
+    },
+    {
+      "notebook": "courses/urbanity/notebooks/urban-graphs.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [],
+      "independent_oracle": false,
+      "canonical_sha256": "26a977d24664254ec3880f10b196887f3f1c70240ea2d083400817794200a491"
+    },
+    {
+      "notebook": "courses/urbanity/notebooks/urban-context.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [],
+      "independent_oracle": false,
+      "canonical_sha256": "d4fd0583209ceeae46fa928956a642805f21f2603dcf8003a350302ca45ccd12"
+    },
+    {
+      "notebook": "courses/urbanity/notebooks/imagery.ipynb",
+      "status": "passed",
+      "code_cells": 1,
+      "skipped_widget_cells": [],
+      "graphics": [],
+      "independent_oracle": false,
+      "canonical_sha256": "6c57f597cfc8f663d843fcfe0faf9088a62135ef504da47e21a7f1c087546ae0"
+    },
+    {
+      "notebook": "courses/urbanity/notebooks/visualisation.ipynb",
+      "status": "passed",
+      "code_cells": 1,
+      "skipped_widget_cells": [],
+      "graphics": [],
+      "independent_oracle": false,
+      "canonical_sha256": "51289c06a408f879508f03c341640a102a84673f097a721f98f4a902053da452"
+    },
+    {
+      "notebook": "courses/urbanity/notebooks/graph-ml.ipynb",
+      "status": "passed",
+      "code_cells": 1,
+      "skipped_widget_cells": [],
+      "graphics": [],
+      "independent_oracle": false,
+      "canonical_sha256": "c5273a46382626d4ddc4193e0dffcf888eb2184ad96e188c795af9d22dbf32ed"
+    },
+    {
+      "notebook": "courses/urbanity/notebooks/reproducibility.ipynb",
+      "status": "passed",
+      "code_cells": 2,
+      "skipped_widget_cells": [],
+      "graphics": [],
+      "independent_oracle": false,
+      "canonical_sha256": "f8df17f250d0071d237dd6557a1106102f454a5211ec6f910433702e45d9a55a"
+    },
+    {
+      "notebook": "courses/terrio/01-first-contact.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/02-coordinates.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/03-vectors-2d-maps.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/04-vector-analysis.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/05-rasters-and-cogs.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/06-terrain.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/07-imagery.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/08-point-clouds.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/09-scenes-and-globes.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/10-data-cubes.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/11-cloud-and-catalogs.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/12-interoperability.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    },
+    {
+      "notebook": "courses/terrio/13-capstone.ipynb",
+      "status": "skipped",
+      "reason": "TerrIO0.9.0 Pyodide0.29 ABI: matched source Lab continuation; no native/Atlas314 TerrIO execution."
+    }
+  ]
+}

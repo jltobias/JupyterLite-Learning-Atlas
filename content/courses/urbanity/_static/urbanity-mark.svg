@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="t d">
+  <title id="t">Urbanity learning companion mark</title>
+  <desc id="d">A small street grid with connected nodes.</desc>
+  <rect width="128" height="128" rx="24" fill="#12263a"/>
+  <g fill="none" stroke="#62d5c8" stroke-linecap="round" stroke-width="7">
+    <path d="M25 35h78M25 64h78M25 93h78M35 25v78M64 25v78M93 25v78"/>
+  </g>
+  <g fill="#ffb454" stroke="#12263a" stroke-width="4">
+    <circle cx="35" cy="35" r="8"/><circle cx="64" cy="64" r="8"/><circle cx="93" cy="93" r="8"/>
+    <circle cx="93" cy="35" r="8"/><circle cx="35" cy="93" r="8"/>
+  </g>
+</svg>

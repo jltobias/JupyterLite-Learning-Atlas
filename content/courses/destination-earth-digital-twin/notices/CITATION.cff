@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this independent learning repository when reusing its original materials."
+title: "Destination Earth Learning Book and Browser Lab"
+type: software
+authors:
+  - name: "jltobias and project contributors"
+repository-code: "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin"
+url: "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin"
+version: "0.1.0"
+date-released: "2026-11-15"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: "Independent educational notebooks and interactive visualizations using original synthetic Earth-system demonstration data."
+keywords:
+  - Destination Earth
+  - JupyterLite
+  - Jupyter Book
+  - synthetic data
+  - digital twins

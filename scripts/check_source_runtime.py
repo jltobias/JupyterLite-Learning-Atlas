@@ -19,6 +19,8 @@ from pathlib import Path
 from urllib.parse import quote
 
 import nbformat
+from expansion_runtime_contracts import reviewed_widget_indices
+from climate_plot_oracles import assert_climate_plot
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -319,7 +321,9 @@ def execute_case(browser, base, output, timeout, case):
     from check_runtime import select_python
     notebook_path=case['notebook'];canonical=ROOT/'content'/notebook_path
     nb=nbformat.read(canonical,as_version=4)
-    code='\n\n'.join(c.source for c in nb.cells if c.cell_type=='code')
+    skipped=[nb.cells[i].id for i in reviewed_widget_indices(notebook_path,nb,browser=True)] if case.get('skip_widgets') else []
+    code='\n\n'.join(c.source for c in nb.cells if c.cell_type=='code' and c.id not in skipped)
+    if case.get('skip_widgets'):assert len(skipped)==1, 'Expected one explicit optional widget-only cell'
     asset_hashes={name:hashlib.sha256((canonical.parent/name).read_bytes()).hexdigest() for name in case['files']}
     context=browser.new_context(viewport={'width':1440,'height':1000})
     tile_requests=[]
@@ -359,6 +363,12 @@ def execute_case(browser, base, output, timeout, case):
                   "_atlas_export_bytes = {name:{'sha256':hashlib.sha256(Path(name).read_bytes()).hexdigest(),'bytes':len(Path(name).read_bytes())} for name in _atlas_export_paths}\n")
     proof=rerun+"\n"+case['assertions']+export_proof+f"\nprint({marker!r}, json.dumps({{'platform':sys.platform,'asset_sha256':_atlas_actual_assets,'exports':_atlas_export_bytes,'assertions':'passed'}}))\n"
     execution=code
+    if case.get('expected_error'):
+        import textwrap
+        execution=('try:\n'+textwrap.indent(code,'    ')+
+            '\nexcept ValueError as _atlas_error:\n    _atlas_expected_error = str(_atlas_error)\n'+
+            f'    assert {case["expected_error"]!r} in _atlas_expected_error\n'+
+            'else:\n    raise AssertionError("Invalid uploaded pair was accepted")\n')
     if case.get('interactive_cells'):
         cells=[c.source for c in nb.cells if c.cell_type=='code']
         execution=(f'_atlas_canonical_cells = {cells!r}\n'
@@ -438,10 +448,86 @@ def execute_case(browser, base, output, timeout, case):
             with (canonical.parent/'resources/pumps.csv').open(encoding='utf-8') as data:
                 pumps=list(csv.DictReader(data))
         maps=inspect_cholera_maps(page,cell,case['maps'],output,case['label'],timeout,deaths,pumps) if case.get('maps') else []
+        plotly=[];plotly_downloads=[]
+        if case.get('plotly'):
+            # A MIME bundle or emitted HTML is not rendered Plotly evidence.
+            # Inspect actual loaded graphs, including sandboxed HTML frames.
+            def fresh_graphs():
+                found=cell.locator('.js-plotly-plot')
+                result=[(found.nth(i),[]) for i in range(found.count())]
+                frames=[]
+                for iframe in cell.locator('iframe').all():
+                    owner=iframe.element_handle();frame=owner.content_frame()
+                    if frame:frames.append((frame,[owner]))
+                while frames:
+                    frame,owners=frames.pop()
+                    frames.extend((child,owners+[child.frame_element()]) for child in frame.child_frames)
+                    found=frame.locator('.js-plotly-plot')
+                    result.extend((found.nth(i),owners) for i in range(found.count()))
+                return result
+            deadline=time.monotonic()+60;graphs=[]
+            while time.monotonic()<deadline:
+                graphs=fresh_graphs()
+                if len(graphs)>=case['plotly']:break
+                page.wait_for_timeout(200)
+            assert len(graphs)>=case['plotly'], 'Missing actual Plotly rendering; emitted MIME/HTML alone cannot pass'
+            for i,(graph,owners) in enumerate(graphs):
+                # The notebook output has its own scroll pane. Reveal each
+                # owning frame from the outside in before acting inside it.
+                for owner in owners:owner.scroll_into_view_if_needed()
+                graph.scroll_into_view_if_needed()
+                graph.evaluate('graph=>Promise.resolve(graph._promises?.length ? Promise.all(graph._promises) : null)')
+                observed=graph.evaluate('''graph=>({types:(graph._fullData||[]).map(t=>t.type),
+                    title:graph._fullLayout?.title?.text,
+                    canvases:[...graph.querySelectorAll('canvas')].map(c=>({width:c.width,height:c.height})),
+                    svg_paths:graph.querySelectorAll('svg path').length,
+                    trace_lengths:(graph._fullData||[]).map(t=>({x:t.x?.length,y:t.y?.length,z:t.z?.length})),
+                    camera:graph._fullLayout?.scene?.camera})''')
+                assert observed['types'] and observed['title'], 'Plotly layout/data failed to load'
+                if case.get('climate'):
+                    traces=graph.evaluate('''graph=>{
+                        const plain=v=>Array.isArray(v)||ArrayBuffer.isView(v) ? Array.from(v,plain) :
+                            (typeof v==='number'&&!Number.isFinite(v) ? null : v);
+                        return (graph._fullData||[]).map(t=>({
+                            type:t.type,visible:t.visible,x:plain(t.x),y:plain(t.y),z:plain(t.z),surfacecolor:plain(t.surfacecolor)}));
+                    }''')
+                    kind='globe' if 'surface' in observed['types'] else case['climate']
+                    observed['climate_oracle']=assert_climate_plot(traces,kind)
+                    if kind!='globe':
+                        heatmap=graph.locator('.heatmaplayer .hm image')
+                        assert heatmap.count()==1 and heatmap.is_visible(),'Expected the actual rendered climate heatmap image'
+                        observed['climate_image']=heatmap.evaluate('image=>({width:image.getBoundingClientRect().width,height:image.getBoundingClientRect().height,opacity:getComputedStyle(image).opacity})')
+                        assert observed['climate_image']['width']>0 and observed['climate_image']['height']>0 and float(observed['climate_image']['opacity'])>0
+                if 'surface' in observed['types']:
+                    assert any(c['width']>=200 and c['height']>=100 for c in observed['canvases']), 'Globe needs a rendered WebGL canvas'
+                    before=observed['camera']
+                    # Explicit screen coordinates keep the real drag tied to
+                    # this graph's visible canvas rather than its modebar.
+                    box=graph.bounding_box()
+                    page.mouse.move(box['x']+box['width']*.5,box['y']+box['height']*.5)
+                    page.mouse.down();page.mouse.move(box['x']+box['width']*.6,box['y']+box['height']*.55,steps=8);page.mouse.up()
+                    page.wait_for_timeout(300)
+                    after=graph.evaluate('graph=>graph._fullLayout.scene.camera')
+                    assert after!=before, 'Globe camera must respond to an actual drag'
+                    observed['camera_changed']=True
+                else:assert observed['svg_paths']>5,'2D Plotly graph needs rendered paths'
+                if case.get('plotly_download'):
+                    graph.hover()
+                    button=graph.locator('.modebar-btn[data-title*="Download plot"]')
+                    assert button.count()==1,'Expected Plotly user image-export control'
+                    with page.expect_download(timeout=30000) as received:button.click()
+                    download=received.value;destination=output/f'plotly-download-{case["label"]}-{i}.png'
+                    download.save_as(destination);data=destination.read_bytes()
+                    assert data[:8]==b'\x89PNG\r\n\x1a\n','Plotly export must be an actual PNG download'
+                    import struct
+                    width,height=struct.unpack('>II',data[16:24]);assert width>=200 and height>=100
+                    plotly_downloads.append({'filename':download.suggested_filename,'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'width':width,'height':height})
+                graph.screenshot(path=str(output/f'plotly-{case["label"]}-{i}.png'))
+                plotly.append(observed)
         if maps:assert tile_requests, 'No controlled tile responses were exercised'
         assert not errors,errors
         page.screenshot(path=str(output/f'executed-{case["label"]}.png'))
-        result={'status':'passed','notebook':notebook_path,'marker':marker,'proof':evidence,'pngs':images,'downloads':downloads,'maps':maps,
+        result={'status':'passed','notebook':notebook_path,'marker':marker,'proof':evidence,'pngs':images,'downloads':downloads,'maps':maps,'plotly':plotly,'plotly_downloads':plotly_downloads,'skipped_optional_widget_cell_ids':skipped,
                 'raw_http_asset_sha256':asset_hashes,'allowed_filesystem_sha256':filesystem_hashes,
                 'filesystem_text_transport':'Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8',
                 'canonical_sha256':hashlib.sha256(canonical.read_bytes()).hexdigest(),

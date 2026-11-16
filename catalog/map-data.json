@@ -13,6 +13,56 @@
   "scientific_limits": "Independent families, units, masks and epochs. No facility coordinates; no flood predictions. Gauge station zero/window anomalies are not MSL. Alternative population products are never summed.",
   "assets": [
     {
+      "path": "content/courses/c3s-atlas/data/reference/CMIP6_WarmingLevels.csv",
+      "site_path": "book/courses/c3s-atlas/data/reference/CMIP6_WarmingLevels.csv",
+      "role": "model-window-reference",
+      "license": "Apache-2.0; C3S/EU/CMIP6 credits retained",
+      "source_url": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data/reference/CMIP6_WarmingLevels.csv",
+      "source_sha256": "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220",
+      "sha256": "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220",
+      "bytes": 5095
+    },
+    {
+      "path": "content/courses/c3s-atlas/data/reference/ne_110m_coastline.geojson",
+      "site_path": "book/courses/c3s-atlas/data/reference/ne_110m_coastline.geojson",
+      "role": "geographic-context",
+      "license": "Natural Earth public domain",
+      "source_url": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data/reference/ne_110m_coastline.geojson",
+      "source_sha256": "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c",
+      "sha256": "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c",
+      "bytes": 139907
+    },
+    {
+      "path": "content/courses/c3s-atlas/data/reference/atlas-catalogue.json",
+      "site_path": "book/courses/c3s-atlas/data/reference/atlas-catalogue.json",
+      "role": "catalogue-metadata",
+      "license": "CC-BY-4.0; C3S/ECMWF/EU credit",
+      "source_url": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/data/reference/atlas-catalogue.json",
+      "source_sha256": "33e92f5a01a5aa77cfe6a782776bbc5bba027cb4761b5d25f1faa35a1138dd86",
+      "sha256": "33e92f5a01a5aa77cfe6a782776bbc5bba027cb4761b5d25f1faa35a1138dd86",
+      "bytes": 5461
+    },
+    {
+      "path": "content/courses/terrio/data/countries.geojson",
+      "site_path": "book/courses/terrio/data/countries.geojson",
+      "role": "geographic-context",
+      "license": "Natural Earth public domain; generalized boundaries",
+      "source_url": "https://github.com/jltobias/JupyterLite-terrio/blob/18574d4e7a8dabb99d3db65b20c6180185578482/notebooks/data/countries.geojson",
+      "source_sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f",
+      "sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f",
+      "bytes": 838726
+    },
+    {
+      "path": "content/courses/terrio/data/sources.json",
+      "site_path": "book/courses/terrio/data/sources.json",
+      "role": "geographic-provenance",
+      "license": "Source-specific metadata; Natural Earth public-domain geography",
+      "source_url": "https://github.com/jltobias/JupyterLite-terrio/blob/18574d4e7a8dabb99d3db65b20c6180185578482/notebooks/data/sources.json",
+      "source_sha256": "d83333c628075ceaeffd11b7be338310546d990657473c224c4768b5ed89e142",
+      "sha256": "d83333c628075ceaeffd11b7be338310546d990657473c224c4768b5ed89e142",
+      "bytes": 609
+    },
+    {
       "path": "content/courses/sea-level-rise/data/nature-city-surfaces.json",
       "site_path": "book/courses/sea-level-rise/data/nature-city-surfaces.json",
       "role": "terrain",
@@ -339,8 +389,8 @@
       "site_path": "data/map-resources.json",
       "role": "atlas-output",
       "license": "MIT code; original narrative CC-BY-4.0; data rights remain separate",
-      "sha256": "e70c9d858b7791f1ffd1c4a31b0db5edaa7c876b41fd1157686dbd8b4306ad53",
-      "bytes": 122068
+      "sha256": "8bd8a637594a6cd7c2aa47ea27c6a1f1c7f27bb183575a857af23d0ab76c9883",
+      "bytes": 142326
     }
   ]
 }

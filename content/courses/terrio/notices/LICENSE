@@ -1,0 +1,37 @@
+Original code in this repository
+===============================
+MIT License
+
+Copyright (c) 2026 JupyterLite-terrio contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Original teaching text, synthetic data, and chapter SVG diagrams
+==============================================================
+To the extent that copyright or related rights exist, the contributors
+dedicate these original materials to the public domain under CC0 1.0:
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Exceptions
+==========
+Natural Earth data is public domain under its own terms. Third-party
+software and redistributed notices retain their original licenses.
+AI-generated cover artwork is identified in assets/ARTWORK.md; no claim
+of exclusive copyright is made. This file does not relicense TerrIO,
+its dependencies, externally hosted resources, or third-party data.

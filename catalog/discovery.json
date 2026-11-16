@@ -419,9 +419,33 @@
       "default_branch": "main",
       "visibility": "public",
       "url": "https://github.com/jltobias/JupyterLite-OneHealth"
+    },
+    {
+      "name": "JupyterLite-C3S-Atlas",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-C3S-Atlas"
+    },
+    {
+      "name": "JupyterLite-Destination-Earth-Digital-Twin",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin"
+    },
+    {
+      "name": "JupyterLite-Urbanity",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-Urbanity"
+    },
+    {
+      "name": "JupyterLite-terrio",
+      "default_branch": "main",
+      "visibility": "public",
+      "url": "https://github.com/jltobias/JupyterLite-terrio"
     }
   ],
-  "method": "Public-only GitHub connector inventory inspected 2026-11-01 (59 records), plus one targeted public Coral Reef One Health source addition verified 2026-11-02 (60 records). Existing records were retained without full reinspection; included source README is pinned to its inspected commit.; index record renamed to JupyterLite-Learning-Atlas on 2026-11-02 with repository identity verified (catalog/repository-rename.json); four external PHI-Case-Studies sources added through targeted commit/notebook/rights/deployment review on 2026-11-02 (64 public records total). The owner field describes the baseline inventory; external records have their own explicit owner. One targeted EO Satellite Guide source added on 2026-11-02: 65 public records total; all 64 prior records retained.",
+  "method": "Public-only GitHub connector inventory inspected 2026-11-01 (59 records), plus one targeted public Coral Reef One Health source addition verified 2026-11-02 (60 records). Existing records were retained without full reinspection; included source README is pinned to its inspected commit.; index record renamed to JupyterLite-Learning-Atlas on 2026-11-02 with repository identity verified (catalog/repository-rename.json); four external PHI-Case-Studies sources added through targeted commit/notebook/rights/deployment review on 2026-11-02 (64 public records total). The owner field describes the baseline inventory; external records have their own explicit owner. One targeted EO Satellite Guide source added on 2026-11-02: 65 public records total; all 64 prior records retained. Targeted 2026-11-16 append preserves all68 prior entries and adds four reviewed public owner repositories: 68 public owner repositories,40 JupyterLite names including Atlas, plus4 external PHI records =72 discovery entries.",
   "baseline_inspection": {
     "inspected_on": "2026-11-01",
     "repository_count": 59,
@@ -468,6 +492,34 @@
       "inspected_on": "2026-11-02",
       "source_commit": "2c607525ab06f52c77192889b2f01c5621714d0e",
       "scope": "Targeted EO source, six notebooks, rights and published-manifest review; all 64 prior discovery records retained without full reinspection."
+    },
+    {
+      "repository": "JupyterLite-C3S-Atlas",
+      "owner": "jltobias",
+      "inspected_on": "2026-11-16",
+      "source_commit": "b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a",
+      "scope": "Complete 20-notebook pinned source/rights/dependency/runtime review; prior discovery rows retained."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "owner": "jltobias",
+      "inspected_on": "2026-11-16",
+      "source_commit": "0e32b2477ba5c0030985e25f1071d94cddabf130",
+      "scope": "Complete 32-notebook pinned source/rights/dependency/runtime review; prior discovery rows retained."
+    },
+    {
+      "repository": "JupyterLite-Urbanity",
+      "owner": "jltobias",
+      "inspected_on": "2026-11-16",
+      "source_commit": "a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f",
+      "scope": "Complete 7-notebook pinned source/rights/dependency/runtime review; prior discovery rows retained."
+    },
+    {
+      "repository": "JupyterLite-terrio",
+      "owner": "jltobias",
+      "inspected_on": "2026-11-16",
+      "source_commit": "18574d4e7a8dabb99d3db65b20c6180185578482",
+      "scope": "Complete 13-notebook pinned source/rights/dependency/runtime review; prior discovery rows retained."
     }
   ]
 }

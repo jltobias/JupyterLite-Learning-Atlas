@@ -1,7 +1,7 @@
 {
-  "checked_on": "2026-11-02",
+  "checked_on": "2026-11-16",
   "baseline_checked_on": "2026-11-01",
-  "method": "HTTP GET entry reachability only. Original 134 rows retained verbatim from checks on 2026-11-01; original rows without checked_on retain that 2026-11-01 date. Targeted Coral addition: eleven exact source/provider entry checks on 2026-11-02, first 512 bytes only. No full reinspection, notebook-target or service functional certification. Targeted PHI addition: thirteen source entry GETs on 2026-11-02, using reviewed README URLs or explicitly observed deployment workflow/manifests. Prior 145 rows preserved; no source execution or Binder build/session started. Published contents manifests are separately normalized under manifest_evidence; these metadata checks add no launch rows. Targeted EO addition: ten exact EO/ESA entry GETs on 2026-11-02, all HTTP 200, extending 158 preserved rows to 168 (166 HTTP 200, two historical HTTP 404). Separate normalized EO manifest metadata confirms six notebook filenames only. Targeted 2026-11-13 Population/OneHealth: six exact documented HTTPS GET entries, all200; prior168 rows and manifest evidence unchanged. No upstream runtime certification.",
+  "method": "HTTP GET entry reachability only. Original 134 rows retained verbatim from checks on 2026-11-01; original rows without checked_on retain that 2026-11-01 date. Targeted Coral addition: eleven exact source/provider entry checks on 2026-11-02, first 512 bytes only. No full reinspection, notebook-target or service functional certification. Targeted PHI addition: thirteen source entry GETs on 2026-11-02, using reviewed README URLs or explicitly observed deployment workflow/manifests. Prior 145 rows preserved; no source execution or Binder build/session started. Published contents manifests are separately normalized under manifest_evidence; these metadata checks add no launch rows. Targeted EO addition: ten exact EO/ESA entry GETs on 2026-11-02, all HTTP 200, extending 158 preserved rows to 168 (166 HTTP 200, two historical HTTP 404). Separate normalized EO manifest metadata confirms six notebook filenames only. Targeted 2026-11-13 Population/OneHealth: six exact documented HTTPS GET entries, all200; prior168 rows and manifest evidence unchanged. No upstream runtime certification. Targeted 2026-11-16 append records exact pinned routes separately from fresh HTTP entry/runtime certification; prior174 rows preserved. Targeted2026-11-16:26 new route rows (26 unique exact source URLs), finite GET with first512bytes read; historical174 rows preserved. No source runtime or provider tile collection.",
   "results": [
     {
       "repository": "JupyterLite-Data-Visualization",
@@ -1003,6 +1003,188 @@
       "resolved_url": "https://jltobias.github.io/JupyterLite-OneHealth/explorer/profile/",
       "status": 200,
       "checked_on": "2026-11-13"
+    },
+    {
+      "repository": "JupyterLite-C3S-Atlas",
+      "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/book/index.html",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-C3S-Atlas",
+      "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/lite/lab/index.html?path=01-atlas-orientation.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-C3S-Atlas",
+      "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-C3S-Atlas",
+      "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/maps/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-C3S-Atlas",
+      "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/globe/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-C3S-Atlas",
+      "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/scenes/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/book/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/lab/index.html?path=01-system.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/map/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/terrain/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/globe/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/dashboard/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/flow/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Destination-Earth-Digital-Twin",
+      "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/compare/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Urbanity",
+      "url": "https://jltobias.github.io/JupyterLite-Urbanity/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Urbanity",
+      "url": "https://jltobias.github.io/JupyterLite-Urbanity/lab/lab/index.html?path=notebooks/street-networks.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Urbanity",
+      "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/2d-map.html",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Urbanity",
+      "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/3d-map.html",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-Urbanity",
+      "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/3d-scene.html",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-terrio",
+      "url": "https://jltobias.github.io/JupyterLite-terrio/book/intro.html",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-terrio",
+      "url": "https://jltobias.github.io/JupyterLite-terrio/lite/lab/index.html?path=01-first-contact.ipynb",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-terrio",
+      "url": "https://jltobias.github.io/JupyterLite-terrio/",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-terrio",
+      "url": "https://jltobias.github.io/JupyterLite-terrio/maps/2d.html",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-terrio",
+      "url": "https://jltobias.github.io/JupyterLite-terrio/maps/3d.html",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
+    },
+    {
+      "repository": "JupyterLite-terrio",
+      "url": "https://jltobias.github.io/JupyterLite-terrio/maps/scenes.html",
+      "status": 200,
+      "checked_on": "2026-11-16",
+      "verification": "Finite HTTPS GET, first512 bytes only; entry reachability, not notebook, JavaScript, WebGL, provider-data or runtime certification."
     }
   ],
   "baseline_results": {

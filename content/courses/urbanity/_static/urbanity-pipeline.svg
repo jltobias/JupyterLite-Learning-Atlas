@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 270" role="img" aria-labelledby="title desc">
+  <title id="title">Urban analysis workflow</title>
+  <desc id="desc">Study area and context become a network, then indicators and visual stories.</desc>
+  <rect width="1120" height="270" rx="22" fill="#f3f7fa"/>
+  <g font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle">
+    <g transform="translate(48 42)">
+      <rect width="210" height="164" rx="18" fill="#fff" stroke="#bed1dc" stroke-width="2"/>
+      <path d="m43 112 26-51 49-18 50 31-20 62-57 18Z" fill="#d8eee8" stroke="#418f86" stroke-width="3"/>
+      <path d="m67 66 46 58 51-50M69 112l93-38m-66 80 17-106" fill="none" stroke="#f0a746" stroke-width="4"/>
+      <text x="105" y="193" font-size="18" font-weight="700" fill="#163248">Study area + context</text>
+    </g>
+    <path d="M277 124h83" stroke="#7894a4" stroke-width="4"/><path d="m352 115 12 9-12 9" fill="none" stroke="#7894a4" stroke-width="4"/>
+    <g transform="translate(387 42)">
+      <rect width="250" height="164" rx="18" fill="#fff" stroke="#bed1dc" stroke-width="2"/>
+      <g fill="none" stroke="#287c82" stroke-width="4">
+        <path d="m46 115 42-49 57 43 57-60m-156 0 42 17 57-37 57 80M88 66l-6 71m63-28 4 35m57-95-5 95"/>
+      </g>
+      <g fill="#f0a746" stroke="#fff" stroke-width="3">
+        <circle cx="46" cy="115" r="7"/><circle cx="88" cy="66" r="7"/><circle cx="145" cy="109" r="7"/>
+        <circle cx="202" cy="49" r="7"/><circle cx="46" cy="49" r="7"/><circle cx="82" cy="137" r="7"/>
+        <circle cx="149" cy="144" r="7"/><circle cx="197" cy="139" r="7"/>
+      </g>
+      <text x="125" y="193" font-size="18" font-weight="700" fill="#163248">Networks + graphs</text>
+    </g>
+    <path d="M654 124h83" stroke="#7894a4" stroke-width="4"/><path d="m729 115 12 9-12 9" fill="none" stroke="#7894a4" stroke-width="4"/>
+    <g transform="translate(764 42)">
+      <rect width="300" height="164" rx="18" fill="#fff" stroke="#bed1dc" stroke-width="2"/>
+      <path d="M56 133V83h42v50m21 0V50h42v83m21 0V70h42v63m22 0V37h42v96" fill="#d8eee8" stroke="#418f86" stroke-width="3"/>
+      <path d="M51 137h215" stroke="#163248" stroke-width="4"/>
+      <path d="M62 105h28m37-33h28m43 12h28m21-35h28" stroke="#f0a746" stroke-width="7" stroke-linecap="round"/>
+      <text x="150" y="193" font-size="18" font-weight="700" fill="#163248">Indicators + decisions</text>
+    </g>
+  </g>
+</svg>

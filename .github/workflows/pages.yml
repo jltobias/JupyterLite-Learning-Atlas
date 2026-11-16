@@ -24,7 +24,10 @@ jobs:
       - run: python -m pip install -r requirements-build.txt
       - run: python -m unittest discover -s tests
       - run: python scripts/generate.py
-      - run: python scripts/execute.py --write
+      # Existing canonical outputs are immutable during this additive expansion.
+      - run: python scripts/execute.py
+      - name: Execute only the new safe course calculations and save outputs
+        run: python scripts/check_expansion.py --write
       - run: python scripts/validate.py
       - run: python scripts/build.py
       - run: python -m pip install -r requirements-browser-test.txt
@@ -34,6 +37,8 @@ jobs:
       - run: python scripts/check_runtime.py
       - name: Verify imported source notebooks in fresh Pyodide kernels
         run: python scripts/check_source_runtime.py
+      - name: Verify new companions and source graphics in actual Pyodide
+        run: python scripts/check_expansion_browser.py
       - name: Preserve browser runtime evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -42,6 +47,9 @@ jobs:
           path: |
             _build/runtime-browser/
             _build/runtime-source-browser/
+            _build/expansion-native/results.json
+            _build/expansion-browser/
+            catalog/expansion-execution.json
           if-no-files-found: ignore
       - uses: actions/upload-pages-artifact@v3
         with:

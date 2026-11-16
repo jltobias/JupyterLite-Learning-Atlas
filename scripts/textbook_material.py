@@ -8,6 +8,7 @@ from pathlib import Path
 import nbformat
 
 from source_library import ROOT, load_library
+from expansion_material import LESSONS as EXPANSION_LESSONS, COURSE_VISUALS
 
 
 NEW = {
@@ -43,6 +44,7 @@ NEW = {
   'limits':'Real public-domain USGS/NASA Landsat and U.S. Census inputs retain their exact source metadata. Original OneHealth source material is included at the owner request without a general license inferred. Agency articles, photographs, presentation figures and videos remain external. Environmental proxies are not validated disease or vulnerability scores. The live explorer has separate service/CORS/acquisition requirements.',
   'reading':'All lesson calculation inputs are bundled at data/manifest.json, data/pixels.csv and data/tracts.geojson, with source-metadata.json and README. Matplotlib is required; first browser package/runtime retrieval may use the network. Landsat DN reflectance scaling is DN×0.0000275−0.2; temperature in °C is DN×0.00341802+149−273.15, with the source QA/mask rules retained. Thermal product grid spacing is not independent thermal support.'},
 }
+NEW.update(EXPANSION_LESSONS)
 
 
 def chapter_cells(record,md,code,helpers):
@@ -101,6 +103,10 @@ def seed_library(notebook,md,records):
         intro.append(md(row))
         cells=[md(f"# {by_slug[slug]['title']} — source course\n\n[Atlas companion](../../projects/{slug}/index.ipynb) · [All courses](../../notebook-library.ipynb)\n\n**Pinned source:** [{course['name']}]({course['url']}/tree/{course['commit']}) at `{course['commit']}`. {course['license']}\n\n{len(sections)} full local source notebooks. Original ordering and within-course file layout are retained. Run sequential prerequisites in a fresh course kernel; helper names overlap across courses. Python-level network guarding is applied only to selected verification runs. No native/service branches are automatically executed. Saved source outputs were cleared, so reading publication alone is not execution proof.")]
         if slug in NEW:cells.append(md(NEW[slug]['reading']+'\n\n'+NEW[slug]['limits']))
+        if slug in EXPANSION_LESSONS:
+            image,alternative,credit=COURSE_VISUALS[slug]
+            cells.append(md(f'## Course visual\n\n![{alternative}]({image})\n\n{credit}'))
+            cells.append(md('## Calculation and frontend verification\n\nThe separate [2026-11-16 expansion execution receipt](https://jltobias.github.io/JupyterLite-Learning-Atlas/catalog/expansion-execution.json) records fresh guarded native calculations for the four original companions and all 59 safe C3S, Destination Earth and Urbanity source notebooks. Five optional Destination Earth widget-only cells are explicitly skipped; these controls need their source frontend. The 13 TerrIO source copies remain unexecuted reading/editing copies requiring their matched Pyodide 0.29 source Lab. Native numerical success and saved figures do not certify browser package/CDN/WebGL rendering, optional widgets, real services or native geospatial extensions. Import-time table labels below remain separate from these later execution receipts.'))
         if slug=='cholera-1854-basic':cells.append(md('## Browser map preparation\n\nBoth full Basic notebooks run independently from the bundled historical CSVs. Their first code cell uses browser-aware piplite preparation for numpy/pandas and Folium 0.20.0; native kernels use the pinned Atlas build requirements. Each map uses one keyless OpenStreetMap street layer with visible contributor attribution and original CSS limited to the tile pane, so red mortality, blue pump and yellow-green mean-center markers retain their colors. This modern light-gray context does not reproduce Snow\'s 1854 streets. Tiles and Folium JavaScript/CSS need network access; no provider tiles are bundled or promised offline. Tables and numerical results remain inspectable when tiles are blocked.\n\nShell installs/listing, retired Stamen/CARTO choices and the excluded local-video execution were replaced by browser-compatible preparation, Python file inspection and an external video continuation. Notebook 2 reads CSVs without Notebook 1 pickle outputs. The local pickle exercises remain, with output directories created before writes. Original source hashes/pins, historical data, markers, weighted-center calculations and credits are retained. The narrow deterministic adapter is recorded in each notebook\'s provenance metadata and catalog/source-library.json.'))
         if slug=='zarr-sql-views':cells.append(md('## LexCube source availability\n\nThe redistributed LexCube2.0.1 wheel retains its GPL notices. Its complete corresponding [upstream source archive](wheels/lexcube-2.0.1.tar.gz) is bundled locally beside the wheel; the manifest records the original archive path and exact hash. The source archive is a distribution/inspection resource and is never executed during import or build. Widget/extension requirements remain separate from the Atlas single-extension shell.'))
         if not sections:cells.append(md('## Source status\n\nNo source notebooks exist at this pin. NASA ARSET is README-only; Shiny is title-only; Gaborone supplies JupyterGIS project/data files rather than notebooks. The Atlas companion is original teaching material. No nonexistent source notebook, data payload or deployment is inferred.'))

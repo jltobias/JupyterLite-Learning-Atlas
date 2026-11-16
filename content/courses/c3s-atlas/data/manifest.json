@@ -1,0 +1,35 @@
+[
+  {
+    "file": "reference/CMIP6_WarmingLevels.csv",
+    "url": "https://raw.githubusercontent.com/ecmwf-projects/c3s-atlas/8d80d4e98053d96077ba67f29464b4f373ff4037/auxiliar/GWLs/CMIP6_WarmingLevels.csv",
+    "licence": "Apache-2.0 (upstream repository)",
+    "attribution": "European Union; C3S Atlas User Tools contributors; underlying CMIP6 modelling groups",
+    "revision": "8d80d4e98053d96077ba67f29464b4f373ff4037",
+    "retrieved": "2026-11-15",
+    "sha256": "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220",
+    "bytes": 5095,
+    "transformations": "None; original bytes"
+  },
+  {
+    "file": "reference/ne_110m_coastline.geojson",
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_110m_coastline.geojson",
+    "licence": "Public domain",
+    "attribution": "Natural Earth; Nathaniel Vaughn Kelso, Tom Patterson and contributors",
+    "revision": "ca96624a56bd078437bca8184e78163e5039ad19",
+    "retrieved": "2026-11-15",
+    "sha256": "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c",
+    "bytes": 139907,
+    "transformations": "None; original bytes"
+  },
+  {
+    "file": "reference/atlas-catalogue.json",
+    "url": "https://cds.climate.copernicus.eu/api/catalogue/v1/collections/multi-origin-c3s-atlas",
+    "licence": "CC-BY-4.0 (catalogue dataset licence)",
+    "attribution": "Copernicus Climate Change Service / ECMWF",
+    "revision": "catalogue snapshot",
+    "retrieved": "2026-11-15",
+    "sha256": "33e92f5a01a5aa77cfe6a782776bbc5bba027cb4761b5d25f1faa35a1138dd86",
+    "bytes": 5461,
+    "transformations": "None; original bytes"
+  }
+]

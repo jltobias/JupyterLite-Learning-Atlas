@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "01-atlas-orientation",
+    "title": "A question-led tour of the Atlas",
+    "question": "What must you know before interpreting a climate map?",
+    "data": "Authentic CDS catalogue metadata; original question-card example"
+  },
+  {
+    "slug": "02-data-and-provenance",
+    "title": "Data families and a reproducible record",
+    "question": "Can another reader identify exactly which evidence your figure used?",
+    "data": "Authentic reference-file bytes and provenance manifest"
+  },
+  {
+    "slug": "03-baselines-and-anomalies",
+    "title": "Baselines, anomalies, and trends",
+    "question": "How much of a visual change comes from changing the reference period?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "04-seasons-and-stripes",
+    "title": "Annual cycles and seasonal stripes",
+    "question": "Does an annual average conceal which months are changing?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "05-heat-and-cold",
+    "title": "Heat, cold, and threshold indices",
+    "question": "Can a monthly mean tell you how many days exceeded 35 \u00b0C?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "06-rain-and-water",
+    "title": "Rainfall, extremes, and the water cycle",
+    "question": "How can similar rainfall totals hide very different hazards?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "07-drought",
+    "title": "Drought, water balance, and accumulation",
+    "question": "Why do drought indicators depend on both timescale and reference climate?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "08-wind-and-radiation",
+    "title": "Wind, radiation, and energy context",
+    "question": "Why is a climate variable not already an energy-production estimate?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "09-snow-and-ice",
+    "title": "Snow, sea ice, and what area means",
+    "question": "What is the difference between sea-ice area and thresholded extent?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "10-ocean-and-circulation",
+    "title": "Ocean temperature and atmospheric circulation",
+    "question": "What can a spatial pattern tell you that a global average cannot?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "11-scenarios-and-ensembles",
+    "title": "Scenarios, models, and ensemble spread",
+    "question": "How do you compare conditional futures without treating them as probabilities?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "12-global-warming-levels",
+    "title": "Global warming levels with real Atlas data",
+    "question": "Does a 2 \u00b0C warming level refer to one calendar year for every model?",
+    "data": "Real upstream CMIP6 warming-level table, unmodified, pinned in data/manifest.json"
+  },
+  {
+    "slug": "13-uncertainty-and-bias",
+    "title": "Uncertainty and bias adjustment",
+    "question": "Can a corrected mean still leave the wrong extreme behaviour?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "14-regions-and-weights",
+    "title": "Regions, masks, and area weighting",
+    "question": "Why should a grid cell near the pole receive less weight?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "15-interactive-2d-maps",
+    "title": "Interactive 2D maps and honest legends",
+    "question": "What choices make a map easier to compare and harder to misread?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "16-globes-and-3d-maps",
+    "title": "Globes and three-dimensional climate maps",
+    "question": "What changes when a climate field is draped over a globe?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "17-3d-scenes",
+    "title": "3D scenes: time, season, and climate",
+    "question": "When does a third axis clarify a pattern, and when does it obscure one?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "18-monitoring-and-urban",
+    "title": "Monitoring and urban context",
+    "question": "How do you separate a recent anomaly from a city\u2013rural contrast?",
+    "data": "Synthetic teaching examples"
+  },
+  {
+    "slug": "19-bring-real-data",
+    "title": "Bring a real C3S export into the browser",
+    "question": "How do you replace a teaching example without silently changing its meaning?",
+    "data": "Synthetic import fixture by default; optional explicit user-provided real-data pair"
+  },
+  {
+    "slug": "20-capstone",
+    "title": "A reproducible regional climate story",
+    "question": "Can you communicate one result without overstating the evidence?",
+    "data": "Real CMIP6 auxiliary warming-level table; independent regional extension uses user-supplied C3S data"
+  }
+]

@@ -17,3 +17,8 @@ content/atlas_gis_handoff.py -text
 catalog/browser-gis-*.json -text
 catalog/authored-support.json -text
 content/assets/browser-gis-pathways.json -text
+# New companion receipts hash exact notebook bytes, including line endings.
+content/projects/c3s-atlas/** -text
+content/projects/destination-earth-digital-twin/** -text
+content/projects/urbanity/** -text
+content/projects/terrio/** -text

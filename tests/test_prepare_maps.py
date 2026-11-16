@@ -64,8 +64,8 @@ class GaugePreparationTests(unittest.TestCase):
 
     def test_gallery_keeps_external_entries_and_local_self_coverage(self):
         catalog=json.loads((ROOT/'catalog/map-resources.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(catalog['resources']),85)
-        self.assertEqual(len(catalog['repository_coverage']),64)
+        self.assertEqual(len(catalog['resources']),100)
+        self.assertEqual(len(catalog['repository_coverage']),68)
         coverage=next(r for r in catalog['repository_coverage'] if r['repository']=='JupyterLite-Learning-Atlas')
         self.assertIn('local Map and Scene Atlas studio',coverage['map_status'])
         self.assertEqual((ROOT/'catalog/map-resources.json').read_bytes(),(ROOT/'site/data/map-resources.json').read_bytes())

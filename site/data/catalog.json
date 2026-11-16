@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "inspected_on": "2026-11-02",
-  "scope": "32 public core JupyterLite-named repositories owned by jltobias, plus 3 prior related browser projects and 4 external PHI-Case-Studies teaching projects (39 chapters); excludes the index. Baseline inventory/README inspection 2026-11-01; targeted Coral, PHI and EO reviews 2026-11-02, without full reinspection of prior sources. Targeted source-textbook expansion 2026-11-13 adds NASA ARSET, Population Data Comparison and OneHealth (42 chapters), without rewriting historical records.",
+  "scope": "32 public core JupyterLite-named repositories owned by jltobias, plus 3 prior related browser projects and 4 external PHI-Case-Studies teaching projects (39 chapters); excludes the index. Baseline inventory/README inspection 2026-11-01; targeted Coral, PHI and EO reviews 2026-11-02, without full reinspection of prior sources. Targeted source-textbook expansion 2026-11-13 adds NASA ARSET, Population Data Comparison and OneHealth (42 chapters), without rewriting historical records. Targeted 2026-11-16 complete pinned C3S Atlas, Destination Earth Digital Twin, Urbanity and TerrIO expansion: 39 core + 7 related = 46 chapters; all prior catalog rows retained.",
   "repositories": [
     {
       "name": "JupyterLite-Data-Visualization",
@@ -2619,6 +2619,336 @@
       "launch_status": "Exact documented entries checked by HTTPS GET on 2026-11-13; reachability only, not runtime certification",
       "attribution": "James L. Tobias / jltobias; source-specific notebook, software and dataset terms and provider credits retained separately.",
       "limitations": "Real public-domain USGS/NASA Landsat and U.S. Census inputs retain their exact source metadata. Original OneHealth source material is included at the owner request without a general license inferred. Agency articles, photographs, presentation figures and videos remain external. Environmental proxies are not validated disease or vulnerability scores. The live explorer has separate service/CORS/acquisition requirements."
+    },
+    {
+      "name": "JupyterLite-C3S-Atlas",
+      "title": "Read a warming window without inventing an observation",
+      "slug": "c3s-atlas",
+      "theme": "Terrain & Earth observation",
+      "summary": "Twenty complete source lessons connect anomalies, regions and uncertainty with a real model-window table, real generalized coastline, catalogue metadata and separately labelled synthetic arrays.",
+      "status": "learning companion",
+      "category": "jupyterlite",
+      "learning_question": "How do latitude weighting and missing coverage change the mean of a small synthetic climate field?",
+      "source_url": "https://github.com/jltobias/JupyterLite-C3S-Atlas",
+      "readme_url": "https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/README.md",
+      "default_branch": "main",
+      "source_commit": "b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a",
+      "inspected_on": "2026-11-16",
+      "visibility": "public",
+      "notebook": "projects/c3s-atlas/index.ipynb",
+      "book_path": "book/projects/c3s-atlas/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/c3s-atlas/index.ipynb",
+      "resources": [
+        {
+          "kind": "book",
+          "label": "Read source Book",
+          "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/book/index.html",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source Lab",
+          "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/lite/lab/index.html?path=01-atlas-orientation.ipynb",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "hub",
+          "label": "Open source portal",
+          "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "Explore C3S teaching maps",
+          "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/maps/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "map-3d",
+          "label": "Explore C3S teaching globe",
+          "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/globe/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "scene-3d",
+          "label": "Explore C3S teaching scenes",
+          "url": "https://jltobias.github.io/JupyterLite-C3S-Atlas/scenes/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "Exact source routes checked2026-11-16; entry responses are separate from notebook targets, data/service access and runtime verification.",
+      "attribution": "James L. Tobias / jltobias; JupyterLite-C3S-Atlas. Original Atlas exercise and adaptation; source/provider/software/media terms remain separate.",
+      "limitations": "Original course MIT. Retain European Union/C3S/ECMWF, CSIC/Predictia and underlying CMIP6 modelling-group credit. The real warming-level auxiliary CSV is Apache-2.0, the Natural Earth coastline is public domain, and the CC BY 4.0 CDS catalogue snapshot is metadata rather than gridded climate data. monthly_series.csv and generated lesson arrays are explicitly synthetic (seed 381). The cleared original splash and its generation provenance are retained. References include Gutiérrez et al. (2024), DOI 10.21957/ah52ufc369; Iturbide et al. (2020), DOI 10.5194/essd-12-2959-2020; CDS dataset DOI 10.24381/cds.h35hb680. All 20 source notebooks, atlas_helpers.py, data manifest, licenses, credits, data guide and learning resources are bundled in the course. Browser setup prepares numpy, pandas, matplotlib and Plotly 6.5.0. Local figures and numerical alternatives remain available; optional interactive Plotly rendering needs its versioned CDN/WebGL. Authenticated CDS downloads, xarray/netCDF4 preparation, archives and native regridding remain source/desktop continuations."
+    },
+    {
+      "name": "JupyterLite-Destination-Earth-Digital-Twin",
+      "title": "Check an interpolated field before calling it a twin",
+      "slug": "destination-earth-digital-twin",
+      "theme": "Terrain & Earth observation",
+      "summary": "Thirty-two complete synthetic experiments introduce Destination Earth architecture, grids, interpolation, validation, ensembles and bounded service handoffs.",
+      "status": "learning companion",
+      "category": "jupyterlite",
+      "learning_question": "Can bilinear interpolation reproduce a planar synthetic field, and what does that check leave untested?",
+      "source_url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin",
+      "readme_url": "https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/blob/0e32b2477ba5c0030985e25f1071d94cddabf130/README.md",
+      "default_branch": "main",
+      "source_commit": "0e32b2477ba5c0030985e25f1071d94cddabf130",
+      "inspected_on": "2026-11-16",
+      "visibility": "public",
+      "notebook": "projects/destination-earth-digital-twin/index.ipynb",
+      "book_path": "book/projects/destination-earth-digital-twin/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/destination-earth-digital-twin/index.ipynb",
+      "resources": [
+        {
+          "kind": "book",
+          "label": "Read source Book",
+          "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/book/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source Lab",
+          "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/lab/index.html?path=01-system.ipynb",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "hub",
+          "label": "Open source portal",
+          "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "Explore synthetic map gallery",
+          "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/map/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "map-3d",
+          "label": "Explore synthetic terrain gallery",
+          "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/terrain/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "scene-3d",
+          "label": "Explore synthetic globe gallery",
+          "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/globe/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Explore synthetic dashboard",
+          "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/dashboard/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Explore synthetic vector flow",
+          "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/flow/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "explorer",
+          "label": "Explore synthetic comparison",
+          "url": "https://jltobias.github.io/JupyterLite-Destination-Earth-Digital-Twin/gallery/compare/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "Exact source routes checked2026-11-16; entry responses are separate from notebook targets, data/service access and runtime verification.",
+      "attribution": "James L. Tobias / jltobias; JupyterLite-Destination-Earth-Digital-Twin. Original Atlas exercise and adaptation; source/provider/software/media terms remain separate.",
+      "limitations": "Independent teaching companion; European Union initiative implemented by ECMWF, ESA and EUMETSAT, with no endorsement implied. All default numerical inputs are original synthetic equations/seeded arrays, not observations, operational forecasts or Digital Twin outputs. Code MIT; original prose/generated numerical data/artwork CC BY 4.0, with repository attribution and adaptation notice retained. Original splash generation provenance credits OpenAI image-generation assistance. ECMWF Generation 2 Climate DT DOI 10.21957/79c6af3105 is cited as metadata context: the dataset is not used. No accounts, credentials or real service/model calls occur. All 32 source notebooks and earthlab.py are bundled, with the coverage/access guides and original BibTeX reference. Browser setup requests numpy, matplotlib, pandas, xarray and ipywidgets. Five optional widget branches require the source frontend; static plots and printed values are alternatives. Fresh native calculations and actual browser graphics are separate checks. Real DTE, Climate DT, Weather-Induced Extremes DT, Polytope, Data Lake, Earthkit, ML and HPC services remain external authorized continuations."
+    },
+    {
+      "name": "JupyterLite-Urbanity",
+      "title": "Trace a synthetic street route and name its assumptions",
+      "slug": "urbanity",
+      "theme": "Browser GIS",
+      "summary": "Seven complete standard-library lessons connect streets, urban graphs, contextual summaries, synthetic imagery labels, visualisation and reproducible exports.",
+      "status": "learning companion",
+      "category": "jupyterlite",
+      "learning_question": "Which shortest path does breadth-first search find in a small unweighted street graph?",
+      "source_url": "https://github.com/jltobias/JupyterLite-Urbanity",
+      "readme_url": "https://github.com/jltobias/JupyterLite-Urbanity/blob/a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f/README.md",
+      "default_branch": "main",
+      "source_commit": "a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f",
+      "inspected_on": "2026-11-16",
+      "visibility": "public",
+      "notebook": "projects/urbanity/index.ipynb",
+      "book_path": "book/projects/urbanity/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/urbanity/index.ipynb",
+      "resources": [
+        {
+          "kind": "book",
+          "label": "Read source Book",
+          "url": "https://jltobias.github.io/JupyterLite-Urbanity/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run source Lab",
+          "url": "https://jltobias.github.io/JupyterLite-Urbanity/lab/lab/index.html?path=notebooks/street-networks.ipynb",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "Explore synthetic urban map",
+          "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/2d-map.html",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "map-3d",
+          "label": "Explore synthetic urban heights",
+          "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/3d-map.html",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "scene-3d",
+          "label": "Explore synthetic urban scene",
+          "url": "https://jltobias.github.io/JupyterLite-Urbanity/exhibits/3d-scene.html",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "Exact source routes checked2026-11-16; entry responses are separate from notebook targets, data/service access and runtime verification.",
+      "attribution": "James L. Tobias / jltobias; JupyterLite-Urbanity. Original Atlas exercise and adaptation; source/provider/software/media terms remain separate.",
+      "limitations": "Owner-authorized original source companion; this source repository has no public license grant, and the MIT license of the separate Urbanity software package does not relicense it. Synthetic diagrams, graph records and imagery labels are not provider data. Independent companion with no Urbanity endorsement. Retain Yap, Stouffs & Biljecki (2023), DOI 10.1038/s42949-023-00125-w; streetscape DOI 10.1177/23998083221138832; global networks DOI 10.1038/s41597-023-02578-1; urban graphs DOI 10.17605/OSF.IO/ABYQH; conditional building-carbon reference DOI 10.1038/s41893-025-01615-8. Each external dataset/provider retains separate terms. All seven notebooks retain the authoritative source TOC order and the sibling notebooks/_static relation for the pipeline illustration. Executable source cells use only standard-library Python; they do not import Urbanity. The three local SVGs are original vector teaching artwork. Native Urbanity installation, OSM acquisition, compiled geospatial dependencies, imagery credentials and optional graph ML remain explicitly linked continuations."
+    },
+    {
+      "name": "JupyterLite-terrio",
+      "title": "Separate pixel positions, map coordinates and runtime compatibility",
+      "slug": "terrio",
+      "theme": "Browser GIS",
+      "summary": "Thirteen complete TerrIO reading/editing copies preserve real Natural Earth countries, original SVG chapter cards, helpers and synthetic raster/vector/point-cloud workflows.",
+      "status": "learning companion",
+      "category": "jupyterlite",
+      "learning_question": "Where is a pixel centre in a projected raster, and why does a correct coordinate not establish runtime compatibility?",
+      "source_url": "https://github.com/jltobias/JupyterLite-terrio",
+      "readme_url": "https://github.com/jltobias/JupyterLite-terrio/blob/18574d4e7a8dabb99d3db65b20c6180185578482/README.md",
+      "default_branch": "main",
+      "source_commit": "18574d4e7a8dabb99d3db65b20c6180185578482",
+      "inspected_on": "2026-11-16",
+      "visibility": "public",
+      "notebook": "projects/terrio/index.ipynb",
+      "book_path": "book/projects/terrio/index.html",
+      "lab_path": "lite/lab/index.html?path=projects/terrio/index.ipynb",
+      "resources": [
+        {
+          "kind": "book",
+          "label": "Read source Book",
+          "url": "https://jltobias.github.io/JupyterLite-terrio/book/intro.html",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "lab",
+          "label": "Run matched TerrIO source Lab",
+          "url": "https://jltobias.github.io/JupyterLite-terrio/lite/lab/index.html?path=01-first-contact.ipynb",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "hub",
+          "label": "Open source portal",
+          "url": "https://jltobias.github.io/JupyterLite-terrio/",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "map-2d",
+          "label": "Explore TerrIO 2D maps",
+          "url": "https://jltobias.github.io/JupyterLite-terrio/maps/2d.html",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "map-3d",
+          "label": "Explore TerrIO 3D maps",
+          "url": "https://jltobias.github.io/JupyterLite-terrio/maps/3d.html",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        },
+        {
+          "kind": "scene-3d",
+          "label": "Explore TerrIO scene and globe",
+          "url": "https://jltobias.github.io/JupyterLite-terrio/maps/scenes.html",
+          "description": "Exact source README/workflow route; synthetic demonstrations and source-specific runtime/terms apply.",
+          "availability": "HTTP 200 - entry only",
+          "checked_on": "2026-11-16",
+          "http_status": 200
+        }
+      ],
+      "launch_status": "Exact source routes checked2026-11-16; entry responses are separate from notebook targets, data/service access and runtime verification.",
+      "attribution": "James L. Tobias / jltobias; JupyterLite-terrio. Original Atlas exercise and adaptation; source/provider/software/media terms remain separate.",
+      "limitations": "Original code MIT; original teaching prose/synthetic data/13 chapter SVGs CC0. No TerrIO wheel is redistributed. Keep TerrIO/dependency/EPSG/IOGP notices separate. The sole bundled real geographic dataset is Natural Earth countries v5.1.2, 177 generalized features, public domain: Made with Natural Earth; Patterson, Kelso and contributors. It is not authoritative boundary evidence. All terrain, reflectance, stations, points and cube examples are explicitly synthetic. Cite Wu, Fitzgerald & Morales Sanchez (2026), TerrIO software concept DOI 10.5281/zenodo.23642204, separately from software version 0.9.0 and this course commit; the course has no assigned DOI. All 13 source notebooks and terrio_lab.py, countries.geojson, sources.json, chapter SVGs, chapter registry and attribution/resources guides are retained. The imported TerrIO notebooks are reading/editing copies in Atlas: TerrIO 0.9.0 has a pyemscripten_2025_0 wasm ABI for Pyodide 0.29. The source pins kernel 0.8.0b0, whose default is Pyodide 0.29.4; Atlas uses Pyodide 314. Run TerrIO in the matched [source Lab](https://jltobias.github.io/JupyterLite-terrio/lite/lab/index.html?path=01-first-contact.ipynb). Do not install its incompatible wheel or downgrade Atlas. Source Plotly 6.3.1/xarray 2025.10.1, CDN and WebGL requirements remain explicit; static and numerical alternatives are available. Native HTTP range I/O and specialized drivers remain optional native continuations."
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "title": "Original cross-book browser GIS pathways",
-  "inspected_on": "2026-11-13",
-  "scope": "42 project companions and 42 course guides; imported lessons remain unchanged",
+  "inspected_on": "2026-11-16",
+  "scope": "46 distinct project companions and 46 course guides; prior 42 profiles and shared templates unchanged; imported lessons remain unchanged",
   "apps": {
     "RustGIS": "https://web.rustgis.app/",
     "GeoLibre": "https://web.geolibre.app/"
@@ -1203,6 +1203,118 @@
       "ai_prompt": "Find the unsupported step from environmental proxy to disease/vulnerability.",
       "geoai_extension": "Held-out prediction needs health/animal/community labels; proxy mapping alone is not inference.",
       "evidence_check": "Surface C differs from air; 300m display differs from 30m footprint; 2024 samples/2020 population distinct."
+    },
+    {
+      "slug": "c3s-atlas",
+      "title": "C3S Atlas",
+      "route": "B + O",
+      "question": "How does a real coastline context differ from a synthetic climate field and a model warming window?",
+      "data_readiness": "The bundled Natural Earth coastline is real generalized geography. The C3S warming-level CSV has model/scenario windows; the CDS snapshot is catalogue metadata. Seeded monthly values are synthetic and have no point geometry.",
+      "source_links": [
+        {
+          "label": "warming windows",
+          "path": "courses/c3s-atlas/12-global-warming-levels.ipynb"
+        },
+        {
+          "label": "region weights",
+          "path": "courses/c3s-atlas/14-regions-and-weights.ipynb"
+        },
+        {
+          "label": "Natural Earth coastline",
+          "path": "courses/c3s-atlas/data/reference/ne_110m_coastline.geojson"
+        },
+        {
+          "label": "source manifest",
+          "path": "courses/c3s-atlas/data/manifest.json"
+        }
+      ],
+      "rustgis_task": "Inspect a bounded copy of the attributed coastline and its CRS before import. Keep synthetic climate values separate; do not turn model-window rows into measured local temperatures.",
+      "geolibre_task": "Compare the same coastline extent and one feature identifier with RustGIS. Use a separate synthetic geographic layer only after explicitly defining its support, units and fixture status.",
+      "ai_prompt": "Explain why the supplied model/scenario window and synthetic monthly series cannot establish a local observed trend.",
+      "geoai_extension": "A later regional emulator needs independent held-out model/time windows and a stated target; latitude weights and map styling are deterministic analysis.",
+      "evidence_check": "Retain Natural Earth credit, model/scenario/threshold/endpoints, synthetic labels and valid-area denominator."
+    },
+    {
+      "slug": "destination-earth-digital-twin",
+      "title": "Destination Earth Digital Twin",
+      "route": "O; C continuation",
+      "question": "Can a synthetic interpolation check support a bounded map handoff without claiming a real Digital Twin product?",
+      "data_readiness": "All 32 source lessons use original equations and seeded synthetic arrays. earthlab.py and the access guide are bundled; no real DestinE output or observational dataset is packaged.",
+      "source_links": [
+        {
+          "label": "interpolation",
+          "path": "courses/destination-earth-digital-twin/11-interpolation.ipynb"
+        },
+        {
+          "label": "validation",
+          "path": "courses/destination-earth-digital-twin/13-verification.ipynb"
+        },
+        {
+          "label": "official access boundary",
+          "path": "courses/destination-earth-digital-twin/book/official-access.md"
+        }
+      ],
+      "rustgis_task": "Build a tiny explicitly synthetic WGS84 fixture from the exercise only after declaring coordinates and units; compare one interpolated value to the plane oracle before exporting.",
+      "geolibre_task": "Import that same synthetic fixture and compare feature IDs, 25-unit oracle value and missingness. Actual authorized DestinE exports need their own provenance and service terms.",
+      "ai_prompt": "Identify which supplied results are synthetic arithmetic checks and which claims would require independent observations or a real DestinE service.",
+      "geoai_extension": "A later learned surrogate needs independent observations, spatial/time holdouts and uncertainty; a Canvas globe or interpolation is not a validated twin.",
+      "evidence_check": "Reconcile IDs, bilinear weights summing to one, units, synthetic labels and explicit exclusion of real-service certification."
+    },
+    {
+      "slug": "urbanity",
+      "title": "Urbanity",
+      "route": "O; N continuation",
+      "question": "Which assumptions are lost when a synthetic unweighted street graph is drawn as a geographic network?",
+      "data_readiness": "Seven standard-library lessons use synthetic graph/context/imagery-label records without real OSM, provider imagery or Urbanity package execution. No public repository license is inferred.",
+      "source_links": [
+        {
+          "label": "street graph",
+          "path": "courses/urbanity/notebooks/street-networks.ipynb"
+        },
+        {
+          "label": "urban context",
+          "path": "courses/urbanity/notebooks/urban-context.ipynb"
+        },
+        {
+          "label": "held-out graph exercise",
+          "path": "courses/urbanity/notebooks/graph-ml.ipynb"
+        }
+      ],
+      "rustgis_task": "Use a declared synthetic geographic graph only if coordinates and a CRS are explicitly added; preserve its invented status and compare six nodes/eight edges. Topological labels alone are not geographic data.",
+      "geolibre_task": "Compare the same synthetic nodes and route A–B–C–F in a second view; record differences between edge count and distance. Native Urbanity/OSM/imagery work needs its own licensed inputs and environment.",
+      "ai_prompt": "Explain how degree and unweighted shortest paths can misrepresent accessibility using the supplied synthetic node IDs.",
+      "geoai_extension": "The source toy held-out classification is a learning exercise; real urban graph ML needs independent places, defensible labels and leakage checks.",
+      "evidence_check": "Keep six node IDs, eight edge pairs, route tie-breaking, synthetic labels and owner-authorized source scope visible."
+    },
+    {
+      "slug": "terrio",
+      "title": "TerrIO",
+      "route": "B + O; matched source runtime",
+      "question": "Which CRS and provenance checks must accompany a TerrIO export before a geographic browser handoff?",
+      "data_readiness": "Natural Earth countries v5.1.2 are real public-domain generalized geography; remaining raster/point/cube fixtures are synthetic. Atlas copies are reference-only because TerrIO 0.9.0 requires Pyodide 0.29 rather than Atlas 314.",
+      "source_links": [
+        {
+          "label": "coordinate checks",
+          "path": "courses/terrio/02-coordinates.ipynb"
+        },
+        {
+          "label": "country vectors",
+          "path": "courses/terrio/03-vectors-2d-maps.ipynb"
+        },
+        {
+          "label": "interoperability",
+          "path": "courses/terrio/12-interoperability.ipynb"
+        },
+        {
+          "label": "Natural Earth sources",
+          "path": "courses/terrio/data/sources.json"
+        }
+      ],
+      "rustgis_task": "For a direct geography exercise, use an attributed bounded copy of the bundled WGS84 Natural Earth countries. For TerrIO-created exports, run the matched source Lab and verify the reopened file/CRS before import.",
+      "geolibre_task": "Import the same reviewed country subset and compare ADMIN-name multisets, selected count and attribution. Keep projected pixel coordinates out of WGS84 exports until a verified transformation.",
+      "ai_prompt": "Audit the supplied CRS, transform, NoData, ADMIN names and separate synthetic/real status; state what cannot be inferred from generalized boundaries.",
+      "geoai_extension": "Future raster classification requires independent imagery/labels and spatial holdouts; format conversion, NDVI thresholds and terrain styling are not fitting.",
+      "evidence_check": "Retain Made with Natural Earth, version 5.1.2, 177-feature source count, subset IDs, CRS and TerrIO 0.29 ABI source-runtime boundary."
     }
   ]
 }

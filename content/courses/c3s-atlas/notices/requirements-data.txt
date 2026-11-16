@@ -1,0 +1,5 @@
+# Optional desktop-only preparation of downloaded NetCDF subsets.
+xarray>=2025.1
+netCDF4>=1.7
+numpy>=2.1,<3
+pandas>=2.2,<3

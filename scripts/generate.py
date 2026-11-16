@@ -15,7 +15,7 @@ from phi_case_material import CASES as PHI_CASES, chapter_cells as phi_chapter_c
 from eo_material import chapter_cells as eo_chapter_cells, STAC_CONNECTION
 from textbook_material import NEW, chapter_cells as textbook_chapter_cells, seed_library
 from source_library import load_library
-from browser_gis_material import seed_browser_gis, reconcile_pathways
+from browser_gis_material import seed_browser_gis, reconcile_pathways, refresh_current_scope
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/repositories.json"
@@ -236,6 +236,7 @@ def make_toc(records):
 
 def main():
     records = json.loads(CATALOG.read_text(encoding="utf-8"))["repositories"]
+    refresh_current_scope(ROOT)
     seed_foundations(records)
     for r in records:
         seed_project(r)

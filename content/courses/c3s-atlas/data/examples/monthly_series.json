@@ -1,0 +1,11 @@
+{
+  "data_kind": "synthetic",
+  "source": "Original monthly_demo(), atlas_helpers.py; seed 381",
+  "variable": "fictional near-surface temperature",
+  "units": "\u00b0C",
+  "region": "fictional region",
+  "statistic": "invented monthly mean",
+  "reference_period": "none; absolute invented values",
+  "licence": "MIT, original project teaching data",
+  "transformations": "Generator output rounded to six decimal places for import fixture; no C3S measurements"
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "slug": "01-system",
+    "title": "A digital twin is a connected system",
+    "objectives": "Trace the roles of platform, data lake and twin engine; measure a small data pipeline.",
+    "reference": "https://github.com/destination-earth/DestinE"
+  },
+  {
+    "slug": "02-grids",
+    "title": "Coordinates, grids and units",
+    "objectives": "Inspect coordinate conventions; convert temperature units without losing metadata.",
+    "reference": "https://destine.ecmwf.int/digital-twin-engine/"
+  },
+  {
+    "slug": "03-access",
+    "title": "Data access without credentials in the browser",
+    "objectives": "Describe discovery, selection and export; distinguish a query plan from a live request.",
+    "reference": "https://polytope.readthedocs.io/en/stable/"
+  },
+  {
+    "slug": "04-validation",
+    "title": "Validate a small authorized export",
+    "objectives": "Reject malformed values and missing provenance; keep real imports separate from synthetic examples.",
+    "reference": "https://data.destination-earth.eu/terms-and-conditions"
+  },
+  {
+    "slug": "05-labelled-arrays",
+    "title": "Labeled arrays and regional selection",
+    "objectives": "Use xarray dimensions and units; avoid positional indexing mistakes.",
+    "reference": "https://docs.xarray.dev/en/stable/"
+  },
+  {
+    "slug": "06-area-means",
+    "title": "Area weighting changes the answer",
+    "objectives": "Calculate cosine-weighted means; test conservation for a constant field.",
+    "reference": "https://destine.ecmwf.int/climate-digital-twin/"
+  },
+  {
+    "slug": "07-climate",
+    "title": "Anomalies and baseline choices",
+    "objectives": "Compute a baseline anomaly; distinguish a demonstration trend from a climate projection.",
+    "reference": "https://destine.ecmwf.int/climate-digital-twin/"
+  },
+  {
+    "slug": "08-extremes",
+    "title": "Thresholds and event duration",
+    "objectives": "Detect exceedance runs; compare absolute and percentile thresholds.",
+    "reference": "https://destine.ecmwf.int/weather-induced-extremes-digital-twin/"
+  },
+  {
+    "slug": "09-water",
+    "title": "A water budget with a conservation check",
+    "objectives": "Implement a toy catchment bucket; close the mass balance.",
+    "reference": "https://destine.ecmwf.int/weather-induced-extremes-digital-twin/"
+  },
+  {
+    "slug": "10-wind",
+    "title": "Vector fields and derived wind speed",
+    "objectives": "Calculate vector magnitude; inspect direction without confusing components with speed.",
+    "reference": "https://destine.ecmwf.int/digital-twin-engine/"
+  },
+  {
+    "slug": "11-interpolation",
+    "title": "Interpolation and its assumptions",
+    "objectives": "Sample between grid points; distinguish interpolation from new information.",
+    "reference": "https://docs.scipy.org/doc/scipy/tutorial/interpolate.html"
+  },
+  {
+    "slug": "12-ensembles",
+    "title": "Ensembles and uncertainty bands",
+    "objectives": "Summarize member spread; distinguish uncertainty types.",
+    "reference": "https://destine.ecmwf.int/climate-digital-twin/"
+  },
+  {
+    "slug": "13-verification",
+    "title": "Skill scores and reference forecasts",
+    "objectives": "Compute bias and RMSE; compare against a declared baseline.",
+    "reference": "https://destine.ecmwf.int/weather-induced-extremes-digital-twin/"
+  },
+  {
+    "slug": "14-maps",
+    "title": "Honest two-dimensional maps",
+    "objectives": "Use fixed color limits across time; separate rendering choices from physical change.",
+    "reference": "https://matplotlib.org/stable/users/explain/colors/colormaps.html"
+  },
+  {
+    "slug": "15-projections",
+    "title": "From longitude and latitude to a projected plane",
+    "objectives": "Calculate a spherical Mercator projection; diagnose polar distortion.",
+    "reference": "https://proj.org/en/stable/operations/projections/merc.html"
+  },
+  {
+    "slug": "16-terrain",
+    "title": "A three-dimensional terrain scene",
+    "objectives": "Create a surface from a grid; describe vertical exaggeration explicitly.",
+    "reference": "https://matplotlib.org/stable/users/explain/toolkits/mplot3d.html"
+  },
+  {
+    "slug": "17-globe",
+    "title": "Put a field on a globe",
+    "objectives": "Transform spherical coordinates to Cartesian coordinates; verify radius.",
+    "reference": "https://destine.ecmwf.int/digital-twin-engine/"
+  },
+  {
+    "slug": "18-time",
+    "title": "Time slices, animation and stable scales",
+    "objectives": "Build comparable frames; measure field change rather than relying on motion.",
+    "reference": "https://matplotlib.org/stable/api/animation_api.html"
+  },
+  {
+    "slug": "19-dashboard",
+    "title": "Build an analytical dashboard",
+    "objectives": "Coordinate a map, time series and distribution; retain units and provenance.",
+    "reference": "https://matplotlib.org/stable/users/explain/axes/arranging_axes.html"
+  },
+  {
+    "slug": "20-performance",
+    "title": "Browser memory and precision",
+    "objectives": "Estimate array costs; quantify float32 approximation error.",
+    "reference": "https://numpy.org/doc/stable/reference/arrays.ndarray.html"
+  },
+  {
+    "slug": "21-reproducibility",
+    "title": "Reproducible methods and provenance",
+    "objectives": "Test random seeds; record transformations and hash an artifact.",
+    "reference": "https://numpy.org/doc/stable/reference/random/"
+  },
+  {
+    "slug": "22-capstone",
+    "title": "A transparent adaptation comparison",
+    "objectives": "Combine ensemble summaries, threshold exposure and a decision table; state limits.",
+    "reference": "https://destine.ecmwf.int/climate-digital-twin/"
+  },
+  {
+    "slug": "23-dte-workflows",
+    "title": "Digital Twin Engine: workflow and HPC roles",
+    "objectives": "Model a dependency graph and its critical path; separate local orchestration patterns from HPC execution.",
+    "reference": "https://destine.ecmwf.int/digital-twin-engine/"
+  },
+  {
+    "slug": "24-polytope",
+    "title": "Polytope: select a feature, not a whole cube",
+    "objectives": "Compare rectangular and trajectory-shaped selections; draft a catalog-grounded request plan.",
+    "reference": "https://polytope.readthedocs.io/en/stable/"
+  },
+  {
+    "slug": "25-earthkit-export",
+    "title": "Earthkit and a server-to-browser export boundary",
+    "objectives": "Design a small, explicit export contract; validate units and provenance after serialization.",
+    "reference": "https://earthkit-data.readthedocs.io/en/latest/"
+  },
+  {
+    "slug": "26-data-lake",
+    "title": "Data Lake services: discovery, compute and hooks",
+    "objectives": "Connect HDA/STAC discovery concepts with a local manifest; validate an event-driven processing contract.",
+    "reference": "https://destine-data-lake-docs.data.destination-earth.eu/en/latest/"
+  },
+  {
+    "slug": "27-ai-validation",
+    "title": "AI and ML: a time-aware baseline",
+    "objectives": "Fit a simple regression with held-out future samples; detect temporal leakage.",
+    "reference": "https://destine.ecmwf.int/ai-in-destination-earth/"
+  },
+  {
+    "slug": "28-regional-extremes",
+    "title": "Regional on-demand extremes and nested scales",
+    "objectives": "Compare coarse and fine sampling of a localized event; measure what a coarse grid misses.",
+    "reference": "https://destine.ecmwf.int/weather-induced-extremes-digital-twin/"
+  },
+  {
+    "slug": "29-land",
+    "title": "Land processes: snow storage and melt",
+    "objectives": "Partition precipitation; track snow storage; close a water budget.",
+    "reference": "https://destine.ecmwf.int/ml-earth-system-components/"
+  },
+  {
+    "slug": "30-waves",
+    "title": "Waves: forcing, response time and memory",
+    "objectives": "Drive a response model with wind; distinguish an equilibrium target from a delayed state.",
+    "reference": "https://destine.ecmwf.int/ml-earth-system-components/"
+  },
+  {
+    "slug": "31-sea-ice",
+    "title": "Sea ice: bounded fractions and seasonal response",
+    "objectives": "Evolve a bounded concentration; verify its discrete budget; handle masked regions explicitly.",
+    "reference": "https://destine.ecmwf.int/ml-earth-system-components/"
+  },
+  {
+    "slug": "32-ocean",
+    "title": "Ocean layers: heat exchange and conservation",
+    "objectives": "Couple two heat reservoirs; account for surface forcing; test energy conservation.",
+    "reference": "https://destine.ecmwf.int/ml-earth-system-components/"
+  }
+]

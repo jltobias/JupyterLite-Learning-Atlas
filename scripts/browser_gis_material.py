@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import posixpath
+import re
 from urllib.parse import quote
 from browser_gis_recipes import CSV_RECIPE, RETURN_RECIPE
 
@@ -12,6 +13,32 @@ ROOT = Path(__file__).resolve().parents[1]
 OWNER = 'atlas-browser-gis-pathways'
 NAVIGATION_NOTEBOOKS = ('index.ipynb','foundations/browser-python.ipynb','foundations/spatial-thinking.ipynb',
     'foundations/evidence-ai.ipynb','foundations/learning-a-model.ipynb','synthesis/global-health.ipynb')
+
+
+def refresh_current_scope(root=ROOT):
+    """Refresh only current managed GIS counts, preserving historical prose."""
+    import nbformat
+    root=Path(root)
+    catalog=json.loads((root/'catalog/repositories.json').read_text(encoding='utf-8'))
+    library=json.loads((root/'catalog/source-library.json').read_text(encoding='utf-8'))
+    start='<!-- BROWSER_GIS_PATHWAYS:START -->';end='<!-- BROWSER_GIS_PATHWAYS:END -->'
+    for name in ['README.md','REFERENCES.md']:
+        path=root/name
+        if not path.exists():continue
+        text=path.read_text(encoding='utf-8')
+        if start not in text:continue
+        assert text.count(start)==text.count(end)==1,'Ambiguous managed browser GIS block'
+        before,rest=text.split(start,1);block,after=rest.split(end,1)
+        block=re.sub(r'\*\*\d+ project chapters and \d+ source-course guides\*\*',
+            f"**{len(catalog['repositories'])} project chapters and {len(library['courses'])} source-course guides**",block)
+        block=re.sub(r'The \d+ imported source lessons',f"The {len(library['sections'])} imported source lessons",block)
+        updated=before+start+block+end+after
+        if updated!=text:path.write_text(updated,encoding='utf-8',newline='\n')
+    path=root/'content/references.ipynb';source=root/'REFERENCES.md'
+    if path.exists() and source.exists():
+        nb=nbformat.read(path,4);text=source.read_text(encoding='utf-8')
+        if nb.cells[0].source!=text:
+            nb.cells[0].source=text;nbformat.write(nb,path)
 
 
 def load_pathways(root=ROOT):

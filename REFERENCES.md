@@ -3,7 +3,230 @@
 Baseline sources inspected 2026-11-01; the Coral Reef One Health source and selected provider context were reviewed in a targeted addition on 2026-11-02. Four external PHI-Case-Studies courses were also reviewed on 2026-11-02. Existing sources were not fully reinspected. Source summaries are original paraphrases. The project title links to the actual repository; the reviewed README links to its immutable default-head commit. Cite the commit/release and underlying data separately when using a source. Exact launch URLs, availability dates and runtime limits are in `catalog/repositories.json` and each chapter.
 
 <!-- BROWSER_GIS_PATHWAYS:START -->
+<!-- ATLAS_EXPANSION_20261116:START -->
+## Four new chapters - 16 November 2026
+
+A fresh public owner-list/search comparison found four missing JupyterLite projects. They now have complete source-course sections and matching Book/Lab introductions. The existing courses, PHI ordering, historical source pins and real-data map inputs are preserved.
+
+| Chapter | Source notebooks | Read the course | Run the Atlas introduction |
+|---|---:|---|---|
+| C3S Atlas - Climate support, area weighting, anomalies, warming windows and uncertainty | 20 | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/c3s-atlas/index.html) | [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=projects/c3s-atlas/index.ipynb) |
+| Destination Earth Digital Twin - Synthetic Earth-system cubes, interpolation, scenarios and digital-twin evidence | 32 | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/destination-earth-digital-twin/index.html) | [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=projects/destination-earth-digital-twin/index.ipynb) |
+| Urbanity - Synthetic street networks, heterogeneous graphs, context and graph-ML limits | 7 | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/urbanity/index.html) | [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=projects/urbanity/index.ipynb) |
+| TerrIO - Raster/vector/point-cloud I/O, coordinates, terrain, scenes and interoperability | 13 | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/terrio/index.html) | [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=projects/terrio/index.ipynb) |
+
+The Atlas introductions use small, explicitly synthetic calculations and original generated visuals. Source courses retain their own data status: C3S includes credited reference tables, catalogue metadata and a coastline; TerrIO includes Natural Earth countries. Destination Earth numerical examples and Urbanity toy networks are synthetic. They are not authentic digital-twin output, city observations, health findings or a live AI result.
+
+**TerrIO runtime:** the full 13 source notebooks are reference/editing copies in the Atlas, whose Pyodide 314 runtime is incompatible with the course's TerrIO 0.9.0 WebAssembly wheel. Use the [matched source Lab](https://jltobias.github.io/JupyterLite-terrio/lite/lab/index.html?path=01-first-contact.ipynb) for those package activities. The independent Atlas introduction runs without TerrIO. Native Urbanity, optional widget frontends and authentic DestinE services retain their course-specific requirements. All four chapters have distinct RustGIS/GeoLibre pathways and optional human-reviewed AI exercises.
+
+New chapters remain part of the same extensible catalog, with source pin/hash/disposition and dataset-credit records. Add later chapters through the documented audited append process; no existing course is silently replaced.
+
+## Citations and reuse for the four new courses
+
+The four course snapshots are cited at their immutable commits in the source-course register. Credits cover the material actually included; linked scientific readings and official services retain their own terms. Source bibliographies and notices are retained beside each course. No agency logo, official satellite image, provider screenshot, model weights or protected training video is added by this expansion.
+
+- **C3S Atlas course contributors (2026).** JupyterLite-C3S-Atlas, commit b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a. [Pinned course](https://github.com/jltobias/JupyterLite-C3S-Atlas/tree/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a), [license](https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/LICENSE) and [credits](https://github.com/jltobias/JupyterLite-C3S-Atlas/blob/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a/content/credits.md). Original course code, explanations, synthetic examples and licensable original illustration: MIT. Its original image-generation prompt and file-specific provenance are retained. The original illustration is not a quantitative climate map.
+- **Destination Earth Digital Twin course contributors (2026).** JupyterLite-Destination-Earth-Digital-Twin, commit 0e32b2477ba5c0030985e25f1071d94cddabf130. [Pinned course](https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/tree/0e32b2477ba5c0030985e25f1071d94cddabf130), [license](https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/blob/0e32b2477ba5c0030985e25f1071d94cddabf130/LICENSE), [attributions](https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/blob/0e32b2477ba5c0030985e25f1071d94cddabf130/ATTRIBUTIONS.md). Original code: MIT; original prose and synthetic data: CC BY 4.0. The licensable original splash is CC BY 4.0, credited to the repository with OpenAI image-generation assistance; its complete prompt/provenance is retained. The invented streamlines and globe are an illustration, not observations or authentic digital-twin output.
+- **Urbanity learning-companion contributors (2026).** JupyterLite-Urbanity, commit a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f. [Pinned course and attribution](https://github.com/jltobias/JupyterLite-Urbanity/tree/a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f). Its original toy networks, local diagrams and course material are incorporated at the repository owner's request. No general public license is inferred for this companion. The separate Urbanity software's MIT license does not license the companion or third-party imagery. Its examples do not execute Urbanity or describe actual neighbourhoods.
+- **TerrIO learning-course contributors (2026).** JupyterLite-terrio, commit 18574d4e7a8dabb99d3db65b20c6180185578482. [Pinned course](https://github.com/jltobias/JupyterLite-terrio/tree/18574d4e7a8dabb99d3db65b20c6180185578482), [license](https://github.com/jltobias/JupyterLite-terrio/blob/18574d4e7a8dabb99d3db65b20c6180185578482/LICENSE), [attribution](https://github.com/jltobias/JupyterLite-terrio/blob/18574d4e7a8dabb99d3db65b20c6180185578482/book/attribution.md). Original code: MIT; original teaching prose, synthetic arrays and code-generated chapter diagrams: CC0 1.0. Natural Earth and software/dependency rights remain separate. No DOI is assigned to this course; the software's concept DOI below is a different work.
+
+### Climate and geographic inputs
+
+- **European Union; C3S Atlas User Tools contributors; CMIP6 modelling groups.** CMIP6_WarmingLevels.csv, [original auxiliary table at 8d80d4e](https://github.com/ecmwf-projects/c3s-atlas/blob/8d80d4e98053d96077ba67f29464b4f373ff4037/auxiliar/GWLs/CMIP6_WarmingLevels.csv), Apache-2.0. Preserve the included upstream license, EU copyright credit, model/scenario/window identifiers and unchanged-byte statement. Global warming windows are model-derived reference information, not local observations or health predictions.
+- **Natural Earth; Tom Patterson, Nathaniel Vaughn Kelso and contributors.** Made with Natural Earth. The C3S coastline retains its [immutable source](https://github.com/nvkelso/natural-earth-vector/blob/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_110m_coastline.geojson); TerrIO countries retain [1:110m Admin 0 Countries, v5.1.2](https://github.com/nvkelso/natural-earth-vector/blob/v5.1.2/geojson/ne_110m_admin_0_countries.geojson). Both are public-domain data under the [Natural Earth terms](https://www.naturalearthdata.com/about/terms-of-use/). Preserve source manifests, hashes and coarse/generalized-boundary limits; neither layer supplies fine-scale risk evidence.
+- **Copernicus Climate Change Service / ECMWF on behalf of the European Union.** [Gridded dataset underpinning the Copernicus Interactive Climate Atlas](https://cds.climate.copernicus.eu/datasets/multi-origin-c3s-atlas?tab=overview), [DOI:10.24381/cds.h35hb680](https://doi.org/10.24381/cds.h35hb680), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Only the source's dated catalogue metadata snapshot is included; the gridded archive is not downloaded. Source model/product citations and transformations are still required for any later authentic extraction.
+- **Gutiérrez, J. M., San Martín, D., Horányi, A., Brookshaw, A., Buontempo, C., Díez-Sierra, J., Goddard, C., and Tuni, M. (2024).** The Copernicus Interactive Climate Atlas: a tool to explore regional climate change. ECMWF Newsletter 181. [DOI:10.21957/ah52ufc369](https://doi.org/10.21957/ah52ufc369). **Iturbide, M., et al. (2020).** An update of IPCC climate reference regions for subcontinental analysis of climate model data: definition and aggregated datasets. Earth System Science Data 12, 2959-2970. [DOI:10.5194/essd-12-2959-2020](https://doi.org/10.5194/essd-12-2959-2020). These are method/background citations; rectangular teaching masks do not become the published IPCC boundaries. Credits also retain CSIC and Predictia's Atlas guide/tool contributions.
+
+### Digital twins, urban networks and geospatial software
+
+- **European Union; ECMWF, ESA and EUMETSAT.** Official [Destination Earth source index](https://github.com/destination-earth/DestinE), [Digital Twin Engine](https://destine.ecmwf.int/digital-twin-engine/), [Climate DT](https://destine.ecmwf.int/climate-digital-twin/) and [Weather-Induced Extremes DT](https://destine.ecmwf.int/weather-induced-extremes-digital-twin/); [Data Lake documentation](https://destine-data-lake-docs.data.destination-earth.eu/en/latest/), [Platform services](https://platform.destine.eu/services/) and [access FAQ](https://platform.destine.eu/support-faq/). These explain official roles/access, not endorsement or authorship of the Atlas. [Polytope](https://polytope.readthedocs.io/en/stable/), [Earthkit data](https://earthkit-data.readthedocs.io/en/latest/), [AI programme](https://destine.ecmwf.int/ai-in-destination-earth/) and [ML components](https://destine.ecmwf.int/ml-earth-system-components/) remain conceptual or external continuations. No official output, weights or service response is imported. The source's [Generation 2 citation example](https://www.ecmwf.int/en/forecasts/dataset/destination-earth-digital-twin-climate-change-adaptation-gen2), DOI 10.21957/79c6af3105, is metadata context for data **not used**. Real service terms and per-product licensing apply separately.
+- **Yap, W., Stouffs, R., and Biljecki, F. (2023).** Urbanity: automated modelling and analysis of multidimensional networks in cities. npj Urban Sustainability 3, 45. [DOI:10.1038/s42949-023-00125-w](https://doi.org/10.1038/s42949-023-00125-w). Credit Winston Yap, the Urbanity contributors and NUS Urban Analytics Lab; [official documentation](https://urbanity.readthedocs.io/en/latest/) and [source](https://github.com/winstonyym/urbanity). The retained native examples/data links have their own dependencies, imagery permissions and provider terms; no real city dataset or imagery from those workflows is added here.
+- **Wu, Q., Fitzgerald, M., and Morales Sanchez, G. (2026).** terrio: Pure-Rust geospatial raster, vector and point cloud data I/O. [Project citation guide](https://terrio.dev/citation/) and the authors' reported [Zenodo concept DOI:10.5281/zenodo.23642204](https://doi.org/10.5281/zenodo.23642204). This is a concept citation, not the course pin or an assertion of an exact release DOI. The course targets TerrIO 0.9.0; [release source/notices](https://github.com/opengeos/terrio/tree/v0.9.0) retain component-specific terms. Credit the TerrIO contributors, whitebox_next_gen, GDAL, PROJ, PDAL, GeoRust, JTS/GEOS, CSF, rasterio, xarray and rioxarray communities. Coordinate-definition notices retain EPSG/IOGP terms; the Atlas does not redistribute a new coordinate database or wheel.
+- **Project Jupyter and Pyodide contributors.** TerrIO's source pins kernel 0.8.0b0, whose [versioned schema](https://github.com/jupyterlite/pyodide-kernel/blob/v0.8.0b0/packages/pyodide-kernel-extension/schema/kernel.v0.schema.json) selects Pyodide 0.29.4. The Atlas retains kernel 0.8.3 / Pyodide 314.0.4. TerrIO source notebooks are full reference/editing copies here; use their matching upstream Lab for its incompatible WebAssembly wheel. The independent Atlas introduction runs without TerrIO. Optional widget/Plotly frontends and browser/CDN/WebGL support are separate from numeric execution.
+- **Scientific Python and visualization contributors.** NumPy, pandas, Matplotlib, Plotly, xarray and ipywidgets retain their own upstream licenses/notices. The Atlas's software/content license never replaces source-course, dataset, model, provider or dependency rights. RustGIS/GeoLibre/Ollama sources remain in the shared browser GIS bibliography; new pathways do not call an AI service.
+
+### Retained source-reference index
+
+These links are retained from the four pinned course notebooks and their source attributions. They identify conceptual references, software, optional services and further readings; inclusion does not mean a dataset was imported or a service executed. The dataset ledger below identifies actual bundled inputs.
+
+#### C3S Atlas
+
+- [Data Creation](http://www.naturalearthdata.com/about/data-creation/).
+- [Full terms of service »](http://www.naturalearthdata.com/about/terms-of-use/).
+- [report it](http://www.naturalearthdata.com/corrections/index.php?a=add).
+- [Download EPS](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV%20Logo%20Black.zip).
+- [Download EPS](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV%20Logo%20White.zip).
+- [Download EPS](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV%20Logo%20color.zip).
+- [Download Large Transparent PNG](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV-Logo-Black.png).
+- [Black with white](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV-Logo-Black_sm.png).
+- [Download Large Transparent PNG](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV-Logo-White.png).
+- [White with transparent](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV-Logo-White_sm.png).
+- [Download Large Transparent PNG](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV-Logo-color.png).
+- [Blue with white](http://www.naturalearthdata.com/wp-content/uploads/2009/08/NEV-Logo-color_sm.png).
+- [Copernicus Interactive Climate Atlas](https://atlas.climate.copernicus.eu/).
+- [machine-readable metadata](https://cds.climate.copernicus.eu/api/catalogue/v1/collections/multi-origin-c3s-atlas).
+- [CDS catalogue](https://cds.climate.copernicus.eu/datasets/multi-origin-c3s-atlas?tab=overview).
+- [API setup guide](https://cds.climate.copernicus.eu/how-to-api).
+- [dataset licence](https://cds.climate.copernicus.eu/licences/cc-by).
+- [C3S introduction to the Atlas](https://climate.copernicus.eu/copernicus-interactive-climate-atlas-guide-powerful-new-c3s-tool).
+- [C3S User Learning Services: modules, courses, and training events](https://climate.copernicus.eu/user-learning-services).
+- [Full Atlas user guide, including the official introductory video link](https://confluence.ecmwf.int/spaces/CKB/pages/394237545/Copernicus+Interactive+Climate+Atlas+User+Guide).
+- [full terms](https://creativecommons.org/licenses/by/4.0/legalcode).
+- [xarray area-weighting tutorial — Mathias Hauser](https://docs.xarray.dev/en/stable/examples/area_weighted_temperature.html).
+- [doi:10.21957/ah52ufc369](https://doi.org/10.21957/ah52ufc369).
+- [doi:10.24381/cds.h35hb680](https://doi.org/10.24381/cds.h35hb680).
+- [IPCC reference regions — Iturbide et al.](https://doi.org/10.5194/essd-12-2959-2020).
+- [Official C3S Atlas User Tools and contributors](https://ecmwf-projects.github.io/c3s-atlas/).
+- [C3S training notebook collection](https://ecmwf-training.github.io/c3s-training/).
+- [Official C3S Atlas User Tools and notebooks](https://github.com/ecmwf-projects/c3s-atlas).
+- [Source table and authors](https://github.com/ecmwf-projects/c3s-atlas/blob/main/auxiliar/GWLs/CMIP6_WarmingLevels.csv).
+- [GWL implementation](https://github.com/ecmwf-projects/c3s-atlas/blob/main/book/notebooks/GWLs.ipynb).
+- [Official urban workflow](https://github.com/ecmwf-projects/c3s-atlas/blob/main/book/notebooks/UHI.ipynb).
+- [Upstream drought methods](https://github.com/ecmwf-projects/c3s-atlas/blob/main/book/notebooks/spei6.ipynb).
+- [Bias adjustment user tools](https://github.com/ecmwf-projects/c3s-atlas/blob/main/book/notebooks/tx35bals.ipynb).
+- [JupyterLite documentation](https://jupyterlite.readthedocs.io/en/stable/).
+- [Plotly surface documentation](https://plotly.com/python/3d-surface-plots/).
+- [IPCC AR6 WGI Atlas chapter](https://www.ipcc.ch/report/ar6/wg1/chapter/atlas/).
+- [Natural Earth terms and contributors](https://www.naturalearthdata.com/about/terms-of-use/).
+
+#### Destination Earth Digital Twin
+
+- [Conceptual or software reference](https://data.destination-earth.eu/terms-and-conditions).
+- [Conceptual or software reference](https://destine-data-lake-docs.data.destination-earth.eu/en/latest/).
+- [DestinE](https://destine.ecmwf.int/).
+- [Conceptual or software reference](https://destine.ecmwf.int/ai-in-destination-earth/).
+- [Conceptual or software reference](https://destine.ecmwf.int/climate-digital-twin/).
+- [Conceptual or software reference](https://destine.ecmwf.int/digital-twin-engine/).
+- [Conceptual or software reference](https://destine.ecmwf.int/ml-earth-system-components/).
+- [Conceptual or software reference](https://destine.ecmwf.int/weather-induced-extremes-digital-twin/).
+- [Conceptual or software reference](https://docs.scipy.org/doc/scipy/tutorial/interpolate.html).
+- [Conceptual or software reference](https://docs.xarray.dev/en/stable/).
+- [10.21957/79c6af3105](https://doi.org/10.21957/79c6af3105).
+- [Conceptual or software reference](https://earthkit-data.readthedocs.io/en/latest/).
+- [Destination Earth initiative source index](https://github.com/destination-earth/DestinE).
+- [DestinE Data Lake Lab](https://github.com/destination-earth/DestinE-DataLake-Lab).
+- [ipykernel](https://github.com/ipython/ipykernel).
+- [Jupyter Book / MyST](https://github.com/jupyter-book/jupyter-book).
+- [ipywidgets](https://github.com/jupyter-widgets/ipywidgets).
+- [nbclient](https://github.com/jupyter/nbclient).
+- [nbformat](https://github.com/jupyter/nbformat).
+- [JupyterLite](https://github.com/jupyterlite/jupyterlite).
+- [Pyodide kernel](https://github.com/jupyterlite/pyodide-kernel).
+- [Matplotlib](https://github.com/matplotlib/matplotlib).
+- [Playwright](https://github.com/microsoft/playwright-python).
+- [Node.js](https://github.com/nodejs/node).
+- [NumPy](https://github.com/numpy/numpy).
+- [pandas](https://github.com/pandas-dev/pandas).
+- [xarray](https://github.com/pydata/xarray).
+- [Pyodide](https://github.com/pyodide/pyodide).
+- [pytest](https://github.com/pytest-dev/pytest).
+- [SciPy](https://github.com/scipy/scipy).
+- [Conceptual or software reference](https://matplotlib.org/stable/api/animation_api.html).
+- [Conceptual or software reference](https://matplotlib.org/stable/users/explain/axes/arranging_axes.html).
+- [Conceptual or software reference](https://matplotlib.org/stable/users/explain/colors/colormaps.html).
+- [Conceptual or software reference](https://matplotlib.org/stable/users/explain/toolkits/mplot3d.html).
+- [Conceptual or software reference](https://numpy.org/doc/stable/reference/arrays.ndarray.html).
+- [Conceptual or software reference](https://numpy.org/doc/stable/reference/random/).
+- [DestinE Platform](https://platform.destine.eu/).
+- [Destination Earth service catalog](https://platform.destine.eu/services/).
+- [registration/access FAQ](https://platform.destine.eu/support-faq/).
+- [Conceptual or software reference](https://polytope.readthedocs.io/en/stable/).
+- [Conceptual or software reference](https://proj.org/en/stable/operations/projections/merc.html).
+- [Climate DT Generation 2 metadata](https://www.ecmwf.int/en/forecasts/dataset/destination-earth-digital-twin-climate-change-adaptation-gen2).
+
+#### Urbanity
+
+- [Core Urbanity paper](https://doi.org/10.1038/s42949-023-00125-w).
+- [Street-view paper](https://doi.org/10.1177/23998083221138832).
+- [Global Urban Graph Dataset](https://figshare.com/articles/dataset/Global_Graph_Dataset/28852319).
+- [Global Feature-Rich Urban Network Dataset](https://figshare.com/articles/dataset/Global_Urban_Network_Dataset/22124219).
+- [Winston Yap](https://github.com/winstonyym).
+- [Urbanity source and licence](https://github.com/winstonyym/urbanity).
+- [MIT License](https://github.com/winstonyym/urbanity/blob/main/LICENSE).
+- [Official notebooks and examples](https://github.com/winstonyym/urbanity_examples).
+- [!Open the Jupyter Book](https://img.shields.io/badge/Explore-Jupyter%20Book-2b6cb0?style=for-the-badge).
+- [!Launch JupyterLite Lab](https://img.shields.io/badge/Launch-JupyterLite%20Lab-f6ad55?style=for-the-badge).
+- [NUS Urban Analytics Lab](https://ual.sg/).
+- [official Urbanity documentation](https://urbanity.readthedocs.io/en/latest/).
+- [Urbanity API reference](https://urbanity.readthedocs.io/en/latest/api/).
+- [building API](https://urbanity.readthedocs.io/en/latest/api/building/).
+- [UrbanGraph API](https://urbanity.readthedocs.io/en/latest/api/data_class/).
+- [population API](https://urbanity.readthedocs.io/en/latest/api/population/).
+- [Urbanity satellite API](https://urbanity.readthedocs.io/en/latest/api/satellite/).
+- [Urbanity visualisation API](https://urbanity.readthedocs.io/en/latest/api/visualisation/).
+- [official Urbanity citation guide](https://urbanity.readthedocs.io/en/latest/changelog/).
+- [official installation instructions](https://urbanity.readthedocs.io/en/latest/installation/).
+- [quickstart](https://urbanity.readthedocs.io/en/latest/quickstart/).
+- [Official Urbanity graph-ML tutorial](https://urbanity.readthedocs.io/en/latest/tutorials/graph-ml/).
+- [Official street-network tutorial](https://urbanity.readthedocs.io/en/latest/tutorials/street-networks/).
+- [Official urban-graph tutorial](https://urbanity.readthedocs.io/en/latest/tutorials/urban-graphs/).
+- [OpenStreetMap's attribution and ODbL requirements](https://www.openstreetmap.org/copyright).
+
+#### TerrIO
+
+- [NASA ARSET training](https://appliedsciences.nasa.gov/what-we-do/capacity-building/arset).
+- [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+- [QGIS Training Manual](https://docs.qgis.org/latest/en/docs/training_manual/).
+- [Source 2](https://docs.xarray.dev/en/stable/user-guide/data-structures.html).
+- [doi.org/10.5281/zenodo.23642204](https://doi.org/10.5281/zenodo.23642204).
+- [Source 4](https://earth-search.aws.element84.com/v1).
+- [terms of use](https://epsg.org/terms-of-use.html).
+- [GDAL tutorials](https://gdal.org/en/stable/tutorials/index.html).
+- [Introduction to GIS Programming](https://geog-312.gishub.org/).
+- [Spatial Data Management](https://geog-414.gishub.org/).
+- [Source 3](https://github.com/ASPRSorg/LAS).
+- [Source 2](https://github.com/nvkelso/natural-earth-vector/tree/v5.1.2).
+- [TerrIO](https://github.com/opengeos/terrio).
+- [CITATION.cff](https://github.com/opengeos/terrio/blob/main/CITATION.cff).
+- [official quickstart notebook](https://github.com/opengeos/terrio/blob/main/docs/notebooks/quickstart.ipynb).
+- [LICENSE](https://github.com/opengeos/terrio/blob/v0.9.0/LICENSE).
+- [third-party license inventory](https://github.com/opengeos/terrio/blob/v0.9.0/LICENSE-THIRD-PARTY.md).
+- [NOTICE](https://github.com/opengeos/terrio/blob/v0.9.0/NOTICE).
+- [Jupyter Book documentation](https://jupyterbook.org/).
+- [JupyterLite documentation](https://jupyterlite.readthedocs.io/).
+- [PDAL tutorials](https://pdal.io/en/stable/tutorial/index.html).
+- [Plotly 3D plots](https://plotly.com/python/3d-charts/).
+- [Source 1](https://plotly.com/python/3d-surface-plots/).
+- [PROJ documentation](https://proj.org/).
+- [Source 2](https://proj.org/en/stable/operations/projections/merc.html).
+- [Source 1](https://stacspec.org/en).
+- [TerrIO official documentation and tutorials](https://terrio.dev/).
+- [TerrIO's citation guide](https://terrio.dev/citation/).
+- [TerrIO command line](https://terrio.dev/cli/).
+- [Source 2](https://terrio.dev/cli/#dem).
+- [Conformance](https://terrio.dev/conformance/).
+- [TerrIO CRS guide](https://terrio.dev/crs/).
+- [Source 1](https://terrio.dev/formats/).
+- [getting started](https://terrio.dev/getting-started/).
+- [HEC-RAS guide](https://terrio.dev/hecras/).
+- [TerrIO JavaScript](https://terrio.dev/javascript/).
+- [MCP](https://terrio.dev/mcp/).
+- [Multidimensional arrays](https://terrio.dev/multidim/).
+- [official notebooks](https://terrio.dev/notebooks/).
+- [browser playground](https://terrio.dev/playground/).
+- [Point-cloud guide](https://terrio.dev/point-clouds/).
+- [Python API](https://terrio.dev/python/).
+- [Source 1](https://terrio.dev/python/#analysis-and-topology).
+- [Source 2](https://terrio.dev/python/#point-clouds).
+- [Source 1](https://terrio.dev/python/#rasters).
+- [Coming from rasterio](https://terrio.dev/rasterio/).
+- [Remote data](https://terrio.dev/remote/).
+- [Roadmap](https://terrio.dev/roadmap/).
+- [Rust](https://terrio.dev/rust/).
+- [Vector SQL](https://terrio.dev/sql/).
+- [Testing](https://terrio.dev/testing/).
+- [TerrIO web app](https://terrio.dev/web/).
+- [TerrIO xarray](https://terrio.dev/xarray/).
+- [xarray tutorials](https://tutorial.xarray.dev/).
+- [Public-domain terms](https://www.naturalearthdata.com/about/terms-of-use/).
+- [OGC COG standard](https://www.ogc.org/standards/ogc-cloud-optimized-geotiff/).
+- [Source 2](https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index).
+- [Qiusheng Wu's video channel](https://www.youtube.com/@giswqs).
+<!-- ATLAS_EXPANSION_20261116:END -->
+
 <!-- CHOLERA_BASIC_REPAIR:START -->
+
+
 ## Cholera Basic: browser notebook repairs
 
 Open [Notebook 1: historical deaths and pumps](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=courses/cholera-1854-basic/NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb) or [Notebook 2: death-weighted center](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=courses/cholera-1854-basic/NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb). Run from the first setup cell in a fresh Python (Pyodide) kernel. Browser packages download on first use; the notebooks use browser-compatible preparation instead of shell `pip`/`ls`. Notebook 2 loads its own bundled historical CSVs, so it can start independently. Excluded local video files remain external continuations.
@@ -27,7 +250,7 @@ See [validation evidence](https://github.com/jltobias/JupyterLite-Learning-Atlas
 
 ## Browser GIS throughout the Atlas
 
-Use the [browser GIS guide in the Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/browser-gis.html) or [the same guide in Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=browser-gis.ipynb), then run the [GIS export/review workbench](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=gis-workbench.ipynb). Each of the **42 project chapters and 42 source-course guides** offers a subject-specific question, a RustGIS task, a GeoLibre task, an optional assistant prompt, a separate GeoAI extension and a human evidence check. The 724 imported source lessons retain their original code and their course-guide handoffs; they are not all rewritten or universally browser-certified.
+Use the [browser GIS guide in the Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/browser-gis.html) or [the same guide in Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=browser-gis.ipynb), then run the [GIS export/review workbench](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=gis-workbench.ipynb). Each of the **46 project chapters and 46 source-course guides** offers a subject-specific question, a RustGIS task, a GeoLibre task, an optional assistant prompt, a separate GeoAI extension and a human evidence check. The 796 imported source lessons retain their original code and their course-guide handoffs; they are not all rewritten or universally browser-certified.
 
 The practical connection is **notebook → attributed GeoJSON → import into a browser GIS → inspect the map/table/tool results → revise and document**. Open [RustGIS Web](https://web.rustgis.app/) or [GeoLibre Web](https://web.geolibre.app/) and use its file picker to load the exported file. The apps have separate projects and storage. The workbench uses real Fresno Census tracts for a clearly identified common practice example, or an explicitly chosen attributed WGS84 GeoJSON file. Other real inputs are available through the [Map and Scene Atlas](https://jltobias.github.io/JupyterLite-Learning-Atlas/teach/) and existing source lessons. A common practice layer does not become a cholera, coral, mobility or other subject observation by changing the chapter name.
 
@@ -317,7 +540,7 @@ The EO Satellite Guide is by **jltobias / James L. Tobias and EO Satellite Guide
 Only used source material is adopted as consulted here. Scientific readings that occur only in the source course remain its references, not independently inspected atlas evidence.
 
 
-## Complete source-course register (2026-11-13)
+## Complete source-course register (expanded 2026-11-16)
 
 Each course is namespaced in `content/courses/`, read as nested Book sections and copied into the Lab with its declared local support files. Source pins below identify this textbook expansion; earlier companion reviews retain their original dates and commits. Each notebook preserves its original path/hash and lists any documented compatibility, format, link, output or rights-related changes in the [machine-readable library](https://jltobias.github.io/JupyterLite-Learning-Atlas/catalog/source-library.json).
 
@@ -365,10 +588,14 @@ Each course is namespaced in `content/courses/`, read as nested Book sections an
 | [JupyterLite-World-Monitor-Prototype](https://github.com/jltobias/JupyterLite-World-Monitor-Prototype) — James L. Tobias / jltobias and source-course contributors | [557e03bb9c3cad560292f5d4bc31deccfd79d570](https://github.com/jltobias/JupyterLite-World-Monitor-Prototype/tree/557e03bb9c3cad560292f5d4bc31deccfd79d570) | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/world-monitor-prototype/index.html) / [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=courses/world-monitor-prototype/index.ipynb) | 12 | Original author material incorporated at repository owner request; no general license inferred. Third-party terms remain separate. |
 | [JupyterLite-WorldView](https://github.com/jltobias/JupyterLite-WorldView) — James L. Tobias / jltobias and source-course contributors | [8e8feea094d489192b8a101069d32fa1328c764f](https://github.com/jltobias/JupyterLite-WorldView/tree/8e8feea094d489192b8a101069d32fa1328c764f) | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/worldview/index.html) / [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=courses/worldview/index.ipynb) | 11 | Source-specific license/notices retained under notices; data and media have separate terms. |
 | [JupyterLite-zarr-sql-views](https://github.com/jltobias/JupyterLite-zarr-sql-views) — James L. Tobias / jltobias and source-course contributors | [9a191f1fd30c40e09b48b9f92a9b5fdd9676509e](https://github.com/jltobias/JupyterLite-zarr-sql-views/tree/9a191f1fd30c40e09b48b9f92a9b5fdd9676509e) | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/zarr-sql-views/index.html) / [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=courses/zarr-sql-views/index.ipynb) | 30 | Source-specific license/notices retained under notices; data and media have separate terms. |
+| [JupyterLite-C3S-Atlas](https://github.com/jltobias/JupyterLite-C3S-Atlas) - course contributors | [b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a](https://github.com/jltobias/JupyterLite-C3S-Atlas/tree/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a) | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/c3s-atlas/index.html) / [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=courses/c3s-atlas/index.ipynb) | 20 | Original course material MIT; C3S auxiliary table Apache-2.0, Natural Earth public domain and CDS catalogue metadata CC BY 4.0. Preserve source credits, licenses and artwork provenance. |
+| [JupyterLite-Destination-Earth-Digital-Twin](https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin) - course contributors | [0e32b2477ba5c0030985e25f1071d94cddabf130](https://github.com/jltobias/JupyterLite-Destination-Earth-Digital-Twin/tree/0e32b2477ba5c0030985e25f1071d94cddabf130) | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/destination-earth-digital-twin/index.html) / [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=courses/destination-earth-digital-twin/index.ipynb) | 32 | Original code MIT; original prose, generated numerical data and cleared artwork CC BY 4.0, with attribution and Atlas adaptation notice. Official DestinE references/datasets are linked context, not copied inputs. |
+| [JupyterLite-Urbanity](https://github.com/jltobias/JupyterLite-Urbanity) - course contributors | [a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f](https://github.com/jltobias/JupyterLite-Urbanity/tree/a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f) | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/urbanity/index.html) / [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=courses/urbanity/index.ipynb) | 7 | Original owner-authored companion incorporated at repository owner request; Urbanity source repository has no public license grant. Package Urbanity and third-party data retain separate terms. |
+| [JupyterLite-terrio](https://github.com/jltobias/JupyterLite-terrio) - course contributors | [18574d4e7a8dabb99d3db65b20c6180185578482](https://github.com/jltobias/JupyterLite-terrio/tree/18574d4e7a8dabb99d3db65b20c6180185578482) | [Book](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/terrio/index.html) / [Lab](https://jltobias.github.io/JupyterLite-Learning-Atlas/lite/lab/index.html?path=courses/terrio/index.ipynb) | 13 | Original code MIT; original teaching prose, synthetic data and chapter SVG diagrams CC0. Natural Earth is public domain; TerrIO/dependency/EPSG terms remain separately scoped in retained notices. No TerrIO wheel redistributed. |
 
 
 <!-- DATA_ATTRIBUTIONS:START -->
-## Dataset citations and attribution register (2026-11-13)
+## Dataset citations and attribution register (2026-11-16)
 
 This register identifies the data actually bundled with the expanded source courses. Exact source-file hashes, local placements, source commits and retained notices are in [the source-library manifest](https://jltobias.github.io/JupyterLite-Learning-Atlas/catalog/source-library.json). The source snapshots retain their own credits and rights; a project software license does not relicense provider data. Atlas import changes are recorded per notebook. No agency or producer endorsement is implied.
 
@@ -415,6 +642,12 @@ This register identifies the data actually bundled with the expanded source cour
 | Source-authored provenance, capability catalogs, scenarios and configuration metadata | James L. Tobias and the named source-course contributors (2026); immutable source paths/commits are recorded per file in the source-library manifest. Catalog source IDs preserve their underlying publisher, documentation URL and access dates. | Source license/author-authorized original compilation; provider observations keep their separately listed rights. These records grant no rights over linked reports, services or imagery. | Factual/curated source registries, query/provenance/control records, original synthetic scenarios and descriptive page/project metadata; copied without supplying missing observations. |
 | Global Health GIS: 232 country/territory demo points (2021 label; synthetic health fields) | [CountryInfo](https://github.com/porimol/countryinfo), Porimol Chandro and contributors; copyright (c) 2018 Porimol Chandro. Source metadata credits the countryinfo Python package for approximate coordinates and country facts and James L. Tobias/ChatGPT for the synthetic demonstration. The package version was not recorded by the source. [CountryInfo README](https://github.com/porimol/countryinfo/blob/main/README.md) identifies Wikipedia as its principal factual source; no Wikipedia article prose or country boundary geometry is copied here. | [CountryInfo MIT license](https://github.com/porimol/countryinfo/blob/main/LICENSE) and full retained notice at content/courses/global-health-gis/notices/COUNTRYINFO-MIT.txt. The original source demonstration is incorporated at the owner request; a general license is not inferred for original unlicensed additions. | Source prepared approximate country centroids and artificial placeholder rates/intervals for software demonstrations. Atlas preserves the original GeoJSON bytes and provides two exact filename aliases used by the source notebook. These are explicitly SYNTHETIC_DEMO_NOT_IHME records, not IHME/GBD estimates; do not interpret the GBD-like filenames or 2021 label as observed disease burden. |
 | JASL/UHSLC hourly sea-level observations: Lagos 2333/C and Mombasa 1011/A, 1–28 July 1994 | Caldwell, Patrick C.; Merrifield, Mark A.; Thompson, Philip R. (2001). Sea level measured by tide gauges from global oceans as part of the Joint Archive for Sea Level (JASL) since 1846. Subset: UHSLC hourly records 2333 (Lagos C) and 1011 (Mombasa A), 1994-07-01 to 1994-07-28 UTC. NOAA National Centers for Environmental Information. Dataset. https://doi.org/10.7289/V5V40S7W. Accessed 2026-11-13 via UHSLC ERDDAP. Primary [NOAA metadata](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc%3AJIMAR-JASL); [UHSLC hourly archive](https://uhslc.soest.hawaii.edu/erddap/tabledap/global_hourly_rqds.html). | The source [ERDDAP license metadata](https://jltobias.github.io/JupyterLite-Learning-Atlas/data/uhslc-hourly-metadata.csv) explicitly permits free use and redistribution. Its complete accuracy/warranty/liability statement is retained. No CreativeCommons license is invented; cite JASL/UHSLC, NOAA NCEI and the exact subset. The separate SouthAfrican SANHO restrictions do not describe these Nigerian/Kenyan records. | Two complete 672-hour windows extracted with raw millimetres, UTC timestamps, station/record versions, source coordinates and response hashes retained. Display anomalies subtract each record’s valid 28-day mean, divide by 1000 and round to 6 decimals; no interpolation. Original full-field source CSVs and metadata accompany the derived JSON. Station zero and a short-window mean are not long-term MSL. These historical observations are a separate chart/marker, not a terrain offset, king tide classification, current forecast or revised facility-risk model. Gauge record versions are not joined. |
+| C3S Atlas CMIP6 global-warming-level windows | European Union; C3S Atlas User Tools contributors; underlying CMIP6 modelling groups. ecmwf-projects/c3s-atlas commit 8d80d4e98053d96077ba67f29464b4f373ff4037, auxiliar/GWLs/CMIP6_WarmingLevels.csv. Gutiérrez et al. (2024), DOI 10.21957/ah52ufc369; Iturbide et al. (2020), DOI 10.5194/essd-12-2959-2020. | Apache-2.0; retained licenses/C3S-Atlas-Apache-2.0.txt and source credit. | Unmodified 5,095-byte auxiliary CSV; model/scenario/threshold time windows, not observed local temperatures. |
+| Natural Earth 1:110m coastline | Made with Natural Earth. Nathaniel Vaughn Kelso, Tom Patterson and contributors; natural-earth-vector commit ca96624a56bd078437bca8184e78163e5039ad19, geojson/ne_110m_coastline.geojson. | Public domain; retain Natural Earth source/credit notice. | Unmodified 139,907-byte generalized geographic context; no boundary authority or precision claim. |
+| C3S Atlas CDS catalogue snapshot (2026-11-15) | Copernicus Climate Change Service / ECMWF / European Union, multi-origin-c3s-atlas catalogue; dataset DOI 10.24381/cds.h35hb680. | CC BY 4.0 as declared by the retained source manifest; source credits and adaptation notice retained. | Unmodified 5,461-byte metadata snapshot; full gridded climate archive not used or redistributed. |
+| C3S companion synthetic monthly teaching series | James L. Tobias / JupyterLite-C3S-Atlas, atlas_helpers.py monthly_demo(), seed 381; explicitly synthetic temperature examples. | Original teaching fixtures MIT; no Copernicus observation claim. | Unmodified CSV and JSON sidecar retained, including units, rounding and generator labels. |
+| Natural Earth countries v5.1.2 (177 features) | Made with Natural Earth. Tom Patterson, Nathaniel Vaughn Kelso and contributors; countries v5.1.2. Source/version/checksum retained in sources.json. | Public domain; preserve source attribution and generalized-boundary limitations. | Unmodified 838,726-byte GeoJSON; SHA-256 6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f. Generalized geography, not authoritative borders. |
+| C3S/DestinE/TerrIO source course registries and provenance metadata | James L. Tobias and named source-course contributors (2026); original curriculum/chapter/lesson registries and file-provenance manifests. C3S manifests identify separately credited reference data. | Source-specific: C3S original metadata MIT; DestinE original prose/generated data CC BY 4.0; TerrIO original teaching metadata CC0. Provider datasets retain separate terms. | Exact pinned local metadata; no observational/DT/model-service output implied. DestinE and Urbanity numerical teaching fixtures are synthetic equations/code, not downloaded datasets. |
 
 **AR6 acknowledgement:** We acknowledge the projection authors and supporting funding agencies, and the NASA Sea Level Change Team for developing and hosting the IPCC AR6 Sea Level Projection Tool. Complete supplied citations and acknowledgement remain with the course license notice.
 
@@ -426,6 +659,8 @@ This register identifies the data actually bundled with the expanded source cour
 
 **Optional live inputs:** source notebooks retain their provider/product citations and query instructions for OpenStreetMap/Overpass and tile services, USGS earthquake feeds, NASA GIBS, Copernicus, WorldPop, GeoLibre hosted samples, Major TOM, ESA WorldCover, CHIRPS and other named gateways. These are external continuations, not silently mirrored data or a blanket license to download every provider asset. Preserve the selected product’s own citation and terms when running such a branch.
 
+
+**2026-11-16 expansion:** Urbanity owner authorization does not imply a public license. DestinE arrays are synthetic, not real twin output; original numerical data/prose CC BY 4.0 and code MIT. TerrIO original synthetic fixtures and 13 SVGs are CC0, original code MIT; TerrIO/software/dependency/EPSG/IOGP rights remain separate. TerrIO reading copies require the matched Pyodide 0.29 source Lab; Atlas stays on 314. Only file-specifically cleared original C3S/DestinE PNGs and original Urbanity/TerrIO SVGs are imported with provenance.
 
 <!-- DATA_ATTRIBUTIONS:END -->
 
@@ -443,6 +678,10 @@ The primary map links now use real source datasets. Switch among five coastal ci
 - **Observed water levels:** JASL/UHSLC's Lagos record 2333/version C and Mombasa record 1011/version A provide 672 hourly readings each for 1–28 July 1994. The separate chart shows a record's observed variation about its own 28-day mean. Station zero/window mean is not MSL: these readings are not added to terrain or projections. No king tide classification or present-day/future flood prediction is inferred from this historical window.
 
 The source inputs, vendored renderer versions, preparation methods and hashes are recorded in [map data and asset provenance](https://jltobias.github.io/JupyterLite-Learning-Atlas/catalog/map-data.json). Existing source files are reused unchanged. Data-specific licenses remain in force for rendered/exported derivatives, including WUR's **CC BY-NC-SA 4.0** noncommercial/share-alike conditions. Local maps, tables and data do not require an external tile/API account; optional OpenStreetMap street context is an online service with its own policy. If WebGL is unavailable, use the geographic 2D map and text table.
+
+**Updated GIS Day 2026 presentation.** Tobias, James L. (2026). *JupyterLite for Geospatial Data Science: Serverless, Browser-Based, Reproducible Public Health Analytics*. Prepared for CDC GIS Day, 18 November 2026; user-supplied PDF revision created 16 November 2026, 50 slides. Source filename: `Jim-Tobias-Peraton-JupyterLite-for-Geospatial-Data Science-Serverless-Browser-Based-Reproducible-Public-Health-Analytics-11182026.pdf`; SHA-256 `4df6880595587da7351ae1cc10f1de9cbc2ef505a5bf455f0df338adf9aa7045`. Citation and learning context only: the PDF, screenshots, logos and contact slide are not redistributed, and their respective rights remain with their owners.
+
+Follow the presentation's learning route in the Atlas: [Cholera Basic](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/cholera-1854-basic/index.html), [browser GIS and optional AI](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/browser-gis.html), [GeoLibre](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/geolibre-geoai/index.html), [RustGIS](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/rustgis/index.html), and [TerrIO](https://jltobias.github.io/JupyterLite-Learning-Atlas/book/courses/terrio/index.html). The deck's software/runtime examples are contextual references; the Atlas records its own selected execution evidence and runtime limits separately.
 
 **Presentation and scientific sources.** James L. Tobias, Maria Jolly, Kelly Van Baalen, Leila Hadj-Chikh, Edward Paul Vallejo, Nathan Heard, Zhanar Haimovich, Casey Kalman, Baboyma Kagniniwa, Jesse Blanton and Herman Tolentino (2024), *PEPFAR adapts to sea-level-rise and storm-surge: potential impacts to coastal cities and facilities (2030)*, AIDS 2024, Munich, 22–26 July 2024, poster THPEF698; [public poster](https://plus.iasociety.org/sites/default/files/2024-09/e-poster_755.pdf). The user-supplied 25-page GIS Day 2026 presentation extends this context; its slides, protected graphics and facility screenshots are not republished.
 

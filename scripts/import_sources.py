@@ -7,6 +7,7 @@ files have hashes and rights exclusions have exact paths and source continuation
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import re
@@ -23,6 +24,10 @@ DEST = ROOT / 'content'
 # Prefix mappings reproduce the *tracked* preparation layout documented by the
 # investigation. No upstream generator, deserializer or acquisition code runs.
 MAPS = {
+ 'c3s-atlas': [('content/', '')],
+ 'destination-earth-digital-twin': [('content/', ''), ('book/', 'book/'), ('assets/splash.png', 'assets/splash.png')],
+ 'urbanity': [('book/', '')],
+ 'terrio': [('notebooks/', ''), ('book/', 'book/')],
  'ai-agents-and-orchestrator-six-thinking-hats': [('notebooks/', '')],
  'astra-demos': [('content/notebooks/', '')],
  'cholera-1854-basic': [('', '')],
@@ -67,6 +72,10 @@ MAPS = {
  'zarr-sql-views': [('notebooks/', '')],
 }
 EXTRA = {
+ 'c3s-atlas': [('assets/PROVENANCE.md', 'notices/assets/PROVENANCE.md'), ('CITATION.cff', 'notices/CITATION.cff'), ('curriculum.json', 'curriculum.json'), ('requirements-data.txt', 'notices/requirements-data.txt')],
+ 'destination-earth-digital-twin': [('assets/GENERATION.md', 'notices/assets/GENERATION.md'), ('CITATION.cff', 'notices/CITATION.cff'), ('assets/splash.png', 'assets/splash.png')],
+ 'urbanity': [('book/_static/'+name, '_static/'+name) for name in ['urbanity-mark.svg', 'urbanity-pipeline.svg', 'urbanity-splash.svg']],
+ 'terrio': [('chapters.json', 'chapters.json'), ('assets/ARTWORK.md', 'notices/assets/ARTWORK.md'), ('CITATION.cff', 'notices/CITATION.cff')],
  'eo-satellite-guide': [('src/eo_guide.py','eo_guide.py'), *[(f'data/{p}',f'data/{p}') for p in ['catalog.json','research-topics.json','stac-coverage.json','research-ontology.ttl','orbit-types.json','geometry-presets.json','mission-registry.json','mission-coverage.json']], ('downloads/eo-explorer.html','support/eo-explorer.html'), ('downloads/eo-swaths.html','support/eo-swaths.html')],
  'population-data-comparison': [('notebooks/population_tools.py','population_tools_real.py'), *[(f'data/{p}',p) for p in ['demo.json','population.json','README.md','import-example.geojson']], ('data/real/independent_oracle.json','independent_oracle.json'), ('data/real/ghsl_copyright.txt','notices/ghsl_copyright.txt'), ('data/real/comparison_source_provenance.json','notices/comparison_source_provenance.json')],
  'geospatial-analyses-and-maps': [('spatial_lite.py','spatial_lite.py')],
@@ -83,7 +92,36 @@ EXTRA = {
 }
 PHI = {'cholera-1854-basic','cholera-1854-advanced-1','cholera-1854-advanced-2','mdr-tb-thailand-2005'}
 MEDIA = {'.png','.jpg','.jpeg','.gif','.webp','.mp4','.wav','.mp3','.pdf','.ogg','.ico'}
-SAFE_EXT = {'.py','.json','.geojson','.csv','.tsv','.txt','.md','.css','.html','.js','.mjs','.svg','.shp','.shx','.dbf','.prj','.cpg','.gpkg','.xlsx','.xls','.graphml','.xml','.yaml','.yml','.jgis','.jGIS','.npz','.npy','.zip','.whl','.ttl','.vtt','.srt','.wasm','.tif','.tiff','.feather'} | MEDIA
+SAFE_EXT = {'.py','.json','.geojson','.csv','.tsv','.txt','.md','.css','.html','.js','.mjs','.svg','.shp','.shx','.dbf','.prj','.cpg','.gpkg','.xlsx','.xls','.graphml','.xml','.yaml','.yml','.jgis','.jGIS','.npz','.npy','.zip','.whl','.ttl','.vtt','.srt','.wasm','.tif','.tiff','.feather','.bib','.cff'} | MEDIA
+# Deliberately independent of the older research audit: append never replays a
+# previous course and refuses an unexpected checkout, inventory or destination.
+APPEND_COURSES = {
+ 'c3s-atlas': ('JupyterLite-C3S-Atlas', 'b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a', 20),
+ 'destination-earth-digital-twin': ('JupyterLite-Destination-Earth-Digital-Twin', '0e32b2477ba5c0030985e25f1071d94cddabf130', 32),
+ 'urbanity': ('JupyterLite-Urbanity', 'a9d2b1e0d0af91dc2782f7f1d77d9bbb10c67d0f', 7),
+ 'terrio': ('JupyterLite-terrio', '18574d4e7a8dabb99d3db65b20c6180185578482', 13),
+}
+URBANITY_ORDER=('street-networks','urban-graphs','urban-context','imagery','visualisation','graph-ml','reproducibility')
+
+
+def ordered_notebooks(slug,notebooks):
+    def path(item):return item['path'] if isinstance(item,dict) else item
+    if slug=='urbanity':return sorted(notebooks,key=lambda item:URBANITY_ORDER.index(PurePosixPath(path(item)).stem))
+    return sorted(notebooks,key=lambda item:(path(item).startswith('notebooks/') if slug=='rustgis' else path(item).startswith('contents/'),path(item)))
+
+
+def collect_support(support,local,slug,path,checkout):
+    """Reject a destination conflict before a dict assignment can hide it."""
+    candidate=(slug,path);previous=support.get(local)
+    if previous is not None and previous!=candidate:
+        relative=local.removeprefix(f'courses/{slug}/')
+        cleared=slug=='destination-earth-digital-twin' and relative=='assets/splash.png' and previous[0]==slug and {previous[1],path}=={'assets/splash.png','content/assets/splash.png'}
+        if not cleared:raise ValueError('Conflicting support destination: '+local)
+        left=(checkout/previous[1]).read_bytes();right=(checkout/path).read_bytes()
+        if left!=right or digest(left)!='8572f03e5207a2be3189eed9e91b2bcf1224186c495b7907fe817b22681d82e3':
+            raise ValueError('Conflicting support destination: '+local)
+        candidate=(slug,'assets/splash.png')  # The demonstrated identical-byte source alias.
+    support[local]=candidate
 BASIC_NOTEBOOKS = {
     'NB01-Cholera-Case-Study-Folium-Map-Part-1.ipynb',
     'NB02-Cholera-Case-Study-Folium-Map-Part-2.ipynb',
@@ -95,6 +133,45 @@ if sys.platform == "emscripten":
     await piplite.install(["numpy", "pandas", "folium==0.20.0"])
 # Native kernels use the Atlas pinned build requirements.
 %run ./resources/library.py'''
+C3S_REFERENCE_AUDIT='''import hashlib
+_reference_pins = {
+    "reference/CMIP6_WarmingLevels.csv": ("799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220", 5095),
+    "reference/ne_110m_coastline.geojson": ("851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c", 139907),
+    "reference/atlas-catalogue.json": ("33e92f5a01a5aa77cfe6a782776bbc5bba027cb4761b5d25f1faa35a1138dd86", 5461),
+}
+def _verify_reference_bytes(item, raw, mounted):
+    expected = _reference_pins.get(item["file"])
+    if expected != (item["sha256"], item["bytes"]) or expected != (hashlib.sha256(raw).hexdigest(), len(raw)):
+        raise ValueError("Authentic raw reference bytes or pinned manifest identity changed.")
+    allowed = {raw}
+    if sys.platform == "emscripten" and Path(item["file"]).suffix.lower() in {".json", ".geojson"}:
+        from js import JSON
+        allowed.add(str(JSON.stringify(JSON.parse(raw.decode("utf-8")))).encode("utf-8"))
+    if mounted not in allowed:
+        raise ValueError("Mounted reference differs from the exact authenticated transport representation.")
+    return True
+
+manifest = json.loads((DATA / "manifest.json").read_text(encoding="utf-8"))
+assert len(manifest) == len(_reference_pins) and {item["file"] for item in manifest} == set(_reference_pins)
+audit = []
+_reference_http_hashes = {}
+for item in manifest:
+    mounted = (DATA / item["file"]).read_bytes()
+    raw = mounted
+    if sys.platform == "emscripten":
+        from js import location
+        from pyodide.http import pyfetch
+        # Fetch only this Atlas deployment's bundled original bytes, never a provider dataset.
+        response = await pyfetch(str(location.origin) + "/JupyterLite-Learning-Atlas/lite/files/courses/c3s-atlas/data/" + item["file"])
+        if response.status != 200:
+            raise ValueError("Bundled raw reference is unavailable.")
+        raw = await response.bytes()
+    # The verifier derives the sole JSON transport representation from authenticated raw bytes.
+    verified = _verify_reference_bytes(item, raw, mounted)
+    _reference_http_hashes[item["file"]] = hashlib.sha256(raw).hexdigest()
+    audit.append({"file": item["file"], "bytes": item["bytes"], "licence": item["licence"], "verified": verified})
+assert all(row["verified"] for row in audit), "A reference file changed. Review provenance."
+display(pd.DataFrame(audit))'''
 BASIC_GRAY_MAP = '''# One keyless modern street layer; only its tile pane is desaturated.
 def gray_street_map(location, zoom_start=17):
     street_map = folium.Map(location=location, zoom_start=zoom_start, tiles=None)
@@ -121,6 +198,25 @@ def write_json(path, data):
 def adapt_support(slug,path,data):
     """Small recorded portability adapters; upstream checkouts remain immutable."""
     changes=[]
+    if slug=='c3s-atlas' and path=='content/atlas_helpers.py':
+        old='''    display({'application/vnd.plotly.v1+json': json.loads(fig.to_json()),
+             'text/html': fig.to_html(full_html=False, include_plotlyjs='cdn'),
+             'text/plain': str(fig)}, raw=True)'''
+        new='''    # Atlas has only the Pyodide extension: isolate Plotly's loader and draw
+    # scripts in an opaque-origin frame so the CDN is ready before newPlot.
+    from html import escape
+    document = fig.to_html(full_html=True, include_plotlyjs='cdn', config={'responsive': True})
+    title = escape(fig.layout.title.text or 'Interactive teaching figure', quote=True)
+    frame = (f'<iframe title="{title}" srcdoc="{escape(document, quote=True)}" '
+             'sandbox="allow-scripts allow-downloads" style="width:100%;height:520px;border:0" loading="eager"></iframe>')
+    display({'text/html': frame, 'text/plain': str(fig)}, raw=True)'''
+        source=data.decode('utf-8')
+        assert source.count(old)==1, 'C3S Plotly portability adapter source changed'
+        source=source.replace(old,new)
+        source=source.replace('The Lab MIME renderer is supplied by the Plotly extension. Static HTML uses',
+            'Atlas uses an isolated sandboxed frame, without a Plotly Lab extension. HTML uses')
+        data=source.encode('utf-8')
+        changes.append({'kind':'portability','adapter':'c3s-plotly-frame-v1','reason':'Actual Atlas Pyodide probe found Plotly undefined in the unisolated HTML fallback. An opaque-origin sandbox=allow-scripts allow-downloads iframe loads the versioned Plotly CDN before drawing and permits user-initiated image export; no allow-same-origin, extra Lab extension or runtime downgrade. Original numerical code, data, notices and text/plain fallback are retained.'})
     if slug=='stac-browser' and path=='notebooks/stac_browser.py':
         old='return str(location.origin) + config["base_path"].rstrip("/") + "/explorer/"'
         new='return ("" if urlsplit(config["base_path"]).scheme else str(location.origin)) + config["base_path"].rstrip("/") + "/explorer/"'
@@ -128,6 +224,58 @@ def adapt_support(slug,path,data):
         data=text.replace(old,new).encode('utf-8')
         changes.append({'kind':'portability','reason':'Absolute source continuation must not be prefixed by the Atlas worker origin','from':old,'to':new})
     return data,changes
+
+
+def prepare_support(slug,path,local,raw,aliases,available):
+    """One publication adapter shared by append and intentional full refresh."""
+    data,changes=adapt_support(slug,path,raw)
+    relative=local.removeprefix(f'courses/{slug}/')
+    if relative!=mapped(slug,path) and relative.startswith('notices/source-documents/'):
+        changes.append({'kind':'layout','from':mapped(slug,path),'to':relative,'reason':'Source Markdown relocated to avoid sharing a canonical notebook document stem.'})
+    if slug in APPEND_COURSES and local.endswith('.md') and ('/notices/source-documents/' in local or ('/notices/' not in local and '/licenses/' not in local)):
+        source=normalize_markdown(data.decode('utf-8'),path,slug,local,aliases,available,changes)
+        if slug=='c3s-atlas' and path=='content/data-guide.md':
+            old="Upload the prepared pair as `my_series.csv` and `my_series.json` into the Lab's\n   root file browser. Run Chapter 19."
+            new="In the Atlas Lab, open `courses/c3s-atlas/` in the file browser and upload\n   `my_series.csv` and `my_series.json` beside `19-bring-real-data.ipynb`. The\n   original source Lab uses its root directory; these are different layouts. Run Chapter 19."
+            assert source.count(old)==1,'C3S upload-guide source changed'
+            source=source.replace(old,new)
+            old='Install `requirements-data.txt` in your project environment, then run:'
+            new=('The following commands belong to the pinned source project, not the Atlas tree.\n'
+                 '[Download or check out the complete source at commit b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a]'
+                 '(https://github.com/jltobias/JupyterLite-C3S-Atlas/tree/b41c3e1098a4fb94cef48b3044fe19c6ce7c1a1a), '
+                 'then open a terminal in that source root. It supplies\n'
+                 '`requirements-data.txt` and `scripts/prepare_netcdf.py`; the source script remains external\n'
+                 'to the Atlas. In an isolated desktop environment, install those source requirements, then run:')
+            assert source.count(old)==1,'C3S desktop-guide source changed'
+            source=source.replace(old,new)
+            changes.append({'kind':'layout','adapter':'c3s-upload-guide-v1','reason':'Name the Atlas course-local upload directory and the separate immutable source checkout required for external desktop preparation commands.'})
+        if slug=='destination-earth-digital-twin' and '{cite:p}`climategen2`' in source:
+            source=source.replace('{cite:p}`climategen2`','([ECMWF Generation 2 Climate DT dataset, DOI 10.21957/79c6af3105](https://doi.org/10.21957/79c6af3105); metadata context only, dataset not used)')
+            source=re.sub(r'```\{bibliography\}.*?```','The retained [source BibTeX references](references.bib) provide the original citation metadata.',source,flags=re.S)
+            changes.append({'kind':'citation','reason':'Rendered Book 2 citation and bibliography syntax as an explicit DOI and retained BibTeX link for the Book 1 host; dataset not used.'})
+        data=source.encode('utf-8')
+    return data,changes
+
+
+def adapt_expansion_notebook(slug,path,nb):
+    if slug!='c3s-atlas':return []
+    changes=[]
+    contracts={
+        'content/02-data-and-provenance.ipynb':('65c79ef897a887aa36b86a243cf0906ea55ba50977025a7c22b989692bc22bc1','c3s-reference-transport-v1'),
+        'content/19-bring-real-data.ipynb':('f7937e4e4fe85da5179a8f639b148cb8306db53b07da6f6b2be3913037ecbb89','c3s-upload-provenance-v1'),
+    }
+    if path not in contracts:return changes
+    expected,adapter=contracts[path]
+    cells=[c for c in nb.cells if c.cell_type=='code' and digest(c.source.encode())==expected]
+    assert len(cells)==1,'Reviewed C3S source cell changed: '+path
+    if adapter=='c3s-reference-transport-v1':
+        cells[0].source=C3S_REFERENCE_AUDIT
+        reason='Authenticate exact bundled raw bytes and pinned identities, then allow only raw bytes or the exact JavaScript JSON.stringify(JSON.parse(authenticated raw)) Jupyter Contents representation. No arbitrary object changes accepted.'
+    else:
+        cells[0].source=cells[0].source.replace('all(str(provenance[k]).strip() for k in required)','all(isinstance(provenance[k], str) and provenance[k].strip() for k in required)')
+        reason='Required uploaded provenance values must be nonblank strings; reject null, nonstring and missing fields before plotting.'
+    changes.append({'kind':'integrity','adapter':adapter,'reason':reason})
+    return changes
 
 
 def adapt_basic_notebook(slug,path,nb):
@@ -223,8 +371,19 @@ def mapped(slug,path):
     return None
 
 
+def support_local_path(slug,path,notebook_paths):
+    """Keep source Markdown out of canonical notebook document stems."""
+    local=mapped(slug,path)
+    if local is not None and PurePosixPath(local).suffix.lower()=='.md' and (
+        local=='index.md' or any(mapped(slug,p)==str(PurePosixPath(local).with_suffix('.ipynb')) for p in notebook_paths)):
+        return 'notices/source-documents/'+path
+    return local
+
+
 def exclusion(slug,path):
     lower=path.lower(); parts=PurePosixPath(path).parts
+    if slug=='urbanity' and path in {f'book/_static/{name}' for name in ['urbanity-mark.svg','urbanity-pipeline.svg','urbanity-splash.svg']}:
+        return None  # Audited original local vector illustrations, owner authorized.
     if any(p.startswith('.') or p in {'__pycache__','node_modules','_build','_static','exports','cache'} for p in parts):
         return 'Build/cache/config artifact, not a teaching dependency'
     if slug=='climate-and-health' and path.startswith('content/legacy/'):
@@ -250,6 +409,7 @@ def exclusion(slug,path):
     if PurePosixPath(path).suffix.lower() in MEDIA:
         cleared = slug=='geospatial-analyses-and-maps' and path.startswith(('images/','videos/'))
         cleared |= slug=='sea-level-rise' and PurePosixPath(path).name in {'continuity-comic.png','scenario-walkthrough.mp4','teaching-video-poster.png'}
+        cleared |= (slug,path) in {('c3s-atlas','content/assets/atlas-splash.png'),('destination-earth-digital-twin','content/assets/splash.png'),('destination-earth-digital-twin','assets/splash.png')}
         if not cleared:
             return 'Optional media omitted: file-specific third-party/open reuse grant not established; retain pinned external continuation'
     if slug=='cross-border-ebola-risk-mapping-prototype' and path.startswith(('GIS/','data/')):
@@ -288,6 +448,27 @@ def runtime(slug,path,nb):
     if slug=='gpt-6-astra-geospatial' and 'wasm' in code:
         requirements.append('The upstream build compiles twin_kernel.wasm; if absent, compile in the source toolchain before that branch.')
     if slug in {'geolibre-geoai','zarr-sql-views'}:requirements.append('Widget/anywidget/LexCube branches need their source extensions; the Atlas shell supplies only Pyodide.')
+    if slug=='c3s-atlas':
+        klass='browser-network';requirements=[
+            'Browser-only piplite prepares numpy, pandas, matplotlib and Plotly 6.5.0; native kernels use installed scientific packages. Local calculations use bundled helpers and inputs; Plotly rendering can require its versioned CDN and WebGL.',
+            'Seeded monthly examples are synthetic. The C3S warming-level table gives model windows, Natural Earth provides real generalized coastlines, and the CDS catalogue is metadata. No authenticated CDS request, archive download or native regridding is run.',
+        ]
+    if slug=='destination-earth-digital-twin':
+        klass='browser-network';requirements=[
+            'Browser-only piplite prepares numpy, matplotlib, pandas, xarray and ipywidgets. Calculations use earthlab.py and original synthetic arrays, not observations or real Digital Twin outputs.',
+            'Optional widget controls need the source frontend; static figures and numerical results provide alternatives. Real DestinE accounts, Polytope/Data Lake services, GRIB/netCDF decoding and HPC remain explicit source/native continuations. No credentials or service requests are required for these defaults.',
+        ]
+    if slug=='urbanity':
+        klass='browser-local';requirements=[
+            'Standard-library synthetic network, context, imagery-label and graph exercises; these executable cells do not import Urbanity or download OSM/provider data.',
+            'Native Urbanity, compiled GIS, imagery and graph-ML examples in Markdown are continuations requiring their own environment and data permissions. Owner-authorized original material has no inferred public repository license.',
+        ]
+    if slug=='terrio':
+        klass='reference-only';requirements=[
+            'Reading/editing copy only in the shared Atlas kernel. TerrIO 0.9.0 uses a pyemscripten_2025_0 wasm wheel for Pyodide 0.29; the source pins jupyterlite-pyodide-kernel 0.8.0b0 (default Pyodide 0.29.4). This wheel is incompatible with Atlas Pyodide 314; do not install it here or downgrade the shared runtime.',
+            '[Run this lesson in its matched source Lab](https://jltobias.github.io/JupyterLite-terrio/lite/lab/index.html?path='+PurePosixPath(path).name+').',
+            'The source uses Plotly 6.3.1, xarray 2025.10.1 and optional CDN/WebGL graphics. Natural Earth countries are real generalized geography; all other numerical fixtures are explicitly synthetic. Native HTTP range I/O, specialized drivers and real service/model calls remain optional external continuations.',
+        ]
     if not requirements:requirements=['Local calculations and bundled inputs; first browser runtime/package download still needs connectivity. Static inspection is not execution certification.']
     # Small, explicitly audited local set. Other source code is never auto-run.
     selected=slug in {'population-data-comparison','onehealth'} or (slug=='spatial-analysis' and path.endswith('01_VC_vector-conversion.ipynb')) or (slug=='eo-satellite-guide' and path.endswith('02_sensor_comparison.ipynb'))
@@ -320,7 +501,13 @@ def normalize_markdown(source,base,slug,course,aliases,available,changes):
         # Normalize POSIX paths without consulting source filesystem symlinks.
         import posixpath
         upstream=posixpath.normpath(posixpath.join(str(PurePosixPath(base).parent),unquote(u.path)))
-        if (slug=='osiris' and upstream=='content/intro.md') or (slug=='data-visualization' and upstream=='content/repository_examples/index.md'):
+        reason=None
+        if slug in APPEND_COURSES and PurePosixPath(upstream).suffix.lower()=='.md':
+            # These copied support documents are deliberately outside the TOC.
+            # MyST otherwise rewrites .md links into nonexistent HTML routes.
+            local=course_source[slug]['url']+'/blob/'+course_source[slug]['commit']+'/'+upstream
+            reason='Non-TOC source Markdown retained locally for inspection; exact immutable source continuation prevents an absent Book HTML cross-reference.'
+        elif (slug=='osiris' and upstream=='content/intro.md') or (slug=='data-visualization' and upstream=='content/repository_examples/index.md'):
             local=posixpath.relpath(f'courses/{slug}/index.ipynb',str(PurePosixPath(course).parent))
         elif upstream in aliases:
             local=posixpath.relpath(aliases[upstream],str(PurePosixPath(course).parent))
@@ -334,7 +521,10 @@ def normalize_markdown(source,base,slug,course,aliases,available,changes):
                 # a self-link silently loses the requested destination.
                 local=course_source[slug]['url']+'/blob/'+course_source[slug]['commit']+'/'+upstream
         result=local+('?' + u.query if u.query else '')+('#'+u.fragment if u.fragment else '')
-        if result!=value:changes.append({'kind':'link','from':value,'to':result})
+        if result!=value:
+            change={'kind':'link','from':value,'to':result}
+            if reason:change['reason']=reason
+            changes.append(change)
         return result
     # Keep markup/prose while converting unsupported relative references into
     # exact pinned source links. HTML image/media paths are covered too.
@@ -391,6 +581,7 @@ def prepare_source_notebook(r,n,nb,local,disposition,license_text,aliases,availa
     """Prepare a single pinned notebook; also used for narrowly scoped refreshes."""
     slug=r['slug'];changes=[{'kind':'format','reason':'Normalized notebook v4.5 and deterministic unique cell IDs; inserted Atlas provenance/runtime cell; cleared unverified outputs and widget execution state.'}]
     changes.extend(adapt_basic_notebook(slug,n['path'],nb))
+    changes.extend(adapt_expansion_notebook(slug,n['path'],nb))
     run=runtime(slug,n['path'],nb)
     for i,c in enumerate(nb.cells):
         c['id']=digest((local+':'+str(i)).encode())[:16]
@@ -447,13 +638,142 @@ def refresh_basic_notebooks():
     return manifest
 
 
+def update_inventory(manifest):
+    manifest['inventory']={
+        'repositories':len(manifest['courses']), 'inspected_notebook_paths':len(manifest['dispositions']),
+        'imported_sections':len(manifest['sections']),
+        'authored_sections':sum(s['collection']=='authored' for s in manifest['sections']),
+        'compatibility_sections':sum(s['collection']=='compatibility' for s in manifest['sections']),
+        'aliases':sum(d['disposition']=='alias' for d in manifest['dispositions']),
+        'excluded_notebooks':sum(d['disposition']=='excluded' for d in manifest['dispositions']),
+        'support_files':len(manifest['support_files']),
+    }
+
+
+def append_courses(slugs):
+    """Prepare the complete append in memory before touching any destination.
+
+    Only new course namespaces are writable. Previous manifest rows and files
+    remain untouched, including locally authored course guides and saved outputs.
+    A failed preparation or write rolls back the new files and manifest mirrors.
+    Tests use tiny local Git fixtures; no network or research audit is required.
+    """
+    slugs=list(slugs)
+    if not slugs or len(slugs)!=len(set(slugs)):
+        raise ValueError('Choose distinct new course slugs')
+    unknown=set(slugs)-set(APPEND_COURSES)
+    if unknown:raise ValueError('Unreviewed append course: '+', '.join(sorted(unknown)))
+    source_manifest=ROOT/'catalog/source-library.json'
+    original=source_manifest.read_bytes();previous=json.loads(original)
+    existing={c['slug'] for c in previous['courses']}
+    if existing.intersection(slugs):raise ValueError('Existing course cannot be appended: '+', '.join(sorted(existing.intersection(slugs))))
+    manifest=copy.deepcopy(previous);pending={};candidates=[];aliases_by_course={}
+    def add(local,data):
+        path=PurePosixPath(local)
+        if path.is_absolute() or '..' in path.parts or '\\' in local or not path.parts or path.parts[0]!='courses' or path.parts[1] not in slugs:
+            raise ValueError('Unsafe append destination: '+local)
+        if local in pending and pending[local]!=data:raise ValueError('Append destination collision: '+local)
+        if (DEST/local).exists():raise FileExistsError('Append destination already exists: '+local)
+        pending[local]=data
+    for slug in slugs:
+        name,pin,count=APPEND_COURSES[slug];checkout=SOURCES/slug
+        if (DEST/'courses'/slug).exists():raise FileExistsError('New course namespace already exists: '+slug)
+        actual=subprocess.check_output(['git','rev-parse','HEAD'],cwd=checkout,text=True).strip()
+        if actual!=pin:raise ValueError('Pin changed: '+slug)
+        if subprocess.check_output(['git','status','--porcelain','--untracked-files=no'],cwd=checkout,text=True).strip():
+            raise ValueError('Pinned tracked source checkout has local changes: '+slug)
+        tracked=[p for p in subprocess.check_output(['git','ls-files','-z'],cwd=checkout).decode().split('\0') if p]
+        for path in tracked:
+            target=(checkout/path).resolve()
+            if not target.is_relative_to(checkout.resolve()) or (checkout/path).is_symlink() or not target.is_file():
+                raise ValueError('Unsafe or missing tracked source: '+path)
+        notebooks=ordered_notebooks(slug,[p for p in tracked if p.endswith('.ipynb')])
+        if len(notebooks)!=count:raise ValueError('Incomplete source notebook inventory: '+slug)
+        r={'slug':slug,'name':name,'url':'https://github.com/jltobias/'+name,'commit':pin}
+        course_source[slug]=r
+        license_text=('Original owner-authored companion incorporated at repository owner request; Urbanity source repository has no public license grant. Package Urbanity and third-party data retain separate terms.' if slug=='urbanity' else
+            'Original code MIT; original prose, generated numerical data and cleared artwork CC BY 4.0, with attribution and Atlas adaptation notice. Official DestinE references/datasets are linked context, not copied inputs.' if slug=='destination-earth-digital-twin' else
+            'Original code MIT; original teaching prose, synthetic data and chapter SVG diagrams CC0. Natural Earth is public domain; TerrIO/dependency/EPSG terms remain separately scoped in retained notices. No TerrIO wheel redistributed.' if slug=='terrio' else
+            'Original course material MIT; C3S auxiliary table Apache-2.0, Natural Earth public domain and CDS catalogue metadata CC BY 4.0. Preserve source credits, licenses and artwork provenance.')
+        manifest['courses'].append({**r,'guide':f'courses/{slug}/index.ipynb','license':license_text,'source_notebook_paths':count,'family':None})
+        aliases_by_course[slug]={}
+        for path in notebooks:
+            raw=(checkout/path).read_bytes();nb=nbformat.reads(raw.decode('utf-8-sig'),as_version=4)
+            local=mapped(slug,path)
+            if local is None or local=='index.ipynb':raise ValueError('Unmapped source notebook: '+path)
+            local=f'courses/{slug}/{local}'
+            heading=next((line for c in nb.cells if c.cell_type=='markdown' for line in c.source.splitlines() if line.startswith('#')),'')
+            d={'course':slug,'source_path':path,'source_sha256':digest(raw),'source_cell_sha256':cell_digest(nb),'source_url':r['url']+'/blob/'+pin+'/'+path,'disposition':'imported','notebook':local}
+            manifest['dispositions'].append(d);aliases_by_course[slug][path]=local
+            candidates.append((r,{'path':path,'first_heading':heading},nb,local,d,license_text))
+        support={}
+        for path in tracked:
+            if path.endswith('.ipynb'):continue
+            local=support_local_path(slug,path,notebooks);reason=exclusion(slug,path)
+            if reason and local is not None:
+                manifest['asset_exclusions'].append({'course':slug,'source_path':path,'reason':reason,'source_url':r['url']+'/blob/'+pin+'/'+path})
+            if local is not None and not reason and PurePosixPath(path).suffix.lower() in {s.lower() for s in SAFE_EXT} and PurePosixPath(path).name not in {'_config.yml','_toc.yml'}:
+                collect_support(support,local,slug,path,checkout)
+            if (len(PurePosixPath(path).parts)==1 and (any(t in path.lower() for t in ['license','notice','attribution','citation','readme']) or path=='requirements.txt')) or path.startswith('licenses/'):
+                if not reason:collect_support(support,'notices/'+path,slug,path,checkout)
+        for source,local in EXTRA.get(slug,[]):
+            if source not in tracked:raise ValueError('Missing reviewed dependency: '+source)
+            if exclusion(slug,source):raise ValueError('Excluded explicit dependency: '+source)
+            collect_support(support,local,slug,source,checkout)
+        for local,(_,path) in support.items():
+            raw=(checkout/path).read_bytes()
+            full=f'courses/{slug}/{local}';add(full,raw)
+            item={'course':slug,'source_path':path,'local_path':full,'source_sha256':digest(raw),'sha256':digest(raw),'license':license_text,'source_url':r['url']+'/blob/'+pin+'/'+path}
+            manifest['support_files'].append(item)
+    available=set(pending)|{c[3] for c in candidates}
+    for item in manifest['support_files'][len(previous['support_files']):]:
+        local=item['local_path'];path=item['source_path'];slug=item['course']
+        data,changes=prepare_support(slug,path,local,pending[local],aliases_by_course[slug],available)
+        pending[local]=data;item['sha256']=digest(data)
+        if changes:item['modifications']=changes
+    for r,n,nb,local,d,license_text in candidates:
+        prepared,section=prepare_source_notebook(r,n,nb,local,d,license_text,aliases_by_course[r['slug']],available)
+        add(local,nbformat.writes(prepared).encode('utf-8'));manifest['sections'].append(section)
+    update_inventory(manifest)
+    # Validate collisions across *every* manifest namespace, before writes.
+    paths=[s['notebook'] for s in manifest['sections']]+[s['local_path'] for s in manifest['support_files']]
+    if len(paths)!=len(set(paths)):raise ValueError('Manifest path collision')
+    mirrors=[source_manifest,ROOT/'site/data/source-library.json']
+    before={p:p.read_bytes() if p.exists() else None for p in mirrors};written=[]
+    data=(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n').encode('utf-8')
+    try:
+        for local,content in pending.items():
+            target=DEST/local;target.parent.mkdir(parents=True,exist_ok=True)
+            with target.open('xb') as stream:
+                written.append(target)  # Exclusive creation succeeded; track even a partial write/close.
+                stream.write(content)
+        for path in mirrors:
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+    except BaseException:
+        for path,content in before.items():
+            if content is not None:path.write_bytes(content)
+            elif path.exists():path.unlink()
+        for path in reversed(written):path.unlink(missing_ok=True)
+        for slug in slugs:
+            base=DEST/'courses'/slug
+            if base.exists():
+                for directory in sorted((p for p in base.rglob('*') if p.is_dir()),key=lambda p:len(p.parts),reverse=True):directory.rmdir()
+                base.rmdir()
+        raise
+    return manifest
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true')
     parser.add_argument('--cholera-basic-only',action='store_true',help='Reapply only the audited Basic pair from the pinned local checkout')
+    parser.add_argument('--append',nargs='+',choices=APPEND_COURSES,help='Append only complete reviewed new courses; never replay existing imports')
     args=parser.parse_args()
     if args.check:
         from source_library import validate_library
-        validate_library(verify_sources=True);print('PASS pinned source/support hashes and all 753 dispositions');return
+        library=validate_library(verify_sources=True);print(f"PASS pinned source/support hashes and all {len(library['dispositions'])} dispositions");return
+    if args.append:
+        if args.cholera_basic_only:parser.error('--append cannot refresh existing Basic notebooks')
+        print(json.dumps(append_courses(args.append)['inventory']));return
     if args.cholera_basic_only:
         refresh_basic_notebooks();print('Prepared only the two Cholera Basic notebooks and their manifest records');return
     previous=json.loads((ROOT/'catalog/source-library.json').read_text(encoding='utf-8')) if (ROOT/'catalog/source-library.json').exists() else {}
@@ -469,6 +789,8 @@ def main():
     audit_path=ROOT/'_research/textbook-source-audit.json'
     if audit_path.exists():
         audit=json.loads(audit_path.read_text(encoding='utf-8'))
+        missing={c['slug'] for c in previous.get('courses',[])}-{c['slug'] for c in audit['repositories']}
+        if missing:raise ValueError('Stale research audit would drop existing courses: '+', '.join(sorted(missing)))
     else:
         # A fresh clone can reproduce the import from checked-in immutable pins
         # after the operator prepares those checkouts. Historical research files
@@ -509,19 +831,26 @@ def main():
                 if PurePosixPath(local).name in {'_config.yml','_toc.yml','jupyter-lite.json','jupyter_lite_config.json'}:continue
                 if PurePosixPath(local).suffix=='.md' and (local=='index.md' or any(mapped(slug,n['path'])==str(PurePosixPath(local).with_suffix('.ipynb')) for n in r['notebooks'])):
                     local='notices/source-documents/'+path
-                support[f'courses/{slug}/{local}']=(slug,path)
+                full=f'courses/{slug}/{local}'
+                if slug in APPEND_COURSES:collect_support(support,full,slug,path,checkout)
+                else:support[full]=(slug,path)
         for source,local in EXTRA.get(slug,[]):
             assert (checkout/source).is_file(),(slug,source)
-            support[f'courses/{slug}/{local}']=(slug,source)
+            full=f'courses/{slug}/{local}'
+            if slug in APPEND_COURSES:collect_support(support,full,slug,source,checkout)
+            else:support[full]=(slug,source)
         # Preserve scoped rights and source narratives, even outside runtime root.
         notices=set(r['licenses'])|set(r['readmes'])|{p for p in tracked if len(PurePosixPath(p).parts)<=2 and PurePosixPath(p).name in {'LICENSES.md','DATA_SOURCES.md','SOURCES.md','CREDITS.md','ATTRIBUTIONS.md','THIRD_PARTY_NOTICES.md'}}
         notices |= {p for p in tracked if (p.startswith('licenses/') or p.startswith('notices/')) and PurePosixPath(p).suffix.lower() in {'.txt','.md'} }
         notices |= {p for p in tracked if p.startswith(('book/','docs/')) and any(t in PurePosixPath(p).name.lower() for t in ['credit','reference','attribution','license','governance','data-source']) and PurePosixPath(p).suffix=='.md'}
         for path in sorted(notices):
-            if not exclusion(slug,path):support[f'courses/{slug}/notices/{path}']=(slug,path)
+            if not exclusion(slug,path):
+                full=f'courses/{slug}/notices/{path}'
+                if slug in APPEND_COURSES:collect_support(support,full,slug,path,checkout)
+                else:support[full]=(slug,path)
         seen={};aliases_by_course[slug]={}
         # Prefer deployed RustGIS Lite and Basic root editions for exact matches.
-        paths=sorted(r['notebooks'],key=lambda n:(n['path'].startswith('notebooks/') if slug=='rustgis' else n['path'].startswith('contents/'),n['path']))
+        paths=ordered_notebooks(slug,r['notebooks'])
         for n in paths:
             path=n['path'];raw=(checkout/path).read_bytes();nb=nbformat.reads(raw.decode('utf-8-sig'),as_version=4);cellhash=cell_digest(nb)
             disposition={'course':slug,'source_path':path,'source_sha256':digest(raw),'source_cell_sha256':cellhash,'source_url':r['url']+'/blob/'+pin+'/'+path}
@@ -546,7 +875,7 @@ def main():
             assert obsolete.is_relative_to((DEST/'courses').resolve())
             if obsolete.is_file():obsolete.unlink()
     for local,(slug,path) in sorted(support.items()):
-        original=(SOURCES/slug/path).read_bytes();data,changes=adapt_support(slug,path,original)
+        original=(SOURCES/slug/path).read_bytes();data,changes=prepare_support(slug,path,local,original,aliases_by_course[slug],available)
         out=DEST/local;out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes(data)
         item={'course':slug,'source_path':path,'local_path':local,'source_sha256':digest(original),'sha256':digest(data),'license':'Retains source-specific notices and provider terms; see course guide and notices/','source_url':course_source[slug]['url']+'/blob/'+course_source[slug]['commit']+'/'+path}
         if changes:item['modifications']=changes

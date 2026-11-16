@@ -23,6 +23,11 @@ GAUGE_SOURCE_HASHES = {
  'uhslc-mombasa-1994-july-28days.csv': 'e791097129a424d2ae39ce642728f4cea56aa47ca9e3d6cc239b98170102c715',
 }
 COURSE_INPUTS = {
+ 'c3s-atlas/data/reference/CMIP6_WarmingLevels.csv': ('model-window-reference', 'Apache-2.0; C3S/EU/CMIP6 credits retained'),
+ 'c3s-atlas/data/reference/ne_110m_coastline.geojson': ('geographic-context', 'Natural Earth public domain'),
+ 'c3s-atlas/data/reference/atlas-catalogue.json': ('catalogue-metadata', 'CC-BY-4.0; C3S/ECMWF/EU credit'),
+ 'terrio/data/countries.geojson': ('geographic-context', 'Natural Earth public domain; generalized boundaries'),
+ 'terrio/data/sources.json': ('geographic-provenance', 'Source-specific metadata; Natural Earth public-domain geography'),
  'sea-level-rise/data/nature-city-surfaces.json': ('terrain', 'CC-BY-NC-SA-4.0'),
  'sea-level-rise/data/nature-sources.json': ('terrain-metadata', 'source-specific'),
  'sea-level-rise/data/nature-raster-catalog.json': ('terrain-metadata', 'source-specific'),

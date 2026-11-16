@@ -1396,6 +1396,123 @@ parts:
     sections:
     - file: courses/nasa-arset-experiments/index
       title: Complete source course and requirements
+  - file: projects/c3s-atlas/index
+    title: C3S-Atlas - Read a warming window without inventing an observation
+    sections:
+    - file: courses/c3s-atlas/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/c3s-atlas/01-atlas-orientation
+        title: 01 · A question-led tour of the Atlas
+      - file: courses/c3s-atlas/02-data-and-provenance
+        title: 02 · Data families and a reproducible record
+      - file: courses/c3s-atlas/03-baselines-and-anomalies
+        title: 03 · Baselines, anomalies, and trends
+      - file: courses/c3s-atlas/04-seasons-and-stripes
+        title: 04 · Annual cycles and seasonal stripes
+      - file: courses/c3s-atlas/05-heat-and-cold
+        title: 05 · Heat, cold, and threshold indices
+      - file: courses/c3s-atlas/06-rain-and-water
+        title: 06 · Rainfall, extremes, and the water cycle
+      - file: courses/c3s-atlas/07-drought
+        title: 07 · Drought, water balance, and accumulation
+      - file: courses/c3s-atlas/08-wind-and-radiation
+        title: 08 · Wind, radiation, and energy context
+      - file: courses/c3s-atlas/09-snow-and-ice
+        title: 09 · Snow, sea ice, and what area means
+      - file: courses/c3s-atlas/10-ocean-and-circulation
+        title: 10 · Ocean temperature and atmospheric circulation
+      - file: courses/c3s-atlas/11-scenarios-and-ensembles
+        title: 11 · Scenarios, models, and ensemble spread
+      - file: courses/c3s-atlas/12-global-warming-levels
+        title: 12 · Global warming levels with real Atlas data
+      - file: courses/c3s-atlas/13-uncertainty-and-bias
+        title: 13 · Uncertainty and bias adjustment
+      - file: courses/c3s-atlas/14-regions-and-weights
+        title: 14 · Regions, masks, and area weighting
+      - file: courses/c3s-atlas/15-interactive-2d-maps
+        title: 15 · Interactive 2D maps and honest legends
+      - file: courses/c3s-atlas/16-globes-and-3d-maps
+        title: 16 · Globes and three-dimensional climate maps
+      - file: courses/c3s-atlas/17-3d-scenes
+        title: '17 · 3D scenes: time, season, and climate'
+      - file: courses/c3s-atlas/18-monitoring-and-urban
+        title: 18 · Monitoring and urban context
+      - file: courses/c3s-atlas/19-bring-real-data
+        title: 19 · Bring a real C3S export into the browser
+      - file: courses/c3s-atlas/20-capstone
+        title: 20 · A reproducible regional climate story
+  - file: projects/destination-earth-digital-twin/index
+    title: Destination-Earth-Digital-Twin - Check an interpolated field before calling
+      it a twin
+    sections:
+    - file: courses/destination-earth-digital-twin/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/destination-earth-digital-twin/01-system
+        title: A digital twin is a connected system
+      - file: courses/destination-earth-digital-twin/02-grids
+        title: Coordinates, grids and units
+      - file: courses/destination-earth-digital-twin/03-access
+        title: Data access without credentials in the browser
+      - file: courses/destination-earth-digital-twin/04-validation
+        title: Validate a small authorized export
+      - file: courses/destination-earth-digital-twin/05-labelled-arrays
+        title: Labeled arrays and regional selection
+      - file: courses/destination-earth-digital-twin/06-area-means
+        title: Area weighting changes the answer
+      - file: courses/destination-earth-digital-twin/07-climate
+        title: Anomalies and baseline choices
+      - file: courses/destination-earth-digital-twin/08-extremes
+        title: Thresholds and event duration
+      - file: courses/destination-earth-digital-twin/09-water
+        title: A water budget with a conservation check
+      - file: courses/destination-earth-digital-twin/10-wind
+        title: Vector fields and derived wind speed
+      - file: courses/destination-earth-digital-twin/11-interpolation
+        title: Interpolation and its assumptions
+      - file: courses/destination-earth-digital-twin/12-ensembles
+        title: Ensembles and uncertainty bands
+      - file: courses/destination-earth-digital-twin/13-verification
+        title: Skill scores and reference forecasts
+      - file: courses/destination-earth-digital-twin/14-maps
+        title: Honest two-dimensional maps
+      - file: courses/destination-earth-digital-twin/15-projections
+        title: From longitude and latitude to a projected plane
+      - file: courses/destination-earth-digital-twin/16-terrain
+        title: A three-dimensional terrain scene
+      - file: courses/destination-earth-digital-twin/17-globe
+        title: Put a field on a globe
+      - file: courses/destination-earth-digital-twin/18-time
+        title: Time slices, animation and stable scales
+      - file: courses/destination-earth-digital-twin/19-dashboard
+        title: Build an analytical dashboard
+      - file: courses/destination-earth-digital-twin/20-performance
+        title: Browser memory and precision
+      - file: courses/destination-earth-digital-twin/21-reproducibility
+        title: Reproducible methods and provenance
+      - file: courses/destination-earth-digital-twin/22-capstone
+        title: A transparent adaptation comparison
+      - file: courses/destination-earth-digital-twin/23-dte-workflows
+        title: 'Digital Twin Engine: workflow and HPC roles'
+      - file: courses/destination-earth-digital-twin/24-polytope
+        title: 'Polytope: select a feature, not a whole cube'
+      - file: courses/destination-earth-digital-twin/25-earthkit-export
+        title: Earthkit and a server-to-browser export boundary
+      - file: courses/destination-earth-digital-twin/26-data-lake
+        title: 'Data Lake services: discovery, compute and hooks'
+      - file: courses/destination-earth-digital-twin/27-ai-validation
+        title: 'AI and ML: a time-aware baseline'
+      - file: courses/destination-earth-digital-twin/28-regional-extremes
+        title: Regional on-demand extremes and nested scales
+      - file: courses/destination-earth-digital-twin/29-land
+        title: 'Land processes: snow storage and melt'
+      - file: courses/destination-earth-digital-twin/30-waves
+        title: 'Waves: forcing, response time and memory'
+      - file: courses/destination-earth-digital-twin/31-sea-ice
+        title: 'Sea ice: bounded fractions and seasonal response'
+      - file: courses/destination-earth-digital-twin/32-ocean
+        title: 'Ocean layers: heat exchange and conservation'
 - caption: AI & human decisions
   chapters:
   - file: projects/ai-agents-and-orchestrator-six-thinking-hats/index
@@ -1674,6 +1791,58 @@ parts:
         title: D3plus neighborhood bars
       - file: courses/pyscript/07-d3plus-neighborhood-treemap
         title: D3plus neighborhood treemap
+  - file: projects/urbanity/index
+    title: Urbanity - Trace a synthetic street route and name its assumptions
+    sections:
+    - file: courses/urbanity/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/urbanity/notebooks/street-networks
+        title: Street networks and centrality
+      - file: courses/urbanity/notebooks/urban-graphs
+        title: 'Urban graphs: connect spatial layers'
+      - file: courses/urbanity/notebooks/urban-context
+        title: Buildings, people, and urban context
+      - file: courses/urbanity/notebooks/imagery
+        title: Street-view and satellite imagery
+      - file: courses/urbanity/notebooks/visualisation
+        title: Visualising urban networks
+      - file: courses/urbanity/notebooks/graph-ml
+        title: 'Graph machine learning: prepare before predicting'
+      - file: courses/urbanity/notebooks/reproducibility
+        title: Reproducibility, export, and next steps
+  - file: projects/terrio/index
+    title: terrio - Separate pixel positions, map coordinates and runtime compatibility
+    sections:
+    - file: courses/terrio/index
+      title: Complete source course and requirements
+      sections:
+      - file: courses/terrio/01-first-contact
+        title: 01. First contact with TerrIO
+      - file: courses/terrio/02-coordinates
+        title: 02. Coordinates tell a story
+      - file: courses/terrio/03-vectors-2d-maps
+        title: 03. Vectors and 2D maps
+      - file: courses/terrio/04-vector-analysis
+        title: 04. Vector analysis
+      - file: courses/terrio/05-rasters-and-cogs
+        title: 05. Rasters and cloud-ready files
+      - file: courses/terrio/06-terrain
+        title: 06. Reading the shape of terrain
+      - file: courses/terrio/07-imagery
+        title: 07. Spectral indices without shortcuts
+      - file: courses/terrio/08-point-clouds
+        title: 08. From points to surfaces
+      - file: courses/terrio/09-scenes-and-globes
+        title: 09. Scenes, maps, and globes
+      - file: courses/terrio/10-data-cubes
+        title: 10. Beyond a single image
+      - file: courses/terrio/11-cloud-and-catalogs
+        title: 11. Cloud data and discovery
+      - file: courses/terrio/12-interoperability
+        title: 12. Formats and reproducibility
+      - file: courses/terrio/13-capstone
+        title: 13. A reproducible terrain investigation
 - caption: Related browser projects
   chapters:
   - file: projects/jupytergis-storymap-gaborone-tb-abm/index

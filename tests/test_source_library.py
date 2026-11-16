@@ -25,8 +25,8 @@ class SourceLibraryTests(unittest.TestCase):
 
     def test_every_inspected_path_has_a_hashed_disposition_and_scoped_rights(self):
         validate_library(self.library)
-        self.assertEqual(self.library['inventory']['imported_sections'],724)
-        self.assertEqual(self.library['inventory']['authored_sections'],705)
+        self.assertEqual(self.library['inventory']['imported_sections'],796)
+        self.assertEqual(self.library['inventory']['authored_sections'],777)
         self.assertEqual(self.library['inventory']['aliases'],12)
         self.assertEqual(self.library['inventory']['excluded_notebooks'],17)
         excluded=[d for d in self.library['dispositions'] if d['disposition']=='excluded']

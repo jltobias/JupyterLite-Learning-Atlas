@@ -1,0 +1,604 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "status": "passed",
+      "notebook": "projects/c3s-atlas/index.ipynb",
+      "marker": "ATLAS_PYODIDE_PROOF_3d8833c88956479387789ca1c1226307\n",
+      "numerical_assertions": "assert abs(full_mean-3)<1e-12 and abs(missing_mean-4.5)<1e-12",
+      "svg_content_checked": "Synthetic latitude weighting and coverage",
+      "svg_rendering": "img",
+      "canonical_sha256": "0ac7841d711602ee3fa032c81f37c3afdd4be62dfeee59e1561b1f0c7c0a5a90",
+      "code_sha256": "74bdd3e4f6be23baeeed3e24a4fbc9cf691481c6fb845ab98ceac50d57498ce1",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "projects/destination-earth-digital-twin/index.ipynb",
+      "marker": "ATLAS_PYODIDE_PROOF_77e707bf071b400888489236b652fced\n",
+      "numerical_assertions": "assert abs(interpolated-25)<1e-12 and [round(weights[k],2) for k in ['SW','SE','NW','NE']]==[.24,.56,.06,.14]",
+      "svg_content_checked": "Synthetic interpolation contributions",
+      "svg_rendering": "img",
+      "canonical_sha256": "b11e6f7489dfcdcc996ae4b7083cc1abe4a3e79c660ddfb99c632945d7bb26ed",
+      "code_sha256": "46c75b2c7d425dbe021615d1e9ea9d5315c0fd93c6a52b9412853846a37f7959",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "projects/urbanity/index.ipynb",
+      "marker": "ATLAS_PYODIDE_PROOF_ec72a05f03654b7ca294f5a28981dbb5\n",
+      "numerical_assertions": "assert degrees=={'A':2,'B':4,'C':2,'D':3,'E':3,'F':2} and route==['A','B','C','F'] and len(edges)==8",
+      "svg_content_checked": "Synthetic street-node degrees",
+      "svg_rendering": "img",
+      "canonical_sha256": "7d61e80350d1954ea0c0445ab7036e73e80789668d2a7c31cd099f8e5e760ef6",
+      "code_sha256": "508a8a576ef08afc40049e057064bf6c5fc5dbd85ece3858c38f4cd0d3ac28c0",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "projects/terrio/index.ipynb",
+      "marker": "ATLAS_PYODIDE_PROOF_ab412b1d0092419c96f2c82ed7ffd382\n",
+      "numerical_assertions": "assert (centre_x,centre_y)==(500315,4399385) and abs(scale['60 degrees']-2)<1e-12",
+      "svg_content_checked": "Idealized Mercator local length scale",
+      "svg_rendering": "img",
+      "canonical_sha256": "e97caa2b7fdcd312b30ccb4adf3a510f8a9b492ce471b24288cfb7b19ea7dad3",
+      "code_sha256": "b5ac262dab7df302839c2321b637a01472d94627871809e688e95a96e64b3723",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "courses/c3s-atlas/02-data-and-provenance.ipynb",
+      "marker": "ATLAS_SOURCE_PYODIDE_PROOF_1415f71479e643bb99e2d6ac228da92b",
+      "proof": {
+        "platform": "emscripten",
+        "asset_sha256": {
+          "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+          "data/reference/CMIP6_WarmingLevels.csv": "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220",
+          "data/reference/ne_110m_coastline.geojson": "4a4a0c75a9382682371e4813731e98d8a48539d1472f3d5b94b1d14849d1aec9",
+          "data/manifest.json": "5478d92c294bea82a6473445548d6183e132b3c960a3250ab069cad2185d6b4c",
+          "data/reference/atlas-catalogue.json": "483d785fc19cb03262426b75cd8dc3cd248d8769696f073732391fc44b662e19"
+        },
+        "exports": {},
+        "assertions": "passed"
+      },
+      "pngs": [],
+      "downloads": [],
+      "maps": [],
+      "plotly": [],
+      "plotly_downloads": [],
+      "skipped_optional_widget_cell_ids": [],
+      "raw_http_asset_sha256": {
+        "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+        "data/reference/CMIP6_WarmingLevels.csv": "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220",
+        "data/reference/ne_110m_coastline.geojson": "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c",
+        "data/manifest.json": "26385ea517f0e9b9865dd6648df92463cb40779ec76619a9445f793b56dcc682",
+        "data/reference/atlas-catalogue.json": "33e92f5a01a5aa77cfe6a782776bbc5bba027cb4761b5d25f1faa35a1138dd86"
+      },
+      "allowed_filesystem_sha256": {
+        "atlas_helpers.py": [
+          "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90"
+        ],
+        "data/reference/CMIP6_WarmingLevels.csv": [
+          "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220"
+        ],
+        "data/reference/ne_110m_coastline.geojson": [
+          "4a4a0c75a9382682371e4813731e98d8a48539d1472f3d5b94b1d14849d1aec9",
+          "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c"
+        ],
+        "data/manifest.json": [
+          "26385ea517f0e9b9865dd6648df92463cb40779ec76619a9445f793b56dcc682",
+          "5478d92c294bea82a6473445548d6183e132b3c960a3250ab069cad2185d6b4c"
+        ],
+        "data/reference/atlas-catalogue.json": [
+          "33e92f5a01a5aa77cfe6a782776bbc5bba027cb4761b5d25f1faa35a1138dd86",
+          "483d785fc19cb03262426b75cd8dc3cd248d8769696f073732391fc44b662e19"
+        ]
+      },
+      "filesystem_text_transport": "Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8",
+      "canonical_sha256": "1753472383a1a299e60b9cbc92d22047d8191fe8b21d5b64680598265953087c",
+      "canonical_code_sha256": "1645781466acf507119add38afe36db1e2b64c96179efde2ea29041f42696d5b",
+      "numerical_assertions": "assert len(audit)==3 and all(row['verified'] for row in audit)\nassert _reference_http_hashes=={key:value[0] for key,value in _reference_pins.items()}",
+      "cell_execution": "Concatenated canonical code",
+      "tile_verification": null,
+      "code_sha256": "c767564d77ea55ec835efff2be95fe904abbfd0b2c553b82099bc24a357d3134",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "courses/c3s-atlas/14-regions-and-weights.ipynb",
+      "marker": "ATLAS_SOURCE_PYODIDE_PROOF_049357a2578e4ae689c1ce598d4228fd",
+      "proof": {
+        "platform": "emscripten",
+        "asset_sha256": {
+          "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+          "data/reference/CMIP6_WarmingLevels.csv": "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220",
+          "data/reference/ne_110m_coastline.geojson": "4a4a0c75a9382682371e4813731e98d8a48539d1472f3d5b94b1d14849d1aec9"
+        },
+        "exports": {},
+        "assertions": "passed"
+      },
+      "pngs": [],
+      "downloads": [],
+      "maps": [],
+      "plotly": [
+        {
+          "types": [
+            "heatmap",
+            "scatter"
+          ],
+          "title": "A rectangular region \u00b7 SYNTHETIC",
+          "canvases": [],
+          "svg_paths": 159,
+          "trace_lengths": [
+            {
+              "x": 72,
+              "y": 36,
+              "z": 36
+            },
+            {
+              "x": 5262,
+              "y": 5262,
+              "z": null
+            }
+          ],
+          "camera": null,
+          "climate_oracle": {
+            "kind": "regional",
+            "coordinate_values_and_missing_mask": "passed"
+          }
+        }
+      ],
+      "plotly_downloads": [
+        {
+          "filename": "newplot.png",
+          "sha256": "f90a6a1ba31b3aab95c120d0249656b277721bff9ed043f2bf073bd072ff9723",
+          "bytes": 115217,
+          "width": 972,
+          "height": 470
+        }
+      ],
+      "skipped_optional_widget_cell_ids": [],
+      "raw_http_asset_sha256": {
+        "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+        "data/reference/CMIP6_WarmingLevels.csv": "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220",
+        "data/reference/ne_110m_coastline.geojson": "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c"
+      },
+      "allowed_filesystem_sha256": {
+        "atlas_helpers.py": [
+          "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90"
+        ],
+        "data/reference/CMIP6_WarmingLevels.csv": [
+          "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220"
+        ],
+        "data/reference/ne_110m_coastline.geojson": [
+          "4a4a0c75a9382682371e4813731e98d8a48539d1472f3d5b94b1d14849d1aec9",
+          "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c"
+        ]
+      },
+      "filesystem_text_transport": "Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8",
+      "canonical_sha256": "5d0d001b9629b5de771ce073f9a317cea02536309d8c266e30454792f8c8f345",
+      "canonical_code_sha256": "d26bb1fd1db78e331b67d49a2dfe90a80b7aa0ed2768f082a2bde578cd9f3249",
+      "numerical_assertions": "assert abs(area_mean(np.array([[0.,0.],[9.,9.]]),np.array([0.,60.]))-3)<1e-12\nassert abs(area_mean(np.array([[0.,np.nan],[9.,9.]]),np.array([0.,60.]))-4.5)<1e-12\n_windows=warming_levels()\nassert len(_windows)==600\n_known=_windows[(_windows.member=='CCCma_CanESM5_r1i1p1f1') & (_windows.scenario=='ssp585') & (_windows.level==2)].iloc[0]\nassert (_known.start,_known.end,_known.midpoint)==(2013,2032,2022.5)\n\nassert weighted<unweighted and 0<coverage<1\n",
+      "cell_execution": "Concatenated canonical code",
+      "tile_verification": null,
+      "code_sha256": "f5558f77bba3285f10b932a15e3924e2afc07fd293e071c943d1f0e6ae53ee24",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "courses/c3s-atlas/16-globes-and-3d-maps.ipynb",
+      "marker": "ATLAS_SOURCE_PYODIDE_PROOF_e89dc058cacc49fabcc77e9c3b87e766",
+      "proof": {
+        "platform": "emscripten",
+        "asset_sha256": {
+          "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+          "data/reference/CMIP6_WarmingLevels.csv": "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220",
+          "data/reference/ne_110m_coastline.geojson": "4a4a0c75a9382682371e4813731e98d8a48539d1472f3d5b94b1d14849d1aec9"
+        },
+        "exports": {},
+        "assertions": "passed"
+      },
+      "pngs": [],
+      "downloads": [],
+      "maps": [],
+      "plotly": [
+        {
+          "types": [
+            "heatmap",
+            "scatter"
+          ],
+          "title": "2D alternative to the globe \u00b7 SYNTHETIC",
+          "canvases": [],
+          "svg_paths": 159,
+          "trace_lengths": [
+            {
+              "x": 72,
+              "y": 36,
+              "z": 36
+            },
+            {
+              "x": 5262,
+              "y": 5262,
+              "z": null
+            }
+          ],
+          "camera": null,
+          "climate_oracle": {
+            "kind": "global-2d",
+            "coordinate_values_and_missing_mask": "passed"
+          }
+        },
+        {
+          "types": [
+            "surface",
+            "scatter3d"
+          ],
+          "title": "A climate field on a globe \u00b7 SYNTHETIC",
+          "canvases": [
+            {
+              "width": 1612,
+              "height": 630
+            }
+          ],
+          "svg_paths": 11,
+          "trace_lengths": [
+            {
+              "x": 37,
+              "y": 37,
+              "z": 37
+            },
+            {
+              "x": 5262,
+              "y": 5262,
+              "z": 5262
+            }
+          ],
+          "camera": {
+            "up": {
+              "x": 0,
+              "y": 0,
+              "z": 1
+            },
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "eye": {
+              "x": 1.25,
+              "y": 1.25,
+              "z": 1.25
+            },
+            "projection": {
+              "type": "perspective"
+            }
+          },
+          "climate_oracle": {
+            "kind": "globe",
+            "coordinate_values_and_missing_mask": "passed"
+          },
+          "camera_changed": true
+        }
+      ],
+      "plotly_downloads": [],
+      "skipped_optional_widget_cell_ids": [],
+      "raw_http_asset_sha256": {
+        "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+        "data/reference/CMIP6_WarmingLevels.csv": "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220",
+        "data/reference/ne_110m_coastline.geojson": "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c"
+      },
+      "allowed_filesystem_sha256": {
+        "atlas_helpers.py": [
+          "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90"
+        ],
+        "data/reference/CMIP6_WarmingLevels.csv": [
+          "799390194c359224ee41d2a69156728b456b2f62b73ce229930fffcd84996220"
+        ],
+        "data/reference/ne_110m_coastline.geojson": [
+          "4a4a0c75a9382682371e4813731e98d8a48539d1472f3d5b94b1d14849d1aec9",
+          "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c"
+        ]
+      },
+      "filesystem_text_transport": "Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8",
+      "canonical_sha256": "b482d10d7511ed6896c955f3afa47a93a0c803a4024b0fc6b647cb5c35e207c8",
+      "canonical_code_sha256": "53921ea8098c5626e9c3d66bec0d56fd387d9e8d666e835132b9bf2086b5e4e4",
+      "numerical_assertions": "assert abs(area_mean(np.array([[0.,0.],[9.,9.]]),np.array([0.,60.]))-3)<1e-12\nassert abs(area_mean(np.array([[0.,np.nan],[9.,9.]]),np.array([0.,60.]))-4.5)<1e-12\n_windows=warming_levels()\nassert len(_windows)==600\n_known=_windows[(_windows.member=='CCCma_CanESM5_r1i1p1f1') & (_windows.scenario=='ssp585') & (_windows.level==2)].iloc[0]\nassert (_known.start,_known.end,_known.midpoint)==(2013,2032,2022.5)\n\nassert abs(float(np.linalg.norm(xyz))-1)<1e-12\n",
+      "cell_execution": "Concatenated canonical code",
+      "tile_verification": null,
+      "code_sha256": "15b20d1a1835523f76673589502c3625b93a9fe253a99fa7edb2efa7e3cde158",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "courses/c3s-atlas/19-bring-real-data.ipynb",
+      "marker": "ATLAS_SOURCE_PYODIDE_PROOF_cc58435b3f584efd940027c50e4f283b",
+      "proof": {
+        "platform": "emscripten",
+        "asset_sha256": {
+          "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+          "data/examples/monthly_series.csv": "6af9257b569579bc76c98424ffd06354c7ad96760f9891537d2ebc68b12e3118",
+          "data/examples/monthly_series.json": "562c9d2681a37249cdba3572083555772d216b4fb59b6cc3e282e3f7220ee742"
+        },
+        "exports": {},
+        "assertions": "passed"
+      },
+      "pngs": [],
+      "downloads": [],
+      "maps": [],
+      "plotly": [
+        {
+          "types": [
+            "scatter"
+          ],
+          "title": "synthetic: fictional temperature \u00b7 fictional region",
+          "canvases": [],
+          "svg_paths": 35,
+          "trace_lengths": [
+            {
+              "x": 3,
+              "y": 3,
+              "z": null
+            }
+          ],
+          "camera": null
+        }
+      ],
+      "plotly_downloads": [],
+      "skipped_optional_widget_cell_ids": [],
+      "raw_http_asset_sha256": {
+        "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+        "data/examples/monthly_series.csv": "6af9257b569579bc76c98424ffd06354c7ad96760f9891537d2ebc68b12e3118",
+        "data/examples/monthly_series.json": "f16c8412177e1100faa17cdc949a371e45c44abbbd9cda3477ffa3b0a3a759de"
+      },
+      "allowed_filesystem_sha256": {
+        "atlas_helpers.py": [
+          "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90"
+        ],
+        "data/examples/monthly_series.csv": [
+          "6af9257b569579bc76c98424ffd06354c7ad96760f9891537d2ebc68b12e3118"
+        ],
+        "data/examples/monthly_series.json": [
+          "562c9d2681a37249cdba3572083555772d216b4fb59b6cc3e282e3f7220ee742",
+          "f16c8412177e1100faa17cdc949a371e45c44abbbd9cda3477ffa3b0a3a759de"
+        ]
+      },
+      "filesystem_text_transport": "Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8",
+      "canonical_sha256": "0cf7a778187158e8ffb878d198ce860b0a3f89cc071d05a4c539dc4c00dfaa15",
+      "canonical_code_sha256": "58f15efe880b3439aba7696067906b2f4483e070cfa0da3c1cb2deb014f429d2",
+      "numerical_assertions": "assert len(actual)==3 and actual.value.isna().tolist()==[False,True,False]\nassert provenance['data_kind']=='synthetic' and actual.value.iloc[0]==1 and actual.value.iloc[2]==3",
+      "cell_execution": "Concatenated canonical code",
+      "tile_verification": null,
+      "code_sha256": "8fde22520fe03b8d93999abcd14b460e11976980fae49800099c016f05e215fd",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "courses/c3s-atlas/19-bring-real-data.ipynb",
+      "marker": "ATLAS_SOURCE_PYODIDE_PROOF_d255a18713b441d9b63bfd54e0f1fc4c",
+      "proof": {
+        "platform": "emscripten",
+        "asset_sha256": {
+          "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+          "data/examples/monthly_series.csv": "6af9257b569579bc76c98424ffd06354c7ad96760f9891537d2ebc68b12e3118",
+          "data/examples/monthly_series.json": "562c9d2681a37249cdba3572083555772d216b4fb59b6cc3e282e3f7220ee742"
+        },
+        "exports": {},
+        "assertions": "passed"
+      },
+      "pngs": [],
+      "downloads": [],
+      "maps": [],
+      "plotly": [],
+      "plotly_downloads": [],
+      "skipped_optional_widget_cell_ids": [],
+      "raw_http_asset_sha256": {
+        "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+        "data/examples/monthly_series.csv": "6af9257b569579bc76c98424ffd06354c7ad96760f9891537d2ebc68b12e3118",
+        "data/examples/monthly_series.json": "f16c8412177e1100faa17cdc949a371e45c44abbbd9cda3477ffa3b0a3a759de"
+      },
+      "allowed_filesystem_sha256": {
+        "atlas_helpers.py": [
+          "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90"
+        ],
+        "data/examples/monthly_series.csv": [
+          "6af9257b569579bc76c98424ffd06354c7ad96760f9891537d2ebc68b12e3118"
+        ],
+        "data/examples/monthly_series.json": [
+          "562c9d2681a37249cdba3572083555772d216b4fb59b6cc3e282e3f7220ee742",
+          "f16c8412177e1100faa17cdc949a371e45c44abbbd9cda3477ffa3b0a3a759de"
+        ]
+      },
+      "filesystem_text_transport": "Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8",
+      "canonical_sha256": "0cf7a778187158e8ffb878d198ce860b0a3f89cc071d05a4c539dc4c00dfaa15",
+      "canonical_code_sha256": "58f15efe880b3439aba7696067906b2f4483e070cfa0da3c1cb2deb014f429d2",
+      "numerical_assertions": "assert 'Provenance fields' in _atlas_expected_error",
+      "cell_execution": "Concatenated canonical code",
+      "tile_verification": null,
+      "code_sha256": "8fde22520fe03b8d93999abcd14b460e11976980fae49800099c016f05e215fd",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "courses/c3s-atlas/19-bring-real-data.ipynb",
+      "marker": "ATLAS_SOURCE_PYODIDE_PROOF_ded6cd99897c4b7d8c35d9f40dccd799",
+      "proof": {
+        "platform": "emscripten",
+        "asset_sha256": {
+          "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+          "data/examples/monthly_series.csv": "6af9257b569579bc76c98424ffd06354c7ad96760f9891537d2ebc68b12e3118",
+          "data/examples/monthly_series.json": "562c9d2681a37249cdba3572083555772d216b4fb59b6cc3e282e3f7220ee742"
+        },
+        "exports": {},
+        "assertions": "passed"
+      },
+      "pngs": [],
+      "downloads": [],
+      "maps": [],
+      "plotly": [],
+      "plotly_downloads": [],
+      "skipped_optional_widget_cell_ids": [],
+      "raw_http_asset_sha256": {
+        "atlas_helpers.py": "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90",
+        "data/examples/monthly_series.csv": "6af9257b569579bc76c98424ffd06354c7ad96760f9891537d2ebc68b12e3118",
+        "data/examples/monthly_series.json": "f16c8412177e1100faa17cdc949a371e45c44abbbd9cda3477ffa3b0a3a759de"
+      },
+      "allowed_filesystem_sha256": {
+        "atlas_helpers.py": [
+          "ef825b4679d35197785936ef251cc41a4ce00ef6a5176bf5385474322873de90"
+        ],
+        "data/examples/monthly_series.csv": [
+          "6af9257b569579bc76c98424ffd06354c7ad96760f9891537d2ebc68b12e3118"
+        ],
+        "data/examples/monthly_series.json": [
+          "562c9d2681a37249cdba3572083555772d216b4fb59b6cc3e282e3f7220ee742",
+          "f16c8412177e1100faa17cdc949a371e45c44abbbd9cda3477ffa3b0a3a759de"
+        ]
+      },
+      "filesystem_text_transport": "Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8",
+      "canonical_sha256": "0cf7a778187158e8ffb878d198ce860b0a3f89cc071d05a4c539dc4c00dfaa15",
+      "canonical_code_sha256": "58f15efe880b3439aba7696067906b2f4483e070cfa0da3c1cb2deb014f429d2",
+      "numerical_assertions": "assert 'Missing month:' in _atlas_expected_error",
+      "cell_execution": "Concatenated canonical code",
+      "tile_verification": null,
+      "code_sha256": "8fde22520fe03b8d93999abcd14b460e11976980fae49800099c016f05e215fd",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "courses/destination-earth-digital-twin/11-interpolation.ipynb",
+      "marker": "ATLAS_SOURCE_PYODIDE_PROOF_16fc5bc79464475b86a5109304daed90",
+      "proof": {
+        "platform": "emscripten",
+        "asset_sha256": {
+          "earthlab.py": "1c4855135768e1ac365e2014b9d94c35cbf5167457a54417f836e7f9b4b0a691"
+        },
+        "exports": {},
+        "assertions": "passed"
+      },
+      "pngs": [
+        {
+          "width": 533,
+          "height": 391,
+          "header": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "sha256": "b41686e994efe4b2d04680bca002106a70fcaf920a4a54aa216e09542fd11e21"
+        }
+      ],
+      "downloads": [],
+      "maps": [],
+      "plotly": [],
+      "plotly_downloads": [],
+      "skipped_optional_widget_cell_ids": [],
+      "raw_http_asset_sha256": {
+        "earthlab.py": "1c4855135768e1ac365e2014b9d94c35cbf5167457a54417f836e7f9b4b0a691"
+      },
+      "allowed_filesystem_sha256": {
+        "earthlab.py": [
+          "1c4855135768e1ac365e2014b9d94c35cbf5167457a54417f836e7f9b4b0a691",
+          "ed2f636b1607e867815c9cd81bab4f165f4d1a6240ccea9f0ae2cec8ca8f6a44"
+        ]
+      },
+      "filesystem_text_transport": "Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8",
+      "canonical_sha256": "e301e98f946b06119cd1f762062d1bbee016c99a8f4ab8ed5e5cb65b437852ef",
+      "canonical_code_sha256": "73065856f1f61cdb7b76b6ea5e6f06b4018820a77b6c46583371218292abdf8a",
+      "numerical_assertions": "_lat=np.array([-10.,0.,10.]);_lon=np.array([0.,10.,20.]);_xx,_yy=np.meshgrid(_lon,_lat)\nassert abs(lab.bilinear(3*_xx+2*_yy,_lat,_lon,2,7)-25)<1e-12\n_gx,_gy,_gz=lab.globe_xyz(np.array([0.,30.,60.]),np.array([0.,45.,90.]),radius=2)\nassert np.allclose(_gx*_gx+_gy*_gy+_gz*_gz,4)\nassert abs(lab.global_mean(np.ones((3,3))*8,np.array([-30.,0.,30.]))-8)<1e-12\n_cube=lab.synthetic_cube()\nassert _cube['temperature'].shape==(60,25,49) and _cube['lon'][-1]<180\n\nassert abs(float(estimated)-285.7)<1e-12\n",
+      "cell_execution": "Concatenated canonical code",
+      "tile_verification": null,
+      "code_sha256": "950092aa89f42165a08f396771cd05f5b3ba630a92bc1c6013a6fb7474f7400e",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "courses/destination-earth-digital-twin/17-globe.ipynb",
+      "marker": "ATLAS_SOURCE_PYODIDE_PROOF_04150979ff9f4e998d1ba9e2e1509cd3",
+      "proof": {
+        "platform": "emscripten",
+        "asset_sha256": {
+          "earthlab.py": "1c4855135768e1ac365e2014b9d94c35cbf5167457a54417f836e7f9b4b0a691"
+        },
+        "exports": {},
+        "assertions": "passed"
+      },
+      "pngs": [
+        {
+          "width": 502,
+          "height": 425,
+          "header": [
+            137,
+            80,
+            78,
+            71,
+            13,
+            10,
+            26,
+            10
+          ],
+          "sha256": "38a75031d2f2d9893acf213f09fcd1fbd03c9231020e8bd7571a0ca6cced32bf"
+        }
+      ],
+      "downloads": [],
+      "maps": [],
+      "plotly": [],
+      "plotly_downloads": [],
+      "skipped_optional_widget_cell_ids": [
+        "5044b6ca60f4c515"
+      ],
+      "raw_http_asset_sha256": {
+        "earthlab.py": "1c4855135768e1ac365e2014b9d94c35cbf5167457a54417f836e7f9b4b0a691"
+      },
+      "allowed_filesystem_sha256": {
+        "earthlab.py": [
+          "1c4855135768e1ac365e2014b9d94c35cbf5167457a54417f836e7f9b4b0a691",
+          "ed2f636b1607e867815c9cd81bab4f165f4d1a6240ccea9f0ae2cec8ca8f6a44"
+        ]
+      },
+      "filesystem_text_transport": "Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8",
+      "canonical_sha256": "4a11a826113d9685619e90f3fabf85708f0c06ae8a3feea4d74497fd02e0d071",
+      "canonical_code_sha256": "ea103d89d03f391be68c11ce0c2b8e9e0a1281ad2cb51443270c702a20e5a1d9",
+      "numerical_assertions": "_lat=np.array([-10.,0.,10.]);_lon=np.array([0.,10.,20.]);_xx,_yy=np.meshgrid(_lon,_lat)\nassert abs(lab.bilinear(3*_xx+2*_yy,_lat,_lon,2,7)-25)<1e-12\n_gx,_gy,_gz=lab.globe_xyz(np.array([0.,30.,60.]),np.array([0.,45.,90.]),radius=2)\nassert np.allclose(_gx*_gx+_gy*_gy+_gz*_gz,4)\nassert abs(lab.global_mean(np.ones((3,3))*8,np.array([-30.,0.,30.]))-8)<1e-12\n_cube=lab.synthetic_cube()\nassert _cube['temperature'].shape==(60,25,49) and _cube['lon'][-1]<180\n",
+      "cell_execution": "Concatenated canonical code",
+      "tile_verification": null,
+      "code_sha256": "7cf16173c771ad772ec020a768b0a88d86474319ed0811a5d08074eaaf558449",
+      "current_code_matches_recorded_run": true
+    },
+    {
+      "status": "passed",
+      "notebook": "courses/urbanity/notebooks/street-networks.ipynb",
+      "marker": "ATLAS_SOURCE_PYODIDE_PROOF_19ed02b9c28c4b0bb8df100f51dbb25b",
+      "proof": {
+        "platform": "emscripten",
+        "asset_sha256": {},
+        "exports": {},
+        "assertions": "passed"
+      },
+      "pngs": [],
+      "downloads": [],
+      "maps": [],
+      "plotly": [],
+      "plotly_downloads": [],
+      "skipped_optional_widget_cell_ids": [],
+      "raw_http_asset_sha256": {},
+      "allowed_filesystem_sha256": {},
+      "filesystem_text_transport": "Jupyter Contents universal newlines; JSON text or precisely computed JavaScript JSON.stringify model; UTF-8",
+      "canonical_sha256": "3149e8563eb63266fd45822d1d3ab369927f52b3e3c9dd1a5e14a6f21d6b0971",
+      "canonical_code_sha256": "084533cd53392e488657aad31d7691714fd3f63c138dff91e4374f99b5988a3a",
+      "numerical_assertions": "assert len(nodes)==6 and len(edges)==8 and {n:len(neighbors[n]) for n in nodes}=={'A':2,'B':4,'C':2,'D':3,'E':3,'F':2}\nassert route==['A','B','C','F']\n",
+      "cell_execution": "Concatenated canonical code",
+      "tile_verification": null,
+      "code_sha256": "59630df46fe952da25fbb19112747bea29bbd49f34631b6d8db00419e5e41298",
+      "current_code_matches_recorded_run": true
+    }
+  ],
+  "method": "Fresh browser context and actual Pyodide kernel per case; canonical packaged inputs checked by raw HTTP and kernel filesystem hashes, independent numerical oracles and unique executed markers. Fresh SVG/PNG and loaded Plotly DOM/WebGL plus globe drag are separate graphics evidence.",
+  "limits": "Four stdlib companions and explicitly declared safe source/upload cases; upload fixtures are original synthetic local files. DestinE optional widget-only globe cell skipped under its exact reviewed contract. These checks do not certify widget frontend support, real DestinE services or native Urbanity. TerrIO source reading copies require the matched0.29 source runtime and are not executed in Atlas314.",
+  "checked_on": "2026-11-16",
+  "source": "Observed complete local assembled Atlas, Chrome with actual Pyodide kernels; not an unobserved CI claim."
+}

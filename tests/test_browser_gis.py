@@ -42,12 +42,12 @@ class BrowserGis(unittest.TestCase):
         path.write_text(json.dumps({'type':'FeatureCollection','features':features,**foreign}),encoding='utf-8')
         return handoff.load_input(path,metadata or self.metadata())
 
-    def test_complete_distinct_profiles_and_matching_84_placements(self):
+    def test_complete_distinct_profiles_and_matching_course_placements(self):
         profiles=load_pathways()['pathways']
         slugs={r['slug'] for r in json.loads((ROOT/'catalog/repositories.json').read_text())['repositories']}
         self.assertEqual({p['slug'] for p in profiles},slugs)
         for key in ['question','ai_prompt','geoai_extension','evidence_check','rustgis_task','geolibre_task']:
-            self.assertEqual(len({p[key] for p in profiles}),42,key)
+            self.assertEqual(len({p[key] for p in profiles}),len(slugs),key)
         for profile in profiles:
             for relative in [f"projects/{profile['slug']}/index.ipynb",f"courses/{profile['slug']}/index.ipynb"]:
                 path=ROOT/'content'/relative;nb=nbformat.read(path,4)
